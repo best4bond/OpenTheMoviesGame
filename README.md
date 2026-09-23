@@ -4,7 +4,7 @@ Fan reverse-engineering notes for **The Movies** and **The Movies: Stunts & Effe
 
 This is an ongoing effort to understand how the game's simulation actually works under the hood — mechanics like genre popularity, the radio/news system, save-file structure, and various asset formats (`.msh`, `.lug`, `.pak`) — done by statically analyzing the shipped `MoviesSE.exe` in Ghidra and cross-checking the results against the real game data files.
 
-**➡️ [FINDINGS.md](FINDINGS.md)** — the main write-up. It's a running research log, not a polished reference: sections get added as threads are investigated, and earlier conclusions are corrected in place (left visible) when later evidence overturns them, rather than silently rewritten.
+Write-up is being redone from scratch — check back soon.
 
 ## What this is
 
