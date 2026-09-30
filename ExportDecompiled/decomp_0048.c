@@ -3562,9 +3562,9 @@ undefined4 * __cdecl FUN_00a393f0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00a39470 @ 00a39470 ////
+//// FUNCTION zlib_inflateReset_copy2 @ 00a39470 ////
 
-undefined4 __cdecl FUN_00a39470(int param_1)
+undefined4 __cdecl zlib_inflateReset_copy2(int param_1)
 
 {
   uint *puVar1;
@@ -3574,16 +3574,16 @@ undefined4 __cdecl FUN_00a39470(int param_1)
     *(undefined4 *)(param_1 + 8) = 0;
     *(undefined4 *)(param_1 + 0x18) = 0;
     *puVar1 = -(uint)(puVar1[3] != 0) & 7;
-    FUN_00aa6840(*(int **)(*(int *)(param_1 + 0x1c) + 0x14),param_1,&param_1);
+    zlib_inflate_blocks_reset_copy2(*(int **)(*(int *)(param_1 + 0x1c) + 0x14),param_1,&param_1);
     return 0;
   }
   return 0xfffffffe;
 }
 
 
-//// FUNCTION FUN_00a394c0 @ 00a394c0 ////
+//// FUNCTION zlib_inflateEnd_copy2 @ 00a394c0 ////
 
-undefined4 __cdecl FUN_00a394c0(int param_1)
+undefined4 __cdecl zlib_inflateEnd_copy2(int param_1)
 
 {
   int *piVar1;
@@ -3593,7 +3593,7 @@ undefined4 __cdecl FUN_00a394c0(int param_1)
   if (((param_1 != 0) && (*(int *)(param_1 + 0x1c) != 0)) && (*(int *)(param_1 + 0x24) != 0)) {
     piVar1 = *(int **)(*(int *)(param_1 + 0x1c) + 0x14);
     if (piVar1 != (int *)0x0) {
-      FUN_00aa7680(piVar1,param_1,&param_1);
+      zlib_inflate_blocks_free_copy2(piVar1,param_1,&param_1);
     }
     (**(code **)(iVar2 + 0x24))(*(undefined4 *)(iVar2 + 0x28),*(undefined4 *)(iVar2 + 0x1c));
     *(undefined4 *)(iVar2 + 0x1c) = 0;
@@ -3603,9 +3603,9 @@ undefined4 __cdecl FUN_00a394c0(int param_1)
 }
 
 
-//// FUNCTION FUN_00a39510 @ 00a39510 ////
+//// FUNCTION zlib_inflateInit2_copy2 @ 00a39510 ////
 
-undefined4 __cdecl FUN_00a39510(int param_1,int param_2,char *param_3,int param_4)
+undefined4 __cdecl zlib_inflateInit2_copy2(int param_1,int param_2,char *param_3,int param_4)
 
 {
   int iVar1;
@@ -3638,34 +3638,34 @@ undefined4 __cdecl FUN_00a39510(int param_1,int param_2,char *param_3,int param_
   }
   if ((7 < param_2) && (param_2 < 0x10)) {
     *(int *)(*(int *)(param_1 + 0x1c) + 0x10) = param_2;
-    piVar2 = FUN_00aa68e0(param_1,~-(uint)(*(int *)(*(int *)(param_1 + 0x1c) + 0xc) != 0) & 0xaa7700
+    piVar2 = zlib_inflate_blocks_new_copy2(param_1,~-(uint)(*(int *)(*(int *)(param_1 + 0x1c) + 0xc) != 0) & 0xaa7700
                           ,1 << ((byte)param_2 & 0x1f));
     *(int **)(*(int *)(param_1 + 0x1c) + 0x14) = piVar2;
     if (*(int *)(*(int *)(param_1 + 0x1c) + 0x14) == 0) {
-      FUN_00a394c0(param_1);
+      zlib_inflateEnd_copy2(param_1);
       return 0xfffffffc;
     }
-    FUN_00a39470(param_1);
+    zlib_inflateReset_copy2(param_1);
     return 0;
   }
-  FUN_00a394c0(param_1);
+  zlib_inflateEnd_copy2(param_1);
   return 0xfffffffe;
 }
 
 
-//// FUNCTION FUN_00a39620 @ 00a39620 ////
+//// FUNCTION zlib_inflateInit_copy2 @ 00a39620 ////
 
-void __cdecl FUN_00a39620(int param_1,char *param_2,int param_3)
+void __cdecl zlib_inflateInit_copy2(int param_1,char *param_2,int param_3)
 
 {
-  FUN_00a39510(param_1,0xf,param_2,param_3);
+  zlib_inflateInit2_copy2(param_1,0xf,param_2,param_3);
   return;
 }
 
 
-//// FUNCTION FUN_00a39640 @ 00a39640 ////
+//// FUNCTION zlib_inflate_copy2 @ 00a39640 ////
 
-int __cdecl FUN_00a39640(int *param_1,int param_2)
+int __cdecl zlib_inflate_copy2(int *param_1,int param_2)
 
 {
   byte bVar1;
@@ -3782,7 +3782,7 @@ switchD_00a39688_caseD_5:
       *(undefined4 *)(param_1[7] + 4) = 0;
       return -2;
     case 7:
-      iVar4 = FUN_00aa6950((uint *)puVar2[5],param_1,iVar4);
+      iVar4 = zlib_inflate_blocks_copy2((uint *)puVar2[5],param_1,iVar4);
       if (iVar4 == -3) {
         *(undefined4 *)param_1[7] = 0xd;
         *(undefined4 *)(param_1[7] + 4) = 0;
@@ -3793,7 +3793,7 @@ switchD_00a39688_caseD_5:
           return iVar4;
         }
         iVar4 = 0;
-        FUN_00aa6840(*(int **)(param_1[7] + 0x14),(int)param_1,(int *)(param_1[7] + 4));
+        zlib_inflate_blocks_reset_copy2(*(int **)(param_1[7] + 0x14),(int)param_1,(int *)(param_1[7] + 4));
         puVar2 = (undefined4 *)param_1[7];
         if (puVar2[3] == 0) {
           *puVar2 = 8;

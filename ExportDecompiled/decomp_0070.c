@@ -5441,7 +5441,7 @@ void FUN_00d153dc(void)
 void FUN_00d153f0(void)
 
 {
-  FUN_00bcea80((LPCRITICAL_SECTION)&DAT_010ced14);
+  Wrap_DeleteCriticalSection_00bcea80((LPCRITICAL_SECTION)&DAT_010ced14);
   return;
 }
 
@@ -5451,7 +5451,7 @@ void FUN_00d153f0(void)
 void FUN_00d15400(void)
 
 {
-  FUN_00bcea80((LPCRITICAL_SECTION)&DAT_010ced2c);
+  Wrap_DeleteCriticalSection_00bcea80((LPCRITICAL_SECTION)&DAT_010ced2c);
   return;
 }
 
@@ -5491,7 +5491,7 @@ void FUN_00d15430(void)
 void FUN_00d15440(void)
 
 {
-  FUN_00c134d0(&DAT_010d5f50);
+  Dtor_00c134d0(&DAT_010d5f50);
   return;
 }
 
@@ -5501,7 +5501,7 @@ void FUN_00d15440(void)
 void FUN_00d15450(void)
 
 {
-  FUN_00bdfc70((undefined4 *)&DAT_010d6128);
+  SetVtable_00d9fbe8_00bdfc70((undefined4 *)&DAT_010d6128);
   return;
 }
 
@@ -5511,7 +5511,7 @@ void FUN_00d15450(void)
 void FUN_00d15460(void)
 
 {
-  FUN_00bdfc70((undefined4 *)&DAT_010d6108);
+  SetVtable_00d9fbe8_00bdfc70((undefined4 *)&DAT_010d6108);
   return;
 }
 
@@ -5531,7 +5531,7 @@ void FUN_00d15470(void)
 void FUN_00d15480(void)
 
 {
-  FUN_00c0f200((undefined4 *)&DAT_010da2d8);
+  Dtor_00c0f200((undefined4 *)&DAT_010da2d8);
   return;
 }
 
@@ -5541,7 +5541,7 @@ void FUN_00d15480(void)
 void FUN_00d15490(void)
 
 {
-  FUN_00c37770((undefined4 *)&DAT_010da230);
+  Dtor_00c37770((undefined4 *)&DAT_010da230);
   return;
 }
 

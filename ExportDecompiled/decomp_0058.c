@@ -50661,9 +50661,9 @@ void FUN_00ba4740(int param_1)
 }
 
 
-//// FUNCTION FUN_00ba4a7b @ 00ba4a7b ////
+//// FUNCTION zlib_inflate_codes_new @ 00ba4a7b ////
 
-void FUN_00ba4a7b(undefined1 param_1,undefined1 param_2,undefined4 param_3,undefined4 param_4,
+void zlib_inflate_codes_new(undefined1 param_1,undefined1 param_2,undefined4 param_3,undefined4 param_4,
                  int param_5)
 
 {
@@ -50681,9 +50681,9 @@ void FUN_00ba4a7b(undefined1 param_1,undefined1 param_2,undefined4 param_3,undef
 }
 
 
-//// FUNCTION FUN_00ba4aae @ 00ba4aae ////
+//// FUNCTION zlib_inflate_codes @ 00ba4aae ////
 
-void FUN_00ba4aae(undefined1 *param_1,int *param_2,int param_3)
+void zlib_inflate_codes(undefined1 *param_1,int *param_2,int param_3)
 
 {
   byte bVar1;
@@ -50727,7 +50727,7 @@ void FUN_00ba4aae(undefined1 *param_1,int *param_2,int param_3)
         piVar6[2] = (int)(local_8 + (piVar6[2] - *piVar6));
         *piVar6 = (int)local_8;
         *(undefined1 **)(puVar5 + 0x34) = puVar10;
-        param_3 = FUN_00bb867a((uint)*(byte *)(piVar2 + 4),(uint)*(byte *)((int)piVar2 + 0x11),
+        param_3 = zlib_inflate_fast((uint)*(byte *)(piVar2 + 4),(uint)*(byte *)((int)piVar2 + 0x11),
                                piVar2[5],piVar2[6],(int)puVar5,piVar6);
         puVar10 = *(undefined1 **)(puVar5 + 0x34);
         local_8 = (byte *)*piVar6;
@@ -50867,7 +50867,7 @@ LAB_00ba4d30:
             }
           }
           *(undefined1 **)(puVar5 + 0x34) = puVar10;
-          param_3 = FUN_00ba5539(puVar5,(int)piVar6,param_3);
+          param_3 = zlib_inflate_flush(puVar5,(int)piVar6,param_3);
           puVar9 = *(undefined1 **)(puVar5 + 0x34);
           puVar10 = *(undefined1 **)(puVar5 + 0x30);
           if (puVar9 < puVar10) {
@@ -50918,7 +50918,7 @@ LAB_00ba4e44:
         }
       }
       *(undefined1 **)(puVar5 + 0x34) = puVar10;
-      param_3 = FUN_00ba5539(puVar5,(int)piVar6,param_3);
+      param_3 = zlib_inflate_flush(puVar5,(int)piVar6,param_3);
       puVar9 = *(undefined1 **)(puVar5 + 0x34);
       puVar10 = *(undefined1 **)(puVar5 + 0x30);
       if (puVar9 < puVar10) {
@@ -50952,7 +50952,7 @@ LAB_00ba4f00:
         local_8 = local_8 + -1;
       }
       *(undefined1 **)(puVar5 + 0x34) = puVar10;
-      param_3 = FUN_00ba5539(puVar5,(int)piVar6,param_3);
+      param_3 = zlib_inflate_flush(puVar5,(int)piVar6,param_3);
       puVar10 = *(undefined1 **)(puVar5 + 0x34);
       if (*(undefined1 **)(puVar5 + 0x30) == puVar10) {
         *piVar2 = 8;
@@ -50978,7 +50978,7 @@ LAB_00ba4f30:
         piVar6[2] = (int)(local_8 + (piVar6[2] - iVar4));
       }
       *(undefined1 **)(puVar5 + 0x34) = puVar10;
-      FUN_00ba5539(puVar5,(int)piVar6,param_3);
+      zlib_inflate_flush(puVar5,(int)piVar6,param_3);
       return;
     case 8:
       goto switchD_00ba4af3_caseD_8;
@@ -50997,9 +50997,9 @@ LAB_00ba4f6d:
 }
 
 
-//// FUNCTION FUN_00ba5005 @ 00ba5005 ////
+//// FUNCTION zlib_inflate_codes_free @ 00ba5005 ////
 
-void FUN_00ba5005(undefined4 param_1,int param_2)
+void zlib_inflate_codes_free(undefined4 param_1,int param_2)
 
 {
   (**(code **)(param_2 + 0x24))(*(undefined4 *)(param_2 + 0x28),param_1);
@@ -51007,10 +51007,10 @@ void FUN_00ba5005(undefined4 param_1,int param_2)
 }
 
 
-//// FUNCTION FUN_00ba5016 @ 00ba5016 ////
+//// FUNCTION zlib_huft_build @ 00ba5016 ////
 
 undefined4
-FUN_00ba5016(uint *param_1,uint param_2,uint param_3,int param_4,int param_5,int *param_6,
+zlib_huft_build(uint *param_1,uint param_2,uint param_3,int param_4,int param_5,int *param_6,
             int param_7,uint *param_8,uint *param_9)
 
 {
@@ -51256,9 +51256,9 @@ FUN_00ba5016(uint *param_1,uint param_2,uint param_3,int param_4,int param_5,int
 }
 
 
-//// FUNCTION FUN_00ba5395 @ 00ba5395 ////
+//// FUNCTION zlib_inflate_trees_bits @ 00ba5395 ////
 
-int FUN_00ba5395(uint *param_1,int *param_2,int *param_3,int param_4,int param_5)
+int zlib_inflate_trees_bits(uint *param_1,int *param_2,int *param_3,int param_4,int param_5)
 
 {
   uint *puVar1;
@@ -51271,7 +51271,7 @@ int FUN_00ba5395(uint *param_1,int *param_2,int *param_3,int param_4,int param_5
     iVar2 = -4;
   }
   else {
-    iVar2 = FUN_00ba5016(param_1,0x13,0x13,0,0,param_3,param_4,&local_8,puVar1);
+    iVar2 = zlib_huft_build(param_1,0x13,0x13,0,0,param_3,param_4,&local_8,puVar1);
     if (iVar2 == -3) {
       *(char **)(param_5 + 0x18) = "oversubscribed dynamic bit lengths tree";
     }
@@ -51285,9 +51285,9 @@ int FUN_00ba5395(uint *param_1,int *param_2,int *param_3,int param_4,int param_5
 }
 
 
-//// FUNCTION FUN_00ba540e @ 00ba540e ////
+//// FUNCTION zlib_inflate_trees_dynamic @ 00ba540e ////
 
-int FUN_00ba540e(uint param_1,uint param_2,uint *param_3,int *param_4,int *param_5,int *param_6,
+int zlib_inflate_trees_dynamic(uint param_1,uint param_2,uint *param_3,int *param_4,int *param_5,int *param_6,
                 int *param_7,int param_8,int param_9)
 
 {
@@ -51300,10 +51300,10 @@ int FUN_00ba540e(uint param_1,uint param_2,uint *param_3,int *param_4,int *param
   if (puVar1 == (uint *)0x0) {
     return -4;
   }
-  iVar2 = FUN_00ba5016(param_3,param_1,0x101,0xd9b140,0xd9b1c0,param_6,param_8,&local_8,puVar1);
+  iVar2 = zlib_huft_build(param_3,param_1,0x101,0xd9b140,0xd9b1c0,param_6,param_8,&local_8,puVar1);
   if (iVar2 == 0) {
     if (*param_4 == 0) goto LAB_00ba54ea;
-    iVar2 = FUN_00ba5016(param_3 + param_1,param_2,0,0xd9b240,0xd9b2b8,param_7,param_8,&local_8,
+    iVar2 = zlib_huft_build(param_3 + param_1,param_2,0,0xd9b240,0xd9b2b8,param_7,param_8,&local_8,
                          puVar1);
     if (iVar2 == 0) {
       if ((*param_5 != 0) || (param_1 < 0x102)) {
@@ -51341,10 +51341,10 @@ LAB_00ba54f6:
 }
 
 
-//// FUNCTION FUN_00ba5508 @ 00ba5508 ////
+//// FUNCTION zlib_inflate_trees_fixed @ 00ba5508 ////
 
 undefined4
-FUN_00ba5508(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
+zlib_inflate_trees_fixed(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
 
 {
   *param_1 = DAT_00ea3dd8;
@@ -51355,9 +51355,9 @@ FUN_00ba5508(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefin
 }
 
 
-//// FUNCTION FUN_00ba5539 @ 00ba5539 ////
+//// FUNCTION zlib_inflate_flush @ 00ba5539 ////
 
-int FUN_00ba5539(undefined1 *param_1,int param_2,int param_3)
+int zlib_inflate_flush(undefined1 *param_1,int param_2,int param_3)
 
 {
   undefined4 *puVar1;

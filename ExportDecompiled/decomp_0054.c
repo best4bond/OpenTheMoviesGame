@@ -21266,10 +21266,10 @@ undefined4 * __thiscall FUN_00afb800(void *this,int param_1,uint param_2,int par
   }
   *(uint *)((int)this + 0x10) = param_2;
   *(undefined4 **)((int)this + 0xc) = puVar1;
-  FUN_00a39620((int)this,"1.2.1",0x38);
-  iVar2 = FUN_00a39640(this,4);
+  zlib_inflateInit_copy2((int)this,"1.2.1",0x38);
+  iVar2 = zlib_inflate_copy2(this,4);
   if ((iVar2 == 1) || ((iVar2 != 2 && ((iVar2 != -5 || (*(int *)((int)this + 4) != 0)))))) {
-    iVar2 = FUN_00a394c0((int)this);
+    iVar2 = zlib_inflateEnd_copy2((int)this);
     if ((iVar2 == 0) && (param_2 == *(uint *)((int)this + 0x14))) {
       return puVar1;
     }
