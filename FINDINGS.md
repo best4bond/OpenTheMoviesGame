@@ -152,7 +152,39 @@ Loaded by `LH_LoadLUGAsset` (`00c009c0`, `decomp_0063.c`) on top of the segment 
 
 The other fields of the record are not decoded. The write side is `LH_BuildLUGAsset` (`00bd34d0`) with matching `LH_Save*` functions.
 
+## `.pak` archives
+
+Only the parts I could read from the decompile are here. The per-entry fields are not decoded, so no extractor can be written from this alone.
+
+**Discovery** (`FUN_00a96360`, `decomp_0051.c`): scans `data\Pak\*.*pak`, then the per-user folder `...\Lionhead Studios\TheMovies\` for `*.cpak` (the folder is from `SHGetSpecialFolderPathA` with CSIDL `0x23`, the common application data folder). `.cpak` files are user content and go through a separate loader (`FUN_00aafc30`) from the normal `.pak` path.
+
+**Loading** (`FUN_00aafeb0`, `decomp_0052.c`):
+- At most `0xffe` (4094) pak files can be loaded. Past that it logs `"Too many pak files ... is the maximum"`. Each pak gets a sequential index from the counter `DAT_010b9360`.
+- The index is XORed into each entry's flags dword (entry `+0x14`, mask `0x7ff8000`, shifted left 15), so every entry records which pak it came from in bits 15-26. Code elsewhere reads it back with `(flags >> 0xf) & 0xfff` (for example `decomp_0046.c`).
+- The pak's `FILE*` is kept open at pak object `+0x28`, in read mode. Pak object `+0x24` is a mode flag: 1 normally, or 2 when the header version is 6.
+
+**Header** (`FUN_00a9b6b0`, parsed from a buffer read by `FUN_00a9be50`; size check in `FUN_00a9baa0` requires at least 0x34 bytes):
+
+| File offset | Meaning |
+|---|---|
+| 0x00 | version dword. Only 4, 5 and 6 are accepted |
+| 0x04, 0x08 | not identified |
+| 0x0c | entry count |
+| 0x10 | count of 8-byte records in a second table |
+| 0x14 | not identified |
+| 0x18 | size in bytes of a string blob |
+| 0x1c | v4: offset of the entry table. v5/6: not identified (see below) |
+| 0x20 | v4: offset of the 8-byte table |
+| 0x24 | v4: offset of the string blob |
+| 0x28, 0x2c, 0x30 | v5/6: offsets of the entry table, the 8-byte table and the string blob |
+
+In v4 the three offsets sit at `0x1c`-`0x24`. In v5 and v6 three more dwords come first (`0x1c`-`0x24`, kept but not used in the parts I read), and the offsets move to `0x28`-`0x30`. The loader copies the tables into memory: `count * 0x38` bytes of entries, `count2 * 8` bytes of small records, and the string blob.
+
+**Entries:** 0x38 bytes each. Only the flags dword at `+0x14` (pak index in bits 15-26) is known. The file-name/hash, offset and size fields have not been decoded.
+
+**Path handling** (`FUN_00ab0060`, `FUN_00ab0150`): paths are lower-cased and cut down to the part after `data\`. A file-type classifier checks the extensions `.msh`, `.pak`, `.cpak`, `.exe`, `.avi`, `.wmv`, `.fnt`. For `.msh` it treats names starting `head_` and `cos_` specially, with `_fat` and `_enh` suffixes (body-size and enhanced variants of costumes). A separate `"%s\%s%s%04d.pak"` format is used when generating numbered pak names.
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
-- `.pak` archives; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
+- `.pak` entry layout (name/hash, offset, size, compression) and how a lookup by path finds an entry; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
 - Details of the older notes (SLVAR type functions, `CSystem`, the RTTI class list) can still be pulled from `git show 9b29b4e:FINDINGS.md`.
