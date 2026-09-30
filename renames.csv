@@ -1689,3 +1689,169 @@ address,old_name,new_name,evidence
 00c53ce0,FUN_00c53ce0,CFrame_Init,CFrame.cpp:37/38/40; allocates channels * samples * 2 bytes
 00c65750,FUN_00c65750,LLAChannelCInitParams_GetFormatFieldA,"LLAChannelCInitParams.cpp:22 ""Format out of range (""; table lookup at 0xdad494 + format*8"
 00c65860,FUN_00c65860,LLAChannelCInitParams_GetFormatFieldB,line 28 same check; second table lookup
+00bc86b0,FUN_00bc86b0,PKCAutoDelete_Set_00bc86b0,"PKCAutoDelete.h:54 asserts ""Leak!"" if already holding a pointer and ""Null object"" for a null argument, then stores it"
+00bcb8a0,FUN_00bcb8a0,PKCAutoDeleteMe_Release_00bcb8a0,PKCAutoDeleteMe.h:46 returns and nulls the owned pointer
+00bcb9a0,FUN_00bcb9a0,PKCAutoDelete_Get_00bcb9a0,"PKCAutoDelete.h:37 returns the owned pointer; asserts ""Should have checked first..."" when null"
+00bcba70,FUN_00bcba70,PKCAutoDeleteMe_Release_00bcba70,PKCAutoDeleteMe.h:46 returns and nulls the owned pointer
+00bd4350,FUN_00bd4350,PKCAutoDelete_Get_00bd4350,"PKCAutoDelete.h:37 returns the owned pointer; asserts ""Should have checked first..."" when null"
+00bd4420,FUN_00bd4420,PKCAutoDelete_Release_00bd4420,PKCAutoDelete.h:47 returns the owned pointer and nulls it (gives up ownership); asserts when null
+00bd44f0,FUN_00bd44f0,PKCAutoDelete_Release_00bd44f0,PKCAutoDelete.h:47 returns the owned pointer and nulls it (gives up ownership); asserts when null
+00bd45c0,FUN_00bd45c0,PKCAutoDeleteArray_Resize_00bd45c0,PKCAutoDeleteArray.h:70 EMEM assert; frees the old buffer and allocates count*4 bytes when the size changes
+00bd4710,FUN_00bd4710,PKCAutoDeleteArray_At_00bd4710,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00bd4820,FUN_00bd4820,PKCAutoDeleteArray_At_00bd4820,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00bdd010,FUN_00bdd010,PKCAutoDelete_Release_00bdd010,PKCAutoDelete.h:47 returns the owned pointer and nulls it (gives up ownership); asserts when null
+00bdd330,FUN_00bdd330,PKAllocatorsLinkTime_Free_00bdd330,"PKAllocatorsLinkTime.h:40 asserts ""Null object"", destroys the string object, locks, returns it to the pool, unlocks"
+00bddc20,FUN_00bddc20,PKAllocatorsLinkTime_Free_00bddc20,"PKAllocatorsLinkTime.h:40 asserts ""Null object"", destroys the string object, locks, returns it to the pool, unlocks"
+00bdf490,FUN_00bdf490,PKCAutoDeleteArray_At_00bdf490,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00bdf5a0,FUN_00bdf5a0,PKCAutoDeleteArray_At_00bdf5a0,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00be28e0,FUN_00be28e0,PKCAutoDeleteArray_Resize_00be28e0,PKCAutoDeleteArray.h:70 EMEM assert; frees the old buffer and allocates count*4 bytes when the size changes
+00be2a20,FUN_00be2a20,PKCAutoDeleteArray_At_00be2a20,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00be8520,FUN_00be8520,PKCAutoDeleteMe_Release_00be8520,PKCAutoDeleteMe.h:46 returns and nulls the owned pointer
+00be85f0,FUN_00be85f0,PKCAutoDeleteMe_Get_00be85f0,PKCAutoDeleteMe.h:36 returns the owned pointer; asserts when null
+00beb720,FUN_00beb720,PKCAutoDelete_Set_00beb720,"PKCAutoDelete.h:54 asserts ""Leak!"" if already holding a pointer and ""Null object"" for a null argument, then stores it"
+00beb890,FUN_00beb890,PKCAutoDelete_Release_00beb890,PKCAutoDelete.h:47 returns the owned pointer and nulls it (gives up ownership); asserts when null
+00beb960,FUN_00beb960,PKCAutoDelete_Set_00beb960,"PKCAutoDelete.h:54 asserts ""Leak!"" if already holding a pointer and ""Null object"" for a null argument, then stores it"
+00bf12f0,FUN_00bf12f0,PKAllocatorsRunTime_Free_00bf12f0,"PKAllocatorsRunTime.h:74 asserts ""Null object"", calls the virtual destructor, locks, returns it to the presized pool, unlocks"
+00bf1400,FUN_00bf1400,PKAllocatorsRunTime_Free_00bf1400,"PKAllocatorsRunTime.h:74 asserts ""Null object"", calls the virtual destructor, locks, returns it to the presized pool, unlocks"
+00bf1510,FUN_00bf1510,PKAllocatorsRunTime_Free_00bf1510,"PKAllocatorsRunTime.h:74 asserts ""Null object"", calls the virtual destructor, locks, returns it to the presized pool, unlocks"
+00bf4590,FUN_00bf4590,PKAllocatorsLinkTime_Free_00bf4590,"PKAllocatorsLinkTime.h:40 asserts ""Null object"", destroys the string object, locks, returns it to the pool, unlocks"
+00bf7f70,FUN_00bf7f70,PKCAutoDelete_Get_00bf7f70,"PKCAutoDelete.h:37 returns the owned pointer; asserts ""Should have checked first..."" when null"
+00bf8040,FUN_00bf8040,PKCAutoDelete_Set_00bf8040,"PKCAutoDelete.h:54 asserts ""Leak!"" if already holding a pointer and ""Null object"" for a null argument, then stores it"
+00bf81b0,FUN_00bf81b0,PKCAutoDelete_Get_00bf81b0,"PKCAutoDelete.h:37 returns the owned pointer; asserts ""Should have checked first..."" when null"
+00bf8280,FUN_00bf8280,PKCAutoDelete_Set_00bf8280,"PKCAutoDelete.h:54 asserts ""Leak!"" if already holding a pointer and ""Null object"" for a null argument, then stores it"
+00bf8b50,FUN_00bf8b50,PKCAutoDeleteMe_Set_00bf8b50,"PKCAutoDeleteMe.h:53 asserts ""Leak!""/""Null object"" then stores the pointer"
+00bfc480,FUN_00bfc480,PKCAutoDeleteArray_Resize_00bfc480,PKCAutoDeleteArray.h:70 EMEM assert; frees the old buffer and allocates count*4 bytes when the size changes
+00bfc770,FUN_00bfc770,PKCAutoDelete_Release_00bfc770,PKCAutoDelete.h:47 returns the owned pointer and nulls it (gives up ownership); asserts when null
+00bfc840,FUN_00bfc840,PKCAutoDelete_Set_00bfc840,"PKCAutoDelete.h:54 asserts ""Leak!"" if already holding a pointer and ""Null object"" for a null argument, then stores it"
+00bfca20,FUN_00bfca20,PKCAutoDeleteArray_At_00bfca20,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00bfcb30,FUN_00bfcb30,PKCAutoDeleteArray_At_00bfcb30,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00bfcc40,FUN_00bfcc40,PKCAutoDeleteArray_At_00bfcc40,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00bfd1d0,FUN_00bfd1d0,PKCAutoDeleteArray_Resize_00bfd1d0,PKCAutoDeleteArray.h:70 EMEM assert; frees the old buffer and allocates count*4 bytes when the size changes
+00bfea50,FUN_00bfea50,PKCAutoDeleteArray_Resize_00bfea50,PKCAutoDeleteArray.h:70 EMEM assert; frees the old buffer and allocates count*4 bytes when the size changes
+00c028c0,FUN_00c028c0,PKCAutoDeleteArray_Get_00c028c0,PKCAutoDeleteArray.h:121 returns the buffer pointer; asserts when null
+00c02990,FUN_00c02990,PKCAutoDeleteArray_Resize_00c02990,PKCAutoDeleteArray.h:70 EMEM assert; frees the old buffer and allocates count*4 bytes when the size changes
+00c02bb0,FUN_00c02bb0,PKCAutoDeleteArray_At_00c02bb0,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00c02cc0,FUN_00c02cc0,PKCAutoDeleteArray_At_00c02cc0,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00c042d0,FUN_00c042d0,PKCAutoDeleteArray_Resize_00c042d0,PKCAutoDeleteArray.h:70 EMEM assert; frees the old buffer and allocates count*4 bytes when the size changes
+00c044b0,FUN_00c044b0,PKCAutoDeleteArray_Resize_00c044b0,PKCAutoDeleteArray.h:70 EMEM assert; frees the old buffer and allocates count*4 bytes when the size changes
+00c05810,FUN_00c05810,PKCAutoDelete_Set_00c05810,"PKCAutoDelete.h:54 asserts ""Leak!"" if already holding a pointer and ""Null object"" for a null argument, then stores it"
+00c059a0,FUN_00c059a0,PKCAutoDelete_Get_00c059a0,"PKCAutoDelete.h:37 returns the owned pointer; asserts ""Should have checked first..."" when null"
+00c05a70,FUN_00c05a70,PKCAutoDelete_Release_00c05a70,PKCAutoDelete.h:47 returns the owned pointer and nulls it (gives up ownership); asserts when null
+00c05b40,FUN_00c05b40,PKCAutoDelete_Get_00c05b40,"PKCAutoDelete.h:37 returns the owned pointer; asserts ""Should have checked first..."" when null"
+00c05c10,FUN_00c05c10,PKCAutoDelete_Release_00c05c10,PKCAutoDelete.h:47 returns the owned pointer and nulls it (gives up ownership); asserts when null
+00c05ce0,FUN_00c05ce0,PKCAutoDelete_Get_00c05ce0,"PKCAutoDelete.h:37 returns the owned pointer; asserts ""Should have checked first..."" when null"
+00c05db0,FUN_00c05db0,PKCAutoDelete_Release_00c05db0,PKCAutoDelete.h:47 returns the owned pointer and nulls it (gives up ownership); asserts when null
+00c06cc0,FUN_00c06cc0,PKCAutoDelete_Get_00c06cc0,"PKCAutoDelete.h:37 returns the owned pointer; asserts ""Should have checked first..."" when null"
+00c06d90,FUN_00c06d90,PKCAutoDelete_Release_00c06d90,PKCAutoDelete.h:47 returns the owned pointer and nulls it (gives up ownership); asserts when null
+00c074a0,FUN_00c074a0,PKCAutoDelete_Get_00c074a0,"PKCAutoDelete.h:37 returns the owned pointer; asserts ""Should have checked first..."" when null"
+00c0a0e0,FUN_00c0a0e0,PKAllocatorsLinkTime_Free_00c0a0e0,"PKAllocatorsLinkTime.h:40 asserts ""Null object"", destroys the string object, locks, returns it to the pool, unlocks"
+00c0ac90,FUN_00c0ac90,PKCAutoDelete_Get_00c0ac90,"PKCAutoDelete.h:37 returns the owned pointer; asserts ""Should have checked first..."" when null"
+00c0ad60,FUN_00c0ad60,PKCAutoDelete_Release_00c0ad60,PKCAutoDelete.h:47 returns the owned pointer and nulls it (gives up ownership); asserts when null
+00c0ae30,FUN_00c0ae30,PKCAutoDelete_Set_00c0ae30,"PKCAutoDelete.h:54 asserts ""Leak!"" if already holding a pointer and ""Null object"" for a null argument, then stores it"
+00c0c7e0,FUN_00c0c7e0,PKCAutoDeleteArray_Set_00c0c7e0,"PKCAutoDeleteArray.h:113 asserts ""Leak!""/""Null object"" then stores pointer and size"
+00c0cab0,FUN_00c0cab0,PKCAutoDelete_Release_00c0cab0,PKCAutoDelete.h:47 returns the owned pointer and nulls it (gives up ownership); asserts when null
+00c0cba0,FUN_00c0cba0,PKCAutoDeleteArray_At_00c0cba0,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00c0d9b0,FUN_00c0d9b0,PKCAutoDelete_Get_00c0d9b0,"PKCAutoDelete.h:37 returns the owned pointer; asserts ""Should have checked first..."" when null"
+00c0da80,FUN_00c0da80,PKCAutoDelete_Set_00c0da80,"PKCAutoDelete.h:54 asserts ""Leak!"" if already holding a pointer and ""Null object"" for a null argument, then stores it"
+00c1d2d0,FUN_00c1d2d0,PKCArray_Allocate_00c1d2d0,"PKCArray.h:69 asserts ""Expecting null buffer"", then allocates count*4 bytes (EMEM at line 74)"
+00c1d460,FUN_00c1d460,PKCArray_Allocate_00c1d460,"PKCArray.h:69 asserts ""Expecting null buffer"", then allocates count*4 bytes (EMEM at line 74)"
+00c1d630,FUN_00c1d630,PKCArray_Allocate_00c1d630,"PKCArray.h:69 asserts ""Expecting null buffer"", then allocates count*4 bytes (EMEM at line 74)"
+00c23390,FUN_00c23390,CMapAccess_SetCellCount_00c23390,"CMapAccess.h:62 asserts ""Must be at least 1!!""/""Must have at least 1 entry""; stores the divisor and size/divisor"
+00c23640,FUN_00c23640,CCellRangeExaminer_GetRange_00c23640,"CCellRangeExaminer.h:16 asserts ""Overflow"" then returns the two range values"
+00c23740,FUN_00c23740,PKCAutoDeleteArray_Resize_00c23740,PKCAutoDeleteArray.h:70 EMEM assert; frees the old buffer and allocates count*4 bytes when the size changes
+00c238e0,FUN_00c238e0,PKCAutoDeleteArray_Resize_00c238e0,PKCAutoDeleteArray.h:70 EMEM assert; frees the old buffer and allocates count*4 bytes when the size changes
+00c23aa0,FUN_00c23aa0,PKCAutoDeleteArray_Resize_00c23aa0,PKCAutoDeleteArray.h:70 EMEM assert; frees the old buffer and allocates count*4 bytes when the size changes
+00c23c70,FUN_00c23c70,PKCAutoDeleteArray_Resize_00c23c70,PKCAutoDeleteArray.h:70 EMEM assert; frees the old buffer and allocates count*4 bytes when the size changes
+00c23e50,FUN_00c23e50,PKCAutoDelete_Get_00c23e50,"PKCAutoDelete.h:37 returns the owned pointer; asserts ""Should have checked first..."" when null"
+00c23f20,FUN_00c23f20,PKCAutoDelete_Set_00c23f20,"PKCAutoDelete.h:54 asserts ""Leak!"" if already holding a pointer and ""Null object"" for a null argument, then stores it"
+00c24090,FUN_00c24090,PKCAutoDelete_Get_00c24090,"PKCAutoDelete.h:37 returns the owned pointer; asserts ""Should have checked first..."" when null"
+00c24310,FUN_00c24310,PKCAutoDeleteArray_At_00c24310,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00c24420,FUN_00c24420,PKCAutoDeleteArray_At_00c24420,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00c24530,FUN_00c24530,PKCAutoDeleteArray_At_00c24530,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00c24640,FUN_00c24640,PKCAutoDeleteArray_At_00c24640,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00c24750,FUN_00c24750,PKCAutoDeleteArray_At_00c24750,"PKCAutoDeleteArray.h:90 asserts ""Index "" out of range then returns the element address"
+00c25c90,FUN_00c25c90,PKCAutoDeleteArray_Resize_00c25c90,PKCAutoDeleteArray.h:70 EMEM assert; frees the old buffer and allocates count*4 bytes when the size changes
+00c535e0,FUN_00c535e0,PKCAutoDeleteMe_Set_00c535e0,"PKCAutoDeleteMe.h:53 asserts ""Leak!""/""Null object"" then stores the pointer"
+00c54bf0,FUN_00c54bf0,PKCMailbox_Receive_00c54bf0,"PKCMailbox.h:63 waits on the semaphore, locks, asserts ""the queue is out of step with the mailbox handler"", pops an item"
+00bc8400,FUN_00bc8400,LH_Sort_Med3_00bc8400,pattern: three compare-and-swap steps with null asserts (std::_Med3 pivot selection)
+00bc84e0,FUN_00bc84e0,LH_Sort_PushHeap_00bc84e0,pattern: sift-up with parent index (i-1)/2 and null asserts
+00bc8b60,FUN_00bc8b60,LH_Sort_AdjustHeap_00bc8b60,"pattern: sift-down choosing the larger child at 2i+2, then push_heap"
+00bc8d30,FUN_00bc8d30,LH_Sort_UnguardedPartition_00bc8d30,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00bc9020,FUN_00bc9020,LH_Sort_InsertionSort_00bc9020,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00bcca30,FUN_00bcca30,LH_Sort_Compare_00bcca30,pattern: comparator with null asserts returning -1/0
+00bcccd0,FUN_00bcccd0,LH_Sort_Med3_00bcccd0,pattern: three compare-and-swap steps with null asserts (std::_Med3 pivot selection)
+00bcce30,FUN_00bcce30,LH_Sort_PushHeap_00bcce30,pattern: sift-up with parent index (i-1)/2 and null asserts
+00bcd310,FUN_00bcd310,LH_Sort_AdjustHeap_00bcd310,"pattern: sift-down choosing the larger child at 2i+2, then push_heap"
+00bcd470,FUN_00bcd470,LH_Sort_UnguardedPartition_00bcd470,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00bcd730,FUN_00bcd730,LH_Sort_InsertionSort_00bcd730,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00bcd830,FUN_00bcd830,LH_Sort_UnguardedPartition_00bcd830,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00bcdae0,FUN_00bcdae0,LH_Sort_InsertionSort_00bcdae0,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00bd40b0,FUN_00bd40b0,LH_Sort_Compare_00bd40b0,pattern: comparator with null asserts returning -1/0
+00bd41c0,FUN_00bd41c0,LH_Sort_Med3_00bd41c0,pattern: three compare-and-swap steps with null asserts (std::_Med3 pivot selection)
+00bd4290,FUN_00bd4290,LH_Sort_PushHeap_00bd4290,pattern: sift-up with parent index (i-1)/2 and null asserts
+00bd4c60,FUN_00bd4c60,LH_Sort_AdjustHeap_00bd4c60,"pattern: sift-down choosing the larger child at 2i+2, then push_heap"
+00bd4f40,FUN_00bd4f40,LH_Sort_UnguardedPartition_00bd4f40,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00bd51f0,FUN_00bd51f0,LH_Sort_InsertionSort_00bd51f0,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00bd67e0,FUN_00bd67e0,LH_Sort_Compare_00bd67e0,pattern: comparator with null asserts returning -1/0
+00bd6850,FUN_00bd6850,LH_Sort_Compare_00bd6850,pattern: comparator with null asserts returning -1/0
+00bd68c0,FUN_00bd68c0,LH_Sort_Compare_00bd68c0,pattern: comparator with null asserts returning -1/0
+00bd81c0,FUN_00bd81c0,LH_Sort_UnguardedPartition_00bd81c0,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00bd8590,FUN_00bd8590,LH_Sort_InsertionSort_00bd8590,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00bd86a0,FUN_00bd86a0,LH_Sort_UnguardedPartition_00bd86a0,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00bd8a70,FUN_00bd8a70,LH_Sort_InsertionSort_00bd8a70,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00bd8b80,FUN_00bd8b80,LH_Sort_UnguardedPartition_00bd8b80,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00bd8e60,FUN_00bd8e60,LH_Sort_InsertionSort_00bd8e60,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00bd8f60,FUN_00bd8f60,LH_Sort_UnguardedPartition_00bd8f60,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00bd9240,FUN_00bd9240,LH_Sort_InsertionSort_00bd9240,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00be90e0,FUN_00be90e0,LH_Sort_Compare_00be90e0,pattern: comparator with null asserts returning -1/0
+00be91a0,FUN_00be91a0,LH_Sort_Compare_00be91a0,pattern: comparator with null asserts returning -1/0
+00be92a0,FUN_00be92a0,LH_Sort_PushHeap_00be92a0,pattern: sift-up with parent index (i-1)/2 and null asserts
+00be95e0,FUN_00be95e0,LH_Sort_UnguardedPartition_00be95e0,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00be9920,FUN_00be9920,LH_Sort_InsertionSort_00be9920,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00bfb240,FUN_00bfb240,LH_Sort_Compare_00bfb240,pattern: comparator with null asserts returning -1/0
+00bfb2b0,FUN_00bfb2b0,LH_Sort_Compare_00bfb2b0,pattern: comparator with null asserts returning -1/0
+00bfb320,FUN_00bfb320,LH_Sort_Compare_00bfb320,pattern: comparator with null asserts returning -1/0
+00bfb380,FUN_00bfb380,LH_Sort_Compare_00bfb380,pattern: comparator with null asserts returning -1/0
+00bfb4a0,FUN_00bfb4a0,LH_Sort_Compare_00bfb4a0,pattern: comparator with null asserts returning -1/0
+00bfb540,FUN_00bfb540,LH_Sort_PushHeap_00bfb540,pattern: sift-up with parent index (i-1)/2 and null asserts
+00bfb690,FUN_00bfb690,LH_Sort_PushHeap_00bfb690,pattern: sift-up with parent index (i-1)/2 and null asserts
+00bfb800,FUN_00bfb800,LH_Sort_PushHeap_00bfb800,pattern: sift-up with parent index (i-1)/2 and null asserts
+00bfbf70,FUN_00bfbf70,LH_Sort_Compare_00bfbf70,pattern: comparator with null asserts returning -1/0
+00bfd660,FUN_00bfd660,LH_Sort_UnguardedPartition_00bfd660,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00bfd9c0,FUN_00bfd9c0,LH_Sort_InsertionSort_00bfd9c0,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00bfdae0,FUN_00bfdae0,LH_Sort_UnguardedPartition_00bfdae0,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00bfde40,FUN_00bfde40,LH_Sort_InsertionSort_00bfde40,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00bfdfe0,FUN_00bfdfe0,LH_Sort_UnguardedPartition_00bfdfe0,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00bfe340,FUN_00bfe340,LH_Sort_InsertionSort_00bfe340,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00c01690,FUN_00c01690,LH_Sort_Compare_00c01690,pattern: comparator with null asserts returning -1/0
+00c01710,FUN_00c01710,LH_Sort_Compare_00c01710,pattern: comparator with null asserts returning -1/0
+00c024c0,FUN_00c024c0,LH_Sort_Med3_00c024c0,pattern: three compare-and-swap steps with null asserts (std::_Med3 pivot selection)
+00c02770,FUN_00c02770,LH_Sort_PushHeap_00c02770,pattern: sift-up with parent index (i-1)/2 and null asserts
+00c03140,FUN_00c03140,LH_Sort_AdjustHeap_00c03140,"pattern: sift-down choosing the larger child at 2i+2, then push_heap"
+00c03540,FUN_00c03540,LH_Sort_UnguardedPartition_00c03540,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00c037f0,FUN_00c037f0,LH_Sort_InsertionSort_00c037f0,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00c038f0,FUN_00c038f0,LH_Sort_UnguardedPartition_00c038f0,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00c03bb0,FUN_00c03bb0,LH_Sort_InsertionSort_00c03bb0,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00c03cb0,FUN_00c03cb0,LH_Sort_UnguardedPartition_00c03cb0,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00c04080,FUN_00c04080,LH_Sort_InsertionSort_00c04080,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00c0d090,FUN_00c0d090,LH_Sort_UnguardedPartition_00c0d090,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00c0d370,FUN_00c0d370,LH_Sort_InsertionSort_00c0d370,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00c21fd0,FUN_00c21fd0,LH_Sort_Compare_00c21fd0,pattern: comparator with null asserts returning -1/0
+00c22080,FUN_00c22080,LH_Sort_Compare_00c22080,pattern: comparator with null asserts returning -1/0
+00c22330,FUN_00c22330,LH_Sort_PushHeap_00c22330,pattern: sift-up with parent index (i-1)/2 and null asserts
+00c22470,FUN_00c22470,LH_Sort_PushHeap_00c22470,pattern: sift-up with parent index (i-1)/2 and null asserts
+00c23040,FUN_00c23040,LH_Sort_Med3_00c23040,pattern: three compare-and-swap steps with null asserts (std::_Med3 pivot selection)
+00c23100,FUN_00c23100,LH_Sort_AdjustHeap_00c23100,"pattern: sift-down choosing the larger child at 2i+2, then push_heap"
+00c231c0,FUN_00c231c0,LH_Sort_Med3_00c231c0,pattern: three compare-and-swap steps with null asserts (std::_Med3 pivot selection)
+00c23270,FUN_00c23270,LH_Sort_AdjustHeap_00c23270,"pattern: sift-down choosing the larger child at 2i+2, then push_heap"
+00c24ff0,FUN_00c24ff0,LH_Sort_UnguardedPartition_00c24ff0,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00c25300,FUN_00c25300,LH_Sort_InsertionSort_00c25300,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00c25400,FUN_00c25400,LH_Sort_UnguardedPartition_00c25400,pattern: median pivot then scans both directions (std::_Unguarded_partition)
+00c256d0,FUN_00c256d0,LH_Sort_InsertionSort_00c256d0,pattern: std::_Insertion_sort over pointer arrays with null asserts
+00bc0370,FUN_00bc0370,LHAudioSystem_CreateAtmosGroup,"asserts atmosGroup != NULL; allocates a 0x3c-byte object (vtable 0xda11d8), initialises it with this and the argument"
+00bc02f0,FUN_00bc02f0,LHAudioSystem_CreateResource,asserts resource != NULL; allocates a 0x44-byte object (vtable 0xda119c) and initialises it
+00bc0400,FUN_00bc0400,LHAudioSystem_CreateResource2,asserts resource != NULL; second resource-creation variant
+00bc0480,FUN_00bc0480,LHAudioSystem_CreateDriver,asserts driver != NULL; allocates a 0x48-byte object (vtable 0xda1258) and initialises it
+00bc7680,FUN_00bc7680,LHAudio_CompareEventsByPriority,compares a float value (helper at +0xac) then the id at +0x40; used as the sort comparator; asserts ret != 0 at the end
+00bcbdd0,FUN_00bcbdd0,LHAudio_RemoveEventTriggersMatching,"asserts eventTrigger != NULL; copies the array, calls virtual slot 2 as a predicate on each and removes and deletes matches"
+00bcbf30,FUN_00bcbf30,LHAudio_RemoveDebugInfoMatching,"asserts debugInfo != NULL; same pattern over the debug-info list at +0x18, freeing the string member"
