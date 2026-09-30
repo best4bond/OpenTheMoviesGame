@@ -5441,7 +5441,7 @@ void FUN_00d153dc(void)
 void FUN_00d153f0(void)
 
 {
-  FUN_00bcea80((LPCRITICAL_SECTION)&DAT_010ced14);
+  Wrap_DeleteCriticalSection_00bcea80((LPCRITICAL_SECTION)&DAT_010ced14);
   return;
 }
 
@@ -5451,7 +5451,7 @@ void FUN_00d153f0(void)
 void FUN_00d15400(void)
 
 {
-  FUN_00bcea80((LPCRITICAL_SECTION)&DAT_010ced2c);
+  Wrap_DeleteCriticalSection_00bcea80((LPCRITICAL_SECTION)&DAT_010ced2c);
   return;
 }
 

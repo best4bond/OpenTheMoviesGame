@@ -195,9 +195,9 @@ void FUN_00c656b0(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c65750 @ 00c65750 ////
+//// FUNCTION LLAChannelCInitParams_GetFormatFieldA @ 00c65750 ////
 
-undefined4 __fastcall FUN_00c65750(int param_1)
+undefined4 __fastcall LLAChannelCInitParams_GetFormatFieldA(int param_1)
 
 {
   LPCSTR pCVar1;
@@ -235,9 +235,9 @@ undefined4 __fastcall FUN_00c65750(int param_1)
 }
 
 
-//// FUNCTION FUN_00c65860 @ 00c65860 ////
+//// FUNCTION LLAChannelCInitParams_GetFormatFieldB @ 00c65860 ////
 
-undefined4 __fastcall FUN_00c65860(int param_1)
+undefined4 __fastcall LLAChannelCInitParams_GetFormatFieldB(int param_1)
 
 {
   LPCSTR pCVar1;
@@ -282,7 +282,7 @@ int __fastcall FUN_00c65970(int param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_00c65750(param_1);
+  iVar1 = LLAChannelCInitParams_GetFormatFieldA(param_1);
   return iVar1 * *(int *)(param_1 + 4);
 }
 
@@ -296,12 +296,12 @@ float10 __fastcall FUN_00c65990(int param_1)
   int iVar2;
   float10 fVar3;
   
-  iVar2 = FUN_00c65860(param_1);
+  iVar2 = LLAChannelCInitParams_GetFormatFieldB(param_1);
   fVar1 = (float)iVar2;
   if (iVar2 < 0) {
     fVar1 = fVar1 + 4.2949673e+09;
   }
-  iVar2 = FUN_00c65750(param_1);
+  iVar2 = LLAChannelCInitParams_GetFormatFieldA(param_1);
   fVar3 = (float10)iVar2;
   if (iVar2 < 0) {
     fVar3 = fVar3 + (float10)4.2949673e+09;
@@ -317,7 +317,7 @@ int __fastcall FUN_00c659e0(int param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_00c65860(param_1);
+  iVar1 = LLAChannelCInitParams_GetFormatFieldB(param_1);
   return iVar1 * *(int *)(param_1 + 4);
 }
 
@@ -9588,9 +9588,9 @@ FUN_00c72990(int param_1,undefined1 (*param_2) [16],undefined4 param_3,int param
 }
 
 
-//// FUNCTION FUN_00c74a70 @ 00c74a70 ////
+//// FUNCTION OpenALContext_alSourcefv_00c74a70 @ 00c74a70 ////
 
-void __thiscall FUN_00c74a70(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
+void __thiscall OpenALContext_alSourcefv_00c74a70(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   FARPROC pFVar1;
@@ -9600,7 +9600,7 @@ void __thiscall FUN_00c74a70(void *this,undefined4 param_1,undefined4 param_2,un
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alSourcefv");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alSourcefv");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alSourcefv");
     }
     *(FARPROC *)((int)this + 0x54) = pFVar1;
   }
@@ -9652,17 +9652,17 @@ LAB_00c74b37:
   }
   uVar1 = *(undefined4 *)((int)this + 0x58);
   if (DAT_010d6040 == (code *)0x0) {
-    DAT_010d6040 = (code *)FUN_00c12920(&DAT_010d5f50,"EAXSet");
+    DAT_010d6040 = (code *)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"EAXSet");
   }
   (*DAT_010d6040)(&DAT_00dac9d8,5,uVar1,&param_1,4);
   if (uVar5 != 0) {
     uVar1 = *(undefined4 *)((int)this + 0x58);
     if (DAT_010d6040 == (code *)0x0) {
-      DAT_010d6040 = (code *)FUN_00c12920(&DAT_010d5f50,"EAXSet");
+      DAT_010d6040 = (code *)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"EAXSet");
     }
     (*DAT_010d6040)(&DAT_00dac9d8,6,uVar1,(int)fVar2 + 0x140,4);
     if (DAT_010d6040 == (code *)0x0) {
-      DAT_010d6040 = (code *)FUN_00c12920(&DAT_010d5f50,"EAXSet");
+      DAT_010d6040 = (code *)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"EAXSet");
     }
     (*DAT_010d6040)(&DAT_00dac9c8,0x16,0,(int)fVar2 + 0x144,4);
   }
@@ -9671,21 +9671,21 @@ LAB_00c74c0a:
     uVar1 = *(undefined4 *)((int)this + 0x58);
     param_1 = 0.0;
     if (DAT_010d6040 == (code *)0x0) {
-      DAT_010d6040 = (code *)FUN_00c12920(&DAT_010d5f50,"EAXSet");
+      DAT_010d6040 = (code *)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"EAXSet");
     }
     (*DAT_010d6040)(&DAT_00dac9d8,7,uVar1,(int)fVar2 + 0x148,4);
     uVar1 = *(undefined4 *)((int)this + 0x58);
     if (DAT_010d6040 == (code *)0x0) {
-      DAT_010d6040 = (code *)FUN_00c12920(&DAT_010d5f50,"EAXSet");
+      DAT_010d6040 = (code *)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"EAXSet");
     }
     (*DAT_010d6040)(&DAT_00dac9d8,8,uVar1,(int)fVar2 + 0x14c,4);
     uVar1 = *(undefined4 *)((int)this + 0x58);
     if (DAT_010d6040 == (code *)0x0) {
-      DAT_010d6040 = (code *)FUN_00c12920(&DAT_010d5f50,"EAXSet");
+      DAT_010d6040 = (code *)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"EAXSet");
     }
     (*DAT_010d6040)(&DAT_00dac9d8,0x14,uVar1,&param_1,4);
     if (DAT_010d6040 == (code *)0x0) {
-      DAT_010d6040 = (code *)FUN_00c12920(&DAT_010d5f50,"EAXSet");
+      DAT_010d6040 = (code *)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"EAXSet");
     }
     (*DAT_010d6040)(&DAT_00dac9c8,0x16,0,(int)fVar2 + 0x150,4);
   }
@@ -9704,7 +9704,7 @@ LAB_00c74c0a:
         DAT_010d5fa0 = GetProcAddress(DAT_010d5f54,"alSourcef");
       }
       else {
-        DAT_010d5fa0 = (FARPROC)FUN_00c12920(&DAT_010d5f50,"alSourcef");
+        DAT_010d5fa0 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"alSourcef");
       }
     }
     (*DAT_010d5fa0)(uVar1,0x100a,param_1);
@@ -9715,7 +9715,7 @@ LAB_00c74c0a:
         DAT_010d6030 = GetProcAddress(DAT_010d5f54,"alGetError");
       }
       else {
-        DAT_010d6030 = (FARPROC)FUN_00c12920(&DAT_010d5f50,"alGetError");
+        DAT_010d6030 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"alGetError");
       }
     }
     (*DAT_010d6030)();
@@ -9779,7 +9779,7 @@ LAB_00c74c0a:
         DAT_010d5fa4 = GetProcAddress(DAT_010d5f54,"alSourcefv");
       }
       else {
-        DAT_010d5fa4 = (FARPROC)FUN_00c12920(&DAT_010d5f50,"alSourcefv");
+        DAT_010d5fa4 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"alSourcefv");
       }
     }
     (*DAT_010d5fa4)(uVar1,0x1004,&fStack_c);
@@ -14977,10 +14977,10 @@ undefined4 FUN_00c7d3e0(int param_1,undefined4 *param_2,int param_3)
   
   if ((param_2 != (undefined4 *)0x0) && (param_3 == 1)) {
     iVar1 = GetField_4_00bd9ef0(*(int *)(param_1 + 4));
-    FUN_00bd9fd0(*(void **)(param_1 + 4),0,2);
-    FUN_00bd9fd0(*(void **)(param_1 + 4),0,1);
+    PKDataReadCStreamer_Seek(*(void **)(param_1 + 4),0,2);
+    PKDataReadCStreamer_Seek(*(void **)(param_1 + 4),0,1);
     uVar2 = GetField_4_00bd9ef0(*(int *)(param_1 + 4));
-    FUN_00bd9fd0(*(void **)(param_1 + 4),iVar1,2);
+    PKDataReadCStreamer_Seek(*(void **)(param_1 + 4),iVar1,2);
     puVar3 = param_2;
     for (iVar1 = 0x12; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar3 = 0;
@@ -15207,9 +15207,9 @@ void __fastcall SetVtable_00dad80c_00c7d830(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c7d980 @ 00c7d980 ////
+//// FUNCTION MapAnalysisImpCGroupModel_DetachFromGroup @ 00c7d980 ////
 
-void __fastcall FUN_00c7d980(int param_1)
+void __fastcall MapAnalysisImpCGroupModel_DetachFromGroup(int param_1)
 
 {
   LPCSTR pCVar1;
@@ -15266,19 +15266,19 @@ void __fastcall Dtor_00c7da70(undefined4 *param_1)
   ExceptionList = &local_c;
   *param_1 = &PTR_LAB_00dad8b4;
   local_4 = 2;
-  iVar1 = FUN_00bcecf0(param_1 + 0xd);
+  iVar1 = RedBlackTree_GetMinObject(param_1 + 0xd);
   while (iVar1 != 0) {
-    FUN_00c4fce0(iVar1);
-    iVar1 = FUN_00bcecf0(param_1 + 0xd);
+    MapAnalysisImpCModel_DetachFromGroupModel(iVar1);
+    iVar1 = RedBlackTree_GetMinObject(param_1 + 0xd);
   }
   if (param_1[6] != 0) {
-    FUN_00c7d980((int)param_1);
+    MapAnalysisImpCGroupModel_DetachFromGroup((int)param_1);
   }
   local_4._0_1_ = 1;
   param_1[0xc] = &PTR_LAB_00dad844;
-  FUN_00bcffc0(param_1 + 0xd);
+  RedBlackTree_Dtor(param_1 + 0xd);
   local_4 = (uint)local_4._1_3_ << 8;
-  Dtor_00bcf880(param_1 + 1);
+  RedBlackTree_Node_Dtor(param_1 + 1);
   *param_1 = &PTR_LAB_00dad80c;
   ExceptionList = local_c;
   return;
@@ -15291,7 +15291,7 @@ void __thiscall FUN_00c7db10(void *this,int param_1)
 
 {
   if (*(int *)((int)this + 0x18) != 0) {
-    FUN_00c7d980((int)this);
+    MapAnalysisImpCGroupModel_DetachFromGroup((int)this);
   }
   *(int *)((int)this + 0x18) = param_1;
   FUN_00bcfac0((void *)(param_1 + 0x24),(int *)(param_1 + 0x20),(int)this);
@@ -15313,7 +15313,7 @@ undefined4 * __fastcall Ctor_vt00dad8b4_00c7db40(undefined4 *param_1)
   local_4 = 0;
   ExceptionList = &local_c;
   *param_1 = &PTR_LAB_00dad8b4;
-  FUN_00bcf160(param_1 + 1);
+  RedBlackTree_Node_Ctor(param_1 + 1);
   param_1[6] = 0;
   param_1[7] = 0;
   param_1[8] = 0;
@@ -15322,7 +15322,7 @@ undefined4 * __fastcall Ctor_vt00dad8b4_00c7db40(undefined4 *param_1)
   param_1[0xb] = 0;
   local_4 = CONCAT31(local_4._1_3_,1);
   param_1[0xc] = &PTR_LAB_00dad844;
-  FUN_00bcf170(param_1 + 0xd);
+  RedBlackTree_Ctor(param_1 + 0xd);
   param_1[0xc] = &PTR_LAB_00dad88c;
   ExceptionList = local_c;
   return param_1;
@@ -15334,7 +15334,7 @@ undefined4 * __fastcall Ctor_vt00dad8b4_00c7db40(undefined4 *param_1)
 int * __fastcall FUN_00c7dbd0(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
@@ -15345,7 +15345,7 @@ void __fastcall Dtor_00c7dc80(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dad844;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
@@ -15356,7 +15356,7 @@ undefined4 * __fastcall Ctor_vt00dad844_00c7dd20(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dad844;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
@@ -15381,7 +15381,7 @@ void __fastcall Dtor_00c7dd60(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dad844;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
@@ -15392,7 +15392,7 @@ undefined4 * __fastcall Ctor_vt00dad88c_00c7dd70(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dad844;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00dad88c;
   return param_1;
 }
@@ -15433,7 +15433,7 @@ undefined4 * __thiscall FUN_00c7dde0(void *this,undefined4 param_1)
 {
   *(undefined4 *)this = param_1;
   *(undefined4 *)((int)this + 4) = 0xffffffff;
-  FUN_00bcf160((undefined4 *)((int)this + 8));
+  RedBlackTree_Node_Ctor((undefined4 *)((int)this + 8));
   return this;
 }
 
@@ -15443,7 +15443,7 @@ undefined4 * __thiscall FUN_00c7dde0(void *this,undefined4 param_1)
 void __fastcall FUN_00c7de00(int param_1)
 
 {
-  Dtor_00bcf880((int *)(param_1 + 8));
+  RedBlackTree_Node_Dtor((int *)(param_1 + 8));
   return;
 }
 
@@ -26081,9 +26081,9 @@ undefined4 __fastcall FUN_00c8b060(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c8b110 @ 00c8b110 ////
+//// FUNCTION Wrap_ResetEvent_00c8b110 @ 00c8b110 ////
 
-bool __fastcall FUN_00c8b110(int param_1)
+bool __fastcall Wrap_ResetEvent_00c8b110(int param_1)
 
 {
   int iVar1;
@@ -26258,9 +26258,9 @@ undefined4 __fastcall FUN_00c8b360(void *param_1)
 }
 
 
-//// FUNCTION FUN_00c8b400 @ 00c8b400 ////
+//// FUNCTION Wrap_timeKillEvent_00c8b400 @ 00c8b400 ////
 
-void __fastcall FUN_00c8b400(int param_1)
+void __fastcall Wrap_timeKillEvent_00c8b400(int param_1)
 
 {
   if (*(UINT *)(param_1 + 0xc0) != 0) {
@@ -26542,9 +26542,9 @@ void __fastcall FUN_00c8b910(int param_1)
 }
 
 
-//// FUNCTION FUN_00c8b9f0 @ 00c8b9f0 ////
+//// FUNCTION Wrap_timeGetTime_00c8b9f0 @ 00c8b9f0 ////
 
-undefined4 __fastcall FUN_00c8b9f0(int param_1)
+undefined4 __fastcall Wrap_timeGetTime_00c8b9f0(int param_1)
 
 {
   DWORD DVar1;
@@ -26612,9 +26612,9 @@ void __fastcall FUN_00c8bbe0(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c8bc50 @ 00c8bc50 ////
+//// FUNCTION Wrap_timeGetTime_00c8bc50 @ 00c8bc50 ////
 
-void __fastcall FUN_00c8bc50(int *param_1)
+void __fastcall Wrap_timeGetTime_00c8bc50(int *param_1)
 
 {
   DWORD DVar1;
@@ -27098,11 +27098,11 @@ undefined4 * __thiscall Ctor_vt00dada30_00c8c830(void *this,undefined4 *param_1,
   *(undefined ***)((int)this + 0xc) = &PTR_FUN_00dad9f0;
   *(undefined ***)((int)this + 0x10) = &PTR_LAB_00dad9dc;
   *(undefined4 *)((int)this + 0x50) = 0;
-  FUN_00c93a60((void *)((int)this + 0x54),0);
+  Wrap_CreateEventA_00c93a60((void *)((int)this + 0x54),0);
   local_4._0_1_ = 1;
-  FUN_00c93a60((void *)((int)this + 0x58),1);
+  Wrap_CreateEventA_00c93a60((void *)((int)this + 0x58),1);
   local_4 = CONCAT31(local_4._1_3_,2);
-  FUN_00c93a60((undefined4 *)((int)this + 0x5c),1);
+  Wrap_CreateEventA_00c93a60((undefined4 *)((int)this + 0x5c),1);
   *(undefined4 *)((int)this + 0x60) = 0;
   *(undefined4 *)((int)this + 100) = 0;
   *(undefined4 *)((int)this + 0x68) = 0;
@@ -27155,11 +27155,11 @@ void __fastcall Dtor_00c8c970(int *param_1)
   DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x25));
   DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x1f));
   local_4._0_1_ = 2;
-  FUN_00c93a80(param_1 + 0x17);
+  Wrap_CloseHandle_00c93a80(param_1 + 0x17);
   local_4._0_1_ = 1;
-  FUN_00c93a80(param_1 + 0x16);
+  Wrap_CloseHandle_00c93a80(param_1 + 0x16);
   local_4 = (uint)local_4._1_3_ << 8;
-  FUN_00c93a80(param_1 + 0x15);
+  Wrap_CloseHandle_00c93a80(param_1 + 0x15);
   local_4 = 0xffffffff;
   FUN_00c90d30((int)param_1);
   ExceptionList = pvStack_c;
@@ -27474,9 +27474,9 @@ LAB_00c8d0df:
 }
 
 
-//// FUNCTION FUN_00c8d100 @ 00c8d100 ////
+//// FUNCTION Wrap_SetEvent_00c8d100 @ 00c8d100 ////
 
-undefined4 __fastcall FUN_00c8d100(int *param_1)
+undefined4 __fastcall Wrap_SetEvent_00c8d100(int *param_1)
 
 {
   if ((param_1[5] != 0) && (param_1[0x1c] = 1, param_1[0x1b] == 0)) {
@@ -28109,9 +28109,9 @@ void __fastcall Dtor_00c8df10(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c8dff0 @ 00c8dff0 ////
+//// FUNCTION Wrap_InterlockedDecrement_00c8dff0 @ 00c8dff0 ////
 
-LONG FUN_00c8dff0(int *param_1)
+LONG Wrap_InterlockedDecrement_00c8dff0(int *param_1)
 
 {
   LONG LVar1;
@@ -28157,9 +28157,9 @@ undefined4 FUN_00c8e050(int param_1)
 }
 
 
-//// FUNCTION FUN_00c8e120 @ 00c8e120 ////
+//// FUNCTION Wrap_InterlockedDecrement_00c8e120 @ 00c8e120 ////
 
-LONG FUN_00c8e120(int *param_1)
+LONG Wrap_InterlockedDecrement_00c8e120(int *param_1)
 
 {
   LONG LVar1;

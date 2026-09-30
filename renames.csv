@@ -939,8 +939,8 @@ address,old_name,new_name,evidence
 00bcc680,FUN_00bcc680,Dtor_00bcc680,"pattern: called with this by ScalarDeletingDtor_00bcc770 (compiler-generated), so it is the class destructor"
 00bccf50,FUN_00bccf50,Dtor_00bccf50,"pattern: called with this by ScalarDeletingDtor_00bcd030 (compiler-generated), so it is the class destructor"
 00bce5d0,FUN_00bce5d0,Dtor_00bce5d0,"pattern: called with this by ScalarDeletingDtor_00bce620 (compiler-generated), so it is the class destructor"
-00bce890,FUN_00bce890,Dtor_00bce890,"pattern: called with this by ScalarDeletingDtor_00bcea50 (compiler-generated), so it is the class destructor"
-00bcf880,FUN_00bcf880,Dtor_00bcf880,"pattern: called with this by ScalarDeletingDtor_00bd00d0 (compiler-generated), so it is the class destructor"
+00bce890,FUN_00bce890,PKDataReadCAccess_Dtor,"PKDataReadCAccess.cpp:13 assert ""There are still N references still out there!"""
+00bcf880,FUN_00bcf880,RedBlackTree_Node_Dtor,"line 903 assert ""Node still initialised!"""
 00bd03b0,FUN_00bd03b0,Dtor_00bd03b0,"pattern: called with this by ScalarDeletingDtor_00bd0480 (compiler-generated), so it is the class destructor"
 00bd0670,FUN_00bd0670,Dtor_00bd0670,"pattern: called with this by ScalarDeletingDtor_00bd1af0 (compiler-generated), so it is the class destructor"
 00bd16a0,FUN_00bd16a0,Dtor_00bd16a0,"pattern: called with this by ScalarDeletingDtor_00bd1790 (compiler-generated), so it is the class destructor"
@@ -969,7 +969,7 @@ address,old_name,new_name,evidence
 00be0c60,FUN_00be0c60,Dtor_00be0c60,"pattern: called with this by ScalarDeletingDtor_00be0d00 (compiler-generated), so it is the class destructor"
 00be0d20,FUN_00be0d20,Dtor_00be0d20,"pattern: called with this by ScalarDeletingDtor_00be0e30 (compiler-generated), so it is the class destructor"
 00be0eb0,FUN_00be0eb0,Dtor_00be0eb0,"pattern: called with this by ScalarDeletingDtor_00be0ed0 (compiler-generated), so it is the class destructor"
-00be1f10,FUN_00be1f10,Dtor_00be1f10,"pattern: called with this by ScalarDeletingDtor_00be20e0 (compiler-generated), so it is the class destructor"
+00be1f10,FUN_00be1f10,PKStringsCHeapString_Dtor,"line 142 assert ""Null data""; releases the data and resets the vtable"
 00be2180,FUN_00be2180,Dtor_00be2180,"pattern: called with this by ScalarDeletingDtor_00be2e00 (compiler-generated), so it is the class destructor"
 00be27e0,FUN_00be27e0,Dtor_00be27e0,"pattern: called with this by ScalarDeletingDtor_00be2810 (compiler-generated), so it is the class destructor"
 00be2870,FUN_00be2870,Dtor_00be2870,"pattern: called with this by ScalarDeletingDtor_00be2b50 (compiler-generated), so it is the class destructor"
@@ -1255,7 +1255,7 @@ address,old_name,new_name,evidence
 00bdcfd0,FUN_00bdcfd0,Ctor_vt00d9f6e8_00bdcfd0,pattern: stores vtable 00d9f6e8 into this and returns this (constructor); functions sharing a vtable belong to one class
 00bdd520,FUN_00bdd520,Ctor_vt00d9f864_00bdd520,pattern: stores vtable 00d9f864 into this and returns this (constructor); functions sharing a vtable belong to one class
 00bdd650,FUN_00bdd650,Ctor_vt00d9f8d0_00bdd650,pattern: stores vtable 00d9f8d0 into this and returns this (constructor); functions sharing a vtable belong to one class
-00bde970,FUN_00bde970,Ctor_vt00d9fb18_00bde970,pattern: stores vtable 00d9fb18 into this and returns this (constructor); functions sharing a vtable belong to one class
+00bde970,FUN_00bde970,LLACodaCSystem_Ctor,"LLACodaCSystem.cpp:146/159 assert ""Error: Could not initialise CODA"" and ""Could initialise coda listener"""
 00bdf710,FUN_00bdf710,Ctor_vt00d9fa34_00bdf710,pattern: stores vtable 00d9fa34 into this and returns this (constructor); functions sharing a vtable belong to one class
 00bdf730,FUN_00bdf730,Ctor_vt00d9fa5c_00bdf730,pattern: stores vtable 00d9fa5c into this and returns this (constructor); functions sharing a vtable belong to one class
 00bdf820,FUN_00bdf820,Ctor_vt00d9fac8_00bdf820,pattern: stores vtable 00d9fac8 into this and returns this (constructor); functions sharing a vtable belong to one class
@@ -1511,3 +1511,181 @@ address,old_name,new_name,evidence
 00c965d0,FUN_00c965d0,Ctor_vt00db1680_00c965d0,pattern: stores vtable 00db1680 into this and returns this (constructor); functions sharing a vtable belong to one class
 00c98ce0,FUN_00c98ce0,Ctor_vt00db175c_00c98ce0,pattern: stores vtable 00db175c into this and returns this (constructor); functions sharing a vtable belong to one class
 00c99790,FUN_00c99790,Ctor_vt00db1878_00c99790,pattern: stores vtable 00db1878 into this and returns this (constructor); functions sharing a vtable belong to one class
+00bcea70,FUN_00bcea70,Wrap_InitializeCriticalSection_00bcea70,pattern: single call to InitializeCriticalSection
+00bcea80,FUN_00bcea80,Wrap_DeleteCriticalSection_00bcea80,pattern: single call to DeleteCriticalSection
+00bcea90,FUN_00bcea90,Wrap_EnterCriticalSection_00bcea90,pattern: single call to EnterCriticalSection
+00bceaa0,FUN_00bceaa0,Wrap_LeaveCriticalSection_00bceaa0,pattern: single call to LeaveCriticalSection
+00bceac0,FUN_00bceac0,Wrap_CloseHandle_00bceac0,pattern: single call to CloseHandle
+00bcead0,FUN_00bcead0,Wrap_ReleaseSemaphore_00bcead0,pattern: single call to ReleaseSemaphore
+00c102f0,FUN_00c102f0,Wrap_CoUninitialize_00c102f0,pattern: single call to CoUninitialize
+00c12920,FUN_00c12920,OpenALContext_alGetProcAddress_00c12920,"pattern: lazily resolves alGetProcAddress with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c12a50,FUN_00c12a50,OpenALContext_alcSuspendContext_00c12a50,"pattern: lazily resolves alcSuspendContext with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c12a90,FUN_00c12a90,OpenALContext_alcProcessContext_00c12a90,"pattern: lazily resolves alcProcessContext with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c12b10,FUN_00c12b10,OpenALContext_alcDestroyContext_00c12b10,"pattern: lazily resolves alcDestroyContext with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c12b60,FUN_00c12b60,OpenALContext_alcIsExtensionPresent_00c12b60,"pattern: lazily resolves alcIsExtensionPresent with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c12bb0,FUN_00c12bb0,OpenALContext_alcGetString_00c12bb0,"pattern: lazily resolves alcGetString with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c12bf0,FUN_00c12bf0,OpenALContext_alcOpenDevice_00c12bf0,"pattern: lazily resolves alcOpenDevice with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c13140,FUN_00c13140,OpenALContext_alcSuspendContext_00c13140,"pattern: lazily resolves alcSuspendContext with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c13180,FUN_00c13180,OpenALContext_alcProcessContext_00c13180,"pattern: lazily resolves alcProcessContext with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c13250,FUN_00c13250,OpenALContext_alListener3f_00c13250,"pattern: lazily resolves alListener3f with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c132b0,FUN_00c132b0,OpenALContext_alDistanceModel_00c132b0,"pattern: lazily resolves alDistanceModel with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c13300,FUN_00c13300,OpenALContext_alGetString_00c13300,"pattern: lazily resolves alGetString with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c13350,FUN_00c13350,OpenALContext_alIsExtensionPresent_00c13350,"pattern: lazily resolves alIsExtensionPresent with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c133f0,FUN_00c133f0,OpenALContext_alcCloseDevice_00c133f0,"pattern: lazily resolves alcCloseDevice with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c13450,FUN_00c13450,OpenALContext_alGetString_00c13450,"pattern: lazily resolves alGetString with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c147b0,FUN_00c147b0,OpenALContext_alGenBuffers_00c147b0,"pattern: lazily resolves alGenBuffers with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c14800,FUN_00c14800,OpenALContext_alDeleteBuffers_00c14800,"pattern: lazily resolves alDeleteBuffers with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c14850,FUN_00c14850,OpenALContext_alBufferData_00c14850,"pattern: lazily resolves alBufferData with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c148a0,FUN_00c148a0,OpenALContext_alGenSources_00c148a0,"pattern: lazily resolves alGenSources with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c148f0,FUN_00c148f0,OpenALContext_alDeleteSources_00c148f0,"pattern: lazily resolves alDeleteSources with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c14940,FUN_00c14940,OpenALContext_alSourcei_00c14940,"pattern: lazily resolves alSourcei with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c14990,FUN_00c14990,OpenALContext_alGetSourcei_00c14990,"pattern: lazily resolves alGetSourcei with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c149e0,FUN_00c149e0,OpenALContext_alSourcePlay_00c149e0,"pattern: lazily resolves alSourcePlay with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c14a30,FUN_00c14a30,OpenALContext_alSourceStop_00c14a30,"pattern: lazily resolves alSourceStop with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c14a80,FUN_00c14a80,OpenALContext_alSourceQueueBuffers_00c14a80,"pattern: lazily resolves alSourceQueueBuffers with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c14ad0,FUN_00c14ad0,OpenALContext_alSourceUnqueueBuffers_00c14ad0,"pattern: lazily resolves alSourceUnqueueBuffers with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c14b20,FUN_00c14b20,OpenALContext_alGetError_00c14b20,"pattern: lazily resolves alGetError with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c14b70,FUN_00c14b70,OpenALContext_alGetEnumValue_00c14b70,"pattern: lazily resolves alGetEnumValue with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c1ae40,FUN_00c1ae40,Wrap_DeleteCriticalSection_00c1ae40,pattern: single call to DeleteCriticalSection
+00c1bab0,FUN_00c1bab0,Wrap_CloseHandle_00c1bab0,pattern: single call to CloseHandle
+00c1bb00,FUN_00c1bb00,Wrap_CreateThread_00c1bb00,pattern: single call to CreateThread
+00c1bb40,FUN_00c1bb40,Wrap_CloseHandle_00c1bb40,pattern: single call to CloseHandle
+00c1bdb0,FUN_00c1bdb0,Wrap_CloseHandle_00c1bdb0,pattern: single call to CloseHandle
+00c1bdd0,FUN_00c1bdd0,Wrap_CloseHandle_00c1bdd0,pattern: single call to CloseHandle
+00c1be00,FUN_00c1be00,Wrap_CloseHandle_00c1be00,pattern: single call to CloseHandle
+00c1be60,FUN_00c1be60,Wrap_CloseHandle_00c1be60,pattern: single call to CloseHandle
+00c1bff0,FUN_00c1bff0,Wrap_CloseHandle_00c1bff0,pattern: single call to CloseHandle
+00c1c600,FUN_00c1c600,Wrap_CloseHandle_00c1c600,pattern: single call to CloseHandle
+00c26390,FUN_00c26390,Wrap_rand_00c26390,pattern: single call to _rand
+00c2a370,FUN_00c2a370,Wrap_rand_00c2a370,pattern: single call to _rand
+00c43c40,FUN_00c43c40,OpenALContext_alSourcef_00c43c40,"pattern: lazily resolves alSourcef with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c43c90,FUN_00c43c90,OpenALContext_alSourcePause_00c43c90,"pattern: lazily resolves alSourcePause with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c43ce0,FUN_00c43ce0,OpenALContext_alSourceRewind_00c43ce0,"pattern: lazily resolves alSourceRewind with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c44040,FUN_00c44040,OpenALContext_alGetError_00c44040,"pattern: lazily resolves alGetError with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c4b120,FUN_00c4b120,Wrap_RegCreateKeyExA_00c4b120,pattern: single call to RegCreateKeyExA
+00c4b150,FUN_00c4b150,Wrap_RegCloseKey_00c4b150,pattern: single call to RegCloseKey
+00c4b180,FUN_00c4b180,Wrap_RegQueryValueExA_00c4b180,pattern: single call to RegQueryValueExA
+00c4b2f0,FUN_00c4b2f0,Wrap_RegCloseKey_00c4b2f0,pattern: single call to RegCloseKey
+00c74a70,FUN_00c74a70,OpenALContext_alSourcefv_00c74a70,"pattern: lazily resolves alSourcefv with GetProcAddress, caches the pointer at a fixed offset of the context object and calls it"
+00c8b110,FUN_00c8b110,Wrap_ResetEvent_00c8b110,pattern: single call to ResetEvent
+00c8b400,FUN_00c8b400,Wrap_timeKillEvent_00c8b400,pattern: single call to timeKillEvent
+00c8b9f0,FUN_00c8b9f0,Wrap_timeGetTime_00c8b9f0,pattern: single call to timeGetTime
+00c8bc50,FUN_00c8bc50,Wrap_timeGetTime_00c8bc50,pattern: single call to timeGetTime
+00c8d100,FUN_00c8d100,Wrap_SetEvent_00c8d100,pattern: single call to SetEvent
+00c8dff0,FUN_00c8dff0,Wrap_InterlockedDecrement_00c8dff0,pattern: single call to InterlockedDecrement
+00c8e120,FUN_00c8e120,Wrap_InterlockedDecrement_00c8e120,pattern: single call to InterlockedDecrement
+00c8fd00,FUN_00c8fd00,Wrap_ResetEvent_00c8fd00,pattern: single call to ResetEvent
+00c8fd50,FUN_00c8fd50,Wrap_SetEvent_00c8fd50,pattern: single call to SetEvent
+00c8fd80,FUN_00c8fd80,Wrap_SetEvent_00c8fd80,pattern: single call to SetEvent
+00c8fdb0,FUN_00c8fdb0,Wrap_ResetEvent_00c8fdb0,pattern: single call to ResetEvent
+00c902f0,FUN_00c902f0,Wrap_ReleaseSemaphore_00c902f0,pattern: single call to ReleaseSemaphore
+00c92cb0,FUN_00c92cb0,Wrap_LoadLibraryA_00c92cb0,pattern: single call to LoadLibraryA
+00c92db0,FUN_00c92db0,Wrap_InterlockedIncrement_00c92db0,pattern: single call to InterlockedIncrement
+00c92e30,FUN_00c92e30,Wrap_InterlockedIncrement_00c92e30,pattern: single call to InterlockedIncrement
+00c93a60,FUN_00c93a60,Wrap_CreateEventA_00c93a60,pattern: single call to CreateEventA
+00c93a80,FUN_00c93a80,Wrap_CloseHandle_00c93a80,pattern: single call to CloseHandle
+00c945c0,FUN_00c945c0,Wrap_GetLastError_00c945c0,pattern: single call to GetLastError
+00c94860,FUN_00c94860,Wrap_WaitForSingleObject_00c94860,pattern: single call to WaitForSingleObject
+00c94880,FUN_00c94880,Wrap_WaitForSingleObject_00c94880,pattern: single call to WaitForSingleObject
+00c94be0,FUN_00c94be0,Wrap_CoTaskMemFree_00c94be0,pattern: single call to CoTaskMemFree
+00bcf960,FUN_00bcf960,RedBlackTree_LeftRotate,"PKContainersCRedBlackTree.cpp:292 assert ""Nil not Red in RedBlackTree::LeftRotate""; pointer rotation"
+00bcf1f0,FUN_00bcf1f0,RedBlackTree_Insert,"PKContainersCRedBlackTree.cpp:383/415 assert ""Object already inserted""; descends comparing keys"
+00bcf3f0,FUN_00bcf3f0,RedBlackTree_GetSuccessor,"line 551 assert ""Null successor""; returns object of the next node"
+00bcf4e0,FUN_00bcf4e0,RedBlackTree_GetPredecessor,"line 572 assert ""Null predecessor"""
+00bcffc0,FUN_00bcffc0,RedBlackTree_Dtor,"line 636 assert ""There is still something in this list""; frees both sentinel nodes"
+00bcfdc0,FUN_00bcfdc0,RedBlackTree_Remove,"line 819 assert ""Not in a list"""
+00bcf5d0,FUN_00bcf5d0,RedBlackTree_CheckAssumptions,"lines 889-892 assert ""CheckAssumptions"" (tree invariants)"
+00bcecf0,FUN_00bcecf0,RedBlackTree_GetMinObject,follows left links to the leftmost node and returns its object (+0x10)
+00bced20,FUN_00bced20,RedBlackTree_GetMaxObject,follows right links to the rightmost node
+00bced50,FUN_00bced50,RedBlackTree_CompareViaVtable,calls vtable slot 0 key extractor twice then compare/adjust slots 1-3
+00bceda0,FUN_00bceda0,RedBlackTree_CompareKeyToObject,compares a stacked key against an object's key via the comparator vtable
+00bcede0,FUN_00bcede0,RedBlackTree_CompareKeyToObject2,"same, key passed in a register"
+00bcee00,FUN_00bcee00,RedBlackTree_CountNodes_Recursive,in-order walk incrementing a counter
+00bcee30,FUN_00bcee30,RedBlackTree_ForEach_Recursive,in-order walk calling a callback on each object
+00bcee70,FUN_00bcee70,RedBlackTree_NextNode,in-order successor using parent pointers
+00bceec0,FUN_00bceec0,RedBlackTree_PrevNode,in-order predecessor
+00bcef10,FUN_00bcef10,RedBlackTree_Node_Init,zeroes left/right/parent/object
+00bcef20,FUN_00bcef20,RedBlackTree_Node_IsInitialised,"true when left, right, parent and object are all set"
+00bcef50,FUN_00bcef50,RedBlackTree_Find,descends with the comparator and returns the stored object or 0
+00bcefb0,FUN_00bcefb0,RedBlackTree_FindNode,same descent returning the node
+00bceff0,FUN_00bceff0,RedBlackTree_FindFirst,finds a node then walks predecessors while keys stay equal
+00bcf120,FUN_00bcf120,RedBlackTree_Count,CountNodes from the root
+00bcf140,FUN_00bcf140,RedBlackTree_ForEach,ForEach from the root
+00bcf160,FUN_00bcf160,RedBlackTree_Node_Ctor,calls Node_Init
+00bcf170,FUN_00bcf170,RedBlackTree_Ctor,allocates the 0x14-byte nil sentinel node and links it as root and nil
+00bce980,FUN_00bce980,PKDataReadCAccess_ReleaseReference,"line 23 assert ""Reference count out of sync""; decrements refcount at +4"
+00bceaf0,FUN_00bceaf0,PKCSemaphore_Create,"CreateSemaphoreA; assert ""Could not create semaphore"""
+00bcebd0,FUN_00bcebd0,PKCSemaphore_Wait,"WaitForSingleObjectEx infinite; assert ""Waiting for semaphore unit failed"""
+00bc1490,FUN_00bc1490,PKCProtectionInstance_Leave,"GetTickCount elapsed vs limit assert ""Event time (n ms) over maximum (m ms)"" then leaves the critical section"
+00bc4030,FUN_00bc4030,CEngine_ProcessActiveResource,"CEngine.cpp:555 assert ""Null active resource""; enters critical section 0x010ced2c"
+00bc41a0,FUN_00bc41a0,CEngine_ProcessMailboxLoop,"CEngine.cpp:601 assert ""Error receiving from mailbox...""; loops calling ProcessActiveResource"
+00bd9fd0,FUN_00bd9fd0,PKDataReadCStreamer_Seek,"PKDataReadCStreamer.cpp:138 assert ""Did not understand seek method""; methods 0/1/2 = begin/current/end, bounds-checked"
+00bda2b0,FUN_00bda2b0,PKDataWriteCStreamer2File_Write,"WriteFile; assert ""Error writing to file""; closes the handle on failure"
+00bdbd70,FUN_00bdbd70,PKDiskManagersThreadedSingleHeadCManager_ReleaseFile,"asserts ""NULL FIle""/""Reference count out of sync""; decrements refcount, closes the handle and removes the file at zero"
+00bdbf40,FUN_00bdbf40,PKDiskManagersThreadedSingleHeadCManager_ReadFileBytes,"SetFilePointer + ReadFile; failure messages ""win32 error "" and ""asked for N bytes, only read M"""
+00bdc260,FUN_00bdc260,PKDiskManagersThreadedSingleHeadCManager_OpenFile,"locks, resolves the name, allocates a 0x24-byte file object; assert EMEM at line 131"
+00bdc510,FUN_00bdc510,PKDiskManagersThreadedSingleHeadCManager_QueueRead,"allocates a request, bumps the file refcount, posts to the thread mailbox; assert EMEM at line 178"
+00bdecc0,FUN_00bdecc0,LLACodaCSystem_ConfigureDirectSound,"logs ""Setting the DirectSound window handle to N"" and builds the Coda init structure (buffer size from ms)"
+00be1930,FUN_00be1930,PKStringsCHeapString_AllocateData,"allocates n+9 bytes: refcount, length, chars, terminator; InterlockedIncrement; assert EMEM at line 33"
+00be1a30,FUN_00be1a30,PKStringsCHeapString_ReleaseData,"asserts ""Null data""/""Not referenced?""; InterlockedDecrement and free at zero"
+00be1cb0,FUN_00be1cb0,PKStringsCHeapString_MakeUniqueResize,"copy-on-write: if shared or too small allocates a new buffer and copies min(old, new) bytes"
+00be5a70,FUN_00be5a70,PKDataReadCWindow_InitWhole,"line 13 assert ""Still initialised""; window over the whole access object (size from vtable slot 2)"
+00be5b70,FUN_00be5b70,PKDataReadCWindow_Init,"lines 21/23 asserts; window (offset, size) inside an access object, checked against its size"
+00be5d30,FUN_00be5d30,PKDataReadCWindow_InitCopy,"line 31; copies access, offset and size from another window and takes a reference"
+00be5e30,FUN_00be5e30,PKDataReadCWindow_InitSubWindow,lines 42/43; window inside another window (offset added)
+00be6120,FUN_00be6120,PKDataReadCWindow_Narrow,"line 139 ""Invalid window parameters""; narrows in place when the same window, otherwise re-initialises"
+00be6240,FUN_00be6240,PKDataReadCWindow_Release,"line 177 ""Expecting null size and offset""; releases the access reference and clears the fields"
+00be63c0,FUN_00be63c0,PKSerialiseCParser_GetReader,"line 11 assert ""Null reader""; returns the reader pointer"
+00be6490,FUN_00be6490,PKSerialiseCParser_GetWriter,"line 17 assert ""Null writer""; returns the writer pointer"
+00bed150,FUN_00bed150,PKCThreadManager_ThreadProc,"CreateThread start routine; assert ""Null thread manager""; calls the object's run slot then sets the done flag"
+00bed240,FUN_00bed240,PKCThreadManager_StartThread,"stores the runner and calls CreateThread with optional stack size/priority; assert ""Problems starting thread"""
+00bf1e30,FUN_00bf1e30,PKCTimerManager_Ctor,PKCTimerManager.cpp:10 assert EMEM; allocates the 0xc-byte thread object and starts it
+00c07930,FUN_00c07930,PKDiskBufferingCReader_CopyOverlap,"PKDiskBufferingCReader.cpp:9 ""No overlap in the copy""; copies an overlapping range out of the ring buffer with modulo wrap"
+00c07de0,FUN_00c07de0,PKDiskBufferingCReader_AddAsyncRange,"line 40 ""Null asyncrange""; adds the range to the tree at +0x20 and the pool at +0x5c"
+00c07ee0,FUN_00c07ee0,PKDiskBufferingCReader_WaitForRange,"line 60 ""Mailbox error""; loops on the mailbox until the wanted range completes"
+00c07a90,FUN_00c07a90,PKDiskBufferingCReader_PrimeCallbackMailbox,"line 76 ""Error priming the callback mailbox""; posts the range to the mailbox"
+00c08060,FUN_00c08060,PKDiskBufferingCReader_ResizeBuffer,"line 131 EMEM; rounds the size up to a multiple of the block size, reallocates the ring buffer"
+00c09540,FUN_00c09540,PKDiskBufferingCReader_Ctor,"line 151 ""Zero min read bytesize...""; zeroes the fields and stores the min read size"
+00c08240,FUN_00c08240,PKDiskBufferingCReader_CopyOut,"line 184 ""Invalid copy range""; waits for the range then copies it out of the ring buffer"
+00c08370,FUN_00c08370,PKDiskBufferingCReader_ReadRange,"lines 198/199 ""No overlap""/""Insanity test""; range intersection then read"
+00c085b0,FUN_00c085b0,PKDiskBufferingCReader_QueueRange,line 211 EMEM; allocates a range entry from the pool and posts the read
+00c086f0,FUN_00c086f0,PKDiskBufferingCReader_QueueRangeInChunks,"line 227 ""Null max read size""; splits the range into chunks no larger than the maximum read"
+00c08830,FUN_00c08830,PKDiskBufferingCReader_RequestAlignedForward,"lines 251/261 ""Range invalid""/""Overrun on alignment""; extends the range forward to the block alignment (inferred)"
+00c08a90,FUN_00c08a90,PKDiskBufferingCReader_RequestAlignedBackward,lines 285/295 same asserts; extends backward (inferred)
+00c07cd0,FUN_00c07cd0,PKDiskBufferingCReader_GetCoveredRange,"line 342 ""NULL last range""; min and max objects of the range tree give the covered span"
+00c08d20,FUN_00c08d20,PKDiskBufferingCReader_PlanRead,"lines 351-398 ""Range request is too big""/""Difference not aligned""; largest function of the class (inferred)"
+00c0b490,FUN_00c0b490,RiffCInfo_GetOrCreateChunk,"RiffCInfo.cpp:84 assert EMEM; RB-tree find by id, else allocates a 0x28-byte entry"
+00c0dc90,FUN_00c0dc90,PKAllocatorsCPooledMemory_FreeBlocks,"line 16 ""There are still objects out there!!!""; frees the block list"
+00c0df90,FUN_00c0df90,PKAllocatorsCPooledMemory_Allocate,"takes an object from the free list, adding a block when empty"
+00c0dd90,FUN_00c0dd90,PKAllocatorsCPooledMemory_Free,"line 62 ""Null object""; pushes the object back on the free list"
+00c0de90,FUN_00c0de90,PKAllocatorsCPooledMemory_AddBlock,line 79 EMEM; allocates a new block and computes objects per block
+00c2a870,FUN_00c2a870,PKAllocatorsCPresizedMemory_Ctor,line 11 EMEM; allocates count * object size
+00c2a990,FUN_00c2a990,PKAllocatorsCPresizedMemory_Allocate,"line 47 ""No objects? This cannot be...""; takes the next object"
+00c2aab0,FUN_00c2aab0,PKAllocatorsCPresizedMemory_Free,"line 57 ""Null object""; pushes the object on the free list"
+00c1f280,FUN_00c1f280,CSFXTimeline_Advance,"line 109 ""Width must be greater than 0""; adds the width to the timeline position at +0xc"
+00c1e120,FUN_00c1e120,LHACodecsACMCCodecInstance_DecodeNextBlock,"lines 109/113 ""There may be trouble ahead....""/""Error unpreparing header""; ACM block conversion"
+00c4f690,FUN_00c4f690,MapAnalysisImpCRange_DetachFromProcessor,"line 36 ""Null processor""; removes itself from the processor's tree at +0x24"
+00c4fbf0,FUN_00c4fbf0,MapAnalysisImpCModel_DetachFromRange,"line 78 ""Null range""; removes itself from the range's tree at +0x2c"
+00c4fce0,FUN_00c4fce0,MapAnalysisImpCModel_DetachFromGroupModel,"line 104 ""Null group model""; removes itself from the group model's tree at +0x30"
+00c501c0,FUN_00c501c0,MapAnalysisImpCGroup_DetachFromProcessor,"line 79 ""Null processor"""
+00c50960,FUN_00c50960,MapAnalysisImpCProcessor_DetachFromSolver,"line 89 ""Null solver"""
+00c7d980,FUN_00c7d980,MapAnalysisImpCGroupModel_DetachFromGroup,"line 56 ""Null group"""
+00c502b0,FUN_00c502b0,MapAnalysisImpCGroup_GetOrCreateGroupModel,"line 46 EMEM; RB-tree find by a 5-dword key, else allocates 0x3c bytes, stores the key and attaches"
+00c50b20,FUN_00c50b20,MapAnalysisImpCProcessor_GetOrCreateGroup,"line 47 EMEM; RB-tree find by key, else allocates 0x2c bytes and attaches"
+00c27620,FUN_00c27620,MapAnalysisImpCSolver_ProcessAll,"line 223/234 ""Null group""/""Null group model""; walks processors, groups and models via the trees"
+00c2cf50,FUN_00c2cf50,CInstance_ServiceFrameStreamer,"CInstance.cpp:8/9 ""Null frame streamer""/""ESTATE""; requires state 2 then calls two frame streamer slots"
+00c2d540,FUN_00c2d540,CInstance_UpdateState,line 250 EMEM; state machine on the state value at +0x110
+00c2f5e0,FUN_00c2f5e0,C16BitSamplePtr_Ctor,"C16BitSamplePtr.cpp:8/9 ""Null buffer""/""Expecting at least 1 channel!""; stores buffer and channel count"
+00c396c0,FUN_00c396c0,LLACodaCChannel_CreateSource,"LLACodaCChannel.cpp:185/214 ""Resource leak: Coda source""/""could not create source"""
+00c39890,FUN_00c39890,LLACodaCChannel_DestroySource,"line 224 ""coda source should not be invalid"""
+00c3abc0,FUN_00c3abc0,LLACodaCStreamed_SetCallback,"LLACodaCStreamed.cpp:20 ""Null streamed callback""; stores it and registers a handler with the source"
+00c39d10,FUN_00c39d10,LLACodaCOneShot_Create,"LLACodaCOneShot.cpp:91-144; validates format, loop details and memory, creates the coda buffer"
+00c3a620,FUN_00c3a620,LLACodaCStreamed_SubmitFrame,LLACodaCStreamed.cpp:56-78; checks frame channels/format against the stream and creates the coda buffer
+00c4b490,FUN_00c4b490,PKDataReadAccessTypesCAccessWindow_Reset,"line 23 ""Reinitialising when there are windows dependant on this one""; releases the access"
+00c4b5a0,FUN_00c4b5a0,PKDataReadAccessTypesCAccessWindow_Init,"lines 56/58 ""Null access""/""Invalid access window size"""
+00c4c9e0,FUN_00c4c9e0,OggVorbisLibWrapper_GetData,"line 60 ""Error in data reader""; ogg_sync_buffer(0x2134) then reads from the streamer"
+00c4cb80,FUN_00c4cb80,OggVorbisLibWrapper_Seek,"line 91 ""Error in data reader""; seeks the streamer and calls ogg_sync_reset"
+00c52e60,FUN_00c52e60,CASyncDecoder_Ctor,CASyncDecoder.cpp:301 EMEM; starts a thread with a 0x3000-byte stack
+00c53ce0,FUN_00c53ce0,CFrame_Init,CFrame.cpp:37/38/40; allocates channels * samples * 2 bytes
+00c65750,FUN_00c65750,LLAChannelCInitParams_GetFormatFieldA,"LLAChannelCInitParams.cpp:22 ""Format out of range (""; table lookup at 0xdad494 + format*8"
+00c65860,FUN_00c65860,LLAChannelCInitParams_GetFormatFieldB,line 28 same check; second table lookup

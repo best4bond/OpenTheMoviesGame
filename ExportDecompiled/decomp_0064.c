@@ -1019,7 +1019,7 @@ void __fastcall FUN_00c067f0(int param_1)
   local_4 = 0;
   _Memory = (undefined4 *)FUN_00c06bf0((int)local_1c);
   if (_Memory != (undefined4 *)0x0) {
-    Dtor_00be1f10(_Memory);
+    PKStringsCHeapString_Dtor(_Memory);
                     /* WARNING: Subroutine does not return */
     _free(_Memory);
   }
@@ -1589,7 +1589,7 @@ uint __thiscall FUN_00c06f50(void *this,int param_1)
         if ((char)uVar3 == '\0') {
           local_4 = 0xffffffff;
           if (puVar4 != (undefined4 *)0x0) {
-            Dtor_00be1f10(puVar4);
+            PKStringsCHeapString_Dtor(puVar4);
                     /* WARNING: Subroutine does not return */
             _free(puVar4);
           }
@@ -1601,7 +1601,7 @@ uint __thiscall FUN_00c06f50(void *this,int param_1)
         local_14 = local_14 - 1;
         local_4 = 0xffffffff;
         if (local_10 != (undefined4 *)0x0) {
-          Dtor_00be1f10(local_10);
+          PKStringsCHeapString_Dtor(local_10);
                     /* WARNING: Subroutine does not return */
           _free(puVar4);
         }
@@ -2193,10 +2193,10 @@ void __thiscall FUN_00c078b0(void *this,uint param_1,int param_2)
 }
 
 
-//// FUNCTION FUN_00c07930 @ 00c07930 ////
+//// FUNCTION PKDiskBufferingCReader_CopyOverlap @ 00c07930 ////
 
 void __fastcall
-FUN_00c07930(uint param_1,uint *param_2,int param_3,uint *param_4,int param_5,undefined4 *param_6)
+PKDiskBufferingCReader_CopyOverlap(uint param_1,uint *param_2,int param_3,uint *param_4,int param_5,undefined4 *param_6)
 
 {
   uint uVar1;
@@ -2275,9 +2275,9 @@ FUN_00c07930(uint param_1,uint *param_2,int param_3,uint *param_4,int param_5,un
 }
 
 
-//// FUNCTION FUN_00c07a90 @ 00c07a90 ////
+//// FUNCTION PKDiskBufferingCReader_PrimeCallbackMailbox @ 00c07a90 ////
 
-void __thiscall FUN_00c07a90(void *this,undefined1 param_1,undefined **param_2)
+void __thiscall PKDiskBufferingCReader_PrimeCallbackMailbox(void *this,undefined1 param_1,undefined **param_2)
 
 {
   char cVar1;
@@ -2388,9 +2388,9 @@ uint __thiscall FUN_00c07b80(void *this,uint *param_1)
 }
 
 
-//// FUNCTION FUN_00c07cd0 @ 00c07cd0 ////
+//// FUNCTION PKDiskBufferingCReader_GetCoveredRange @ 00c07cd0 ////
 
-void __thiscall FUN_00c07cd0(void *this,int *param_1)
+void __thiscall PKDiskBufferingCReader_GetCoveredRange(void *this,int *param_1)
 
 {
   int *piVar1;
@@ -2412,9 +2412,9 @@ void __thiscall FUN_00c07cd0(void *this,int *param_1)
   iVar5 = 0;
   iVar4 = 0;
   ExceptionList = &local_c;
-  piVar1 = (int *)FUN_00bcecf0((undefined4 *)((int)this + 0x24));
+  piVar1 = (int *)RedBlackTree_GetMinObject((undefined4 *)((int)this + 0x24));
   if (piVar1 != (int *)0x0) {
-    piVar2 = (int *)FUN_00bced20((undefined4 *)((int)this + 0x24));
+    piVar2 = (int *)RedBlackTree_GetMaxObject((undefined4 *)((int)this + 0x24));
     if (piVar2 == (int *)0x0) {
       local_110 = &PTR_LAB_00d9db7c;
       local_10c = 0;
@@ -2440,9 +2440,9 @@ void __thiscall FUN_00c07cd0(void *this,int *param_1)
 }
 
 
-//// FUNCTION FUN_00c07de0 @ 00c07de0 ////
+//// FUNCTION PKDiskBufferingCReader_AddAsyncRange @ 00c07de0 ////
 
-void __thiscall FUN_00c07de0(void *this,undefined4 *param_1)
+void __thiscall PKDiskBufferingCReader_AddAsyncRange(void *this,undefined4 *param_1)
 
 {
   LPCSTR pCVar1;
@@ -2486,9 +2486,9 @@ void __thiscall FUN_00c07de0(void *this,undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c07ee0 @ 00c07ee0 ////
+//// FUNCTION PKDiskBufferingCReader_WaitForRange @ 00c07ee0 ////
 
-undefined4 __thiscall FUN_00c07ee0(void *this,undefined4 param_1)
+undefined4 __thiscall PKDiskBufferingCReader_WaitForRange(void *this,undefined4 param_1)
 
 {
   bool bVar1;
@@ -2510,7 +2510,7 @@ undefined4 __thiscall FUN_00c07ee0(void *this,undefined4 param_1)
   local_c = ExceptionList;
   ExceptionList = &local_c;
   local_11c = (undefined4 *)
-              FUN_00bceff0((void *)((int)this + 0x24),(void *)((int)this + 0x20),param_1);
+              RedBlackTree_FindFirst((void *)((int)this + 0x24),(void *)((int)this + 0x20),param_1);
   if (local_11c != (undefined4 *)0x0) {
     local_118 = (void *)((int)this + 0x24);
     do {
@@ -2537,9 +2537,9 @@ undefined4 __thiscall FUN_00c07ee0(void *this,undefined4 param_1)
         if (local_114 == local_11c) {
           bVar1 = true;
         }
-        FUN_00c07de0(this,local_114);
+        PKDiskBufferingCReader_AddAsyncRange(this,local_114);
       } while (!bVar1);
-      local_11c = (undefined4 *)FUN_00bceff0(local_118,(void *)((int)this + 0x20),param_1);
+      local_11c = (undefined4 *)RedBlackTree_FindFirst(local_118,(void *)((int)this + 0x20),param_1);
     } while (local_11c != (undefined4 *)0x0);
   }
   ExceptionList = local_c;
@@ -2547,9 +2547,9 @@ undefined4 __thiscall FUN_00c07ee0(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00c08060 @ 00c08060 ////
+//// FUNCTION PKDiskBufferingCReader_ResizeBuffer @ 00c08060 ////
 
-void __thiscall FUN_00c08060(void *this,int param_1)
+void __thiscall PKDiskBufferingCReader_ResizeBuffer(void *this,int param_1)
 
 {
   undefined4 uVar1;
@@ -2571,7 +2571,7 @@ void __thiscall FUN_00c08060(void *this,int param_1)
   uVar4 = (((uVar4 - 1) + param_1) / uVar4) * uVar4;
   if (uVar4 - *(int *)((int)this + 8) != 0) {
     ExceptionList = &local_c;
-    uVar1 = FUN_00c07ee0(this,(int)this + 0x14);
+    uVar1 = PKDiskBufferingCReader_WaitForRange(this,(int)this + 0x14);
     if ((char)uVar1 == '\0') {
       *(undefined4 *)((int)this + 0x1c) = 0;
     }
@@ -2622,25 +2622,25 @@ void __fastcall Dtor_00c081b0(void *param_1)
   local_c = ExceptionList;
   local_4 = 3;
   ExceptionList = &local_c;
-  FUN_00c08060(param_1,0);
+  PKDiskBufferingCReader_ResizeBuffer(param_1,0);
   *(undefined ***)((int)param_1 + 0x88) = &PTR_LAB_00d9da84;
   local_4._0_1_ = 4;
-  FUN_00bcea80((LPCRITICAL_SECTION)((int)param_1 + 0x70));
+  Wrap_DeleteCriticalSection_00bcea80((LPCRITICAL_SECTION)((int)param_1 + 0x70));
   local_4._0_1_ = 1;
-  FUN_00c0dc90((int)param_1 + 0x5c);
+  PKAllocatorsCPooledMemory_FreeBlocks((int)param_1 + 0x5c);
   local_4 = (uint)local_4._1_3_ << 8;
   Dtor_00c09d20((undefined4 *)((int)param_1 + 0x2c));
   local_4 = 0xffffffff;
   *(undefined ***)((int)param_1 + 0x20) = &PTR_LAB_00da2df8;
-  FUN_00bcffc0((undefined4 *)((int)param_1 + 0x24));
+  RedBlackTree_Dtor((undefined4 *)((int)param_1 + 0x24));
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c08240 @ 00c08240 ////
+//// FUNCTION PKDiskBufferingCReader_CopyOut @ 00c08240 ////
 
-undefined4 __thiscall FUN_00c08240(void *this,int param_1,uint *param_2,uint *param_3)
+undefined4 __thiscall PKDiskBufferingCReader_CopyOut(void *this,int param_1,uint *param_2,uint *param_3)
 
 {
   LPCSTR pCVar1;
@@ -2676,9 +2676,9 @@ undefined4 __thiscall FUN_00c08240(void *this,int param_1,uint *param_2,uint *pa
     local_110 = &PTR_LAB_00d9d9b4;
     DebugBreak();
   }
-  uVar2 = FUN_00c07ee0(this,param_3);
+  uVar2 = PKDiskBufferingCReader_WaitForRange(this,param_3);
   if ((char)uVar2 != '\0') {
-    uVar2 = FUN_00c07930(*(uint *)((int)this + 8),param_3,param_1,param_2,
+    uVar2 = PKDiskBufferingCReader_CopyOverlap(*(uint *)((int)this + 8),param_3,param_1,param_2,
                          (*(int *)((int)this + 0x10) - *(int *)((int)this + 0x14)) + *param_3,
                          *(undefined4 **)((int)this + 0xc));
     uVar2 = CONCAT31((int3)((uint)uVar2 >> 8),1);
@@ -2688,9 +2688,9 @@ undefined4 __thiscall FUN_00c08240(void *this,int param_1,uint *param_2,uint *pa
 }
 
 
-//// FUNCTION FUN_00c08370 @ 00c08370 ////
+//// FUNCTION PKDiskBufferingCReader_ReadRange @ 00c08370 ////
 
-undefined1 __thiscall FUN_00c08370(void *this,int param_1,uint *param_2,uint *param_3)
+undefined1 __thiscall PKDiskBufferingCReader_ReadRange(void *this,int param_1,uint *param_2,uint *param_3)
 
 {
   void *this_00;
@@ -2774,9 +2774,9 @@ undefined1 __thiscall FUN_00c08370(void *this,int param_1,uint *param_2,uint *pa
 }
 
 
-//// FUNCTION FUN_00c085b0 @ 00c085b0 ////
+//// FUNCTION PKDiskBufferingCReader_QueueRange @ 00c085b0 ////
 
-uint __thiscall FUN_00c085b0(void *this,int *param_1,undefined4 param_2)
+uint __thiscall PKDiskBufferingCReader_QueueRange(void *this,int *param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -2827,9 +2827,9 @@ uint __thiscall FUN_00c085b0(void *this,int *param_1,undefined4 param_2)
 }
 
 
-//// FUNCTION FUN_00c086f0 @ 00c086f0 ////
+//// FUNCTION PKDiskBufferingCReader_QueueRangeInChunks @ 00c086f0 ////
 
-undefined4 __thiscall FUN_00c086f0(void *this,int *param_1,int param_2,uint param_3)
+undefined4 __thiscall PKDiskBufferingCReader_QueueRangeInChunks(void *this,int *param_1,int param_2,uint param_3)
 
 {
   LPCSTR pCVar1;
@@ -2882,7 +2882,7 @@ undefined4 __thiscall FUN_00c086f0(void *this,int *param_1,int param_2,uint para
     }
     local_118 = iVar2;
     local_114 = uVar3;
-    param_1 = (int *)FUN_00c085b0(local_11c,&local_118,param_2);
+    param_1 = (int *)PKDiskBufferingCReader_QueueRange(local_11c,&local_118,param_2);
     if ((char)param_1 == '\0') break;
     uVar4 = uVar4 - uVar3;
     param_2 = param_2 + uVar3;
@@ -2893,9 +2893,9 @@ undefined4 __thiscall FUN_00c086f0(void *this,int *param_1,int param_2,uint para
 }
 
 
-//// FUNCTION FUN_00c08830 @ 00c08830 ////
+//// FUNCTION PKDiskBufferingCReader_RequestAlignedForward @ 00c08830 ////
 
-undefined4 __thiscall FUN_00c08830(void *this,uint *param_1,uint param_2)
+undefined4 __thiscall PKDiskBufferingCReader_RequestAlignedForward(void *this,uint *param_1,uint param_2)
 
 {
   uint uVar1;
@@ -2936,7 +2936,7 @@ undefined4 __thiscall FUN_00c08830(void *this,uint *param_1,uint param_2)
     local_4 = 0xffffffff;
     DebugBreak();
   }
-  uVar3 = FUN_00c07ee0(this,param_1);
+  uVar3 = PKDiskBufferingCReader_WaitForRange(this,param_1);
   if ((char)uVar3 != '\0') {
     uVar1 = *param_1;
     uVar6 = param_1[1];
@@ -2966,11 +2966,11 @@ undefined4 __thiscall FUN_00c08830(void *this,uint *param_1,uint param_2)
     if (*(uint *)((int)this + 8) < uVar4 + uVar6) {
       iVar5 = *(int *)((int)this + 8) - uVar4;
       local_114 = iVar5;
-      uVar3 = FUN_00c086f0(this,(int *)&local_118,*(int *)((int)this + 0xc) + uVar4,param_2);
+      uVar3 = PKDiskBufferingCReader_QueueRangeInChunks(this,(int *)&local_118,*(int *)((int)this + 0xc) + uVar4,param_2);
       if ((char)uVar3 != '\0') {
         local_118 = iVar5 + uVar1;
         local_114 = uVar6 - iVar5;
-        uVar3 = FUN_00c086f0(this,(int *)&local_118,*(int *)((int)this + 0xc),param_2);
+        uVar3 = PKDiskBufferingCReader_QueueRangeInChunks(this,(int *)&local_118,*(int *)((int)this + 0xc),param_2);
         if ((char)uVar3 != '\0') {
           ExceptionList = local_c;
           return 1;
@@ -2980,7 +2980,7 @@ undefined4 __thiscall FUN_00c08830(void *this,uint *param_1,uint param_2)
     }
     else {
       local_114 = uVar6;
-      uVar3 = FUN_00c086f0(this,(int *)&local_118,*(int *)((int)this + 0xc) + uVar4,param_2);
+      uVar3 = PKDiskBufferingCReader_QueueRangeInChunks(this,(int *)&local_118,*(int *)((int)this + 0xc) + uVar4,param_2);
     }
   }
   ExceptionList = local_c;
@@ -2988,9 +2988,9 @@ undefined4 __thiscall FUN_00c08830(void *this,uint *param_1,uint param_2)
 }
 
 
-//// FUNCTION FUN_00c08a90 @ 00c08a90 ////
+//// FUNCTION PKDiskBufferingCReader_RequestAlignedBackward @ 00c08a90 ////
 
-uint __thiscall FUN_00c08a90(void *this,uint *param_1)
+uint __thiscall PKDiskBufferingCReader_RequestAlignedBackward(void *this,uint *param_1)
 
 {
   LPCSTR pCVar1;
@@ -3036,7 +3036,7 @@ uint __thiscall FUN_00c08a90(void *this,uint *param_1)
     local_4 = 0xffffffff;
     DebugBreak();
   }
-  uVar2 = FUN_00c07ee0(this,param_1);
+  uVar2 = PKDiskBufferingCReader_WaitForRange(this,param_1);
   if ((char)uVar2 != '\0') {
     uVar3 = *(undefined4 *)this;
     FUN_00bbbfb0(local_150);
@@ -3099,9 +3099,9 @@ uint __thiscall FUN_00c08a90(void *this,uint *param_1)
 }
 
 
-//// FUNCTION FUN_00c08d20 @ 00c08d20 ////
+//// FUNCTION PKDiskBufferingCReader_PlanRead @ 00c08d20 ////
 
-undefined4 __thiscall FUN_00c08d20(void *this,uint *param_1,undefined1 *param_2)
+undefined4 __thiscall PKDiskBufferingCReader_PlanRead(void *this,uint *param_1,undefined1 *param_2)
 
 {
   uint *puVar1;
@@ -3182,7 +3182,7 @@ undefined4 __thiscall FUN_00c08d20(void *this,uint *param_1,undefined1 *param_2)
       uVar6 = *(int *)((int)this + 0x18) - *(int *)((int)this + 8);
       local_11c = *puVar1;
       local_118 = uVar6;
-      uVar5 = FUN_00c07ee0(this,&local_11c);
+      uVar5 = PKDiskBufferingCReader_WaitForRange(this,&local_11c);
       if ((char)uVar5 == '\0') goto LAB_00c090f1;
       if (uVar6 % *(uint *)((int)this + 4) != 0) {
         local_110 = &PTR_LAB_00d9db7c;
@@ -3217,7 +3217,7 @@ undefined4 __thiscall FUN_00c08d20(void *this,uint *param_1,undefined1 *param_2)
       local_11c = *puVar1 + *(int *)((int)this + 8);
       uVar6 = *(int *)((int)this + 0x18) - *(int *)((int)this + 8);
       local_118 = uVar6;
-      uVar5 = FUN_00c07ee0(this,&local_11c);
+      uVar5 = PKDiskBufferingCReader_WaitForRange(this,&local_11c);
       if ((char)uVar5 == '\0') goto LAB_00c090f1;
       if (uVar6 % *(uint *)((int)this + 4) != 0) {
         local_110 = &PTR_LAB_00d9db7c;
@@ -3242,7 +3242,7 @@ undefined4 __thiscall FUN_00c08d20(void *this,uint *param_1,undefined1 *param_2)
     if ((*(int *)((int)this + 0x18) != 0) && (param_2 != (undefined1 *)0x0)) {
       *param_2 = 1;
     }
-    uVar5 = FUN_00c07ee0(this,puVar1);
+    uVar5 = PKDiskBufferingCReader_WaitForRange(this,puVar1);
     if ((char)uVar5 == '\0') {
 LAB_00c090f1:
       ExceptionList = local_c;
@@ -3270,7 +3270,7 @@ undefined4 __fastcall FUN_00c09120(void *param_1)
   uVar2 = (**(code **)(*(int *)((int)param_1 + 0x2c) + 8))(&local_4,1);
   cVar1 = (char)uVar2;
   while (cVar1 != '\0') {
-    FUN_00c07de0(param_1,unaff_EDI);
+    PKDiskBufferingCReader_AddAsyncRange(param_1,unaff_EDI);
     uVar2 = (**(code **)(*(int *)((int)param_1 + 0x2c) + 8))(&stack0xfffffff4,1);
     cVar1 = (char)uVar2;
   }
@@ -3312,7 +3312,7 @@ undefined1 __thiscall FUN_00c09170(void *this,uint param_1,int param_2,int param
     return 0;
   }
   if (*(int *)((int)this + 8) == 0) {
-    uVar1 = FUN_00c08370(this,param_3,&local_30,&local_30);
+    uVar1 = PKDiskBufferingCReader_ReadRange(this,param_3,&local_30,&local_30);
     return uVar1;
   }
   local_44 = *(uint *)((int)this + 4);
@@ -3338,7 +3338,7 @@ undefined1 __thiscall FUN_00c09170(void *this,uint param_1,int param_2,int param
       local_44 = 0;
     }
     local_48 = local_1c + local_20;
-    uVar4 = FUN_00c08240(this,param_3,&local_30,&local_20);
+    uVar4 = PKDiskBufferingCReader_CopyOut(this,param_3,&local_30,&local_20);
     if ((char)uVar4 == '\0') goto LAB_00c09355;
   }
   if (local_44 != 0) {
@@ -3350,26 +3350,26 @@ undefined1 __thiscall FUN_00c09170(void *this,uint param_1,int param_2,int param
     if (uVar3 != local_44) {
       local_14 = local_44 - uVar3;
       local_18 = local_48;
-      cVar2 = FUN_00c08370(this,param_3,&local_30,&local_18);
+      cVar2 = PKDiskBufferingCReader_ReadRange(this,param_3,&local_30,&local_18);
       if (cVar2 == '\0') goto LAB_00c09355;
       local_48 = local_48 + (local_44 - uVar3);
       local_44 = uVar3;
     }
-    uVar4 = FUN_00c08d20(this,&local_48,(undefined1 *)0x0);
-    if ((((char)uVar4 == '\0') || (uVar3 = FUN_00c08a90(this,&local_48), (char)uVar3 == '\0')) ||
-       (uVar4 = FUN_00c08240(this,param_3,&local_30,&local_48), (char)uVar4 == '\0'))
+    uVar4 = PKDiskBufferingCReader_PlanRead(this,&local_48,(undefined1 *)0x0);
+    if ((((char)uVar4 == '\0') || (uVar3 = PKDiskBufferingCReader_RequestAlignedBackward(this,&local_48), (char)uVar3 == '\0')) ||
+       (uVar4 = PKDiskBufferingCReader_CopyOut(this,param_3,&local_30,&local_48), (char)uVar4 == '\0'))
     goto LAB_00c09355;
   }
   if (local_34 != 0) {
     uVar3 = FUN_00c07b80(this,&local_38);
     if ((char)uVar3 == '\0') {
-      cVar2 = FUN_00c08370(this,param_3,&local_30,&local_38);
+      cVar2 = PKDiskBufferingCReader_ReadRange(this,param_3,&local_30,&local_38);
     }
     else {
-      uVar4 = FUN_00c08d20(this,&local_38,(undefined1 *)0x0);
-      if (((char)uVar4 == '\0') || (uVar3 = FUN_00c08a90(this,&local_38), (char)uVar3 == '\0'))
+      uVar4 = PKDiskBufferingCReader_PlanRead(this,&local_38,(undefined1 *)0x0);
+      if (((char)uVar4 == '\0') || (uVar3 = PKDiskBufferingCReader_RequestAlignedBackward(this,&local_38), (char)uVar3 == '\0'))
       goto LAB_00c09355;
-      uVar4 = FUN_00c08240(this,param_3,&local_30,&local_38);
+      uVar4 = PKDiskBufferingCReader_CopyOut(this,param_3,&local_30,&local_38);
       cVar2 = (char)uVar4;
     }
     if (cVar2 == '\0') goto LAB_00c09355;
@@ -3398,7 +3398,7 @@ LAB_00c09355:
     FUN_00c09750(&local_40,uVar3);
   }
   uVar3 = local_40;
-  FUN_00c07cd0(this,(int *)&local_18);
+  PKDiskBufferingCReader_GetCoveredRange(this,(int *)&local_18);
   local_30 = 0;
   local_2c = 0;
   local_28 = 0;
@@ -3424,9 +3424,9 @@ LAB_00c09355:
       local_2c = local_2c - (local_2c - uVar5);
     }
     if (local_2c != 0) {
-      uVar4 = FUN_00c08d20(this,&local_30,&local_49);
+      uVar4 = PKDiskBufferingCReader_PlanRead(this,&local_30,&local_49);
       if (((char)uVar4 == '\0') ||
-         (uVar4 = FUN_00c08830(this,&local_30,*(uint *)((int)this + 0x98)), (char)uVar4 == '\0'))
+         (uVar4 = PKDiskBufferingCReader_RequestAlignedForward(this,&local_30,*(uint *)((int)this + 0x98)), (char)uVar4 == '\0'))
       goto LAB_00c09523;
       if (local_49 != '\0') {
         return 1;
@@ -3446,9 +3446,9 @@ LAB_00c09355:
   if (local_24 == 0) {
     return 1;
   }
-  uVar4 = FUN_00c08d20(this,&local_28,(undefined1 *)0x0);
+  uVar4 = PKDiskBufferingCReader_PlanRead(this,&local_28,(undefined1 *)0x0);
   if (((char)uVar4 != '\0') &&
-     (uVar4 = FUN_00c08830(this,&local_28,*(uint *)((int)this + 0x98)), (char)uVar4 != '\0')) {
+     (uVar4 = PKDiskBufferingCReader_RequestAlignedForward(this,&local_28,*(uint *)((int)this + 0x98)), (char)uVar4 != '\0')) {
     return 1;
   }
 LAB_00c09523:
@@ -3457,9 +3457,9 @@ LAB_00c09523:
 }
 
 
-//// FUNCTION FUN_00c09540 @ 00c09540 ////
+//// FUNCTION PKDiskBufferingCReader_Ctor @ 00c09540 ////
 
-undefined4 * __thiscall FUN_00c09540(void *this,undefined4 param_1,undefined4 param_2)
+undefined4 * __thiscall PKDiskBufferingCReader_Ctor(void *this,undefined4 param_1,undefined4 param_2)
 
 {
   undefined4 *puVar1;
@@ -3491,7 +3491,7 @@ undefined4 * __thiscall FUN_00c09540(void *this,undefined4 param_1,undefined4 pa
   *puVar1 = 0;
   *(undefined ***)((int)this + 0x20) = &PTR_LAB_00da2df8;
   local_118 = this;
-  FUN_00bcf170((int *)((int)this + 0x24));
+  RedBlackTree_Ctor((int *)((int)this + 0x24));
   *(undefined ***)((int)this + 0x20) = &PTR_LAB_00da2efc;
   local_4 = 0;
   Ctor_vt00da2e20_00c09c70((undefined4 *)((int)this + 0x2c));
@@ -3499,14 +3499,14 @@ undefined4 * __thiscall FUN_00c09540(void *this,undefined4 param_1,undefined4 pa
   local_4._0_1_ = 1;
   FUN_00c0dc40(local_114,0x20,0x400);
   local_4._0_1_ = 2;
-  FUN_00bcea70((LPCRITICAL_SECTION)((int)this + 0x70));
+  Wrap_InitializeCriticalSection_00bcea70((LPCRITICAL_SECTION)((int)this + 0x70));
   *(undefined ***)((int)this + 0x88) = &PTR_FUN_00da2e34;
   *(undefined4 *)((int)this + 0x8c) = 0;
   *(undefined4 *)((int)this + 0x90) = 0;
   *(undefined4 *)((int)this + 0x94) = 0;
   *(undefined4 *)((int)this + 0x98) = 0;
   *(void **)((int)this + 0x90) = this;
-  *(code **)((int)this + 0x8c) = FUN_00c07a90;
+  *(code **)((int)this + 0x8c) = PKDiskBufferingCReader_PrimeCallbackMailbox;
   uVar3 = *(int *)((int)this + 4) + 7U & 0xfffffff8;
   local_4 = CONCAT31(local_4._1_3_,4);
   *(uint *)((int)this + 4) = uVar3;
@@ -3561,7 +3561,7 @@ undefined4 * __fastcall FUN_00c097b0(undefined4 *param_1)
 {
   *param_1 = 0;
   param_1[1] = 0;
-  FUN_00bcf160(param_1 + 2);
+  RedBlackTree_Node_Ctor(param_1 + 2);
   *(undefined1 *)(param_1 + 7) = 1;
   return param_1;
 }
@@ -3572,7 +3572,7 @@ undefined4 * __fastcall FUN_00c097b0(undefined4 *param_1)
 int * __fastcall FUN_00c097d0(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
@@ -3602,7 +3602,7 @@ void * __fastcall FUN_00c09800(void *param_1)
   ExceptionList = &local_c;
   FUN_00c0dc40(param_1,0x20,0x400);
   local_4 = 0;
-  FUN_00bcea70((LPCRITICAL_SECTION)((int)param_1 + 0x14));
+  Wrap_InitializeCriticalSection_00bcea70((LPCRITICAL_SECTION)((int)param_1 + 0x14));
   ExceptionList = local_c;
   return param_1;
 }
@@ -3623,15 +3623,15 @@ int * __fastcall FUN_00c09850(uint *param_1)
   puStack_8 = &LAB_00d02e51;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  FUN_00bcea90((LPCRITICAL_SECTION)(param_1 + 5));
-  piVar1 = FUN_00c0df90(param_1);
-  FUN_00bceaa0((LPCRITICAL_SECTION)(param_1 + 5));
+  Wrap_EnterCriticalSection_00bcea90((LPCRITICAL_SECTION)(param_1 + 5));
+  piVar1 = PKAllocatorsCPooledMemory_Allocate(param_1);
+  Wrap_LeaveCriticalSection_00bceaa0((LPCRITICAL_SECTION)(param_1 + 5));
   local_4 = 0;
   piVar2 = (int *)0x0;
   if (piVar1 != (int *)0x0) {
     *piVar1 = 0;
     piVar1[1] = 0;
-    FUN_00bcf160(piVar1 + 2);
+    RedBlackTree_Node_Ctor(piVar1 + 2);
     *(undefined1 *)(piVar1 + 7) = 1;
     piVar2 = piVar1;
   }
@@ -3645,7 +3645,7 @@ int * __fastcall FUN_00c09850(uint *param_1)
 void __fastcall FUN_00c09910(int param_1)
 
 {
-  Dtor_00bcf880((int *)(param_1 + 8));
+  RedBlackTree_Node_Dtor((int *)(param_1 + 8));
   return;
 }
 
@@ -3781,9 +3781,9 @@ void __fastcall FUN_00c09ae0(int param_1)
   local_c = ExceptionList;
   local_4 = 0;
   ExceptionList = &local_c;
-  FUN_00bcea80((LPCRITICAL_SECTION)(param_1 + 0x14));
+  Wrap_DeleteCriticalSection_00bcea80((LPCRITICAL_SECTION)(param_1 + 0x14));
   local_4 = 0xffffffff;
-  FUN_00c0dc90(param_1);
+  PKAllocatorsCPooledMemory_FreeBlocks(param_1);
   ExceptionList = local_c;
   return;
 }
@@ -3805,7 +3805,7 @@ void __fastcall Dtor_00c09c20(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da2df8;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
@@ -3824,9 +3824,9 @@ undefined4 * __fastcall Ctor_vt00da2e20_00c09c70(undefined4 *param_1)
   local_4 = 0;
   ExceptionList = &local_c;
   *param_1 = &PTR_FUN_00da2e20;
-  FUN_00bcea70((LPCRITICAL_SECTION)(param_1 + 1));
+  Wrap_InitializeCriticalSection_00bcea70((LPCRITICAL_SECTION)(param_1 + 1));
   local_4 = CONCAT31(local_4._1_3_,1);
-  FUN_00bceaf0(param_1 + 7,0,1);
+  PKCSemaphore_Create(param_1 + 7,0,1);
   param_1[8] = 0;
   param_1[9] = 0;
   param_1[10] = 0;
@@ -3849,7 +3849,7 @@ uint __thiscall FUN_00c09ce0(void *this,int param_1)
       return param_1 & 0xffffff00;
     }
     do {
-      FUN_00bcebd0((undefined4 *)((int)this + 0x1c));
+      PKCSemaphore_Wait((undefined4 *)((int)this + 0x1c));
       uVar1 = (**(code **)(*(int *)this + 0x10))(0);
     } while ((char)uVar1 == '\0');
   }
@@ -3877,9 +3877,9 @@ void __fastcall Dtor_00c09d20(undefined4 *param_1)
   }
   local_4._0_1_ = 1;
   local_4._1_3_ = 0;
-  FUN_00bceac0(param_1 + 7);
+  Wrap_CloseHandle_00bceac0(param_1 + 7);
   local_4 = (uint)local_4._1_3_ << 8;
-  FUN_00bcea80((LPCRITICAL_SECTION)(param_1 + 1));
+  Wrap_DeleteCriticalSection_00bcea80((LPCRITICAL_SECTION)(param_1 + 1));
   *param_1 = &PTR_LAB_00da2dc4;
   ExceptionList = local_c;
   return;
@@ -3896,7 +3896,7 @@ bool __fastcall FUN_00c09da0(int param_1)
   
   FUN_00bc1470(local_8,(LPCRITICAL_SECTION)(param_1 + 4));
   iVar1 = *(int *)(param_1 + 0x24);
-  FUN_00bc1490(local_8);
+  PKCProtectionInstance_Leave(local_8);
   return iVar1 == 0;
 }
 
@@ -3912,13 +3912,13 @@ uint __thiscall FUN_00c09dd0(void *this,undefined4 *param_1)
   
   FUN_00bc1470(local_8,(LPCRITICAL_SECTION)((int)this + 4));
   if (*(int *)((int)this + 0x24) == 0) {
-    uVar1 = FUN_00bc1490(local_8);
+    uVar1 = PKCProtectionInstance_Leave(local_8);
     return uVar1 & 0xffffff00;
   }
   *param_1 = *(undefined4 *)(*(int *)((int)this + 0x20) + *(int *)((int)this + 0x2c) * 4);
   *(int *)((int)this + 0x24) = *(int *)((int)this + 0x24) + -1;
   *(uint *)((int)this + 0x2c) = (*(int *)((int)this + 0x2c) + 1U) % *(uint *)((int)this + 0x28);
-  uVar2 = FUN_00bc1490(local_8);
+  uVar2 = PKCProtectionInstance_Leave(local_8);
   return CONCAT31((int3)((uint)uVar2 >> 8),1);
 }
 
@@ -3971,7 +3971,7 @@ undefined4 * __fastcall Ctor_vt00da2df8_00c09ec0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da2df8;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
@@ -3996,7 +3996,7 @@ void __fastcall Dtor_00c09f00(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da2df8;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
@@ -4041,13 +4041,13 @@ uint __thiscall FUN_00c09f70(void *this,undefined4 *param_1)
   uVar1 = FUN_00c0a010((void *)((int)this + 0x20),param_1);
   if ((char)uVar1 == '\0') {
     local_4 = 0xffffffff;
-    uVar2 = FUN_00bc1490(local_14);
+    uVar2 = PKCProtectionInstance_Leave(local_14);
     ExceptionList = local_c;
     return uVar2 & 0xffffff00;
   }
-  FUN_00bcead0((undefined4 *)((int)this + 0x1c));
+  Wrap_ReleaseSemaphore_00bcead0((undefined4 *)((int)this + 0x1c));
   local_4 = 0xffffffff;
-  uVar1 = FUN_00bc1490(local_14);
+  uVar1 = PKCProtectionInstance_Leave(local_14);
   ExceptionList = local_c;
   return CONCAT31((int3)((uint)uVar1 >> 8),1);
 }
@@ -4160,10 +4160,10 @@ void __thiscall FUN_00c0a0e0(void *this,undefined4 *param_1)
     local_110 = &PTR_LAB_00d9d9b4;
     DebugBreak();
   }
-  Dtor_00bcf880(param_1 + 2);
-  FUN_00bcea90((LPCRITICAL_SECTION)((int)this + 0x14));
-  FUN_00c0dd90(this,param_1);
-  FUN_00bceaa0((LPCRITICAL_SECTION)((int)this + 0x14));
+  RedBlackTree_Node_Dtor(param_1 + 2);
+  Wrap_EnterCriticalSection_00bcea90((LPCRITICAL_SECTION)((int)this + 0x14));
+  PKAllocatorsCPooledMemory_Free(this,param_1);
+  Wrap_LeaveCriticalSection_00bceaa0((LPCRITICAL_SECTION)((int)this + 0x14));
   ExceptionList = local_c;
   return;
 }
@@ -4175,7 +4175,7 @@ undefined4 * __fastcall Ctor_vt00da2efc_00c0a2e0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da2df8;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da2efc;
   return param_1;
 }
@@ -4268,14 +4268,14 @@ void __fastcall CLHSegmentReader_Clear(int *param_1)
   int *_Memory;
   
   this = param_1 + 1;
-  _Memory = (int *)FUN_00bcecf0(this);
+  _Memory = (int *)RedBlackTree_GetMinObject(this);
   while( true ) {
     if (_Memory == (int *)0x0) {
       return;
     }
     FUN_00bcff70(this,param_1,(int)_Memory);
     if (_Memory != (int *)0x0) break;
-    _Memory = (int *)FUN_00bcecf0(this);
+    _Memory = (int *)RedBlackTree_GetMinObject(this);
   }
   CLHSegmentEntry_Destructor(_Memory);
                     /* WARNING: Subroutine does not return */
@@ -4333,13 +4333,13 @@ uint __thiscall LH_DecodeSegmentStructure(void *this,int *param_1)
       if ((char)uVar2 == '\0') {
 LAB_00c0a624:
         bVar1 = true;
-        FUN_00bd9fd0(local_140,0,1);
+        PKDataReadCStreamer_Seek(local_140,0,1);
       }
       else {
-        iVar3 = FUN_00bcef50((int *)((int)this + 4),this,local_148,local_148);
+        iVar3 = RedBlackTree_Find((int *)((int)this + 4),this,local_148,local_148);
         if (iVar3 != 0) goto LAB_00c0a624;
         iVar3 = GetField_4_00bd9ef0((int)local_140);
-        uVar4 = FUN_00bd9fd0(local_140,local_128,0);
+        uVar4 = PKDataReadCStreamer_Seek(local_140,local_128,0);
         if ((char)uVar4 == '\0') goto LAB_00c0a624;
         local_124 = operator_new(0x28);
         local_c._0_1_ = 2;
@@ -4375,7 +4375,7 @@ LAB_00c0a624:
         this = local_14c;
       }
       local_c = (uint)local_c._1_3_ << 8;
-      Dtor_00be1f10(local_148);
+      PKStringsCHeapString_Dtor(local_148);
       iVar3 = FUN_00bd9f00((int)local_140);
     } while (iVar3 != 0);
     if (bVar1) {
@@ -4400,7 +4400,7 @@ bool __thiscall CLHSegmentReader_HasSegment(void *this,undefined4 param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_00bcef50((void *)((int)this + 4),this,param_1,param_1);
+  iVar1 = RedBlackTree_Find((void *)((int)this + 4),this,param_1,param_1);
   return iVar1 != 0;
 }
 
@@ -4414,7 +4414,7 @@ CLHSegmentReader_GetSegmentOffsetAndSize(void *this,undefined4 param_1,undefined
   undefined4 uVar1;
   int iVar2;
   
-  iVar2 = FUN_00bcef50((void *)((int)this + 4),this,param_1,param_1);
+  iVar2 = RedBlackTree_Find((void *)((int)this + 4),this,param_1,param_1);
   if (iVar2 == 0) {
     return 0;
   }
@@ -4432,7 +4432,7 @@ int __thiscall CLHSegmentReader_GetCachedSegmentStream(void *this,undefined4 par
 {
   int iVar1;
   
-  iVar1 = FUN_00bcef50((void *)((int)this + 4),this,param_1,param_1);
+  iVar1 = RedBlackTree_Find((void *)((int)this + 4),this,param_1,param_1);
   if ((iVar1 != 0) && (*(int *)(iVar1 + 0x24) != 0)) {
     iVar1 = FUN_00c0ac90((int *)(iVar1 + 0x24));
     return iVar1;
@@ -4457,7 +4457,7 @@ void __fastcall CLHSegmentReader_Destructor(int *param_1)
   CLHSegmentReader_Clear(param_1);
   local_4 = 0xffffffff;
   *param_1 = (int)&PTR_LAB_00da3034;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   ExceptionList = local_c;
   return;
 }
@@ -4489,7 +4489,7 @@ undefined4 __thiscall CLHSegmentReader_CacheSegment(void *this,int *param_1,unde
   puStack_8 = &LAB_00d03254;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  iVar1 = FUN_00bcef50((void *)((int)this + 4),this,param_2,param_2);
+  iVar1 = RedBlackTree_Find((void *)((int)this + 4),this,param_2,param_2);
   if (iVar1 == 0) {
     ExceptionList = local_c;
     return 0;
@@ -4558,7 +4558,7 @@ undefined4 * __fastcall CLHSegmentReader_Constructor(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da3034;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da3074;
   return param_1;
 }
@@ -4569,7 +4569,7 @@ undefined4 * __fastcall CLHSegmentReader_Constructor(undefined4 *param_1)
 int * __fastcall FUN_00c0a9d0(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
@@ -4606,7 +4606,7 @@ void __fastcall Dtor_00c0ab10(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da3034;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
@@ -4624,7 +4624,7 @@ undefined4 * __fastcall CLHSegmentEntry_Constructor(undefined4 *param_1)
   puStack_8 = &LAB_00d03158;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  FUN_00bcf160(param_1);
+  RedBlackTree_Node_Ctor(param_1);
   local_4 = 0;
   param_1[5] = 0;
   param_1[6] = 0;
@@ -4654,9 +4654,9 @@ void __fastcall CLHSegmentEntry_Destructor(int *param_1)
     param_1[9] = 0;
   }
   local_4 = local_4 & 0xffffff00;
-  Dtor_00be1f10(param_1 + 7);
+  PKStringsCHeapString_Dtor(param_1 + 7);
   local_4 = 0xffffffff;
-  Dtor_00bcf880(param_1);
+  RedBlackTree_Node_Dtor(param_1);
   ExceptionList = pvStack_c;
   return;
 }
@@ -4682,7 +4682,7 @@ undefined4 * __fastcall Ctor_vt00da3034_00c0ac50(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da3034;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
@@ -4839,7 +4839,7 @@ void __fastcall Dtor_00c0afa0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da3034;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
@@ -4869,7 +4869,7 @@ undefined4 * __fastcall Ctor_vt00da3074_00c0b030(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da3034;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da3074;
   return param_1;
 }
@@ -4967,7 +4967,7 @@ int __thiscall FUN_00c0b170(void *this,int *param_1)
   char *pcVar2;
   int iVar3;
   
-  iVar1 = FUN_00bcecf0((undefined4 *)((int)this + 0x24));
+  iVar1 = RedBlackTree_GetMinObject((undefined4 *)((int)this + 0x24));
   while( true ) {
     if (iVar1 == 0) {
       return 0;
@@ -4975,7 +4975,7 @@ int __thiscall FUN_00c0b170(void *this,int *param_1)
     pcVar2 = (char *)FUN_00bbf3a0(param_1);
     iVar3 = FUN_00bbf6e0((void *)(iVar1 + 0xc),pcVar2);
     if (iVar3 == 0) break;
-    iVar1 = FUN_00bcf3f0((void *)((int)this + 0x24),(int *)((int)this + 0x20),iVar1);
+    iVar1 = RedBlackTree_GetSuccessor((void *)((int)this + 0x24),(int *)((int)this + 0x20),iVar1);
   }
   return iVar1;
 }
@@ -5132,9 +5132,9 @@ uint __thiscall FUN_00c0b3f0(void *this,void *param_1)
 }
 
 
-//// FUNCTION FUN_00c0b490 @ 00c0b490 ////
+//// FUNCTION RiffCInfo_GetOrCreateChunk @ 00c0b490 ////
 
-undefined4 * __thiscall FUN_00c0b490(void *this,undefined4 param_1)
+undefined4 * __thiscall RiffCInfo_GetOrCreateChunk(void *this,undefined4 param_1)
 
 {
   undefined4 *puVar1;
@@ -5153,7 +5153,7 @@ undefined4 * __thiscall FUN_00c0b490(void *this,undefined4 param_1)
   local_c = ExceptionList;
   ExceptionList = &local_c;
   puVar1 = (undefined4 *)
-           FUN_00bcef50((void *)((int)this + 0x24),(int *)((int)this + 0x20),&param_1,&param_1);
+           RedBlackTree_Find((void *)((int)this + 0x24),(int *)((int)this + 0x20),&param_1,&param_1);
   if (puVar1 == (undefined4 *)0x0) {
     local_114 = operator_new(0x28);
     local_4 = 0;
@@ -5295,18 +5295,18 @@ undefined4 __thiscall FUN_00c0b6f0(void *this,undefined4 *param_1)
       uVar3 = FUN_00c0b5e0(local_40,&local_50,local_4c);
       if ((char)uVar3 == '\0') {
         local_c._0_1_ = 1;
-        Dtor_00be1f10(local_4c);
+        PKStringsCHeapString_Dtor(local_4c);
         break;
       }
-      puVar4 = FUN_00c0b490(this,local_50);
+      puVar4 = RiffCInfo_GetOrCreateChunk(this,local_50);
       FUN_00be2010(puVar4 + 3,(int)local_4c);
       local_c._0_1_ = 1;
-      Dtor_00be1f10(local_4c);
+      PKStringsCHeapString_Dtor(local_4c);
     }
     else if (local_44 == 0x7478746c) {
       uVar3 = FUN_00c0b080(local_40,&local_58,&local_54);
       if ((char)uVar3 == '\0') break;
-      puVar4 = FUN_00c0b490(this,local_58);
+      puVar4 = RiffCInfo_GetOrCreateChunk(this,local_58);
       puVar4[2] = local_54;
     }
     local_c = (uint)local_c._1_3_ << 8;
@@ -5559,7 +5559,7 @@ LAB_00c0bc6b:
       do {
         puVar4 = (undefined4 *)FUN_00c0cba0(&local_38,uVar3);
         local_3c = FUN_00c0cba0(&local_38,uVar3);
-        puVar4 = FUN_00c0b490(local_40,*puVar4);
+        puVar4 = RiffCInfo_GetOrCreateChunk(local_40,*puVar4);
         puVar4[1] = *(undefined4 *)(local_3c + 0x14);
         uVar3 = uVar3 + 1;
       } while (uVar3 < local_44);
@@ -5591,34 +5591,34 @@ void __fastcall Dtor_00c0bd10(undefined4 *param_1)
   local_4 = 6;
   ExceptionList = &local_c;
   LH_Array_SetFilledSize_00c0c490(param_1 + 0xb,0);
-  _Memory = (void *)FUN_00bcecf0(param_1 + 9);
+  _Memory = (void *)RedBlackTree_GetMinObject(param_1 + 9);
   if (_Memory != (void *)0x0) {
     do {
       FUN_00bcff70(param_1 + 9,param_1 + 8,(int)_Memory);
       if (_Memory != (void *)0x0) {
         local_4._0_1_ = 7;
-        Dtor_00bcf880((int *)((int)_Memory + 0x14));
+        RedBlackTree_Node_Dtor((int *)((int)_Memory + 0x14));
         local_4 = CONCAT31(local_4._1_3_,6);
-        Dtor_00be1f10((undefined4 *)((int)_Memory + 0xc));
+        PKStringsCHeapString_Dtor((undefined4 *)((int)_Memory + 0xc));
                     /* WARNING: Subroutine does not return */
         _free(_Memory);
       }
-      _Memory = (void *)FUN_00bcecf0(param_1 + 9);
+      _Memory = (void *)RedBlackTree_GetMinObject(param_1 + 9);
     } while (_Memory != (void *)0x0);
   }
   local_4._0_1_ = 5;
-  Dtor_00be1f10(param_1 + 0x14);
+  PKStringsCHeapString_Dtor(param_1 + 0x14);
   local_4._0_1_ = 4;
-  Dtor_00be1f10(param_1 + 0x12);
+  PKStringsCHeapString_Dtor(param_1 + 0x12);
   local_4._0_1_ = 3;
-  Dtor_00be1f10(param_1 + 0x10);
+  PKStringsCHeapString_Dtor(param_1 + 0x10);
   local_4._0_1_ = 2;
-  Dtor_00be1f10(param_1 + 0xe);
+  PKStringsCHeapString_Dtor(param_1 + 0xe);
   local_4._0_1_ = 1;
   LH_Array_FreeBuffer_00c0c4d0(param_1 + 0xb);
   local_4 = (uint)local_4._1_3_ << 8;
   param_1[8] = &PTR_LAB_00da30c0;
-  FUN_00bcffc0(param_1 + 9);
+  RedBlackTree_Dtor(param_1 + 9);
   if ((void *)*param_1 == (void *)0x0) {
     ExceptionList = local_c;
     return;
@@ -5650,7 +5650,7 @@ undefined4 * __fastcall FUN_00c0be20(undefined4 *param_1)
   param_1[7] = 0;
   local_4 = 0;
   param_1[8] = &PTR_LAB_00da30c0;
-  FUN_00bcf170(param_1 + 9);
+  RedBlackTree_Ctor(param_1 + 9);
   param_1[8] = &PTR_LAB_00da3150;
   FUN_00c0c4c0(param_1 + 0xb);
   local_4._0_1_ = 2;
@@ -5753,13 +5753,13 @@ joined_r0x00c0c035:
     }
     if (bVar5 == 0) {
       this_00 = (undefined4 *)((int)this + 0x2c);
-      uVar2 = FUN_00bcf120((undefined4 *)((int)this + 0x24));
+      uVar2 = RedBlackTree_Count((undefined4 *)((int)this + 0x24));
       LH_Array_Reserve_00c0c3d0(this_00,uVar2);
-      iVar3 = FUN_00bcecf0((undefined4 *)((int)this + 0x24));
+      iVar3 = RedBlackTree_GetMinObject((undefined4 *)((int)this + 0x24));
       if (iVar3 != 0) {
         do {
           FUN_00c0ccb0(this_00,iVar3);
-          iVar3 = FUN_00bcf3f0((void *)((int)this + 0x24),(int *)((int)this + 0x20),iVar3);
+          iVar3 = RedBlackTree_GetSuccessor((void *)((int)this + 0x24),(int *)((int)this + 0x20),iVar3);
         } while (iVar3 != 0);
       }
       FUN_00c0d670(this_00);
@@ -5852,7 +5852,7 @@ int __fastcall FUN_00c0c220(int param_1)
   ExceptionList = &local_c;
   Ctor_vt00d9feb8_00be1e00((undefined4 *)(param_1 + 0xc));
   local_4 = 0;
-  FUN_00bcf160((undefined4 *)(param_1 + 0x14));
+  RedBlackTree_Node_Ctor((undefined4 *)(param_1 + 0x14));
   ExceptionList = local_c;
   return param_1;
 }
@@ -5891,9 +5891,9 @@ void __fastcall FUN_00c0c290(int param_1)
   local_c = ExceptionList;
   local_4 = 0;
   ExceptionList = &local_c;
-  Dtor_00bcf880((int *)(param_1 + 0x14));
+  RedBlackTree_Node_Dtor((int *)(param_1 + 0x14));
   local_4 = 0xffffffff;
-  Dtor_00be1f10((undefined4 *)(param_1 + 0xc));
+  PKStringsCHeapString_Dtor((undefined4 *)(param_1 + 0xc));
   ExceptionList = local_c;
   return;
 }
@@ -5904,7 +5904,7 @@ void __fastcall FUN_00c0c290(int param_1)
 int * __fastcall FUN_00c0c2e0(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
@@ -6211,7 +6211,7 @@ void __fastcall Dtor_00c0c9c0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da30c0;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
@@ -6412,7 +6412,7 @@ undefined4 * __fastcall Ctor_vt00da30c0_00c0ce80(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da30c0;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
@@ -6437,7 +6437,7 @@ void __fastcall Dtor_00c0cec0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da30c0;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
@@ -6490,7 +6490,7 @@ undefined4 * __fastcall Ctor_vt00da3150_00c0d030(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da30c0;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da3150;
   return param_1;
 }
@@ -6930,7 +6930,7 @@ undefined4 * __fastcall Ctor_vt00da3178_00c0d750(undefined4 *param_1)
   FUN_00be8750(param_1);
   local_4 = 0;
   *param_1 = &PTR_FUN_00da3178;
-  FUN_00bcf160(param_1 + 6);
+  RedBlackTree_Node_Ctor(param_1 + 6);
   param_1[0xb] = 0;
   param_1[0xc] = 0;
   ExceptionList = local_c;
@@ -6966,7 +6966,7 @@ void __fastcall Dtor_00c0d7b0(undefined4 *param_1)
     _free((void *)param_1[0xc]);
   }
   local_4 = local_4 & 0xffffff00;
-  Dtor_00bcf880(param_1 + 6);
+  RedBlackTree_Node_Dtor(param_1 + 6);
   local_4 = 0xffffffff;
   SetVtable_00da14e0_00be87b0(param_1);
   ExceptionList = local_c;
@@ -7164,9 +7164,9 @@ uint * __thiscall FUN_00c0dc40(void *this,uint param_1,uint param_2)
 }
 
 
-//// FUNCTION FUN_00c0dc90 @ 00c0dc90 ////
+//// FUNCTION PKAllocatorsCPooledMemory_FreeBlocks @ 00c0dc90 ////
 
-void __fastcall FUN_00c0dc90(int param_1)
+void __fastcall PKAllocatorsCPooledMemory_FreeBlocks(int param_1)
 
 {
   undefined4 *_Memory;
@@ -7213,9 +7213,9 @@ void __fastcall FUN_00c0dc90(int param_1)
 }
 
 
-//// FUNCTION FUN_00c0dd90 @ 00c0dd90 ////
+//// FUNCTION PKAllocatorsCPooledMemory_Free @ 00c0dd90 ////
 
-void __thiscall FUN_00c0dd90(void *this,undefined4 *param_1)
+void __thiscall PKAllocatorsCPooledMemory_Free(void *this,undefined4 *param_1)
 
 {
   LPCSTR pCVar1;
@@ -7261,9 +7261,9 @@ void __thiscall FUN_00c0dd90(void *this,undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c0de90 @ 00c0de90 ////
+//// FUNCTION PKAllocatorsCPooledMemory_AddBlock @ 00c0de90 ////
 
-void __fastcall FUN_00c0de90(uint *param_1)
+void __fastcall PKAllocatorsCPooledMemory_AddBlock(uint *param_1)
 
 {
   uint *puVar1;
@@ -7308,9 +7308,9 @@ void __fastcall FUN_00c0de90(uint *param_1)
 }
 
 
-//// FUNCTION FUN_00c0df90 @ 00c0df90 ////
+//// FUNCTION PKAllocatorsCPooledMemory_Allocate @ 00c0df90 ////
 
-int * __fastcall FUN_00c0df90(uint *param_1)
+int * __fastcall PKAllocatorsCPooledMemory_Allocate(uint *param_1)
 
 {
   uint uVar1;
@@ -7332,7 +7332,7 @@ int * __fastcall FUN_00c0df90(uint *param_1)
   ExceptionList = &local_c;
   if (param_1[2] == 0) {
     ExceptionList = &local_c;
-    FUN_00c0de90(param_1);
+    PKAllocatorsCPooledMemory_AddBlock(param_1);
   }
   if ((uint *)param_1[2] == (uint *)0x0) {
     ExceptionList = local_c;
@@ -7385,7 +7385,7 @@ undefined4 * __thiscall Ctor_vt00da3248_00c0e150(void *this,undefined4 param_1)
   *(undefined ***)this = &PTR_LAB_00da3248;
   *(undefined4 *)((int)this + 8) = 0;
   *(undefined4 *)((int)this + 0xc) = 0;
-  FUN_00bcf160((undefined4 *)((int)this + 0x10));
+  RedBlackTree_Node_Ctor((undefined4 *)((int)this + 0x10));
   ExceptionList = local_c;
   return this;
 }
@@ -7419,7 +7419,7 @@ void __fastcall Dtor_00c0e1d0(undefined4 *param_1)
   ExceptionList = &local_c;
   *param_1 = &PTR_LAB_00da3248;
   local_4 = 0;
-  Dtor_00bcf880(param_1 + 4);
+  RedBlackTree_Node_Dtor(param_1 + 4);
   *param_1 = &PTR_LAB_00d9f8a0;
   ExceptionList = local_c;
   return;
@@ -7765,7 +7765,7 @@ undefined4 * __fastcall Ctor_vt00da3284_00c0e9d0(undefined4 *param_1)
   *param_1 = &PTR_LAB_00da3284;
   FUN_00c39cc0(param_1 + 0xd);
   local_4 = CONCAT31(local_4._1_3_,1);
-  FUN_00bcf160(param_1 + 0x16);
+  RedBlackTree_Node_Ctor(param_1 + 0x16);
   param_1[0xe] = param_1;
   ExceptionList = local_c;
   return param_1;
@@ -7786,7 +7786,7 @@ void __fastcall Dtor_00c0ea30(undefined4 *param_1)
   ExceptionList = &local_c;
   *param_1 = &PTR_LAB_00da3284;
   local_4 = 1;
-  Dtor_00bcf880(param_1 + 0x16);
+  RedBlackTree_Node_Dtor(param_1 + 0x16);
   local_4 = local_4 & 0xffffff00;
   SetVtable_00da6e68_00c39b30(param_1 + 0xd);
   local_4 = 0xffffffff;
@@ -7814,7 +7814,7 @@ void __thiscall FUN_00c0eaf0(void *this,undefined4 *param_1,int *param_2,undefin
   FUN_00bcff70((void *)(*(int *)((int)this + 4) + 8),(int *)(*(int *)((int)this + 4) + 4),(int)this)
   ;
   FUN_00c399f0(this,param_3,param_1);
-  FUN_00c39d10((void *)((int)this + 0x34),param_2,param_1);
+  LLACodaCOneShot_Create((void *)((int)this + 0x34),param_2,param_1);
   FUN_00bcfac0((void *)(*(int *)((int)this + 4) + 0x14),(int *)(*(int *)((int)this + 4) + 0x10),
                (int)this);
   return;
@@ -7829,7 +7829,7 @@ void __thiscall FUN_00c0eb40(void *this,undefined4 *param_1,int *param_2,int par
   FUN_00bcff70((void *)(*(int *)((int)this + 4) + 8),(int *)(*(int *)((int)this + 4) + 4),(int)this)
   ;
   FUN_00c39970(this,param_3,param_1);
-  FUN_00c39d10((void *)((int)this + 0x34),param_2,param_1);
+  LLACodaCOneShot_Create((void *)((int)this + 0x34),param_2,param_1);
   FUN_00bcfac0((void *)(*(int *)((int)this + 4) + 0x14),(int *)(*(int *)((int)this + 4) + 0x10),
                (int)this);
   return;
@@ -7844,7 +7844,7 @@ void __fastcall FUN_00c0eb90(int param_1)
   FUN_00bcff70((void *)(*(int *)(param_1 + 4) + 0x14),(int *)(*(int *)(param_1 + 4) + 0x10),param_1)
   ;
   FUN_00c39ce0(param_1 + 0x34);
-  FUN_00c39890(param_1);
+  LLACodaCChannel_DestroySource(param_1);
   FUN_00bcfac0((void *)(*(int *)(param_1 + 4) + 8),(int *)(*(int *)(param_1 + 4) + 4),param_1);
   return;
 }
@@ -7913,7 +7913,7 @@ undefined4 * __fastcall Ctor_vt00da32c0_00c0ece0(undefined4 *param_1)
   *param_1 = &PTR_LAB_00da32c0;
   Ctor_vt00da6fd8_00c3a540(param_1 + 0xd);
   local_4 = CONCAT31(local_4._1_3_,1);
-  FUN_00bcf160(param_1 + 0x1a);
+  RedBlackTree_Node_Ctor(param_1 + 0x1a);
   param_1[0xe] = param_1;
   ExceptionList = local_c;
   return param_1;
@@ -7934,7 +7934,7 @@ void __fastcall Dtor_00c0ed40(undefined4 *param_1)
   ExceptionList = &local_c;
   *param_1 = &PTR_LAB_00da32c0;
   local_4 = 1;
-  Dtor_00bcf880(param_1 + 0x1a);
+  RedBlackTree_Node_Dtor(param_1 + 0x1a);
   local_4 = local_4 & 0xffffff00;
   Dtor_00c3a590(param_1 + 0xd);
   local_4 = 0xffffffff;
@@ -7952,7 +7952,7 @@ void __thiscall FUN_00c0edf0(void *this,undefined4 *param_1,int *param_2,undefin
   FUN_00bcff70((void *)(*(int *)((int)this + 4) + 0x20),(int *)(*(int *)((int)this + 4) + 0x1c),
                (int)this);
   FUN_00c399f0(this,param_3,param_1);
-  FUN_00c3abc0((void *)((int)this + 0x34),param_2);
+  LLACodaCStreamed_SetCallback((void *)((int)this + 0x34),param_2);
   FUN_00bcfac0((void *)(*(int *)((int)this + 4) + 0x2c),(int *)(*(int *)((int)this + 4) + 0x28),
                (int)this);
   return;
@@ -7967,7 +7967,7 @@ void __thiscall FUN_00c0ee40(void *this,undefined4 *param_1,int *param_2,int par
   FUN_00bcff70((void *)(*(int *)((int)this + 4) + 0x20),(int *)(*(int *)((int)this + 4) + 0x1c),
                (int)this);
   FUN_00c39970(this,param_3,param_1);
-  FUN_00c3abc0((void *)((int)this + 0x34),param_2);
+  LLACodaCStreamed_SetCallback((void *)((int)this + 0x34),param_2);
   FUN_00bcfac0((void *)(*(int *)((int)this + 4) + 0x2c),(int *)(*(int *)((int)this + 4) + 0x28),
                (int)this);
   return;
@@ -7982,7 +7982,7 @@ void __fastcall FUN_00c0ee90(int param_1)
   FUN_00bcff70((void *)(*(int *)(param_1 + 4) + 0x2c),(int *)(*(int *)(param_1 + 4) + 0x28),param_1)
   ;
   FUN_00c3a5e0(param_1 + 0x34);
-  FUN_00c39890(param_1);
+  LLACodaCChannel_DestroySource(param_1);
   FUN_00bcfac0((void *)(*(int *)(param_1 + 4) + 0x20),(int *)(*(int *)(param_1 + 4) + 0x1c),param_1)
   ;
   return;
@@ -9363,9 +9363,9 @@ uint __thiscall FUN_00c10240(void *this,undefined4 param_1,undefined4 param_2,ch
 }
 
 
-//// FUNCTION FUN_00c102f0 @ 00c102f0 ////
+//// FUNCTION Wrap_CoUninitialize_00c102f0 @ 00c102f0 ////
 
-void __fastcall FUN_00c102f0(int param_1)
+void __fastcall Wrap_CoUninitialize_00c102f0(int param_1)
 
 {
   int *piVar1;
@@ -10823,9 +10823,9 @@ undefined4 * __thiscall ScalarDeletingDtor_00c12860(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c12920 @ 00c12920 ////
+//// FUNCTION OpenALContext_alGetProcAddress_00c12920 @ 00c12920 ////
 
-void __thiscall FUN_00c12920(void *this,undefined4 param_1)
+void __thiscall OpenALContext_alGetProcAddress_00c12920(void *this,undefined4 param_1)
 
 {
   FARPROC pFVar1;
@@ -10854,7 +10854,7 @@ FUN_00c12970(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   undefined4 uVar1;
   
   if (*(int *)((int)this + 0xf0) == 0) {
-    uVar1 = FUN_00c12920(this,"EAXSet");
+    uVar1 = OpenALContext_alGetProcAddress_00c12920(this,"EAXSet");
     *(undefined4 *)((int)this + 0xf0) = uVar1;
   }
   (**(code **)((int)this + 0xf0))(param_1,param_2,param_3,param_4,param_5);
@@ -10872,7 +10872,7 @@ FUN_00c129c0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   undefined4 uVar1;
   
   if (*(int *)((int)this + 0xf4) == 0) {
-    uVar1 = FUN_00c12920(this,"EAXGet");
+    uVar1 = OpenALContext_alGetProcAddress_00c12920(this,"EAXGet");
     *(undefined4 *)((int)this + 0xf4) = uVar1;
   }
   (**(code **)((int)this + 0xf4))(param_1,param_2,param_3,param_4,param_5);
@@ -10889,7 +10889,7 @@ FUN_00c12a10(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   undefined4 uVar1;
   
   if (*(int *)((int)this + 0xf4) == 0) {
-    uVar1 = FUN_00c12920(this,"EAXGet");
+    uVar1 = OpenALContext_alGetProcAddress_00c12920(this,"EAXGet");
     *(undefined4 *)((int)this + 0xf4) = uVar1;
   }
   (**(code **)((int)this + 0xf4))(param_1,param_2,0,param_3,param_4);
@@ -10897,9 +10897,9 @@ FUN_00c12a10(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 }
 
 
-//// FUNCTION FUN_00c12a50 @ 00c12a50 ////
+//// FUNCTION OpenALContext_alcSuspendContext_00c12a50 @ 00c12a50 ////
 
-void __fastcall FUN_00c12a50(int param_1)
+void __fastcall OpenALContext_alcSuspendContext_00c12a50(int param_1)
 
 {
   FARPROC pFVar1;
@@ -10914,9 +10914,9 @@ void __fastcall FUN_00c12a50(int param_1)
 }
 
 
-//// FUNCTION FUN_00c12a90 @ 00c12a90 ////
+//// FUNCTION OpenALContext_alcProcessContext_00c12a90 @ 00c12a90 ////
 
-void __fastcall FUN_00c12a90(int param_1)
+void __fastcall OpenALContext_alcProcessContext_00c12a90(int param_1)
 
 {
   FARPROC pFVar1;
@@ -10943,15 +10943,15 @@ undefined4 __fastcall FUN_00c12ad0(void *param_1)
   if (pFVar1 == (FARPROC)0x0) {
     return 0;
   }
-  iVar2 = FUN_00c12920(param_1,"alGenSources");
+  iVar2 = OpenALContext_alGetProcAddress_00c12920(param_1,"alGenSources");
   *(bool *)((int)param_1 + 0x104) = iVar2 != 0;
   return CONCAT31((int3)((uint)iVar2 >> 8),1);
 }
 
 
-//// FUNCTION FUN_00c12b10 @ 00c12b10 ////
+//// FUNCTION OpenALContext_alcDestroyContext_00c12b10 @ 00c12b10 ////
 
-void __fastcall FUN_00c12b10(int param_1)
+void __fastcall OpenALContext_alcDestroyContext_00c12b10(int param_1)
 
 {
   FARPROC pFVar1;
@@ -10969,9 +10969,9 @@ void __fastcall FUN_00c12b10(int param_1)
 }
 
 
-//// FUNCTION FUN_00c12b60 @ 00c12b60 ////
+//// FUNCTION OpenALContext_alcIsExtensionPresent_00c12b60 @ 00c12b60 ////
 
-bool __thiscall FUN_00c12b60(void *this,undefined4 param_1)
+bool __thiscall OpenALContext_alcIsExtensionPresent_00c12b60(void *this,undefined4 param_1)
 
 {
   char cVar1;
@@ -10989,9 +10989,9 @@ bool __thiscall FUN_00c12b60(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00c12bb0 @ 00c12bb0 ////
+//// FUNCTION OpenALContext_alcGetString_00c12bb0 @ 00c12bb0 ////
 
-void __thiscall FUN_00c12bb0(void *this,undefined4 param_1)
+void __thiscall OpenALContext_alcGetString_00c12bb0(void *this,undefined4 param_1)
 
 {
   FARPROC pFVar1;
@@ -11005,9 +11005,9 @@ void __thiscall FUN_00c12bb0(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00c12bf0 @ 00c12bf0 ////
+//// FUNCTION OpenALContext_alcOpenDevice_00c12bf0 @ 00c12bf0 ////
 
-undefined4 __thiscall FUN_00c12bf0(void *this,undefined4 param_1)
+undefined4 __thiscall OpenALContext_alcOpenDevice_00c12bf0(void *this,undefined4 param_1)
 
 {
   FARPROC pFVar1;
@@ -11295,7 +11295,7 @@ FUN_00c130c0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   bool bVar3;
   
   if (*(int *)((int)this + 0xf4) == 0) {
-    uVar1 = FUN_00c12920(this,"EAXGet");
+    uVar1 = OpenALContext_alGetProcAddress_00c12920(this,"EAXGet");
     *(undefined4 *)((int)this + 0xf4) = uVar1;
   }
   iVar2 = (**(code **)((int)this + 0xf4))(param_1,param_2,0,param_3,param_4);
@@ -11321,9 +11321,9 @@ FUN_00c130c0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 }
 
 
-//// FUNCTION FUN_00c13140 @ 00c13140 ////
+//// FUNCTION OpenALContext_alcSuspendContext_00c13140 @ 00c13140 ////
 
-void __fastcall FUN_00c13140(int param_1)
+void __fastcall OpenALContext_alcSuspendContext_00c13140(int param_1)
 
 {
   FARPROC pFVar1;
@@ -11338,9 +11338,9 @@ void __fastcall FUN_00c13140(int param_1)
 }
 
 
-//// FUNCTION FUN_00c13180 @ 00c13180 ////
+//// FUNCTION OpenALContext_alcProcessContext_00c13180 @ 00c13180 ////
 
-void __fastcall FUN_00c13180(int param_1)
+void __fastcall OpenALContext_alcProcessContext_00c13180(int param_1)
 
 {
   FARPROC pFVar1;
@@ -11394,10 +11394,10 @@ LAB_00c1322b:
 }
 
 
-//// FUNCTION FUN_00c13250 @ 00c13250 ////
+//// FUNCTION OpenALContext_alListener3f_00c13250 @ 00c13250 ////
 
 void __thiscall
-FUN_00c13250(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+OpenALContext_alListener3f_00c13250(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   FARPROC pFVar1;
@@ -11407,7 +11407,7 @@ FUN_00c13250(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alListener3f");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alListener3f");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alListener3f");
     }
     *(FARPROC *)((int)this + 0x98) = pFVar1;
   }
@@ -11416,9 +11416,9 @@ FUN_00c13250(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 }
 
 
-//// FUNCTION FUN_00c132b0 @ 00c132b0 ////
+//// FUNCTION OpenALContext_alDistanceModel_00c132b0 @ 00c132b0 ////
 
-void __thiscall FUN_00c132b0(void *this,undefined4 param_1)
+void __thiscall OpenALContext_alDistanceModel_00c132b0(void *this,undefined4 param_1)
 
 {
   FARPROC pFVar1;
@@ -11428,7 +11428,7 @@ void __thiscall FUN_00c132b0(void *this,undefined4 param_1)
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alDistanceModel");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alDistanceModel");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alDistanceModel");
     }
     *(FARPROC *)((int)this + 0xd4) = pFVar1;
   }
@@ -11437,9 +11437,9 @@ void __thiscall FUN_00c132b0(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00c13300 @ 00c13300 ////
+//// FUNCTION OpenALContext_alGetString_00c13300 @ 00c13300 ////
 
-void __thiscall FUN_00c13300(void *this,undefined4 param_1)
+void __thiscall OpenALContext_alGetString_00c13300(void *this,undefined4 param_1)
 
 {
   FARPROC pFVar1;
@@ -11449,7 +11449,7 @@ void __thiscall FUN_00c13300(void *this,undefined4 param_1)
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alGetString");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alGetString");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alGetString");
     }
     *(FARPROC *)((int)this + 0xd0) = pFVar1;
   }
@@ -11458,9 +11458,9 @@ void __thiscall FUN_00c13300(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00c13350 @ 00c13350 ////
+//// FUNCTION OpenALContext_alIsExtensionPresent_00c13350 @ 00c13350 ////
 
-bool __thiscall FUN_00c13350(void *this,undefined4 param_1)
+bool __thiscall OpenALContext_alIsExtensionPresent_00c13350(void *this,undefined4 param_1)
 
 {
   char cVar1;
@@ -11471,7 +11471,7 @@ bool __thiscall FUN_00c13350(void *this,undefined4 param_1)
       pFVar2 = GetProcAddress(*(HMODULE *)((int)this + 4),"alIsExtensionPresent");
     }
     else {
-      pFVar2 = (FARPROC)FUN_00c12920(this,"alIsExtensionPresent");
+      pFVar2 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alIsExtensionPresent");
     }
     *(FARPROC *)((int)this + 0xe4) = pFVar2;
     if (pFVar2 == (FARPROC)0x0) {
@@ -11492,7 +11492,7 @@ FUN_00c133b0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   undefined4 uVar1;
   
   if (*(int *)((int)this + 0xf0) == 0) {
-    uVar1 = FUN_00c12920(this,"EAXSet");
+    uVar1 = OpenALContext_alGetProcAddress_00c12920(this,"EAXSet");
     *(undefined4 *)((int)this + 0xf0) = uVar1;
   }
   (**(code **)((int)this + 0xf0))(param_1,param_2,0,param_3,param_4);
@@ -11500,9 +11500,9 @@ FUN_00c133b0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 }
 
 
-//// FUNCTION FUN_00c133f0 @ 00c133f0 ////
+//// FUNCTION OpenALContext_alcCloseDevice_00c133f0 @ 00c133f0 ////
 
-void __fastcall FUN_00c133f0(void *param_1)
+void __fastcall OpenALContext_alcCloseDevice_00c133f0(void *param_1)
 
 {
   FARPROC pFVar1;
@@ -11521,9 +11521,9 @@ void __fastcall FUN_00c133f0(void *param_1)
 }
 
 
-//// FUNCTION FUN_00c13450 @ 00c13450 ////
+//// FUNCTION OpenALContext_alGetString_00c13450 @ 00c13450 ////
 
-undefined4 __fastcall FUN_00c13450(void *param_1)
+undefined4 __fastcall OpenALContext_alGetString_00c13450(void *param_1)
 
 {
   bool bVar1;
@@ -11536,7 +11536,7 @@ undefined4 __fastcall FUN_00c13450(void *param_1)
       pFVar2 = GetProcAddress(*(HMODULE *)((int)param_1 + 4),"alGetString");
     }
     else {
-      pFVar2 = (FARPROC)FUN_00c12920(param_1,"alGetString");
+      pFVar2 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(param_1,"alGetString");
     }
     *(FARPROC *)((int)param_1 + 0xd0) = pFVar2;
   }
@@ -11544,7 +11544,7 @@ undefined4 __fastcall FUN_00c13450(void *param_1)
   if (_Str1 == (char *)0x0) {
     return 0;
   }
-  bVar1 = FUN_00c13350(param_1,"EAX3.0");
+  bVar1 = OpenALContext_alIsExtensionPresent_00c13350(param_1,"EAX3.0");
   if (bVar1) {
     iVar3 = _strncmp(_Str1,"Creative",8);
     if (iVar3 == 0) {
@@ -11579,7 +11579,7 @@ void __fastcall Dtor_00c134d0(undefined4 *param_1)
     (*(code *)param_1[6])(param_1[0x40]);
     param_1[0x40] = 0;
   }
-  FUN_00c133f0(param_1);
+  OpenALContext_alcCloseDevice_00c133f0(param_1);
   if ((HMODULE)param_1[1] != (HMODULE)0x0) {
     FreeLibrary((HMODULE)param_1[1]);
     param_1[1] = 0;
@@ -11602,8 +11602,8 @@ void __fastcall FUN_00c13580(void *param_1)
   piVar1 = (int *)((int)param_1 + 0x1b4);
   *piVar1 = *piVar1 + -1;
   if (*piVar1 == 0) {
-    FUN_00c12b10((int)param_1);
-    FUN_00c133f0(param_1);
+    OpenALContext_alcDestroyContext_00c12b10((int)param_1);
+    OpenALContext_alcCloseDevice_00c133f0(param_1);
     if (*(HMODULE *)((int)param_1 + 4) != (HMODULE)0x0) {
       FreeLibrary(*(HMODULE *)((int)param_1 + 4));
     }
@@ -11661,7 +11661,7 @@ FUN_00c13650(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   bool bVar3;
   
   if (*(int *)((int)this + 0xf0) == 0) {
-    uVar1 = FUN_00c12920(this,"EAXSet");
+    uVar1 = OpenALContext_alGetProcAddress_00c12920(this,"EAXSet");
     *(undefined4 *)((int)this + 0xf0) = uVar1;
   }
   iVar2 = (**(code **)((int)this + 0xf0))(param_1,param_2,0,param_3,param_4);
@@ -11695,7 +11695,7 @@ void __thiscall FUN_00c136f0(void *this,undefined4 param_1,undefined4 param_2,un
   undefined4 uVar1;
   
   if (*(int *)((int)this + 0xf0) == 0) {
-    uVar1 = FUN_00c12920(this,"EAXSet");
+    uVar1 = OpenALContext_alGetProcAddress_00c12920(this,"EAXSet");
     *(undefined4 *)((int)this + 0xf0) = uVar1;
   }
   (**(code **)((int)this + 0xf0))(&DAT_00dac9c8,param_1,0,param_2,param_3);
@@ -11751,15 +11751,15 @@ uint __thiscall FUN_00c13750(void *this,char param_1)
     if (*(int *)((int)this + 4) != 0) {
       uVar3 = FUN_00c12ad0(this);
       if ((char)uVar3 != '\0') {
-        uVar3 = FUN_00c12bf0(this,"DirectSound3D");
+        uVar3 = OpenALContext_alcOpenDevice_00c12bf0(this,"DirectSound3D");
         if ((char)uVar3 != '\0') {
           uVar3 = FUN_00c12c50((int)this);
           if ((char)uVar3 != '\0') {
-            uVar3 = FUN_00c13450(this);
+            uVar3 = OpenALContext_alGetString_00c13450(this);
             if ((char)uVar3 != '\0') goto LAB_00c13832;
-            FUN_00c12b10((int)this);
+            OpenALContext_alcDestroyContext_00c12b10((int)this);
           }
-          FUN_00c133f0(this);
+          OpenALContext_alcCloseDevice_00c133f0(this);
         }
       }
       FreeLibrary(*(HMODULE *)((int)this + 4));
@@ -11780,23 +11780,23 @@ uint __thiscall FUN_00c13750(void *this,char param_1)
       if (pHVar2 != (HMODULE)0x0) {
         uVar3 = FUN_00c12ad0(this);
         if ((char)uVar3 != '\0') {
-          uVar3 = FUN_00c12bf0(this,0);
+          uVar3 = OpenALContext_alcOpenDevice_00c12bf0(this,0);
           if ((char)uVar3 != '\0') {
             uVar3 = FUN_00c12f20(local_244);
-            FUN_00c133f0(this);
+            OpenALContext_alcCloseDevice_00c133f0(this);
             if ((char)uVar3 != '\0') {
-              uVar3 = FUN_00c12bf0(this,local_244);
+              uVar3 = OpenALContext_alcOpenDevice_00c12bf0(this,local_244);
               if ((char)uVar3 != '\0') {
                 uVar3 = FUN_00c12c50((int)this);
                 if ((char)uVar3 != '\0') {
-                  uVar3 = FUN_00c13450(this);
+                  uVar3 = OpenALContext_alGetString_00c13450(this);
                   if ((char)uVar3 != '\0') {
 LAB_00c13832:
                     return CONCAT31((int3)((uint)uVar3 >> 8),1);
                   }
-                  FUN_00c12b10((int)this);
+                  OpenALContext_alcDestroyContext_00c12b10((int)this);
                 }
-                FUN_00c133f0(this);
+                OpenALContext_alcCloseDevice_00c133f0(this);
               }
             }
           }
@@ -11890,7 +11890,7 @@ void __fastcall FUN_00c13a30(void *param_1)
       pFVar1 = GetProcAddress(*(HMODULE *)((int)param_1 + 4),"alDistanceModel");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(param_1,"alDistanceModel");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(param_1,"alDistanceModel");
     }
     *(FARPROC *)((int)param_1 + 0xd4) = pFVar1;
   }
@@ -11900,7 +11900,7 @@ void __fastcall FUN_00c13a30(void *param_1)
       pFVar1 = GetProcAddress(*(HMODULE *)((int)param_1 + 4),"alListener3f");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(param_1,"alListener3f");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(param_1,"alListener3f");
     }
     *(FARPROC *)((int)param_1 + 0x98) = pFVar1;
   }
@@ -11910,20 +11910,20 @@ void __fastcall FUN_00c13a30(void *param_1)
       pFVar1 = GetProcAddress(*(HMODULE *)((int)param_1 + 4),"alListener3f");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(param_1,"alListener3f");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(param_1,"alListener3f");
     }
     *(FARPROC *)((int)param_1 + 0x98) = pFVar1;
   }
   (**(code **)((int)param_1 + 0x98))(0x1006,0,0,0);
   uStack_8 = 0xffffd8f0;
   if (*(int *)((int)param_1 + 0xf0) == 0) {
-    uVar2 = FUN_00c12920(param_1,"EAXSet");
+    uVar2 = OpenALContext_alGetProcAddress_00c12920(param_1,"EAXSet");
     *(undefined4 *)((int)param_1 + 0xf0) = uVar2;
   }
   (**(code **)((int)param_1 + 0xf0))(&DAT_00dac9c8,0x80000005,0,&uStack_8,4);
   uStack_4 = 0;
   if (*(int *)((int)param_1 + 0xf0) == 0) {
-    uVar2 = FUN_00c12920(param_1,"EAXSet");
+    uVar2 = OpenALContext_alGetProcAddress_00c12920(param_1,"EAXSet");
     *(undefined4 *)((int)param_1 + 0xf0) = uVar2;
   }
   (**(code **)((int)param_1 + 0xf0))(&DAT_00dac9c8,0x80000018,0,&uStack_4,4);
@@ -12361,9 +12361,9 @@ void __fastcall FUN_00c14780(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c147b0 @ 00c147b0 ////
+//// FUNCTION OpenALContext_alGenBuffers_00c147b0 @ 00c147b0 ////
 
-void __thiscall FUN_00c147b0(void *this,undefined4 param_1,undefined4 param_2)
+void __thiscall OpenALContext_alGenBuffers_00c147b0(void *this,undefined4 param_1,undefined4 param_2)
 
 {
   FARPROC pFVar1;
@@ -12373,7 +12373,7 @@ void __thiscall FUN_00c147b0(void *this,undefined4 param_1,undefined4 param_2)
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alGenBuffers");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alGenBuffers");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alGenBuffers");
     }
     *(FARPROC *)((int)this + 0x2c) = pFVar1;
   }
@@ -12382,9 +12382,9 @@ void __thiscall FUN_00c147b0(void *this,undefined4 param_1,undefined4 param_2)
 }
 
 
-//// FUNCTION FUN_00c14800 @ 00c14800 ////
+//// FUNCTION OpenALContext_alDeleteBuffers_00c14800 @ 00c14800 ////
 
-void __thiscall FUN_00c14800(void *this,undefined4 param_1,undefined4 param_2)
+void __thiscall OpenALContext_alDeleteBuffers_00c14800(void *this,undefined4 param_1,undefined4 param_2)
 
 {
   FARPROC pFVar1;
@@ -12394,7 +12394,7 @@ void __thiscall FUN_00c14800(void *this,undefined4 param_1,undefined4 param_2)
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alDeleteBuffers");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alDeleteBuffers");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alDeleteBuffers");
     }
     *(FARPROC *)((int)this + 0x30) = pFVar1;
   }
@@ -12403,10 +12403,10 @@ void __thiscall FUN_00c14800(void *this,undefined4 param_1,undefined4 param_2)
 }
 
 
-//// FUNCTION FUN_00c14850 @ 00c14850 ////
+//// FUNCTION OpenALContext_alBufferData_00c14850 @ 00c14850 ////
 
 void __thiscall
-FUN_00c14850(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+OpenALContext_alBufferData_00c14850(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
             undefined4 param_5)
 
 {
@@ -12417,7 +12417,7 @@ FUN_00c14850(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alBufferData");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alBufferData");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alBufferData");
     }
     *(FARPROC *)((int)this + 0x38) = pFVar1;
   }
@@ -12426,9 +12426,9 @@ FUN_00c14850(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 }
 
 
-//// FUNCTION FUN_00c148a0 @ 00c148a0 ////
+//// FUNCTION OpenALContext_alGenSources_00c148a0 @ 00c148a0 ////
 
-void __thiscall FUN_00c148a0(void *this,undefined4 param_1,undefined4 param_2)
+void __thiscall OpenALContext_alGenSources_00c148a0(void *this,undefined4 param_1,undefined4 param_2)
 
 {
   FARPROC pFVar1;
@@ -12438,7 +12438,7 @@ void __thiscall FUN_00c148a0(void *this,undefined4 param_1,undefined4 param_2)
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alGenSources");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alGenSources");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alGenSources");
     }
     *(FARPROC *)((int)this + 0x44) = pFVar1;
   }
@@ -12447,9 +12447,9 @@ void __thiscall FUN_00c148a0(void *this,undefined4 param_1,undefined4 param_2)
 }
 
 
-//// FUNCTION FUN_00c148f0 @ 00c148f0 ////
+//// FUNCTION OpenALContext_alDeleteSources_00c148f0 @ 00c148f0 ////
 
-void __thiscall FUN_00c148f0(void *this,undefined4 param_1,undefined4 param_2)
+void __thiscall OpenALContext_alDeleteSources_00c148f0(void *this,undefined4 param_1,undefined4 param_2)
 
 {
   FARPROC pFVar1;
@@ -12459,7 +12459,7 @@ void __thiscall FUN_00c148f0(void *this,undefined4 param_1,undefined4 param_2)
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alDeleteSources");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alDeleteSources");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alDeleteSources");
     }
     *(FARPROC *)((int)this + 0x48) = pFVar1;
   }
@@ -12468,9 +12468,9 @@ void __thiscall FUN_00c148f0(void *this,undefined4 param_1,undefined4 param_2)
 }
 
 
-//// FUNCTION FUN_00c14940 @ 00c14940 ////
+//// FUNCTION OpenALContext_alSourcei_00c14940 @ 00c14940 ////
 
-void __thiscall FUN_00c14940(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
+void __thiscall OpenALContext_alSourcei_00c14940(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   FARPROC pFVar1;
@@ -12480,7 +12480,7 @@ void __thiscall FUN_00c14940(void *this,undefined4 param_1,undefined4 param_2,un
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alSourcei");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alSourcei");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alSourcei");
     }
     *(FARPROC *)((int)this + 0x5c) = pFVar1;
   }
@@ -12489,9 +12489,9 @@ void __thiscall FUN_00c14940(void *this,undefined4 param_1,undefined4 param_2,un
 }
 
 
-//// FUNCTION FUN_00c14990 @ 00c14990 ////
+//// FUNCTION OpenALContext_alGetSourcei_00c14990 @ 00c14990 ////
 
-void __thiscall FUN_00c14990(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
+void __thiscall OpenALContext_alGetSourcei_00c14990(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   FARPROC pFVar1;
@@ -12501,7 +12501,7 @@ void __thiscall FUN_00c14990(void *this,undefined4 param_1,undefined4 param_2,un
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alGetSourcei");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alGetSourcei");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alGetSourcei");
     }
     *(FARPROC *)((int)this + 0x68) = pFVar1;
   }
@@ -12510,9 +12510,9 @@ void __thiscall FUN_00c14990(void *this,undefined4 param_1,undefined4 param_2,un
 }
 
 
-//// FUNCTION FUN_00c149e0 @ 00c149e0 ////
+//// FUNCTION OpenALContext_alSourcePlay_00c149e0 @ 00c149e0 ////
 
-void __thiscall FUN_00c149e0(void *this,undefined4 param_1)
+void __thiscall OpenALContext_alSourcePlay_00c149e0(void *this,undefined4 param_1)
 
 {
   code *pcVar1;
@@ -12520,7 +12520,7 @@ void __thiscall FUN_00c149e0(void *this,undefined4 param_1)
   
   if (*(int *)((int)this + 0x6c) == 0) {
     if (*(char *)((int)this + 0x104) != '\0') {
-      pcVar1 = (code *)FUN_00c12920(this,"alSourcePlay");
+      pcVar1 = (code *)OpenALContext_alGetProcAddress_00c12920(this,"alSourcePlay");
       *(code **)((int)this + 0x6c) = pcVar1;
       (*pcVar1)(param_1);
       return;
@@ -12533,9 +12533,9 @@ void __thiscall FUN_00c149e0(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00c14a30 @ 00c14a30 ////
+//// FUNCTION OpenALContext_alSourceStop_00c14a30 @ 00c14a30 ////
 
-void __thiscall FUN_00c14a30(void *this,undefined4 param_1)
+void __thiscall OpenALContext_alSourceStop_00c14a30(void *this,undefined4 param_1)
 
 {
   code *pcVar1;
@@ -12543,7 +12543,7 @@ void __thiscall FUN_00c14a30(void *this,undefined4 param_1)
   
   if (*(int *)((int)this + 0x7c) == 0) {
     if (*(char *)((int)this + 0x104) != '\0') {
-      pcVar1 = (code *)FUN_00c12920(this,"alSourceStop");
+      pcVar1 = (code *)OpenALContext_alGetProcAddress_00c12920(this,"alSourceStop");
       *(code **)((int)this + 0x7c) = pcVar1;
       (*pcVar1)(param_1);
       return;
@@ -12556,9 +12556,9 @@ void __thiscall FUN_00c14a30(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00c14a80 @ 00c14a80 ////
+//// FUNCTION OpenALContext_alSourceQueueBuffers_00c14a80 @ 00c14a80 ////
 
-void __thiscall FUN_00c14a80(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
+void __thiscall OpenALContext_alSourceQueueBuffers_00c14a80(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   FARPROC pFVar1;
@@ -12568,7 +12568,7 @@ void __thiscall FUN_00c14a80(void *this,undefined4 param_1,undefined4 param_2,un
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alSourceQueueBuffers");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alSourceQueueBuffers");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alSourceQueueBuffers");
     }
     *(FARPROC *)((int)this + 0x8c) = pFVar1;
   }
@@ -12577,9 +12577,9 @@ void __thiscall FUN_00c14a80(void *this,undefined4 param_1,undefined4 param_2,un
 }
 
 
-//// FUNCTION FUN_00c14ad0 @ 00c14ad0 ////
+//// FUNCTION OpenALContext_alSourceUnqueueBuffers_00c14ad0 @ 00c14ad0 ////
 
-void __thiscall FUN_00c14ad0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
+void __thiscall OpenALContext_alSourceUnqueueBuffers_00c14ad0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   FARPROC pFVar1;
@@ -12589,7 +12589,7 @@ void __thiscall FUN_00c14ad0(void *this,undefined4 param_1,undefined4 param_2,un
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alSourceUnqueueBuffers");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alSourceUnqueueBuffers");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alSourceUnqueueBuffers");
     }
     *(FARPROC *)((int)this + 0x90) = pFVar1;
   }
@@ -12598,9 +12598,9 @@ void __thiscall FUN_00c14ad0(void *this,undefined4 param_1,undefined4 param_2,un
 }
 
 
-//// FUNCTION FUN_00c14b20 @ 00c14b20 ////
+//// FUNCTION OpenALContext_alGetError_00c14b20 @ 00c14b20 ////
 
-void __fastcall FUN_00c14b20(void *param_1)
+void __fastcall OpenALContext_alGetError_00c14b20(void *param_1)
 
 {
   code *pcVar1;
@@ -12608,7 +12608,7 @@ void __fastcall FUN_00c14b20(void *param_1)
   
   if (*(int *)((int)param_1 + 0xe0) == 0) {
     if (*(char *)((int)param_1 + 0x104) != '\0') {
-      pcVar1 = (code *)FUN_00c12920(param_1,"alGetError");
+      pcVar1 = (code *)OpenALContext_alGetProcAddress_00c12920(param_1,"alGetError");
       *(code **)((int)param_1 + 0xe0) = pcVar1;
       (*pcVar1)();
       return;
@@ -12621,9 +12621,9 @@ void __fastcall FUN_00c14b20(void *param_1)
 }
 
 
-//// FUNCTION FUN_00c14b70 @ 00c14b70 ////
+//// FUNCTION OpenALContext_alGetEnumValue_00c14b70 @ 00c14b70 ////
 
-void __thiscall FUN_00c14b70(void *this,undefined4 param_1)
+void __thiscall OpenALContext_alGetEnumValue_00c14b70(void *this,undefined4 param_1)
 
 {
   FARPROC pFVar1;
@@ -12633,7 +12633,7 @@ void __thiscall FUN_00c14b70(void *this,undefined4 param_1)
       pFVar1 = GetProcAddress(*(HMODULE *)((int)this + 4),"alGetEnumValue");
     }
     else {
-      pFVar1 = (FARPROC)FUN_00c12920(this,"alGetEnumValue");
+      pFVar1 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(this,"alGetEnumValue");
     }
     *(FARPROC *)((int)this + 0xec) = pFVar1;
     if (pFVar1 == (FARPROC)0x0) {
@@ -12692,14 +12692,14 @@ void __fastcall FUN_00c14e00(int param_1)
   undefined4 uVar2;
   
   if (*(char *)(param_1 + 0x620) != '\0') {
-    FUN_00c14a30(&DAT_010d5f50,*(undefined4 *)(param_1 + 0x614));
+    OpenALContext_alSourceStop_00c14a30(&DAT_010d5f50,*(undefined4 *)(param_1 + 0x614));
     uVar1 = *(undefined4 *)(param_1 + 0x614);
     if (DAT_010d5fac == (FARPROC)0x0) {
       if (DAT_010d6054 == '\0') {
         DAT_010d5fac = GetProcAddress(DAT_010d5f54,"alSourcei");
       }
       else {
-        DAT_010d5fac = (FARPROC)FUN_00c12920(&DAT_010d5f50,"alSourcei");
+        DAT_010d5fac = (FARPROC)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"alSourcei");
       }
     }
     (*DAT_010d5fac)(uVar1,0x1009,0);
@@ -12708,7 +12708,7 @@ void __fastcall FUN_00c14e00(int param_1)
         DAT_010d5f98 = GetProcAddress(DAT_010d5f54,"alDeleteSources");
       }
       else {
-        DAT_010d5f98 = (FARPROC)FUN_00c12920(&DAT_010d5f50,"alDeleteSources");
+        DAT_010d5f98 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"alDeleteSources");
       }
     }
     (*DAT_010d5f98)(1,(undefined4 *)(param_1 + 0x614));
@@ -12722,7 +12722,7 @@ void __fastcall FUN_00c14e00(int param_1)
         DAT_010d5f80 = GetProcAddress(DAT_010d5f54,"alDeleteBuffers");
       }
       else {
-        DAT_010d5f80 = (FARPROC)FUN_00c12920(&DAT_010d5f50,"alDeleteBuffers");
+        DAT_010d5f80 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"alDeleteBuffers");
       }
     }
     (*DAT_010d5f80)(uVar2,uVar1);
@@ -12752,7 +12752,7 @@ void __fastcall FUN_00c14fb0(int param_1)
       DAT_010d6030 = GetProcAddress(DAT_010d5f54,"alGetError");
     }
     else {
-      DAT_010d6030 = (FARPROC)FUN_00c12920(&DAT_010d5f50,"alGetError");
+      DAT_010d6030 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"alGetError");
     }
   }
   (*DAT_010d6030)();
@@ -12764,7 +12764,7 @@ void __fastcall FUN_00c14fb0(int param_1)
       DAT_010d5f88 = GetProcAddress(DAT_010d5f54,"alBufferData");
     }
     else {
-      DAT_010d5f88 = (FARPROC)FUN_00c12920(&DAT_010d5f50,"alBufferData");
+      DAT_010d5f88 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"alBufferData");
     }
   }
   (*DAT_010d5f88)(uVar3,uVar2,param_1 + 4,uVar1,0xac44);
@@ -12776,7 +12776,7 @@ void __fastcall FUN_00c14fb0(int param_1)
       DAT_010d5fdc = GetProcAddress(DAT_010d5f54,"alSourceQueueBuffers");
     }
     else {
-      DAT_010d5fdc = (FARPROC)FUN_00c12920(&DAT_010d5f50,"alSourceQueueBuffers");
+      DAT_010d5fdc = (FARPROC)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"alSourceQueueBuffers");
     }
   }
   (*DAT_010d5fdc)(uVar1,1,iVar5 + iVar4 * 4);
@@ -12804,7 +12804,7 @@ void __fastcall FUN_00c150e0(int param_1)
       DAT_010d6030 = GetProcAddress(DAT_010d5f54,"alGetError");
     }
     else {
-      DAT_010d6030 = (FARPROC)FUN_00c12920(&DAT_010d5f50,"alGetError");
+      DAT_010d6030 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"alGetError");
     }
   }
   (*DAT_010d6030)();
@@ -12816,7 +12816,7 @@ void __fastcall FUN_00c150e0(int param_1)
       DAT_010d5fe0 = GetProcAddress(DAT_010d5f54,"alSourceUnqueueBuffers");
     }
     else {
-      DAT_010d5fe0 = (FARPROC)FUN_00c12920(&DAT_010d5f50,"alSourceUnqueueBuffers");
+      DAT_010d5fe0 = (FARPROC)OpenALContext_alGetProcAddress_00c12920(&DAT_010d5f50,"alSourceUnqueueBuffers");
     }
   }
   (*DAT_010d5fe0)(uVar2,1,iVar1 + iVar3 * 4);
