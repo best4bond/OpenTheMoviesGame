@@ -30514,7 +30514,7 @@ address,name,body_size,file,status
 00be75c0,"FUN_00be75c0",98,decomp_0062.c,ok
 00be7630,"FUN_00be7630",96,decomp_0062.c,ok
 00be7690,"FUN_00be7690",96,decomp_0062.c,ok
-00be76f0,"FUN_00be76f0",201,decomp_0062.c,ok
+00be76f0,"CDistanceModel_GetRolloffType",201,decomp_0062.c,ok
 00be77c0,"FUN_00be77c0",94,decomp_0062.c,ok
 00be7820,"FUN_00be7820",102,decomp_0062.c,ok
 00be7890,"FUN_00be7890",97,decomp_0062.c,ok
@@ -30990,10 +30990,10 @@ address,name,body_size,file,status
 00bf2de0,"FUN_00bf2de0",457,decomp_0062.c,ok
 00bf3030,"FUN_00bf3030",7,decomp_0062.c,ok
 00bf3040,"FUN_00bf3040",7,decomp_0062.c,ok
-00bf3050,"FUN_00bf3050",6,decomp_0062.c,ok
+00bf3050,"LHAudioParams_GetIs3D",6,decomp_0062.c,ok
 00bf3060,"FUN_00bf3060",7,decomp_0062.c,ok
 00bf3070,"FUN_00bf3070",25,decomp_0062.c,ok
-00bf3090,"FUN_00bf3090",39,decomp_0062.c,ok
+00bf3090,"LHAudioParams_Get3DPosition",39,decomp_0062.c,ok
 00bf30d0,"FUN_00bf30d0",211,decomp_0062.c,ok
 00bf31b0,"FUN_00bf31b0",8,decomp_0062.c,ok
 00bf3220,"FUN_00bf3220",13,decomp_0062.c,ok

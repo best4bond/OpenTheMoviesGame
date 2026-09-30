@@ -375,9 +375,9 @@ uint __fastcall FUN_00be7690(int param_1)
 }
 
 
-//// FUNCTION FUN_00be76f0 @ 00be76f0 ////
+//// FUNCTION CDistanceModel_GetRolloffType @ 00be76f0 ////
 
-undefined4 __fastcall FUN_00be76f0(int param_1)
+undefined4 __fastcall CDistanceModel_GetRolloffType(int param_1)
 
 {
   undefined2 uVar1;
@@ -6275,7 +6275,7 @@ void FUN_00beddc0(void)
   int extraout_ECX;
   
   FUN_00bed970();
-  FUN_00bf3050((uint *)(extraout_ECX + 0xac));
+  LHAudioParams_GetIs3D((uint *)(extraout_ECX + 0xac));
   return;
 }
 
@@ -6520,7 +6520,7 @@ void __thiscall FUN_00bee3f0(void *this,int param_1,undefined4 param_2,undefined
   local_18 = 0;
   local_c = 0;
   local_8 = 0;
-  uVar1 = FUN_00bf3050(this_00);
+  uVar1 = LHAudioParams_GetIs3D(this_00);
   local_24 = (char)uVar1;
   if (local_24 == '\0') {
     FUN_00bf3500(this_00,&local_4);
@@ -6571,7 +6571,7 @@ void __fastcall FUN_00bee4d0(int param_1)
       }
       if ((*(byte *)(param_1 + 0x188) & 4) != 0) {
         this = (uint *)(param_1 + 0xac);
-        uVar4 = FUN_00bf3050(this);
+        uVar4 = LHAudioParams_GetIs3D(this);
         if ((char)uVar4 != '\0') {
           iVar1 = *piVar3;
           fVar5 = FUN_00bf3380((int)this);
@@ -10066,7 +10066,7 @@ void __thiscall FUN_00bf29a0(void *this,void *param_1)
     }
     if (pfVar8 == (float *)0x0) {
       if (pfVar7 != (float *)0x0) {
-        uVar4 = FUN_00bf3050((uint *)((int)param_1 + 0xac));
+        uVar4 = LHAudioParams_GetIs3D((uint *)((int)param_1 + 0xac));
         if ((char)uVar4 == '\0') {
           fVar9 = FUN_00bf3510((uint *)((int)param_1 + 0xac));
           *pfVar7 = (float)fVar9;
@@ -10077,7 +10077,7 @@ void __thiscall FUN_00bf29a0(void *this,void *param_1)
       }
     }
     else {
-      uVar4 = FUN_00bf3050((uint *)((int)param_1 + 0xac));
+      uVar4 = LHAudioParams_GetIs3D((uint *)((int)param_1 + 0xac));
       if ((char)uVar4 == '\0') {
         pfVar8 = (float *)0x0;
       }
@@ -10377,9 +10377,9 @@ float10 __fastcall FUN_00bf3040(int param_1)
 }
 
 
-//// FUNCTION FUN_00bf3050 @ 00bf3050 ////
+//// FUNCTION LHAudioParams_GetIs3D @ 00bf3050 ////
 
-uint __fastcall FUN_00bf3050(uint *param_1)
+uint __fastcall LHAudioParams_GetIs3D(uint *param_1)
 
 {
   return *param_1 & 1;
@@ -10403,7 +10403,7 @@ undefined4 __fastcall FUN_00bf3070(uint *param_1)
   uint uVar1;
   int extraout_ECX;
   
-  uVar1 = FUN_00bf3050(param_1);
+  uVar1 = LHAudioParams_GetIs3D(param_1);
   if (((char)uVar1 != '\0') && (*(char *)(extraout_ECX + 0x10) != '\0')) {
     return 1;
   }
@@ -10411,16 +10411,16 @@ undefined4 __fastcall FUN_00bf3070(uint *param_1)
 }
 
 
-//// FUNCTION FUN_00bf3090 @ 00bf3090 ////
+//// FUNCTION LHAudioParams_Get3DPosition @ 00bf3090 ////
 
-uint * __fastcall FUN_00bf3090(uint *param_1)
+uint * __fastcall LHAudioParams_Get3DPosition(uint *param_1)
 
 {
   uint uVar1;
   undefined4 uStack_4;
   
   uStack_4 = param_1;
-  uVar1 = FUN_00bf3050(param_1);
+  uVar1 = LHAudioParams_GetIs3D(param_1);
   if ((char)uVar1 == '\0') {
     LH_Assert((void *)((int)&uStack_4 + 3),"GetIs3D ()\n");
     DebugBreak();
@@ -10441,7 +10441,7 @@ void __thiscall FUN_00bf30d0(void *this,char *param_1,uint *param_2)
   if (*param_1 != '\0') {
     *(undefined4 *)this = 1;
   }
-  uVar1 = FUN_00bf3050(this);
+  uVar1 = LHAudioParams_GetIs3D(this);
   if ((char)uVar1 == '\0') {
     *(undefined4 *)((int)this + 0x34) = *(undefined4 *)(extraout_EDX + 0x20);
   }
@@ -10520,7 +10520,7 @@ float10 __thiscall FUN_00bf3260(uint *param_1,int param_2)
   uint local_8;
   undefined1 local_4;
   
-  uVar1 = FUN_00bf3050(param_1);
+  uVar1 = LHAudioParams_GetIs3D(param_1);
   if ((char)uVar1 == '\0') {
     LH_Assert(&local_19,"GetIs3D ()\n");
     DebugBreak();

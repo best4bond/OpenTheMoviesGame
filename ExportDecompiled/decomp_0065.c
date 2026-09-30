@@ -10918,7 +10918,7 @@ void __thiscall FUN_00c26970(void *this,void *param_1)
   local_14 = 0.0;
   local_10 = 0;
   local_c = *(undefined4 *)(*(int *)((int)this + 0x18) + 0x28);
-  puVar1 = FUN_00bf3090((uint *)((int)param_1 + 0xac));
+  puVar1 = LHAudioParams_Get3DPosition((uint *)((int)param_1 + 0xac));
   local_10 = puVar1[4];
   local_14 = (float)puVar1[3];
   local_4 = puVar1[1];

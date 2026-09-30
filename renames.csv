@@ -1865,3 +1865,6 @@ address,old_name,new_name,evidence
 00c809a0,FUN_00c809a0,Util_BitLength_b,"same loop, second copy"
 00c7de30,FUN_00c7de30,Util_CeilLog2,"number of shifts of (v - 1) until zero, 0 for v == 0"
 00c809b0,FUN_00c809b0,Util_CeilLog2_b,"same, second copy"
+00bf3050,FUN_00bf3050,LHAudioParams_GetIs3D,"the predicate that callers assert as ""GetIs3D ()""/""!GetIs3D ()"" (bf3090, bf3260, bf3510 ...); name from those assertions"
+00bf3090,FUN_00bf3090,LHAudioParams_Get3DPosition,asserts GetIs3D () then returns the vector at +8
+00be76f0,FUN_00be76f0,CDistanceModel_GetRolloffType,"locks, maps the stored value 0/1/2 to the returned rolloff type, asserts on anything else (E_MODEL_ROLLOFF_TYPE_* clue; class name from the CDistanceModel source file in the Fable tree)"
