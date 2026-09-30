@@ -4397,15 +4397,15 @@ undefined4 __fastcall FUN_00c4c0f0(undefined4 *param_1)
   if (param_1 != (undefined4 *)0x0) {
     FUN_00c30ac0(param_1 + 0x94);
     FUN_00c30f20(param_1 + 0x78);
-    FUN_00c32700(param_1 + 0x1e);
+    ogg_stream_clear(param_1 + 0x1e);
     if ((param_1[0x12] != 0) && (param_1[0xd] != 0)) {
       iVar2 = 0;
       if (0 < (int)param_1[0xd]) {
         iVar1 = 0;
         iVar3 = 0;
         do {
-          FUN_00c2fbe0((undefined4 *)(param_1[0x12] + iVar3));
-          FUN_00c2fb30((int *)(param_1[0x13] + iVar1));
+          vorbis_info_clear((undefined4 *)(param_1[0x12] + iVar3));
+          vorbis_comment_clear((int *)(param_1[0x13] + iVar1));
           iVar2 = iVar2 + 1;
           iVar3 = iVar3 + 0x20;
           iVar1 = iVar1 + 0x10;
@@ -4430,7 +4430,7 @@ undefined4 __fastcall FUN_00c4c0f0(undefined4 *param_1)
                     /* WARNING: Subroutine does not return */
       _free((void *)param_1[0xe]);
     }
-    FUN_00c32c90(param_1 + 6);
+    ogg_sync_clear(param_1 + 6);
     for (iVar2 = 0xb0; iVar2 != 0; iVar2 = iVar2 + -1) {
       *param_1 = 0;
       param_1 = param_1 + 1;
@@ -4886,7 +4886,7 @@ uint FUN_00c4c9e0(void)
     ExceptionList = local_c;
     return 0;
   }
-  local_114 = FUN_00c32ce0(unaff_ESI + 6,0x2134);
+  local_114 = ogg_sync_buffer(unaff_ESI + 6,0x2134);
   iVar3 = FUN_00bd9ef0(*unaff_ESI);
   uVar4 = FUN_00bd9fd0((void *)*unaff_ESI,0,1);
   cVar1 = (char)uVar4;
@@ -4920,7 +4920,7 @@ uint FUN_00c4c9e0(void)
     ExceptionList = pvStack_14;
     return 0xffffffff;
   }
-  FUN_00c32d60((int)(unaff_ESI + 6),uVar7);
+  ogg_sync_wrote((int)(unaff_ESI + 6),uVar7);
   ExceptionList = pvStack_14;
   return uVar7;
 }
@@ -4967,7 +4967,7 @@ void FUN_00c4cb80(int param_1,undefined4 param_2)
     }
     unaff_ESI[2] = param_1;
     unaff_ESI[3] = param_2;
-    FUN_00c331c0((int)(unaff_ESI + 6));
+    ogg_sync_reset((int)(unaff_ESI + 6));
   }
   ExceptionList = local_c;
   return;
@@ -4999,7 +4999,7 @@ undefined8 FUN_00c4cc80(int *param_1,uint param_2,int param_3)
         return 0xffffffffffffffff;
       }
 LAB_00c4ccc0:
-      uVar3 = FUN_00c32d80((int *)(in_EAX + 0x18),param_1);
+      uVar3 = ogg_sync_pageseek((int *)(in_EAX + 0x18),param_1);
       if (-1 < (int)uVar3) break;
       uVar1 = *(uint *)(in_EAX + 8);
       *(uint *)(in_EAX + 8) = uVar1 - uVar3;
@@ -5142,7 +5142,7 @@ FUN_00c4ce50(int param_1,int param_2,undefined4 param_3,undefined4 param_4,longl
         return 0xffffff80;
       }
       lVar10 = lVar4;
-      if ((lVar9 < 0) || (iVar5 = FUN_00c32630(&local_10), iVar5 != param_2)) {
+      if ((lVar9 < 0) || (iVar5 = ogg_page_serialno(&local_10), iVar5 != param_2)) {
         local_28 = (uint)param_5;
         local_24 = param_5._4_4_;
         if (-1 < lVar9) {
@@ -5165,7 +5165,7 @@ FUN_00c4ce50(int param_1,int param_2,undefined4 param_3,undefined4 param_4,longl
   }
   if ((lVar3 < CONCAT44(param_7,param_6)) && (-1 < lVar10)) {
     iVar5 = param_8 + 1;
-    iVar6 = FUN_00c32630(&local_10);
+    iVar6 = ogg_page_serialno(&local_10);
     iVar5 = FUN_00c4ce50(param_1,iVar6,local_20,local_1c,*(longlong *)(param_1 + 8),param_6,param_7,
                          iVar5);
     if (iVar5 == -0x80) {
@@ -5212,21 +5212,21 @@ int __thiscall FUN_00c4d070(void *this,int param_1,undefined4 *param_2,int *para
     }
     in_EAX = local_30;
   }
-  FUN_00c32630(in_EAX);
-  FUN_00c33230(param_1 + 0x78);
+  ogg_page_serialno(in_EAX);
+  ogg_stream_reset_serialno(param_1 + 0x78);
   if (this != (void *)0x0) {
     *(undefined4 *)this = *(undefined4 *)(param_1 + 0x1c8);
   }
   *(undefined4 *)(param_1 + 0x58) = 3;
-  FUN_00c2fbb0(param_2);
-  FUN_00c2f830(param_3);
+  vorbis_info_init(param_2);
+  vorbis_comment_init(param_3);
   iVar2 = 0;
 LAB_00c4d100:
-  FUN_00c32f00((int *)(param_1 + 0x78),in_EAX);
+  ogg_stream_pagein((int *)(param_1 + 0x78),in_EAX);
   if (iVar2 < 3) {
-    while (iVar1 = FUN_00c33380(param_1 + 0x78,local_20), iVar1 != 0) {
+    while (iVar1 = ogg_stream_packetout(param_1 + 0x78,local_20), iVar1 != 0) {
       if (iVar1 == -1) goto LAB_00c4d16d;
-      iVar1 = FUN_00c301a0(param_2,(int)param_3,local_20);
+      iVar1 = vorbis_synthesis_headerin(param_2,(int)param_3,local_20);
       if (iVar1 != 0) goto LAB_00c4d172;
       iVar2 = iVar2 + 1;
       if (2 < iVar2) {
@@ -5242,8 +5242,8 @@ code_r0x00c4d154:
 LAB_00c4d16d:
     iVar1 = -0x85;
 LAB_00c4d172:
-    FUN_00c2fbe0(param_2);
-    FUN_00c2fb30(param_3);
+    vorbis_info_clear(param_2);
+    vorbis_comment_clear(param_3);
     *(undefined4 *)(param_1 + 0x58) = 2;
     return iVar1;
   }
@@ -5313,14 +5313,14 @@ void FUN_00c4d1a0(int param_1,int param_2)
         piVar2 = (int *)(in_EAX + 0x78);
         local_38 = 0;
         iVar8 = -1;
-        FUN_00c33230((int)piVar2);
+        ogg_stream_reset_serialno((int)piVar2);
         lVar10 = FUN_00c4cc80(local_30,0xffffffff,-1);
         if (-1 < lVar10) {
           do {
-            iVar4 = FUN_00c32630(local_30);
+            iVar4 = ogg_page_serialno(local_30);
             if (iVar4 != *(int *)(*(int *)(in_EAX + 0x40) + iVar7 * 4)) break;
-            FUN_00c32f00(piVar2,local_30);
-            iVar4 = FUN_00c33380(piVar2,local_20);
+            ogg_stream_pagein(piVar2,local_30);
+            iVar4 = ogg_stream_packetout(piVar2,local_20);
             while (iVar4 != 0) {
               iVar5 = iVar8;
               if ((0 < iVar4) &&
@@ -5331,12 +5331,12 @@ void FUN_00c4d1a0(int param_1,int param_2)
                 local_38 = CONCAT44(local_38._4_4_ + (iVar5 + iVar8 >> 0x1f) +
                                     (uint)CARRY4((uint)local_38,uVar6),(uint)local_38 + uVar6);
               }
-              iVar4 = FUN_00c33380(piVar2,local_20);
+              iVar4 = ogg_stream_packetout(piVar2,local_20);
               iVar8 = iVar5;
             }
-            lVar10 = FUN_00c325a0(local_30);
+            lVar10 = ogg_page_granulepos(local_30);
             if (lVar10 != -1) {
-              lVar10 = FUN_00c325a0(local_30);
+              lVar10 = ogg_page_granulepos(local_30);
               local_38 = lVar10 - local_38;
               break;
             }
@@ -5356,10 +5356,10 @@ void FUN_00c4d1a0(int param_1,int param_2)
       bVar9 = -1 < lVar10;
       while (bVar9) {
         do {
-          lVar11 = FUN_00c325a0(local_30);
+          lVar11 = ogg_page_granulepos(local_30);
           if (lVar11 != -1) {
             plVar1 = (longlong *)(iVar7 * 0x10 + *(int *)(in_EAX + 0x44));
-            lVar10 = FUN_00c325a0(local_30);
+            lVar10 = ogg_page_granulepos(local_30);
             plVar1[1] = lVar10 - *plVar1;
             goto LAB_00c4d462;
           }
@@ -5368,8 +5368,8 @@ void FUN_00c4d1a0(int param_1,int param_2)
           bVar9 = -1 < lVar10;
         } while ((int)((ulonglong)lVar10 >> 0x20) != 0 && bVar9);
       }
-      FUN_00c2fbe0((undefined4 *)(iVar7 * 0x20 + *(int *)(in_EAX + 0x48)));
-      FUN_00c2fb30((int *)(iVar7 * 0x10 + *(int *)(in_EAX + 0x4c)));
+      vorbis_info_clear((undefined4 *)(iVar7 * 0x20 + *(int *)(in_EAX + 0x48)));
+      vorbis_comment_clear((int *)(iVar7 * 0x10 + *(int *)(in_EAX + 0x4c)));
 LAB_00c4d462:
       iVar7 = iVar7 + 1;
     } while (iVar7 < *(int *)(in_EAX + 0x34));
@@ -5406,7 +5406,7 @@ int FUN_00c4d480(undefined4 *param_1,int param_2,int param_3)
         if (param_1 == (undefined4 *)0x0) {
           puVar8 = local_20;
         }
-        iVar1 = FUN_00c33380(in_EAX + 0x78,puVar8);
+        iVar1 = ogg_stream_packetout(in_EAX + 0x78,puVar8);
         param_1 = (undefined4 *)0x0;
         if (iVar1 == -1) {
           return -3;
@@ -5478,15 +5478,15 @@ LAB_00c4d57d:
       iVar1 = *(int *)(in_EAX + 0x58);
       *(double *)(in_EAX + 0x68) = (double)(local_2c * 8) + *(double *)(in_EAX + 0x68);
       if (iVar1 == 4) {
-        iVar1 = FUN_00c32630(&local_30);
+        iVar1 = ogg_page_serialno(&local_30);
         if (*(int *)(in_EAX + 0x5c) != iVar1) {
           if (param_3 == 0) {
             return -2;
           }
           FUN_00c4c0d0();
           if (*(int *)(in_EAX + 4) == 0) {
-            FUN_00c2fbe0(*(undefined4 **)(in_EAX + 0x48));
-            FUN_00c2fb30(*(int **)(in_EAX + 0x4c));
+            vorbis_info_clear(*(undefined4 **)(in_EAX + 0x48));
+            vorbis_comment_clear(*(int **)(in_EAX + 0x4c));
           }
         }
         goto LAB_00c4d57d;
@@ -5502,7 +5502,7 @@ LAB_00c4d589:
           *(int *)(in_EAX + 0x60) = *(int *)(in_EAX + 0x60) + 1;
         }
         else {
-          iVar1 = FUN_00c32630(&local_30);
+          iVar1 = ogg_page_serialno(&local_30);
           iVar7 = 0;
           *(int *)(in_EAX + 0x5c) = iVar1;
           if (0 < *(int *)(in_EAX + 0x34)) {
@@ -5518,7 +5518,7 @@ LAB_00c4d589:
             return -0x89;
           }
           *(int *)(in_EAX + 0x60) = iVar7;
-          FUN_00c33230(in_EAX + 0x78);
+          ogg_stream_reset_serialno(in_EAX + 0x78);
           *(undefined4 *)(in_EAX + 0x58) = 3;
         }
       }
@@ -5527,7 +5527,7 @@ LAB_00c4d589:
         return iVar1;
       }
     }
-    FUN_00c32f00((int *)(in_EAX + 0x78),&local_30);
+    ogg_stream_pagein((int *)(in_EAX + 0x78),&local_30);
   } while( true );
 }
 
@@ -5566,9 +5566,9 @@ int FUN_00c4d720(void *param_1,uint param_2)
   }
   *unaff_EBX = pvVar4;
   piVar1 = unaff_EBX + 6;
-  FUN_00c32c70(piVar1);
+  ogg_sync_init(piVar1);
   if (in_EAX != (undefined4 *)0x0) {
-    puVar3 = (undefined4 *)FUN_00c32ce0(piVar1,param_2);
+    puVar3 = (undefined4 *)ogg_sync_buffer(piVar1,param_2);
     for (uVar6 = param_2 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
       *puVar3 = *in_EAX;
       in_EAX = in_EAX + 1;
@@ -5579,7 +5579,7 @@ int FUN_00c4d720(void *param_1,uint param_2)
       in_EAX = (undefined4 *)((int)in_EAX + 1);
       puVar3 = (undefined4 *)((int)puVar3 + 1);
     }
-    FUN_00c32d60((int)piVar1,param_2);
+    ogg_sync_wrote((int)piVar1,param_2);
   }
   if (param_1 != (void *)0xffffffff) {
     unaff_EBX[1] = 1;
@@ -5589,7 +5589,7 @@ int FUN_00c4d720(void *param_1,uint param_2)
   unaff_EBX[0x12] = pvVar4;
   pvVar4 = _calloc(unaff_EBX[0xd],0x10);
   unaff_EBX[0x13] = pvVar4;
-  FUN_00c32690(unaff_EBX + 0x1e,0xffffffff);
+  ogg_stream_init(unaff_EBX + 0x1e,0xffffffff);
   iVar5 = FUN_00c4d070(unaff_EBX + 0x17,(int)unaff_EBX,(undefined4 *)unaff_EBX[0x12],
                        (int *)unaff_EBX[0x13]);
   if (iVar5 < 0) {
@@ -5638,26 +5638,26 @@ undefined4 __thiscall FUN_00c4d840(void *this,uint param_1,int param_2)
   }
   *(undefined4 *)((int)this + 0x50) = 0xffffffff;
   *(undefined4 *)((int)this + 0x54) = 0xffffffff;
-  FUN_00c33230((int)this + 0x78);
+  ogg_stream_reset_serialno((int)this + 0x78);
   FUN_00c31750((int)this + 0x1e0);
   FUN_00c4cb80(param_1,param_2);
   local_19c = 0;
   local_1a0 = 0;
-  FUN_00c32690(local_168,*(undefined4 *)((int)this + 0x5c));
-  FUN_00c331e0((int)local_168);
+  ogg_stream_init(local_168,*(undefined4 *)((int)this + 0x5c));
+  ogg_stream_reset((int)local_168);
   iVar5 = 0;
   iVar7 = 0;
 LAB_00c4d8f4:
-  while ((2 < *(int *)((int)this + 0x58) && (iVar2 = FUN_00c33380(local_168,local_188), 0 < iVar2)))
+  while ((2 < *(int *)((int)this + 0x58) && (iVar2 = ogg_stream_packetout(local_168,local_188), 0 < iVar2)))
   {
     iVar2 = *(int *)((int)this + 0x48) + *(int *)((int)this + 0x60) * 0x20;
     if (*(int *)(iVar2 + 0x1c) == 0) {
-      FUN_00c33380((int)this + 0x78,(void *)0x0);
+      ogg_stream_packetout((int)this + 0x78,(void *)0x0);
       break;
     }
     local_19c = FUN_00c7d790(iVar2,local_188);
     if (local_19c < 0) {
-      FUN_00c33380((int)this + 0x78,(void *)0x0);
+      ogg_stream_packetout((int)this + 0x78,(void *)0x0);
       local_19c = 0;
     }
     else if (iVar5 == 0) {
@@ -5666,7 +5666,7 @@ LAB_00c4d8f4:
       }
     }
     else {
-      FUN_00c33380((int)this + 0x78,(void *)0x0);
+      ogg_stream_packetout((int)this + 0x78,(void *)0x0);
     }
     iVar7 = local_19c;
     if ((local_178 & local_174) != 0xffffffff) {
@@ -5692,7 +5692,7 @@ LAB_00c4d8f4:
       *(uint *)((int)this + 0x50) = uVar8 - local_1a0;
       *(uint *)((int)this + 0x54) = (iVar2 - ((int)local_1a0 >> 0x1f)) - (uint)(uVar8 < local_1a0);
 LAB_00c4daf6:
-      FUN_00c32700(local_168);
+      ogg_stream_clear(local_168);
       *(undefined8 *)((int)this + 0x68) = 0;
       *(undefined8 *)((int)this + 0x70) = 0;
       return 0;
@@ -5703,7 +5703,7 @@ LAB_00c4daf6:
     if (-1 < lVar10) {
       if (*(int *)((int)this + 0x58) < 3) {
 LAB_00c4d9e2:
-        iVar5 = FUN_00c32630(local_198);
+        iVar5 = ogg_page_serialno(local_198);
         iVar2 = 0;
         *(int *)((int)this + 0x5c) = iVar5;
         if (0 < *(int *)((int)this + 0x34)) {
@@ -5718,26 +5718,26 @@ LAB_00c4d9e2:
         if (iVar2 == *(int *)((int)this + 0x34)) {
           *(undefined4 *)((int)this + 0x50) = 0xffffffff;
           *(undefined4 *)((int)this + 0x54) = 0xffffffff;
-          FUN_00c32700(local_168);
+          ogg_stream_clear(local_168);
           FUN_00c4c0d0();
           return 0xffffff77;
         }
         *(int *)((int)this + 0x60) = iVar2;
-        FUN_00c33230((int)this + 0x78);
-        FUN_00c33230((int)local_168);
+        ogg_stream_reset_serialno((int)this + 0x78);
+        ogg_stream_reset_serialno((int)local_168);
         *(undefined4 *)((int)this + 0x58) = 3;
       }
       else {
-        iVar5 = FUN_00c32630(local_198);
+        iVar5 = ogg_page_serialno(local_198);
         if (*(int *)((int)this + 0x5c) != iVar5) {
           FUN_00c4c0d0();
-          FUN_00c32700(local_168);
+          ogg_stream_clear(local_168);
         }
         if (*(int *)((int)this + 0x58) < 3) goto LAB_00c4d9e2;
       }
-      FUN_00c32f00((int *)((int)this + 0x78),local_198);
-      FUN_00c32f00(local_168,local_198);
-      bVar1 = FUN_00c32590(local_198);
+      ogg_stream_pagein((int *)((int)this + 0x78),local_198);
+      ogg_stream_pagein(local_168,local_198);
+      bVar1 = ogg_page_eos(local_198);
       iVar5 = CONCAT31(extraout_var,bVar1);
       goto LAB_00c4d8f4;
     }
@@ -5887,7 +5887,7 @@ LAB_00c4de92:
            (((int)local_78 <= (int)uVar3 && (local_7c <= local_74)))) break;
         goto LAB_00c4dd20;
       }
-      lVar16 = FUN_00c325a0(local_30);
+      lVar16 = ogg_page_granulepos(local_30);
       if (lVar16 == -1) goto LAB_00c4de92;
       local_84._0_4_ = (uint)uVar15;
       if (lVar16 < CONCAT44(iVar9,uVar8)) {
@@ -5940,14 +5940,14 @@ LAB_00c4dec5:
   else {
     FUN_00c4c0d0();
     *(int *)((int)this + 0x60) = iVar12;
-    uVar6 = FUN_00c32630((int *)&local_48);
+    uVar6 = ogg_page_serialno((int *)&local_48);
     *(undefined4 *)((int)this + 0x5c) = uVar6;
     *(undefined4 *)((int)this + 0x58) = 3;
   }
   piVar1 = (int *)((int)this + 0x78);
-  FUN_00c33230((int)piVar1);
-  FUN_00c32f00(piVar1,(int *)&local_48);
-  iVar12 = FUN_00c33390(piVar1,local_20);
+  ogg_stream_reset_serialno((int)piVar1);
+  ogg_stream_pagein(piVar1,(int *)&local_48);
+  iVar12 = ogg_stream_packetpeek(piVar1,local_20);
   do {
     if (iVar12 == 0) {
       FUN_00c4cb80(local_50,local_4c);
@@ -5955,9 +5955,9 @@ LAB_00c4dec5:
       local_84 = uVar15 & 0xffffffff;
       if (-1 < (longlong)uVar15) {
         do {
-          uVar18 = FUN_00c325a0((int *)&local_48);
+          uVar18 = ogg_page_granulepos((int *)&local_48);
           if (((uint)((ulonglong)uVar18 >> 0x20) < 0x80000000) ||
-             (bVar2 = FUN_00c32570((int *)&local_48), CONCAT31(extraout_var,bVar2) == 0)) {
+             (bVar2 = ogg_page_continued((int *)&local_48), CONCAT31(extraout_var,bVar2) == 0)) {
             uVar6 = FUN_00c4d840(this,(uint)uVar15,(int)(uVar15 >> 0x20));
             return uVar6;
           }
@@ -6003,8 +6003,8 @@ LAB_00c4e103:
       local_84._0_4_ = 0xffffff7f;
       goto LAB_00c4e103;
     }
-    FUN_00c33380(piVar1,(void *)0x0);
-    iVar12 = FUN_00c33390(piVar1,local_20);
+    ogg_stream_packetout(piVar1,(void *)0x0);
+    iVar12 = ogg_stream_packetpeek(piVar1,local_20);
   } while( true );
 }
 
@@ -6036,11 +6036,11 @@ int __thiscall FUN_00c4e140(void *this,uint param_1,int param_2)
   while( true ) {
     while( true ) {
       iVar2 = (int)this + 0x78;
-      iVar3 = FUN_00c33390(iVar2,local_20);
+      iVar3 = ogg_stream_packetpeek(iVar2,local_20);
       if (iVar3 < 1) break;
       iVar3 = FUN_00c7d790(*(int *)((int)this + 0x60) * 0x20 + *(int *)((int)this + 0x48),local_20);
       if (iVar3 < 0) {
-        FUN_00c33380(iVar2,(void *)0x0);
+        ogg_stream_packetout(iVar2,(void *)0x0);
       }
       else {
         if (iVar5 != 0) {
@@ -6050,14 +6050,14 @@ int __thiscall FUN_00c4e140(void *this,uint param_1,int param_2)
           *(uint *)((int)this + 0x54) =
                *(int *)((int)this + 0x54) + (iVar5 + iVar3 >> 0x1f) + (uint)CARRY4(uVar6,uVar4);
         }
-        iVar5 = FUN_00c2fba0(*(int *)((int)this + 0x48),1);
+        iVar5 = vorbis_info_blocksize(*(int *)((int)this + 0x48),1);
         uVar6 = iVar5 + iVar3 >> 2;
         iVar5 = (iVar5 + iVar3 >> 0x1f) + *(int *)((int)this + 0x54) +
                 (uint)CARRY4(uVar6,*(uint *)((int)this + 0x50));
         if ((param_2 < iVar5) ||
            ((param_2 <= iVar5 && (param_1 <= uVar6 + *(uint *)((int)this + 0x50)))))
         goto LAB_00c4e33f;
-        FUN_00c33380(iVar2,(void *)0x0);
+        ogg_stream_packetout(iVar2,(void *)0x0);
         FUN_00c7d6c0((int *)((int)this + 0x250),local_20);
         FUN_00c317e0((int)this + 0x1e0,(int *)((int)this + 0x250));
         iVar5 = iVar3;
@@ -6090,12 +6090,12 @@ int __thiscall FUN_00c4e140(void *this,uint param_1,int param_2)
     }
     if (((iVar3 < 0) && (iVar3 != -3)) ||
        (lVar10 = FUN_00c4cc80(local_30,0xffffffff,-1), lVar10 < 0)) break;
-    iVar2 = FUN_00c32630(local_30);
+    iVar2 = ogg_page_serialno(local_30);
     if (*(int *)((int)this + 0x5c) != iVar2) {
       FUN_00c4c0d0();
     }
     if (*(int *)((int)this + 0x58) < 3) {
-      iVar2 = FUN_00c32630(local_30);
+      iVar2 = ogg_page_serialno(local_30);
       iVar5 = 0;
       *(int *)((int)this + 0x5c) = iVar2;
       if (0 < *(int *)((int)this + 0x34)) {
@@ -6110,7 +6110,7 @@ int __thiscall FUN_00c4e140(void *this,uint param_1,int param_2)
         return -0x89;
       }
       *(int *)((int)this + 0x60) = iVar5;
-      FUN_00c33230((int)this + 0x78);
+      ogg_stream_reset_serialno((int)this + 0x78);
       *(undefined4 *)((int)this + 0x58) = 3;
       iVar2 = FUN_00c4c060();
       if (iVar2 != 0) {
@@ -6118,7 +6118,7 @@ int __thiscall FUN_00c4e140(void *this,uint param_1,int param_2)
       }
       iVar5 = 0;
     }
-    FUN_00c32f00((int *)((int)this + 0x78),local_30);
+    ogg_stream_pagein((int *)((int)this + 0x78),local_30);
   }
 LAB_00c4e33f:
   *(undefined8 *)((int)this + 0x68) = 0;
@@ -6637,10 +6637,10 @@ int __fastcall FUN_00c4ecc0(int param_1,int param_2)
     local_8 = &stack0xffffffd0 + iVar2;
     puVar11 = &stack0xffffffd0 + iVar2;
     (&uStack_34)[-iVar3] = 0xc4ed60;
-    iVar7 = FUN_00c2fba0(iVar4,0);
+    iVar7 = vorbis_info_blocksize(iVar4,0);
     iVar7 = iVar7 >> ((char)uVar6 + 1U & 0x1f);
     (&uStack_34)[-iVar3] = 0xc4ed72;
-    FUN_00c2fba0(iVar5,0);
+    vorbis_info_blocksize(iVar5,0);
     (&uStack_34)[-iVar3] = 0xc4ed88;
     puVar8 = FUN_00c32530(param_1 + 0x1e0,0);
     (&uStack_34)[-iVar3] = 0xc4ed9e;
@@ -6741,7 +6741,7 @@ int FUN_00c4ee60(undefined4 param_1,undefined4 param_2,undefined *param_3)
       local_14 = FUN_00c4c240(extraout_ECX);
       iVar1 = *(int *)(iVar4 + 4);
       local_14 = local_14 + 1;
-      iVar5 = FUN_00c2fba0(iVar4,0);
+      iVar5 = vorbis_info_blocksize(iVar4,0);
       iVar5 = iVar5 >> ((byte)local_14 & 0x1f);
       local_8 = in_EAX + 0x1e0;
       puVar6 = FUN_00c32530(local_8,0);
@@ -6784,7 +6784,7 @@ int FUN_00c4ee60(undefined4 param_1,undefined4 param_2,undefined *param_3)
           iVar4 = FUN_00c4c5b0(in_EAX,-1);
           uVar2 = *(undefined4 *)(iVar4 + 4);
           *(undefined4 *)(puVar10 + -4) = 0xc4ef5b;
-          FUN_00c2fba0(iVar4,0);
+          vorbis_info_blocksize(iVar4,0);
           iVar4 = local_8;
           *(undefined4 *)(puVar10 + -4) = 0xc4ef6c;
           puVar7 = FUN_00c32530(iVar4,0);
@@ -6845,7 +6845,7 @@ int FUN_00c4f010(undefined4 param_1,undefined4 param_2,undefined *param_3)
       local_14 = FUN_00c4c240(extraout_ECX);
       iVar1 = *(int *)(iVar4 + 4);
       local_14 = local_14 + 1;
-      iVar5 = FUN_00c2fba0(iVar4,0);
+      iVar5 = vorbis_info_blocksize(iVar4,0);
       iVar5 = iVar5 >> ((byte)local_14 & 0x1f);
       local_8 = in_EAX + 0x1e0;
       puVar6 = FUN_00c32530(local_8,0);
@@ -6887,7 +6887,7 @@ int FUN_00c4f010(undefined4 param_1,undefined4 param_2,undefined *param_3)
           iVar4 = FUN_00c4c5b0(in_EAX,-1);
           uVar2 = *(undefined4 *)(iVar4 + 4);
           *(undefined4 *)(puVar10 + -4) = 0xc4f10c;
-          FUN_00c2fba0(iVar4,0);
+          vorbis_info_blocksize(iVar4,0);
           iVar4 = local_8;
           *(undefined4 *)(puVar10 + -4) = 0xc4f11d;
           puVar7 = FUN_00c32530(iVar4,0);
@@ -6940,7 +6940,7 @@ undefined4 FUN_00c4f1a0(void)
   if (((int)((ulonglong)lVar6 >> 0x20) == 0 || lVar6 < 0) && (lVar6 < 0)) {
     return (int)lVar6;
   }
-  iVar3 = FUN_00c32630(local_10);
+  iVar3 = ogg_page_serialno(local_10);
   if (iVar3 == iVar4) {
     iVar4 = FUN_00c4ce50((int)unaff_ESI,iVar4,0,0,lVar6,(uint)(lVar6 + 1),
                          (int)((ulonglong)(lVar6 + 1) >> 0x20),0);
@@ -11274,9 +11274,9 @@ undefined4 * __thiscall FUN_00c54d10(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c54d30 @ 00c54d30 ////
+//// FUNCTION oggpack_writeinit @ 00c54d30 ////
 
-void __fastcall FUN_00c54d30(undefined4 *param_1)
+void __fastcall oggpack_writeinit(undefined4 *param_1)
 
 {
   undefined1 *puVar1;
@@ -11295,9 +11295,9 @@ void __fastcall FUN_00c54d30(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c54de0 @ 00c54de0 ////
+//// FUNCTION oggpack_write @ 00c54de0 ////
 
-void __fastcall FUN_00c54de0(int *param_1,uint param_2,int param_3)
+void __fastcall oggpack_write(int *param_1,uint param_2,int param_3)
 
 {
   int *piVar1;
@@ -11336,9 +11336,9 @@ void __fastcall FUN_00c54de0(int *param_1,uint param_2,int param_3)
 }
 
 
-//// FUNCTION FUN_00c54ee0 @ 00c54ee0 ////
+//// FUNCTION oggpackB_write @ 00c54ee0 ////
 
-void __fastcall FUN_00c54ee0(int *param_1,uint param_2,int param_3)
+void __fastcall oggpackB_write(int *param_1,uint param_2,int param_3)
 
 {
   int *piVar1;
@@ -11376,21 +11376,21 @@ void __fastcall FUN_00c54ee0(int *param_1,uint param_2,int param_3)
 }
 
 
-//// FUNCTION FUN_00c54fd0 @ 00c54fd0 ////
+//// FUNCTION oggpack_writealign @ 00c54fd0 ////
 
-void __fastcall FUN_00c54fd0(int *param_1)
+void __fastcall oggpack_writealign(int *param_1)
 
 {
   if (8 - param_1[1] < 8) {
-    FUN_00c54de0(param_1,0,8 - param_1[1]);
+    oggpack_write(param_1,0,8 - param_1[1]);
   }
   return;
 }
 
 
-//// FUNCTION FUN_00c55110 @ 00c55110 ////
+//// FUNCTION oggpack_reset @ 00c55110 ////
 
-void __fastcall FUN_00c55110(undefined4 *param_1)
+void __fastcall oggpack_reset(undefined4 *param_1)
 
 {
   param_1[3] = (undefined1 *)param_1[2];
@@ -11401,9 +11401,9 @@ void __fastcall FUN_00c55110(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c55140 @ 00c55140 ////
+//// FUNCTION oggpack_writeclear @ 00c55140 ////
 
-void __fastcall FUN_00c55140(int param_1)
+void __fastcall oggpack_writeclear(int param_1)
 
 {
                     /* WARNING: Subroutine does not return */
@@ -11411,9 +11411,9 @@ void __fastcall FUN_00c55140(int param_1)
 }
 
 
-//// FUNCTION FUN_00c55180 @ 00c55180 ////
+//// FUNCTION oggpack_readinit @ 00c55180 ////
 
-void __fastcall FUN_00c55180(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
+void __fastcall oggpack_readinit(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
 
 {
   *param_1 = 0;
@@ -11428,9 +11428,9 @@ void __fastcall FUN_00c55180(undefined4 *param_1,undefined4 param_2,undefined4 p
 }
 
 
-//// FUNCTION FUN_00c551c0 @ 00c551c0 ////
+//// FUNCTION oggpack_look @ 00c551c0 ////
 
-uint __fastcall FUN_00c551c0(int *param_1,int param_2)
+uint __fastcall oggpack_look(int *param_1,int param_2)
 
 {
   int iVar1;
@@ -11457,9 +11457,9 @@ uint __fastcall FUN_00c551c0(int *param_1,int param_2)
 }
 
 
-//// FUNCTION FUN_00c55350 @ 00c55350 ////
+//// FUNCTION oggpack_adv @ 00c55350 ////
 
-void __fastcall FUN_00c55350(int *param_1,int param_2)
+void __fastcall oggpack_adv(int *param_1,int param_2)
 
 {
   int iVar1;
@@ -11474,9 +11474,9 @@ void __fastcall FUN_00c55350(int *param_1,int param_2)
 }
 
 
-//// FUNCTION FUN_00c553c0 @ 00c553c0 ////
+//// FUNCTION oggpack_read @ 00c553c0 ////
 
-uint __fastcall FUN_00c553c0(int *param_1,int param_2)
+uint __fastcall oggpack_read(int *param_1,int param_2)
 
 {
   byte *pbVar1;
@@ -11511,9 +11511,9 @@ uint __fastcall FUN_00c553c0(int *param_1,int param_2)
 }
 
 
-//// FUNCTION FUN_00c555d0 @ 00c555d0 ////
+//// FUNCTION oggpack_bytes @ 00c555d0 ////
 
-int __fastcall FUN_00c555d0(int *param_1)
+int __fastcall oggpack_bytes(int *param_1)
 
 {
   return ((int)(param_1[1] + 7 + (param_1[1] + 7 >> 0x1f & 7U)) >> 3) + *param_1;
@@ -14098,9 +14098,9 @@ FUN_00c58920(int param_1,int param_2,int *param_3,int param_4,int param_5,int pa
 }
 
 
-//// FUNCTION FUN_00c58d20 @ 00c58d20 ////
+//// FUNCTION vorbis__ilog @ 00c58d20 ////
 
-int __fastcall FUN_00c58d20(uint param_1)
+int __fastcall vorbis__ilog(uint param_1)
 
 {
   int iVar1;
@@ -14113,9 +14113,9 @@ int __fastcall FUN_00c58d20(uint param_1)
 }
 
 
-//// FUNCTION FUN_00c58dd0 @ 00c58dd0 ////
+//// FUNCTION vorbis__float32_unpack @ 00c58dd0 ////
 
-float10 __fastcall FUN_00c58dd0(uint param_1)
+float10 __fastcall vorbis__float32_unpack(uint param_1)
 
 {
   double dVar1;
@@ -14129,9 +14129,9 @@ float10 __fastcall FUN_00c58dd0(uint param_1)
 }
 
 
-//// FUNCTION FUN_00c58e10 @ 00c58e10 ////
+//// FUNCTION vorbis__make_words @ 00c58e10 ////
 
-uint * __fastcall FUN_00c58e10(int param_1,uint param_2,uint param_3)
+uint * __fastcall vorbis__make_words(int param_1,uint param_2,uint param_3)
 
 {
   uint uVar1;
@@ -14220,9 +14220,9 @@ uint * __fastcall FUN_00c58e10(int param_1,uint param_2,uint param_3)
 }
 
 
-//// FUNCTION FUN_00c58f70 @ 00c58f70 ////
+//// FUNCTION vorbis__book_maptype1_quantvals @ 00c58f70 ////
 
-void __fastcall FUN_00c58f70(int *param_1)
+void __fastcall vorbis__book_maptype1_quantvals(int *param_1)
 
 {
   int iVar1;
@@ -14259,9 +14259,9 @@ void __fastcall FUN_00c58f70(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c58fe0 @ 00c58fe0 ////
+//// FUNCTION vorbis__book_unquantize @ 00c58fe0 ////
 
-void * __fastcall FUN_00c58fe0(int *param_1,int param_2,int param_3)
+void * __fastcall vorbis__book_unquantize(int *param_1,int param_2,int param_3)
 
 {
   float fVar1;
@@ -14280,11 +14280,11 @@ void * __fastcall FUN_00c58fe0(int *param_1,int param_2,int param_3)
   if ((param_1[3] != 1) && (param_1[3] != 2)) {
     return (void *)0x0;
   }
-  fVar8 = FUN_00c58dd0(param_1[4]);
-  fVar9 = FUN_00c58dd0(param_1[5]);
+  fVar8 = vorbis__float32_unpack(param_1[4]);
+  fVar9 = vorbis__float32_unpack(param_1[5]);
   pvVar2 = _calloc(*param_1 * param_2,4);
   if (param_1[3] == 1) {
-    iVar5 = FUN_00c58f70(param_1);
+    iVar5 = vorbis__book_maptype1_quantvals(param_1);
     local_14 = 0.0;
     if (0 < param_1[1]) {
       do {
@@ -14351,9 +14351,9 @@ void * __fastcall FUN_00c58fe0(int *param_1,int param_2,int param_3)
 }
 
 
-//// FUNCTION FUN_00c591a0 @ 00c591a0 ////
+//// FUNCTION vorbis_staticbook_clear @ 00c591a0 ////
 
-void __fastcall FUN_00c591a0(undefined4 *param_1)
+void __fastcall vorbis_staticbook_clear(undefined4 *param_1)
 
 {
   int iVar1;
@@ -14384,13 +14384,13 @@ void __fastcall FUN_00c591a0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c59270 @ 00c59270 ////
+//// FUNCTION vorbis_staticbook_destroy @ 00c59270 ////
 
-void __fastcall FUN_00c59270(undefined4 *param_1)
+void __fastcall vorbis_staticbook_destroy(undefined4 *param_1)
 
 {
   if (param_1[0xc] != 0) {
-    FUN_00c591a0(param_1);
+    vorbis_staticbook_clear(param_1);
                     /* WARNING: Subroutine does not return */
     _free(param_1);
   }
@@ -14398,9 +14398,9 @@ void __fastcall FUN_00c59270(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c59290 @ 00c59290 ////
+//// FUNCTION vorbis_book_clear @ 00c59290 ////
 
-void __fastcall FUN_00c59290(undefined4 *param_1)
+void __fastcall vorbis_book_clear(undefined4 *param_1)
 
 {
   int iVar1;
@@ -14433,9 +14433,9 @@ void __fastcall FUN_00c59290(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c592f0 @ 00c592f0 ////
+//// FUNCTION vorbis_book_init_encode @ 00c592f0 ////
 
-undefined4 __fastcall FUN_00c592f0(int *param_1,int *param_2)
+undefined4 __fastcall vorbis_book_init_encode(int *param_1,int *param_2)
 
 {
   uint *puVar1;
@@ -14452,17 +14452,17 @@ undefined4 __fastcall FUN_00c592f0(int *param_1,int *param_2)
   param_1[1] = param_2[1];
   param_1[2] = param_2[1];
   *param_1 = *param_2;
-  puVar1 = FUN_00c58e10(param_2[2],param_2[1],0);
+  puVar1 = vorbis__make_words(param_2[2],param_2[1],0);
   param_1[5] = (int)puVar1;
-  pvVar2 = FUN_00c58fe0(param_2,param_2[1],0);
+  pvVar2 = vorbis__book_unquantize(param_2,param_2[1],0);
   param_1[4] = (int)pvVar2;
   return 0;
 }
 
 
-//// FUNCTION FUN_00c59340 @ 00c59340 ////
+//// FUNCTION vorbis_bitreverse @ 00c59340 ////
 
-uint FUN_00c59340(void)
+uint vorbis_bitreverse(void)
 
 {
   uint in_EAX;
@@ -14476,9 +14476,9 @@ uint FUN_00c59340(void)
 }
 
 
-//// FUNCTION FUN_00c593b0 @ 00c593b0 ////
+//// FUNCTION vorbis_sort32a @ 00c593b0 ////
 
-int __cdecl FUN_00c593b0(undefined4 *param_1,undefined4 *param_2)
+int __cdecl vorbis_sort32a(undefined4 *param_1,undefined4 *param_2)
 
 {
   return (uint)(*(uint *)*param_2 < *(uint *)*param_1) -
@@ -14486,12 +14486,12 @@ int __cdecl FUN_00c593b0(undefined4 *param_1,undefined4 *param_2)
 }
 
 
-//// FUNCTION FUN_00c593d0 @ 00c593d0 ////
+//// FUNCTION vorbis_book_init_decode @ 00c593d0 ////
 
 /* WARNING: Function: __chkstk replaced with injection: alloca_probe */
 /* WARNING: Unable to track spacebase fully for stack */
 
-undefined4 __fastcall FUN_00c593d0(undefined4 *param_1,undefined4 *param_2)
+undefined4 __fastcall vorbis_book_init_decode(undefined4 *param_1,undefined4 *param_2)
 
 {
   uint *puVar1;
@@ -14528,7 +14528,7 @@ undefined4 __fastcall FUN_00c593d0(undefined4 *param_1,undefined4 *param_2)
   param_1[2] = uVar7;
   *param_1 = *param_2;
   auStackY_3c[3] = 0xc5941d;
-  puVar1 = FUN_00c58e10(param_2[2],param_2[1],uVar7);
+  puVar1 = vorbis__make_words(param_2[2],param_2[1],uVar7);
   iVar6 = uVar7 * -4;
   piVar5 = (int *)(&stack0xffffffd8 + uVar7 * -8);
   if (puVar1 != (uint *)0x0) {
@@ -14537,14 +14537,14 @@ undefined4 __fastcall FUN_00c593d0(undefined4 *param_1,undefined4 *param_2)
       local_10 = uVar7;
       do {
         *(undefined4 *)(&stack0xffffffd4 + iVar6) = 0xc5946d;
-        uVar2 = FUN_00c59340();
+        uVar2 = vorbis_bitreverse();
         *puVar9 = uVar2;
         *(uint **)(&stack0xffffffd8 + (iVar6 - (int)puVar1) + (int)puVar9) = puVar9;
         puVar9 = puVar9 + 1;
         local_10 = local_10 - 1;
       } while (local_10 != 0);
     }
-    *(code **)(&stack0xffffffd4 + iVar6) = FUN_00c593b0;
+    *(code **)(&stack0xffffffd4 + iVar6) = vorbis_sort32a;
     auStackY_3c[3 - uVar7] = 4;
     auStackY_3c[2 - uVar7] = uVar7;
     auStackY_3c[1 - uVar7] = (uint)(&stack0xffffffd8 + iVar6);
@@ -14580,14 +14580,14 @@ undefined4 __fastcall FUN_00c593d0(undefined4 *param_1,undefined4 *param_2)
     _free(*(void **)(&stack0xffffffd4 + uVar7 * -8));
   }
   *(undefined4 *)(&stack0xffffffd4 + iVar6) = 0xc5944a;
-  FUN_00c59290(param_1);
+  vorbis_book_clear(param_1);
   return 0xffffffff;
 }
 
 
-//// FUNCTION FUN_00c59750 @ 00c59750 ////
+//// FUNCTION vorbis__dist @ 00c59750 ////
 
-float10 FUN_00c59750(int param_1,int param_2,float *param_3)
+float10 vorbis__dist(int param_1,int param_2,float *param_3)
 
 {
   float fVar1;
@@ -14645,9 +14645,9 @@ float10 FUN_00c59750(int param_1,int param_2,float *param_3)
 }
 
 
-//// FUNCTION FUN_00c59850 @ 00c59850 ////
+//// FUNCTION vorbis__best @ 00c59850 ////
 
-int __fastcall FUN_00c59850(int *param_1,float *param_2,int param_3)
+int __fastcall vorbis__best(int *param_1,float *param_2,int param_3)
 
 {
   int iVar1;
@@ -14758,7 +14758,7 @@ LAB_00c599d6:
     iVar8 = 0;
     do {
       if ((0 < *piVar4) &&
-         ((fVar10 = FUN_00c59750(iVar1,iVar9,param_2), iVar6 == -1 || (fVar10 < (float10)local_20)))
+         ((fVar10 = vorbis__dist(iVar1,iVar9,param_2), iVar6 == -1 || (fVar10 < (float10)local_20)))
          ) {
         local_20 = (float)fVar10;
         iVar6 = iVar8;
@@ -14772,9 +14772,9 @@ LAB_00c599d6:
 }
 
 
-//// FUNCTION FUN_00c59ae0 @ 00c59ae0 ////
+//// FUNCTION vorbis_staticbook_pack @ 00c59ae0 ////
 
-undefined4 __fastcall FUN_00c59ae0(uint *param_1,int *param_2)
+undefined4 __fastcall vorbis_staticbook_pack(uint *param_1,int *param_2)
 
 {
   uint uVar1;
@@ -14785,9 +14785,9 @@ undefined4 __fastcall FUN_00c59ae0(uint *param_1,int *param_2)
   int iVar6;
   int local_4;
   
-  FUN_00c54de0(param_2,0x564342,0x18);
-  FUN_00c54de0(param_2,*param_1,0x10);
-  FUN_00c54de0(param_2,param_1[1],0x18);
+  oggpack_write(param_2,0x564342,0x18);
+  oggpack_write(param_2,*param_1,0x10);
+  oggpack_write(param_2,param_1[1],0x18);
   uVar4 = param_1[1];
   uVar1 = 1;
   if (1 < (int)uVar4) {
@@ -14801,8 +14801,8 @@ undefined4 __fastcall FUN_00c59ae0(uint *param_1,int *param_2)
   }
   if (uVar1 == uVar4) {
     iVar6 = 0;
-    FUN_00c54de0(param_2,1,1);
-    FUN_00c54de0(param_2,*(int *)param_1[2] - 1,5);
+    oggpack_write(param_2,1,1);
+    oggpack_write(param_2,*(int *)param_1[2] - 1,5);
     iVar5 = 1;
     if (1 < (int)param_1[1]) {
       do {
@@ -14811,8 +14811,8 @@ undefined4 __fastcall FUN_00c59ae0(uint *param_1,int *param_2)
         if (iVar2 < local_4) {
           local_4 = local_4 - iVar2;
           do {
-            iVar2 = FUN_00c58d20(param_1[1] - iVar6);
-            FUN_00c54de0(param_2,iVar5 - iVar6,iVar2);
+            iVar2 = vorbis__ilog(param_1[1] - iVar6);
+            oggpack_write(param_2,iVar5 - iVar6,iVar2);
             local_4 = local_4 + -1;
             iVar6 = iVar5;
           } while (local_4 != 0);
@@ -14820,11 +14820,11 @@ undefined4 __fastcall FUN_00c59ae0(uint *param_1,int *param_2)
         iVar5 = iVar5 + 1;
       } while (iVar5 < (int)param_1[1]);
     }
-    iVar2 = FUN_00c58d20(param_1[1] - iVar6);
-    FUN_00c54de0(param_2,iVar5 - iVar6,iVar2);
+    iVar2 = vorbis__ilog(param_1[1] - iVar6);
+    oggpack_write(param_2,iVar5 - iVar6,iVar2);
   }
   else {
-    FUN_00c54de0(param_2,0,1);
+    oggpack_write(param_2,0,1);
     uVar4 = param_1[1];
     uVar1 = 0;
     if (0 < (int)uVar4) {
@@ -14836,17 +14836,17 @@ undefined4 __fastcall FUN_00c59ae0(uint *param_1,int *param_2)
       } while ((int)uVar1 < (int)uVar4);
     }
     if (uVar1 == uVar4) {
-      FUN_00c54de0(param_2,0,1);
+      oggpack_write(param_2,0,1);
       iVar6 = 0;
       if (0 < (int)param_1[1]) {
         do {
-          FUN_00c54de0(param_2,*(int *)(param_1[2] + iVar6 * 4) - 1,5);
+          oggpack_write(param_2,*(int *)(param_1[2] + iVar6 * 4) - 1,5);
           iVar6 = iVar6 + 1;
         } while (iVar6 < (int)param_1[1]);
       }
     }
     else {
-      FUN_00c54de0(param_2,1,1);
+      oggpack_write(param_2,1,1);
       iVar6 = 0;
       if (0 < (int)param_1[1]) {
         do {
@@ -14855,28 +14855,28 @@ undefined4 __fastcall FUN_00c59ae0(uint *param_1,int *param_2)
             uVar4 = 0;
           }
           else {
-            FUN_00c54de0(param_2,1,1);
+            oggpack_write(param_2,1,1);
             iVar5 = 5;
             uVar4 = *(int *)(param_1[2] + iVar6 * 4) - 1;
           }
-          FUN_00c54de0(param_2,uVar4,iVar5);
+          oggpack_write(param_2,uVar4,iVar5);
           iVar6 = iVar6 + 1;
         } while (iVar6 < (int)param_1[1]);
       }
     }
   }
-  FUN_00c54de0(param_2,param_1[3],4);
+  oggpack_write(param_2,param_1[3],4);
   uVar4 = param_1[3];
   if (uVar4 != 0) {
     if ((((int)uVar4 < 1) || (2 < (int)uVar4)) || (param_1[8] == 0)) {
       return 0xffffffff;
     }
-    FUN_00c54de0(param_2,param_1[4],0x20);
-    FUN_00c54de0(param_2,param_1[5],0x20);
-    FUN_00c54de0(param_2,param_1[6] - 1,4);
-    FUN_00c54de0(param_2,param_1[7],1);
+    oggpack_write(param_2,param_1[4],0x20);
+    oggpack_write(param_2,param_1[5],0x20);
+    oggpack_write(param_2,param_1[6] - 1,4);
+    oggpack_write(param_2,param_1[7],1);
     if (param_1[3] == 1) {
-      iVar6 = FUN_00c58f70((int *)param_1);
+      iVar6 = vorbis__book_maptype1_quantvals((int *)param_1);
     }
     else if (param_1[3] == 2) {
       iVar6 = param_1[1] * *param_1;
@@ -14889,7 +14889,7 @@ undefined4 __fastcall FUN_00c59ae0(uint *param_1,int *param_2)
       do {
         uVar4 = *(uint *)(param_1[8] + iVar5 * 4);
         uVar1 = (int)uVar4 >> 0x1f;
-        FUN_00c54de0(param_2,(uVar4 ^ uVar1) - uVar1,param_1[6]);
+        oggpack_write(param_2,(uVar4 ^ uVar1) - uVar1,param_1[6]);
         iVar5 = iVar5 + 1;
       } while (iVar5 < iVar6);
     }
@@ -14898,9 +14898,9 @@ undefined4 __fastcall FUN_00c59ae0(uint *param_1,int *param_2)
 }
 
 
-//// FUNCTION FUN_00c59d20 @ 00c59d20 ////
+//// FUNCTION vorbis_staticbook_unpack @ 00c59d20 ////
 
-undefined4 __fastcall FUN_00c59d20(int *param_1,uint *param_2)
+undefined4 __fastcall vorbis_staticbook_unpack(int *param_1,uint *param_2)
 
 {
   undefined1 *puVar1;
@@ -14917,23 +14917,23 @@ undefined4 __fastcall FUN_00c59d20(int *param_1,uint *param_2)
     puVar7 = puVar7 + 1;
   }
   param_2[0xc] = 1;
-  puVar1 = (undefined1 *)FUN_00c553c0(param_1,0x18);
+  puVar1 = (undefined1 *)oggpack_read(param_1,0x18);
   if (puVar1 == &LAB_00564342) {
-    uVar2 = FUN_00c553c0(param_1,0x10);
+    uVar2 = oggpack_read(param_1,0x10);
     *param_2 = uVar2;
-    uVar2 = FUN_00c553c0(param_1,0x18);
+    uVar2 = oggpack_read(param_1,0x18);
     param_2[1] = uVar2;
     if (uVar2 != 0xffffffff) {
-      uVar2 = FUN_00c553c0(param_1,1);
+      uVar2 = oggpack_read(param_1,1);
       if (uVar2 == 0) {
         pvVar3 = _malloc(param_2[1] << 2);
         param_2[2] = (uint)pvVar3;
-        uVar2 = FUN_00c553c0(param_1,1);
+        uVar2 = oggpack_read(param_1,1);
         iVar6 = 0;
         if (uVar2 == 0) {
           if (0 < (int)param_2[1]) {
             do {
-              uVar2 = FUN_00c553c0(param_1,5);
+              uVar2 = oggpack_read(param_1,5);
               if (uVar2 == 0xffffffff) goto LAB_00c59f67;
               *(uint *)(param_2[2] + iVar6 * 4) = uVar2 + 1;
               iVar6 = iVar6 + 1;
@@ -14942,12 +14942,12 @@ undefined4 __fastcall FUN_00c59d20(int *param_1,uint *param_2)
         }
         else if (0 < (int)param_2[1]) {
           do {
-            uVar2 = FUN_00c553c0(param_1,1);
+            uVar2 = oggpack_read(param_1,1);
             if (uVar2 == 0) {
               *(undefined4 *)(param_2[2] + iVar6 * 4) = 0;
             }
             else {
-              uVar2 = FUN_00c553c0(param_1,5);
+              uVar2 = oggpack_read(param_1,5);
               if (uVar2 == 0xffffffff) goto LAB_00c59f67;
               *(uint *)(param_2[2] + iVar6 * 4) = uVar2 + 1;
             }
@@ -14959,15 +14959,15 @@ undefined4 __fastcall FUN_00c59d20(int *param_1,uint *param_2)
         if (uVar2 != 1) {
           return 0xffffffff;
         }
-        uVar2 = FUN_00c553c0(param_1,5);
+        uVar2 = oggpack_read(param_1,5);
         pvVar3 = _malloc(param_2[1] << 2);
         param_2[2] = (uint)pvVar3;
         if (0 < (int)param_2[1]) {
           iVar6 = 0;
           do {
             uVar2 = uVar2 + 1;
-            iVar4 = FUN_00c58d20(param_2[1] - iVar6);
-            uVar5 = FUN_00c553c0(param_1,iVar4);
+            iVar4 = vorbis__ilog(param_2[1] - iVar6);
+            uVar5 = oggpack_read(param_1,iVar4);
             if (uVar5 == 0xffffffff) goto LAB_00c59f67;
             iVar4 = 0;
             if (0 < (int)uVar5) {
@@ -14981,23 +14981,23 @@ undefined4 __fastcall FUN_00c59d20(int *param_1,uint *param_2)
           } while (iVar6 < (int)param_2[1]);
         }
       }
-      uVar2 = FUN_00c553c0(param_1,4);
+      uVar2 = oggpack_read(param_1,4);
       param_2[3] = uVar2;
       if (uVar2 == 0) {
         return 0;
       }
       if ((0 < (int)uVar2) && ((int)uVar2 < 3)) {
-        uVar2 = FUN_00c553c0(param_1,0x20);
+        uVar2 = oggpack_read(param_1,0x20);
         param_2[4] = uVar2;
-        uVar2 = FUN_00c553c0(param_1,0x20);
+        uVar2 = oggpack_read(param_1,0x20);
         param_2[5] = uVar2;
-        uVar2 = FUN_00c553c0(param_1,4);
+        uVar2 = oggpack_read(param_1,4);
         param_2[6] = uVar2 + 1;
-        uVar2 = FUN_00c553c0(param_1,1);
+        uVar2 = oggpack_read(param_1,1);
         param_2[7] = uVar2;
         iVar6 = 0;
         if (param_2[3] == 1) {
-          iVar6 = FUN_00c58f70((int *)param_2);
+          iVar6 = vorbis__book_maptype1_quantvals((int *)param_2);
         }
         else if (param_2[3] == 2) {
           iVar6 = *param_2 * param_2[1];
@@ -15007,7 +15007,7 @@ undefined4 __fastcall FUN_00c59d20(int *param_1,uint *param_2)
         param_2[8] = (uint)pvVar3;
         if (0 < iVar6) {
           do {
-            uVar2 = FUN_00c553c0(param_1,param_2[6]);
+            uVar2 = oggpack_read(param_1,param_2[6]);
             *(uint *)(param_2[8] + iVar4 * 4) = uVar2;
             iVar4 = iVar4 + 1;
           } while (iVar4 < iVar6);
@@ -15022,25 +15022,25 @@ undefined4 __fastcall FUN_00c59d20(int *param_1,uint *param_2)
     }
   }
 LAB_00c59f67:
-  FUN_00c591a0(param_2);
+  vorbis_staticbook_clear(param_2);
   return 0xffffffff;
 }
 
 
-//// FUNCTION FUN_00c59f80 @ 00c59f80 ////
+//// FUNCTION vorbis_book_encode @ 00c59f80 ////
 
-undefined4 __fastcall FUN_00c59f80(int param_1,int param_2,int *param_3)
+undefined4 __fastcall vorbis_book_encode(int param_1,int param_2,int *param_3)
 
 {
-  FUN_00c54de0(param_3,*(uint *)(*(int *)(param_1 + 0x14) + param_2 * 4),
+  oggpack_write(param_3,*(uint *)(*(int *)(param_1 + 0x14) + param_2 * 4),
                *(int *)(*(int *)(*(int *)(param_1 + 0xc) + 8) + param_2 * 4));
   return *(undefined4 *)(*(int *)(*(int *)(param_1 + 0xc) + 8) + param_2 * 4);
 }
 
 
-//// FUNCTION FUN_00c59fb0 @ 00c59fb0 ////
+//// FUNCTION vorbis_book_errorv @ 00c59fb0 ////
 
-void __fastcall FUN_00c59fb0(int *param_1,float *param_2)
+void __fastcall vorbis_book_errorv(int *param_1,float *param_2)
 
 {
   int iVar1;
@@ -15051,7 +15051,7 @@ void __fastcall FUN_00c59fb0(int *param_1,float *param_2)
   int iVar6;
   
   iVar1 = *param_1;
-  iVar2 = FUN_00c59850(param_1,param_2,1);
+  iVar2 = vorbis__best(param_1,param_2,1);
   iVar6 = 0;
   if (3 < iVar1) {
     pfVar4 = param_2 + 2;
@@ -15080,9 +15080,9 @@ void __fastcall FUN_00c59fb0(int *param_1,float *param_2)
 }
 
 
-//// FUNCTION FUN_00c5a0f0 @ 00c5a0f0 ////
+//// FUNCTION vorbis_bitreverse_codebook @ 00c5a0f0 ////
 
-uint FUN_00c5a0f0(void)
+uint vorbis_bitreverse_codebook(void)
 
 {
   uint in_EAX;
@@ -15096,9 +15096,9 @@ uint FUN_00c5a0f0(void)
 }
 
 
-//// FUNCTION FUN_00c5a160 @ 00c5a160 ////
+//// FUNCTION vorbis_decode_packed_entry_number @ 00c5a160 ////
 
-uint FUN_00c5a160(int param_1,int *param_2)
+uint vorbis_decode_packed_entry_number(int param_1,int *param_2)
 
 {
   uint uVar1;
@@ -15110,7 +15110,7 @@ uint FUN_00c5a160(int param_1,int *param_2)
   int iVar7;
   
   iVar6 = *(int *)(param_1 + 0x28);
-  uVar2 = FUN_00c551c0(param_2,*(int *)(param_1 + 0x24));
+  uVar2 = oggpack_look(param_2,*(int *)(param_1 + 0x24));
   if ((int)uVar2 < 0) {
     iVar7 = *(int *)(param_1 + 8);
     uVar2 = 0;
@@ -15118,17 +15118,17 @@ uint FUN_00c5a160(int param_1,int *param_2)
   else {
     uVar3 = *(uint *)(*(int *)(param_1 + 0x20) + uVar2 * 4);
     if (-1 < (int)uVar3) {
-      FUN_00c55350(param_2,(int)*(char *)(*(int *)(param_1 + 0x1c) + -1 + uVar3));
+      oggpack_adv(param_2,(int)*(char *)(*(int *)(param_1 + 0x1c) + -1 + uVar3));
       return uVar3 - 1;
     }
     uVar2 = (int)uVar3 >> 0xf & 0x7fff;
     iVar7 = *(int *)(param_1 + 8) - (uVar3 & 0x7fff);
   }
-  uVar3 = FUN_00c551c0(param_2,iVar6);
+  uVar3 = oggpack_look(param_2,iVar6);
   do {
     if (-1 < (int)uVar3) {
 LAB_00c5a1f5:
-      uVar3 = FUN_00c5a0f0();
+      uVar3 = vorbis_bitreverse_codebook();
       iVar4 = iVar7 - uVar2;
       if (1 < iVar4) {
         do {
@@ -15141,10 +15141,10 @@ LAB_00c5a1f5:
       }
       iVar7 = (int)*(char *)(*(int *)(param_1 + 0x1c) + uVar2);
       if (iVar6 < iVar7) {
-        FUN_00c55350(param_2,iVar6);
+        oggpack_adv(param_2,iVar6);
         return 0xffffffff;
       }
-      FUN_00c55350(param_2,iVar7);
+      oggpack_adv(param_2,iVar7);
       return uVar2;
     }
     if (iVar6 < 2) {
@@ -15154,19 +15154,19 @@ LAB_00c5a1f5:
       goto LAB_00c5a1f5;
     }
     iVar6 = iVar6 + -1;
-    uVar3 = FUN_00c551c0(param_2,iVar6);
+    uVar3 = oggpack_look(param_2,iVar6);
   } while( true );
 }
 
 
-//// FUNCTION FUN_00c5a270 @ 00c5a270 ////
+//// FUNCTION vorbis_book_decode @ 00c5a270 ////
 
-uint __fastcall FUN_00c5a270(int param_1,int *param_2)
+uint __fastcall vorbis_book_decode(int param_1,int *param_2)
 
 {
   uint uVar1;
   
-  uVar1 = FUN_00c5a160(param_1,param_2);
+  uVar1 = vorbis_decode_packed_entry_number(param_1,param_2);
   if (-1 < (int)uVar1) {
     uVar1 = *(uint *)(*(int *)(param_1 + 0x18) + uVar1 * 4);
   }
@@ -15174,12 +15174,12 @@ uint __fastcall FUN_00c5a270(int param_1,int *param_2)
 }
 
 
-//// FUNCTION FUN_00c5a290 @ 00c5a290 ////
+//// FUNCTION vorbis_book_decodevs_add @ 00c5a290 ////
 
 /* WARNING: Function: __chkstk replaced with injection: alloca_probe */
 /* WARNING: Unable to track spacebase fully for stack */
 
-undefined4 __fastcall FUN_00c5a290(int *param_1,float *param_2,int param_3,int param_4)
+undefined4 __fastcall vorbis_book_decodevs_add(int *param_1,float *param_2,int param_3,int param_4)
 
 {
   int iVar1;
@@ -15202,7 +15202,7 @@ undefined4 __fastcall FUN_00c5a290(int *param_1,float *param_2,int param_3,int p
       aiStack_30[iVar1 * -2 + 2] = param_3;
       aiStack_30[iVar1 * -2 + 1] = (int)param_1;
       aiStack_30[iVar1 * -2] = 0xc5a2f2;
-      uVar2 = FUN_00c5a160(aiStack_30[iVar1 * -2 + 1],(int *)aiStack_30[iVar1 * -2 + 2]);
+      uVar2 = vorbis_decode_packed_entry_number(aiStack_30[iVar1 * -2 + 1],(int *)aiStack_30[iVar1 * -2 + 2]);
       piVar4[iVar1] = uVar2;
       if (uVar2 == 0xffffffff) {
         return 0xffffffff;
@@ -15253,9 +15253,9 @@ undefined4 __fastcall FUN_00c5a290(int *param_1,float *param_2,int param_3,int p
 }
 
 
-//// FUNCTION FUN_00c5a540 @ 00c5a540 ////
+//// FUNCTION vorbis_book_decodev_set @ 00c5a540 ////
 
-undefined4 __fastcall FUN_00c5a540(int *param_1,int param_2,int *param_3,int param_4)
+undefined4 __fastcall vorbis_book_decodev_set(int *param_1,int param_2,int *param_3,int param_4)
 
 {
   int iVar1;
@@ -15267,7 +15267,7 @@ undefined4 __fastcall FUN_00c5a540(int *param_1,int param_2,int *param_3,int par
   iVar5 = 0;
   if (0 < param_4) {
     do {
-      uVar3 = FUN_00c5a160((int)param_1,param_3);
+      uVar3 = vorbis_decode_packed_entry_number((int)param_1,param_3);
       if (uVar3 == 0xffffffff) {
         return 0xffffffff;
       }
@@ -15288,10 +15288,10 @@ undefined4 __fastcall FUN_00c5a540(int *param_1,int param_2,int *param_3,int par
 }
 
 
-//// FUNCTION FUN_00c5a5a0 @ 00c5a5a0 ////
+//// FUNCTION vorbis_book_decodevv_add @ 00c5a5a0 ////
 
 undefined4 __fastcall
-FUN_00c5a5a0(int *param_1,int param_2,int param_3,int param_4,int *param_5,int param_6)
+vorbis_book_decodevv_add(int *param_1,int param_2,int param_3,int param_4,int *param_5,int param_6)
 
 {
   int iVar1;
@@ -15308,7 +15308,7 @@ FUN_00c5a5a0(int *param_1,int param_2,int param_3,int param_4,int *param_5,int p
     if ((param_6 + param_3) / param_4 <= iVar4) {
       return 0;
     }
-    uVar5 = FUN_00c5a160((int)param_1,param_5);
+    uVar5 = vorbis_decode_packed_entry_number((int)param_1,param_5);
     if (uVar5 == 0xffffffff) break;
     iVar1 = *param_1;
     iVar2 = param_1[4];
@@ -15331,11 +15331,11 @@ FUN_00c5a5a0(int *param_1,int param_2,int param_3,int param_4,int *param_5,int p
 }
 
 
-//// FUNCTION FUN_00c5a640 @ 00c5a640 ////
+//// FUNCTION vorbis_drfti1 @ 00c5a640 ////
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00c5a640(int param_1,int param_2,int *param_3)
+void vorbis_drfti1(int param_1,int param_2,int *param_3)
 
 {
   float fVar1;
@@ -15443,23 +15443,23 @@ void FUN_00c5a640(int param_1,int param_2,int *param_3)
 }
 
 
-//// FUNCTION FUN_00c5a7f0 @ 00c5a7f0 ////
+//// FUNCTION vorbis_fdrffti @ 00c5a7f0 ////
 
-void __fastcall FUN_00c5a7f0(int *param_1,int param_2)
+void __fastcall vorbis_fdrffti(int *param_1,int param_2)
 
 {
   int in_EAX;
   
   if (in_EAX != 1) {
-    FUN_00c5a640(in_EAX,param_2 + in_EAX * 4,param_1);
+    vorbis_drfti1(in_EAX,param_2 + in_EAX * 4,param_1);
   }
   return;
 }
 
 
-//// FUNCTION FUN_00c5a810 @ 00c5a810 ////
+//// FUNCTION vorbis_dradf2 @ 00c5a810 ////
 
-void __fastcall FUN_00c5a810(uint param_1,float *param_2,int param_3,int param_4)
+void __fastcall vorbis_dradf2(uint param_1,float *param_2,int param_3,int param_4)
 
 {
   float fVar1;
@@ -15629,12 +15629,12 @@ void __fastcall FUN_00c5a810(uint param_1,float *param_2,int param_3,int param_4
 }
 
 
-//// FUNCTION FUN_00c5ab60 @ 00c5ab60 ////
+//// FUNCTION vorbis_dradf4 @ 00c5ab60 ////
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __fastcall
-FUN_00c5ab60(uint param_1,float *param_2,int param_3,float *param_4,float *param_5,float *param_6)
+vorbis_dradf4(uint param_1,float *param_2,int param_3,float *param_4,float *param_5,float *param_6)
 
 {
   float fVar1;
@@ -15937,12 +15937,12 @@ FUN_00c5ab60(uint param_1,float *param_2,int param_3,float *param_4,float *param
 }
 
 
-//// FUNCTION FFT_RadixButterflyPass @ 00c5b440 ////
+//// FUNCTION vorbis_dradfg @ 00c5b440 ////
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __fastcall
-FFT_RadixButterflyPass
+vorbis_dradfg
           (float *param_1,int param_2,float *param_3,int param_4,float *param_5,float *param_6,
           float *param_7,float *param_8,float *param_9)
 
@@ -15997,7 +15997,7 @@ FFT_RadixButterflyPass
   
                     /* Radix-2 FFT butterfly pass: computes twiddle factors via cos/sin(2*pi/N) and
                        performs the classic decimation butterfly recurrence over strided
-                       real/imaginary buffers. Called twice in a row from FUN_00c5ccc0 (rows then
+                       real/imaginary buffers. Called twice in a row from vorbis_drftf1 (rows then
                        columns) -- a 2D FFT driver. Part of a ~226-function DSP/audio-processing
                        cluster in the 0xC50000-0xC90000 address range (2.8% of the priority-trace
                        queue) that is very likely a bundled signal-processing library rather than
@@ -16871,9 +16871,9 @@ FFT_RadixButterflyPass
 }
 
 
-//// FUNCTION FFT2D_Transform @ 00c5ccc0 ////
+//// FUNCTION vorbis_drftf1 @ 00c5ccc0 ////
 
-void __thiscall FFT2D_Transform(void *this,int param_1,int param_2)
+void __thiscall vorbis_drftf1(void *this,int param_1,int param_2)
 
 {
   float *in_EAX;
@@ -16905,17 +16905,17 @@ void __thiscall FFT2D_Transform(void *this,int param_1,int param_2)
         if (local_10 != 0) {
           pfVar4 = unaff_EDI;
         }
-        FUN_00c5ab60(uVar2,pfVar4,iVar1,(float *)(param_2 + -4 + local_14 * 4),
+        vorbis_dradf4(uVar2,pfVar4,iVar1,(float *)(param_2 + -4 + local_14 * 4),
                      (float *)(param_2 + -4 + (local_14 + uVar2) * 4),
                      (float *)(param_2 + -4 + (local_14 + uVar2 + uVar2) * 4));
       }
       else if (pfVar4 == (float *)0x2) {
         iVar5 = param_2 + -4 + local_14 * 4;
         if (local_10 == 0) {
-          FUN_00c5a810(uVar2,in_EAX,iVar1,iVar5);
+          vorbis_dradf2(uVar2,in_EAX,iVar1,iVar5);
         }
         else {
-          FUN_00c5a810(uVar2,unaff_EDI,iVar1,iVar5);
+          vorbis_dradf2(uVar2,unaff_EDI,iVar1,iVar5);
         }
       }
       else {
@@ -16924,13 +16924,13 @@ void __thiscall FFT2D_Transform(void *this,int param_1,int param_2)
         }
         pfVar3 = (float *)(param_2 + -4 + local_14 * 4);
         if (local_10 == 0) {
-          FFT_RadixButterflyPass
+          vorbis_dradfg
                     (unaff_EDI,uVar2,pfVar4,iVar1,(float *)(uVar2 * iVar1),unaff_EDI,unaff_EDI,
                      in_EAX,pfVar3);
           local_10 = 1;
         }
         else {
-          FFT_RadixButterflyPass
+          vorbis_dradfg
                     (in_EAX,uVar2,pfVar4,iVar1,(float *)(uVar2 * iVar1),in_EAX,in_EAX,unaff_EDI,
                      pfVar3);
           local_10 = 0;
@@ -16972,9 +16972,9 @@ void __thiscall FFT2D_Transform(void *this,int param_1,int param_2)
 }
 
 
-//// FUNCTION FUN_00c5cea0 @ 00c5cea0 ////
+//// FUNCTION vorbis_dradb2 @ 00c5cea0 ////
 
-void __fastcall FUN_00c5cea0(float *param_1,uint param_2,int param_3,int param_4)
+void __fastcall vorbis_dradb2(float *param_1,uint param_2,int param_3,int param_4)
 
 {
   float fVar1;
@@ -17153,11 +17153,11 @@ void __fastcall FUN_00c5cea0(float *param_1,uint param_2,int param_3,int param_4
 }
 
 
-//// FUNCTION FUN_00c5d240 @ 00c5d240 ////
+//// FUNCTION vorbis_dradb3 @ 00c5d240 ////
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00c5d240(float *param_1,int param_2,int param_3,float *param_4)
+void vorbis_dradb3(float *param_1,int param_2,int param_3,float *param_4)
 
 {
   float fVar1;
@@ -17324,12 +17324,12 @@ void FUN_00c5d240(float *param_1,int param_2,int param_3,float *param_4)
 }
 
 
-//// FUNCTION FUN_00c5d6f0 @ 00c5d6f0 ////
+//// FUNCTION vorbis_dradb4 @ 00c5d6f0 ////
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __fastcall
-FUN_00c5d6f0(uint param_1,int param_2,int param_3,float *param_4,float *param_5,float *param_6)
+vorbis_dradb4(uint param_1,int param_2,int param_3,float *param_4,float *param_5,float *param_6)
 
 {
   float fVar1;
@@ -17659,12 +17659,12 @@ FUN_00c5d6f0(uint param_1,int param_2,int param_3,float *param_4,float *param_5,
 }
 
 
-//// FUNCTION FUN_00c5e070 @ 00c5e070 ////
+//// FUNCTION vorbis_dradbg @ 00c5e070 ////
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __fastcall
-FUN_00c5e070(float *param_1,float *param_2,int param_3,int param_4,int param_5,int param_6,
+vorbis_dradbg(float *param_1,float *param_2,int param_3,int param_4,int param_5,int param_6,
             int param_7,int param_8)
 
 {
@@ -18511,10 +18511,10 @@ FUN_00c5e070(float *param_1,float *param_2,int param_3,int param_4,int param_5,i
 }
 
 
-//// FUNCTION FUN_00c5f830 @ 00c5f830 ////
+//// FUNCTION vorbis_drftb1 @ 00c5f830 ////
 
 void __fastcall
-FUN_00c5f830(undefined4 param_1,int param_2,int param_3,float *param_4,float *param_5)
+vorbis_drftb1(undefined4 param_1,int param_2,int param_3,float *param_4,float *param_5)
 
 {
   float *pfVar1;
@@ -18544,7 +18544,7 @@ FUN_00c5f830(undefined4 param_1,int param_2,int param_3,float *param_4,float *pa
         if (param_4 != (float *)0x0) {
           pfVar3 = pfVar1;
         }
-        FUN_00c5d6f0(uVar2,(int)pfVar3,(int)pfVar4,(float *)(in_EAX + -4 + local_c * 4),
+        vorbis_dradb4(uVar2,(int)pfVar3,(int)pfVar4,(float *)(in_EAX + -4 + local_c * 4),
                      (float *)(in_EAX + -4 + (uVar2 + local_c) * 4),
                      (float *)(in_EAX + -4 + (uVar2 + local_c + uVar2) * 4));
 LAB_00c5f98f:
@@ -18559,7 +18559,7 @@ LAB_00c5f98f:
           iVar5 = in_EAX + -4 + local_c * 4;
           pfVar3 = pfVar1;
         }
-        FUN_00c5cea0(pfVar3,uVar2,(int)pfVar4,iVar5);
+        vorbis_dradb2(pfVar3,uVar2,(int)pfVar4,iVar5);
         param_4 = (float *)(1 - (int)param_4);
       }
       else {
@@ -18567,10 +18567,10 @@ LAB_00c5f98f:
           pfVar3 = (float *)(in_EAX + -4 + (uVar2 + local_c) * 4);
           iVar5 = in_EAX + -4 + local_c * 4;
           if (param_4 == (float *)0x0) {
-            FUN_00c5d240(pfVar4,(int)param_5,iVar5,pfVar3);
+            vorbis_dradb3(pfVar4,(int)param_5,iVar5,pfVar3);
           }
           else {
-            FUN_00c5d240(pfVar4,(int)pfVar1,iVar5,pfVar3);
+            vorbis_dradb3(pfVar4,(int)pfVar1,iVar5,pfVar3);
           }
           goto LAB_00c5f98f;
         }
@@ -18580,7 +18580,7 @@ LAB_00c5f98f:
           pfVar3 = param_5;
           pfVar7 = pfVar1;
         }
-        FUN_00c5e070(pfVar3,pfVar3,iVar6,(int)pfVar4,uVar2 * (int)pfVar4,(int)pfVar3,(int)pfVar7,
+        vorbis_dradbg(pfVar3,pfVar3,iVar6,(int)pfVar4,uVar2 * (int)pfVar4,(int)pfVar3,(int)pfVar7,
                      in_EAX + -4 + local_c * 4);
         if (uVar2 == 1) {
           param_4 = (float *)(1 - (int)param_4);
@@ -18623,16 +18623,16 @@ LAB_00c5f98f:
 }
 
 
-//// FUNCTION FUN_00c5fa50 @ 00c5fa50 ////
+//// FUNCTION vorbis_drft_forward @ 00c5fa50 ////
 
-void __fastcall FUN_00c5fa50(int *param_1)
+void __fastcall vorbis_drft_forward(int *param_1)
 
 {
   int iVar1;
   
   iVar1 = *param_1;
   if (iVar1 != 1) {
-    FFT2D_Transform((void *)param_1[2],iVar1,param_1[1] + iVar1 * 4);
+    vorbis_drftf1((void *)param_1[2],iVar1,param_1[1] + iVar1 * 4);
   }
   return;
 }
@@ -18651,7 +18651,7 @@ void __fastcall FUN_00c5fa90(int *param_1,int param_2)
   param_1[1] = (int)pvVar1;
   piVar2 = _calloc(0x20,4);
   param_1[2] = (int)piVar2;
-  FUN_00c5a7f0(piVar2,param_1[1]);
+  vorbis_fdrffti(piVar2,param_1[1]);
   return;
 }
 
@@ -18678,9 +18678,9 @@ void __fastcall FUN_00c5fad0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c5fb10 @ 00c5fb10 ////
+//// FUNCTION vorbis_mdct_init @ 00c5fb10 ////
 
-void __fastcall FUN_00c5fb10(int *param_1,int param_2)
+void __fastcall vorbis_mdct_init(int *param_1,int param_2)
 
 {
   void *pvVar1;
@@ -18776,9 +18776,9 @@ void __fastcall FUN_00c5fb10(int *param_1,int param_2)
 }
 
 
-//// FUNCTION FUN_00c5fcf0 @ 00c5fcf0 ////
+//// FUNCTION vorbis_mdct_butterfly_8 @ 00c5fcf0 ////
 
-void FUN_00c5fcf0(void)
+void vorbis_mdct_butterfly_8(void)
 
 {
   float fVar1;
@@ -18809,9 +18809,9 @@ void FUN_00c5fcf0(void)
 }
 
 
-//// FUNCTION FUN_00c5fd70 @ 00c5fd70 ////
+//// FUNCTION vorbis_mdct_butterfly_16 @ 00c5fd70 ////
 
-void FUN_00c5fd70(void)
+void vorbis_mdct_butterfly_16(void)
 
 {
   float *pfVar1;
@@ -18848,15 +18848,15 @@ void FUN_00c5fd70(void)
   in_EAX[0xf] = in_EAX[7] + in_EAX[0xf];
   in_EAX[6] = fVar2 - in_EAX[6];
   in_EAX[7] = fVar3 - in_EAX[7];
-  FUN_00c5fcf0();
-  FUN_00c5fcf0();
+  vorbis_mdct_butterfly_8();
+  vorbis_mdct_butterfly_8();
   return;
 }
 
 
-//// FUNCTION FUN_00c5fe40 @ 00c5fe40 ////
+//// FUNCTION vorbis_mdct_butterfly_32 @ 00c5fe40 ////
 
-void FUN_00c5fe40(void)
+void vorbis_mdct_butterfly_32(void)
 
 {
   float *pfVar1;
@@ -18921,15 +18921,15 @@ void FUN_00c5fe40(void)
   in_EAX[0x11] = in_EAX[0x11] + in_EAX[1];
   *in_EAX = (fVar2 - fVar3) * 0.9238795 + (in_EAX[1] - fVar4) * 0.38268343;
   in_EAX[1] = (in_EAX[1] - fVar4) * 0.9238795 - (fVar2 - fVar3) * 0.38268343;
-  FUN_00c5fd70();
-  FUN_00c5fd70();
+  vorbis_mdct_butterfly_16();
+  vorbis_mdct_butterfly_16();
   return;
 }
 
 
-//// FUNCTION FUN_00c60020 @ 00c60020 ////
+//// FUNCTION vorbis_mdct_butterfly_first @ 00c60020 ////
 
-void __fastcall FUN_00c60020(int param_1,float *param_2)
+void __fastcall vorbis_mdct_butterfly_first(int param_1,float *param_2)
 
 {
   float fVar1;
@@ -18985,9 +18985,9 @@ void __fastcall FUN_00c60020(int param_1,float *param_2)
 }
 
 
-//// FUNCTION FUN_00c60130 @ 00c60130 ////
+//// FUNCTION vorbis_mdct_butterfly_generic @ 00c60130 ////
 
-void __fastcall FUN_00c60130(int param_1,float *param_2,int param_3)
+void __fastcall vorbis_mdct_butterfly_generic(int param_1,float *param_2,int param_3)
 
 {
   float fVar1;
@@ -19048,9 +19048,9 @@ void __fastcall FUN_00c60130(int param_1,float *param_2,int param_3)
 }
 
 
-//// FUNCTION FUN_00c60240 @ 00c60240 ////
+//// FUNCTION vorbis_mdct_butterflies @ 00c60240 ////
 
-void FUN_00c60240(undefined4 param_1,int param_2)
+void vorbis_mdct_butterflies(undefined4 param_1,int param_2)
 
 {
   float *pfVar1;
@@ -19062,7 +19062,7 @@ void FUN_00c60240(undefined4 param_1,int param_2)
   pfVar1 = *(float **)(in_EAX + 8);
   local_8 = *(int *)(in_EAX + 4);
   if (0 < local_8 + -6) {
-    FUN_00c60020(param_2,pfVar1);
+    vorbis_mdct_butterfly_first(param_2,pfVar1);
   }
   local_8 = local_8 + -7;
   bVar3 = 1;
@@ -19071,7 +19071,7 @@ void FUN_00c60240(undefined4 param_1,int param_2)
       iVar2 = 1 << (bVar3 & 0x1f);
       if (0 < iVar2) {
         do {
-          FUN_00c60130(param_2 >> (bVar3 & 0x1f),pfVar1,4 << (bVar3 & 0x1f));
+          vorbis_mdct_butterfly_generic(param_2 >> (bVar3 & 0x1f),pfVar1,4 << (bVar3 & 0x1f));
           iVar2 = iVar2 + -1;
         } while (iVar2 != 0);
       }
@@ -19082,7 +19082,7 @@ void FUN_00c60240(undefined4 param_1,int param_2)
   if (0 < param_2) {
     iVar2 = (param_2 - 1U >> 5) + 1;
     do {
-      FUN_00c5fe40();
+      vorbis_mdct_butterfly_32();
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
   }
@@ -19090,9 +19090,9 @@ void FUN_00c60240(undefined4 param_1,int param_2)
 }
 
 
-//// FUNCTION FUN_00c60300 @ 00c60300 ////
+//// FUNCTION vorbis_mdct_clear @ 00c60300 ////
 
-void __fastcall FUN_00c60300(undefined4 *param_1)
+void __fastcall vorbis_mdct_clear(undefined4 *param_1)
 
 {
   if (param_1 != (undefined4 *)0x0) {
@@ -19114,9 +19114,9 @@ void __fastcall FUN_00c60300(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c60340 @ 00c60340 ////
+//// FUNCTION vorbis_mdct_bitreverse @ 00c60340 ////
 
-void __fastcall FUN_00c60340(undefined4 param_1,float *param_2)
+void __fastcall vorbis_mdct_bitreverse(undefined4 param_1,float *param_2)
 
 {
   float *pfVar1;
@@ -19172,9 +19172,9 @@ void __fastcall FUN_00c60340(undefined4 param_1,float *param_2)
 }
 
 
-//// FUNCTION FUN_00c60460 @ 00c60460 ////
+//// FUNCTION vorbis_mdct_backward @ 00c60460 ////
 
-void __fastcall FUN_00c60460(int *param_1,float *param_2,float *param_3)
+void __fastcall vorbis_mdct_backward(int *param_1,float *param_2,float *param_3)
 
 {
   float fVar1;
@@ -19219,8 +19219,8 @@ void __fastcall FUN_00c60460(int *param_1,float *param_2,float *param_3)
     pfVar5 = pfVar6;
     pfVar8 = pfVar8 + 4;
   } while (param_2 <= pfVar6);
-  FUN_00c60240(param_3 + iVar9,iVar9);
-  FUN_00c60340(extraout_ECX,param_3);
+  vorbis_mdct_butterflies(param_3 + iVar9,iVar9);
+  vorbis_mdct_bitreverse(extraout_ECX,param_3);
   pfVar3 = (float *)(param_1[2] + iVar9 * 4);
   pfVar5 = param_3 + 3;
   pfVar8 = pfVar4;
@@ -19277,12 +19277,12 @@ void __fastcall FUN_00c60460(int *param_1,float *param_2,float *param_3)
 }
 
 
-//// FUNCTION FUN_00c606b0 @ 00c606b0 ////
+//// FUNCTION vorbis_mdct_forward @ 00c606b0 ////
 
 /* WARNING: Function: __chkstk replaced with injection: alloca_probe */
 /* WARNING: Unable to track spacebase fully for stack */
 
-void __fastcall FUN_00c606b0(int *param_1,int param_2,int param_3)
+void __fastcall vorbis_mdct_forward(int *param_1,int param_2,int param_3)
 
 {
   float fVar1;
@@ -19374,9 +19374,9 @@ void __fastcall FUN_00c606b0(int *param_1,int param_2,int param_3)
   afStack_3c[2 - iVar17] = (float)iVar7;
   afStack_3c[1 - iVar17] = (float)(&stack0xffffffd0 + iVar13 + iVar5);
   afStack_3c[-iVar17] = 1.8186372e-38;
-  FUN_00c60240(afStack_3c[1 - iVar17],(int)afStack_3c[2 - iVar17]);
+  vorbis_mdct_butterflies(afStack_3c[1 - iVar17],(int)afStack_3c[2 - iVar17]);
   afStack_3c[2 - iVar17] = 1.8186385e-38;
-  FUN_00c60340(extraout_ECX,(float *)(&stack0xffffffd0 + iVar5));
+  vorbis_mdct_bitreverse(extraout_ECX,(float *)(&stack0xffffffd0 + iVar5));
   pfVar6 = (float *)(param_1[2] + iVar13);
   pfVar12 = (float *)(param_3 + iVar13);
   iVar13 = 0;
@@ -19454,7 +19454,7 @@ void __fastcall FUN_00c609a0(int *param_1,int param_2)
   param_1[0x2c] = *(int *)(iVar2 + 4) / 2;
   pvVar4 = _calloc(0x80,4);
   param_1[9] = (int)pvVar4;
-  FUN_00c5fb10(param_1 + 4,0x80);
+  vorbis_mdct_init(param_1 + 4,0x80);
   local_c = 0;
   do {
     fVar6 = (float10)fsin((float10)local_c * (float10)0.024736950716634433);
@@ -19513,7 +19513,7 @@ void __fastcall FUN_00c609a0(int *param_1,int param_2)
 void __fastcall FUN_00c60b40(int param_1)
 
 {
-  FUN_00c60300((undefined4 *)(param_1 + 0x10));
+  vorbis_mdct_clear((undefined4 *)(param_1 + 0x10));
                     /* WARNING: Subroutine does not return */
   _free(*(void **)(param_1 + 0x30));
 }
@@ -19606,7 +19606,7 @@ uint FUN_00c60ba0(int param_1,float param_2,int param_3,int param_4)
   }
   *(undefined1 **)((int)&iStack_40 + iVar12 * -4) = &stack0xffffffc4 + iVar3;
   (&iStack_44)[-iVar12] = 0xc60d04;
-  FUN_00c606b0((int *)(in_EAX + 0x10),(int)(&stack0xffffffc4 + iVar3),
+  vorbis_mdct_forward((int *)(in_EAX + 0x10),(int)(&stack0xffffffc4 + iVar3),
                *(int *)((int)&iStack_40 + iVar12 * -4));
   iVar4 = *(int *)(param_4 + 0x8c);
   iVar10 = 0;

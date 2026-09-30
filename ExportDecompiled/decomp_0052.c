@@ -16802,7 +16802,7 @@ uint __cdecl zlib_read_buf_copy2(int *param_1,undefined4 *param_2,uint param_3)
   }
   param_1[1] = uVar1 - uVar2;
   if (*(int *)(param_1[7] + 0x14) == 0) {
-    uVar1 = zlib_adler32_2(param_1[0xc],(byte *)*param_1,uVar2);
+    uVar1 = zlib_adler32_copy2(param_1[0xc],(byte *)*param_1,uVar2);
     param_1[0xc] = uVar1;
   }
   puVar3 = (undefined4 *)*param_1;

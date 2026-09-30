@@ -9732,9 +9732,9 @@ void __fastcall FUN_00bba7d0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00bba8c0 @ 00bba8c0 ////
+//// FUNCTION CodecFormat_DetectFromHeader @ 00bba8c0 ////
 
-int __thiscall FUN_00bba8c0(void *this,int *param_1,undefined1 *param_2)
+int __thiscall CodecFormat_DetectFromHeader(void *this,int *param_1,undefined1 *param_2)
 
 {
   undefined4 uVar1;
@@ -9905,7 +9905,7 @@ bool __thiscall CSystem_LoadAudioSample_Wav_Ogg(void *this,undefined4 param_1,LP
       ppvStack_140 = &pvStack_154;
       ppuStack_148 = &PTR_FUN_00d9da70;
       puStack_10._0_1_ = 5;
-      piVar4 = (int *)FUN_00bba8c0(this,(int *)&ppuStack_148,&stack0xfffffeab);
+      piVar4 = (int *)CodecFormat_DetectFromHeader(this,(int *)&ppuStack_148,&stack0xfffffeab);
       cVar3 = (char)((uint)unaff_EBX >> 0x18);
       if ((piVar4 != (int *)0x0) || (cVar3 != '\0')) {
         FUN_00bda270(&iStack_128,param_2);

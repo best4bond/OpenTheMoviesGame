@@ -39,7 +39,7 @@ address,old_name,new_name,evidence
 00bb867a,FUN_00bb867a,zlib_inflate_fast,fast literal/length/distance loop with the same two error messages
 00aa7700,FUN_00aa7700,zlib_adler32_copy2,second zlib copy (BASE 65521 / NMAX 5552); body similarity 0.78 to the first copy
 00bbe6d0,FUN_00bbe6d0,Jenkins_Hash_Lookup2,0x9e3779b9 golden-ratio seed and lookup2 mix of 12-byte blocks
-00c327e0,FUN_00c327e0,Ogg_PageChecksumSet,"MSB-first CRC-32 table loop over header then body, result stored at page header +0x16..0x19"
+00c327e0,FUN_00c327e0,ogg_page_checksum_set,"libogg framing.c: MSB-first CRC-32 over header then body, stored at page header +0x16..0x19"
 00c0f9c0,FUN_00c0f9c0,CPU_IsCpuidSupported,toggles EFLAGS bit 0x200000 (ID flag) and tests it
 00c0f9f0,FUN_00c0f9f0,CPU_GetIntelBrandName,string table of Pentium/Celeron/Xeon names
 00c0fad0,FUN_00c0fad0,CPU_GetAMDBrandName,string table of K6/Athlon/Duron names
@@ -89,3 +89,112 @@ address,old_name,new_name,evidence
 00ac7ae0,FUN_00ac7ae0,zlib_fill_window_copy2,"counterpart of zlib_fill_window in the second zlib copy, body similarity 0.53"
 00ac73c0,FUN_00ac73c0,zlib_deflateReset_copy2,"counterpart of zlib_deflateReset in the second zlib copy, body similarity 0.55"
 00ac70d0,FUN_00ac70d0,zlib_deflateInit2__copy2,"counterpart of zlib_deflateInit2_ in the second zlib copy, body similarity 0.62"
+00c32560,FUN_00c32560,ogg_page_version,libogg 1.x: reads header byte 4
+00c32570,FUN_00c32570,ogg_page_continued,libogg 1.x: header byte 5 & 1
+00c32580,FUN_00c32580,ogg_page_bos,libogg 1.x: header byte 5 & 2
+00c32590,FUN_00c32590,ogg_page_eos,libogg 1.x: header byte 5 & 4
+00c325a0,FUN_00c325a0,ogg_page_granulepos,libogg 1.x: assembles the 64-bit granule position from header bytes 6..13
+00c32630,FUN_00c32630,ogg_page_serialno,libogg 1.x: reads dword at header +0xe
+00c32650,FUN_00c32650,ogg_page_pageno,libogg 1.x: reads dword at header +0x12
+00c32690,FUN_00c32690,ogg_stream_init,"libogg 1.x: clears 0x5a dwords; body 0x4000, lacing 0x400 entries (0x1000 and 8-byte granule array), serialno stored"
+00c32700,FUN_00c32700,ogg_stream_clear,libogg 1.x: frees body/lacing/granule buffers then zeroes the state
+00c32750,FUN_00c32750,ogg_stream_destroy,libogg 1.x: clear then free
+00c32770,FUN_00c32770,ogg__os_body_expand,libogg 1.x: grows body_data by needed + 1024
+00c327a0,FUN_00c327a0,ogg__os_lacing_expand,libogg 1.x: grows lacing_vals and granule_vals by needed + 32
+00c32890,FUN_00c32890,ogg_stream_packetin,"libogg 1.x: packet bytes/255 lacing values, memmove of consumed data, copies packet body"
+00c329f0,FUN_00c329f0,ogg_stream_flush,"libogg 1.x: builds the ""OggS"" (0x5367674f) page header and computes the checksum"
+00c32c20,FUN_00c32c20,ogg_stream_pageout,libogg 1.x: forced-flush conditions 0xff lacing / 0x1000 body bytes then calls flush
+00c32c70,FUN_00c32c70,ogg_sync_init,libogg 1.x: zeroes the 7-dword sync state
+00c32c90,FUN_00c32c90,ogg_sync_clear,libogg 1.x: frees data and zeroes state
+00c32cc0,FUN_00c32cc0,ogg_sync_destroy,libogg 1.x: clear then free
+00c32ce0,FUN_00c32ce0,ogg_sync_buffer,libogg 1.x: memmove consumed data down; grows by 0x1000 + size
+00c32d60,FUN_00c32d60,ogg_sync_wrote,libogg 1.x: fill += bytes; returns -1 if beyond storage
+00c32d80,FUN_00c32d80,ogg_sync_pageseek,"libogg 1.x: searches for ""OggS"" (0x5367674f), reads lacing table, verifies the page CRC"
+00c32f00,FUN_00c32f00,ogg_stream_pagein,libogg 1.x: reads page header fields via the ogg_page_* accessors and appends the segments
+00c331c0,FUN_00c331c0,ogg_sync_reset,libogg 1.x: clears fill/returned/unsynced/headerbytes/bodybytes
+00c331e0,FUN_00c331e0,ogg_stream_reset,libogg 1.x: clears body/lacing counters and sets granulepos to -1 (0x154)
+00c33230,FUN_00c33230,ogg_stream_reset_serialno,libogg 1.x: reset then store serialno
+00c33240,FUN_00c33240,ogg__packetout,libogg 1.x: packet extraction with adv flag
+00c33380,FUN_00c33380,ogg_stream_packetout,libogg 1.x: calls _packetout(adv=1)
+00c33390,FUN_00c33390,ogg_stream_packetpeek,libogg 1.x: calls _packetout(adv=0)
+00c54d30,FUN_00c54d30,oggpack_writeinit,"libogg 1.x: malloc 0x100, storage = 0x100"
+00c54de0,FUN_00c54de0,oggpack_write,"libogg 1.x: little-endian bit writer: realloc by 0x100 when storage <= endbyte+4, mask table at 0xf77f78"
+00c54ee0,FUN_00c54ee0,oggpackB_write,libogg 1.x: big-endian variant: value masked then shifted to the top of the 32-bit word
+00c54fd0,FUN_00c54fd0,oggpack_writealign,libogg 1.x: writes zero bits up to the byte boundary
+00c55110,FUN_00c55110,oggpack_reset,libogg 1.x: resets ptr to buffer and clears endbyte/endbit
+00c55140,FUN_00c55140,oggpack_writeclear,libogg 1.x: frees the buffer
+00c55180,FUN_00c55180,oggpack_readinit,libogg 1.x: sets buffer/ptr/storage
+00c551c0,FUN_00c551c0,oggpack_look,libogg 1.x: peeks up to 32 bits using the mask table without advancing
+00c55350,FUN_00c55350,oggpack_adv,libogg 1.x: advances endbit/endbyte/ptr by bits
+00c553c0,FUN_00c553c0,oggpack_read,libogg 1.x: look then advance; returns -1 when past the end
+00c2f7b0,FUN_00c2f7b0,vorbis_ilog2,libvorbis 1.0.1 (20030909): info.c ilog2: counts shifts of (v-1) (used to pack block sizes)
+00c2f7d0,FUN_00c2f7d0,vorbis__v_writestring,"libvorbis 1.0.1 (20030909): writes a string byte by byte with oggpack_write(...,8)"
+00c2f800,FUN_00c2f800,vorbis__v_readstring,"libvorbis 1.0.1 (20030909): reads bytes with oggpack_read(...,8) into a buffer"
+00c2f830,FUN_00c2f830,vorbis_comment_init,libvorbis 1.0.1 (20030909): zeroes the 4-field vorbis_comment
+00c2f840,FUN_00c2f840,vorbis_comment_add,libvorbis 1.0.1 (20030909): reallocs comment_lengths/user_comments (n*4+8) and copies the string
+00c2f8e0,FUN_00c2f8e0,vorbis_comment_add_tag,"libvorbis 1.0.1 (20030909): builds ""TAG=contents"" on the stack then calls comment_add"
+00c2f980,FUN_00c2f980,vorbis_tagcompare,libvorbis 1.0.1 (20030909): case-insensitive compare of n characters using toupper
+00c2f9d0,FUN_00c2f9d0,vorbis_comment_query,"libvorbis 1.0.1 (20030909): builds ""TAG="" and scans user_comments with tagcompare"
+00c2fa90,FUN_00c2fa90,vorbis_comment_query_count,"libvorbis 1.0.1 (20030909): same scan, counts matches"
+00c2fb30,FUN_00c2fb30,vorbis_comment_clear,"libvorbis 1.0.1 (20030909): frees each user comment, both arrays and the vendor string"
+00c2fba0,FUN_00c2fba0,vorbis_info_blocksize,libvorbis 1.0.1 (20030909): returns codec_setup blocksizes[zo] or -1
+00c2fbb0,FUN_00c2fbb0,vorbis_info_init,libvorbis 1.0.1 (20030909): zeroes vorbis_info and callocs the 0xe80-byte codec_setup
+00c2fbe0,FUN_00c2fbe0,vorbis_info_clear,libvorbis 1.0.1 (20030909): frees per-mode/floor/residue/map/book setup then codec_setup
+00c2fd50,FUN_00c2fd50,vorbis__vorbis_unpack_info,"libvorbis 1.0.1 (20030909): reads version (must be 0), channels, rate, three bitrates, two 4-bit blocksize exponents and the framing bit"
+00c2fe30,FUN_00c2fe30,vorbis__vorbis_unpack_comment,"libvorbis 1.0.1 (20030909): reads vendor string and the comment list, each with a 32-bit length"
+00c2ff10,FUN_00c2ff10,vorbis__vorbis_unpack_books,"libvorbis 1.0.1 (20030909): setup header reader, 645 bytes; follows unpack_comment in info.c order"
+00c301a0,FUN_00c301a0,vorbis_synthesis_headerin,"libvorbis 1.0.1 (20030909): checks the ""vorbis"" tag then dispatches packet types 1 (info), 3 (comment), 5 (setup); returns OV_ENOTVORBIS/OV_EBADHEADER"
+00c302c0,FUN_00c302c0,vorbis__vorbis_pack_info,"libvorbis 1.0.1 (20030909): writes type 1, ""vorbis"", version, channels, rate, bitrates, ilog2 blocksizes, framing bit"
+00c30370,FUN_00c30370,vorbis__vorbis_pack_comment,"libvorbis 1.0.1 (20030909): writes type 3, ""vorbis"" and the vendor string ""Xiph.Org libVorbis I 20030909"""
+00c30450,FUN_00c30450,vorbis__vorbis_pack_books,"libvorbis 1.0.1 (20030909): writes type 5, ""vorbis"" and the setup header"
+00c30640,FUN_00c30640,vorbis_commentheader_out,"libvorbis 1.0.1 (20030909): writeinit, pack_comment, returns the packet"
+00c306c0,FUN_00c306c0,vorbis_analysis_headerout,"libvorbis 1.0.1 (20030909): emits the three header packets (info, comment, books)"
+00c555d0,FUN_00c555d0,oggpack_bytes,endbyte + (endbit+7)/8
+00c58d20,FUN_00c58d20,vorbis__ilog,libvorbis 1.0.1 (20030909): sharedbook.c _ilog: bit length of v
+00c58dd0,FUN_00c58dd0,vorbis__float32_unpack,"libvorbis 1.0.1 (20030909): mantissa & 0x1fffff, sign bit, ldexp(exponent - 0x314)"
+00c58e10,FUN_00c58e10,vorbis__make_words,libvorbis 1.0.1 (20030909): assigns canonical Huffman codewords from a length list (33-entry marker array)
+00c58f70,FUN_00c58f70,vorbis__book_maptype1_quantvals,libvorbis 1.0.1 (20030909): finds the largest vals with vals^dim <= entries
+00c58fe0,FUN_00c58fe0,vorbis__book_unquantize,libvorbis 1.0.1 (20030909): builds the float value list for map types 1 and 2 using the unpacked float32 min/delta
+00c591a0,FUN_00c591a0,vorbis_staticbook_clear,"libvorbis 1.0.1 (20030909): frees quantlist, lengthlist and the two map arrays, zeroes 0xd dwords"
+00c59270,FUN_00c59270,vorbis_staticbook_destroy,libvorbis 1.0.1 (20030909): clear then free
+00c59290,FUN_00c59290,vorbis_book_clear,libvorbis 1.0.1 (20030909): frees codelist/valuelist/dec tables and zeroes 0xb dwords
+00c592f0,FUN_00c592f0,vorbis_book_init_encode,libvorbis 1.0.1 (20030909): make_words and unquantize into the codebook
+00c59340,FUN_00c59340,vorbis_bitreverse,libvorbis 1.0.1 (20030909): reverses the bits of a 32-bit word with 0x55555555/0x33333333/0x0f0f0f0f masks
+00c593b0,FUN_00c593b0,vorbis_sort32a,libvorbis 1.0.1 (20030909): qsort comparator on 32-bit codewords
+00c593d0,FUN_00c593d0,vorbis_book_init_decode,"libvorbis 1.0.1 (20030909): counts used entries, make_words, bitreverse and sort codewords, builds the decode tables"
+00c59750,FUN_00c59750,vorbis__dist,libvorbis 1.0.1 (20030909): sum of squared differences over a codebook entry
+00c59850,FUN_00c59850,vorbis__best,libvorbis 1.0.1 (20030909): nearest-entry search in a codebook (binary search then linear refinement)
+00c59ae0,FUN_00c59ae0,vorbis_staticbook_pack,"libvorbis 1.0.1 (20030909): writes the ""BCV"" (0x564342) sync pattern then dimension, entries, length list and quantization map"
+00c59d20,FUN_00c59d20,vorbis_staticbook_unpack,"libvorbis 1.0.1 (20030909): reads ""BCV"" and the codebook definition"
+00c59f80,FUN_00c59f80,vorbis_book_encode,libvorbis 1.0.1 (20030909): oggpack_write of the entry codeword with its length
+00c59fb0,FUN_00c59fb0,vorbis_book_errorv,libvorbis 1.0.1 (20030909): finds the best entry and overwrites the vector with it
+00c5a0f0,FUN_00c5a0f0,vorbis_bitreverse_codebook,"libvorbis 1.0.1 (20030909): codebook.c copy of bitreverse, same masks"
+00c5a160,FUN_00c5a160,vorbis_decode_packed_entry_number,libvorbis 1.0.1 (20030909): oggpack_look based fast table lookup then bit-by-bit binary search
+00c5a270,FUN_00c5a270,vorbis_book_decode,libvorbis 1.0.1 (20030909): decode_packed_entry_number then index into the entry map
+00c5a290,FUN_00c5a290,vorbis_book_decodevs_add,libvorbis 1.0.1 (20030909): alloca of n/dim entries; adds decoded vectors to the output
+00c5a540,FUN_00c5a540,vorbis_book_decodev_set,"libvorbis 1.0.1 (20030909): decodes n values, copying vectors into the output"
+00c5a5a0,FUN_00c5a5a0,vorbis_book_decodevv_add,libvorbis 1.0.1 (20030909): multi-channel decode adding into per-channel arrays with an interleave counter
+00c5a640,FUN_00c5a640,vorbis_drfti1,"libvorbis 1.0.1 (20030909): factorizes n using the {4,2,3,5} table then trig setup"
+00c5a7f0,FUN_00c5a7f0,vorbis_fdrffti,"libvorbis 1.0.1 (20030909): if n != 1 calls drfti1(n, wsave+n, ifac)"
+00c5a810,FUN_00c5a810,vorbis_dradf2,libvorbis 1.0.1 (20030909): radix-2 real forward pass; called by drftf1 for factor 2
+00c5ab60,FUN_00c5ab60,vorbis_dradf4,libvorbis 1.0.1 (20030909): radix-4 real forward pass; called by drftf1 for factor 4
+00c5b440,FUN_00c5b440,vorbis_dradfg,libvorbis 1.0.1 (20030909): general-radix real forward pass
+00c5ccc0,FUN_00c5ccc0,vorbis_drftf1,libvorbis 1.0.1 (20030909): loops over the factor list choosing dradf4/dradf2/dradfg
+00c5cea0,FUN_00c5cea0,vorbis_dradb2,libvorbis 1.0.1 (20030909): radix-2 real backward pass; called by drftb1 for factor 2
+00c5d240,FUN_00c5d240,vorbis_dradb3,libvorbis 1.0.1 (20030909): radix-3 backward pass; uses the taur constant
+00c5d6f0,FUN_00c5d6f0,vorbis_dradb4,libvorbis 1.0.1 (20030909): radix-4 backward pass; called by drftb1 for factor 4
+00c5e070,FUN_00c5e070,vorbis_dradbg,libvorbis 1.0.1 (20030909): general-radix real backward pass
+00c5f830,FUN_00c5f830,vorbis_drftb1,libvorbis 1.0.1 (20030909): loops over the factor list choosing dradb4/dradb2/dradb3/dradbg
+00c5fa50,FUN_00c5fa50,vorbis_drft_forward,libvorbis 1.0.1 (20030909): if n != 1 calls drftf1
+00c5fb10,FUN_00c5fb10,vorbis_mdct_init,"libvorbis 1.0.1 (20030909): log2(n), n/4 bit reverse table and cos/sin trig table of M_PI/n steps"
+00c5fcf0,FUN_00c5fcf0,vorbis_mdct_butterfly_8,"libvorbis 1.0.1 (20030909): 8-point butterfly, in place"
+00c5fd70,FUN_00c5fd70,vorbis_mdct_butterfly_16,libvorbis 1.0.1 (20030909): 16-point butterfly using 0.70710677
+00c5fe40,FUN_00c5fe40,vorbis_mdct_butterfly_32,libvorbis 1.0.1 (20030909): 32-point butterfly using 0.9238795 and 0.38268343
+00c60020,FUN_00c60020,vorbis_mdct_butterfly_first,libvorbis 1.0.1 (20030909): first butterfly stage with trig table
+00c60130,FUN_00c60130,vorbis_mdct_butterfly_generic,libvorbis 1.0.1 (20030909): generic butterfly stage with a trig stride
+00c60240,FUN_00c60240,vorbis_mdct_butterflies,"libvorbis 1.0.1 (20030909): runs first, then the generic stages by log2n"
+00c60300,FUN_00c60300,vorbis_mdct_clear,"libvorbis 1.0.1 (20030909): frees trig and bitrev, zeroes the struct"
+00c60340,FUN_00c60340,vorbis_mdct_bitreverse,libvorbis 1.0.1 (20030909): uses the n/4 bitrev table
+00c60460,FUN_00c60460,vorbis_mdct_backward,libvorbis 1.0.1 (20030909): inverse MDCT
+00c606b0,FUN_00c606b0,vorbis_mdct_forward,libvorbis 1.0.1 (20030909): forward MDCT
+00bba8c0,FUN_00bba8c0,CodecFormat_DetectFromHeader,"reads 4 bytes: ""OggS"" 0x5367674f -> Ogg codec, ""RIFF"" 0x46464952 -> checks the fmt tag (0x50 MPEG2 Layer II, 0x69 Xbox ADPCM), 0x75b22630 -> WMA"

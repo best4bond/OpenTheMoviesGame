@@ -18052,9 +18052,9 @@ undefined4 __cdecl zlib_inflate_blocks_free_copy2(int *param_1,int param_2,int *
 }
 
 
-//// FUNCTION zlib_adler32_2 @ 00aa7700 ////
+//// FUNCTION zlib_adler32_copy2 @ 00aa7700 ////
 
-uint __cdecl zlib_adler32_2(uint param_1,byte *param_2,uint param_3)
+uint __cdecl zlib_adler32_copy2(uint param_1,byte *param_2,uint param_3)
 
 {
   uint uVar1;
