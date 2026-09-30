@@ -5501,7 +5501,7 @@ void FUN_00d15440(void)
 void FUN_00d15450(void)
 
 {
-  FUN_00bdfc70((undefined4 *)&DAT_010d6128);
+  SetVtable_00d9fbe8_00bdfc70((undefined4 *)&DAT_010d6128);
   return;
 }
 
@@ -5511,7 +5511,7 @@ void FUN_00d15450(void)
 void FUN_00d15460(void)
 
 {
-  FUN_00bdfc70((undefined4 *)&DAT_010d6108);
+  SetVtable_00d9fbe8_00bdfc70((undefined4 *)&DAT_010d6108);
   return;
 }
 
