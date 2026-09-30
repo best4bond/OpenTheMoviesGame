@@ -1,5 +1,5 @@
 address,old_name,new_name,evidence
-00c0a980,FUN_00c0a980,CLHSegmentReader_Constructor,sets vtable and builds the segment map; class named by ".\CLHSegmentReader.cpp" assert
+00c0a980,FUN_00c0a980,CLHSegmentReader_Constructor,"sets vtable and builds the segment map; class named by "".CLHSegmentReader.cpp"" assert"
 00c0a780,FUN_00c0a780,CLHSegmentReader_Destructor,calls Clear then destroys the map
 00c0a3e0,FUN_00c0a3e0,CLHSegmentReader_Clear,frees every directory entry in the map
 00c0a700,FUN_00c0a700,CLHSegmentReader_HasSegment,map lookup by segment name
@@ -12,6 +12,39 @@ address,old_name,new_name,evidence
 00be6560,FUN_00be6560,LH_Archive_Transfer,dispatches to a reader or writer through the vtable depending on the mode
 00be6590,FUN_00be6590,LH_Archive_TransferU32,thin wrapper over LH_Archive_Transfer used for counts and ids
 00bbfe60,FUN_00bbfe60,LH_Archive_SerializeString,u32 length then bytes; EMEM assert at PKStringsCString.cpp line 0x31d
-00bbea70,FUN_00bbea70,PKString_GetLength,strlen with "Null c" assert at PKStringsCString.cpp line 0x306
+00bbea70,FUN_00bbea70,PKString_GetLength,"strlen with ""Null c"" assert at PKStringsCString.cpp line 0x306"
 00bd4d30,FUN_00bd4d30,LH_Archive_SerializeU32Array,count then each element; used for the criteria sample id list
 00c03440,FUN_00c03440,LH_Archive_SerializeCriteriaSampleIds,thunk to LH_Archive_SerializeU32Array
+00b2dc34,FUN_00b2dc34,zlib_inflate,"zlib 1.1.x inflate(): ""incorrect header check"" / ""need dictionary"" / ""incorrect data check"" / ""invalid window size"" messages"
+00b2dc1e,FUN_00b2dc1e,zlib_inflateInit_,calls inflateInit2_ with windowBits 15 (DEF_WBITS)
+00b2db3f,FUN_00b2db3f,zlib_inflateInit2_,checks version[0]=='1' and stream_size==0x38 (sizeof z_stream); window bits 8..15
+00b2dac3,FUN_00b2dac3,zlib_inflateReset,zeroes total_in/total_out/msg and resets the block state
+00b2db02,FUN_00b2db02,zlib_inflateEnd,frees the block state then the internal state
+00b2df97,FUN_00b2df97,zlib_inflateSetDictionary,checks adler32 of dictionary then copies it into the window
+00b666f7,FUN_00b666f7,zlib_adler32,BASE 65521 and NMAX 5552 constants
+00b67fa8,FUN_00b67fa8,zlib_zcalloc,"HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, items*size)"
+00b67fda,FUN_00b67fda,zlib_inflate_blocks_reset,resets mode and window pointers; frees codes/trees by mode
+00b68040,FUN_00b68040,zlib_inflate_blocks_new,"allocates state, 1440-entry (0x5a0) huft array and window"
+00b680be,FUN_00b680be,zlib_inflate_blocks,"block-type state machine: ""invalid block type""/""invalid stored block lengths""/""too many length or distance symbols""/""invalid bit length repeat"""
+00b6880a,FUN_00b6880a,zlib_inflate_blocks_free,resets then frees window/hufts/state
+00b6883d,FUN_00b6883d,zlib_inflate_set_dictionary,copies dictionary bytes into the window and sets read/write pointers
+00ba4a7b,FUN_00ba4a7b,zlib_inflate_codes_new,allocates a 0x1c-byte codes state and stores lbits/dbits/tl/td
+00ba4aae,FUN_00ba4aae,zlib_inflate_codes,"literal/length/distance decode: ""invalid literal/length code""/""invalid distance code"""
+00ba5005,FUN_00ba5005,zlib_inflate_codes_free,calls zfree on the codes state
+00ba5016,FUN_00ba5016,zlib_huft_build,builds Huffman decode tables; called by inflate_trees_bits and inflate_trees_dynamic
+00ba5395,FUN_00ba5395,zlib_inflate_trees_bits,"oversubscribed dynamic bit lengths tree / ""incomplete dynamic bit lengths tree"""
+00ba540e,FUN_00ba540e,zlib_inflate_trees_dynamic,"oversubscribed/incomplete literal/length tree and ""empty distance tree with lengths"""
+00ba5508,FUN_00ba5508,zlib_inflate_trees_fixed,returns the four fixed-table globals
+00ba5539,FUN_00ba5539,zlib_inflate_flush,copies window output to next_out and updates the check value
+00bb867a,FUN_00bb867a,zlib_inflate_fast,fast literal/length/distance loop with the same two error messages
+00aa7700,FUN_00aa7700,zlib_adler32_2,second adler32 copy (same BASE and NMAX constants) in a different module
+00bbe6d0,FUN_00bbe6d0,Jenkins_Hash_Lookup2,0x9e3779b9 golden-ratio seed and lookup2 mix of 12-byte blocks
+00c327e0,FUN_00c327e0,Ogg_PageChecksumSet,"MSB-first CRC-32 table loop over header then body, result stored at page header +0x16..0x19"
+00c0f9c0,FUN_00c0f9c0,CPU_IsCpuidSupported,toggles EFLAGS bit 0x200000 (ID flag) and tests it
+00c0f9f0,FUN_00c0f9f0,CPU_GetIntelBrandName,string table of Pentium/Celeron/Xeon names
+00c0fad0,FUN_00c0fad0,CPU_GetAMDBrandName,string table of K6/Athlon/Duron names
+00c0fd60,FUN_00c0fd60,CPU_InitCapabilities,checks vendor strings GenuineIntel/AuthenticAMD/CyrixInstead/CentaurHauls and calls the brand helpers
+00c8c550,FUN_00c8c550,Math_IntegerSqrt,"Newton iteration (n + x*x) / (2x), 0x40000000 clamp"
+0096ce70,FUN_0096ce70,LHHttp_ParseURL,"strips ""http://""; splits host at ':' or '/'; default port 0x50 (80); parses port with atol; same role as Fable LHHttp2_ParseURL (different implementation)"
+0096e7b0,FUN_0096e7b0,LHHttp_BuildHeaderBlock,"adds a default User-Agent header if missing then joins all headers with ""%s%s\r\n"""
+0096f0d0,FUN_0096f0d0,LHHttp_ParseResponseHeaders,"reads ""ServerCode"" (sscanf ""%s %ld"") and ""Location:"" from the response header list; same role as Fable LHHttp_ParseResponseHeaders"

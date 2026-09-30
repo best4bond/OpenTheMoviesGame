@@ -1,0 +1,1155 @@
+ours_addr,ours_name,fable_addr,fable_name,method,body_similarity,size_run_len,fable_label_note
+00bc9880,FUN_00bc9880,00c0acc0,Graphics_MultiplyFloatByBitMask,body,0.89,0,[forge-autoname4 conf=medium] Fastcall loop multiplies array elements by param_3 based on bitmask (line 1982); shifts pa
+00bc9a60,FUN_00bc9a60,00c0ae70,ConstructString_SetCharMask,size-run,0.84,6,"[forge-autoname3 conf=medium] Fastcall, operates on ushort arrays with bit shifts and mask operations (1<<index), sets/c"
+00bc9ad0,FUN_00bc9ad0,00c0aee0,ConstructString,size-run,,6,
+00bc9af0,FUN_00bc9af0,00c0af00,ConstructString,size-run,,6,
+00bc9b10,FUN_00bc9b10,00c0af20,NUISystem_CComponent_UpdateAnimation,size-run,0.42,6,"[forge-autoname3 conf=medium] Fastcall iterates 0x10 times comparing floats, calls AnimationCurve_UpdateWithDelta and On"
+00bc9d20,FUN_00bc9d20,00c0b130,Graphics_ClampFloatParam,size-run,0.38,6,[forge-autoname3 conf=medium] Fastcall returns clamped float using _DAT_0123078c/0123088c globals; float clamping utilit
+00bc9d70,FUN_00bc9d70,00c0b180,Render_ApplyAlphaValueMask,size-run,0.72,6,"[forge-autoname4 conf=medium] Fastcall loop applies alpha mask to float array (line 2001); checks char flag (line 2009),"
+00bcaa50,FUN_00bcaa50,00c15ea0,SetRotationAngle,size-run,,6,
+00bcaac0,FUN_00bcaac0,00c15f10,OnInitialActivate,size-run,,6,
+00bcab10,FUN_00bcab10,00c15f60,SetAtmosEditingMode,size-run,,6,
+00bcab40,FUN_00bcab40,00c15f90,SetAtmosEditingMode,size-run,,6,
+00bcab70,FUN_00bcab70,00c15fc0,SetMaterialIndex,size-run,,6,
+00bcaba0,FUN_00bcaba0,00c15ff0,SetAtmosEditingMode,size-run,,6,
+00bcbb60,FUN_00bcbb60,0088e090,?SetAllSoundsAsMuted@CGameScriptInterface@@UBEX_N@Z,size-run,,6,
+00bcbb80,FUN_00bcbb80,0088e0b0,?SetSoundThemesAsEnabledForRegion@CGameScriptInterface@@UBEXABVCCharString@@_N@Z,size-run,,6,
+00bcbbc0,FUN_00bcbbc0,0088e0f0,?SetDebugCameraType@CGameScriptInterface@@UBEXJ@Z,size-run,,6,
+00bcbbd0,FUN_00bcbbd0,0088e100,?IsXbox@CGameScriptInterface@@UBE_NXZ,size-run,,6,
+00bcbbe0,FUN_00bcbbe0,0088e110,?GiveHeroTitle@CGameScriptInterface@@UBEXABVCCharString@@@Z,size-run,,6,
+00bcbc00,FUN_00bcbc00,0088e130,?GiveHeroWeapon@CGameScriptInterface@@UBEXABVCCharString@@_N@Z,size-run,,6,
+00bcc610,FUN_00bcc610,00994430,~CFileDataInputStream,size-run,,6,
+00bcc630,FUN_00bcc630,00994450,?SetPosition@CFileDataOutputStream@@UAEXK@Z,size-run,,6,
+00bcc640,FUN_00bcc640,00994460,?GetPosition@CFileDataOutputStream@@UBEKXZ,size-run,,6,
+00bcc650,FUN_00bcc650,00994470,?Close@CFileDataOutputStream@@UAEXXZ,size-run,,6,
+00bcc660,FUN_00bcc660,00994480,?Write@CFileDataOutputStream@@UAEXPBXJ@Z,size-run,,6,
+00bcc680,FUN_00bcc680,009944a0,CBufferedFileDataOutputStream,size-run,,6,
+00bd0c60,FUN_00bd0c60,0073e320,CModeCrouch,size-run,,6,
+00bd0d20,FUN_00bd0d20,0073e3e0,`scalar_deleting_destructor',size-run,,6,
+00bd0d50,FUN_00bd0d50,0073e410,CModeCrouch,size-run,,6,
+00bd0e10,FUN_00bd0e10,0073e4d0,`scalar_deleting_destructor',size-run,,6,
+00bd0e40,FUN_00bd0e40,0073e500,CModeCrouch,size-run,,6,
+00bd0f00,FUN_00bd0f00,0073e5c0,`scalar_deleting_destructor',size-run,,6,
+00bd10a0,FUN_00bd10a0,0088fe30,?GetTimeOfDay@CGameScriptInterface@@UBEJXZ,size-run,,6,
+00bd10b0,FUN_00bd10b0,0088fe40,?IsTimeOfDayBetween@CGameScriptInterface@@UBE_NJJ@Z,size-run,,6,
+00bd10c0,FUN_00bd10c0,0088fe50,?GetDayOfWeek@CGameScriptInterface@@UBEJXZ,size-run,,6,
+00bd10e0,FUN_00bd10e0,0088fe70,?GetDayCount@CGameScriptInterface@@UBEJXZ,size-run,,6,
+00bd10f0,FUN_00bd10f0,0088fe80,?SetTimeAsStopped@CGameScriptInterface@@UBEX_NAAJ@Z,size-run,,6,
+00bd1100,FUN_00bd1100,0088fe90,?FastForwardTimeTo@CGameScriptInterface@@UBEXMM@Z,size-run,,6,
+00bd16a0,FUN_00bd16a0,00c302b0,~CActionParamCCountedPointer<NUISystem::CComponent>,size-run,,8,
+00bd16f0,FUN_00bd16f0,00c30300,~CActionParamCCountedPointer<NUISystem::CComponent>,size-run,,8,
+00bd1740,FUN_00bd1740,00c30350,~CActionParamCCountedPointer<NUISystem::CComponent>,size-run,,8,
+00bd1790,FUN_00bd1790,00c303a0,`vector_deleting_destructor',size-run,,8,
+00bd17b0,FUN_00bd17b0,00c303c0,`vector_deleting_destructor',size-run,,8,
+00bd17d0,FUN_00bd17d0,00c303e0,`vector_deleting_destructor',size-run,,8,
+00bd17f0,FUN_00bd17f0,00c30400,CActionParamString,size-run,,8,
+00bd1840,FUN_00bd1840,00c30450,CActionParamString,size-run,,8,
+00bd1910,FUN_00bd1910,0097ce70,?Initialise@CCreatureAction_VillagerAttackKnockdown@@UAEXXZ,size-run,,6,
+00bd1950,FUN_00bd1950,0097ceb0,?Initialise@CCreatureAction_VillagerAdvance@@UAEXXZ,size-run,,6,
+00bd1990,FUN_00bd1990,0097cef0,?Initialise@CCreatureAction_VillagerBackOff@@UAEXXZ,size-run,,6,
+00bd19d0,FUN_00bd19d0,0097cf30,CCreatureAction_DragonRoar,size-run,,6,
+00bd1a30,FUN_00bd1a30,0097cf90,CCreatureAction_SummonCreatures,size-run,,6,
+00bd1a90,FUN_00bd1a90,0097cff0,CCreatureAction_DragonRoar,size-run,,6,
+00bd38a0,FUN_00bd38a0,00907400,?IsToRetainSafeDistance@CCreatureAction_FodderUnblockablePrimaryAttack@@UBE_NXZ,size-run,,7,
+00bd38b0,FUN_00bd38b0,00907410,?IsToFaceTargetAtStart@CCreatureAction_FodderUnblockablePrimaryAttack@@UBE_NXZ,size-run,,7,
+00bd38c0,LH_SerializeGlobalProperties_Thunk,00907420,?IsBlockable@CCreatureAction_FodderUnblockablePrimaryAttack@@UBE_NXZ,size-run,,7,
+00bd38d0,LH_Array_ZeroHeader,00907430,?IsKnockdownStrike@CCreatureAction_FodderUnblockablePrimaryAttack@@UBE_NXZ,size-run,,7,
+00bd38e0,FUN_00bd38e0,00907440,CCreatureAction_DragonRoar,size-run,,7,
+00bd3940,FUN_00bd3940,009074a0,?IsToRetainSafeDistance@CCreatureAction_FodderSecondaryAttack@@UBE_NXZ,size-run,,7,
+00bd3950,FUN_00bd3950,009074b0,?IsToFaceTargetAtStart@CCreatureAction_FodderSecondaryAttack@@UBE_NXZ,size-run,,7,
+00bd6650,FUN_00bd6650,00a75ca0,SetBLNode,size-run,,6,
+00bd6690,FUN_00bd6690,00a75ce0,SetBLNode,size-run,,6,
+00bd66d0,FUN_00bd66d0,00a75d20,SetBLNode,size-run,,6,
+00bd6710,FUN_00bd6710,00a75d60,SetBLNode,size-run,,6,
+00bd6750,FUN_00bd6750,00a75da0,?CalculateChildrenNeighbours@CNavQuadTreeNode@@MAEXXZ,size-run,,6,
+00bd67b0,FUN_00bd67b0,00a75e00,?RemoveNeighbours@CNavQuadTreeNode@@MAEXXZ,size-run,,6,
+00bdde30,FUN_00bdde30,0088f400,?SetCreatureGeneratorsCreatureGroupAsEnabled@CGameScriptInterface@@UBEXW4ECreatureGroup@@_N@Z,size-run,,11,
+00bdde40,FUN_00bdde40,0088f410,?SetTeleportingAsActive@CGameScriptInterface@@UBEX_N@Z,size-run,,11,
+00bdde50,FUN_00bdde50,0088f420,?IsTeleportingActive@CGameScriptInterface@@UBE_NXZ,size-run,,11,
+00bdde60,FUN_00bdde60,0088f430,?SetRegionTextDisplayAsActive@CGameScriptInterface@@UBEX_N@Z,size-run,,11,
+00bdde70,FUN_00bdde70,0088f440,?SetHeroSleepingAsEnabled@CGameScriptInterface@@UBEX_N@Z,size-run,,11,
+00bdde80,FUN_00bdde80,0088f450,?IsHeroSleepingEnabled@CGameScriptInterface@@UBE_NXZ,size-run,,11,
+00bdde90,FUN_00bdde90,0088f460,?SetExperienceSpendingAsEnabled@CGameScriptInterface@@UBEX_N@Z,size-run,,11,
+00bddea0,FUN_00bddea0,0088f470,?SetSummonerDeathExplosionAffectsHero@CGameScriptInterface@@UBEX_N@Z,size-run,,11,
+00bddeb0,FUN_00bddeb0,0088f480,?ApplyScriptBrush@CGameScriptInterface@@UBEXABVCCharString@@@Z,size-run,,11,
+00bdded0,FUN_00bdded0,0088f4a0,?EnableDecals@CGameScriptInterface@@UBEX_N@Z,size-run,,11,
+00bddf00,FUN_00bddf00,0088f4d0,?EntityEnableGravity@CGameScriptInterface@@UBEXABVCScriptThing@@_N@Z,size-run,,11,
+00bde060,FUN_00bde060,00c22790,CBase,size-run,,6,
+00bde080,FUN_00bde080,00c227b0,CBase,size-run,,6,
+00bde090,FUN_00bde090,00c227c0,CBase,size-run,,6,
+00bde0a0,FUN_00bde0a0,00c227d0,CBase,size-run,,6,
+00bde0b0,FUN_00bde0b0,00c227e0,CBase,size-run,,6,
+00bde0c0,FUN_00bde0c0,00c227f0,CBase,size-run,,6,
+00bdff10,FUN_00bdff10,00c3e760,CCombatRenderer_UpdateRenderState,body,0.63,0,"[forge-autoname3 conf=medium] Fastcall checks multiple offset pointers (+0x180, +0x184, +0x58, +0x1d4) calling vtable fu"
+00be0000,FUN_00be0000,00c3e800,Audio_ProcessMixingIfNeeded,body,0.90,0,"autoname-t5 [medium]: fastcall; checks if mixing needed (offset 0x180, 0x1cc, 0x1b8); calls Audio_MixStereoSamples twice"
+00be0b10,FUN_00be0b10,00c3f280,Render_QualityLevelAdjustment,size-run,1.00,7,"autoname-t5 [medium]: simple switch on quality level (1,2,4,8,0x40,0x80); returns adjusted level or default 0x80; qualit"
+00be0bf0,FUN_00be0bf0,00c3f360,`vector_deleting_destructor',size-run,,7,
+00be0c10,FUN_00be0c10,00c3f380,~CScriptDefinitionManager,size-run,,7,
+00be0c60,FUN_00be0c60,00c3f3d0,~CParticleEffect,size-run,,7,
+00be0d00,FUN_00be0d00,00c3f470,`vector_deleting_destructor',size-run,,7,
+00be0d20,FUN_00be0d20,00c3f490,CMap::Destructor,size-run,0.41,7,"[forge-autoname2 conf=high <- wf] Fastcall destructor; calls Update, destroys CParticleEffect; map cleanup pattern evide"
+00be0da0,FUN_00be0da0,00c3f510,GlobalEventCreatureDied,size-run,,7,
+00be15b0,FUN_00be15b0,00c3fd20,CQ_GuildTrainingSkillScript::InitializeRenderer,body,0.62,0,"autoname-t5 [high]: thiscall on CQ_GuildTrainingSkillScript; calls Init, QueryPerformanceCounter/Frequency; constructs r"
+00be2b30,FUN_00be2b30,00aa7050,?GetChunkDescription@C3DMeshFileXMappingInfoChunk@@UBE?BVCCharString@@XZ,size-run,,6,
+00be2b50,FUN_00be2b50,00aa7070,`vector_deleting_destructor',size-run,,6,
+00be2b70,FUN_00be2b70,00aa7090,?GetChunkDescription@C3DMeshFileXAnimatedPrimitiveChunk@@UBE?BVCCharString@@XZ,size-run,,6,
+00be2b90,FUN_00be2b90,00aa70b0,`vector_deleting_destructor',size-run,,6,
+00be2be0,FUN_00be2be0,00aa7100,?GetChunkDescription@C3DMeshFileXBoundingSphereChunk@@UBE?BVCCharString@@XZ,size-run,,6,
+00be2c00,FUN_00be2c00,00aa7120,`vector_deleting_destructor',size-run,,6,
+00be7150,FUN_00be7150,0089ea30,?CreatureGeneratorIsDestroyed@CGameScriptInterface@@UBE_NABVCScriptThing@@@Z,size-run,,8,
+00be71c0,FUN_00be71c0,0089eaa0,?CreatureGeneratorSetGeneratedCreatureScriptName@CGameScriptInterface@@UBEXABVCScriptThing@@ABVCCharString@@@Z,size-run,,8,
+00be7230,FUN_00be7230,0089eb10,?CreatureGeneratorSetNumTriggers@CGameScriptInterface@@UBEXABVCScriptThing@@J@Z,size-run,,8,
+00be72a0,FUN_00be72a0,0089eb80,?CreatureGeneratorGetNumGeneratedCreatures@CGameScriptInterface@@UBEJABVCScriptThing@@@Z,size-run,,8,
+00be7310,FUN_00be7310,0089ebf0,?CreatureGeneratorAreAllCreaturesAlive@CGameScriptInterface@@UBE_NABVCScriptThing@@@Z,size-run,,8,
+00be7380,FUN_00be7380,0089ec60,?CreatureGeneratorAddTriggerer@CGameScriptInterface@@UBEXABVCScriptThing@@0@Z,size-run,,8,
+00be73e0,FUN_00be73e0,0089ecc0,?CreatureGeneratorRemoveTriggerer@CGameScriptInterface@@UBEXABVCScriptThing@@0@Z,size-run,,8,
+00be7440,FUN_00be7440,0089ed20,?SetCreatureGeneratorEnabled@CGameScriptInterface@@UBEXABVCScriptThing@@_N@Z,size-run,,8,
+00be77c0,FUN_00be77c0,0089e880,?EntitySetDeathContainerAsEnabled@CGameScriptInterface@@UBEXABVCScriptThing@@_N@Z,size-run,,8,
+00be7820,FUN_00be7820,0089e8e0,?CreatureGeneratorTrigger@CGameScriptInterface@@UBEXABVCScriptThing@@@Z,size-run,,8,
+00be7890,FUN_00be7890,0089e950,?CreatureGeneratorSetAlwaysCreateCreaturesOnTrigger@CGameScriptInterface@@UBEXABVCScriptThing@@_N@Z,size-run,,8,
+00be7900,FUN_00be7900,0089e9c0,?CreatureGeneratorIsDepleted@CGameScriptInterface@@UBE_NABVCScriptThing@@@Z,size-run,,8,
+00be7b30,FUN_00be7b30,00899700,?GetDistanceHeroCanBeHeardFrom@CGameScriptInterface@@UBEMXZ,size-run,,8,
+00be7ba0,FUN_00be7ba0,00899770,?GetHeroRoughExperienceLevel@CGameScriptInterface@@UBEJXZ,size-run,,8,
+00be7c10,FUN_00be7c10,008997e0,?GetHeroExperienceAvailableToSpend@CGameScriptInterface@@UBEJXZ,size-run,,8,
+00be7c80,FUN_00be7c80,00899850,?GetHeroFatness@CGameScriptInterface@@UBEMXZ,size-run,,8,
+00be7cf0,FUN_00be7cf0,008998c0,?GetHeroScariness@CGameScriptInterface@@UBEMXZ,size-run,,8,
+00be7d60,FUN_00be7d60,00899930,?GetHeroAttractiveness@CGameScriptInterface@@UBEMXZ,size-run,,8,
+00be7dd0,FUN_00be7dd0,008999a0,?GetHeroWillEnergyLevel@CGameScriptInterface@@UBEMXZ,size-run,,8,
+00be7e40,FUN_00be7e40,00899a10,?SetHeroWillEnergyLevel@CGameScriptInterface@@UBEXM@Z,size-run,,8,
+00be86e0,FUN_00be86e0,006f5ae0,?IsToFaceTarget@CCreatureAction_GenericFireProjectileWeapon@@UBE_NXZ,size-run,,6,
+00be86f0,FUN_00be86f0,006f5af0,?GetIsToFaceTargetCone@CCreatureAction_GenericFireProjectileWeapon@@UBEMXZ,size-run,,6,
+00be8700,FUN_00be8700,006f5b00,C3DAnimationUtil,size-run,,6,
+00be8720,FUN_00be8720,006f5b20,C3DAnimationUtil,size-run,,6,
+00be8740,FUN_00be8740,006f5b40,?IsUsingAnimationMovement@CCreatureAction_NymphGetHitDie@@UBE_NXZ,size-run,,6,
+00be8750,FUN_00be8750,006f5b50,CCreatureAction_BanditKingStuckGetHit,size-run,,6,
+00bec350,FUN_00bec350,00c330a0,CSBAgents,size-run,,6,
+00bec370,FUN_00bec370,00c330c0,`vector_deleting_destructor',size-run,,6,
+00bec390,FUN_00bec390,00c330e0,CBase,size-run,,6,
+00bec3b0,FUN_00bec3b0,00c33100,InformOfEvent,size-run,,6,
+00bec3c0,FUN_00bec3c0,00c33110,InformOfEvent,size-run,,6,
+00bec3d0,FUN_00bec3d0,00c33120,~CScriptDefinitionManager,size-run,,6,
+00bed930,FUN_00bed930,00c206e0,Creature_GetWeaponSlotFromState,body,0.85,0,"autoname-t5 [medium]: Switch on offset +0xac (state/type field), returns 0, 1, 2, or -1 based on case (2-6); maps state "
+00beda10,FUN_00beda10,00c207c0,Thiscall_ValidateInventoryRange,body,0.73,0,"[forge-autoname3 conf=medium] Validates ushort at 0xac: (1 < value < 5 or == 6); no clear class evidence, thiscall calli"
+00bedde0,FUN_00bedde0,00c20ef0,IsStateStreaming_2to4,body,0.72,0,"returns 1 if short at obj+0xac in {2,3,4} else 0; caller GetTexturesInUse (likely texture-state check)"
+00bf0210,FUN_00bf0210,00c1ffe0,`vector_deleting_destructor',size-run,,6,
+00bf0230,FUN_00bf0230,00c20000,"~CPredicate_And<NScript::CIsThingAlive,NScript::CIsVariableFalse>",size-run,,6,
+00bf0280,FUN_00bf0280,00c20050,`vector_deleting_destructor',size-run,,6,
+00bf02a0,FUN_00bf02a0,00c20070,`vector_deleting_destructor',size-run,,6,
+00bf02c0,FUN_00bf02c0,00c20090,`vector_deleting_destructor',size-run,,6,
+00bf02e0,FUN_00bf02e0,00c200b0,`vector_deleting_destructor',size-run,,6,
+00bf1b00,FUN_00bf1b00,00c258d0,Math_Vector3Normalize,body,0.72,0,"[forge-autoname2 conf=high <- wf] Fastcall float*, SQRT of sum of squares, divides by magnitude, modifies in-place"
+00bf1c20,FUN_00bf1c20,00c25970,Math_Vector3Length,body,1.00,0,"[forge-autoname2 conf=high <- wf] Fastcall float*, returns SQRT of sum of squares of three components, standard magnitud"
+00bf1fd0,FUN_00bf1fd0,00a03be0,Close,size-run,,6,
+00bf1fe0,FUN_00bf1fe0,00a03bf0,SetAsKeyboardKeyHeld,size-run,,6,
+00bf2010,FUN_00bf2010,00a03c20,SetAsKeyboardKeyHeld,size-run,,6,
+00bf2040,FUN_00bf2040,00a03c50,SetAsKeyboardKeyHeld,size-run,,6,
+00bf2070,FUN_00bf2070,00a03c80,SetAsLeftMouseButtonPressed,size-run,,6,
+00bf20a0,FUN_00bf20a0,00a03cb0,SetAsKeyboardKeyHeld,size-run,,6,
+00bf2720,FUN_00bf2720,00c25de0,IsAngry,size-run,,11,
+00bf2740,FUN_00bf2740,00c25e00,FreeBuffer,size-run,,11,
+00bf2760,FUN_00bf2760,00c25e20,Thiscall_ScaleArrayElement_0x11,size-run,0.17,11,[forge-autoname3 conf=medium] Sets float array[0x11]; constraint normalization likely but class/method ownership not con
+00bf2790,FUN_00bf2790,00c25e50,Thiscall_ScaleArrayElement_0x12,size-run,0.17,11,[forge-autoname3 conf=medium] Sets float array[0x12]; rotation normalization likely but class/method ownership not confi
+00bf27c0,FUN_00bf27c0,00c25e80,AddExclusiveObserver,size-run,,11,
+00bf27d0,FUN_00bf27d0,00c25e90,$E2,size-run,,11,
+00bf27e0,FUN_00bf27e0,00c25ea0,C3DMeshFileTransformationChunk_UpdateAngle,size-run,0.67,11,"[forge-autoname4 conf=medium] Fastcall caller C3DMeshFileTransformationChunk; wraps angle, applies boundary, marks state"
+00bf2840,FUN_00bf2840,00c25f00,Radius_ApplyModifiers,size-run,0.69,11,"[forge-autoname3 conf=medium] Reads radius at offset 8, applies conditional modifiers at 0x38, multiplies by scale; CThi"
+00bf2880,FUN_00bf2880,00c25f40,HeroWorksInBrothel_UpdateAnim,size-run,0.69,11,"[forge-autoname4 conf=medium] Fastcall caller HeroWorksInBrothel; calls Radius_ApplyModifiers, AnimationCurve_UpdateWith"
+00bf2930,FUN_00bf2930,00c25ff0,ConstructString,size-run,,11,
+00bf2950,FUN_00bf2950,00c26010,CWideString_ConstructFromResourceId,size-run,0.11,11,"[forge-autoname4 conf=medium] Fastcall initializing CWideString from long ID; calls ConstructString, adds observer, scal"
+00bf2bd0,FUN_00bf2bd0,00c203a0,CAtmosProcess,size-run,,11,
+00bf2bf0,FUN_00bf2bf0,00c203c0,TransferOut,size-run,,11,
+00bf2c10,FUN_00bf2c10,00c203e0,SetAsPumpCombatActions,size-run,,11,
+00bf2c30,FUN_00bf2c30,00c20400,TransferOut,size-run,,11,
+00bf2c50,FUN_00bf2c50,00c20420,SetAsPumpCombatActions,size-run,,11,
+00bf2c70,FUN_00bf2c70,00c20440,"bind2nd<std::greater<long>,long>",size-run,,11,
+00bf2c90,FUN_00bf2c90,00c20460,SetAsPumpCombatActions,size-run,,11,
+00bf2cb0,FUN_00bf2cb0,00c20480,SetAsPumpCombatActions,size-run,,11,
+00bf2cd0,FUN_00bf2cd0,00c204a0,SetAsPumpCombatActions,size-run,,11,
+00bf2cf0,FUN_00bf2cf0,00c204c0,"bind2nd<std::greater<long>,long>",size-run,,11,
+00bf2d90,FUN_00bf2d90,00c20560,"bind2nd<std::greater<long>,long>",size-run,,11,
+00bf32d0,FUN_00bf32d0,008ceae0,SetAnimationMemoryPool,size-run,,6,
+00bf3340,FUN_00bf3340,008ceb50,GetItemDescription,size-run,,6,
+00bf3380,FUN_00bf3380,008ceb90,?PerformAction@CCreatureAction_CastTimeSpell@@UAEXXZ,size-run,,6,
+00bf3390,FUN_00bf3390,008ceba0,?PerformAction@CCreatureAction_BuildUpTimeSpell@@UAEXXZ,size-run,,6,
+00bf33a0,FUN_00bf33a0,008cebb0,?PerformAction@CCreatureAction_ReleaseTimeSpell@@UAEXXZ,size-run,,6,
+00bf33b0,FUN_00bf33b0,008cebc0,?IsToCauseRecoil@CCreatureAction_ReleaseTimeSpell@@UBE_NXZ,size-run,,6,
+00bf3a60,FUN_00bf3a60,00c22eb0,CBase,size-run,,6,
+00bf3a70,FUN_00bf3a70,00c22ec0,CBase,size-run,,6,
+00bf3a80,FUN_00bf3a80,00c22ed0,CBase,size-run,,6,
+00bf3a90,FUN_00bf3a90,00c22ee0,CBase,size-run,,6,
+00bf3aa0,FUN_00bf3aa0,00c22ef0,~CActionParamCCountedPointer<NUISystem::CComponent>,size-run,,6,
+00bf3b10,FUN_00bf3b10,00c22f60,IsNewDestinationGoingToResetNavigation,size-run,,6,
+00bf62d0,FUN_00bf62d0,00c1c900,CMatrix3x4_RotateYaw,size-run,0.70,10,[forge-autoname4 conf=high] Rotates 6 pairs of matrix columns using cos/sin; modifies param_1+4 through param_1+0x2c; cl
+00bf6360,FUN_00bf6360,00c1c990,CMatrix3x4_RotateYawSparse,size-run,0.21,10,[forge-autoname4 conf=high] Similar to 00c1c900 but rotates 4 coordinate pairs in float array; sparse version of full ma
+00bf6480,FUN_00bf6480,00c1cab0,Math_Atan2Normalized,size-run,0.74,10,"[forge-autoname2 conf=high <- wf] Float math function, multiple fpatan calls for quadrant handling, angle normalization"
+00bf65e0,FUN_00bf65e0,00c1cc10,SetLocalizationMatrix,size-run,,10,
+00bf6770,FUN_00bf6770,00c1cda0,ConvertVectorToLocal,size-run,,10,
+00bf68f0,FUN_00bf68f0,00c1cf20,operator*,size-run,,10,
+00bf6a80,FUN_00bf6a80,00c1d0b0,Matrix_RotateAroundAxis,size-run,0.90,10,autoname-t5 [high]: Fastcall float math with sin/cos; builds rotation matrix via Rodrigues' formula (evident from cost/s
+00bf6b90,FUN_00bf6b90,00c1d1c0,SetInversePositionMatrixFromPositionMatrix,size-run,,10,
+00bf6cf0,FUN_00bf6cf0,00c1d320,Matrix_Invert,size-run,0.91,10,autoname-t5 [high]: Fastcall float arrays; computes inverse via adjugate matrix and determinant division; 3x3/4x4 matrix
+00bf6eb0,FUN_00bf6eb0,00c1d4e0,"_Dest_val<std::allocator<std::pair<CCharString,CSymbolMap::CSymbolInfo>_>,std::pair<CCharString,CSymbolMap::CSymbolInfo>_>",size-run,,10,
+00bfbcc0,FUN_00bfbcc0,004c79f0,GetDisplayEngine,size-run,,7,
+00bfbcd0,FUN_00bfbcd0,004c7a00,GetDisplayEngine,size-run,,7,
+00bfbce0,FUN_00bfbce0,004c7a10,GetPlayer,size-run,,7,
+00bfbd00,FUN_00bfbd00,004c7a30,GetPlayer,size-run,,7,
+00bfbd20,FUN_00bfbd20,004c7a50,"_Cons_val<std::allocator<std::pair<EHeroMorphType,CParticleMorphs::CEntry>_>,std::pair<EHeroMorphType,CParticleMorphs::CEntry>,std::pair<enum_EHeroMorphType,class_CParticleMorphs::CEntry>_const&>",size-run,,7,
+00bfbd30,FUN_00bfbd30,004c7a60,"_Cons_val<std::allocator<std::pair<EHeroMorphType,CParticleMorphs::CEntry>_>,std::pair<EHeroMorphType,CParticleMorphs::CEntry>,std::pair<enum_EHeroMorphType,class_CParticleMorphs::CEntry>_const&>",size-run,,7,
+00bfbd40,FUN_00bfbd40,004c7a70,GetDisplayEngine,size-run,,7,
+00bfbdc0,FUN_00bfbdc0,008cc480,`vector_deleting_destructor',size-run,,6,
+00bfbde0,FUN_00bfbde0,008cc4a0,`vector_deleting_destructor',size-run,,6,
+00bfbe00,FUN_00bfbe00,008cc4c0,`vector_deleting_destructor',size-run,,6,
+00bfbe20,FUN_00bfbe20,008cc4e0,`vector_deleting_destructor',size-run,,6,
+00bfbe40,FUN_00bfbe40,008cc500,?Clone@CCreatureAction_SheatheWeapons@@UBEPAVCCreatureActionBase@@XZ,size-run,,6,
+00bfbe80,FUN_00bfbe80,008cc540,?Clone@CCreatureAction_SummonerSummonInto@@UBEPAVCCreatureActionBase@@XZ,size-run,,6,
+00bfbeb0,FUN_00bfbeb0,00ac61f0,`vector_deleting_destructor',size-run,,6,
+00bfbed0,FUN_00bfbed0,00ac6210,"_Dest_val<std::allocator<CMacro>,CMacro>",size-run,,6,
+00bfbf00,FUN_00bfbf00,00ac6240,"_Dest_val<std::allocator<CIVCountedPointer<N3DPrimitive::CTriangleList>_>,CIVCountedPointer<N3DPrimitive::CTriangleList>_>",size-run,,6,
+00bfbf30,FUN_00bfbf30,00ac6270,?GetChunkDescription@C3DMeshFileEngineMaterialChunk@@UBE?BVCCharString@@XZ,size-run,,6,
+00bfbf50,FUN_00bfbf50,00ac6290,`vector_deleting_destructor',size-run,,6,
+00bfbf70,FUN_00bfbf70,00ac62b0,?GetChunkInfo@C3DMeshFileClothChunk@@UBE?BVCCharString@@XZ,size-run,,6,
+00bfed20,FUN_00bfed20,00cba3b0,"_Cons_val<std::allocator<CMeshBankManager::CMeshDataBankInfo>,CMeshBankManager::CMeshDataBankInfo,CMeshBankManager::CMeshDataBankInfo_const&>",size-run,,6,
+00bfed50,FUN_00bfed50,00cba3e0,"_Uninit_copy<std::_Vector_const_iterator<std::_Vector_val<std::pair<unsigned___int64,CCountedPointer<CActiveEntityScriptBase>_>,std::allocator<std::pair<unsigned___int64,CCountedPointer<CActiveEntityScriptBase>_>_>_>_>,std::pair<unsigned___int64,CCountedPointer<CActiveEntityScriptBase>_>*,std::allocator<std::pair<unsigned___int64,CCountedPointer<CActiveEntityScriptBase>_>_>_>",size-run,,6,
+00bfed90,FUN_00bfed90,00cba420,"_Uninit_fill_n<std::pair<unsigned___int64,CCountedPointer<CActiveEntityScriptBase>_>*,unsigned_int,std::pair<unsigned___int64,class_CCountedPointer<class_CActiveEntityScriptBase>_>,std::allocator<std::pair<unsigned___int64,CCountedPointer<CActiveEntityScriptBase>_>_>,std::pair<unsigned___int64,class_CCountedPointer<class_CActiveEntityScriptBase>_>_>",size-run,,6,
+00bfedd0,FUN_00bfedd0,00cba460,"_Uninit_copy<std::_Vector_const_iterator<std::_Vector_val<std::pair<unsigned___int64,CCountedPointer<CActiveEntityScriptBase>_>,std::allocator<std::pair<unsigned___int64,CCountedPointer<CActiveEntityScriptBase>_>_>_>_>,std::pair<unsigned___int64,CCountedPointer<CActiveEntityScriptBase>_>*,std::allocator<std::pair<unsigned___int64,CCountedPointer<CActiveEntityScriptBase>_>_>_>",size-run,,6,
+00bfee10,FUN_00bfee10,00cba4a0,"_Uninit_copy<std::_Vector_const_iterator<std::_Vector_val<CScriptThing,std::allocator<CScriptThing>_>_>,CScriptThing*,std::allocator<CScriptThing>_>",size-run,,6,
+00bfee50,FUN_00bfee50,00cba4e0,"_Uninit_fill_n<std::pair<unsigned___int64,CCountedPointer<CActiveEntityScriptBase>_>*,unsigned_int,std::pair<unsigned___int64,class_CCountedPointer<class_CActiveEntityScriptBase>_>,std::allocator<std::pair<unsigned___int64,CCountedPointer<CActiveEntityScriptBase>_>_>,std::pair<unsigned___int64,class_CCountedPointer<class_CActiveEntityScriptBase>_>_>",size-run,,6,
+00c01f90,FUN_00c01f90,0081e170,TransferToGui,size-run,,7,
+00c01fb0,FUN_00c01fb0,0081e190,TransferToGui,size-run,,7,
+00c01fd0,FUN_00c01fd0,0081e1b0,OnInitialActivate,size-run,,7,
+00c01ff0,FUN_00c01ff0,0081e1d0,OnInitialActivate,size-run,,7,
+00c02010,FUN_00c02010,0081e1f0,OnInitialActivate,size-run,,7,
+00c02040,FUN_00c02040,0081e220,?DrawGetEngineThemeAt@CIDrawMap@@UBEJJJJ@Z,size-run,,7,
+00c02050,FUN_00c02050,0081e230,?DrawGetEngineBlendAt@CIDrawMap@@UBEEJJJ@Z,size-run,,7,
+00c02170,FUN_00c02170,00c1ff00,`vector_deleting_destructor',size-run,,7,
+00c02190,FUN_00c02190,00c1ff20,"~CPredicate_And<NScript::CIsThingAlive,NScript::CIsVariableFalse>",size-run,,7,
+00c021e0,FUN_00c021e0,00c1ff70,`vector_deleting_destructor',size-run,,7,
+00c02200,FUN_00c02200,00c1ff90,"~CPredicate_And<NScript::CIsThingAlive,NScript::CIsVariableFalse>",size-run,,7,
+00c056f0,FUN_00c056f0,00a03b90,GetCanItemBeQuickAssigned,size-run,,8,
+00c05700,FUN_00c05700,00a03ba0,DrawGetSeaLevel,size-run,,8,
+00c05710,FUN_00c05710,00a03bb0,DrawGetSeaLevel,size-run,,8,
+00c0b050,FUN_00c0b050,009775c0,?Clone@CCreatureAction_JackScream@@UBEPAVCCreatureActionBase@@XZ,size-run,,6,
+00c0b080,FUN_00c0b080,009775f0,CScriptGameResourceObjectScriptedThingBase,size-run,,6,
+00c0b0c0,FUN_00c0b0c0,00977630,?Clone@CCreatureAction_JackDeathInto@@UBEPAVCCreatureActionBase@@XZ,size-run,,6,
+00c0b0f0,FUN_00c0b0f0,00977660,?Clone@CCreatureAction_JackFloatUp@@UBEPAVCCreatureActionBase@@XZ,size-run,,6,
+00c0b120,FUN_00c0b120,00977690,CMultiStaticMeshEntryDef,size-run,,6,
+00c0b170,FUN_00c0b170,009776e0,?Clone@CCreatureAction_JackFall@@UBEPAVCCreatureActionBase@@XZ,size-run,,6,
+00c0c220,FUN_00c0c220,008c95b0,CCreatureAction_LeapLong,size-run,,6,
+00c0c270,FUN_00c0c270,008c9600,?GetAnimationTransitionInTime@CCreatureAction_BanditKingUnstuck@@UBEJXZ,size-run,,6,
+00c0c280,FUN_00c0c280,008c9610,?IsKnockdownStrike@CCreatureAction_BanditKingUnstuck@@UBE_NXZ,size-run,,6,
+00c0c290,FUN_00c0c290,008c9620,CCreatureAction_SheatheWeapons,size-run,,6,
+00c0c2e0,FUN_00c0c2e0,008c9670,`vector_deleting_destructor',size-run,,6,
+00c0c300,FUN_00c0c300,008c9690,`vector_deleting_destructor',size-run,,6,
+00c0ce80,FUN_00c0ce80,0066f930,?GetControlDirection@CInputTypeMouseWheelMovementEvent@@UBE?AVC2DVector@@ABVCInputEvent@@@Z,size-run,,6,
+00c0cea0,FUN_00c0cea0,0066f950,?GetControlDirection@CInputTypeMouseWheelMovementUpEvent@@UBE?AVC2DVector@@ABVCInputEvent@@@Z,size-run,,6,
+00c0cec0,FUN_00c0cec0,0066f970,?GetControlDirection@CInputTypeMouseWheelMovementDownEvent@@UBE?AVC2DVector@@ABVCInputEvent@@@Z,size-run,,6,
+00c0cf00,FUN_00c0cf00,0066f9b0,SetFacingAnglesFromRHSet,size-run,,6,
+00c0cfa0,FUN_00c0cfa0,0066fa50,AddExclusiveObserver,size-run,,6,
+00c0d030,FUN_00c0d030,0066fae0,ApplyMovementVector,size-run,,6,
+00c0e7d0,FUN_00c0e7d0,00c336f0,Constraint_NotifyGlobalManager,body,1.00,0,caller AddConstraintRepeat; via global DAT_0143bb5c virtual-calls handler(+0x1d4/+0x1c) and object at +0x58
+00c0e950,FUN_00c0e950,00910bb0,CIntelligentPointer<CThing_const_><CThing_const_>,size-run,,7,
+00c0e980,FUN_00c0e980,00910be0,IS_THING_ALIVE<CIntelligentPointer<CThingPhysical_const_>_>,size-run,,7,
+00c0e9d0,FUN_00c0e9d0,00910c30,CCreatureAction_DeclarePlayerACriminal,size-run,,7,
+00c0ea30,FUN_00c0ea30,00910c90,`scalar_deleting_destructor',size-run,,7,
+00c0ea90,FUN_00c0ea90,00910cf0,"FindMostRecentMessage<CFilter_Bind3<CMessageEventFilter_IsOfType,CMessageEventFilter_HasExtraData,CMessageEventFilter_OccuredBetween>_>",size-run,,7,
+00c0eaf0,FUN_00c0eaf0,00910d50,FindYellForHelpEvent,size-run,,7,
+00c0eb40,FUN_00c0eb40,00910da0,?IsRunnable@CAIStateGroup_MinionGuardHeardYellForHelp@@UAE_NXZ,size-run,,7,
+00c0f090,FUN_00c0f090,00c3c930,LinkedList_ClearAndDestructor,body,1.00,0,"[forge-autoname conf=high <- wf] Fastcall list clear, pops nodes from param_1+4 calling vtable [0] destructor, decrement"
+00c0f200,FUN_00c0f200,00c3caa0,CTCFishingSpot::Destructor_UnwindHelper,body,0.89,0,[forge-autoname conf=medium <- wf] Vtable management + exception list handling + destructor unwind pattern
+00c0f620,FUN_00c0f620,00c4d340,CTCHeroStats_LoadFromStream,body,0.75,0,"autoname-t5 [high]: Thiscall; calls CTCHeroStats::InformOfEvent, CDataInputStream ctor, FUN_00c3fd20 (read implementatio"
+00c0f9a0,FUN_00c0f9a0,00c52a80,CPUAheadCounterCallback,size-run,,8,
+00c0f9c0,FUN_00c0f9c0,00c52aa0,CPU_IsCpuidSupported,size-run,1.00,8,autoname-t6 [high]: Classic EFLAGS ID-flag (bit 0x200000) toggle test: XOR 0x200000 and compare - detects CPUID support
+00c0f9f0,FUN_00c0f9f0,00c52ad0,CPU_GetIntelBrandName,size-run,0.89,8,"autoname-t5 [high]: Caller is InitCPUCapabilities; hardcoded string literals match Intel processor names (Pentium, Penti"
+00c0fad0,FUN_00c0fad0,00c52bb0,CPU_GetAMDBrandName,size-run,1.00,8,"autoname-t5 [high]: Caller is InitCPUCapabilities; hardcoded strings for AMD processors (Athlon, Duron, K6, etc.); CPUID"
+00c0fb60,FUN_00c0fb60,00c52c40,GetRenderLayerMask,size-run,,8,
+00c0fbb0,FUN_00c0fbb0,00c52c90,GetModifierScalingType,size-run,,8,
+00c0fc00,FUN_00c0fc00,00c52ce0,CPU_CalibrateTSCFrequency,size-run,0.63,8,"autoname-t5 [high]: Caller is InitCPUCapabilities; calls QueryPerformanceCounter, rdtsc, and __allmul to correlate CPU c"
+00c0fcc0,FUN_00c0fcc0,00c52da0,CPU_FindNearestRoundedValue,size-run,0.97,8,autoname-t5 [medium]: Arithmetic rounding and approximation logic comparing differences to find nearest value; likely fr
+00c0fd60,FUN_00c0fd60,00c52e40,InitCPUCapabilities,body,0.85,0,"[forge-autoname conf=high <- wf] No params, initializes CPUID data (brand, cache, FP flags), populates global DAT_0143bc"
+00c10240,FUN_00c10240,00c53260,Audio_InitDirectSound3D,body,0.83,0,autoname-t5 [high]: Thiscall with CoCreateInstance/CoInitializeEx; calls vtable methods; creates COM audio object; DAT_0
+00c10af0,FUN_00c10af0,00c53b10,Pow2_Float,body,0.96,0,autoname-t5 [high]: third pow2 implementation; identical x87 pattern
+00c10d80,FUN_00c10d80,00c53d50,SetVWindowsForDeprecatedDrawInterface,size-run,,11,
+00c10e70,FUN_00c10e70,00c53e40,SetVWindowsForDeprecatedDrawInterface,size-run,,11,
+00c110c0,FUN_00c110c0,00c54090,CAIStateGroupBase,size-run,,11,
+00c11140,FUN_00c11140,00c54110,~CScriptDefinitionManager,size-run,,11,
+00c111a0,FUN_00c111a0,00c54170,ChangeCameraAngle,size-run,,11,
+00c111c0,FUN_00c111c0,00c54190,Attribute_SetClamped,size-run,0.48,11,autoname-t5 [high]: calls 19 Attribute_SetClamped_Index variants; centralizes attribute clamping dispatch
+00c11540,FUN_00c11540,00c54510,Audio_InitializeParameters,size-run,0.39,11,autoname-t5 [high]: Calls many Attribute_SetClamped_Index methods to initialize 27 float constants; exception handling; 
+00c11710,FUN_00c11710,00c546e0,Audio_ApplyEffectChain,size-run,0.76,11,"autoname-t5 [medium]: calls FUN_00c58520, FUN_00c6af50, FUN_00c6b5d0; chains audio effects processing"
+00c117b0,FUN_00c117b0,00c54780,`vector_deleting_destructor',size-run,,11,
+00c11800,FUN_00c11800,00c547d0,Audio_MixStereoSamples,size-run,0.84,11,"[forge-autoname3 conf=high] Loop with index wrapping at 10; mixes L/R with fixed coefficients -0x14f, -0x102"
+00c11ab0,FUN_00c11ab0,00c54a80,Pow2_Float,size-run,0.96,11,autoname-t5 [high]: fourth pow2 implementation
+00c11cc0,FUN_00c11cc0,00c54c10,C3DMeshFileXBoundingBoxChunk_UpdateAudioProperties,body,0.63,0,"autoname-t5 [high]: Thiscall from C3DMeshFileXBoundingBoxChunk::LoadData; calls CSound_ComputeEffectiveVolume, Audio_Com"
+00c11fe0,FUN_00c11fe0,00c54f30,AudioBuffer_ApplyGainFilter,body,0.61,0,"autoname-t5 [high]: calls Audio_ApplyGainFilter_SIMD, AudioBuffer_AdjustPlaybackPosition, __security_check_cookie; filte"
+00c12920,FUN_00c12920,00c4d740,CAudioContext::GetProcAddress,body,0.76,0,"[forge-autoname conf=medium <- wf] Evidence matches: thiscall, calls GetProcAddress for 'alGetProcAddress', caches resul"
+00c12a90,FUN_00c12a90,00c55940,GetWaterGenerator,size-run,,6,
+00c12ad0,FUN_00c12ad0,00c55980,OpenAL_InitAudioFunctions,size-run,0.55,6,"[forge-autoname conf=high <- wf] GetProcAddress for 'alcOpenDevice', 'alGenSources'; OpenAL audio initialization strings"
+00c12b10,FUN_00c12b10,00c559c0,AudioContext_Destroy,size-run,1.00,6,[forge-autoname conf=medium <- wf] OpenAL cleanup calling alcDestroyContext dynamically loaded from module; audio system
+00c12b60,FUN_00c12b60,00c55a10,CAudioContext_GetExtensionProc,size-run,0.61,6,autoname-t5 [high]: calls GetProcAddress for 'alcIsExtensionPresent'; OpenAL extension loader
+00c12bb0,FUN_00c12bb0,00c55a60,CAudioContext_GetStringProc,size-run,0.69,6,autoname-t5 [high]: calls GetProcAddress for 'alcGetString'; OpenAL string getter wrapper
+00c12bf0,FUN_00c12bf0,00c55aa0,OpenAL_InitAlcOpenDevice,size-run,0.64,6,[forge-autoname conf=high <- wf] thiscall initializes OpenAL alcOpenDevice; string literal and GetProcAddress lookup exp
+00c13060,FUN_00c13060,00c55f00,C3DAnimationUtil_OnNotify,size-run,0.35,14,"autoname-t5 [medium]: calls InformOfEvent, C3DAnimationUtil constructor; animation notification handler"
+00c130c0,FUN_00c130c0,00c55f60,CAudioContext_GetEAXProc,size-run,0.80,14,autoname-t5 [high]: calls CAudioContext::GetProcAddress for 'EAXGet'; EAX audio extension loader
+00c13140,FUN_00c13140,00c55fe0,CAudioContext_GetSuspendProc,size-run,1.00,14,autoname-t5 [high]: calls GetProcAddress for 'alcSuspendContext'; OpenAL context control loader
+00c13180,FUN_00c13180,00c56020,CAudioContext::ProcessContext,size-run,1.00,14,"autoname-t5 [medium]: Lazy-loads alcProcessContext via GetProcAddress; offset 0x20 storage, fastcall pattern with slot i"
+00c131f0,FUN_00c131f0,00c56090,StringCopy_ValidateLength,size-run,0.95,14,"[forge-autoname conf=medium <- wf] Validates string null terminator presence, calls _StringCopyWorkerA; wrapper for safe"
+00c13250,FUN_00c13250,00c560f0,CAudioContext::Listener3f,size-run,0.70,14,autoname-t5 [medium]: Thiscall wrapper for alListener3f OpenAL function; conditional GetProcAddress at offset 0x98
+00c132b0,FUN_00c132b0,00c56150,CAudioContext::DistanceModel,size-run,0.67,14,autoname-t5 [medium]: Thiscall wrapper for alDistanceModel; GetProcAddress at offset 0xd4
+00c13300,FUN_00c13300,00c561a0,CAudioContext::GetString,size-run,0.67,14,autoname-t5 [medium]: Thiscall wrapper for alGetString OpenAL call; offset 0xd0
+00c13350,FUN_00c13350,00c561f0,CAudioContext_CheckExtensionPresent,size-run,0.61,14,autoname-t5 [high]: Thiscall on CAudioContext; GetProcAddress for 'alIsExtensionPresent'; returns bool; OpenAL extension
+00c133b0,FUN_00c133b0,00c56250,GetWaterGenerator,size-run,,14,
+00c133f0,FUN_00c133f0,00c56290,DestroyWaterGenerator,size-run,,14,
+00c13450,FUN_00c13450,00c562f0,OpenAL_CheckCreativeEAX3Support,size-run,0.72,14,[forge-autoname conf=high <- wf] GetProcAddress for 'alGetString'; checks renderer string for 'Creative' and 'EAX3.0' su
+00c134d0,FUN_00c134d0,00c56370,CEngineWaterRenderer_Destructor,size-run,0.31,14,"[forge-autoname3 conf=high] Thiscall; vector_deleting_destructor caller; sets vftable, destroys audio context and water "
+00c13580,FUN_00c13580,00c56420,CEngineWaterRenderer_ReleaseAudioResources,size-run,0.33,14,[forge-autoname3 conf=high] Fastcall; decrements refcount at +0x1b4 then destroys context/generator; refcount-driven cle
+00c13650,FUN_00c13650,00c564f0,CAudioContext::EAXSet,body,0.80,0,"autoname-t5 [high]: Thiscall; calls CAudioContext::GetProcAddress(""EAXSet""), returns EAX error codes (0xa001-0xa005)"
+00c13a30,FUN_00c13a30,00c568f0,CAudioContext_ConfigureListener,body,0.75,0,"autoname-t5 [high]: Thiscall on CAudioContext; GetProcAddress for alDistanceModel, alListener3f, EAXSet; configures Open"
+00c147b0,FUN_00c147b0,00c4d870,CAudioContext_GenerateBuffers,body,0.69,0,autoname-t5 [high]: Thiscall; lazy-loads alGenBuffers via GetProcAddress or CAudioContext::GetProcAddress; invokes buffe
+00c14800,FUN_00c14800,00c4d8c0,CAudioContext_DeleteBuffers,body,0.69,0,autoname-t5 [high]: Thiscall; caller CAudioBuffer::Create; lazy-loads alDeleteBuffers; invokes buffer deletion callback
+00c14850,FUN_00c14850,00c4d910,Audio_SetupBufferData,body,0.70,0,[forge-autoname3 conf=high] Lazy-loads alBufferData via GetProcAddress and invokes it; string evidence confirms
+00c148a0,FUN_00c148a0,00c574b0,CAudioContext_CallAlGenSources,body,0.69,0,autoname-t5 [high]: Thiscall on CAudioContext; GetProcAddress for alGenSources; wrapper for OpenAL source generation.
+00c148f0,FUN_00c148f0,00c57500,CAudioContext::DeleteSources,body,0.69,0,autoname-t5 [medium]: Thiscall wrapper for alDeleteSources; GetProcAddress at offset 0x48
+00c14940,FUN_00c14940,00c57550,Audio_SetSourceInteger,body,0.70,0,[forge-autoname3 conf=high] Thiscall; lazy-loads alSourcei via GetProcAddress; invokes OpenAL alSourcei
+00c14990,FUN_00c14990,00c575a0,CAudioContext::GetSourcei,body,0.70,0,autoname-t5 [medium]: Thiscall wrapper for alGetSourcei; offset 0x68 for cached function pointer
+00c149e0,FUN_00c149e0,00c575f0,CAudioContext::PlaySource,body,0.70,0,[forge-autoname2 conf=high <- wf] Thiscall loads and calls alSourcePlay; string reference; clear audio source playback p
+00c14a30,FUN_00c14a30,00c57640,CAudioContext_CallAlSourceStop,body,0.70,0,autoname-t5 [high]: Thiscall on CAudioContext; GetProcAddress for alSourceStop; calls OpenAL stop function.
+00c14a80,FUN_00c14a80,00c57690,CAudioContext_CallAlSourceQueueBuffers,body,0.70,0,autoname-t5 [high]: Thiscall on CAudioContext; GetProcAddress for alSourceQueueBuffers; caller is Audio_ProcessQueue_Nav
+00c14ad0,FUN_00c14ad0,00c576e0,CAudioContext::SourceUnqueueBuffers,body,0.70,0,autoname-t5 [medium]: Thiscall wrapper for alSourceUnqueueBuffers; offset 0x90 cache slot
+00c14b20,FUN_00c14b20,00c4d960,OpenAL_InitAlGetError,body,0.77,0,[forge-autoname conf=high <- wf] fastcall initializes OpenAL alGetError; string literal and GetProcAddress lookup explic
+00c14b70,FUN_00c14b70,00c57730,CAudioContext::GetEnumValue,body,0.70,0,[forge-autoname2 conf=high <- wf] Thiscall loads alGetEnumValue function pointer; string reference; clear audio enum loo
+00c14fb0,FUN_00c14fb0,00c57b60,CAudioSource_BufferNextFrame,body,0.66,0,"autoname-t5 [high]: Fastcall; calls alGetError, alBufferData, alSourceQueueBuffers; increments frame counter; stream buf"
+00c150e0,FUN_00c150e0,00c57c90,CAudioSource_UnqueueProcessedBuffer,body,0.65,0,"autoname-t5 [high]: Fastcall; calls alGetError, alSourceUnqueueBuffers; decrements queued count; processes completed buf"
+00c15cd0,FUN_00c15cd0,00c58880,AudioFormat_DecodeWithDeltas_Shifted,body,0.63,0,autoname-t5 [medium]: Thiscall; combines channel count logic with shift amounts and delta processing; vtable at 0x24.
+00c16130,FUN_00c16130,00c58ce0,AudioFormat_DecodeMultiChannelWithDeltas,body,0.65,0,autoname-t5 [medium]: Thiscall; largest decoder (1010 bytes); multi-channel with delta arrays (param_4); vtable at 0x24.
+00c16640,FUN_00c16640,00c591f0,CArenaRoundDef_InitializeBuffers,body,1.00,0,"autoname-t5 [high]: Fastcall on undefined4*; aligns buffer pointers (0x33 mask), sets vtable, initializes 6 buffer offse"
+00c16740,FUN_00c16740,00c592f0,FollowCamera_UpdateDamping,body,0.73,0,[forge-autoname3 conf=medium] Fastcall; reads circular history at 0x164; updates damping factors; lacks explicit class e
+00c16810,FUN_00c16810,00c593c0,AudioStream_ProcessAudioSamples,body,0.70,0,autoname-t5 [high]: Thiscall; processes audio samples with damping state machine; calls FollowCamera_UpdateDamping; circ
+00c169c0,FUN_00c169c0,00c59570,Ctor_ZeroInit_012b8f64,body,1.00,0,autoname-t6 [medium]: Sets vtable 012b8f64 then zero-fills 0x58 dwords and clears [0x59]/[0x5d]; constructor
+00c16b00,FUN_00c16b00,00c596a0,C3DAnimationUtil,size-run,,12,
+00c16b20,FUN_00c16b20,00c596c0,`vector_deleting_destructor',size-run,,12,
+00c16b40,FUN_00c16b40,00c596e0,ClearScreenFilter,size-run,,12,
+00c16b70,FUN_00c16b70,00c59710,Clear,size-run,,12,
+00c16b80,FUN_00c16b80,00c59720,Write3DVector,size-run,,12,
+00c16c40,FUN_00c16c40,00c597e0,AddToRenderList,size-run,,12,
+00c16c80,FUN_00c16c80,00c59820,AddToRenderList,size-run,,12,
+00c16cc0,FUN_00c16cc0,00c59860,Close,size-run,,12,
+00c16ce0,FUN_00c16ce0,00c59880,AddExclusiveObserver,size-run,,12,
+00c16cf0,FUN_00c16cf0,00c59890,CAudioSource_UpdateDamping,size-run,0.77,12,autoname-t5 [medium]: Thiscall; damping state machine (uVar4 & 0x180); decrements counter; flips damping direction.
+00c16dc0,FUN_00c16dc0,00c59960,GUI_ComputeAlphaBlend,size-run,0.24,12,[forge-autoname3 conf=medium] Calls GetCurrentSelectedEntryData; returns interpolated alpha; not a calculation function 
+00c16e20,FUN_00c16e20,00c599c0,Audio_ComputePitchFromVector,size-run,0.62,12,autoname-t5 [high]: Fastcall; fpatan and SQRT on param_3 (vector); computes angle/pitch; returns in param_1/param_2; cal
+00c17030,FUN_00c17030,00c59ba0,C3DAnimationBlendState,size-run,,8,
+00c17050,FUN_00c17050,00c59bc0,GetCurrentScreen,size-run,,8,
+00c170b0,FUN_00c170b0,00c59c20,CAudioSource_SetInitialTimeOffset,size-run,0.60,8,autoname-t5 [high]: Thiscall; calls Graphics_ConvertTimeToPixels to convert time param_2 to pixel offset; initialization
+00c170f0,FUN_00c170f0,00c59c60,GraphicalElement_ComputeAnimationTransform,size-run,0.60,8,"[forge-autoname3 conf=medium] Thiscall; calls Graphics_ConvertTimeToPixels, _CIpow; computes scale/rotation; name should"
+00c171d0,FUN_00c171d0,00c59d40,Animation_ComputeFrameRate,size-run,0.67,8,[forge-autoname3 conf=medium] Returns float10; normalizes duration via Graphics_ConvertTimeToPixels; computes per-frame 
+00c17210,FUN_00c17210,00c59d80,Math_ComputeExponent,size-run,0.66,8,[forge-autoname conf=medium <- wf] Calls FUN_00c59b00; uses fscale and f2xm1 x87 instructions; exponential computation e
+00c17270,FUN_00c17270,00c59de0,Graphics_TimeToPixelsWrapper,size-run,0.40,8,thiscall calls FUN_00c59b00 then _CIpow; thin wrapper around power function
+00c172b0,FUN_00c172b0,00c59e20,CAudioSource_UpdateTimeOffset,size-run,0.66,8,"autoname-t5 [high]: Thiscall; state machine (uVar5: 0,2,4,8,0x10) for time offset animation; calls Animation_ComputeFram"
+00c176b0,FUN_00c176b0,00c5a1d0,OnCreate,size-run,,12,
+00c176d0,FUN_00c176d0,00c5a1f0,Update,size-run,,12,
+00c17780,FUN_00c17780,00c5a2a0,Update,size-run,,12,
+00c178a0,FUN_00c178a0,00c5a3c0,CAudioSource_ComputeBufferTime,size-run,0.41,12,autoname-t5 [medium]: Thiscall; computes buffer positions with vtable methods at offsets 0x50/0x54; calls Audio_ComputeT
+00c17960,FUN_00c17960,00c5a480,CAudioSource_UpdateTimeOffsetAdvanced,size-run,0.44,12,autoname-t5 [high]: Thiscall; calls FUN_00c59e20; adds Math_ComputeExponent fallback; bit flag 0x20 check.
+00c179e0,FUN_00c179e0,00c5a500,CSound_ComputeEffectiveVolume,size-run,0.59,12,[forge-autoname3 conf=medium] Thiscall; multiplies volume by modifiers from param_1; computes final scaling; clamps to 0
+00c17be0,FUN_00c17be0,00c5a700,CAudioSource_UpdateScaleTransform,size-run,0.78,12,"autoname-t5 [high]: Thiscall; state machine for scale animation (0,0x20,0x200,0x400,0x800,0x1000); calls _CIpow, Graphic"
+00c17eb0,FUN_00c17eb0,00c5a9d0,ReadFromFile,size-run,,12,
+00c18030,FUN_00c18030,00c5ab50,CAudioSource_UpdateRotationDamping,size-run,0.72,12,autoname-t5 [medium]: Thiscall; rotation damping state machine (uVar4 & 0x18000); similar to FUN_00c59890; damping scale
+00c18190,FUN_00c18190,00c5acb0,C3DMeshFileXBoundingBoxChunk::LoadData,size-run,0.59,12,[forge-autoname2 conf=high <- wf] Thiscall on C3DMeshFileXBoundingBoxChunk; complex mesh chunk loading with material/ani
+00c18430,FUN_00c18430,00c5af50,RenderTarget_ClearBuffer,size-run,0.80,12,"[forge-autoname3 conf=medium] Thiscall; clears memory at stride (pitch, height); Timer_Advance suggests broader operatio"
+00c184a0,FUN_00c184a0,00c5afc0,CAudioSource_ApplyFilter,size-run,0.64,12,autoname-t5 [high]: Thiscall; param_4 branches (0 vs 1); calls Audio_FilterProcess or Audio_FilterSamples_2ndOrder based
+00c18510,FUN_00c18510,00c5b030,Audio_InterpolateAndPlaySample,body,0.78,0,autoname-t5 [medium]: Calls AudioBuffer_AdjustPlaybackPosition; performs linear interpolation on audio samples (pmulhw-l
+00c199a0,FUN_00c199a0,00c5c2d0,CTCTavernGameCoinGolf_Update,body,0.61,0,autoname-t5 [high]: Thiscall; calls CTCTavernGameCoinGolf_PrepareRender and GetFacingVector on two rigid bodies; bitwise
+00c19a30,FUN_00c19a30,00c5c360,Mesh_UpdateVertexColors,body,0.77,0,autoname-t5 [medium]: Calls CalculateTextureChangeFlags; computes signed differences between pairs of uint16 values at m
+00c19e90,FUN_00c19e90,00c5c800,CTCCarryable_OnCarryableKill,size-run,0.39,16,autoname-t5 [high]: Calls CTCCarrying::SetAllCarriedThingsAsBypassFilter and CTCCarryable::OnKill; thiscall; checks carr
+00c19f10,FUN_00c19f10,00c5c880,CTCCarryable_OnDamageOverTime,size-run,0.43,16,autoname-t5 [high]: Thiscall; checks flag at 0x248; calls std::_Fill_n and FUN_00c6acc0; manages carry state with dirty 
+00c1a010,FUN_00c1a010,00c5c980,Direction_MapBitmaskToIndex,size-run,0.94,16,"[forge-autoname3 conf=medium] Switch on bitmask (1,2,4,8,0x10,0x20); returns index 0-5 or -1; maps direction flags"
+00c1a0f0,FUN_00c1a0f0,00c5ca60,CTCHeroStats_UpdateSoundAndVisuals,size-run,0.66,16,"autoname-t5 [high]: Thiscall into hero stats object; calls CSound_ComputeEffectiveVolume, GUI_ComputeAlphaBlend, Graphic"
+00c1a490,FUN_00c1a490,00c5ce00,CReactionMatch_SecondaryAxisCentredMRShifted,size-run,,16,
+00c1a4d0,FUN_00c1a4d0,00c5ce40,Init,size-run,,16,
+00c1a4f0,FUN_00c1a4f0,00c5ce60,Audio_ComputeTimeOffset,size-run,0.78,16,[forge-autoname2 conf=medium <- wf] Thiscall dividing by granule size to compute sample time offset; clear audio time of
+00c1a530,FUN_00c1a530,00c5cea0,Init,size-run,,16,
+00c1a540,FUN_00c1a540,00c5ceb0,CThingSearchTools,size-run,,16,
+00c1a590,FUN_00c1a590,00c5cf00,Timer_Advance,size-run,0.65,16,"[forge-autoname conf=medium <- wf] Advances timer by param_2, increments counters and wraps if exceeds period at param_1"
+00c1a5b0,FUN_00c1a5b0,00c5cf20,AudioBuffer_AdjustPlaybackPosition,size-run,0.67,16,thiscall adds/subtracts at param+0x14/+0x1c with bounds checks; timing arithmetic
+00c1a620,FUN_00c1a620,00c5cf90,Image_CopyRow,size-run,0.83,16,autoname-t5 [medium]: Thiscall; calculates stride as height*width from object; copies row data from param3 row to param2
+00c1a660,FUN_00c1a660,00c5cfd0,Image_FillRow,size-run,0.79,16,autoname-t5 [medium]: Thiscall; calculates buffer offset from object stride fields; fills a row with zeros in a loop.
+00c1a6a0,FUN_00c1a6a0,00c5d010,ImageData_CopyRows,size-run,0.90,16,autoname-t5 [medium]: Thiscall; nested loops copying image rows (stride-aware memcpy in 4-byte then 1-byte chunks)
+00c1a730,FUN_00c1a730,00c5d0a0,CSoundInit,size-run,,16,
+00c1a750,FUN_00c1a750,00c5d0c0,`vector_deleting_destructor',size-run,,16,
+00c1a950,FUN_00c1a950,00c5d2e0,Math_AccumulateFloatArray,body,0.98,0,"autoname-t5 [medium]: Loops 8 times; loads 16 consecutive floats, casts to int, accumulates into 16-element int array."
+00c1ab20,FUN_00c1ab20,00c5d4b0,IntBlock128_AddInPlace_c5d4b0,body,1.00,0,autoname-t6 [medium]: Byte-identical 128-int element-wise accumulate (param2 += param1)
+00c1ad20,FUN_00c1ad20,00c400d0,Animation_ComputeFrameOffset,body,0.63,0,[forge-autoname2 conf=medium <- wf] Switch on param_1 computing animation frame offset; evidence shows animation lookup 
+00c1b420,FUN_00c1b420,00c5da70,Audio_IsDirectSoundInitialized,body,1.00,0,"autoname-t5 [medium]: Checks four global bytes (0x0143ccc2-ccc5) for non-zero; returns 1 if any set, 0 otherwise; likely"
+00c1b4f0,FUN_00c1b4f0,00c5db40,Audio_InitializeDirectSound,body,0.82,0,"autoname-t5 [high]: Fastcall; loads dsound.dll, gets DllGetClassObject, creates COM objects; initializes DirectSound inf"
+00c1b600,FUN_00c1b600,00c5dc60,Audio_QueryHardwareDevicePath,body,0.62,0,autoname-t5 [high]: Thiscall; parses registry path with 3-char segments (#-delimited); calls RegOpenKeyExA on hardware e
+00c22e20,FUN_00c22e20,00c21f20,operator(),size-run,,7,
+00c22e30,FUN_00c22e30,00c21f30,AddLearnedExpression,size-run,,7,
+00c22e50,FUN_00c22e50,00c21f50,WriteToFile,size-run,,7,
+00c22ea0,FUN_00c22ea0,00c21fa0,WriteToFile,size-run,,7,
+00c22ef0,FUN_00c22ef0,00c21ff0,WriteToFile,size-run,,7,
+00c22f40,FUN_00c22f40,00c22040,AddLearnedExpression,size-run,,7,
+00c22f60,FUN_00c22f60,00c22060,CSBAgents,size-run,,7,
+00c24ed0,FUN_00c24ed0,0085bc40,`vector_deleting_destructor',size-run,,6,
+00c24ef0,FUN_00c24ef0,0085bc60,`vector_deleting_destructor',size-run,,6,
+00c24f10,FUN_00c24f10,0085bc80,?Clone@CCreatureActionHeroJump@@UBEPAVCCreatureActionBase@@XZ,size-run,,6,
+00c24f40,FUN_00c24f40,0085bcb0,?Clone@CCreatureActionHero180RunningTurn@@UBEPAVCCreatureActionBase@@XZ,size-run,,6,
+00c24f70,FUN_00c24f70,0085bce0,CAbilityTrackLevelDef,size-run,,6,
+00c24fb0,FUN_00c24fb0,0085bd20,?Clone@CCreatureActionHeroRunningStop@@UBEPAVCCreatureActionBase@@XZ,size-run,,6,
+00c29590,FUN_00c29590,00c37ad0,Fastcall_CreatureOpinionApplyModifier,body,0.67,0,[forge-autoname3 conf=medium] Fastcall with complex memory access pattern for opinion modifier; creature relationship lo
+00c2ba00,FUN_00c2ba00,00c28c20,CHandleBasedMemoryPool_Allocate,body,0.64,0,"autoname-t5 [high]: Thiscall; calls callback at +0x38 to grow if needed, calls PartialDefragment and Defragment if neces"
+00c2eac0,FUN_00c2eac0,00737590,"_Dest_val<std::allocator<CIVCountedPointer<N3DPrimitive::CTriangleList>_>,CIVCountedPointer<N3DPrimitive::CTriangleList>_>",size-run,,7,
+00c2eae0,FUN_00c2eae0,007375b0,"_Dest_val<std::allocator<CIVCountedPointer<N3DPrimitive::CTriangleList>_>,CIVCountedPointer<N3DPrimitive::CTriangleList>_>",size-run,,7,
+00c2eb00,FUN_00c2eb00,007375d0,"_Dest_val<std::allocator<CIVCountedPointer<N3DPrimitive::CTriangleList>_>,CIVCountedPointer<N3DPrimitive::CTriangleList>_>",size-run,,7,
+00c2eb20,FUN_00c2eb20,007375f0,"_Dest_val<std::allocator<CIVCountedPointer<N3DPrimitive::CTriangleList>_>,CIVCountedPointer<N3DPrimitive::CTriangleList>_>",size-run,,7,
+00c2eb40,FUN_00c2eb40,00737610,"_Dest_val<std::allocator<CIVCountedPointer<N3DPrimitive::CTriangleList>_>,CIVCountedPointer<N3DPrimitive::CTriangleList>_>",size-run,,7,
+00c2eb60,FUN_00c2eb60,00737630,"_Dest_val<std::allocator<CIVCountedPointer<N3DPrimitive::CTriangleList>_>,CIVCountedPointer<N3DPrimitive::CTriangleList>_>",size-run,,7,
+00c2eb80,FUN_00c2eb80,00737650,"_Dest_val<std::allocator<CIVCountedPointer<N3DPrimitive::CTriangleList>_>,CIVCountedPointer<N3DPrimitive::CTriangleList>_>",size-run,,7,
+00c2f380,FUN_00c2f380,00c3a8f0,AnimationCurve_CheckBoundaryTransition,body,0.63,0,autoname-t5 [medium]: Fastcall float params; checks param_1[5]==param_1[6] boundary; wraps value around boundary with of
+00c2f760,FUN_00c2f760,005d8e20,RemoveFromInventory,size-run,,6,
+00c2f780,FUN_00c2f780,005d8e40,AddExclusiveObserver,size-run,,6,
+00c2f790,FUN_00c2f790,005d8e50,OnPredicateFail,size-run,,6,
+00c2f7b0,FUN_00c2f7b0,005d8e70,GetBoughtPrice,size-run,,6,
+00c2f7d0,FUN_00c2f7d0,005d8e90,GetInventoryOwner,size-run,,6,
+00c2f800,FUN_00c2f800,005d8ec0,OnDie,size-run,,6,
+00c2f840,FUN_00c2f840,00c8dbf0,RTC_AllocateDebugBuffer,body,0.75,0,"autoname-t5 [medium]: Called by _RTC_StackFailure; calls malloc, realloc — allocates memory for runtime check failure di"
+00c2f9d0,FUN_00c2f9d0,00c8dd90,CCharString_FindOccurrence,body,0.81,0,"autoname-t5 [high]: Fastcall searches param_2 string in array at param_1. Loops CCharString_CompareNoCase, counts occurr"
+00c2fb30,FUN_00c2fb30,00c8def0,Array_FreeAllElements,body,0.91,0,"[forge-autoname conf=medium <- wf] Frees all pointers in dynamic array using count param_1[2], then frees array structur"
+00c2fbe0,FUN_00c2fbe0,00c8dfb0,C3DGenerator_Destructor,body,0.63,0,"[forge-autoname conf=high <- wf] fastcall complex destructor with multiple array iterations, free, Kill, ~CTCWound calls"
+00c2fd50,FUN_00c2fd50,00c8e120,C3DGenerator_ReadGeometry,body,0.68,0,"autoname-t5 [medium]: Calls C3DGenerator_Destructor, CBitstream::ReadBits — reads 3D geometry data from bitstream"
+00c2ff10,FUN_00c2ff10,00c8e2e0,C3DGenerator_ReadComplexMesh,body,0.68,0,"autoname-t5 [medium]: Calls calloc, C3DGenerator_Destructor, CBitstream::ReadBits — reads complex 3D mesh with potential"
+00c30640,FUN_00c30640,00c8ea70,Audio_CreateAlignedBuffer,body,0.77,0,"autoname-t5 [medium]: Fastcall allocates aligned audio buffer. Creates CVsyncCallbackTimerInfo, calls FUN_00c8e790 (setu"
+00c309e0,FUN_00c309e0,00c8f0d0,MemAllocator_Allocate,body,0.91,0,[forge-autoname conf=medium <- wf] Custom allocator: 8-byte alignment + malloc + linked list management
+00c30ec0,FUN_00c30ec0,00c8f5f0,AudioSystem_InitializeAudio,body,0.69,0,"autoname-t5 [high]: Calls AudioSystem_Initialize, FUN_00c91820 (likely audio resource load), calloc for 0xb4 buffer, the"
+00c31140,FUN_00c31140,00c8f880,Buffer_Reallocate,body,0.81,0,"autoname-t5 [medium]: Calls free, realloc; 204 bytes, generic buffer reallocation utility"
+00c31210,FUN_00c31210,00c8f960,Audio_ConvolutionStep,size-run,0.67,10,[forge-autoname4 conf=medium] Calls FUN_00c9e5d0 (back-substitution) and FUN_00c9e8f0 (forward-substitution); manages ma
+00c31310,FUN_00c31310,00c8fa60,Audio_ProcessConvolutionBuffer,size-run,0.70,10,"autoname-t5 [medium]: Calls Audio_ConvolutionStep, Matrix_BackSubstitute, Matrix_ForwardSubstitute—audio signal processi"
+00c31450,FUN_00c31450,00c8fba0,Audio_FlushBuffer,size-run,0.90,10,"autoname-t5 [medium]: Calls MemoryPool_FreeNodes, memmove (buffer shift), MemAllocator_Allocate—manages audio buffer flu"
+00c31750,FUN_00c31750,00c8fea0,AudioFormat_GetChannelMask,size-run,1.00,10,"[forge-autoname2 conf=medium <- wf] __fastcall reads audio format config at param_1+0x1c, shifts *(int*)(param_1+4) by c"
+00c317b0,FUN_00c317b0,00c8ff00,Audio_InitializeIfAttached,size-run,0.62,10,"autoname-t5 [medium]: Called by IsAttachedToVillage; calls AudioSystem_Initialize, AudioFormat_GetChannelMask — conditio"
+00c317e0,FUN_00c317e0,00c8ff30,AudioDSP_Process,size-run,0.86,10,"[forge-autoname3 conf=medium] 2458-byte function with float accumulation and bit shifts suggests audio DSP, but 'samples"
+00c32190,FUN_00c32190,00c908e0,VertexBuffer_GetRange,size-run,1.00,10,"[forge-autoname conf=medium <- wf] fastcall returns vertex range [start, end), computes from offsets. Generic vertex buf"
+00c321e0,FUN_00c321e0,00c90930,VertexBuffer_CommitData,size-run,1.00,10,"[forge-autoname2 conf=medium <- wf] __fastcall increments param_1+0x18 by param_2, validates against param_1+0x14 limit,"
+00c32200,FUN_00c32200,00c90950,Buffer_SwapElements,size-run,1.00,10,"[forge-autoname2 conf=medium <- wf] Complex 4-element DWORD swaps with dimension tracking, but callers/context needed fo"
+00c32530,FUN_00c32530,00c90c80,GetEntryDataSize,size-run,,10,
+00c32560,FUN_00c32560,00c8ccf0,ConsoleDisplayCSTimecode,size-run,,7,
+00c32570,FUN_00c32570,00c8cd00,ConsoleDisplayCSTimecode,size-run,,7,
+00c32580,FUN_00c32580,00c8cd10,ConsoleDisplayCSTimecode,size-run,,7,
+00c32590,FUN_00c32590,00c8cd20,ConsoleDisplayCSTimecode,size-run,,7,
+00c325a0,FUN_00c325a0,00c8cd30,Timecode_UnpackBytes,size-run,1.00,7,"[forge-autoname conf=medium <- wf] fastcall reads timecode bytes, bitshifts to assemble 8-byte value. Generic timecode u"
+00c32630,FUN_00c32630,00c8cdc0,SetDebugBoxColour1,size-run,,7,
+00c32650,FUN_00c32650,00c8cde0,SetDebugBoxColour1,size-run,,7,
+00c32690,FUN_00c32690,00c8ce20,CreatureHitNotification_Buffer_Initialize,body,0.88,0,"[forge-autoname4 conf=high] Called by CreatureHitNotification_Process; allocates three buffers (0x4000, 0x1000, param*8)"
+00c32700,FUN_00c32700,00c8ce80,EntityData_FreeResources,body,0.91,0,"[forge-autoname conf=medium <- wf] Frees heap allocations at indices 0,4,5 and zeroes 0x5a dwords; entity cleanup patter"
+00c327a0,FUN_00c327a0,00c8cf20,WeatherRenderer_ReallocateBuffer,body,0.65,0,"autoname-t5 [medium]: Called by WeatherRenderer_ProcessStream; calls realloc; 60 bytes, reallocation wrapper for weather"
+00c327e0,FUN_00c327e0,00c8cf60,CRC32_ComputeBuffer,body,1.00,0,[forge-autoname3 conf=high] Standard CRC32 table-lookup algorithm with DAT_0139d9b0 table and result storage at 0x16-0x1
+00c329f0,FUN_00c329f0,00c8d170,OggVorbis_EncodePacket,body,0.81,0,"autoname-t5 [medium]: Fastcall returns longlong. Sets param_1[10]='OggS', manages flags, calls __allshr, memmove (array "
+00c32c70,FUN_00c32c70,00c8d400,construct,size-run,,13,
+00c32c90,FUN_00c32c90,00c8d420,StdVector_Destroy,size-run,0.15,13,[forge-autoname4 conf=high] Deallocates vector via free + construct; high-level 'Deallocate' overstates the operation. '
+00c32cc0,FUN_00c32cc0,00c8d450,OnDie,size-run,,13,
+00c32ce0,FUN_00c32ce0,00c8d470,MemoryStream_CompactAndRealloc,size-run,0.54,13,[forge-autoname3 conf=medium] memmove compaction and realloc with 0x1000 padding clearly evident.
+00c32d60,FUN_00c32d60,00c8d4f0,GetSelectedCategory,size-run,,13,
+00c32d80,FUN_00c32d80,00c8d510,SearchValue_ValidateCRC,size-run,0.89,13,"autoname-t5 [medium]: Called by SearchValue_WithBorrow; calls CRC32_ComputeBuffer, memchr — validates search result inte"
+00c32f00,FUN_00c32f00,00c8d690,WeatherRenderer_ProcessStream,size-run,0.80,13,"[forge-autoname conf=medium <- wf] fastcall processes particle/weather stream, calls FUN_00c8cd30/cf20/cef0. Class likel"
+00c331c0,FUN_00c331c0,00c8d950,Close,size-run,,13,
+00c331e0,FUN_00c331e0,00c8d970,CRegionMinimap,size-run,,13,
+00c33230,FUN_00c33230,00c8d9c0,CRegionMinimap_CRegionMinimap,size-run,0.56,13,"[forge-autoname conf=medium <- wf] Thiscall pattern, calls CRegionMinimap constructor, small wrapper function - construc"
+00c33240,FUN_00c33240,00c8d9d0,Notification_ProcessState,size-run,0.66,13,"[forge-autoname3 conf=medium] Flag 0x400 check and return values suggest state machine, not frame-based processing. Call"
+00c33380,FUN_00c33380,00c8db10,"_Dest_val<std::allocator<NCreatureHitNotification::CFlash>,NCreatureHitNotification::CFlash>",size-run,,13,
+00c33390,FUN_00c33390,00c8db20,"_Dest_val<std::allocator<NCreatureHitNotification::CFlash>,NCreatureHitNotification::CFlash>",size-run,,13,
+00c33410,FUN_00c33410,00c9cb80,Float_ConvertToInteger,body,0.80,0,[forge-autoname3 conf=high] Calls __ftol2 and floor for FP-to-int conversion.
+00c334f0,FUN_00c334f0,00c9cc60,Array_LinearSearch,body,1.00,0,"[forge-autoname4 conf=high] Backward linear search iterating ptr[-1] loop, compares param_1, returns on first match or l"
+00c335b0,FUN_00c335b0,00c9cd20,CVsyncCallbackTimerInfo::Initialize,body,0.63,0,"autoname-t5 [high]: Calls CVsyncCallbackTimerInfo constructor, calloc, __ftol2; initializes vsync timer callback with st"
+00c337b0,FUN_00c337b0,00c9cf10,AnimationEventMap_Destructor,body,0.61,0,autoname-t5 [high]: Called by GraphicsResource_Cleanup; destructors on pairs; frees 7 members; animation event map clean
+00c338a0,FUN_00c338a0,00c9cff0,CLandscapeBackgroundDynamicBuildTemplate::UpdateTerrainGrid,body,0.75,0,"autoname-t5 [high]: Calls CWorld::DrawGetEnvironment, Array_LinearSearch, calls Hora method (visible in decomp at 865)—t"
+00c37660,FUN_00c37660,00c3c720,CScriptDefinitionManager::CleanupAudioAndRender,body,0.65,0,autoname-t5 [medium]: fastcall; calls CTCHeroStats::ProcessEventNotification and Audio_DeleteBuffers conditionally; chec
+00c37c30,FUN_00c37c30,00c3cfe0,GetElapsedPerformanceTime,body,0.76,0,autoname-t5 [high]: calls QueryPerformanceCounter; computes elapsed time delta from stored base values
+00c38fb0,FUN_00c38fb0,00c402e0,Vector3_Normalize,body,0.70,0,"[forge-autoname conf=high <- wf] Normalizes 3D vector computing SQRT(x^2+y^2+z^2) and scaling to unit length, returns ma"
+00c39180,FUN_00c39180,00c404f0,CRightHandedSet::SetOrientationVectors,body,0.68,0,autoname-t5 [high]: thiscall; copies 3 float* params to offsets +0x24/+0x28/+0x2c and +0x30/+0x34/+0x38; sets dirty flag
+00c39220,FUN_00c39220,00c40590,CRightHandedSet::NormalizeOrientationFrame,body,0.65,0,autoname-t5 [high]: fastcall; checks dirty flag 0x20000; normalizes vectors; computes cross product for orientation; res
+00c3afc0,FUN_00c3afc0,00c69660,C3DAnimationUtil,size-run,,10,
+00c3afe0,FUN_00c3afe0,00c69680,~CChunkedFileChunk,size-run,,10,
+00c3b000,FUN_00c3b000,00c696a0,`vector_deleting_destructor',size-run,,10,
+00c3b080,FUN_00c3b080,00c69720,C3DAnimationUtil,size-run,,10,
+00c3b0a0,FUN_00c3b0a0,00c69740,~CChunkedFileChunk,size-run,,10,
+00c3b0e0,FUN_00c3b0e0,00c69780,`vector_deleting_destructor',size-run,,10,
+00c3b100,FUN_00c3b100,00c697a0,C3DAnimationUtil,size-run,,10,
+00c3b120,FUN_00c3b120,00c697c0,~CChunkedFileChunk,size-run,,10,
+00c3b160,FUN_00c3b160,00c69800,`vector_deleting_destructor',size-run,,10,
+00c3b1d0,FUN_00c3b1d0,00c69870,CBase,size-run,,10,
+00c3b3d0,FUN_00c3b3d0,00c69a70,NScript::CQ_GuildTrainingSkillScript::AllocateMemory,body,0.82,0,"autoname-t5 [medium]: Thiscall void, allocates two memory blocks tracking size/capacity, called by CQ_GuildTrainingSkill"
+00c3b4c0,FUN_00c3b4c0,00c69b60,CTCNpcInteractable_Reset,body,0.80,0,"autoname-t5 [high]: Fastcall; calls CQ_GuildTrainingSkillScript::Init twice, clears multiple buffers, calls 3 functions"
+00c3c210,FUN_00c3c210,00c6a8b0,NScript::CQ_GuildTrainingSkillScript::BeginScript,body,0.61,0,"autoname-t5 [medium]: Thiscall uint, called by unknown, checks state cache, initializes script via CQ_GuildTrainingSkill"
+00c3c880,FUN_00c3c880,00c6af50,CTCHeroStats::UpdateEventProgress,body,0.74,0,"autoname-t5 [medium]: Thiscall uint, calls vtable method at [0x28c+8], accumulates progress counter, returns param_3 bas"
+00c3cb90,FUN_00c3cb90,00c6b260,FloatToLongConvert_Vectorized,body,0.87,0,"autoname-t5 [medium]: Thiscall; checks DAT_0143bc7d/c/78 CPU flags, calls InitCPUCapabilities, FtoL in fallback"
+00c3ccd0,FUN_00c3ccd0,00c6b3a0,LongToFloatConvert_Vectorized,body,0.97,0,"autoname-t5 [medium]: Non-thiscall; mirrors float->long pattern with CPU capability checks, 8-loop conversion or SIMD"
+00c3cdc0,FUN_00c3cdc0,00c6b490,FloatArrayRound_CPU,body,0.90,0,"autoname-t5 [medium]: Thiscall; CPU-based float rounding via FtoL; checks DAT_0143bc7d/c/78, 0x80 element loop"
+00c3cf00,FUN_00c3cf00,00c6b5d0,Math_ConvertFloatsToIntegers,body,0.96,0,"autoname-t5 [medium]: Function void, checks CPU capabilities, loops converting float arrays to int, handles SSE/FPU path"
+00c3d790,FUN_00c3d790,00c6be60,Audio_ComputeFrequencyResponse,body,0.64,0,"autoname-t5 [medium]: Function void, calls FUN_00c6bdc0 and _CIpow to compute audio filter response for two channels"
+00c3d880,FUN_00c3d880,00c6bf60,MathUtils_Pow2_v2,size-run,0.96,13,autoname-t5 [medium]: Float thunk; identical to 00c5c0b0 (fscale+f2xm1 for 2^x)
+00c3d910,FUN_00c3d910,00c6bff0,CBaseIntelligentPointer,size-run,,13,
+00c3d920,FUN_00c3d920,00c6c000,Audio_ComputeDecibelsToLinear,size-run,0.59,13,"[forge-autoname3 conf=medium] fscale/f2xm1/fcos intrinsics, log/exp-based conversion pattern, member outputs at offsets "
+00c3da10,FUN_00c3da10,00c6c0f0,Audio_ApplyIIRFilter,size-run,0.68,13,"autoname-t5 [medium]: Thiscall void, applies IIR filter kernel to 16-sample short audio blocks with saturating arithmeti"
+00c3de50,FUN_00c3de50,00c6c530,Audio_ApplyGainFilter_SIMD,size-run,0.72,13,[forge-autoname3 conf=medium] Processes samples with multiplications (param_1[1] * input + param_1[0] * state) with 16-b
+00c3e340,FUN_00c3e340,00c6ca20,CEnvironmentSpellEffectInterface,size-run,,13,
+00c3e3e0,FUN_00c3e3e0,00c6cac0,~CChunkedFileChunk,size-run,,13,
+00c3e410,FUN_00c3e410,00c6caf0,Audio_ResampleAndAccumulate,size-run,0.98,13,[forge-autoname conf=medium <- wf] Short pointer arithmetic with phase/pitch interpolation; accumulates into int array; 
+00c3e4a0,FUN_00c3e4a0,00c6cb80,Audio_ResampleDecayAndAccumulate,size-run,0.98,13,[forge-autoname conf=medium <- wf] Similar to 00c6caf0 but with ushort decay coefficient; audio resampling with amplitud
+00c3e530,FUN_00c3e530,00c6cc10,Audio_ApplyGain,size-run,0.97,13,[forge-autoname4 conf=high] Accumulates scaled int16 array into output with right-shift by 0xf for audio bit scaling.
+00c3e810,FUN_00c3e810,00c6cef0,Audio_SetFilterCoefficients,size-run,0.76,13,[forge-autoname conf=medium <- wf] Thiscall; sets ushort amplitude and phase from float; audio filter coefficient setup
+00c3e860,FUN_00c3e860,00c6cf40,Audio_SetFilterCoefficients,size-run,0.63,13,[forge-autoname3 conf=medium] Calls EnterCriticalSection/LeaveCriticalSection; manages critical section around filter st
+00c3ec70,FUN_00c3ec70,00c6d350,`vector_deleting_destructor',size-run,,13,
+00c3f2c0,FUN_00c3f2c0,00c6d9d0,CResourceBank,size-run,,7,
+00c3f320,FUN_00c3f320,00c6da30,~CChunkedFileChunk,size-run,,7,
+00c3f330,FUN_00c3f330,00c6da40,FixedPoint_AccumulateShort,size-run,0.98,7,Identical pattern to 00c6caf0 with phase interpolation; variant detection uncertain without deeper analysis
+00c3f3c0,FUN_00c3f3c0,00c6dad0,FixedPoint_AccumulateUshortDelta,size-run,0.98,7,Identical decay resampling pattern to 00c6cb80; variant detection uncertain
+00c3f750,FUN_00c3f750,00c6de60,Audio_ConvertFloatToS15,size-run,0.66,7,Identical to 00c6cef0; sets ushort from float with scale; variant detection uncertain
+00c3f790,FUN_00c3f790,00c6dea0,Audio_SetOutputVolume,size-run,0.65,7,"[forge-autoname2 conf=medium <- wf] __thiscall CriticalSection guard, ROUND() for PCM scaling 0x7fff, stereo ushort poin"
+00c3fac0,FUN_00c3fac0,00c6e1d0,`vector_deleting_destructor',size-run,,7,
+00c3fee0,FUN_00c3fee0,00c6e630,CConsoleCommandParameters,size-run,,11,
+00c3ff10,FUN_00c3ff10,00c6e660,WriteCBYTE,size-run,,11,
+00c3ff50,FUN_00c3ff50,00c6e6a0,CConsoleCommandParameters,size-run,,11,
+00c3ff80,FUN_00c3ff80,00c6e6d0,`vector_deleting_destructor',size-run,,11,
+00c40010,FUN_00c40010,00c6e760,CConsoleCommandParameters_Constructor,size-run,0.06,11,[forge-autoname3 conf=high] Calls CConsoleCommandParameters::CConsoleCommandParameters; sets vtable pointer and member p
+00c40030,FUN_00c40030,00c6e780,~CChunkedFileChunk,size-run,,11,
+00c40040,FUN_00c40040,00c6e790,DSP_AccumulateModulatedWaveform,size-run,0.98,11,Identical to previous resample patterns; third variant; uncertain if genuine distinct variant
+00c400d0,FUN_00c400d0,00c6e820,DSP_AccumulateUnsignedModulatedWaveform,size-run,0.98,11,Identical decay resampling as previous; third variant; uncertain if truly distinct
+00c40450,FUN_00c40450,00c6eba0,AudioGainLookup_GetValues,size-run,0.69,11,"autoname-t5 [medium]: Thiscall; computes gain from float at offset 0x20, clamps to 0x7fff, shifts and stores nibbles"
+00c40490,FUN_00c40490,00c6ebe0,Audio_SetVolume_Channel,size-run,0.64,11,"[forge-autoname3 conf=medium] Thiscall entering/leaving critical section; reads float at 0x20, writes byte at 0x24, sets"
+00c40560,FUN_00c40560,00c6ecb0,`vector_deleting_destructor',size-run,,11,
+00c40580,FUN_00c40580,00c6ecd0,SSE_MatrixMultiplyShort_NoVaryingScale,body,0.60,0,Identical SSE pattern; third variant; uncertain if truly distinct
+00c40610,FUN_00c40610,00c6ed70,SSE_MatrixMultiplyShort,body,0.65,0,Identical SIMD loop to 00c6d410; third variant for animation blend
+00c41420,FUN_00c41420,00c6fc80,SSE_MatrixMultiplyLonglong,body,0.98,0,Identical structure to 00c6f1a0; third 64-bit SIMD blend variant
+00c41780,FUN_00c41780,00c70040,Set,size-run,,19,
+00c41860,FUN_00c41860,00c70120,Resize,size-run,,19,
+00c41910,FUN_00c41910,00c701d0,~CChunkedFileChunk,size-run,,19,
+00c41980,FUN_00c41980,00c70240,Graphics_RenderSprite_32x32_Base,size-run,0.80,19,[forge-autoname3 conf=medium] Calls rendering functions FUN_00c79440/FUN_00c7ab20 based on version check; sprite size ha
+00c41a20,FUN_00c41a20,00c702e0,Graphics_RenderSprite_32x32_Alt,size-run,0.74,19,[forge-autoname3 conf=medium] Nearly identical to 00c70240 but passes 0x7fff/0xffffff00 constants to rendering functions
+00c41ad0,FUN_00c41ad0,00c70390,Graphics_RenderText_Conditional,size-run,0.81,19,[forge-autoname3 conf=medium] Branches on version/flag at 0x120/0x121; calls different rendering functions - 'Variable' 
+00c41cf0,FUN_00c41cf0,00c705b0,Audio_ProcessChannelVolume,size-run,0.83,19,"[forge-autoname2 conf=medium <- wf] __thiscall audio processing, ROUND(fVar2*multiplier), calls FUN_00c78970 DSP - chann"
+00c41e90,FUN_00c41e90,00c70750,Audio_SetChannelOutputMode,size-run,0.60,19,"[forge-autoname2 conf=medium <- wf] __thiscall CriticalSection, calls FUN_00c705b0 3 times for dual channel with offsets"
+00c42170,FUN_00c42170,00c70a30,`vector_deleting_destructor',size-run,,19,
+00c421a0,FUN_00c421a0,00c70a60,Set,size-run,,19,
+00c42240,FUN_00c42240,00c70b00,Resize,size-run,,19,
+00c422f0,FUN_00c422f0,00c70bb0,~CChunkedFileChunk,size-run,,19,
+00c42350,FUN_00c42350,00c70c10,Graphics_RenderSprite_16x16,size-run,0.76,19,[forge-autoname3 conf=medium] Similar pattern to 00c70240 but offset 0x298/0x290/0x29c; calls FUN_00c7e420/FUN_00c843f0;
+00c423f0,FUN_00c423f0,00c70cb0,Graphics_RenderSprite_16x16_Alt,size-run,0.70,19,[forge-autoname3 conf=medium] Identical to 00c70c10 but with 0x7fff/0xffffff00 constants; 'Variant' is vague - 'Alt' or 
+00c424a0,FUN_00c424a0,00c70d60,Graphics_RenderText_Conditional2,size-run,0.73,19,[forge-autoname3 conf=medium] Matches 00c70390 pattern with offsets 0x2a0/0x2a1/0x2a2; calls different render functions 
+00c426c0,FUN_00c426c0,00c70f80,Audio_ProcessChannelVolume_Alt,size-run,0.83,19,"[forge-autoname2 conf=medium <- wf] Identical to 00c705b0 but offsets +0x180 (0x294 vs 0x114), calls FUN_00c7ba00 - alte"
+00c42860,FUN_00c42860,00c71120,Audio_SetChannelOutputMode_Alt,size-run,0.60,19,"[forge-autoname2 conf=medium <- wf] Identical to 00c70750 but offsets +0x400, calls FUN_00c70f80 - second channel manage"
+00c42b40,FUN_00c42b40,00c71400,`vector_deleting_destructor',size-run,,19,
+00c42b60,FUN_00c42b60,00c71420,CNavigationLayer,size-run,,19,
+00c42b70,FUN_00c42b70,00c71430,CAudioMixer::EnumerateAndOpenDevice,body,0.66,0,"autoname-t5 [medium]: Thiscall uint, enumerates mixer devices via mixerGetNumDevs, matches name, opens mixer, configures"
+00c42ce0,FUN_00c42ce0,00c715d0,CAudioMixer::CloseAndCleanup,size-run,0.94,6,"autoname-t5 [medium]: Fastcall void, called as destructor, sets mixer control details via mixerSetControlDetails and clo"
+00c42d50,FUN_00c42d50,00c71640,"make_pair<CSkeletalMorphs::CEntry,float&>",size-run,,6,
+00c42dd0,FUN_00c42dd0,00c716c0,Audio_MixerHandle_Close,size-run,0.94,6,[forge-autoname3 conf=high] Calls mixerClose and mixerSetControlDetails; manages HMIXEROBJ; called by cleanup function -
+00c42e20,FUN_00c42e20,00c71710,C3DAnimationUtil,size-run,,6,
+00c42e60,FUN_00c42e60,00c71750,AudioBuffer_ClampAndConvert16bit,size-run,0.87,6,"autoname-t5 [high]: Thiscall; loops 0x200 bytes, clamps int32 to 16-bit [-0x8000, 0x7fff], writes shorts; param_1+0x21c "
+00c433e0,FUN_00c433e0,00c71cd0,`vector_deleting_destructor',size-run,,6,
+00c43640,FUN_00c43640,00c71f10,Audio_InitSource_Properties,size-run,0.62,9,"[forge-autoname3 conf=medium] Thiscall; calls __ftol2; manipulates member at offset 0x28 (flags), 0x80/0x84 (time), 0x3c"
+00c436b0,FUN_00c436b0,00c71f80,CAudioSource::ComputePitchScale,size-run,0.75,9,"autoname-t5 [medium]: Thiscall void, validates pitch parameters, computes pitch scaling factor via __alldiv/__allrem and"
+00c437f0,FUN_00c437f0,00c720c0,Math_ConvertToPowerOfTwo_or_ComputeScale,size-run,0.44,9,[forge-autoname conf=medium <- wf] Calls __ftol2 without clear log/power relationship; computes scale via division; name
+00c43860,FUN_00c43860,00c72130,Audio_SetSource_Gain,size-run,0.52,9,"[forge-autoname3 conf=medium] Thiscall; calls __ftol2; sets offset 0x70/0x68 from time values, computes gain at offset 0"
+00c43930,FUN_00c43930,00c72200,CAudioSource::UpdateGainState,size-run,0.40,9,"autoname-t5 [medium]: Thiscall uint, complex state machine for audio gain updates, calls Audio_SetSource_Gain, Math_Conv"
+00c43c40,FUN_00c43c40,00c72510,CAudioSource_LazyLoadAlSourcef,size-run,0.70,9,autoname-t5 [medium]: Thiscall with member offset 0x50 for caching FARPROC. Lazy-loads 'alSourcef' via GetProcAddress or
+00c43c90,FUN_00c43c90,00c72560,CAudioSource::PausePlayback,size-run,0.70,9,"autoname-t5 [medium]: Thiscall void, lazily loads 'alSourcePause' via CAudioContext or GetProcAddress, caches and calls "
+00c43ce0,FUN_00c43ce0,00c725b0,CAudioSource_LazyLoadAlSourceRewind,size-run,0.67,9,autoname-t5 [medium]: Thiscall with member offset 0x84. Lazy-loads 'alSourceRewind' function pointer. Same pattern as ab
+00c43d30,FUN_00c43d30,00c72600,C3DAnimationUtil,size-run,,9,
+00c44040,FUN_00c44040,00c4dbe0,CAudioDriver_GetErrorCode,body,0.80,0,"[forge-autoname conf=high <- wf] fastcall audio error polling, loads alGetError via GetProcAddress, returns error code w"
+00c44280,FUN_00c44280,00c72af0,CAudioSource::InitializeProperties,body,0.80,0,"autoname-t5 [medium]: Thiscall uint, validates and initializes source properties, calls Audio_InitSource_Properties and "
+00c44ad0,FUN_00c44ad0,00c73340,CAudioSoundBuffer_GetPosition,body,0.88,0,autoname-t6 [medium]: Calls CAudioSoundBuffer_TransferPCMData; returns this+0x30 or this+0x34 into *param2 depending on 
+00c44b60,FUN_00c44b60,00c733d0,Audio_ApplyEffectProperties,body,0.73,0,"autoname-t5 [medium]: thiscall, calls CAudioContext::GetProcAddress/GetProcAddress to dynamically load AL audio function"
+00c44df0,FUN_00c44df0,00c4e2a0,CIndexBuffer,size-run,,13,
+00c44e20,FUN_00c44e20,00c4e2d0,OnResize,size-run,,13,
+00c44e40,FUN_00c44e40,00c4e2f0,Alloc,size-run,,13,
+00c44ed0,FUN_00c44ed0,00c4e380,ScriptEvent_DispatchIfActive,size-run,0.75,13,autoname-t6 [medium]: caller AddToRenderList; returns -4 unless param_4 valid and *(param_4+0x1f0)!=0 then ScriptEvent_D
+00c44f10,FUN_00c44f10,00c4e3c0,CShaderRenderManager_SetupProjection,size-run,0.47,13,"autoname-t5 [medium]: Thiscall; calls NormalizeVectorPair, SetProjectionTransform; clamps projection values using global"
+00c45580,FUN_00c45580,00c4ea30,CTCLook_ProcessHeadTurn,size-run,0.72,13,"autoname-t5 [medium]: Fastcall; calls SetHeadTurnState, FUN_00c41e40; large function (1182 bytes); processes head turn s"
+00c45d50,FUN_00c45d50,00c4f200,`vector_deleting_destructor',size-run,,13,
+00c45d70,FUN_00c45d70,00c4f220,SetBankUpdateProgress,size-run,,13,
+00c46150,FUN_00c46150,00c4f600,PropertySerializer_GetPropertyTypeCode,size-run,1.00,13,[forge-autoname2 conf=medium <- wf] Compares param_1 against data table addresses to return property type codes; large f
+00c48570,FUN_00c48570,00c51a20,PropertySerializer_WriteProperty,size-run,0.51,13,[forge-autoname conf=medium <- wf] Massive switch on type IDs 1-25+; calls FUN_00c4f600 repeatedly; property serializati
+00c48a50,FUN_00c48a50,00c51f00,Model_WritePropertyIfValid,size-run,0.40,13,[forge-autoname2 conf=medium <- wf] Non-member function calling FUN_00c68510 and PropertySerializer_WriteProperty; model
+00c48aa0,FUN_00c48aa0,00c51f50,CDrawGuildSeal_SetProperty,size-run,0.62,13,"autoname-t5 [high]: calls CDrawGuildSeal_SetProperty, PropertySerializer_WriteProperty; serializes guild seal attribute"
+00c49390,FUN_00c49390,00c52840,Resize,size-run,,13,
+00c49740,FUN_00c49740,00c42d60,CIcicleData,size-run,,28,
+00c497b0,FUN_00c497b0,00c42dd0,CTCHeroStats_InitializeShadowRenderer,size-run,0.46,28,[forge-autoname3 conf=medium] Thiscall; calls CShadowRendererSceneData and CTCHeroStats::InformOfEvent; checks flag at +
+00c49930,FUN_00c49930,00c42f50,Audio_SetDecibels,size-run,0.25,28,"autoname-t5 [medium]: Computes log10 via constant 0.30103, stores result at +0x18, sets audio flag 0x2 at +0x14"
+00c499c0,FUN_00c499c0,00c42fe0,Enable2DSceneRendering,size-run,,28,
+00c499e0,FUN_00c499e0,00c43000,Audio_SetFilterParams,size-run,0.80,28,"autoname-t5 [medium]: Copies 6 floats from param_2 to internal storage at +0x7c, sets filter state flag 0x8"
+00c49cd0,FUN_00c49cd0,00c432f0,OnDelete,size-run,,28,
+00c49d50,FUN_00c49d50,00c43370,IsNewDestinationGoingToResetNavigation,size-run,,28,
+00c49d70,FUN_00c49d70,00c43390,NCreatureMode_EvaluateAnimState,size-run,0.62,28,"autoname-t5 [medium]: Calls GetAnimFilter and ClearPrimitivesIfNecessary, evaluates animation state bits"
+00c49e00,FUN_00c49e00,00c43420,CMusicManager::SetLoopPoints,size-run,0.86,28,"autoname-t5 [high]: Called by CMusicManager_SetLoop, manages loop start/end pair, sets flag 0x80"
+00c49e80,FUN_00c49e80,00c434a0,CMusicManager::SetVolumeParams,size-run,0.87,28,"autoname-t5 [high]: Called by CMusicManager_SetVolume, manages 3-int volume params, sets flag 0x100"
+00c49f10,FUN_00c49f10,00c43530,GetDrawableStateFlags,size-run,1.00,28,autoname-t5 [medium]: calls virtual method at [0x14][0x10]; checks two global state tables DAT_0139c990/c9a8; returns st
+00c49f50,FUN_00c49f50,00c43570,CCombatRenderState_SetStateValue,size-run,0.70,28,[forge-autoname3 conf=medium] Thiscall; masks and compares state at +0x10; calls CCombatSequenceManager_ProcessAction; c
+00c4a0a0,FUN_00c4a0a0,00c436c0,Thing_Cleanup,size-run,0.88,28,"[forge-autoname conf=medium <- wf] Cleans up object checking state bits and managing cleanup via vtable, but class 'CThi"
+00c4a160,FUN_00c4a160,00c43780,CMusicManager_SetLoop,size-run,0.15,28,[forge-autoname4 conf=medium] Thiscall wrapper calling FUN_00c43420 with music state offsets +0x24 and +0x3c; looping pr
+00c4a180,FUN_00c4a180,00c437a0,CMusicManager_SetVolume,size-run,0.15,28,[forge-autoname4 conf=medium] Thiscall wrapper calling FUN_00c434a0 with music state offsets +0x28 and +0x44; volume pro
+00c4a1a0,FUN_00c4a1a0,00c437c0,DestroyDevice,size-run,,28,
+00c4a1f0,FUN_00c4a1f0,00c43810,~CExclusiveAssert,size-run,,28,
+00c4a2d0,FUN_00c4a2d0,00c438f0,SetBankUpdateStatus,size-run,,28,
+00c4a2f0,FUN_00c4a2f0,00c43910,GetDrawableShadowParameters,size-run,0.89,28,"autoname-t5 [medium]: calls FUN_00c43390 with 8 parameters; checks object state at 0x14, 0x1e, 0x15-0x19; returns shadow"
+00c4a360,FUN_00c4a360,00c43980,CCombatRenderState_OnActionComplete,size-run,0.71,28,"[forge-autoname3 conf=medium] Thiscall; calls vtable at +0x50 with param_2, param_3; calls FUN_00c43570 on success - act"
+00c4a3f0,FUN_00c4a3f0,00c43a10,CDisplayManager_ProcessStateChange,size-run,0.72,28,[forge-autoname3 conf=medium] Thiscall on CDisplayManager; calls DestroyDevice and OnDelete; state machine with vtable c
+00c4a510,FUN_00c4a510,00c43b30,CShaderConstantRange_ValidateAndLoad,size-run,0.60,28,"[forge-autoname3 conf=medium] Complex validation function calling GetAnimFilter, ClearPrimitivesIfNecessary; checks filt"
+00c4a710,FUN_00c4a710,00c43d30,CShaderConstantRange_ShouldClearPrimitives,size-run,0.34,28,[forge-autoname3 conf=medium] Thiscall checks animation filter flags and primitives state; calls ClearPrimitivesIfNecess
+00c4a7c0,FUN_00c4a7c0,00c43de0,DrawAutoPickups_SelectAndDrawPrimitive,size-run,1.00,28,caller CDrawAutoPickups::OnVisibilityChange; picks element at this[0x15]+this[0x19]*4 or this[0x1e] then virtual-calls +
+00c4a800,FUN_00c4a800,00c43e20,CExclusiveAssert_UpdateSelectedWeapon,size-run,0.29,28,"[forge-autoname3 conf=medium] Thiscall on CExclusiveAssert; calls Thing_Cleanup, FUN_00c43d30, FUN_00c3c750; manages wea"
+00c4a8a0,FUN_00c4a8a0,00c43ec0,CExclusiveAssert::OnQuestItemUsed,size-run,0.34,28,"autoname-t5 [medium]: Calls Thing_Cleanup, SetQuestPersistentFlag, CCombatSequenceManager_ProcessAction; quest item fina"
+00c4a960,FUN_00c4a960,00c43f80,Weapon_ProcessAnimFrameIfReady,size-run,0.39,28,caller Inventory_OnItemEquipped_ValidateWeaponExtended; if ShouldClearPrimitives and CreateAudioBuffer ok calls CCreatur
+00c4a9b0,FUN_00c4a9b0,00c43fd0,CDrawAutoPickups::OnVisibilityChange,size-run,0.77,28,"autoname-t5 [medium]: Caller CDrawAutoPickups_ShouldRender, manipulates state bits at +0x10, calls FUN_00c43de0"
+00c4ace0,FUN_00c4ace0,00c44320,CircularQueue_DequeueNext,body,0.93,0,[forge-autoname3 conf=medium] Fastcall manages circular queue with indices at param_1[2] (size) and param_1[4] (current)
+00c4ad90,FUN_00c4ad90,00c443d0,CTCInventory::ClearMarkedItems,body,0.81,0,"[forge-autoname2 conf=high <- wf] Fastcall iterating items calling SetQuestPersistentFlag, clearing quest item flags; cl"
+00c4af70,FUN_00c4af70,00c73660,Sys_DetectOSVersion,body,0.73,0,"autoname-t5 [high]: called by SetDefaultString, calls GetVersionExA and GetVersion to detect Windows OS version and stor"
+00c4b0c0,FUN_00c4b0c0,00c73770,SetDefaultString,size-run,,7,
+00c4b0e0,FUN_00c4b0e0,00c73790,CBaseIntelligentPointer,size-run,,7,
+00c4b120,FUN_00c4b120,00c737d0,AudioDriver_LoadRegistry_Key,size-run,0.39,7,[forge-autoname3 conf=medium] Calls RegCreateKeyExA; returns bool on success - loads audio driver registry but scoping t
+00c4b150,FUN_00c4b150,00c73800,ClearTextures,size-run,,7,
+00c4b170,FUN_00c4b170,00c73820,AddExclusiveObserver,size-run,,7,
+00c4b180,FUN_00c4b180,00c73830,Registry_QueryDWord,size-run,0.63,7,"[forge-autoname2 conf=high <- wf] __thiscall RegQueryValueExA with HKEY from param_1+4, DWORD buffer validation - Window"
+00c4b2f0,FUN_00c4b2f0,00c739a0,ClearTextures,size-run,,7,
+00c4c3a0,FUN_00c4c3a0,00c8aa80,GetSampleRecursive,body,0.94,0,"[forge-autoname conf=medium <- wf] Recursive sample retrieval from param_1+0x44 buffer, returns longlong pair; 'Audio' p"
+00c4c410,FUN_00c4c410,00c8aaf0,GetNormalizedSample,body,0.80,0,"[forge-autoname conf=medium <- wf] Recursive normalization function, returns float10, divides longlong by int; 'Audio' p"
+00c4c4d0,FUN_00c4c4d0,00c8b9d0,Audio_GetCurrentSamplePosition,body,0.84,0,autoname-t5 [medium]: Fastcall returns float10 position. Calls GetSampleRecursive/GetNormalizedSample in loop searching 
+00c4c5b0,FUN_00c4c5b0,00c8bab0,Indexed_GetElementOffsetSafe,body,1.00,0,Array indexing with bounds check: index * 0x20 + base at +0x48
+00c4c5e0,FUN_00c4c5e0,00c8bae0,Script_GetEntryPointer,body,1.00,0,caller Script_LoadAndInitialize; index/bounds check then returns base(+0x4c)+index*0x10 or fallback pointers
+00c4c620,FUN_00c4c620,00c8bf90,Audio_ConvolveChannels,body,0.95,0,"[forge-autoname2 conf=medium <- wf] __fastcall 4-sample chunks with fVar1*fVar1 (squared value) blending, convolution-li"
+00c4c860,FUN_00c4c860,00c8cb70,Audio_GetSamplePosition,body,0.71,0,"autoname-t5 [medium]: Fastcall seeks sample position. Handles negative offset, loops __allmul/GetNormalizedSample, calls"
+00c4cc80,FUN_00c4cc80,00c89cb0,SearchValue_WithBorrow,body,0.93,0,[forge-autoname3 conf=medium] Performs 64-bit comparison with carry/borrow; complex control flow (returns -1/-2/-128) su
+00c4ce50,FUN_00c4ce50,00c89e80,BankFile_BinarySearch,body,0.64,0,"[forge-autoname2 conf=medium <- wf] __fastcall binary search loop with lVar3/lVar4 bounds, __alldiv for midpoint, recurs"
+00c4d480,FUN_00c4d480,00c8a540,CreatureHitNotification_StateProcess,body,0.60,0,"[forge-autoname conf=medium <- wf] Complex state machine with particle flashes using CMemoryDataOutputStream, calls IsAt"
+00c4e640,FUN_00c4e640,00c8bb20,Primitive_ProcessVertexBuffer,body,0.66,0,"[forge-autoname3 conf=medium] Vertex buffer processing with FtoL conversions is clear, but child primitive claim lacks m"
+00c4eab0,FUN_00c4eab0,00c8c1d0,CreatureHitNotification_WaitForCompletion,body,0.82,0,"[forge-autoname2 conf=medium <- wf] Loop calls CreatureHitNotification_StateProcess until iVar1==4 (state value), state "
+00c4eae0,FUN_00c4eae0,00c8c200,VertexBuffer_WaitAndAllocate,body,0.70,0,[forge-autoname2 conf=medium <- wf] Loop calls VertexBuffer_GetRange/CreatureHitNotification_StateProcess until ready - 
+00c4eb20,FUN_00c4eb20,00c8c240,VertexBuffer_FillData,body,0.84,0,"[forge-autoname2 conf=medium <- wf] Calls VertexBuffer_GetRange/CreatureHitNotification_StateProcess/FUN_00c90950, memcp"
+00c4f280,FUN_00c4f280,00c8ca90,CreatureHitNotification_Shutdown,body,0.86,0,"autoname-t5 [high]: Called by lua_dobuffer; calls FUN_00c8c8c0 (search), CAInputProcess_Shutdown — cleanup phase after n"
+00c51f70,FUN_00c51f70,006f5690,C3DAnimationUtil,size-run,,6,
+00c51f90,FUN_00c51f90,006f56b0,?GetAnimationTransitionInTime@CCombatAction_GenericStrikeResponseBase@@UBEJXZ,size-run,,6,
+00c51fa0,FUN_00c51fa0,006f56c0,?SetHitDirection@CCombatAction_GenericStrikeResponseBase@@UAEXVC3DVector@@@Z,size-run,,6,
+00c51fc0,FUN_00c51fc0,006f56e0,?SetHitPosition@CCombatAction_GenericStrikeResponseBase@@UAEXVC3DVector@@@Z,size-run,,6,
+00c51fe0,FUN_00c51fe0,006f5700,?IsUsingAnimationMovement@CCombatAction_GenericStrikeResponseBase@@MBE_NXZ,size-run,,6,
+00c52000,FUN_00c52000,006f5720,?SetHitter@CCombatAction_GenericStrikeResponseBase@@UAEXABVCThing@@@Z,size-run,,6,
+00c54d30,FUN_00c54d30,00c90f10,CVsyncCallbackTimerInfo,size-run,,12,
+00c54de0,FUN_00c54de0,00c90fc0,CBitstream::WriteBits,size-run,0.93,12,"[forge-autoname conf=high <- wf] Evidence matches: fastcall int*, shifts bits into bytes, reallocates if needed, advance"
+00c54ee0,FUN_00c54ee0,00c910c0,Bitstream_WriteBits,size-run,0.93,12,"autoname-t5 [medium]: Writes to bit-level positions, manipulates bit offsets and buffers—serializes data to bitstream"
+00c54fd0,FUN_00c54fd0,00c911b0,RemoveMap,size-run,,12,
+00c55110,FUN_00c55110,00c912f0,CIndexBuffer,size-run,,12,
+00c55140,FUN_00c55140,00c91320,"_Dest_val<std::allocator<std::pair<unsigned_long,CSmallVector<NAnimationEvents::CEvent,32>_>_>,std::pair<unsigned_long,CSmallVector<NAnimationEvents::CEvent,32>_>_>",size-run,,12,
+00c55180,FUN_00c55180,00c91360,OpenMemorySource,size-run,,12,
+00c551c0,FUN_00c551c0,00c913a0,CBitstream_ReadBitsVariable,size-run,1.00,12,"[forge-autoname2 conf=medium <- wf] __fastcall variable-length bit reading from byte array param_1[3], up to 5 bytes wit"
+00c55350,FUN_00c55350,00c91530,CBitstream_AdvanceBitPosition,size-run,1.00,12,[forge-autoname2 conf=medium <- wf] __fastcall bit stream position advance: (param_2 + param_1[1] + 7) >> 3 byte advance
+00c553c0,FUN_00c553c0,00c915a0,CBitstream::ReadBits,size-run,1.00,12,"[forge-autoname conf=high <- wf] Evidence matches: fastcall int*, extracts bits from bytes with complex shifts, advances"
+00c555d0,FUN_00c555d0,00c917b0,AlignValue_8Byte,size-run,1.00,12,[forge-autoname conf=medium <- wf] fastcall aligns value to 8-byte boundary with bit operations. Rename to avoid '8ByteB
+00c55620,FUN_00c55620,00c91800,DrawGetEnvironment,size-run,,12,
+00c55660,FUN_00c55660,00c91820,Memory_AllocateSmall,size-run,0.88,8,"autoname-t5 [medium]: Calls calloc; 44 bytes, small memory allocation wrapper"
+00c55690,FUN_00c55690,00c91850,construct,size-run,,8,
+00c556e0,FUN_00c556e0,00c918a0,"_Cons_val<std::allocator<C3DGeneratorObject>,C3DGeneratorObject,C3DGeneratorObject>",size-run,,8,
+00c55700,FUN_00c55700,00c918c0,BoundingBox_UpdateMin,size-run,1.00,8,[forge-autoname3 conf=medium] Eight-element float comparison loop (7 iterations) is characteristic of 3D min-corner upda
+00c557c0,FUN_00c557c0,00c91980,BoundingBox_AccumulateMax,size-run,1.00,8,autoname-t6 [medium]: caller BoundingBox_ComputeTransform; 7-iteration loop taking component-wise max of two float array
+00c55880,FUN_00c55880,00c91a40,Vector8f_AddScalar,size-run,1.00,8,[forge-autoname3 conf=high] Loop structure adds param_1 to 8 float elements repeatedly.
+00c558f0,FUN_00c558f0,00c91ab0,BoundingBox_ComputeTransform,size-run,0.66,8,"autoname-t5 [medium]: Calls ceil, floor, __ftol2, Vector8f_AddScalar, BoundingBox_UpdateMin, FUN_00c91980, malloc — comp"
+00c56480,FUN_00c56480,00c92660,AudioSystem_ProcessSources,body,0.68,0,"autoname-t5 [high]: Called by AudioSystem_Initialize; calls FUN_00c91ab0 (bounding box), __ftol2, floor, malloc — proces"
+00c56ae0,FUN_00c56ae0,00c92ca0,Graphics_ConvertFloatToFixed,size-run,0.90,22,"autoname-t5 [medium]: Calls __ftol2; 376 bytes, converts floating-point graphics values to fixed-point representation"
+00c56c60,FUN_00c56c60,00c92e20,Graphics_ApplyConversion,size-run,0.87,22,autoname-t5 [medium]: Calls FUN_00c92ca0 (float-to-fixed); applies graphics conversion pipeline
+00c56d50,FUN_00c56d50,00c92f10,DSP_ComputeRunningMinEnvelope,size-run,0.95,22,__chkstk stack scratch; running min/max envelope over param_3 floats; called by FFT_InitializeWaveform path
+00c56ec0,FUN_00c56ec0,00c93080,FFT_ComputeWaveformEnvelope,size-run,0.92,22,caller FFT_InitializeWaveform; calls DSP running-envelope helper FUN_00c92f10 then clamps segment maxima
+00c57010,FUN_00c57010,00c931d0,FFT_ComputeMagnitudes,size-run,0.85,22,[forge-autoname3 conf=medium] 2383-byte function suggests FFT but 'FrequencyDomainMagnitudes' is speculative. Generic FF
+00c57970,FUN_00c57970,00c93b30,Audio_ApplyGainTableToBuffer,size-run,1.00,22,"caller CPlayer::ProcessAudioFrame; multiplies samples by gain from table DAT_013a3948 indexed per-sample, zero-fills tai"
+00c57a80,FUN_00c57a80,00c93c40,FFT_ProcessBuffer,size-run,0.74,22,"autoname-t5 [high]: Calls FFT_ComputeMagnitudes, __ftol2, __chkstk — processes buffer via FFT magnitude computation"
+00c57c70,FUN_00c57c70,00c93e30,FFT_InitializeWaveform,size-run,0.86,22,autoname-t5 [medium]: Calls FUN_00c92e20 and FUN_00c93080; large buffer allocation loop with stack probe; likely FFT/aud
+00c57da0,FUN_00c57da0,00c93f60,Audio_MixBlockSamples,size-run,1.00,22,"[forge-autoname2 conf=medium <- wf] Float array vector operations with clipping (max/min bounds), tight arithmetic loop "
+00c57fd0,FUN_00c57fd0,00c94190,Audio_ComputeClampedPosition,size-run,0.84,22,caller Audio_FlushBuffer; float position from sample counts clamped to floor _DAT_012bf314
+00c58020,FUN_00c58020,00c941e0,Vector_NormalizeCross,size-run,0.79,22,autoname-t5 [medium]: Operates on two float*; ABS comparisons; swaps and negates params; geometric normalization pattern
+00c580f0,FUN_00c580f0,00c942b0,Audio_ComputeLog2WeightedCoeff,size-run,0.92,22,caller Audio_ProcessWeightedCoefficients; bit-length(log2) of index range picks table entries DAT_013a3d48/DAT_013a3948 
+00c58150,FUN_00c58150,00c94310,Math_SignedSqrtMagnitude,size-run,0.66,22,autoname-t5 [medium]: Returns float10; two params; SQRT with sign-based conditional returns; magnitude/distance calculat
+00c58230,FUN_00c58230,00c943f0,Math_SignedSqrtMagnitudeAlt,size-run,0.76,22,"autoname-t5 [medium]: Similar pattern to 00c94310, slightly different sign/magnitude branch logic"
+00c582d0,FUN_00c582d0,00c94490,Audio_ComputeAnalysisVectors,size-run,0.85,22,"autoname-t5 [medium]: Calls FUN_00c943f0, FUN_00c94310, MemAllocator_Allocate; nested loops; computes vectors per 'param"
+00c583f0,FUN_00c583f0,00c945b0,Float_CompareAbsValue,size-run,0.94,22,"autoname-t5 [high]: Compares ABS(float) values, returns ternary comparison—float value comparator"
+00c58440,FUN_00c58440,00c94600,Mesh_ComputeIndexOffsets,size-run,0.79,22,"autoname-t5 [medium]: Calls MemAllocator_Allocate, qsort; computes indices with offset sorting; typical mesh processing"
+00c58590,FUN_00c58590,00c94750,Mesh_SortIndicesByOffset,size-run,0.92,22,autoname-t5 [medium]: Calls qsort twice; sorts mesh indices in chunks; FUN_00c945b0 is comparator
+00c58650,FUN_00c58650,00c94810,Audio_ComputeSparseBasis,size-run,0.80,22,"autoname-t5 [medium]: Calls floor, Float_SignBitExtract; loops over param_4 entries; accumulates float squares; sparse b"
+00c58920,FUN_00c58920,00c94ae0,Audio_ProcessWeightedCoefficients,size-run,0.85,22,"autoname-t5 [medium]: Calls FUN_00c942b0, floor, FUN_00c941e0, Float_SignBitExtract; processes 10 params; large complex "
+00c58d20,FUN_00c58d20,00c94ee0,Bitcount,size-run,1.00,22,[forge-autoname conf=high <- wf] Counts set bits by right-shifting and incrementing until zero; standard popcount algori
+00c58dd0,FUN_00c58dd0,00c94f90,Float_DecompressCompactRep,size-run,0.88,22,"[forge-autoname3 conf=high] Extracts 21-bit mantissa and 10-bit exponent, uses ldexp for custom float decompression."
+00c58e10,FUN_00c58e10,00c94fd0,Bitstream_ProcessCodes,body,0.92,0,"[forge-autoname3 conf=medium] Bitstream operations and conflict detection evident, but 'Huffman' specificity unproven. G"
+00c58f70,FUN_00c58f70,00c95140,Waveform_FindBestFrequencyFit,body,0.75,0,"[forge-autoname4 conf=medium] Called by Waveform_Synthesize, computes factorials in loop with power/floor math, bounds-c"
+00c58fe0,FUN_00c58fe0,00c951b0,Waveform_Synthesize,body,0.90,0,"[forge-autoname3 conf=medium] Float decompression and amplitude/phase calculations evident, but 'Phase' is narrow. Gener"
+00c593b0,FUN_00c593b0,00c95560,Uint_Compare,body,0.91,0,autoname-t5 [high]: Simple uint comparison returning signed difference—qsort-style comparator
+00c59750,FUN_00c59750,00c95910,Audio_ComputeL2Norm,size-run,0.95,38,autoname-t5 [medium]: Accumulates squared differences against reference; returns float10; L2 distance metric
+00c59850,FUN_00c59850,00c95a10,Waveform_FindClosestFrequencyBin,size-run,0.96,38,autoname-t5 [medium]: Calls FUN_00c95910; binary search pattern on sorted floats; returns best frequency match index
+00c59ae0,FUN_00c59ae0,00c95ca0,Waveform_WriteEncodedData,size-run,0.48,38,"autoname-t5 [medium]: Calls CBitstream::WriteBits, Bitcount, Waveform_FindBestFrequencyFit; encodes waveform to bitstrea"
+00c59d20,FUN_00c59d20,00c95ee0,Waveform_ReadEncodedData,size-run,0.61,38,"autoname-t5 [medium]: Calls CBitstream::ReadBits, malloc, Bitcount, Waveform_FindBestFrequencyFit; decodes waveform from"
+00c59f80,FUN_00c59f80,00c96140,GetLocalEnvironmentThemeIndexFromGlobal,size-run,,38,
+00c59fb0,FUN_00c59fb0,00c96170,Matrix_CopyRectTransposed,size-run,0.80,38,"autoname-t5 [medium]: Loops with unrolled 4x copies from param_1[4] to param_2, increments by matrix size—transposed mat"
+00c5a0f0,FUN_00c5a0f0,00c962b0,Util_BitReversalPermutation,size-run,1.00,38,"autoname-t5 [high]: Called by PropertyDef_LookupByClass; bitwise reversals (>>0x10 | <<0x10, XOR patterns); FFT bit-reve"
+00c5a160,FUN_00c5a160,00c96320,PropertyDef_LookupByClass,size-run,0.78,38,"[forge-autoname conf=medium <- wf] Binary searches property defs via FUN_00c913a0/FUN_00c91530/FUN_00c962b0, returns ind"
+00c5a270,FUN_00c5a270,00c96430,GetPDefFromClassIndex,size-run,,38,
+00c5a290,FUN_00c5a290,00c96450,Matrix_MultiplyVectorArray,size-run,0.73,38,"autoname-t5 [medium]: Calls PropertyDef_LookupByClass, loops over matrix rows/cols with 4-element unroll—matrix-vector m"
+00c5a540,FUN_00c5a540,00c96700,PropertyDef_CopyMatrix,size-run,0.81,38,autoname-t5 [high]: Calls PropertyDef_LookupByClass; copies matrix column-wise with stride param_1[4]
+00c5a5a0,FUN_00c5a5a0,00c96760,PropertyDef_AccumulateMatrixByStride,size-run,0.85,38,autoname-t5 [high]: Calls PropertyDef_LookupByClass; accumulates matrix values over param_4 chunks; adds to output
+00c5a640,FUN_00c5a640,00c96800,FFT_InitializeTwiddleFactors,size-run,0.93,38,autoname-t5 [medium]: Called by _Cons_val template; iterates prime factorization; computes fcos/fsin twiddle factors for
+00c5a7f0,FUN_00c5a7f0,00c969b0,"_Cons_val<std::allocator<CCharString>,CCharString,char_const_(&)[5]>",size-run,,38,
+00c5a810,FUN_00c5a810,00c969d0,FFT_Radix4Transform,size-run,1.00,38,[forge-autoname3 conf=medium] Butterfly operations and twiddle factor multiplication match radix-4 FFT algorithm.
+00c5ab60,FUN_00c5ab60,00c96d20,FFT_Radix2Stage,size-run,0.99,38,autoname-t5 [medium]: Butterfly operations on float arrays; characteristic radix-2 FFT stage unrolled 4x
+00c5b440,FFT_RadixButterflyPass,00c97600,FFT_2D_Radix2,size-run,0.87,38,[forge-autoname4 conf=high] 6201 bytes; trig butterflies with fcos/fsin; complex multiplies; bit-reversal patterns; clas
+00c5ccc0,FFT2D_Transform,00c98e80,FFT_2D_DispatchByRadix,size-run,0.62,38,"autoname-t5 [high]: Thiscall; caller DiscardAsyncData; dispatches to FUN_00c96d20, FFT_2D_Radix2, FFT_Radix4Transform pe"
+00c5cea0,FUN_00c5cea0,00c99060,FFT_Radix4Stage,size-run,1.00,38,autoname-t5 [medium]: Butterfly pattern with 4-way unrolling; radix-4 FFT stage kernel
+00c5d240,FUN_00c5d240,00c99400,MDCT_Analysis,size-run,0.97,38,[forge-autoname4 conf=high] Post-processes FFT output with dual scalar constants _DAT_013a3dfc/_DAT_013a3e00; overlappin
+00c5d6f0,FUN_00c5d6f0,00c998b0,FFT_MixedRadixDecomposition,size-run,0.99,38,autoname-t5 [medium]: 6 float* params; complex twiddle coefficient multiplies; mixed-radix FFT twiddle application
+00c5e070,FUN_00c5e070,00c9a230,Audio_FFT_MixedRadixTransform,size-run,0.98,38,"autoname-t6 [medium]: caller Audio_TransformFFTCoefficients; uses fcos/fsin twiddles, butterfly stages with radix param_"
+00c5f830,FUN_00c5f830,00c9b9f0,Audio_TransformFFTCoefficients,size-run,0.67,38,"autoname-t5 [medium]: Calls MDCT_Analysis, FUN_00c99060 (FFT transform), FUN_00c998b0, FUN_00c9a230—audio FFT/MDCT coeff"
+00c5fa50,FUN_00c5fa50,00c9bc10,DiscardAsyncData,size-run,,38,
+00c5fa90,FUN_00c5fa90,00c9bc50,CParticleMorphs_CEntry_Constructor,size-run,0.35,38,[forge-autoname3 conf=high] Constructor with calloc and _Cons_val<CCharString> initialization clear.
+00c5fad0,FUN_00c5fad0,00c9bc90,GFCheckTreeNodes,size-run,,38,
+00c5fb10,FUN_00c5fb10,00c9bcd0,FFT_InitializeTwiddles,size-run,0.73,38,"[forge-autoname2 conf=medium <- wf] Allocates two buffers, computes fcos/fsin with angles scaled by 2π and π/2 using log"
+00c5fcf0,FUN_00c5fcf0,00c9beb0,Sphere_Initialize,size-run,1.00,38,[forge-autoname3 conf=medium] Caller 'InitialiseFromSphere' confirms sphere geometry initialization.
+00c5fd70,FUN_00c5fd70,00c9bf30,InitialiseFromSphere,size-run,,38,
+00c5fe40,FUN_00c5fe40,00c9c000,C3DBoundingBox::TransformByRotation,size-run,0.77,38,autoname-t5 [high]: Thiscall; caller Mesh_ProcessLOD; calls InitialiseFromSphere; transforms 8 box corners with rotation
+00c60020,FUN_00c60020,00c9c1e0,FFT_Radix2MixedStride,size-run,1.00,38,autoname-t5 [medium]: Caller Mesh_ProcessLOD; FFT butterfly with mixed stride indexing (param_1/2 offsets)
+00c60130,FUN_00c60130,00c9c2f0,FFT_Radix2VariableStride,size-run,1.00,38,autoname-t5 [medium]: Caller Mesh_ProcessLOD; similar to 00c9c1e0 but with param_3 stride parameter
+00c60240,FUN_00c60240,00c9c400,Mesh_ProcessLOD,size-run,0.77,38,"[forge-autoname4 conf=high] Called by Mesh_Process; LOD loop: 1<<n iterations, scales 4<<n. Classic LOD processing patte"
+00c60300,FUN_00c60300,00c9c4c0,GFCheckTreeNodes,size-run,,38,
+00c60340,FUN_00c60340,00c9c500,Mesh_TransformVertices,size-run,0.93,38,[forge-autoname4 conf=high] Thiscall __fastcall; transforms half-paired vertex data via trig rotation and scaling consta
+00c60460,FUN_00c60460,00c9c620,Mesh_ComputeDetailLOD,size-run,0.84,38,"autoname-t5 [high]: Calls Mesh_TransformVertices, Mesh_ProcessLOD twice; computes 2D FFT-style detail LOD decomposition"
+00c606b0,FUN_00c606b0,00c9c870,Mesh_Process,size-run,0.89,38,"[forge-autoname3 conf=medium] Calls to opaque mesh functions suggest pipeline, but 'Compile' is unverified."
+00c60980,FUN_00c60980,00c9cb40,Hora,size-run,,38,
+00c609a0,FUN_00c609a0,00c9db40,FFT_InitializeTwiddleTable,body,0.84,0,"autoname-t5 [high]: Calls FFT_InitializeTwiddles, malloc, calloc; allocates and initializes FFT lookup tables"
+00c60ba0,FUN_00c60ba0,00c9dd60,Mesh_ComputeNormalMap,size-run,0.86,9,"autoname-t5 [medium]: Calls Float_AbsScale, Mesh_Process; uint return; processes normals with scale factor param_2"
+00c610c0,FUN_00c610c0,00c9e280,Mesh_ResizeDetail,size-run,0.90,9,"autoname-t5 [medium]: Calls realloc, FUN_00c9dd60; reallocates mesh detail buffer"
+00c612e0,FUN_00c612e0,00c9e4a0,Audio_CheckBufferRegionActive,size-run,1.00,9,caller Audio_FlushBuffer; computes sample region and returns 1 if overlaps active grid cell (+0xac / grid at +0xa0)
+00c613a0,FUN_00c613a0,00c9e560,Memory_MoveData,size-run,0.93,9,autoname-t5 [high]: Calls memmove; thin wrapper around memmove with two int params
+00c61410,FUN_00c61410,00c9e5d0,Matrix_BackSubstitute,size-run,0.88,9,[forge-autoname4 conf=high] LU decomposition back-substitution via Gaussian elimination on matrix with __chkstk stack al
+00c61730,FUN_00c61730,00c9e8f0,Matrix_ForwardSubstitute,size-run,0.97,9,"[forge-autoname4 conf=high] __fastcall forward substitution; accumulates dot products from matrix rows, writes to param_"
+00c618b0,FUN_00c618b0,00c9ea70,IsAllocatorFixedSize,size-run,,9,
+00c618c0,FUN_00c618c0,00c9ea80,Mesh_TransformWithInterpolation,size-run,1.00,9,"autoname-t5 [medium]: 6 params: 2 undefined4*, 2 ints, 2 uints; complex mesh transform with uint scale params"
+00c61a40,FUN_00c61a40,00c9ec00,"_Cons_val<std::allocator<C3DGeneratorObject>,C3DGeneratorObject,C3DGeneratorObject>",size-run,,9,
+00c61b30,FUN_00c61b30,00c4d9b0,Audio_DeleteBuffers,body,0.88,0,"[forge-autoname3 conf=high] Loads alDeleteBuffers, alcSuspendContext, alcProcessContext; clears with magic 0xc0daf00d"
+00c61d60,FUN_00c61d60,00c4dc40,CAudioBuffer::Create,body,0.63,0,"[forge-autoname2 conf=high <- wf] Strings: alGenBuffers, alcSuspendContext, alcProcessContext; calls GetProcAddress for "
+00c622d0,FUN_00c622d0,00c4e1b0,CAudioSoundBuffer_SetupFromStream,body,0.62,0,"autoname-t5 [high]: Thiscall; calls CAudioBuffer::Create, Audio_SetupBufferData, CAudioSoundBuffer_TransferPCMData, Open"
+00c62930,FUN_00c62930,00c40d10,NormalizeVectorPair,body,0.87,0,[forge-autoname2 conf=medium <- wf] Fastcall normalizes two 3D vectors using SQRT; clear vector normalization pattern
+00c62a50,FUN_00c62a50,00c40e60,Pow2_Float,size-run,0.96,12,"autoname-t5 [high]: x87 FPU ops: fscale, f2xm1 computing 2^x using log2(10)=3.321928 constant"
+00c62ad0,FUN_00c62ad0,00c40ee0,Math_ScaleByLog2,size-run,0.75,12,"autoname-t5 [medium]: global function; converts exponent param via log operations (fscale, f2xm1); returns scaled float1"
+00c62b40,FUN_00c62b40,00c40f50,Math_ComputeLogValue,size-run,0.20,12,autoname-t5 [medium]: global function; computes log of float with bounds check; multiplies by 0.30103 and scaling consta
+00c62c50,FUN_00c62c50,00c41060,CTCHeroStats::SetupCharacterStateInitial,size-run,0.19,12,"autoname-t5 [high]: thiscall on int*; large initialization setting 0x4c fields (color, scale, rotation, visibility); cal"
+00c62f10,FUN_00c62f10,00c41320,SetCameraPos,size-run,,12,
+00c62f70,FUN_00c62f70,00c41380,SetCameraPos,size-run,,12,
+00c62fd0,FUN_00c62fd0,00c413e0,SetCameraPos,size-run,,12,
+00c63030,FUN_00c63030,00c41440,Enable2DSceneRendering,size-run,,12,
+00c63120,FUN_00c63120,00c41530,SetHeadTurnState,size-run,,12,
+00c63140,FUN_00c63140,00c41550,SetHeadTurnState,size-run,,12,
+00c63190,FUN_00c63190,00c415a0,SetHeadTurnState,size-run,,12,
+00c631b0,FUN_00c631b0,00c415c0,SetHeadTurnState,size-run,,12,
+00c634e0,FUN_00c634e0,00c418f0,Math_ComputeVectorMagnitude,size-run,0.63,8,autoname-t5 [medium]: global function; copies 3 float params; calls Vector3_Normalize; computes sqrt of sum of squares; 
+00c63580,FUN_00c63580,00c41990,CCombatant::ComputeDamageResistance,size-run,0.52,8,autoname-t5 [medium]: fastcall on combat object; checks flag 0x200000 at +0x10; selects min between +0x17c/+0x180 vs 300
+00c63610,FUN_00c63610,00c41a20,CCombatant::ComputeLightingAdjustment,size-run,0.75,8,autoname-t5 [medium]: fastcall; computes dot product of 3 vector pairs at fixed offsets; multiplies by flag-dependent sc
+00c63660,FUN_00c63660,00c41a70,CCombatant::ComputeEffectiveRange,size-run,0.80,8,autoname-t5 [medium]: fastcall; computes angle between two 3D points via fpatan; interpolates value based on time offset
+00c637a0,FUN_00c637a0,00c41bb0,CCombatant::ComputeSpellPower,size-run,0.52,8,"autoname-t5 [medium]: fastcall; similar logic to FUN_00c41990 (checks flags, selects min); calls _CIpow on selected valu"
+00c63830,FUN_00c63830,00c41c40,CShaderRenderManager_SetCameraAndLights,size-run,0.76,8,"autoname-t5 [high]: calls SetCameraPos 3 times, sets float values at specific member offsets, updates dirty flags (0x1d8"
+00c63a30,FUN_00c63a30,00c41e40,CCombatant::SetCombatParameters,size-run,0.73,8,autoname-t5 [high]: thiscall; writes 10 parameters to offsets +0x1a4 through +0x1c8; sets 0x1d8 dirty flags conditionall
+00c63ba0,FUN_00c63ba0,00c41fb0,CCombatant::ComputeDerivedCombatStats,size-run,0.67,8,"autoname-t5 [high]: thiscall; large function calling FUN_00c41bb0, FUN_00c40f50, FUN_00c41990, FUN_00c41a20, FUN_00c41a7"
+00c64550,FUN_00c64550,00c448d0,CCreatureAbility_InitializeFlagScales,body,0.89,0,"autoname-t5 [medium]: Initializes 0x40000/0x20000 flags, loops setting bit-shift patterns and 1.0f (0x3f800000)"
+00c647d0,FUN_00c647d0,00c35a10,Inventory_OnItemEquipped_ValidateWeaponExtended,body,0.64,0,autoname-t5 [medium]: Checks weapon flags (offset 0x2c bits 2-3) and inventory state (offset 0xc); calls FUN_00c43f80; c
+00c65ec0,FUN_00c65ec0,00c74420,CRefCountedObject_AddRef,body,1.00,0,[forge-autoname conf=medium <- wf] Increments DAT_0143cce0 if DAT_0143ccdc==0; vtable init at param_1[0]; thiscall refco
+00c65f70,FUN_00c65f70,00c744e0,Init,size-run,,33,
+00c65fa0,FUN_00c65fa0,00c74510,Audio_IIRFilterProcess,size-run,0.86,33,"[forge-autoname2 conf=medium <- wf] Called by DisplayProgress/Animation_InterpolateHelper, implements state update loop "
+00c662e0,FUN_00c662e0,00c74850,CFilter_Setup,size-run,0.66,33,"[forge-autoname2 conf=medium <- wf] __thiscall SQRT/fscale/f2xm1 (x87 instructions), computes filter coefficients, write"
+00c66540,FUN_00c66540,00c74ab0,CAudioChannel_ComputeShelveFilterCoefficients,size-run,0.58,33,"autoname-t5 [high]: called by CAudioChannel_ProcessEffects, thiscall computing floating-point EQ coefficients via _CIpow"
+00c66640,FUN_00c66640,00c74bb0,CAudioChannel_ComputePeakFilterCoefficients,size-run,0.48,33,"autoname-t5 [high]: called by CAudioChannel_ProcessEffects, thiscall computing EQ filter coefficients with fcos, quadrat"
+00c66770,FUN_00c66770,00c74ce0,DisplayProgress,size-run,,33,
+00c667c0,FUN_00c667c0,00c74d30,Animation_InterpolateHelper,size-run,0.63,33,"[forge-autoname conf=medium <- wf] Calls FUN_00c74510 twice for interpolation, sets norm values to 0x3f800000; generic h"
+00c66970,FUN_00c66970,00c74ee0,Math_IsPrimeNumber,size-run,0.52,33,"[forge-autoname conf=high <- wf] Classic trial-division primality test: checks < 4, tests odd divisibility up to sqrt(n)"
+00c669f0,FUN_00c669f0,00c74f60,Ctor_Init_012bf074,size-run,1.00,33,"Sets vtable 012bf074 and clears this[1],this[2]; constructor"
+00c66a90,FUN_00c66a90,00c75000,Init,size-run,,33,
+00c66aa0,FUN_00c66aa0,00c75010,MemBuffer_ClearDoubleBuffered,size-run,1.00,33,"autoname-t5 [medium]: fastcall clearing two sized buffers, iterates over size masks and zeros elements"
+00c66ae0,FUN_00c66ae0,00c75050,CQ_GuildTrainingSkillScript_InitializePrimeHashTables,size-run,0.79,33,"autoname-t5 [high]: called by CQ_GuildTrainingSkillScript_Init, calls Math_IsPrimeNumber to find prime sizes for hash ta"
+00c66bd0,FUN_00c66bd0,00c75140,FFT_RadixStride_Vectorized,size-run,0.74,33,"autoname-t5 [medium]: thiscall processing float arrays with cyclic buffer indexing, filtering via feedback coefficients,"
+00c66e90,FUN_00c66e90,00c75400,Ctor_Init_012bf074_b,size-run,1.00,33,"Byte-similar ctor: sets vtable 012bf074 and clears this[1],this[2]"
+00c66ea0,FUN_00c66ea0,00c75410,CTCKraken_Construct,size-run,1.00,33,"autoname-t5 [high]: called by CTCKraken, returns vtable pointer, calls eh_vector_constructor_iterator for vector element"
+00c66ed0,FUN_00c66ed0,00c75440,TransferBinaryIn,size-run,,33,
+00c66f30,FUN_00c66f30,00c754a0,`vector_deleting_destructor',size-run,,33,
+00c66fc0,FUN_00c66fc0,00c75530,CAIStateGroupBehaviourBase,size-run,,33,
+00c67020,FUN_00c67020,00c75590,`vector_deleting_destructor',size-run,,33,
+00c67040,FUN_00c67040,00c755b0,CQ_GuildTrainingSkillScript_InitializeSkillSlots,size-run,0.55,33,"autoname-t5 [high]: called by CQ_GuildTrainingSkillScript_Init, thiscall, calls Init 3 times for skill objects and FUN_0"
+00c67100,FUN_00c67100,00c75670,CQ_GuildTrainingSkillScript_ResetAll,size-run,0.67,33,"autoname-t5 [high]: calls Init multiple times on embedded CQ_GuildTrainingSkillScript objects, clears double-buffered st"
+00c67150,FUN_00c67150,00c756c0,Graphics_LoadTerrainChunk,size-run,0.59,33,[forge-autoname3 conf=medium] Calls DisplayProgress; 341-byte function; loads large data chunk with progress callback - 
+00c672b0,FUN_00c672b0,00c75820,Animation_InterpolateAndInsert,size-run,0.41,33,"autoname-t5 [high]: thiscall, calls Animation_InterpolateHelper, Partition_Copy_Split, Vector_RangeInsert to blend and i"
+00c67410,FUN_00c67410,00c75980,WaypointData,size-run,,33,
+00c67490,FUN_00c67490,00c75a00,`vector_deleting_destructor',size-run,,33,
+00c674b0,FUN_00c674b0,00c75a20,Graphics_LoadTerrainChunksAndStream,size-run,0.49,33,"autoname-t5 [high]: thiscall, calls Graphics_LoadTerrainChunk 3 times and Graphics_ProcessStreamData twice in sequential"
+00c67540,FUN_00c67540,00c75ab0,Graphics_ProcessTerrainStreamingChunks,size-run,0.62,33,"autoname-t5 [high]: thiscall, calls Graphics_LoadTerrainChunk, FUN_00c75820, FUN_00c89350 with conditional branches for "
+00c676c0,FUN_00c676c0,00c75c30,CQ_GuildTrainingSkillScript_InitializeEffectArray,size-run,0.61,33,"autoname-t5 [high]: called by CQ_GuildTrainingSkillScript_Init, thiscall calling FUN_00c896c0 in loop 4 times for effect"
+00c67730,FUN_00c67730,00c75ca0,CQ_GuildTrainingSkillScript_DestroyEffectArray,size-run,0.86,33,"autoname-t5 [high]: fastcall, calls Init on embedded CQ_GuildTrainingSkillScript objects in double-buffered arrays 4 tim"
+00c67770,FUN_00c67770,00c75ce0,Audio_ProcessTriggerActivations,size-run,0.37,33,"autoname-t5 [high]: thiscall, calls AddTrigger to register triggers, FUN_00c88e60/Graphics_RenderWaveform for processing"
+00c67920,FUN_00c67920,00c75e90,Audio_ProcessMultipleTriggerEvents,size-run,0.48,33,"autoname-t5 [high]: thiscall, calls FUN_00c89850, Graphics_RenderWaveform and Audio_ApplyConvolution_Samples in conditio"
+00c67a10,FUN_00c67a10,00c75f80,CQ_GuildTrainingSkillScript_AllocateSkillBuffer,size-run,0.83,33,"autoname-t5 [high]: called by CQ_GuildTrainingSkillScript_Init, thiscall allocating sized buffer for skill, zeroing and "
+00c67a80,FUN_00c67a80,00c75ff0,Array_InsertWrappedWithCallbacks,size-run,0.64,33,"autoname-t5 [high]: thiscall, calls CArrayWrapper_CopyWraparound twice, Array_CopyWrapped and Vector_RangeInsert to inse"
+00c67bb0,FUN_00c67bb0,00c76120,SignalProcessing_InterpolateAndAccumulate,body,0.67,0,autoname-t5 [medium]: thiscall complex float arithmetic on wrapped buffer indices with linear interpolation coefficients
+00c67e70,FUN_00c67e70,00c763e0,CArray_CopyCircular_Wrap,size-run,1.00,35,[forge-autoname3 conf=medium] Called by AddTrigger; manages circular buffer copying with offset pattern - 'Circular' is 
+00c67ef0,FUN_00c67ef0,00c76460,Vector_RangeInsert,size-run,1.00,35,[forge-autoname conf=medium <- wf] Copies range of param_4 elements from param_3 into vector at offset param_2 with circ
+00c67f70,FUN_00c67f70,00c764e0,Array_CopyWrapped,size-run,0.84,35,[forge-autoname4 conf=high] Thiscall with vtable method at offset 0xc; handles overflow by splitting copy. Offset-driven
+00c67ff0,FUN_00c67ff0,00c76560,StreamWriter_WriteWrapped,size-run,0.85,35,"[forge-autoname3 conf=medium] Checks bounds at param_3[1], splits write across vtable calls; generic wrapping, class unp"
+00c68110,FUN_00c68110,00c76680,CArrayWrapper_CopyWraparound,size-run,0.84,35,[forge-autoname conf=medium <- wf] Thiscall with vtable; copies from circular array; handles boundary wrap-around; patte
+00c68180,FUN_00c68180,00c766f0,Array_CopyWrapped_Variant,size-run,0.84,35,[forge-autoname4 conf=medium] Similar structure to 00c764e0 but uses vtable offset 0x14 instead of 0xc; different vtable
+00c681f0,FUN_00c681f0,00c76760,WaveformBuffer_ProcessWrapped,size-run,0.84,35,"[forge-autoname4 conf=medium] Called by Graphics_RenderWaveform; uses vtable at 0x1c. While related to audio, the specif"
+00c68270,FUN_00c68270,00c767e0,Partition_Copy_Split,size-run,0.85,35,"Bounds checking at param_3[1], vtable+0x18 calls, implements split-range logic; low confidence due to sparse detail"
+00c68310,FUN_00c68310,00c76880,DSP_TransformWithFilterCoefficients,size-run,0.95,35,"autoname-t5 [medium]: Large DSP loop: reads param_3 offsets (+4, +8), scales/combines param_1/2 vectors via matrix multi"
+00c68540,FUN_00c68540,00c76ab0,CQ_GuildTrainingSkillScript_ActivateSkillByIndex,size-run,0.74,35,"autoname-t5 [high]: called by CQ_GuildTrainingSkillScript_Init, thiscall setting skill activation state with member fiel"
+00c685f0,FUN_00c685f0,00c76b60,Array_CopyStrided,size-run,0.66,35,"autoname-t5 [high]: thiscall, calls Array_CopyWrapped_Variant and Vector_RangeInsert to copy array elements with offset"
+00c686b0,FUN_00c686b0,00c76c20,Array_PartitionAndInsert,size-run,0.62,35,"autoname-t5 [high]: thiscall, calls Array_CopyWrapped_Variant, Partition_Copy_Split and Vector_RangeInsert for partition"
+00c68860,FUN_00c68860,00c76dd0,CQ_GuildTrainingSkillScript_DeactivateSkillByIndex,size-run,0.73,35,"autoname-t5 [high]: called by CQ_GuildTrainingSkillScript_Init, thiscall setting skill deactivation state"
+00c68920,FUN_00c68920,00c76e90,FFT_ComputeRealTransform,size-run,0.69,35,"autoname-t5 [medium]: 537 bytes, thiscall, no direct callees but member offset access patterns suggest real FFT computat"
+00c68b40,FUN_00c68b40,00c770b0,FFT_ComputeComplexTransform,size-run,0.68,35,"autoname-t5 [medium]: 857 bytes, thiscall, no direct callees but size and context suggest complex FFT butterfly operatio"
+00c68ed0,FUN_00c68ed0,00c77440,CGameJoystickManager,size-run,,35,
+00c68f00,FUN_00c68f00,00c77470,ClearTextures,size-run,,35,
+00c69030,FUN_00c69030,00c775a0,OnDie,size-run,,35,
+00c69070,FUN_00c69070,00c775e0,CTCHeroStats_NotifyObservers,size-run,0.65,35,"autoname-t5 [high]: thiscall, calls InformOfEvent to notify listeners of hero stats change"
+00c690e0,FUN_00c690e0,00c77650,`vector_deleting_destructor',size-run,,35,
+00c69120,FUN_00c69120,00c77690,Math_Pow2_Fast,size-run,0.96,35,"autoname-t5 [high]: Computes pow(2,param_1) using fscale + f2xm1 (x86 FPU instructions). Multiplies by 3.321928≈log2(e)."
+00c69190,FUN_00c69190,00c77700,CAudioChannel_GetOutputGain,size-run,0.75,35,"autoname-t5 [high]: called by CAudioChannel_ProcessEffects, fastcall, reads and returns channel gain value"
+00c69200,FUN_00c69200,00c77770,Clear,size-run,,35,
+00c69210,FUN_00c69210,00c77780,AddExclusiveObserver,size-run,,35,
+00c69290,FUN_00c69290,00c77800,CAudioChannel_SetupAudioFilter,size-run,0.81,35,"autoname-t5 [high]: called by CAudioChannel_ProcessEffects, thiscall, calls CFilter_Setup to initialize filter parameter"
+00c69570,FUN_00c69570,00c77ae0,CAudioChannel_ApplyCompressorEffect,size-run,0.41,35,"autoname-t5 [medium]: called by CAudioChannel_ProcessEffects, fastcall, computes compression ratios/thresholds"
+00c695c0,FUN_00c695c0,00c77b30,CAudioChannel_ApplyDistortionEffect,size-run,0.67,35,"autoname-t5 [medium]: called by CAudioChannel_ProcessEffects, fastcall, applies nonlinear saturation/clipping"
+00c69690,FUN_00c69690,00c77c00,CAudioChannel_ApplyReverbEffect,size-run,0.59,35,"autoname-t5 [medium]: called by CAudioChannel_ProcessEffects, fastcall, applies reverb processing"
+00c69710,FUN_00c69710,00c77c80,Audio_Channel_ComputePitch_Modulation,size-run,0.72,35,[forge-autoname3 conf=medium] Manipulates audio channel pitch via member offset access; not purely setting but computing
+00c69820,FUN_00c69820,00c77d90,Audio_MixChannels,size-run,0.60,35,"[forge-autoname2 conf=medium <- wf] Called by ModifyHeroStats, complex multichannel mix (uVar6==2 optimized path), fVar3"
+00c69a50,FUN_00c69a50,00c77fc0,CAudioChannel_ApplyChorusEffect,size-run,0.68,35,"autoname-t5 [medium]: called by CAudioChannel_ProcessEffects, fastcall, applies chorus modulation"
+00c69ad0,FUN_00c69ad0,00c78040,CAudioChannel_ApplyDelayEffect,size-run,0.69,35,"autoname-t5 [medium]: called by CAudioChannel_ProcessEffects, fastcall, applies delay line processing"
+00c69b50,FUN_00c69b50,00c780c0,Audio_Channel_ComputeEnvelope_Amplitude,size-run,0.84,35,[forge-autoname3 conf=medium] Audio channel envelope processing; no callers evident but computes envelope tables for amp
+00c69be0,FUN_00c69be0,00c78150,CAudioChannel_ApplyEqualizerEffect,size-run,0.73,35,"autoname-t5 [medium]: called by CAudioChannel_ProcessEffects, fastcall, applies EQ filtering to channel"
+00c69e40,FUN_00c69e40,00c783b0,ModifyHeroStats,size-run,,35,
+00c6a080,FUN_00c6a080,00c78670,Math_ShiftRight_Int64,body,0.65,0,"autoname-t5 [medium]: Thiscall 64-bit right shift by param_3 bits. Shifts high dword and low dword, stores result in par"
+00c6a1b0,FUN_00c6a1b0,00c788d0,Simd_PackedAddDwords,body,0.93,0,autoname-t6 [high]: Adds low and high dwords of *param2/*param3 separately into *param1; MMX PADDD (unsaturated dword ad
+00c6a230,FUN_00c6a230,00c78970,Audio_RenderMultichannelData,body,0.98,0,"[forge-autoname2 conf=medium <- wf] Fills 0x40 undefined4s with 0, multiplies shorts by param_4 with ROUNDING, copies 6 "
+00c6a2d0,FUN_00c6a2d0,00c78a10,Graphics_RenderTextWithConditionalEffects,body,0.99,0,"autoname-t5 [high]: called by Graphics_RenderText_Conditional, size 2567 bytes, calls __security_check_cookie, large tex"
+00c6acd0,FUN_00c6acd0,00c79440,Audio_ConvolveFilter_Aligned,body,0.99,0,[forge-autoname3 conf=high] Large (2921 bytes) SIMD convolution kernel; switch statement on alignment (cases 0-3); pmadd
+00c6b810,FUN_00c6b810,00c79fd0,Audio_ConvolveFilter_WithGain,body,0.99,0,[forge-autoname3 conf=high] Large (2858 bytes) similar to 00c79440 but with gain scaling (param_7 multiplier); pmaddwd/p
+00c6c320,FUN_00c6c320,00c7ab20,Audio_ConvolveFilter_Complex_Variable,body,0.99,0,[forge-autoname3 conf=high] Largest (3220 bytes) convolution variant; more parameters than aligned version suggesting co
+00c6d140,FUN_00c6d140,00c7ba00,Audio_RenderMultichannelData_Alt,body,0.98,0,"[forge-autoname2 conf=medium <- wf] Identical to 00c78970 but fills 0xa0 (double size, 160 vs 64), processes 6 channel b"
+00c72990,FUN_00c72990,00c7e420,Audio_ConvolveFilter_LongVariant,body,0.61,0,[forge-autoname3 conf=high] Very large (11925 bytes) SIMD convolution; operator+ and CBitfield operations - 'Long' is am
+00c74a70,FUN_00c74a70,00c88050,CAudioSource_LazyLoadAlSourcefv,body,0.70,0,"autoname-t5 [medium]: Thiscall, member offset 0x54. Lazy-loads 'alSourcefv' function pointer. Identical pattern to alSou"
+00c74ac0,FUN_00c74ac0,00c880a0,Audio_GetProcAddress_Wrapper,body,0.72,0,autoname-t5 [medium]: Called by Audio_InitializeSource_AL; calls CAudioContext::GetProcAddress and GetProcAddress — wrap
+00c75000,FUN_00c75000,00c5ff50,CBase,size-run,,12,
+00c75010,FUN_00c75010,00c5ff60,CConsoleVariable_Unregister,size-run,0.86,12,[forge-autoname3 conf=high] Thiscall called by CConsoleVariable ctor; unlinks node from linked list; decrements refcount
+00c75060,FUN_00c75060,00c5ffb0,CTCHeroStats::AddEventData,size-run,0.82,12,"[forge-autoname conf=high <- wf] thiscall CTCHeroStats, calls InformOfEvent(0x98), massive switch writing to event queue"
+00c754c0,FUN_00c754c0,00c60410,ClearMessages,size-run,,12,
+00c75500,FUN_00c75500,00c60450,Float_ClampWithFuzzyComparison,size-run,0.76,12,[forge-autoname conf=medium <- wf] Clamps float with NaN check and fuzzy comparison on epsilon threshold; value clamping
+00c75590,FUN_00c75590,00c604e0,CEnvironmentSpellEffectInterface,size-run,,12,
+00c759e0,FUN_00c759e0,00c60930,CDrawGuildSeal_Destructor,size-run,0.45,12,autoname-t5 [high]: Fastcall; vector deleting destructor; calls NPlayerGui::CDrawGuildSeal::ClearMessages; destructs mes
+00c75a50,FUN_00c75a50,00c609a0,CShadowRendererSceneData_OnHeroStatsUpdate,size-run,0.35,12,"autoname-t5 [high]: Thiscall; calls CTCHeroStats::InformOfEvent, CBase::CBase, CShaderRenderManager::OnPostViewportChang"
+00c75ab0,FUN_00c75ab0,00c60a00,`vector_deleting_destructor',size-run,,12,
+00c75ad0,FUN_00c75ad0,00c60a20,CBase,size-run,,12,
+00c75ae0,FUN_00c75ae0,00c60a30,CShadowRendererSceneData_OnAnimationLoaded,size-run,0.72,12,autoname-t5 [high]: Fastcall; calls CTCHeroStats::InformOfEvent and OnPostViewportChanged in a loop; responds to animati
+00c75b80,FUN_00c75b80,00c60ad0,`vector_deleting_destructor',size-run,,12,
+00c75c80,FUN_00c75c80,00c62ff0,Audio_MatchFormatGuid,body,0.65,0,"autoname-t6 [medium]: Compares incoming 16-byte key against several format GUIDs (DAT_012b9468/78/88/98), selects a this"
+00c75d50,FUN_00c75d50,00c630d0,CCharacter::SetSkillPropertyEx,size-run,0.74,76,"autoname-t5 [medium]: Thiscall, called by CCharacter_SetSkillAcquired, manipulates skill data with bit flags and member "
+00c75e60,FUN_00c75e60,00c631e0,CLight::SetLightValue,size-run,0.56,76,"[forge-autoname2 conf=high <- wf] Thiscall validates float range, sets light property at offset, updates bitflag 0x4; cl"
+00c75ef0,FUN_00c75ef0,00c63270,CLight::SetIntegerProperty,size-run,0.62,76,"[forge-autoname2 conf=high <- wf] Thiscall validates int range (-0x2711 to 1), sets property at offset 0x100, updates bi"
+00c75f60,FUN_00c75f60,00c632e0,CLight::SetIntegerProperty2,size-run,0.66,76,"[forge-autoname2 conf=high <- wf] Thiscall same int setter pattern at offset 0x104, bitflag 0x10; light int property var"
+00c75fd0,FUN_00c75fd0,00c63350,CLight::SetIntegerProperty3,size-run,0.66,76,"[forge-autoname2 conf=high <- wf] Thiscall same int setter pattern at offset 0x108, bitflag 0x20; light int property var"
+00c76040,FUN_00c76040,00c633c0,HeroAttribute_SetValueWithValidation,size-run,0.53,76,[forge-autoname conf=medium <- wf] Thiscall with param_2 indexing; calls FUN_00c60450 for range validation; sets attribu
+00c76100,FUN_00c76100,00c63480,CLight::SetLightValue2,size-run,0.56,76,"[forge-autoname2 conf=high <- wf] Thiscall validates float range, sets light property at offset 0x110, bitflag 0x80; lig"
+00c761a0,FUN_00c761a0,00c63520,SetAttribute_Float,size-run,0.56,76,"[forge-autoname2 conf=medium <- wf] Evidence shows __thiscall setter with range validation and dirty flag, but lacks cla"
+00c76240,FUN_00c76240,00c635c0,HeroAttribute_SetIntValueClamped,size-run,0.63,76,"[forge-autoname conf=medium <- wf] Thiscall; clamps int to [-10000, 1000] range; validates and sets attribute with error"
+00c76310,FUN_00c76310,00c63690,HeroAttribute_SetFloatValueValidated,size-run,0.53,76,"[forge-autoname conf=medium <- wf] Thiscall; calls FUN_00c60450 with fixed float bounds (0x0, 0x3e99999a); float attribu"
+00c763d0,FUN_00c763d0,00c63750,HeroAttribute_SetVector3,size-run,0.74,76,"[forge-autoname2 conf=medium <- wf] Pattern clear: __thiscall, 3-float params, _isnan validation, writes 3 floats to spe"
+00c76490,FUN_00c76490,00c63810,HeroAttribute_SetInt,size-run,0.63,76,"[forge-autoname2 conf=medium <- wf] __thiscall int param with -10000/2000 clamping, writes offset 0x378, dirty flag 0x10"
+00c76560,FUN_00c76560,00c638e0,HeroAttribute_SetValue2,size-run,0.53,76,"[forge-autoname conf=medium <- wf] Thiscall; similar pattern; calls FUN_00c60450 with bounds (0x0, 0x3dcccccd); variant "
+00c76620,FUN_00c76620,00c639a0,SetAttribute_Vector3_Alt,size-run,0.74,76,[forge-autoname2 conf=medium <- wf] Identical to 00c63750 pattern but different offsets (0x380/0x384/0x388) - drops clas
+00c766e0,FUN_00c766e0,00c63a60,HeroAttribute_SetValue3,size-run,0.53,76,"[forge-autoname conf=medium <- wf] Thiscall; similar pattern; calls FUN_00c60450 with bounds (0x3d99999a, 0x3e800000); v"
+00c767a0,FUN_00c767a0,00c63b20,SetAttribute_Float_Validated,size-run,0.56,76,"[forge-autoname2 conf=medium <- wf] __thiscall float with range checks, but lacks evidence of 'Hero' class - rename drop"
+00c76840,FUN_00c76840,00c63bc0,HeroAttribute_SetValue4,size-run,0.53,76,"[forge-autoname conf=medium <- wf] Thiscall; similar pattern; calls FUN_00c60450 with bounds (0x3d23d70a, 0x40800000); v"
+00c76900,FUN_00c76900,00c63c80,SetAttribute_Float_Validated,size-run,0.56,76,[forge-autoname2 conf=medium <- wf] Similar float setter pattern to 00c63b20 - insufficient evidence for unique numberin
+00c769a0,FUN_00c769a0,00c63d20,SetAttribute_Float_Indexed,size-run,0.59,76,[forge-autoname2 conf=medium <- wf] __thiscall float with indexed offset calculation (param_2 + 3) * 0x70 - generic sett
+00c76a30,FUN_00c76a30,00c63db0,SetAttribute_Float_Validated,size-run,0.56,76,[forge-autoname2 conf=medium <- wf] Float setter with range validation - overlapping naming with others in the cluster
+00c76ad0,FUN_00c76ad0,00c63e50,SetAttribute_Float_Validated,size-run,0.56,76,[forge-autoname2 conf=medium <- wf] Float setter pattern - insufficient evidence to differentiate as 'fifth' variant
+00c76b70,FUN_00c76b70,00c63ef0,SetAttribute_Float_Validated,size-run,0.56,76,[forge-autoname2 conf=medium <- wf] Float setter pattern - sixth 'variant' claim not justified by code evidence
+00c76c10,FUN_00c76c10,00c63f90,HeroAttribute_SetBitFlagBit0,size-run,0.75,76,"[forge-autoname3 conf=high] Thiscall pattern, called by HeroAttribute_SetBitFlags, manipulates bit 0 (mask 0x1), sets di"
+00c76ca0,FUN_00c76ca0,00c64020,HeroAttribute_SetBitFlagBit1,size-run,0.75,76,"[forge-autoname3 conf=high] Thiscall pattern, called by HeroAttribute_SetBitFlags, manipulates bit 1 (>> 1 & 1, mask 0x2"
+00c76d30,FUN_00c76d30,00c640b0,HeroAttribute_SetBitFlagBit2,size-run,0.75,76,"[forge-autoname3 conf=high] Thiscall pattern, called by HeroAttribute_SetBitFlags, manipulates bit 2 (>> 2 & 1, mask 0x4"
+00c76dc0,FUN_00c76dc0,00c64140,HeroAttribute_SetBitFlagBit3,size-run,0.75,76,"[forge-autoname3 conf=high] Thiscall pattern, called by HeroAttribute_SetBitFlags, manipulates bit 3 (>> 3 & 1, mask 0x8"
+00c76e50,FUN_00c76e50,00c641d0,HeroAttribute_SetBitFlagBit4,size-run,0.75,76,"[forge-autoname3 conf=high] Thiscall pattern, called by HeroAttribute_SetBitFlags, manipulates bit 4 (>> 4 & 1, mask 0x1"
+00c76ee0,FUN_00c76ee0,00c64260,HeroAttribute_SetBitFlagBit5,size-run,0.75,76,"[forge-autoname3 conf=high] Thiscall pattern, called by HeroAttribute_SetBitFlags, manipulates bit 5 (>> 5 & 1, mask 0x2"
+00c76f70,FUN_00c76f70,00c642f0,HeroAttribute_SetBitFlagBit6,size-run,0.75,76,"[forge-autoname3 conf=high] Thiscall pattern, called by HeroAttribute_SetBitFlags, manipulates bit 6 (>> 6 & 1, mask 0x4"
+00c77000,FUN_00c77000,00c64380,HeroAttribute_SetBitFlagBit7,size-run,0.75,76,"[forge-autoname3 conf=high] Thiscall pattern, called by HeroAttribute_SetBitFlags, manipulates bit 7 (>> 7 & 1, mask 0x8"
+00c770a0,FUN_00c770a0,00c64420,CCharacter_SetActiveSkill,size-run,0.76,76,"[forge-autoname3 conf=medium] Thiscall with 5 params, validates against 5 marker data blocks, sets offsets 0x2b4-0x2c0, "
+00c77250,FUN_00c77250,00c645d0,HeroAttribute_SetRotationZ,size-run,0.52,76,"[forge-autoname3 conf=high] Thiscall, takes float, validates global bounds, stores at offset 0x2c4, sets dirty flag 0x20"
+00c772b0,FUN_00c772b0,00c64630,HeroAttribute_SetPositionY,size-run,0.63,76,"[forge-autoname3 conf=high] Thiscall, takes float, validates bounds, stores at offset 0x2c8, checks active skill marker,"
+00c77360,FUN_00c77360,00c646e0,HeroAttribute_SetPositionZ,size-run,0.63,76,"[forge-autoname3 conf=high] Thiscall, takes float, validates bounds, stores at offset 0x2cc, checks active skill marker,"
+00c77430,FUN_00c77430,00c647b0,CEntity::SetVectorProperty_XY,size-run,0.67,76,"autoname-t5 [medium]: Thiscall, validates two float inputs within bounds, stores at offsets 0x28/0x2c and 0x218/0x21c, s"
+00c774c0,FUN_00c774c0,00c64840,CEntity::SetVectorProperty_XYZW,size-run,0.67,76,"autoname-t5 [medium]: Thiscall, validates four float inputs within bounds, stores at offsets 0x30-0x3c, sets dirty flag,"
+00c775c0,FUN_00c775c0,00c64940,CEntity::SetVectorProperty_XY_Alt,size-run,0.69,76,"autoname-t5 [medium]: Thiscall, validates two floats, stores at offsets 0x40/0x44, sets dirty flag at 0x3bc, variant of "
+00c77640,FUN_00c77640,00c649c0,HeroAttribute_SetBaseLife,size-run,0.69,76,"[forge-autoname3 conf=high] Thiscall, validates -10001 < param < 1001, stores at 0x18 and 0x208 (dual storage pattern), "
+00c77680,FUN_00c77680,00c64a00,HeroAttribute_SetBaseSpell,size-run,0.69,76,"[forge-autoname3 conf=high] Thiscall, validates -10001 < param < 1, stores at 0x1c and 0x20c, sets dirty flag 0x10. Foll"
+00c776c0,FUN_00c776c0,00c64a40,SetPitch,size-run,0.71,76,"[forge-autoname4 conf=medium] Thiscall setter with bounds check -0x2711 < param_2 < 0x3e9, stores at +0x20, sets dirty f"
+00c77700,FUN_00c77700,00c64a80,SetGain,size-run,0.71,76,"[forge-autoname4 conf=medium] Thiscall setter with bounds check -0x2711 < param_2 < 1, stores at +0x24, sets dirty flag "
+00c77740,FUN_00c77740,00c64ac0,HeroAttribute_SetBaseArmour,size-run,0.69,76,"[forge-autoname3 conf=high] Thiscall, validates -10001 < param < 1, stores at 0x28 and 0x218 (dual storage), sets dirty "
+00c77780,FUN_00c77780,00c64b00,SetIntensity,size-run,0.55,76,"[forge-autoname4 conf=medium] Thiscall float setter with global bounds check, stores at +0x2c and +0x21c, sets dirty fla"
+00c777f0,FUN_00c777f0,00c64b70,SetVelocity,size-run,0.71,76,"[forge-autoname4 conf=medium] Thiscall setter with bounds check -0x2711 < param_2 < 1, stores at +0x30, sets dirty flag "
+00c77830,FUN_00c77830,00c64bb0,SetFrequency,size-run,0.56,76,"[forge-autoname4 conf=medium] Thiscall float setter with bounds check, stores at +0x34, sets dirty flag 0x400000"
+00c77890,FUN_00c77890,00c64c10,SetDelay,size-run,0.56,76,"[forge-autoname4 conf=medium] Thiscall float setter with bounds check, stores at +0x38, sets dirty flag 0x400000"
+00c778f0,FUN_00c778f0,00c64c70,SetDecay,size-run,0.56,76,"[forge-autoname4 conf=medium] Thiscall float setter with bounds check, stores at +0x3c, sets dirty flag 0x400000"
+00c77950,FUN_00c77950,00c64cd0,SetPan,size-run,0.71,76,"[forge-autoname4 conf=medium] Thiscall setter with bounds check -0x2711 < param_2 < 1, stores at +0x40, sets dirty flag "
+00c77990,FUN_00c77990,00c64d10,CEntity_SetFloatProperty_0x44,size-run,0.56,76,"[forge-autoname4 conf=high] Thiscall setter validates float range, writes to offset 0x44, sets dirty flag 0x400000. Clas"
+00c779f0,FUN_00c779f0,00c64d70,CEntity_SetIntProperty_0x48,size-run,0.69,76,"[forge-autoname4 conf=high] Thiscall setter with int range check, writes dual offsets 0x48/0x238, sets 0x8000 flag. Cons"
+00c77a30,FUN_00c77a30,00c64db0,CEntity_SetFloatProperty_0x4c,size-run,0.55,76,"[forge-autoname4 conf=high] Float setter writes to 0x4c/0x23c, sets 0x10000 flag. Follows CEntity property setter patter"
+00c77aa0,FUN_00c77aa0,00c64e20,CEntity_SetFloatProperty_0x50,size-run,0.55,76,"[forge-autoname4 conf=high] Float setter with offset 0x50/0x240, sets 0x20000 flag. Consistent offset-incremented patter"
+00c77b10,FUN_00c77b10,00c64e90,CEntity_SetFloatProperty_0x54,size-run,0.55,76,"[forge-autoname4 conf=high] Float setter offset 0x54/0x244, sets 0x40000 flag. Pattern continues consistently."
+00c77b80,FUN_00c77b80,00c64f00,CEntity_SetFloatProperty_0x58,size-run,0.55,76,"[forge-autoname4 conf=high] Float setter offset 0x58/0x248, sets 0x80000 flag. Last in consistent property chain."
+00c77bf0,FUN_00c77bf0,00c64f70,HeroAttribute_SetUintOffset5C,size-run,0.67,76,"[forge-autoname3 conf=medium] Thiscall, takes uint, validates mask < 8 (3-bit value), stores at 0x5c and 0x24c (dual), s"
+00c77c30,FUN_00c77c30,00c64fb0,CEntity::SetMeshComponentsProperty,size-run,0.84,76,"autoname-t5 [medium]: Thiscall, validates array of 6-int tuples against 4 known component IDs (DAT_012b9468-498), stores"
+00c77df0,FUN_00c77df0,00c65170,CEntity::SetLightComponentsProperty,size-run,0.74,76,"autoname-t5 [medium]: Thiscall, validates array of 0x30-byte structures with component ID matching and ranges, stores li"
+00c780d0,FUN_00c780d0,00c65450,CEntity::SetSoundComponentsProperty,size-run,0.77,76,"autoname-t5 [medium]: Thiscall, validates array of 8-word sound data with 4 component type checks, stores at indexed off"
+00c78310,FUN_00c78310,00c65690,CEntity::SetVFXComponentsProperty,size-run,0.80,76,"autoname-t5 [medium]: Thiscall, validates 6-word tuples against 4 component IDs, stores VFX data at indexed offsets 0x15"
+00c784f0,FUN_00c784f0,00c65870,CEntity::SetPhysicsCollisionProperty,size-run,0.82,76,"autoname-t5 [medium]: Thiscall, validates collision data against 6 known physics shapes, handles 1-2 collision pairs, st"
+00c78680,FUN_00c78680,00c65a00,HeroStats_UpdateDerivedValues,size-run,0.67,76,[forge-autoname2 conf=high <- wf] __fastcall calls CTCHeroStats::AddEventData 16+ times in sequence with event IDs 0-0x1
+00c79910,FUN_00c79910,00c66c90,ScriptEvent_DispatchByID,size-run,1.00,76,"autoname-t5 [medium]: Dispatch table lookup by param_1 (max 0x1c), calls function pointer from PTR_LAB_00c673a8 array, e"
+00c7a0b0,FUN_00c7a0b0,00c67430,CCharacter_SetSkillAcquired,size-run,0.62,76,"[forge-autoname3 conf=medium] Thiscall, validates param_3 < 2 (binary flag), calls FUN_00c630d0 if value differs. Caller"
+00c7a0f0,FUN_00c7a0f0,00c67470,CDrawGuildSeal::SetSkillIndexProperty,size-run,0.65,76,"autoname-t5 [medium]: Thiscall, called by CDrawGuildSeal_SetPropertyEx, validates skill index param_2 not 0/1, stores in"
+00c7a130,FUN_00c7a130,00c674b0,CCharacter_AddSkill,size-run,0.57,76,"[forge-autoname3 conf=medium] Thiscall, takes skill index, initializes large indexed structure with float/int constants,"
+00c7a3a0,FUN_00c7a3a0,00c67720,CCharacter_SetSkillDamage,size-run,0.74,76,"[forge-autoname3 conf=medium] Thiscall, takes skill index and damage value, validates -10000 <= param_3 < 0, modifies in"
+00c7a440,FUN_00c7a440,00c677c0,HeroAttribute_SetValueWithValidation,size-run,0.41,76,[forge-autoname2 conf=high <- wf] __thiscall calls multiple HeroAttribute_* functions and cascades validation/setting - 
+00c7a690,FUN_00c7a690,00c67a10,HeroAttribute_SetBitFlags,size-run,0.73,76,[forge-autoname conf=medium <- wf] Thiscall; checks param_3 & 0xffffff00 for error; calls 8 sequential functions for bit
+00c7a760,FUN_00c7a760,00c67ae0,ScriptCommand_SetHeroProperties,size-run,0.65,76,"autoname-t5 [medium]: Thiscall, calls CCharacter_SetActiveSkill and HeroAttribute setters (Position/Rotation), validates"
+00c7a880,FUN_00c7a880,00c67c00,ScriptCommand_SetCharacterAttributes,size-run,0.57,76,"autoname-t5 [medium]: Thiscall, massive validation and chained setter calls (BaseLife, BaseSpell, Pitch, Gain, etc.), co"
+00c7abe0,FUN_00c7abe0,00c67f60,CTCHeroStats_UpdateAttributeEvents,size-run,0.48,76,"[forge-autoname3 conf=high] Fastcall thiscall, loops through 26 dirty-flag bits, calls CTCHeroStats::AddEventData for ea"
+00c7b040,FUN_00c7b040,00c683c0,CDrawGuildSeal_ApplyEffect,size-run,0.57,76,"autoname-t5 [medium]: Thiscall; calls ClearMessages, indirect jump table on param_2 (7 branches); returns -3 on invalid"
+00c7b190,FUN_00c7b190,00c68510,CDrawGuildSeal_SetProperty,size-run,0.52,76,"[forge-autoname3 conf=high] Thiscall, calls CDrawGuildSeal::ClearMessages on this, dispatches via jumptable to property "
+00c7b630,FUN_00c7b630,00c689b0,CDrawGuildSeal::SetSkillPropertiesEx,size-run,0.35,76,"autoname-t5 [medium]: Thiscall, called by CDrawGuildSeal_SetPropertyEx, chained calls to CCharacter_AddSkill/SetSkillDam"
+00c7b6d0,FUN_00c7b6d0,00c68a50,CDrawGuildSeal_SetLightProperty,size-run,0.45,76,"[forge-autoname3 conf=high] Thiscall, validates param_3 <= 0x1a (26 presets), stores at indexed 0xf4, calls series of na"
+00c7b9f0,FUN_00c7b9f0,00c68d70,ScriptCommand_SetLightAttributes,size-run,0.38,76,"autoname-t5 [medium]: Thiscall void, massive chained setter for light properties via CLight/HeroAttribute methods, coord"
+00c7bc10,FUN_00c7bc10,00c68f90,CDrawGuildSeal_SetPropertyEx,body,0.63,0,"[forge-autoname3 conf=high] Thiscall with CDrawGuildSeal* param_1, calls ClearMessages, dispatches via jumptable, handle"
+00c7c220,FUN_00c7c220,00c60b30,Math_IsAnyNaN,size-run,0.78,7,"[forge-autoname conf=high <- wf] Calls _isnan on 3 floats; returns 1 if any is NaN, 0 otherwise; pattern clear"
+00c7c280,FUN_00c7c280,00c60b90,CConsoleVariable,size-run,,7,
+00c7c6d0,FUN_00c7c6d0,00c60fe0,OnPostViewportChanged,size-run,,7,
+00c7c6e0,FUN_00c7c6e0,00c60ff0,CTCHeroStats_ProcessEventData,size-run,0.67,7,autoname-t5 [high]: Thiscall; massive switch on param_2 with event type codes; calls CTCHeroStats__AddEventData and Hero
+00c7cd00,FUN_00c7cd00,00c61610,CShadowRendererSceneData,size-run,,7,
+00c7d210,FUN_00c7d210,00c61b20,`vector_deleting_destructor',size-run,,7,
+00c7d230,FUN_00c7d230,00c61b40,CDrawGuildSeal_Render,size-run,0.52,7,"autoname-t5 [medium]: Thiscall; calls ClearMessages, FUN_00c60ff0 (render pass), extracts result from offset 0x3c4"
+00c7de30,FUN_00c7de30,00c9ec20,Util_BitWidth,size-run,1.00,41,[forge-autoname2 conf=high <- wf] Right-shift loop counting set bits—standard bit population/log2 calculation.
+00c7df90,FUN_00c7df90,00c9ed80,C3DGeneratorObject_Parse,size-run,0.41,41,"autoname-t5 [medium]: Allocates 0xc88 struct, calls CBitstream::ReadBits repeatedly, Util_BitWidth—parses 3D generator f"
+00c7e180,FUN_00c7e180,00c9ef70,Float10_NormalizeAbsValue,size-run,0.54,41,"[forge-autoname3 conf=medium] Applies bitmask 0x7fffffff (abs), scales by global _DAT_012bf264, subtracts _DAT_012bf260;"
+00c7e1a0,FUN_00c7e1a0,00c9ef90,CPlayer::ProcessAudioFrame,size-run,0.44,41,autoname-t5 [high]: Thiscall on CPlayer*; massive callees list (21 functions); master audio/mesh frame processor
+00c7ead0,FUN_00c7ead0,00c9f8c0,Mesh_BlendMorphStreams,size-run,0.85,41,"Dispatches per vertex-stream via PTR_DAT_013a3dc8 table by type, applies threshold-based add/subtract of float pairs (_D"
+00c7efe0,FUN_00c7efe0,00c9fdd0,"_Cons_val<std::allocator<C3DGeneratorObject>,C3DGeneratorObject,C3DGeneratorObject>",size-run,,41,
+00c7f000,FUN_00c7f000,00c9fdf0,C3DGeneratorObject_Destroy,size-run,0.29,41,"autoname-t5 [high]: Loops freeing arrays at param_1[5] and param_1[7], zeroes struct, frees param_1—destructor for C3DGe"
+00c7f080,FUN_00c7f080,00c9fe70,Util_CountHighBits,size-run,1.00,41,"[forge-autoname4 conf=high] Loop shifts param_1 >>1, increments counter. Counts position of highest set bit."
+00c7f090,FUN_00c7f090,00c9fe80,Util_PopCount,size-run,1.00,41,"[forge-autoname4 conf=high] Loop shifts param_1 >>1, accumulates (param_1 & 1). Classic Kernighan population count."
+00c7f190,FUN_00c7f190,00c9ff80,C3DGeneratorObject_ParseAlt,size-run,0.30,41,"autoname-t5 [medium]: Allocates 0x714, reads from CBitstream, Util_PopCount—alternate parser for 3D generator from bitst"
+00c7f2f0,FUN_00c7f2f0,00ca00e0,Math_BuildBasisVectors,size-run,0.69,41,"autoname-t5 [medium]: Allocates 0x2c struct, calls _CIpow, Util_CountHighBits—constructs mathematical basis/coordinate s"
+00c7f4c0,FUN_00c7f4c0,00ca02b0,Audio_ComputeTimeFrequencyMap,size-run,0.99,41,autoname-t5 [medium]: Takes int* and float*; returns int; likely spectrogram or time-frequency matrix
+00c7f830,FUN_00c7f830,00ca0620,CEnvironment::LookupLocalThemeIndex,size-run,0.48,41,"autoname-t5 [high]: Thiscall, calls CEnvironment::GetLocalEnvironmentThemeIndexFromGlobal—environment theme index lookup"
+00c7f890,FUN_00c7f890,00ca0680,Audio_InterpolateScaledSamples,size-run,0.84,41,"autoname-t5 [medium]: Calls __ftol2, floor, MemAllocator_Allocate; interpolates audio with scale"
+00c7faa0,FUN_00c7faa0,00ca0890,CurveInterpolation_ResampleCurveData,size-run,0.89,41,"autoname-t5 [medium]: Calls MemAllocator_Allocate, performs curve interpolation/resampling with float arrays and binary "
+00c7fdb0,FUN_00c7fdb0,00ca0ba0,Environment_GetThemeIndex,size-run,0.87,41,[forge-autoname3 conf=medium] Calls GetLocalEnvironmentThemeIndexFromGlobal confirm environment theme lookup.
+00c80000,FUN_00c80000,00ca0df0,Class_AllocateFromPool,size-run,0.68,41,[forge-autoname3 conf=medium] Calls GetPDefFromClassIndex and MemAllocator_Allocate confirm class allocation.
+00c80270,FUN_00c80270,00ca1060,Environment_AccumulateVertexData,size-run,0.89,41,"autoname-t5 [medium]: Thiscall, accumulates float vectors in loops with 4-element unroll, calls Environment_GetThemeInde"
+00c80520,FUN_00c80520,00ca1310,Geometry_ProcessNonzeroElements,size-run,0.68,41,"autoname-t5 [medium]: Loops checking param_4[*] != 0, calls FUN_00ca0890 if non-zero—processes non-zero geometry element"
+00c80570,FUN_00c80570,00ca1360,Environment_TransformVertexArray,size-run,0.93,41,"autoname-t5 [medium]: Calls Environment_GetThemeIndex, MemAllocator_Allocate, manipulates float arrays with 4-element un"
+00c807d0,FUN_00c807d0,00ca15c0,CDefinitionManager::ProcessPropertyDefinition,size-run,0.72,41,autoname-t5 [medium]: Calls CDefinitionManager::GetPDefFromClassIndex—processes property definitions
+00c80960,FUN_00c80960,00ca1750,"_Cons_val<std::allocator<C3DGeneratorObject>,C3DGeneratorObject,C3DGeneratorObject>",size-run,,41,
+00c809a0,FUN_00c809a0,00ca1790,Util_CountBits,size-run,1.00,41,[forge-autoname2 conf=high <- wf] Identical bit-counting loop to 00c9ec20.
+00c809b0,FUN_00c809b0,00ca17a0,Math_Log2Int,size-run,1.00,41,autoname-t5 [high]: Computes integer bit length via repeated right-shift; classic log2 calculation for power-of-2 or nex
+00c809d0,FUN_00c809d0,00ca17c0,C3DGeneratorObject_Write,size-run,0.51,41,"autoname-t5 [medium]: Calls CBitstream::WriteBits repeatedly, serializes param_1 fields—writes 3D generator to bitstream"
+00c80b80,FUN_00c80b80,00ca1970,C3DGeneratorObject_ParseComplex,size-run,0.30,41,"autoname-t5 [medium]: Allocates 0x460, CBitstream::ReadBits with complex nested validation—complex 3D generator parser"
+00c80dd0,FUN_00c80dd0,00ca1bc0,Int_Compare,size-run,0.88,41,autoname-t5 [high]: Simple int difference—qsort-style int comparator
+00c81010,FUN_00c81010,00ca1e00,Interpolate_ClampedLinear,size-run,1.00,41,"[forge-autoname2 conf=medium <- wf] Computes signed difference ratio scaled by (param1 - param3)/(param4 - param3), cons"
+00c81060,FUN_00c81060,00ca1e50,Clamp_To10BitValue,size-run,0.62,41,"[forge-autoname2 conf=medium <- wf] Converts float via __ftol2, clamps to 0x3ff (1023=2^10-1), masks to 0 if negative"
+00c81090,FUN_00c81090,00ca1e80,CurveInterpolation_InterpolateFloats,size-run,0.96,41,autoname-t5 [medium]: Thiscall with float scaling; loads from DAT_013abe28 lookup table and performs weighted interpolat
+00c81220,FUN_00c81220,00ca2010,CurveInterpolation_InterpolateInts,size-run,0.75,41,autoname-t5 [medium]: Similar thiscall to 00ca1e80 but operates on integer arrays; Bresenham-style integer interpolation
+00c812b0,FUN_00c812b0,00ca20a0,FloatVector_Clamp,size-run,0.69,41,[forge-autoname3 conf=medium] Calls Clamp_To10BitValue confirm float vector clamping to 10-bit range.
+00c81490,FUN_00c81490,00ca2280,LinearRegression_CalcSlope,size-run,0.81,41,"[forge-autoname2 conf=medium <- wf] Accumulates sums in loops, performs linear regression math: iVar10*local_24 - iVar8*"
+00c81690,FUN_00c81690,00ca2480,CurveInterpolation_ValidateSplineQuality,size-run,0.93,41,"autoname-t5 [high]: Called by CurveInterpolation_ComputeSpline; calls Clamp_To10BitValue twice, validates tolerance thre"
+00c818b0,FUN_00c818b0,00ca26a0,InterpolateInt_Conditional,size-run,1.00,41,[forge-autoname conf=medium <- wf] Blends two int values but proposal ambiguous; returns one value or average based on s
+00c818d0,FUN_00c818d0,00ca26c0,CurveInterpolation_ComputeSpline,size-run,0.68,41,"[forge-autoname3 conf=medium] Complex spline fitting: calls LinearRegression_CalcSlope, Interpolate_ClampedLinear, 65-el"
+00c81d10,FUN_00c81d10,00ca2b00,PixelBlend_InterpolateWithMemAlloc,size-run,0.92,41,[forge-autoname3 conf=high] Calls MemAllocator_Allocate; 16-bit pixel interpolation with (val & 0x7fff) * param5 + (val2
+00c81dc0,FUN_00c81dc0,00ca2bb0,CEnvironment_SerializeTheme,size-run,0.73,41,"autoname-t5 [high]: Calls CBitstream::WriteBits, CEnvironment::GetLocalEnvironmentThemeIndexFromGlobal twice; processes "
+00c82630,FUN_00c82630,00ca3420,Geometry_ScaleVertexArray,size-run,0.84,41,autoname-t5 [medium]: Multiplies param_4 floats by scale factor from DAT_013abe28 lookup—scales geometry vertices
+00c82790,FUN_00c82790,00ca3580,"_Cons_val<std::allocator<C3DGeneratorObject>,C3DGeneratorObject,C3DGeneratorObject>",size-run,,41,
+00c827b0,FUN_00c827b0,00ca35a0,C3DGeneratorObject_Release,body,0.61,0,"autoname-t5 [high]: Frees nested pointers param_1[2] and its children, zeroes, frees param_1—release/cleanup for 3D gene"
+00c82900,FUN_00c82900,00ca36e0,Math_PrecomputeAngleLookupTable,body,0.67,0,"autoname-t5 [medium]: Calls malloc, floor, __ftol2; complex trigonometric math with fpatan calls and lookup table genera"
+00c82bd0,FUN_00c82bd0,00ca39c0,Geometry_TransformAndScale,body,0.65,0,"autoname-t5 [medium]: Calls FUN_00ca36e0, FUN_00ca4570, zero-fills param_4—transforms and scales geometry"
+00c82ce0,FUN_00c82ce0,00c889f0,operator+=,size-run,,21,
+00c82d00,FUN_00c82d00,00c88a10,GetSize,size-run,,21,
+00c82d20,FUN_00c82d20,00c88a30,CBase,size-run,,21,
+00c82d40,FUN_00c82d40,00c88a50,DSP_ScaleFloatVector,size-run,0.88,21,autoname-t5 [high]: Multiplies 4-element float vectors by param_2 scalar in a loop (param_3>>2 iterations). Each element
+00c82da0,FUN_00c82da0,00c88ab0,DSP_ScaleFloatVectorWithOffset,size-run,0.99,21,"autoname-t5 [high]: Scales float vectors from offset address. Loads 4 floats from (param_1+offset), multiplies by param_"
+00c82e10,FUN_00c82e10,00c88b20,DSP_AmplitudeModulate,size-run,0.81,21,autoname-t5 [high]: Loop multiplying 4-element float vectors by varying amplitudes. param_2/param_3 form envelope that i
+00c82ee0,FUN_00c82ee0,00c88bf0,DSP_AmplitudeModulateWithOffset,size-run,0.86,21,"autoname-t5 [high]: Offset version of amplitude modulation. Reads floats from (param_1+offset), applies time-varying gai"
+00c82fc0,FUN_00c82fc0,00c88cd0,"_Copy_impl<std::pair<float,CSubtitledMessage::CCameraTag>*,std::pair<float,class_CSubtitledMessage::CCameraTag>*>",size-run,,21,
+00c83000,FUN_00c83000,00c88d10,DSP_AddScaledVector,size-run,1.00,21,"autoname-t5 [high]: Adds scaled offset vector to param_1. Loads 4 floats from (param_2-offset), multiplies by param_3, a"
+00c83070,FUN_00c83070,00c88d80,DSP_AddScaledVectorWithModulation,size-run,0.87,21,autoname-t5 [medium]: Adds offset vector with time-varying amplitude modulation. Combines scaled vector add + envelope (
+00c83150,FUN_00c83150,00c88e60,Audio_ProcessFilter4Channel,size-run,0.88,21,caller Audio_ProcessTriggerActivations; unrolled 4-channel float filter/resampler loop over param_5 samples with per-cha
+00c83400,FUN_00c83400,00c89110,GuildTrainingSkillScript_AllocSkillSlots,size-run,0.71,21,"autoname-t6 [medium]: caller CQ_GuildTrainingSkillScript_InitializeSkillSlots; bump-allocates aligned zeroed block, sets"
+00c83490,FUN_00c83490,00c891a0,Graphics_ProcessStreamData,size-run,0.51,21,"[forge-autoname3 conf=medium] Calls DisplayProgress, FUN_00c763e0, CArrayWrapper_CopyWraparound; processes streaming dis"
+00c83640,FUN_00c83640,00c89350,Partition_ProcessAnimationData,size-run,0.50,21,"autoname-t5 [medium]: Calls Partition_Copy_Split, Animation_InterpolateHelper, StreamWriter_WriteWrapped — suggests part"
+00c839b0,FUN_00c839b0,00c896c0,GuildTrainingSkillScript_AllocEffectArray,size-run,0.72,21,autoname-t6 [medium]: caller CQ_GuildTrainingSkillScript_InitializeEffectArray; bump-allocates zeroed block into this+0x
+00c83a40,FUN_00c83a40,00c89750,Graphics_RenderWaveform,size-run,0.54,21,"[forge-autoname3 conf=medium] Calls DisplayProgress, FUN_00c76760; renders waveform data with progress display; processe"
+00c83b40,FUN_00c83b40,00c89850,Animation_InterpolateProcess,size-run,0.58,21,"autoname-t5 [medium]: Calls Partition_Copy_Split, Animation_InterpolateHelper — core animation interpolation function"
+00c83d90,FUN_00c83d90,00c89aa0,Audio_ApplyConvolution_Samples,size-run,0.87,21,[forge-autoname3 conf=medium] Thiscall processing float buffers with convolution kernel at offset -0x100/-0x80/0/0x80; c
+00c83e30,FUN_00c83e30,00c89b40,AddTrigger,size-run,,21,
+00c83e50,FUN_00c83e50,00c89b60,WaveformBuffer_Process,size-run,0.68,21,"autoname-t5 [medium]: Calls WaveformBuffer_ProcessWrapped; 125 bytes, wrapper for waveform buffer processing"
+00c83ed0,FUN_00c83ed0,00c89be0,FtoL,size-run,,21,
+00c84010,FUN_00c84010,00ca4570,Math_ApplyDampeningFilter,body,0.75,0,"autoname-t5 [medium]: Calls Math_InterpolateFloatTableLookup, FUN_00ca3ea0, FUN_00ca3f00, frexp, IsAllocatorFixedSize; a"
+00c841a0,FUN_00c841a0,00ca3a40,FloatArray_TransformWithUnroll,body,0.95,0,"[forge-autoname3 conf=medium] Float array manipulation with 4-way unrolled loop (pfVar1[2], pfVar1[1], pfVar1[-1], pfVar"
+00c84270,FUN_00c84270,00ca3b30,Float_CompareStrict,body,0.92,0,autoname-t5 [high]: Compares floats param_1 vs param_2 with explicit reversal—float comparator for qsort
+00c842b0,FUN_00c842b0,00ca3b80,Math_LevenbergMarquardtFit,body,0.84,0,[forge-autoname3 conf=medium] Calls __chkstk; iterative function fitting with float80 arithmetic; convergence test on fV
+00c84580,FUN_00c84580,00ca3f60,Math_SolveLinearSystemGaussian,body,0.92,0,[forge-autoname3 conf=medium] Calls __chkstk; Gaussian elimination with double precision; discriminant singularity test 
+00c84780,FUN_00c84780,00ca4160,Math_FitSplineCurve,body,0.67,0,"autoname-t5 [medium]: Calls _CIacos, Math_LevenbergMarquardtFit, Math_SolveLinearSystemGaussian, qsort—fits spline via L"
+00c856b0,FUN_00c856b0,00c10800,`vector_deleting_destructor',size-run,,6,
+00c856d0,FUN_00c856d0,00c10820,`vector_deleting_destructor',size-run,,6,
+00c856f0,FUN_00c856f0,00c10840,`vector_deleting_destructor',size-run,,6,
+00c85710,FUN_00c85710,00c10860,`vector_deleting_destructor',size-run,,6,
+00c85750,FUN_00c85750,00c108a0,"pair<unsigned_long,C3DMeshVolume>",size-run,,6,
+00c85790,FUN_00c85790,00c108e0,CCardPositionsDef,size-run,,6,
+00c890c0,FUN_00c890c0,006af060,GetActionName,size-run,,6,
+00c890e0,FUN_00c890e0,006af080,`scalar_deleting_destructor',size-run,,6,
+00c891e0,FUN_00c891e0,006af180,operator(),size-run,,6,
+00c89200,FUN_00c89200,006af1a0,operator(),size-run,,6,
+00c89220,FUN_00c89220,006af1c0,operator(),size-run,,6,
+00c89240,FUN_00c89240,006af1e0,operator(),size-run,,6,
+00c8ae90,FUN_00c8ae90,00ca4780,FileFormat_DispatchFormat,body,0.90,0,autoname-t5 [medium]: Compares param_2 against DAT_012aa064 and DAT_012a9a04 (likely format signatures); dispatches to v
+00c8aee0,FUN_00c8aee0,00ca47d0,ThreadMsg_PumpAndWaitForCompletion,body,0.88,0,"[forge-autoname3 conf=high] Calls GetCurrentThreadId, PeekMessageW, Sleep, PostThreadMessageW, GetQueueStatus; polls thr"
+00c8afb0,FUN_00c8afb0,00ca4910,COM_GetInputPin,size-run,0.75,19,"autoname-t5 [high]: COM interface, checks lstrcmpW for 'In', returns HRESULT 0x80040216—COM property/interface getter fo"
+00c8b030,FUN_00c8b030,00ca4990,WorldFrameUpdate,size-run,,19,
+00c8b060,FUN_00c8b060,00ca49c0,operator(),size-run,,19,
+00c8b110,FUN_00c8b110,00ca4a70,OnResize,size-run,,19,
+00c8b140,FUN_00c8b140,00ca4aa0,Audio_ProcessEventWithCallback,size-run,0.47,19,"autoname-t5 [medium]: Thiscall; invokes callback at (*param_1 + 0x58), calls SetEvent on param_1[0x15]; event-driven pro"
+00c8b200,FUN_00c8b200,00ca4b60,ClipBox,size-run,,19,
+00c8b230,FUN_00c8b230,00ca4b90,RemoveExclusiveForegroundWindow,size-run,,19,
+00c8b290,FUN_00c8b290,00ca4bf0,ReleaseVolume,size-run,,19,
+00c8b300,FUN_00c8b300,00ca4c60,Audio_SynchronizeWithCriticalSection,size-run,1.00,19,"autoname-t5 [medium]: Fastcall; enters/leaves critical section at param_1+0x25, resets param_1[0x30] flag, invokes vtabl"
+00c8b360,FUN_00c8b360,00ca4cc0,CSurface::GetRefCountAndLock,size-run,0.53,19,"[forge-autoname3 conf=high] Thiscall on CSurface*; calls EnterCriticalSection, CSurface::GetRefCount, LeaveCriticalSecti"
+00c8b400,FUN_00c8b400,00ca4d60,ClearTextures,size-run,,19,
+00c8b420,FUN_00c8b420,00ca4d80,Audio_StartPlayback,size-run,1.00,19,"autoname-t5 [medium]: EnterCriticalSection, timeBeginPeriod, calls vtable methods at +0x40/+0x60—starts audio playback w"
+00c8b4d0,FUN_00c8b4d0,00ca4e30,CVolume_Shutdown,size-run,1.00,19,"autoname-t5 [high]: Called by CVolume::~CVolume; enters critical section, clears param_1[0x1d], invokes vtable at *param"
+00c8b540,FUN_00c8b540,00ca4ea0,ClipBox,size-run,,19,
+00c8b5e0,FUN_00c8b5e0,00ca4f40,CAIStateGroup_WhisperPotionCombat,size-run,,19,
+00c8b630,FUN_00c8b630,00ca4f90,Engine_AddPrimitiveToRenderer,size-run,0.49,19,"autoname-t5 [medium]: Calls CEngineInternalPrimitiveBase::AddChildPrimitive, critical section locks—adds primitive to re"
+00c8b6d0,FUN_00c8b6d0,00ca5030,OpenGate,size-run,,19,
+00c8b770,FUN_00c8b770,00ca50d0,Engine_RemovePrimitive,size-run,1.00,19,"autoname-t5 [medium]: Critical sections, calls FUN_00ca8e40 (likely removal)—removes primitive from engine with synchron"
+00c8b810,FUN_00c8b810,00ca5170,DetachTarget,size-run,,19,
+00c8b910,FUN_00c8b910,00ca52a0,OnActivate,size-run,,16,
+00c8b9f0,FUN_00c8b9f0,00ca5380,IsTalking,size-run,,16,
+00c8ba30,FUN_00c8ba30,00ca53c0,CallCommandFunction,size-run,,16,
+00c8ba60,FUN_00c8ba60,00ca53f0,operator==,size-run,,16,
+00c8bb80,FUN_00c8bb80,00ca5510,operator==,size-run,,16,
+00c8bbe0,FUN_00c8bbe0,00ca5570,Audio_SleepUntilFrameTime,size-run,1.00,16,"autoname-t5 [medium]: Sets param_1[0x3d]/[0x3e], calls Sleep—audio frame-based sleep/sync"
+00c8bc50,FUN_00c8bc50,00ca55e0,WriteToFile,size-run,,16,
+00c8bc80,FUN_00c8bc80,00ca5610,Audio_UpdateFrameTimings,size-run,1.00,16,"autoname-t5 [medium]: Calls timeGetTime, adjusts param_1[0xf4/f8/fc], calls Sleep—updates audio timing stats"
+00c8bd50,FUN_00c8bd50,00ca56e0,Audio_ProcessTimeAdjustment,size-run,0.84,16,"autoname-t5 [medium]: Thiscall, complex time calculations with __alldiv, calls vtable at +0xc0—processes audio time sync"
+00c8bec0,FUN_00c8bec0,00ca5850,Audio_AdjustBufferLevel,size-run,0.52,16,"autoname-t5 [medium]: Thiscall, 64-bit arithmetic on time values, vtable calls at +0xc0/+0x3c—adjusts audio buffer level"
+00c8c3c0,FUN_00c8c3c0,00ca5d50,COM_GetValue,size-run,1.00,16,"autoname-t5 [high]: COM interface, critical section, copies from param_1 + 0x40 to param_2—COM property getter with lock"
+00c8c410,FUN_00c8c410,00ca5da0,CritSec_GetField44_Locked,size-run,1.00,16,"autoname-t6 [medium]: Null-check returns E_POINTER(0x80004003), then Enter/LeaveCriticalSection(this-100) around copying"
+00c8c460,FUN_00c8c460,00ca5df0,GetCalculatedValue_WithTimeElapsed,size-run,1.00,16,autoname-t5 [medium]: Calls timeGetTime and MulDiv; computes elapsed time multiplied by 100000 / elapsed; accumulator pa
+00c8c4e0,FUN_00c8c4e0,00ca5e70,CritSec_GetDividedValue_Locked,size-run,0.83,16,"Under lock, __alldiv of 64-bit *(this+0x48/0x4c) by (*(this+0x44)-1) into *param2; locked computed getter, else writes 0"
+00c8c550,FUN_00c8c550,00ca5ee0,Math_IntegerSquareRoot,size-run,1.00,16,"autoname-t5 [high]: Newton-Raphson integer sqrt: iterates iVar1*2, converges via (i²+n)/(2*i); called by AudioDevice_Com"
+00c8c5c0,FUN_00c8c5c0,00ca5f50,AudioDevice_ComputeLatencyDelta,size-run,0.73,16,[forge-autoname3 conf=medium] Thiscall with critical section; calls __alldiv on 64-bit values; calculates audio sample o
+00c8cbb0,FUN_00c8cbb0,00ca65b0,Audio_WaitForBufferEvent,body,1.00,0,"autoname-t6 [medium]: Calls vf0x48, loops WaitForMultipleObjects(2 handles,10000) while WAIT_TIMEOUT(0x102), vf0x4c; ret"
+00c8cdb0,FUN_00c8cdb0,00ca67b0,CAudioBank_Stop,body,0.97,0,"autoname-t6 [medium]: SEH+CritSec(this+0x70); if state(this+8)==1 vf0x30(1); else resumes, sets flag 0xa4=1, timeKillEve"
+00c8d100,FUN_00c8d100,00ca6b00,AudioThread_RequestStop,body,1.00,0,autoname-t6 [medium]: If this[5]!=0 sets flag this[0x1c]=1 and (if this[0x1b]==0) SetEvent(this[0x17]) plus vf0x60; sign
+00c8d140,FUN_00c8d140,00ca6b40,AudioThread_StopAndWait,body,0.82,0,"autoname-t6 [medium]: ResetEvent(this[0x17]) if state[5]==1, vf0x28(0)/vf0x6c/vf0x70, then ThreadMsg_PumpAndWaitForCompl"
+00c8d240,FUN_00c8d240,00ca6c40,CEngine_InitializeRender_WithSurface,body,0.71,0,"autoname-t5 [medium]: Thiscall CEngine*; calls ClipBox, SetEvent; stores surface data at 0x6c; initializes render state"
+00c8d590,FUN_00c8d590,00ca6f90,ScheduleTimer_ForScreenRefresh,body,0.67,0,autoname-t5 [medium]: Fastcall; calls timeSetEvent with calculated delay; uses 0xc0 member for timer ID; screen refresh 
+00c8dd40,FUN_00c8dd40,00ca7850,Audio_SetDeviceSource,body,0.84,0,"autoname-t5 [medium]: Thread-safe; enters critical section, copies wide string to param_1+0x30 via operator_new/lstrlenW"
+00c8df10,FUN_00c8df10,00ca7a20,GetMeshesUsed,size-run,,8,
+00c8dff0,FUN_00c8dff0,00ca7b00,InterlockedDecrement_WithCleanup,size-run,1.00,8,autoname-t5 [medium]: Calls InterlockedDecrement at param_1+5; calls destructor at vtable offset 0x1c if refcount reache
+00c8e020,FUN_00c8e020,00ca7b30,GetNoFaces,size-run,,8,
+00c8e050,FUN_00c8e050,00ca7b60,GetNoFaces,size-run,,8,
+00c8e120,FUN_00c8e120,00ca7c30,InterlockedDecrement_WithCleanup_AtOffset4,size-run,1.00,8,autoname-t5 [medium]: Calls InterlockedDecrement at param_1+4; calls destructor at vtable offset 0x1c if refcount reache
+00c8e150,FUN_00c8e150,00ca7c60,Init,size-run,,8,
+00c8e170,FUN_00c8e170,00ca7c80,~WaypointData,size-run,,8,
+00c8e1d0,FUN_00c8e1d0,00ca7ce0,MovableResourceMemoryPool_CheckGUID,size-run,0.54,8,[forge-autoname3 conf=high] Calls GUID_CompareAndCallback and CMovableResourceMemoryPool::CanMoveResource; compares para
+00c8e690,FUN_00c8e690,00ca8420,GetWideStringData_CopyToOutput,body,0.84,0,autoname-t5 [medium]: Calls lstrcpynW; copies wide string from param_1+8 to output; manages vtable at offset 0xc
+00c8e890,FUN_00c8e890,00ca8610,COM_QueryInterface_012a9a24,body,0.75,0,autoname-t6 [medium]: Calls param2->vf0x24 then param2->vf0(QueryInterface for IID DAT_012a9a24) into this+0x9c; returns
+00c8e950,FUN_00c8e950,00ca86d0,Com_CreateWithFallback,body,0.91,0,"COM create pattern: vf0xc alloc, vf0x3c bind, vf0x10 activate; on failure Releases and retries via this->vf0x48 fallback"
+00c8ebb0,FUN_00c8ebb0,00ca8940,ReleaseVolume,size-run,,6,
+00c8edc0,FUN_00c8edc0,00ca8b50,GetRefCount,size-run,,6,
+00c8ee00,FUN_00c8ee00,00ca8b90,AudioFile_QueryCapabilities,size-run,1.00,6,"autoname-t5 [medium]: Returns error if param_2 null; queries vtable methods for HasReverb, HasDolby, HasStereo (bits 4,2"
+00c8ef60,FUN_00c8ef60,00ca8cf0,FindMatchingElement_InArray,size-run,1.00,6,autoname-t5 [medium]: Loops through array at param_2; calls vtable method at offset 0x18; returns index on match
+00c8efc0,FUN_00c8efc0,00ca8d50,Enumerate_QueryInterface_012a9a24,size-run,1.00,6,"Loops count=obj->vf0x18, per item obj->vf0x1c(i)->+0xc, checks type==1, QueryInterface(DAT_012a9a24), Releases; returns "
+00c8f080,FUN_00c8f080,00ca8e10,ChangeScene,size-run,,6,
+00c8f0b0,FUN_00c8f0b0,00ca8e40,Audio_ResetFlaggedState,body,1.00,0,"autoname-t5 [medium]: Thread-safe; enters critical section at param_1+0x14, clears param_1[0x95] and param_1[0x18]"
+00c8f2f0,FUN_00c8f2f0,00ca9080,DecrementRefcount_AndCleanup,size-run,1.00,28,autoname-t5 [medium]: Manages refcount at offset 0x11; calls vtable at 0x38 if flag at offset 1 has bit 3 set; cleanup s
+00c8f660,FUN_00c8f660,00ca93f0,CBankFileAsyncData_SetImmContext,size-run,0.45,28,autoname-t5 [high]: Thiscall CBankFileAsyncData*; calls FreeBuffer and ImmContext_Create; manages IMM context at param_2
+00c8f900,FUN_00c8f900,00ca9690,~CPatchTesselationEdgeStrip,size-run,,28,
+00c8f960,FUN_00c8f960,00ca96f0,Thunk_VirtualMethod_0,size-run,1.00,28,"[forge-autoname4 conf=medium] Trivial vtable thunk dereferences param_1-8, calls code at [vtable+0]. Virtual method forw"
+00c8f970,FUN_00c8f970,00ca9700,Thunk_VirtualMethod_1,size-run,1.00,28,[forge-autoname4 conf=medium] Vtable thunk at [vtable+4]. Second vtable slot forwarder.
+00c8f980,FUN_00c8f980,00ca9710,Thunk_VirtualMethod_2,size-run,1.00,28,[forge-autoname4 conf=medium] Vtable thunk at [vtable+8]. Third vtable slot forwarder.
+00c8fa90,FUN_00c8fa90,00ca9820,TransferBinaryOut,size-run,,28,
+00c8fad0,FUN_00c8fad0,00ca9860,Audio_SignalShutdown,size-run,1.00,28,"autoname-t5 [medium]: Fastcall; critical section; checks param_1+0xc4 status, calls SetEvent twice, closes HANDLE at par"
+00c8fb50,FUN_00c8fb50,00ca98e0,WaitForAsyncCompletion_WithRetry,size-run,0.96,28,autoname-t5 [medium]: Fastcall; calls WaitForMultipleObjects with infinite timeout; retries on status 2; async completio
+00c8fc70,FUN_00c8fc70,00ca9a00,NHitLocations_TransferBinaryOut_WithRefcount,size-run,0.36,28,autoname-t5 [high]: Fastcall; calls NHitLocations::CPhysicalPrimitiveCylinder::TransferBinaryOut; decrements refcount; n
+00c8fcb0,FUN_00c8fcb0,00ca9a40,ClipBox,size-run,,28,
+00c8fd00,FUN_00c8fd00,00ca9a90,GetCurrentChange,size-run,,28,
+00c8fd50,FUN_00c8fd50,00ca9ae0,GetAnims,size-run,,28,
+00c8fd80,FUN_00c8fd80,00ca9b10,GetAnims,size-run,,28,
+00c8fdb0,FUN_00c8fdb0,00ca9b40,GetAnims,size-run,,28,
+00c8fde0,FUN_00c8fde0,00ca9b70,CAudioBank_ExecuteCommand,size-run,0.45,28,"autoname-t5 [high]: Thiscall; invokes vtable methods at offsets 0x10, 0x24, 0x18, 0x14, 0x3c on vtable objects at param_"
+00c8fef0,FUN_00c8fef0,00ca9c80,Object_AcquireField26,size-run,1.00,28,"Calls this->vf0x38(this[0x27],&this[0x26]); on success and this[10]+0x14!=0 AddRefs this[0x26] via vf0x14"
+00c8ff70,FUN_00c8ff70,00ca9d00,~CVertexShaderData,size-run,,28,
+00c90130,FUN_00c90130,00ca9ec0,GetVectorFields_Locked,size-run,1.00,28,"Under lock (this+4, or none if this==0xc) copies fields 0x2c/0x34/0x38/0x3c into param2[0..3]; locked 4-field getter"
+00c902b0,FUN_00c902b0,00caa040,GetBufferOffset_Locked,size-run,1.00,28,Under lock computes *param2 = (*(this+0x2c) - *(this+0x30)) + *(this+0x20); locked offset/position getter
+00c902f0,FUN_00c902f0,00caa080,OnKill,size-run,,28,
+00c903d0,FUN_00c903d0,00caa160,CScriptDefinitionManager_SignalCompletion,size-run,0.96,28,"autoname-t5 [high]: Called by ~CScriptDefinitionManager; enters critical section, checks param_1[0x11]/[0x12] flags, cal"
+00c90500,FUN_00c90500,00caa290,AllocateAndValidateMemoryRange,size-run,1.00,28,autoname-t5 [medium]: Calls GetSystemInfo; validates allocation granularity; stores range info in output; memory pool in
+00c90630,FUN_00c90630,00caa3c0,CScriptDefinitionManager::DeallocateScriptEntries,size-run,1.00,28,[forge-autoname3 conf=high] Caller: ~CScriptDefinitionManager; walks linked list via offset 0x28 with param_1[7] links; 
+00c90680,FUN_00c90680,00caa410,~CScriptDefinitionManager,size-run,,28,
+00c90710,FUN_00c90710,00caa4a0,FileArchive_ValidateAndLoad,size-run,1.00,28,"[forge-autoname3 conf=medium] Processes archive entry list (param_1); calls vtable methods on param_2 at offsets (0x1c, "
+00c90950,FUN_00c90950,00caa6e0,Uninitialise,size-run,,28,
+00c90a00,FUN_00c90a00,00caa790,ReleaseVolume,size-run,,28,
+00c90ea0,FUN_00c90ea0,00caab30,CAudioBank_PauseAllSounds,size-run,1.00,7,"autoname-t5 [medium]: Thread-safe; iterates vtable objects from param_1-0xc, calls vtable method at offset 0x18 to pause"
+00c90f50,FUN_00c90f50,00caabe0,CAudioBank_ResumeAllSounds,size-run,1.00,7,"autoname-t5 [medium]: Thread-safe; iterates vtable objects, calls vtable method at offset 0x14 to resume; sets param_1+8"
+00c91010,FUN_00c91010,00caaca0,CAudioBank_SetAudioFormat,size-run,1.00,7,"autoname-t5 [medium]: Thread-safe; stores param_2 and param_3 in param_1[5]/[6], checks param_1[2] state machine, invoke"
+00c91120,FUN_00c91120,00caadb0,FindEntryByString_InList,size-run,0.79,7,autoname-t5 [medium]: Calls lstrcmpW to match string; iterates list via vtable at 0x18/0x1c; returns entry with refcount
+00c91300,FUN_00c91300,00caaf90,`vector_deleting_destructor',size-run,,7,
+00c91330,FUN_00c91330,00caafc0,PopNodes_FromList_UpToCount,size-run,0.93,7,autoname-t5 [medium]: Calls List_PushNode and FUN_00cb13c0; pops up to param_2 items from list; returns count popped
+00c91450,FUN_00c91450,00cab0e0,SkipNodes_InList_ByCount,size-run,1.00,7,autoname-t5 [medium]: Skips param_2 nodes in sequence; checks list state; returns 1 if insufficient nodes
+00c91700,FUN_00c91700,00ca7dc0,VirtualFileSystem_TransactionExecute,body,0.62,0,"[forge-autoname3 conf=medium] Thiscall; manages vtable calls at offsets 0x20, 0x28, 0x24, 0x30; appears to be open/valid"
+00c917b0,FUN_00c917b0,00ca7e90,AudioBank_ExecuteAsyncTransaction,body,0.74,0,"autoname-t5 [high]: Calls VirtualFileSystem_TransactionExecute, CBankFileAsyncData::FreeBuffer; loops executing pending "
+00c91890,FUN_00c91890,00ca7fb0,AudioBank_LoadAsyncWithRetry,body,0.66,0,"autoname-t5 [high]: Thiscall; calls FUN_00cb1ae0, FUN_00ca7e90, VirtualFileSystem_TransactionExecute with retry loop up "
+00c91bb0,FUN_00c91bb0,00cab990,CAudioBank_LoadAsync,body,0.85,0,"autoname-t5 [high]: Fastcall; checks param_1+0x18 pointer, calls FUN_00ca9b70; async loading wrapper with error handling"
+00c925a0,FUN_00c925a0,00cac400,NHitLocations::CPhysicalPrimitiveCylinder_TransferBinaryOutAsync,body,0.69,0,"autoname-t5 [high]: Creates event, calls NHitLocations__CPhysicalPrimitiveCylinder__TransferBinaryOutAsync, waits for ev"
+00c92c80,FUN_00c92c80,00abc650,C3DMeshFileGroupChunk,size-run,,6,
+00c92cb0,FUN_00c92cb0,00abc680,OnDie,size-run,,6,
+00c92d10,FUN_00c92d10,00abc6e0,?CreateNewInstance@C3DMeshFileGroupChunk@@UBEPAVCChunkedFileChunk@@XZ,size-run,,6,
+00c92db0,FUN_00c92db0,00abc780,C3DAnimFileXSequenceChunk,size-run,,6,
+00c92de0,FUN_00c92de0,00abc7b0,OnDie,size-run,,6,
+00c92e30,FUN_00c92e30,00abc800,?CreateNewInstance@C3DMeshFileVerticesChunk@@UBEPAVCChunkedFileChunk@@XZ,size-run,,6,
+00c93d50,FUN_00c93d50,00cb0310,MemMove,body,0.99,0,autoname-t5 [high]: Generic memory move routine; handles overlapping copy (backward when param_2 < param_1); DWORD-align
+00c93db0,FUN_00c93db0,00cb0370,Math_Divide64bit,body,0.93,0,"autoname-t5 [high]: Calls __allmul, __aulldiv, __aulldvrm; 64-bit signed division with overflow checking and sign handli"
+00c94100,FUN_00c94100,00cb0700,SignedDecimal_Divide,body,0.89,0,"autoname-t5 [medium]: Complex 64-bit signed division; calls __allmul for multiplication; handles sign bits, overflow che"
+00c94350,FUN_00c94350,00cb0940,COM_AllocateWideString,body,0.62,0,"autoname-t5 [high]: Calls CoTaskMemAlloc, lstrlenW; allocates and copies wide string (param_1) to param_2 buffer via 4-b"
+00c943b0,LH_DirectShow_MessagePump,00cb09a0,OS_WaitForMultipleObjectsWithMessages,body,0.68,0,"autoname-t5 [high]: Calls MsgWaitForMultipleObjects, WaitForMultipleObjects, PeekMessageW, DispatchMessageW; waits on ha"
+00c945c0,FUN_00c945c0,00cb0bc0,Win32ErrorToHRESULT,body,1.00,0,"[forge-autoname conf=high <- wf] Converts GetLastError() to HRESULT; returns 0x80004005 if 0, encodes as 0x80070000|code"
+00c94800,FUN_00c94800,00cb0e30,CThreadMessage::Send,body,0.65,0,autoname-t5 [medium]: thiscall managing thread communication; EnterCriticalSection/LeaveCriticalSection; SetEvent on off
+00c94880,FUN_00c94880,00cb0eb0,CThreadMessage::TryReceive,body,0.71,0,"autoname-t5 [medium]: thiscall, non-blocking check; WaitForSingleObject with 0 timeout; retrieves message from offset 0x"
+00c948e0,FUN_00c948e0,00cb0f10,CFileInstaller::Destructor,body,0.66,0,"autoname-t5 [high]: fastcall cleanup; WaitForSingleObject, CloseHandle on offsets 8 and 0x3c; LinkedList_DestroyAll; Del"
+00c94990,FUN_00c94990,00cb0fc0,COM_CoInitializeMainLoop,body,1.00,0,"autoname-t5 [medium]: Calls CoInitialize, CoUninitialize; main loop pattern with vtable calls at *param_1+4, *param_1+0,"
+00c94b40,FUN_00c94b40,00cb1920,Std_MemCmp_Dwords,body,1.00,0,autoname-t5 [medium]: Compares two 4-dword blocks (16 bytes) element-wise; loop structure matches memcmp; returns invert
+00c94be0,FUN_00c94be0,00cb19c0,"Stack<unsigned_long,64>::~Stack<unsigned_long,64>",size-run,,6,
+00c94c00,FUN_00c94c00,00cb19e0,COM_AllocAndCacheBuffer,size-run,0.80,6,"autoname-t5 [medium]: thiscall, caches allocated memory; checks size at offset 0x40 and pointer at offset 0x44; calls Co"
+00c94c60,FUN_00c94c60,00cb1a40,COM_AllocAndCacheBuffer_WithCopy,size-run,0.90,6,autoname-t5 [medium]: Similar to above but copies old buffer contents when resizing; uses dword and byte copy loops; man
+00c94ce0,FUN_00c94ce0,00cb1ac0,CEntry,size-run,,6,
+00c94d00,FUN_00c94d00,00cb1ae0,AudioBank_MatchesSignature,size-run,1.00,6,"autoname-t6 [medium]: caller AudioBank_LoadAsyncWithRetry; compares two 16-byte fields against signature DAT_012c0694, r"
+00c94d40,FUN_00c94d40,00cb1b20,AudioBank_CompareTransactionKeys,size-run,0.74,6,autoname-t6 [medium]: caller AudioBank_ExecuteAsyncTransaction; multiple 16-byte block compares against signature/other 
+00c94df0,FUN_00c94df0,00cb1bd0,COM_CopyVariant,body,1.00,0,"[forge-autoname2 conf=medium <- wf] Copies 18 DWORD fields, CoTaskMemAlloc, destructor call at [0xf]—COM variant duplica"
+00c96860,FUN_00c96860,00cacd90,COM_LoadTypeLibrary,body,0.97,0,"autoname-t5 [high]: Calls OleAut32_LoadLibrary, GetProcAddress for 'LoadRegTypeLib'/'LoadTypeLib'; loads 'control.tlb' t"
+00c96eb0,FUN_00c96eb0,00cad400,COM_QueryInterface_Wrapper2,size-run,0.54,11,[forge-autoname2 conf=medium <- wf] Identical pattern to 00cad460 with different global data—variant confirmed.
+00c96f10,FUN_00c96f10,00cad460,COM_QueryInterface_Wrapper,size-run,0.54,11,"[forge-autoname2 conf=medium <- wf] Vtable 0x18 call, vtable 0 call, HRESULT 0x80004001 return—COM pattern confirmed."
+00c976c0,FUN_00c976c0,00cadc10,COM_InitializeFromDispatch,size-run,0.76,11,"autoname-t5 [medium]: Thiscall; calls vtable at *param_2+0x14 to extract dispatch info, stores results in param_1+0x38.."
+00c97770,FUN_00c97770,00cadcc0,SetTargetVertexNormal,size-run,,11,
+00c977b0,FUN_00c977b0,00cadd00,CThreadedManager::ExecuteTask,size-run,0.50,11,"autoname-t5 [medium]: thiscall, EnterCriticalSection/LeaveCriticalSection pattern; checks param_1[0x12]==1 for stopped s"
+00c97870,FUN_00c97870,00caddc0,CTCGraphicAppearanceMultipleStaticMeshes,size-run,,11,
+00c978a0,FUN_00c978a0,00caddf0,CSurface_GetRefCountAndLock,size-run,1.00,11,"autoname-t5 [high]: Called by CSurface::GetRefCountAndLock; checks param_1[0x12]=1 error, calls vtable at *param_1+0x2c,"
+00c97c20,FUN_00c97c20,00cae170,StackCheck_ValidateFrame,size-run,0.85,11,[forge-autoname3 conf=medium] Thiscall; checks offset 0x60 for handler validity and offset 100 for permission; compares 
+00c98460,FUN_00c98460,00cae9b0,Variant_CopyVariantArray,size-run,0.78,11,"autoname-t5 [high]: Thiscall; allocates param_1 buffer (param_2*16 bytes), copies variant array elements via switch(type"
+00c98660,FUN_00c98660,00caebb0,Unwind_Cleanup,size-run,0.89,11,"[forge-autoname2 conf=medium <- wf] Iterates type tags (8, 9, 0xd) invoking virtual destructors, called by Unwind; stack"
+00c98730,FUN_00c98730,00caec80,GetAnims,size-run,,11,
+00c98800,FUN_00c98800,00caed50,COM_InitializeTypeLibrary,body,0.98,0,"autoname-t5 [medium]: fastcall, calls OleAut32_LoadLibrary, GetProcAddress for 'LoadRegTypeLib' and 'LoadTypeLib'; handl"
+00c99030,FUN_00c99030,00caf580,CEngineLandscapePatch::Destructor,body,0.64,0,"autoname-t5 [high]: fastcall cleanup; calls LinkedList_DestroyAll, DeleteCriticalSection, DestroyProceduralTextureVertex"
+00c99130,FUN_00c99130,00caf680,CEngineLandscapePatch::AllocateTask,body,0.76,0,autoname-t5 [medium]: thiscall with complex params; EnterCriticalSection/LeaveCriticalSection; allocates 0x50 bytes; cal
+00c99200,FUN_00c99200,00caf750,CModifierGraphic_UpdatePosition,body,0.88,0,"[forge-autoname conf=medium <- wf] Calls ResetEvent, PeekConnectedToTrackNode twice, compares/updates 64-bit positions a"
+00c99af0,FUN_00c99af0,00cb0040,CEditControlCentre::SetRenderEffect,body,0.78,0,autoname-t5 [medium]: thiscall taking pointer param; critical section protected; manages effect at offset 0x60 with refc
