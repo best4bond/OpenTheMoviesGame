@@ -37,7 +37,7 @@ address,old_name,new_name,evidence
 00ba5508,FUN_00ba5508,zlib_inflate_trees_fixed,returns the four fixed-table globals
 00ba5539,FUN_00ba5539,zlib_inflate_flush,copies window output to next_out and updates the check value
 00bb867a,FUN_00bb867a,zlib_inflate_fast,fast literal/length/distance loop with the same two error messages
-00aa7700,FUN_00aa7700,zlib_adler32_2,second adler32 copy (same BASE and NMAX constants) in a different module
+00aa7700,FUN_00aa7700,zlib_adler32_copy2,second zlib copy (BASE 65521 / NMAX 5552); body similarity 0.78 to the first copy
 00bbe6d0,FUN_00bbe6d0,Jenkins_Hash_Lookup2,0x9e3779b9 golden-ratio seed and lookup2 mix of 12-byte blocks
 00c327e0,FUN_00c327e0,Ogg_PageChecksumSet,"MSB-first CRC-32 table loop over header then body, result stored at page header +0x16..0x19"
 00c0f9c0,FUN_00c0f9c0,CPU_IsCpuidSupported,toggles EFLAGS bit 0x200000 (ID flag) and tests it
@@ -48,3 +48,44 @@ address,old_name,new_name,evidence
 0096ce70,FUN_0096ce70,LHHttp_ParseURL,"strips ""http://""; splits host at ':' or '/'; default port 0x50 (80); parses port with atol; same role as Fable LHHttp2_ParseURL (different implementation)"
 0096e7b0,FUN_0096e7b0,LHHttp_BuildHeaderBlock,"adds a default User-Agent header if missing then joins all headers with ""%s%s\r\n"""
 0096f0d0,FUN_0096f0d0,LHHttp_ParseResponseHeaders,"reads ""ServerCode"" (sscanf ""%s %ld"") and ""Location:"" from the response header list; same role as Fable LHHttp_ParseResponseHeaders"
+00a39470,FUN_00a39470,zlib_inflateReset_copy2,"same structure as inflateReset in copy 1: clears counters, mode, calls blocks_reset"
+00a394c0,FUN_00a394c0,zlib_inflateEnd_copy2,calls inflate_blocks_free then zfree on the state
+00a39510,FUN_00a39510,zlib_inflateInit2_copy2,body similarity 0.51 to inflateInit2_ in copy 1
+00a39620,FUN_00a39620,zlib_inflateInit_copy2,"thin wrapper, similarity 0.59 to inflateInit_"
+00a39640,FUN_00a39640,zlib_inflate_copy2,inflate() state machine; uses the shared zlib message strings
+00aa6840,FUN_00aa6840,zlib_inflate_blocks_reset_copy2,similarity 0.64 to inflate_blocks_reset
+00aa68e0,FUN_00aa68e0,zlib_inflate_blocks_new_copy2,similarity 0.41; same allocation pattern
+00aa6950,FUN_00aa6950,zlib_inflate_blocks_copy2,"block-type state machine, 3,309 bytes"
+00aa7680,FUN_00aa7680,zlib_inflate_blocks_free_copy2,similarity 0.55 to inflate_blocks_free; called by inflateEnd
+00abf9e0,FUN_00abf9e0,zlib_inflate_trees_bits_copy2,"contains ""oversubscribed/incomplete dynamic bit lengths tree"""
+00abfa40,FUN_00abfa40,zlib_huft_build_copy2,"1,201 bytes; called by trees_bits/dynamic/fixed"
+00abff00,FUN_00abff00,zlib_inflate_trees_dynamic_copy2,two huft_build calls with 0x101 (257) length codes
+00abfff0,FUN_00abfff0,zlib_inflate_trees_fixed_copy2,"fills 144 x 8, 112 x 9 length tables on first call (fixed_built pattern)"
+00ac0150,FUN_00ac0150,zlib_huft_free_copy2,walks the allocated huft list and frees each chunk
+00ac0190,FUN_00ac0190,zlib_inflate_codes_new_copy2,similarity 0.85 to inflate_codes_new
+00ac01d0,FUN_00ac01d0,zlib_inflate_codes_copy2,"1,894 bytes; literal/length/distance decode"
+00ac0960,FUN_00ac0960,zlib_inflate_codes_free_copy2,similarity 0.88 to inflate_codes_free
+00ac0980,FUN_00ac0980,zlib_inflate_flush_copy2,similarity 0.74 to inflate_flush
+00ac8360,FUN_00ac8360,zlib_inflate_fast_copy2,similarity 0.48 to inflate_fast (different codegen)
+00b2c827,FUN_00b2c827,zlib_putShortMSB,writes a 16-bit value MSB first into pending_buf
+00b2c849,FUN_00b2c849,zlib_flush_pending,copies pending_buf to next_out and advances counters
+00b2c89d,FUN_00b2c89d,zlib_deflate,"deflate(): INIT_STATE 0x2a / BUSY_STATE 0x71 / FINISH_STATE 0x29a; ""stream error""/""buffer error"""
+00b2cac8,FUN_00b2cac8,zlib_deflateEnd,"checks the three valid states then frees pending_buf, head, prev, window and the state"
+00b2cb54,FUN_00b2cb54,zlib_deflateCopy,copies a 0x16b8-byte deflate state and its buffers
+00b2cce5,FUN_00b2cce5,zlib_read_buf,copies input and updates adler32
+00b2cd42,FUN_00b2cd42,zlib_lm_init,"window_size = 2*w_size, clears the hash head table"
+00b2cdc7,FUN_00b2cdc7,zlib_longest_match,MAX_MATCH 258 (0x102) and MIN_LOOKAHEAD 262 (0x106)
+00b2cf11,FUN_00b2cf11,zlib_fill_window,slides the window and refills from input
+00b2d069,FUN_00b2d069,zlib_deflate_stored,stored blocks capped at 0xffff bytes
+00b2d7a2,FUN_00b2d7a2,zlib_deflateReset,clears counters and sets state 0x2a (or 0x71 with the wrap flag)
+00b2d811,FUN_00b2d811,zlib_deflateParams,level 0..9 and strategy 0..2 checks; config table of 12-byte entries at 0xd8e070
+00b2d8c2,FUN_00b2d8c2,zlib_deflateInit2_,"version string ""1.1.4"" check, stream_size 0x38, allocates a 0x16b8-byte state and window/prev/head/pending buffers"
+00ac77c0,FUN_00ac77c0,zlib_putShortMSB_copy2,"counterpart of zlib_putShortMSB in the second zlib copy, body similarity 0.58"
+00ac77f0,FUN_00ac77f0,zlib_flush_pending_copy2,"counterpart of zlib_flush_pending in the second zlib copy, body similarity 0.80"
+00ac7510,FUN_00ac7510,zlib_deflate_copy2,"counterpart of zlib_deflate in the second zlib copy, body similarity 0.69"
+00ac7c10,FUN_00ac7c10,zlib_read_buf_copy2,"counterpart of zlib_read_buf in the second zlib copy, body similarity 0.51"
+00ac7930,FUN_00ac7930,zlib_lm_init_copy2,"counterpart of zlib_lm_init in the second zlib copy, body similarity 0.63"
+00ac7ee0,FUN_00ac7ee0,zlib_longest_match_copy2,"counterpart of zlib_longest_match in the second zlib copy, body similarity 0.56"
+00ac7ae0,FUN_00ac7ae0,zlib_fill_window_copy2,"counterpart of zlib_fill_window in the second zlib copy, body similarity 0.53"
+00ac73c0,FUN_00ac73c0,zlib_deflateReset_copy2,"counterpart of zlib_deflateReset in the second zlib copy, body similarity 0.55"
+00ac70d0,FUN_00ac70d0,zlib_deflateInit2__copy2,"counterpart of zlib_deflateInit2_ in the second zlib copy, body similarity 0.62"
