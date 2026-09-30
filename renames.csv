@@ -1,0 +1,17 @@
+address,old_name,new_name,evidence
+00c0a980,FUN_00c0a980,CLHSegmentReader_Constructor,sets vtable and builds the segment map; class named by ".\CLHSegmentReader.cpp" assert
+00c0a780,FUN_00c0a780,CLHSegmentReader_Destructor,calls Clear then destroys the map
+00c0a3e0,FUN_00c0a3e0,CLHSegmentReader_Clear,frees every directory entry in the map
+00c0a700,FUN_00c0a700,CLHSegmentReader_HasSegment,map lookup by segment name
+00c0a720,FUN_00c0a720,CLHSegmentReader_GetSegmentOffsetAndSize,returns entry+0x14 (offset) and entry+0x18 (size)
+00c0a750,FUN_00c0a750,CLHSegmentReader_GetCachedSegmentStream,returns the cached stream at entry+0x24 or null
+00c0a7d0,FUN_00c0a7d0,CLHSegmentReader_CacheSegment,allocates a memory stream of the segment size; EMEM assert at CLHSegmentReader.cpp line 0x81
+00c0ab70,FUN_00c0ab70,CLHSegmentEntry_Constructor,zeroes offset/size and inits the name string
+00c0abc0,FUN_00c0abc0,CLHSegmentEntry_Destructor,frees cached stream and name
+00be6380,FUN_00be6380,LH_Archive_InitForLoading,stores stream and sets mode field (+4) to 0; LH_Archive_IsLoading tests +4 == 0
+00be6560,FUN_00be6560,LH_Archive_Transfer,dispatches to a reader or writer through the vtable depending on the mode
+00be6590,FUN_00be6590,LH_Archive_TransferU32,thin wrapper over LH_Archive_Transfer used for counts and ids
+00bbfe60,FUN_00bbfe60,LH_Archive_SerializeString,u32 length then bytes; EMEM assert at PKStringsCString.cpp line 0x31d
+00bbea70,FUN_00bbea70,PKString_GetLength,strlen with "Null c" assert at PKStringsCString.cpp line 0x306
+00bd4d30,FUN_00bd4d30,LH_Archive_SerializeU32Array,count then each element; used for the criteria sample id list
+00c03440,FUN_00c03440,LH_Archive_SerializeCriteriaSampleIds,thunk to LH_Archive_SerializeU32Array
