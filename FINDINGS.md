@@ -289,6 +289,22 @@ The binary statically links **libogg (1.1-era)** and parts of **libvorbis 1.0.1 
 
 **Other find.** `00bba8c0` (`CodecFormat_DetectFromHeader`) sniffs the first 4 bytes of an audio file to choose a codec: `"OggS"` selects Ogg, `"RIFF"` selects MPEG-2 Layer II (fmt tag `0x50`) or Xbox ADPCM (`0x69`), and `0x75b22630` selects WMA.
 
+## Naming the rest of the shared library window
+
+The window `0x00bc0000`-`0x00c9a000` (4,852 functions) is now mostly labelled: **1,867 names in `renames.csv`** cover everything named this session, and `library_map.csv` lists every function in the window with its size, current name, source-file bracket, structural category and Fable hint. `tools/library_map.py` regenerates it. About 2,880 functions in the window still have `FUN_` names (about 550 of them 200 bytes or larger). Of those, about 800 have a Fable hint I have not adopted.
+
+**How the names were made, from most to least reliable**
+1. **Source-file assertions.** The library logs `.\File.cpp(line) : message` through a stack-built message. Each such function names its own class and often its purpose (`PKCSemaphore`, `PKDiskBufferingCReader`, `PKContainersCRedBlackTree`, `PKDataReadCWindow`, `PKStringsCHeapString`, `PKAllocatorsCPooledMemory`/`CPresizedMemory`, `LLACodaCChannel`/`COneShot`/`CStreamed`/`CSystem`, `CFrame`, `CInstance`, `CASyncDecoder`, `OggVorbisLibWrapper`, `MapAnalysisImp*`, `RiffCInfo`, `CSFXTimeline`). I read about 110 of these and named them `Class_Method`, with the evidence (file, line, message) in the CSV. Header assertions from `d:\rh\audio\ver06_movies2\libpk\` (`PKCAutoDelete.h`, `PKCAutoDeleteMe.h`, `PKCAutoDeleteArray.h`, `PKCArray.h`, `PKAllocatorsLinkTime.h`, `PKAllocatorsRunTime.h`, `PKCMailbox.h`) name 84 more template instantiations by header line (`Get`, `Release`, `Set`, `Resize`, `At`, `Free`, `Allocate`, `Receive`).
+2. **The red-black tree.** `PKContainersCRedBlackTree` is complete (`Insert`, `Remove`, `LeftRotate`, `Find`, `FindFirst`, `GetMin/MaxObject`, `NextNode`, `PrevNode`, `GetSuccessor/Predecessor`, `Count`, `ForEach`, constructor and destructors). Its nodes are `{left, right, parent, ..., object at +0x10}` and it is used by the segment reader, the disk reader and the map-analysis classes.
+3. **Win32 and OpenAL wrappers.** 44 single-call wrappers are named by the API they call (`Wrap_CloseHandle_...`), and 33 lazy OpenAL loaders by the AL function they resolve (`OpenALContext_alSourcePlay_...`).
+4. **Compiler-generated patterns.** 388 scalar deleting destructors, 289 destructors called only from those, 314 constructors (stores its final vtable and returns `this`) and 92 vtable setters. Functions with the same vtable address belong to one class, which the names show (`Ctor_vt00d9fb18_...`).
+5. **STL and array templates.** `LH_Array_*` (get/set/reserve/free/truncate), and the MSVC 7.1 sort internals `LH_Sort_Med3`, `PushHeap`, `AdjustHeap`, `UnguardedPartition`, `InsertionSort` and comparators (75 functions). 
+6. **Small maths and bit utilities** where the body is a few lines, such as `Util_PopCount`, `Util_BitLength`, `Util_CeilLog2` and `Math_Vector3Length`.
+
+**One correction to Fable's hints.** Fable calls four x87 functions `Pow2_Float`. They multiply the exponent by 3.321928 (log2 of 10) before `fscale`/`f2xm1`, so they compute 10^x. They are named `Math_Pow10_x87*`.
+
+**What the bracket column shows.** Template instantiations from many source files are interleaved, so most functions can only be placed "between file A and file B". The largest unnamed blocks: after `MapAnalysisImpCGroupModel` (about 400), between `PKCTimerManager` and `PKDiskBufferingCReader` (about 380), and between `PKAllocatorsCPooledMemory` and `CVSTParameters` (about 250). The game's own audio engine (`LHAudioSystem_*`, `CEngine`, event triggers, atmosphere groups, the sound driver classes) is in the 0x00bf3000-0x00c02000 and 0x00bc0000-0x00bc9000 ranges. I named seven creator and predicate functions there and left the rest, because that code is Movies-specific and each function needs its own read.
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
 - `.pak` entry layout (name/hash, offset, size, compression) and how a lookup by path finds an entry; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.

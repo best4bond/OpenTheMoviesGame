@@ -1855,3 +1855,13 @@ address,old_name,new_name,evidence
 00bc7680,FUN_00bc7680,LHAudio_CompareEventsByPriority,compares a float value (helper at +0xac) then the id at +0x40; used as the sort comparator; asserts ret != 0 at the end
 00bcbdd0,FUN_00bcbdd0,LHAudio_RemoveEventTriggersMatching,"asserts eventTrigger != NULL; copies the array, calls virtual slot 2 as a predicate on each and removes and deletes matches"
 00bcbf30,FUN_00bcbf30,LHAudio_RemoveDebugInfoMatching,"asserts debugInfo != NULL; same pattern over the debug-info list at +0x18, freeing the string member"
+00bf1c20,FUN_00bf1c20,Math_Vector3Length,sqrt(x*x + y*y + z*z) of three floats
+00c10af0,FUN_00c10af0,Math_Pow10_x87,"fscale/f2xm1 evaluating 2^(x*3.321928) = 10^x (3.321928 = log2(10)); Fable's hint called it Pow2, the constant shows it is 10^x"
+00c11ab0,FUN_00c11ab0,Math_Pow10_x87_b,"same x87 sequence, second copy"
+00c62a50,FUN_00c62a50,Math_Pow10_x87_c,"same, third copy"
+00c69120,FUN_00c69120,Math_Pow10_x87_d,"same, fourth copy"
+00c7f090,FUN_00c7f090,Util_PopCount,loop shifting right and accumulating (v & 1)
+00c7f080,FUN_00c7f080,Util_BitLength,number of shifts until zero (index of the highest set bit + 1)
+00c809a0,FUN_00c809a0,Util_BitLength_b,"same loop, second copy"
+00c7de30,FUN_00c7de30,Util_CeilLog2,"number of shifts of (v - 1) until zero, 0 for v == 0"
+00c809b0,FUN_00c809b0,Util_CeilLog2_b,"same, second copy"
