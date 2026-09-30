@@ -8292,8 +8292,8 @@ void __thiscall FUN_00bb8f80(void *this,int *param_1)
     FUN_00bc1d00(*(void **)((int)this + 0x78),(int)param_1);
   }
   FUN_00bc3a00(*(void **)((int)this + 0x48),(int)param_1);
-  FUN_00bcbf30((void *)((int)this + 0x4c),param_1);
-  FUN_00bcbdd0((void *)((int)this + 0x4c),param_1);
+  LHAudio_RemoveDebugInfoMatching((void *)((int)this + 0x4c),param_1);
+  LHAudio_RemoveEventTriggersMatching((void *)((int)this + 0x4c),param_1);
   if (param_1 != (int *)0x0) {
     (**(code **)(*param_1 + 0x10))(1);
   }
@@ -14026,9 +14026,9 @@ void __thiscall FUN_00bc02a0(void *this,void *param_1)
 }
 
 
-//// FUNCTION FUN_00bc02f0 @ 00bc02f0 ////
+//// FUNCTION LHAudioSystem_CreateResource @ 00bc02f0 ////
 
-undefined4 * FUN_00bc02f0(int *param_1)
+undefined4 * LHAudioSystem_CreateResource(int *param_1)
 
 {
   undefined4 *this;
@@ -14061,9 +14061,9 @@ undefined4 * FUN_00bc02f0(int *param_1)
 }
 
 
-//// FUNCTION FUN_00bc0370 @ 00bc0370 ////
+//// FUNCTION LHAudioSystem_CreateAtmosGroup @ 00bc0370 ////
 
-undefined4 * __thiscall FUN_00bc0370(void *this,undefined4 param_1)
+undefined4 * __thiscall LHAudioSystem_CreateAtmosGroup(void *this,undefined4 param_1)
 
 {
   undefined4 *this_00;
@@ -14096,9 +14096,9 @@ undefined4 * __thiscall FUN_00bc0370(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00bc0400 @ 00bc0400 ////
+//// FUNCTION LHAudioSystem_CreateResource2 @ 00bc0400 ////
 
-undefined4 * FUN_00bc0400(int *param_1)
+undefined4 * LHAudioSystem_CreateResource2(int *param_1)
 
 {
   undefined4 *this;
@@ -14131,9 +14131,9 @@ undefined4 * FUN_00bc0400(int *param_1)
 }
 
 
-//// FUNCTION FUN_00bc0480 @ 00bc0480 ////
+//// FUNCTION LHAudioSystem_CreateDriver @ 00bc0480 ////
 
-undefined4 * FUN_00bc0480(undefined4 *param_1)
+undefined4 * LHAudioSystem_CreateDriver(undefined4 *param_1)
 
 {
   undefined4 *this;

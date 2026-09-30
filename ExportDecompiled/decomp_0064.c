@@ -130,9 +130,9 @@ void __fastcall FUN_00c057e0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c05810 @ 00c05810 ////
+//// FUNCTION PKCAutoDelete_Set_00c05810 @ 00c05810 ////
 
-void __thiscall FUN_00c05810(void *this,int param_1)
+void __thiscall PKCAutoDelete_Set_00c05810(void *this,int param_1)
 
 {
   LPCSTR pCVar1;
@@ -205,9 +205,9 @@ undefined4 * __fastcall FUN_00c05990(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c059a0 @ 00c059a0 ////
+//// FUNCTION PKCAutoDelete_Get_00c059a0 @ 00c059a0 ////
 
-int __fastcall FUN_00c059a0(int *param_1)
+int __fastcall PKCAutoDelete_Get_00c059a0(int *param_1)
 
 {
   LPCSTR pCVar1;
@@ -242,9 +242,9 @@ int __fastcall FUN_00c059a0(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c05a70 @ 00c05a70 ////
+//// FUNCTION PKCAutoDelete_Release_00c05a70 @ 00c05a70 ////
 
-int __fastcall FUN_00c05a70(int *param_1)
+int __fastcall PKCAutoDelete_Release_00c05a70(int *param_1)
 
 {
   int iVar1;
@@ -282,9 +282,9 @@ int __fastcall FUN_00c05a70(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c05b40 @ 00c05b40 ////
+//// FUNCTION PKCAutoDelete_Get_00c05b40 @ 00c05b40 ////
 
-int __fastcall FUN_00c05b40(int *param_1)
+int __fastcall PKCAutoDelete_Get_00c05b40(int *param_1)
 
 {
   LPCSTR pCVar1;
@@ -319,9 +319,9 @@ int __fastcall FUN_00c05b40(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c05c10 @ 00c05c10 ////
+//// FUNCTION PKCAutoDelete_Release_00c05c10 @ 00c05c10 ////
 
-int __fastcall FUN_00c05c10(int *param_1)
+int __fastcall PKCAutoDelete_Release_00c05c10(int *param_1)
 
 {
   int iVar1;
@@ -359,9 +359,9 @@ int __fastcall FUN_00c05c10(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c05ce0 @ 00c05ce0 ////
+//// FUNCTION PKCAutoDelete_Get_00c05ce0 @ 00c05ce0 ////
 
-int __fastcall FUN_00c05ce0(int *param_1)
+int __fastcall PKCAutoDelete_Get_00c05ce0(int *param_1)
 
 {
   LPCSTR pCVar1;
@@ -396,9 +396,9 @@ int __fastcall FUN_00c05ce0(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c05db0 @ 00c05db0 ////
+//// FUNCTION PKCAutoDelete_Release_00c05db0 @ 00c05db0 ////
 
-int __fastcall FUN_00c05db0(int *param_1)
+int __fastcall PKCAutoDelete_Release_00c05db0(int *param_1)
 
 {
   int iVar1;
@@ -475,7 +475,7 @@ uint __thiscall FUN_00c05e80(void *this,int param_1)
           iVar4 = FUN_00c1cce0(puVar3);
         }
         local_4 = 0xffffffff;
-        FUN_00c05810(this,iVar4);
+        PKCAutoDelete_Set_00c05810(this,iVar4);
         uVar5 = FUN_00c05340(param_1,*(void **)this);
         ExceptionList = local_c;
         return uVar5;
@@ -548,7 +548,7 @@ uint __thiscall LH_SerializeResourceHeaderArray(void *this,int param_1)
         }
         local_4 = 1;
         local_10 = puVar4;
-        pvVar5 = (void *)FUN_00c059a0((int *)&local_10);
+        pvVar5 = (void *)PKCAutoDelete_Get_00c059a0((int *)&local_10);
         uVar3 = FUN_00c056f0(param_1,pvVar5);
         if ((char)uVar3 == '\0') {
           local_4 = 0xffffffff;
@@ -559,7 +559,7 @@ uint __thiscall LH_SerializeResourceHeaderArray(void *this,int param_1)
           }
           goto LAB_00c0600f;
         }
-        iVar2 = FUN_00c05a70((int *)&local_10);
+        iVar2 = PKCAutoDelete_Release_00c05a70((int *)&local_10);
         puVar6 = (undefined4 *)FUN_00c02170(this,iVar2);
         puVar4 = local_10;
         local_14 = local_14 - 1;
@@ -650,7 +650,7 @@ uint __thiscall LH_SerializeDriverArray(void *this,int param_1)
         }
         local_4 = 1;
         local_10 = puVar4;
-        pvVar5 = (void *)FUN_00c05b40((int *)&local_10);
+        pvVar5 = (void *)PKCAutoDelete_Get_00c05b40((int *)&local_10);
         uVar3 = FUN_00c05700(param_1,pvVar5);
         if ((char)uVar3 == '\0') {
           local_4 = 0xffffffff;
@@ -661,7 +661,7 @@ uint __thiscall LH_SerializeDriverArray(void *this,int param_1)
           }
           goto LAB_00c061df;
         }
-        iVar2 = FUN_00c05c10((int *)&local_10);
+        iVar2 = PKCAutoDelete_Release_00c05c10((int *)&local_10);
         puVar6 = (undefined2 *)FUN_00c021e0(this,iVar2);
         puVar4 = local_10;
         local_14 = local_14 - 1;
@@ -752,7 +752,7 @@ uint __thiscall LH_SerializeRLMParamArray(void *this,uint param_1)
         }
         local_4 = 1;
         local_10 = puVar4;
-        piVar5 = (int *)FUN_00c05ce0((int *)&local_10);
+        piVar5 = (int *)PKCAutoDelete_Get_00c05ce0((int *)&local_10);
         uVar3 = FUN_00c37390(param_1,piVar5);
         if ((char)uVar3 == '\0') {
           local_4 = 0xffffffff;
@@ -763,7 +763,7 @@ uint __thiscall LH_SerializeRLMParamArray(void *this,uint param_1)
           }
           goto LAB_00c063af;
         }
-        iVar2 = FUN_00c05db0((int *)&local_10);
+        iVar2 = PKCAutoDelete_Release_00c05db0((int *)&local_10);
         puVar6 = (undefined4 *)FUN_00c02250(this,iVar2);
         puVar4 = local_10;
         local_14 = local_14 - 1;
@@ -1391,9 +1391,9 @@ void __fastcall FUN_00c06c90(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c06cc0 @ 00c06cc0 ////
+//// FUNCTION PKCAutoDelete_Get_00c06cc0 @ 00c06cc0 ////
 
-int __fastcall FUN_00c06cc0(int *param_1)
+int __fastcall PKCAutoDelete_Get_00c06cc0(int *param_1)
 
 {
   LPCSTR pCVar1;
@@ -1428,9 +1428,9 @@ int __fastcall FUN_00c06cc0(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c06d90 @ 00c06d90 ////
+//// FUNCTION PKCAutoDelete_Release_00c06d90 @ 00c06d90 ////
 
-int __fastcall FUN_00c06d90(int *param_1)
+int __fastcall PKCAutoDelete_Release_00c06d90(int *param_1)
 
 {
   int iVar1;
@@ -1584,7 +1584,7 @@ uint __thiscall FUN_00c06f50(void *this,int param_1)
         }
         local_4 = 1;
         local_10 = puVar4;
-        pvVar5 = (void *)FUN_00c06cc0((int *)&local_10);
+        pvVar5 = (void *)PKCAutoDelete_Get_00c06cc0((int *)&local_10);
         uVar3 = FUN_00c06780(param_1,pvVar5);
         if ((char)uVar3 == '\0') {
           local_4 = 0xffffffff;
@@ -1595,7 +1595,7 @@ uint __thiscall FUN_00c06f50(void *this,int param_1)
           }
           goto LAB_00c06faf;
         }
-        iVar2 = FUN_00c06d90((int *)&local_10);
+        iVar2 = PKCAutoDelete_Release_00c06d90((int *)&local_10);
         puVar6 = (undefined4 *)FUN_00c06e60(this,iVar2);
         puVar4 = local_10;
         local_14 = local_14 - 1;
@@ -1923,9 +1923,9 @@ void __fastcall FUN_00c07450(int param_1)
 }
 
 
-//// FUNCTION FUN_00c074a0 @ 00c074a0 ////
+//// FUNCTION PKCAutoDelete_Get_00c074a0 @ 00c074a0 ////
 
-int __fastcall FUN_00c074a0(int *param_1)
+int __fastcall PKCAutoDelete_Get_00c074a0(int *param_1)
 
 {
   LPCSTR pCVar1;
@@ -2041,7 +2041,7 @@ uint __thiscall FUN_00c075f0(void *this,int param_1)
           }
           local_4 = 0;
           local_10 = pvVar5;
-          FUN_00c074a0((int *)&local_10);
+          PKCAutoDelete_Get_00c074a0((int *)&local_10);
           uVar3 = FUN_00c07360(param_1);
           if ((char)uVar3 == '\0') {
             if (pvVar5 != (void *)0x0) {
@@ -2050,7 +2050,7 @@ uint __thiscall FUN_00c075f0(void *this,int param_1)
             }
             goto LAB_00c0764f;
           }
-          iVar2 = FUN_00bd44f0((int *)&local_10);
+          iVar2 = PKCAutoDelete_Release_00bd44f0((int *)&local_10);
           FUN_00bd4b30(this,iVar2);
           local_14 = local_14 - 1;
           local_4 = 0xffffffff;
@@ -2480,7 +2480,7 @@ void __thiscall PKDiskBufferingCReader_AddAsyncRange(void *this,undefined4 *para
     *(undefined4 *)((int)this + 0x1c) = 0;
   }
   FUN_00bcff70((void *)((int)this + 0x24),(int *)((int)this + 0x20),(int)param_1);
-  FUN_00c0a0e0((void *)((int)this + 0x5c),param_1);
+  PKAllocatorsLinkTime_Free_00c0a0e0((void *)((int)this + 0x5c),param_1);
   ExceptionList = local_c;
   return;
 }
@@ -2817,7 +2817,7 @@ uint __thiscall PKDiskBufferingCReader_QueueRange(void *this,int *param_1,undefi
   piVar1[1] = param_1[1];
   uVar3 = FUN_00bc0060(*(void **)this,*param_1,param_1[1],param_2,piVar1,(int)this + 0x88);
   if ((char)uVar3 == '\0') {
-    uVar4 = FUN_00c0a0e0((uint *)((int)this + 0x5c),piVar1);
+    uVar4 = PKAllocatorsLinkTime_Free_00c0a0e0((uint *)((int)this + 0x5c),piVar1);
   }
   else {
     uVar4 = FUN_00bcfac0((void *)((int)this + 0x24),(int *)((int)this + 0x20),(int)piVar1);
@@ -4124,9 +4124,9 @@ uint __thiscall FUN_00c0a060(void *this,uint param_1)
 }
 
 
-//// FUNCTION FUN_00c0a0e0 @ 00c0a0e0 ////
+//// FUNCTION PKAllocatorsLinkTime_Free_00c0a0e0 @ 00c0a0e0 ////
 
-void __thiscall FUN_00c0a0e0(void *this,undefined4 *param_1)
+void __thiscall PKAllocatorsLinkTime_Free_00c0a0e0(void *this,undefined4 *param_1)
 
 {
   LPCSTR pCVar1;
@@ -4434,7 +4434,7 @@ int __thiscall CLHSegmentReader_GetCachedSegmentStream(void *this,undefined4 par
   
   iVar1 = RedBlackTree_Find((void *)((int)this + 4),this,param_1,param_1);
   if ((iVar1 != 0) && (*(int *)(iVar1 + 0x24) != 0)) {
-    iVar1 = FUN_00c0ac90((int *)(iVar1 + 0x24));
+    iVar1 = PKCAutoDelete_Get_00c0ac90((int *)(iVar1 + 0x24));
     return iVar1;
   }
   return 0;
@@ -4496,7 +4496,7 @@ undefined4 __thiscall CLHSegmentReader_CacheSegment(void *this,int *param_1,unde
   }
   this_00 = (int *)(iVar1 + 0x24);
   if (*(int *)(iVar1 + 0x24) != 0) {
-    puVar2 = (undefined4 *)FUN_00c0ad60(this_00);
+    puVar2 = (undefined4 *)PKCAutoDelete_Release_00c0ad60(this_00);
     if (puVar2 != (undefined4 *)0x0) {
       (**(code **)*puVar2)(1);
     }
@@ -4510,7 +4510,7 @@ undefined4 __thiscall CLHSegmentReader_CacheSegment(void *this,int *param_1,unde
     puVar2 = Ctor_vt00d9e4b0_00bc12f0(pvStack_114,*(uint *)(iVar1 + 0x18));
   }
   uStack_4 = 0xffffffff;
-  FUN_00c0ae30(this_00,(int)puVar2);
+  PKCAutoDelete_Set_00c0ae30(this_00,(int)puVar2);
   if (*this_00 == 0) {
     ppuStack_110 = &PTR_LAB_00d9db7c;
     uStack_10c = 0;
@@ -4537,7 +4537,7 @@ undefined4 __thiscall CLHSegmentReader_CacheSegment(void *this,int *param_1,unde
   uVar5 = (**(code **)(*param_1 + 4))
                     (iVar4,*(undefined4 *)(iVar1 + 0x14),*(undefined4 *)(iVar1 + 0x18));
   if ((char)uVar5 == '\0') {
-    puVar2 = (undefined4 *)FUN_00c0ad60(this_00);
+    puVar2 = (undefined4 *)PKCAutoDelete_Release_00c0ad60(this_00);
     uVar6 = 0;
     if (puVar2 != (undefined4 *)0x0) {
       uVar6 = (**(code **)*puVar2)(1);
@@ -4701,9 +4701,9 @@ undefined4 * __thiscall ScalarDeletingDtor_00c0ac70(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c0ac90 @ 00c0ac90 ////
+//// FUNCTION PKCAutoDelete_Get_00c0ac90 @ 00c0ac90 ////
 
-int __fastcall FUN_00c0ac90(int *param_1)
+int __fastcall PKCAutoDelete_Get_00c0ac90(int *param_1)
 
 {
   LPCSTR pCVar1;
@@ -4738,9 +4738,9 @@ int __fastcall FUN_00c0ac90(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c0ad60 @ 00c0ad60 ////
+//// FUNCTION PKCAutoDelete_Release_00c0ad60 @ 00c0ad60 ////
 
-int __fastcall FUN_00c0ad60(int *param_1)
+int __fastcall PKCAutoDelete_Release_00c0ad60(int *param_1)
 
 {
   int iVar1;
@@ -4778,9 +4778,9 @@ int __fastcall FUN_00c0ad60(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c0ae30 @ 00c0ae30 ////
+//// FUNCTION PKCAutoDelete_Set_00c0ae30 @ 00c0ae30 ////
 
-void __thiscall FUN_00c0ae30(void *this,int param_1)
+void __thiscall PKCAutoDelete_Set_00c0ae30(void *this,int param_1)
 
 {
   LPCSTR pCVar1;
@@ -5110,7 +5110,7 @@ uint __thiscall FUN_00c0b3f0(void *this,void *param_1)
   *(undefined4 *)((int)this + 0x10) = uVar2;
   *(uint *)((int)this + 0x14) = uVar7;
   pvVar3 = operator_new(uVar7);
-  FUN_00c0c7e0(this,(int)pvVar3,uVar7);
+  PKCAutoDeleteArray_Set_00c0c7e0(this,(int)pvVar3,uVar7);
   iVar4 = FUN_00bbc590(this,0);
   uVar2 = FUN_00be5a10(param_1,0,uVar1,iVar4);
   if ((char)uVar2 == '\0') {
@@ -5545,7 +5545,7 @@ LAB_00c0bc6b:
     local_34 = uVar3;
     local_c = CONCAT31(local_c._1_3_,1);
     local_38 = _Memory;
-    iVar2 = FUN_00c0cba0(&local_38,0);
+    iVar2 = PKCAutoDeleteArray_At_00c0cba0(&local_38,0);
     uVar3 = LH_ReadFileData(local_30,iVar2,local_44 * 0x18);
     if ((char)uVar3 == '\0') {
       if (_Memory != (void *)0x0) {
@@ -5557,8 +5557,8 @@ LAB_00c0bc6b:
     uVar3 = 0;
     if (local_44 != 0) {
       do {
-        puVar4 = (undefined4 *)FUN_00c0cba0(&local_38,uVar3);
-        local_3c = FUN_00c0cba0(&local_38,uVar3);
+        puVar4 = (undefined4 *)PKCAutoDeleteArray_At_00c0cba0(&local_38,uVar3);
+        local_3c = PKCAutoDeleteArray_At_00c0cba0(&local_38,uVar3);
         puVar4 = RiffCInfo_GetOrCreateChunk(local_40,*puVar4);
         puVar4[1] = *(undefined4 *)(local_3c + 0x14);
         uVar3 = uVar3 + 1;
@@ -5824,7 +5824,7 @@ int __fastcall FUN_00c0c140(int *param_1,byte param_2)
     ExceptionList = local_c;
     return 0;
   }
-  iVar3 = FUN_00c0cab0((int *)&local_10);
+  iVar3 = PKCAutoDelete_Release_00c0cab0((int *)&local_10);
   piVar1 = local_10;
   local_4 = 0xffffffff;
   if (local_10 != (int *)0x0) {
@@ -6146,9 +6146,9 @@ void * __thiscall ScalarDeletingDtor_00c0c7c0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c0c7e0 @ 00c0c7e0 ////
+//// FUNCTION PKCAutoDeleteArray_Set_00c0c7e0 @ 00c0c7e0 ////
 
-void __thiscall FUN_00c0c7e0(void *this,int param_1,int param_2)
+void __thiscall PKCAutoDeleteArray_Set_00c0c7e0(void *this,int param_1,int param_2)
 
 {
   LPCSTR pCVar1;
@@ -6230,9 +6230,9 @@ undefined4 * __thiscall ScalarDeletingDtor_00c0ca90(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c0cab0 @ 00c0cab0 ////
+//// FUNCTION PKCAutoDelete_Release_00c0cab0 @ 00c0cab0 ////
 
-int __fastcall FUN_00c0cab0(int *param_1)
+int __fastcall PKCAutoDelete_Release_00c0cab0(int *param_1)
 
 {
   int iVar1;
@@ -6270,9 +6270,9 @@ int __fastcall FUN_00c0cab0(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c0cba0 @ 00c0cba0 ////
+//// FUNCTION PKCAutoDeleteArray_At_00c0cba0 @ 00c0cba0 ////
 
-int __thiscall FUN_00c0cba0(void *this,uint param_1)
+int __thiscall PKCAutoDeleteArray_At_00c0cba0(void *this,uint param_1)
 
 {
   LPCSTR pCVar1;
@@ -6524,9 +6524,9 @@ undefined4 * __thiscall ScalarDeletingDtor_00c0d070(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c0d090 @ 00c0d090 ////
+//// FUNCTION LH_Sort_UnguardedPartition_00c0d090 @ 00c0d090 ////
 
-void __fastcall FUN_00c0d090(undefined4 *param_1,int *param_2,int *param_3,undefined4 param_4)
+void __fastcall LH_Sort_UnguardedPartition_00c0d090(undefined4 *param_1,int *param_2,int *param_3,undefined4 param_4)
 
 {
   int *piVar1;
@@ -6696,9 +6696,9 @@ LAB_00c0d21a:
 }
 
 
-//// FUNCTION FUN_00c0d370 @ 00c0d370 ////
+//// FUNCTION LH_Sort_InsertionSort_00c0d370 @ 00c0d370 ////
 
-void __fastcall FUN_00c0d370(int *param_1,int *param_2)
+void __fastcall LH_Sort_InsertionSort_00c0d370(int *param_1,int *param_2)
 
 {
   int iVar1;
@@ -6821,7 +6821,7 @@ void __fastcall FUN_00c0d560(int *param_1,int *param_2,int param_3,undefined4 pa
     if (iVar2 < 0x21) {
 LAB_00c0d5f3:
       if (1 < iVar2) {
-        FUN_00c0d370(param_1,param_2);
+        LH_Sort_InsertionSort_00c0d370(param_1,param_2);
       }
       return;
     }
@@ -6835,7 +6835,7 @@ LAB_00c0d5f3:
       }
       goto LAB_00c0d5f3;
     }
-    FUN_00c0d090(&local_8,param_1,param_2,param_4);
+    LH_Sort_UnguardedPartition_00c0d090(&local_8,param_1,param_2,param_4);
     piVar1 = local_4;
     param_3 = param_3 / 2 + (param_3 / 2) / 2;
     if ((int)((int)local_8 - (int)param_1 & 0xfffffffcU) <
@@ -6984,8 +6984,8 @@ void __thiscall FUN_00c0d860(void *this,undefined4 *param_1)
   
   if (*(int *)((int)this + 0x30) == 0) {
     pvVar1 = operator_new(0x10);
-    FUN_00c0da80((int *)((int)this + 0x30),(int)pvVar1);
-    puVar2 = (undefined4 *)FUN_00c0d9b0((int *)((int)this + 0x30));
+    PKCAutoDelete_Set_00c0da80((int *)((int)this + 0x30),(int)pvVar1);
+    puVar2 = (undefined4 *)PKCAutoDelete_Get_00c0d9b0((int *)((int)this + 0x30));
     *puVar2 = *param_1;
     puVar2[1] = param_1[1];
     puVar2[2] = param_1[2];
@@ -7021,9 +7021,9 @@ void __fastcall FUN_00c0d950(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c0d9b0 @ 00c0d9b0 ////
+//// FUNCTION PKCAutoDelete_Get_00c0d9b0 @ 00c0d9b0 ////
 
-int __fastcall FUN_00c0d9b0(int *param_1)
+int __fastcall PKCAutoDelete_Get_00c0d9b0(int *param_1)
 
 {
   LPCSTR pCVar1;
@@ -7058,9 +7058,9 @@ int __fastcall FUN_00c0d9b0(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c0da80 @ 00c0da80 ////
+//// FUNCTION PKCAutoDelete_Set_00c0da80 @ 00c0da80 ////
 
-void __thiscall FUN_00c0da80(void *this,int param_1)
+void __thiscall PKCAutoDelete_Set_00c0da80(void *this,int param_1)
 
 {
   LPCSTR pCVar1;

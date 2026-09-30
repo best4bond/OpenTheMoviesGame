@@ -9926,21 +9926,21 @@ void * __thiscall FUN_00c37290(void *this,int param_1)
   *(undefined4 *)((int)this + 8) = 0;
   *(undefined4 *)((int)this + 0xc) = 0;
   local_4 = 1;
-  FUN_00c042d0((undefined4 *)((int)this + 8),*(uint *)(param_1 + 0xc));
+  PKCAutoDeleteArray_Resize_00c042d0((undefined4 *)((int)this + 8),*(uint *)(param_1 + 0xc));
   local_14 = 0;
   if (*(int *)(param_1 + 0xc) == 0) {
     ExceptionList = local_c;
     return this;
   }
   do {
-    this_00 = (void *)FUN_00bd4820((void *)(param_1 + 8),local_14);
-    this_01 = (void *)FUN_00bd4820((void *)((int)this + 8),local_14);
-    FUN_00bd45c0(this_01,*(uint *)((int)this_00 + 4));
+    this_00 = (void *)PKCAutoDeleteArray_At_00bd4820((void *)(param_1 + 8),local_14);
+    this_01 = (void *)PKCAutoDeleteArray_At_00bd4820((void *)((int)this + 8),local_14);
+    PKCAutoDeleteArray_Resize_00bd45c0(this_01,*(uint *)((int)this_00 + 4));
     uVar3 = 0;
     if (*(int *)((int)this_00 + 4) != 0) {
       do {
-        puVar1 = (undefined4 *)FUN_00bd4710(this_01,uVar3);
-        puVar2 = (undefined4 *)FUN_00bd4710(this_00,uVar3);
+        puVar1 = (undefined4 *)PKCAutoDeleteArray_At_00bd4710(this_01,uVar3);
+        puVar2 = (undefined4 *)PKCAutoDeleteArray_At_00bd4710(this_00,uVar3);
         *puVar1 = *puVar2;
         uVar3 = uVar3 + 1;
       } while (uVar3 < *(uint *)((int)this_00 + 4));
@@ -10005,7 +10005,7 @@ uint __thiscall FUN_00c373f0(void *this,uint param_1)
 LAB_00c3745f:
       return uVar2 & 0xffffff00;
     }
-    FUN_00c042d0(this,param_1);
+    PKCAutoDeleteArray_Resize_00c042d0(this,param_1);
   }
   else {
     uVar2 = LH_Archive_TransferU32(param_1);
@@ -10015,7 +10015,7 @@ LAB_00c3745f:
   uVar2 = 0;
   if (*(int *)((int)this + 4) != 0) {
     do {
-      pvVar3 = (void *)FUN_00bd4820(this,uVar4);
+      pvVar3 = (void *)PKCAutoDeleteArray_At_00bd4820(this,uVar4);
       uVar2 = FUN_00bd5530(param_1,pvVar3);
       if ((char)uVar2 == '\0') {
         return uVar2 & 0xffffff00;

@@ -9761,7 +9761,7 @@ LAB_00c52a92:
           puVar3 = FUN_00bf7b40((int)this_00);
           puVar4 = FUN_00bf7b10((int)this_00);
           iVar1 = (**(code **)*puVar8)(puVar3,puVar4);
-          FUN_00c535e0(&local_114,iVar1);
+          PKCAutoDeleteMe_Set_00c535e0(&local_114,iVar1);
         }
       }
       piVar9 = (int *)*piVar2;
@@ -10241,9 +10241,9 @@ void * __fastcall FUN_00c53470(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c535e0 @ 00c535e0 ////
+//// FUNCTION PKCAutoDeleteMe_Set_00c535e0 @ 00c535e0 ////
 
-void __thiscall FUN_00c535e0(void *this,int param_1)
+void __thiscall PKCAutoDeleteMe_Set_00c535e0(void *this,int param_1)
 
 {
   LPCSTR pCVar1;
@@ -10990,7 +10990,7 @@ Ctor_vt00dad260_00c54320(void *this,int *param_1,undefined4 param_2,undefined4 p
 void __fastcall FUN_00c54600(int param_1)
 
 {
-  FUN_00c54bf0((LPCRITICAL_SECTION)(param_1 + 0x24));
+  PKCMailbox_Receive_00c54bf0((LPCRITICAL_SECTION)(param_1 + 0x24));
   *(int *)(param_1 + 0x50) = *(int *)(param_1 + 0x50) + 1;
   return;
 }
@@ -11028,7 +11028,7 @@ void __fastcall Dtor_00c54610(undefined4 *param_1)
   local_11c[0] = (LPCRITICAL_SECTION)0x0;
   if (param_1[0x11] != 0) {
     do {
-      puVar1 = (undefined4 *)FUN_00c54bf0((LPCRITICAL_SECTION)(param_1 + 9));
+      puVar1 = (undefined4 *)PKCMailbox_Receive_00c54bf0((LPCRITICAL_SECTION)(param_1 + 9));
       if (puVar1 == (undefined4 *)0x0) {
         ppuStack_110 = &PTR_LAB_00d9db7c;
         uStack_10c = 0;
@@ -11210,9 +11210,9 @@ int __fastcall FUN_00c54be0(int param_1)
 }
 
 
-//// FUNCTION FUN_00c54bf0 @ 00c54bf0 ////
+//// FUNCTION PKCMailbox_Receive_00c54bf0 @ 00c54bf0 ////
 
-undefined4 __fastcall FUN_00c54bf0(LPCRITICAL_SECTION param_1)
+undefined4 __fastcall PKCMailbox_Receive_00c54bf0(LPCRITICAL_SECTION param_1)
 
 {
   int iVar1;
