@@ -141,16 +141,16 @@ Loaded by `LH_LoadLUGAsset` (`00c009c0`, `decomp_0063.c`) on top of the segment 
 |---|---|
 | 0x000 | name string (up to 0x104 bytes) |
 | 0x104 | resource ID. The record is skipped if this is 0 |
-| 0x108 | must equal the ID at 0x104, otherwise the record is skipped (meaning of this field is unknown) |
+| 0x108 | wave ID. Equal to the ID for a real clip. Records where it differs are aliases of another clip, and `LH_ExtractResources` skips them, so each clip is extracted once (Fable's `.lug` notes call these aliases) |
 | 0x10c | uncompressed size |
 | 0x110 | data offset within the wave-data segment (the loader adds the segment base) |
 | 0x124 | wave format tag (word) |
 | 0x126 | channel count (word) |
 | 0x128 | sample rate (dword) |
-| 0x138 | loop start |
-| 0x13c | loop end |
+| 0x138 | loop start (-1 in the Fable files means no loop) |
+| 0x13c | loop end (-1 in the Fable files means no loop) |
 
-The other fields of the record are not decoded. The write side is `LH_BuildLUGAsset` (`00bd34d0`) with matching `LH_Save*` functions.
+The parameter block at `0x240`-`0x27c` is decoded in the next subsection. The write side is `LH_BuildLUGAsset` (`00bd34d0`) with matching `LH_Save*` functions.
 
 ## `.pak` archives
 
@@ -184,7 +184,51 @@ In v4 the three offsets sit at `0x1c`-`0x24`. In v5 and v6 three more dwords com
 
 **Path handling** (`FUN_00ab0060`, `FUN_00ab0150`): paths are lower-cased and cut down to the part after `data\`. A file-type classifier checks the extensions `.msh`, `.pak`, `.cpak`, `.exe`, `.avi`, `.wmv`, `.fnt`. For `.msh` it treats names starting `head_` and `cos_` specially, with `_fat` and `_enh` suffixes (body-size and enhanced variants of costumes). A separate `"%s\%s%s%04d.pak"` format is used when generating numbered pak names.
 
+### Sample record parameter block (`LH_BuildDriverTable`, `00c00660`)
+
+`LH_BuildDriverTable` turns each sample record into a 0x48-byte "driver" object. The record's `+0x244` dword is a flags word that says which optional fields are present. What each field means for playback is my inference from how it is used, not confirmed.
+
+| Record offset | Used as |
+|---|---|
+| 0x104 / 0x108 | driver +4 / +8: id and wave id |
+| 0x118 | two words. The low word goes to driver word 0xb and the high word to driver word 0xa. Fable's docs saw values `0x10000`, `0` and `40000` here |
+| 0x140 | group / category name string, 256 bytes (`"Arena"`, `"Balverine"`, ...). Copied into the driver |
+| 0x240 | dword copied to the driver, default 1 when 0. Fable saw 1, 300 and 1000 here, so it looks like a priority or weight |
+| 0x244 | flags word, see below |
+| 0x248 | dword, used only if flag `0x40` is set |
+| 0x250, 0x254 | words, used if flags `0x4` and `0x8` are set |
+| 0x258 | flag bits 1 and 2, used if flag `0x10` is set. They become driver flags 1 and 2 |
+| 0x25c, 0x25e | word pair forming a range. If both flags `0x20` and `0x1000` are set it is (0x25c, 0x25e). If only one is set that word is used for both ends. If neither, both are 0x7f. The pair is swapped so low <= high |
+| 0x260 | word, used if flag `0x1` is set, otherwise the driver value is 100 |
+| 0x264 | word, always copied |
+| 0x268 | float, used if flag `0x80` is set. Fable's data has values like 3.0 and 5.0, so this is a minimum distance |
+| 0x26c | float, used if flag `0x100` is set. Fable's values are like 25.0 and 35.0, so this is a maximum distance |
+| 0x270, 0x272 | two words, copied to driver words 0 and 1. Fable saw these as percentages up to 140 |
+| 0x274 | with flag `0x400` and a value of 2, clears driver flag 8 (otherwise flag 8 is set) |
+| 0x278 | if non-zero, sets driver flag 4 |
+| 0x27c | dword, default 1 when it is -1. Fable saw values like 4000, 800 and 10000 |
+
+The Fable docs also list this block as unknown. The distance floats and the alias meaning of `0x108` line up with what they observed in real files.
+
+## Comparison with the Fable decomp (`BuffJesus/FableDecomp`)
+
+*Fable: The Lost Chapters* (Lionhead, 2004-05, MSVC 7.1) shares more with our binary than Black & White does, but only in a few places. Their `docs/formats/AUDIO.md` (Part B) documents `.lug` from real files, and I used it to cross-check ours.
+
+**Matches (all confirmed by both sides):**
+- Same container: `"LiOnHeAd"` + blocks of `char[32] name`, `u32 size`, payload. Same segment order: `LHFileSegmentBankInfo`, `LHAudioWaveData`, `LHAudioBankSampleTable`, `LHAudioBankCriteiaInfo` (same typo).
+- Same sample record size, 652 (0x28c) bytes, with the same offsets for id (+260), wave id (+264), RIFF size (+268), RIFF offset (+272), format tag (+292), channels, rate, group name (+320).
+- Their bank-info payload is 0x208 bytes holding the bank title, which fits our loader reading the version dword at 0x208 (their version is 0, as ours expects).
+- Their `LHAudioBankCriteiaInfo` layout is `u32 count`, then per entry `u32 len`, tag string, `u32 n`, `n` sample ids. That fills in the criteria segment we left open. The tags are semicolon-joined event criteria such as `SI_HERO;SE_FOOTSTEP;MATERIAL_GRASS`.
+- The sample-table count is followed by a second u16 in Fable's files, which they could not explain. Our loader masks the 4-byte count read to 16 bits and ignores the upper half.
+- Their audio is embedded RIFF/WAVE, packed back to back and addressed by RIFF offset and size. That matches our `FileSize` field in the resource header, which is the record's offset plus the wave segment base.
+
+**What their notes add:** codec statistics for Fable's banks (Xbox ADPCM `0x0069` for 98.7% of clips, otherwise 16-bit PCM), the tag format above, and the observation that a `.met` sidecar file with build metadata sits next to each bank. Our `LH_LoadMetFile` reads such a file.
+
+**What ours adds for them:** the driver table above answers their open question about the `+576..` parameter block. They marked those fields as hypotheses.
+
+**Other overlap:** none I could use. Fable's `.big` archives and its LZO1X texture compression have no counterpart in our export (no LZO or zlib strings). `CSystem` in Fable is a different class (`CSystemManager`, `CSystemRegistry`). Their save format (`SAVE*.md`) and definition files (`.bin` defs) are Fable-specific, and our save format is the text-based SLVAR one. Their mesh notes are for `.big` mesh banks, which are unrelated to our `.msh`.
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
-- `.pak` entry layout (name/hash, offset, size, compression) and how a lookup by path finds an entry; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
+- Criteria segment fields in our own loader (`FUN_00c03440`) against Fable's layout; `.pak` entry layout (name/hash, offset, size, compression) and how a lookup by path finds an entry; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
 - Details of the older notes (SLVAR type functions, `CSystem`, the RTTI class list) can still be pulled from `git show 9b29b4e:FINDINGS.md`.
