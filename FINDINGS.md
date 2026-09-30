@@ -101,6 +101,25 @@ The first 10 floats of the quantization block (bbox min/max and UV min/max) are 
 
 Other mesh functions: collision hulls (`LH_LoadMeshCollisionHullSet` `00a76060`, `LH_LoadCollisionHullPiece` `00a73d40`), extra polygon data (`LH_LoadAuxPolygonChunk` `009e7270`), and a debug text exporter (`LH_ExportMeshDebugText` `009dc3e0`).
 
+## Comparison with the Black & White decomp (`openblack/bw1-decomp`)
+
+I compared our export against that project's Lionhead library sources (`src/Lionhead/*`) and symbol lists (`config/BW1W120/**/symbols.txt`). Much of that source is empty stubs (`LHAudio`, most of `LH3DLib`), so the comparison mostly rests on `LHFile`, `LHParseFile`, `LH3DMath`, `LHLog` and the symbol names.
+
+**Match found: the segment file container (`LHFile` ↔ our `CLHSegmentReader`).**
+- The magic is the same: `"LiOnHeAd"`, 8 bytes.
+- Segments are the same: a 32-byte name (zero-padded, stored in a 33-byte buffer), a dword size, then the data. B&W's `LHFile::VerifyFile` (`007bd7d0`) reads the name, reads the size, seeks past the data, and repeats until end of file, so it builds a segment directory.
+- Our equivalent is `LH_DecodeSegmentStructure` (`00c0a430`), which checks the header with `LH_VerifyLUGHeader`. It then reads each segment's info with `LH_GetFirstSegmentInfo` (`00c0a370`) and records offset and size in a 0x28-byte node. Its assert path names `.\CLHSegmentReader.cpp`, so it is a rewrite of the same format under a new class name, not the same code.
+- `.lug` audio banks and B&W's segment files therefore share a container. The write side matches too: B&W's `WriteSegmentHeader` (`007bdb20`) is the counterpart of the segment writes in our `LH_BuildLUGAsset` (`00bd34d0`).
+- Suggested renames for our unnamed functions around `00c0a3e0`-`00c0a7d0`: `FUN_00c0a3e0` clears the segment list, and the node constructor `FUN_00c0ab70` builds one directory entry. I read these but did not verify them against the segment code beyond what is quoted here.
+
+**No match found for:**
+- `LHParseFile` (enum-list parser using `bsearch`/`qsort`). Our only `_bsearch` caller uses 100-byte records and is unrelated.
+- `LH3DMath` (an inverse-square-root lookup table built from `(i | 0x1f80) << 17`). Nothing like it is in the export.
+- `LHLog`'s `LHLogger`/`LHVersion`. Our `LH_LogErrorMessage`, `LH_Assert` and `LH_FormatVersionString` look like a small string-builder and assert helper, and the version helper formats a 5-part number. That is unrelated to `LHVersion` (a registry-based version-block checker).
+- `LH3DMesh`. B&W's mesh is an older in-memory format with a 4-byte magic, flags such as UV2, name data, EBone and TnL data, and no version-10 header. It does not correspond to our `.msh` loader.
+
+**Why so little overlap:** B&W was built with MSVC 6, and *The Movies* used a newer compiler, DirectX 9 and a new library layer (the `PK*` containers/strings/disk classes and the `LLA`/`LHA` audio classes). That rules out byte-level matching. Only file formats and clearly named strings carry over. B&W's `symbols.txt` files are still useful for class and method names that show up as strings in our export.
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
 - `.lug`/`.met` audio banks (`LH_LoadLUGAsset` `00c009c0`, magic `"LiOnHeAd"` in `decomp_0064.c`), `.pak`.
