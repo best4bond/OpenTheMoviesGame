@@ -65,7 +65,43 @@ All present in the export: `CStudioAI_CreateGlobalInstance` (`0041f4e0`), `CStud
 
 `CVarSystem_Register_STUBBED` (`005434a0`, `decomp_0011.c`) is a stub in the retail build. Over 100 debug commands (`sbx_*`, `awd_*`, `gnd_*`, `sitt_*`, `ee_*`, `ass_*`) register through it and are inert.
 
+## `.msh` mesh format
+
+Parsed by `LH_LoadMeshBinary` (`009deb10`, `decomp_0045.c`). Details below come from the loaders' own annotations in the export plus a re-read of the code; none were checked against real `.msh` files here.
+
+**File header** (`LH_LoadMeshHeader`, `009dadd0`), 0x24 bytes when the control byte is `0xC2`:
+
+| Offset | Field |
+|---|---|
+| 0x00 | dword FormatVersion. The caller aborts unless it is 10 |
+| 0x04 | NumTextureNames |
+| 0x08 | NumMaterials |
+| 0x0c | NumSubmeshes |
+| 0x10-0x15 | flag bytes. Byte 0x14 folds into mesh flag bits, and the rest is undecoded |
+| 0x16 | control byte. Bits 1, 6 and 7 each say an optional dword follows (at 0x18, 0x1c, 0x20) |
+| 0x17 | read but unused |
+
+The texture-name table follows the header. Per the loader annotation, the optional dwords were 0 in every file checked.
+
+**Materials** (`LH_LoadMeshMaterial`, `009daeb0`): a 0x14-byte on-disk record, or 0x18 bytes when bit 2 of byte 0x0e is set. It has two texture indices (0xFF means none), three flag dwords, and a dword at 0x10 copied straight through (probably a colour or ID). The loader expands each record into a 0x24-byte in-memory entry that holds a "type code". Observed values are 0, 3, 5, 7, 0xB, 0x18 and 0x1B, and the renderer meaning of each is not known. A second texture is only resolved if global `DAT_0105be08` is set.
+
+**Primitive header** (`LH_LoadMeshPrimitiveHeader`, `009dcb40`): a flags byte at +0xc controls what follows.
+- Bit 0x10: three extra dwords follow.
+- Bit 0x20: a 14-float quantization block follows (`LH_LoadVertexQuantizationBounds`, `009dad00`).
+- Bit 0x40: one extra dword follows.
+
+After the header the loader reads `TriangleCount * 6` bytes of indices (three uint16 per triangle, `LH_BuildPrimitiveIndexBuffer`). Then it reads the vertices in one of two layouts, chosen by a flag bit: a compact 16-byte quantized vertex, or a direct 32-byte float vertex (position, normal, UV).
+
+**Vertex dequantization** (`LH_DequantizeVertex`, `00a39e80`): the compact vertex is 8 little-endian uint16 values. With `t = value / 65535`:
+- Position xyz = `lerp(bboxMin, bboxMax, t)`.
+- Normal xyz = `2t - 1`.
+- UV = `lerp(uvMin, uvMax, t)`.
+
+The first 10 floats of the quantization block (bbox min/max and UV min/max) are used, and the last 4 are undecoded.
+
+Other mesh functions: collision hulls (`LH_LoadMeshCollisionHullSet` `00a76060`, `LH_LoadCollisionHullPiece` `00a73d40`), extra polygon data (`LH_LoadAuxPolygonChunk` `009e7270`), and a debug text exporter (`LH_ExportMeshDebugText` `009dc3e0`).
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
-- `.lug`/`.met` audio banks (`LH_LoadLUGAsset` `00c009c0`, magic `"LiOnHeAd"` in `decomp_0064.c`), `.msh`, `.pak`.
+- `.lug`/`.met` audio banks (`LH_LoadLUGAsset` `00c009c0`, magic `"LiOnHeAd"` in `decomp_0064.c`), `.pak`.
 - Details of the older notes (SLVAR type functions, `CSystem`, the RTTI class list) can still be pulled from `git show 9b29b4e:FINDINGS.md`.
