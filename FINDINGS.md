@@ -120,7 +120,39 @@ I compared our export against that project's Lionhead library sources (`src/Lion
 
 **Why so little overlap:** B&W was built with MSVC 6, and *The Movies* used a newer compiler, DirectX 9 and a new library layer (the `PK*` containers/strings/disk classes and the `LLA`/`LHA` audio classes). That rules out byte-level matching. Only file formats and clearly named strings carry over. B&W's `symbols.txt` files are still useful for class and method names that show up as strings in our export.
 
+## `.lug` audio bank format
+
+Loaded by `LH_LoadLUGAsset` (`00c009c0`, `decomp_0063.c`) on top of the segment container (see the Black & White comparison). An auto-detecting entry point, `LH_LoadLUGAsset_AutoDetectFormat` (`00bd2b70`), reads the first segment. If it is not the classic bank-info segment, it takes a newer single-blob "META Data" route (`LH_LoadMetFile`, `LH_DeserializeMetaDataSegment` `00c05390`) that is not covered here.
+
+**Load order** (each step checks `LH_CheckLoadStatus`):
+1. `LH_DecodeSegmentStructure`: builds the segment directory.
+2. `LH_LoadGlobalProperties` (`00bff9d0`): segment `LHAudioBankGlobalProps` (string at `0xd9f1bc`), read with `LH_SerializeGlobalProperties`. Missing segment means defaults.
+3. `LH_ValidateFileBank` (`00bffb00`): reads the bank info segment (string at `0xd9f148`). `LH_GetFileSegmentBankInfo` (`00bd1ef0`) seeks to **offset 0x208** in it and reads a dword version, which must be 0 (a "normal LUG"). The 0x208 bytes before it are a fixed text field (title/description). `LH_IsNormalLUG` also requires the wave-data segment (`0xd9f374`) and sample-table segment (`0xd9f1d4`) to exist.
+4. `LH_OpenWavSegment`: opens the wave-data segment (`LHAudioWaveData`, `0xd9f374`) and gets its base offset.
+5. `LH_LoadSampleBankTable` (`00bffe70`): segment `LHAudioBankSampleTable` (`0xd9f1d4`). A dword count, masked to 16 bits (max 65535 samples), then `count` records of **0x28c bytes** each.
+6. `LH_ExtractResources` (`00c00480`): builds a 0x24-byte `LH_ResourceHeader` for each sample record. Records with a zero ID (`+0x104`) are skipped. Duplicate IDs log `"Resource collision, id (...)"` as a warning and are dropped.
+7. `LH_BuildDriverTable` (`00c00660`) builds per-sample driver entries from the sample records.
+8. `LH_LoadRLMParams`: an RLM-parameters segment (string at `0xd9f344`), which is optional. Applied by `FUN_00bffdd0`.
+9. `LH_LoadBankCriteriaInfo` (`00c00080`): segment `LHAudioBankCriteiaInfo` (`0xd9f32c`). The spelling is missing an "r" and is baked into shipped data, so a reader or writer must keep it. It holds a count, then per criteria entry a name and a driver table. `LH_BuildTriggersFromCriteria` turns these into triggers.
+
+**Sample record (0x28c bytes), fields used by `LH_ExtractResources`:**
+
+| Offset | Meaning |
+|---|---|
+| 0x000 | name string (up to 0x104 bytes) |
+| 0x104 | resource ID. The record is skipped if this is 0 |
+| 0x108 | must equal the ID at 0x104, otherwise the record is skipped (meaning of this field is unknown) |
+| 0x10c | uncompressed size |
+| 0x110 | data offset within the wave-data segment (the loader adds the segment base) |
+| 0x124 | wave format tag (word) |
+| 0x126 | channel count (word) |
+| 0x128 | sample rate (dword) |
+| 0x138 | loop start |
+| 0x13c | loop end |
+
+The other fields of the record are not decoded. The write side is `LH_BuildLUGAsset` (`00bd34d0`) with matching `LH_Save*` functions.
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
-- `.lug`/`.met` audio banks (`LH_LoadLUGAsset` `00c009c0`, magic `"LiOnHeAd"` in `decomp_0064.c`), `.pak`.
+- `.pak` archives; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
 - Details of the older notes (SLVAR type functions, `CSystem`, the RTTI class list) can still be pulled from `git show 9b29b4e:FINDINGS.md`.
