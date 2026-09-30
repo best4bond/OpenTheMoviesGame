@@ -17242,7 +17242,7 @@ undefined4 * __thiscall FUN_00aa6340(void *this,int param_1,int *param_2)
       piVar1 = (int *)0x0;
     }
     else {
-      FUN_00c965d0(piVar1,0,(int)this,param_2,&DAT_00d7b610);
+      Ctor_vt00db1680_00c965d0(piVar1,0,(int)this,param_2,&DAT_00d7b610);
       *piVar1 = (int)&PTR_FUN_00d7b5b4;
       piVar1[3] = (int)&PTR_FUN_00d7b564;
       piVar1[4] = (int)&PTR_LAB_00d7b548;
@@ -17263,7 +17263,7 @@ undefined4 * __thiscall FUN_00aa6340(void *this,int param_1,int *param_2)
       piVar1 = (int *)0x0;
     }
     else {
-      piVar1 = FUN_00c95a00(this_00,0,(int)this,param_2,&DAT_00d73f30);
+      piVar1 = Ctor_vt00db15e8_00c95a00(this_00,0,(int)this,param_2,&DAT_00d73f30);
     }
     local_4 = (uint)local_4._1_3_ << 8;
     if (piVar1 != (int *)0x0) {
@@ -17431,9 +17431,9 @@ undefined4 * __thiscall FUN_00aa67e0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00aa6840 @ 00aa6840 ////
+//// FUNCTION zlib_inflate_blocks_reset_copy2 @ 00aa6840 ////
 
-void __cdecl FUN_00aa6840(int *param_1,int param_2,int *param_3)
+void __cdecl zlib_inflate_blocks_reset_copy2(int *param_1,int param_2,int *param_3)
 
 {
   int iVar1;
@@ -17445,9 +17445,9 @@ void __cdecl FUN_00aa6840(int *param_1,int param_2,int *param_3)
     (**(code **)(param_2 + 0x24))(*(undefined4 *)(param_2 + 0x28),param_1[3]);
   }
   if (*param_1 == 6) {
-    FUN_00ac0960(param_1[3],param_2);
-    FUN_00ac0150(param_1[2],param_2);
-    FUN_00ac0150(param_1[1],param_2);
+    zlib_inflate_codes_free_copy2(param_1[3],param_2);
+    zlib_huft_free_copy2(param_1[2],param_2);
+    zlib_huft_free_copy2(param_1[1],param_2);
   }
   *param_1 = 0;
   param_1[0xc] = param_1[9];
@@ -17463,9 +17463,9 @@ void __cdecl FUN_00aa6840(int *param_1,int param_2,int *param_3)
 }
 
 
-//// FUNCTION FUN_00aa68e0 @ 00aa68e0 ////
+//// FUNCTION zlib_inflate_blocks_new_copy2 @ 00aa68e0 ////
 
-int * __cdecl FUN_00aa68e0(int param_1,int param_2,int param_3)
+int * __cdecl zlib_inflate_blocks_new_copy2(int param_1,int param_2,int param_3)
 
 {
   int *piVar1;
@@ -17484,14 +17484,14 @@ int * __cdecl FUN_00aa68e0(int param_1,int param_2,int param_3)
   piVar1[10] = iVar2 + param_3;
   piVar1[0xd] = param_2;
   *piVar1 = 0;
-  FUN_00aa6840(piVar1,param_1,piVar1 + 0xe);
+  zlib_inflate_blocks_reset_copy2(piVar1,param_1,piVar1 + 0xe);
   return piVar1;
 }
 
 
-//// FUNCTION FUN_00aa6950 @ 00aa6950 ////
+//// FUNCTION zlib_inflate_blocks_copy2 @ 00aa6950 ////
 
-void __cdecl FUN_00aa6950(uint *param_1,int *param_2,int param_3)
+void __cdecl zlib_inflate_blocks_copy2(uint *param_1,int *param_2,int param_3)
 
 {
   byte bVar1;
@@ -17546,7 +17546,7 @@ switchD_00aa6a01_default:
         *param_2 = (int)local_2c;
         param_2[2] = (int)((int)local_2c + (param_2[2] - iVar5));
         puVar3[0xc] = (uint)param_1;
-        FUN_00ac0980((int)puVar3,(int)param_2,param_3);
+        zlib_inflate_flush_copy2((int)puVar3,(int)param_2,param_3);
         return;
       }
       param_3 = 0;
@@ -17565,7 +17565,7 @@ switchD_00aa6a01_default:
       param_2[1] = local_30;
       param_2[2] = (int)((int)local_2c + (param_2[2] - iVar5));
       puVar3[0xc] = (uint)param_1;
-      FUN_00ac0980((int)puVar3,(int)param_2,-3);
+      zlib_inflate_flush_copy2((int)puVar3,(int)param_2,-3);
       return;
     }
     puVar7 = (uint *)0x0;
@@ -17585,7 +17585,7 @@ switchD_00aa6a01_default:
       param_2[1] = 0;
       param_2[2] = (int)((int)local_2c + (param_2[2] - iVar5));
       puVar3[0xc] = (uint)param_1;
-      FUN_00ac0980((int)puVar3,(int)param_2,param_3);
+      zlib_inflate_flush_copy2((int)puVar3,(int)param_2,param_3);
       return;
     }
     if (local_24 == 0) {
@@ -17604,7 +17604,7 @@ switchD_00aa6a01_default:
         }
       }
       puVar3[0xc] = (uint)param_1;
-      iVar5 = FUN_00ac0980((int)puVar3,(int)param_2,param_3);
+      iVar5 = zlib_inflate_flush_copy2((int)puVar3,(int)param_2,param_3);
       param_1 = (uint *)puVar3[0xc];
       puVar8 = (uint *)puVar3[0xb];
       if (param_1 < puVar8) {
@@ -17631,7 +17631,7 @@ switchD_00aa6a01_default:
         *param_2 = (int)local_2c;
         param_2[2] = (int)((int)local_2c + (param_2[2] - iVar2));
         puVar3[0xc] = (uint)param_1;
-        FUN_00ac0980((int)puVar3,(int)param_2,iVar5);
+        zlib_inflate_flush_copy2((int)puVar3,(int)param_2,iVar5);
         return;
       }
     }
@@ -17674,7 +17674,7 @@ LAB_00aa6bc5:
         param_2[1] = 0;
         param_2[2] = (int)((int)local_2c + (param_2[2] - iVar5));
         puVar3[0xc] = (uint)param_1;
-        FUN_00ac0980((int)puVar3,(int)param_2,param_3);
+        zlib_inflate_flush_copy2((int)puVar3,(int)param_2,param_3);
         return;
       }
       local_30 = local_30 - 1;
@@ -17693,7 +17693,7 @@ LAB_00aa6bc5:
       *param_2 = (int)local_2c;
       param_2[2] = (int)((int)local_2c + (param_2[2] - iVar5));
       puVar3[0xc] = (uint)param_1;
-      FUN_00ac0980((int)puVar3,(int)param_2,-3);
+      zlib_inflate_flush_copy2((int)puVar3,(int)param_2,-3);
       return;
     }
     uVar4 = ((uVar10 & 0x3fff) >> 5 & 0x1f) + 0x102 + (uVar10 & 0x1f);
@@ -17710,7 +17710,7 @@ LAB_00aa6bc5:
       *param_2 = (int)local_2c;
       param_2[2] = (int)((int)local_2c + (param_2[2] - iVar5));
       puVar3[0xc] = (uint)param_1;
-      FUN_00ac0980((int)puVar3,(int)param_2,-4);
+      zlib_inflate_flush_copy2((int)puVar3,(int)param_2,-4);
       return;
     }
     uVar10 = uVar10 >> 0xe;
@@ -17732,7 +17732,7 @@ LAB_00aa73d0:
             param_2[2] = (int)((int)local_2c + (param_2[2] - iVar5));
             param_2[1] = 0;
             puVar3[0xc] = (uint)param_1;
-            FUN_00ac0980((int)puVar3,(int)param_2,param_3);
+            zlib_inflate_flush_copy2((int)puVar3,(int)param_2,param_3);
             return;
           }
           local_30 = local_30 - 1;
@@ -17755,7 +17755,7 @@ LAB_00aa73d0:
       puVar3[2] = uVar4;
     }
     puVar3[4] = 7;
-    iVar5 = FUN_00abf9e0((int *)puVar3[3],puVar3 + 4,puVar3 + 5,(int)param_2);
+    iVar5 = zlib_inflate_trees_bits_copy2((int *)puVar3[3],puVar3 + 4,puVar3 + 5,(int)param_2);
     if (iVar5 != 0) {
       if (iVar5 == -3) {
         *puVar3 = 9;
@@ -17767,7 +17767,7 @@ LAB_00aa73d0:
       *param_2 = (int)local_2c;
       param_2[2] = (int)((int)local_2c + (param_2[2] - iVar2));
       puVar3[0xc] = (uint)param_1;
-      FUN_00ac0980((int)puVar3,(int)param_2,iVar5);
+      zlib_inflate_flush_copy2((int)puVar3,(int)param_2,iVar5);
       return;
     }
     puVar3[2] = 0;
@@ -17823,7 +17823,7 @@ LAB_00aa740f:
             param_2[2] = (int)((int)local_2c + (param_2[2] - *param_2));
             *param_2 = (int)local_2c;
             puVar3[0xc] = (uint)param_1;
-            FUN_00ac0980((int)puVar3,(int)param_2,-3);
+            zlib_inflate_flush_copy2((int)puVar3,(int)param_2,-3);
             return;
           }
           uVar4 = local_24;
@@ -17843,11 +17843,11 @@ LAB_00aa740f:
         puVar3[2] = uVar4;
       } while (puVar3[2] < (puVar3[1] >> 5 & 0x1f) + 0x102 + (puVar3[1] & 0x1f));
     }
-    FUN_00ac0150(puVar3[5],(int)param_2);
+    zlib_huft_free_copy2(puVar3[5],(int)param_2);
     puVar3[5] = 0;
     local_28 = 9;
     local_24 = 6;
-    iVar5 = FUN_00abff00((puVar3[1] & 0x1f) + 0x101,(puVar3[1] >> 5 & 0x1f) + 1,(int *)puVar3[3],
+    iVar5 = zlib_inflate_trees_dynamic_copy2((puVar3[1] & 0x1f) + 0x101,(puVar3[1] >> 5 & 0x1f) + 1,(int *)puVar3[3],
                          &local_28,&local_24,&local_1c,&local_20,(int)param_2);
     if (iVar5 != 0) {
       if (iVar5 == -3) {
@@ -17860,13 +17860,13 @@ LAB_00aa740f:
       *param_2 = (int)local_2c;
       param_2[2] = (int)((int)local_2c + (param_2[2] - iVar2));
       puVar3[0xc] = (uint)param_1;
-      FUN_00ac0980((int)puVar3,(int)param_2,iVar5);
+      zlib_inflate_flush_copy2((int)puVar3,(int)param_2,iVar5);
       return;
     }
-    local_4 = FUN_00ac0190((char)local_28,(char)local_24,local_1c,local_20,(int)param_2);
+    local_4 = zlib_inflate_codes_new_copy2((char)local_28,(char)local_24,local_1c,local_20,(int)param_2);
     if (local_4 == 0) {
-      FUN_00ac0150(local_20,(int)param_2);
-      FUN_00ac0150(local_1c,(int)param_2);
+      zlib_huft_free_copy2(local_20,(int)param_2);
+      zlib_huft_free_copy2(local_1c,(int)param_2);
       puVar3[8] = uVar10;
       puVar3[7] = (uint)puVar7;
       iVar5 = *param_2;
@@ -17874,7 +17874,7 @@ LAB_00aa740f:
       *param_2 = (int)local_2c;
       param_2[2] = (int)((int)local_2c + (param_2[2] - iVar5));
       puVar3[0xc] = (uint)param_1;
-      FUN_00ac0980((int)puVar3,(int)param_2,-4);
+      zlib_inflate_flush_copy2((int)puVar3,(int)param_2,-4);
       return;
     }
     (*(code *)param_2[9])(param_2[10],puVar3[3]);
@@ -17890,12 +17890,12 @@ LAB_00aa703c:
     *param_2 = (int)local_2c;
     param_2[2] = (int)((int)local_2c + (param_2[2] - iVar5));
     puVar3[0xc] = (uint)param_1;
-    iVar5 = FUN_00ac01d0((uint)puVar3,param_2,param_3);
+    iVar5 = zlib_inflate_codes_copy2((uint)puVar3,param_2,param_3);
     if (iVar5 == 1) {
       param_3 = 0;
-      FUN_00ac0960(puVar3[3],(int)param_2);
-      FUN_00ac0150(puVar3[2],(int)param_2);
-      FUN_00ac0150(puVar3[1],(int)param_2);
+      zlib_inflate_codes_free_copy2(puVar3[3],(int)param_2);
+      zlib_huft_free_copy2(puVar3[2],(int)param_2);
+      zlib_huft_free_copy2(puVar3[1],(int)param_2);
       local_30 = param_2[1];
       local_2c = (uint *)*param_2;
       local_28 = puVar3[8];
@@ -17919,7 +17919,7 @@ LAB_00aa703c:
       *puVar3 = 7;
 LAB_00aa7516:
       puVar3[0xc] = (uint)param_1;
-      iVar5 = FUN_00ac0980((int)puVar3,(int)param_2,param_3);
+      iVar5 = zlib_inflate_flush_copy2((int)puVar3,(int)param_2,param_3);
       param_1 = (uint *)puVar3[0xc];
       if ((uint *)puVar3[0xb] == param_1) {
         *puVar3 = 8;
@@ -17930,7 +17930,7 @@ LAB_00aa757d:
         param_2[2] = (int)((int)local_2c + (param_2[2] - *param_2));
         *param_2 = (int)local_2c;
         puVar3[0xc] = (uint)param_1;
-        FUN_00ac0980((int)puVar3,(int)param_2,1);
+        zlib_inflate_flush_copy2((int)puVar3,(int)param_2,1);
         return;
       }
       puVar3[7] = (uint)puVar7;
@@ -17941,7 +17941,7 @@ LAB_00aa757d:
       param_2[2] = (int)((int)local_2c + (param_2[2] - iVar2));
       puVar3[0xc] = (uint)param_1;
     }
-    FUN_00ac0980((int)puVar3,(int)param_2,iVar5);
+    zlib_inflate_flush_copy2((int)puVar3,(int)param_2,iVar5);
     return;
   case 5:
     goto LAB_00aa6dd5;
@@ -17959,7 +17959,7 @@ LAB_00aa757d:
     *param_2 = (int)local_2c;
     param_2[2] = (int)((int)local_2c + (param_2[2] - iVar5));
     puVar3[0xc] = (uint)param_1;
-    FUN_00ac0980((int)puVar3,(int)param_2,-3);
+    zlib_inflate_flush_copy2((int)puVar3,(int)param_2,-3);
     return;
   default:
     puVar3[8] = local_28;
@@ -17969,7 +17969,7 @@ LAB_00aa757d:
     *param_2 = (int)local_2c;
     param_2[2] = (int)((int)local_2c + (param_2[2] - iVar5));
     puVar3[0xc] = (uint)param_1;
-    FUN_00ac0980((int)puVar3,(int)param_2,-2);
+    zlib_inflate_flush_copy2((int)puVar3,(int)param_2,-2);
     return;
   }
   *puVar3 = -(uint)(puVar3[6] != 0) & 7;
@@ -17983,7 +17983,7 @@ switchD_00aa699d_caseD_0:
       param_2[2] = (int)((int)local_2c + (param_2[2] - *param_2));
       *param_2 = (int)local_2c;
       puVar3[0xc] = (uint)param_1;
-      FUN_00ac0980((int)puVar3,(int)param_2,param_3);
+      zlib_inflate_flush_copy2((int)puVar3,(int)param_2,param_3);
       return;
     }
     local_30 = local_30 - 1;
@@ -18000,8 +18000,8 @@ switchD_00aa699d_caseD_0:
     puVar7 = (uint *)(((int)puVar7 - 3U) - uVar4);
     break;
   case 1:
-    FUN_00abfff0(&local_c,&local_10,&local_14,&local_18);
-    uVar4 = FUN_00ac0190((char)local_c,(char)local_10,local_14,local_18,(int)param_2);
+    zlib_inflate_trees_fixed_copy2(&local_c,&local_10,&local_14,&local_18);
+    uVar4 = zlib_inflate_codes_new_copy2((char)local_c,(char)local_10,local_14,local_18,(int)param_2);
     puVar3[3] = uVar4;
     if (uVar4 == 0) {
       puVar3[8] = uVar10;
@@ -18010,7 +18010,7 @@ switchD_00aa699d_caseD_0:
       param_2[2] = (int)((int)local_2c + (param_2[2] - *param_2));
       *param_2 = (int)local_2c;
       puVar3[0xc] = (uint)param_1;
-      FUN_00ac0980((int)puVar3,(int)param_2,-4);
+      zlib_inflate_flush_copy2((int)puVar3,(int)param_2,-4);
       return;
     }
     *puVar3 = 6;
@@ -18033,28 +18033,28 @@ switchD_00aa699d_caseD_0:
     param_2[2] = (int)((int)local_2c + (param_2[2] - *param_2));
     *param_2 = (int)local_2c;
     puVar3[0xc] = (uint)param_1;
-    FUN_00ac0980((int)puVar3,(int)param_2,-3);
+    zlib_inflate_flush_copy2((int)puVar3,(int)param_2,-3);
     return;
   }
   goto switchD_00aa6a01_default;
 }
 
 
-//// FUNCTION FUN_00aa7680 @ 00aa7680 ////
+//// FUNCTION zlib_inflate_blocks_free_copy2 @ 00aa7680 ////
 
-undefined4 __cdecl FUN_00aa7680(int *param_1,int param_2,int *param_3)
+undefined4 __cdecl zlib_inflate_blocks_free_copy2(int *param_1,int param_2,int *param_3)
 
 {
-  FUN_00aa6840(param_1,param_2,param_3);
+  zlib_inflate_blocks_reset_copy2(param_1,param_2,param_3);
   (**(code **)(param_2 + 0x24))(*(undefined4 *)(param_2 + 0x28),param_1[9]);
   (**(code **)(param_2 + 0x24))(*(undefined4 *)(param_2 + 0x28),param_1);
   return 0;
 }
 
 
-//// FUNCTION FUN_00aa7700 @ 00aa7700 ////
+//// FUNCTION zlib_adler32_copy2 @ 00aa7700 ////
 
-uint __cdecl FUN_00aa7700(uint param_1,byte *param_2,uint param_3)
+uint __cdecl zlib_adler32_copy2(uint param_1,byte *param_2,uint param_3)
 
 {
   uint uVar1;

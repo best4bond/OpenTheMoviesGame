@@ -15236,18 +15236,18 @@ void __fastcall FUN_00897d70(int param_1)
     local_18 = 0;
     local_14 = 0;
     local_38 = iVar9 + iVar7;
-    FUN_00a39620((int)&local_38,"1.2.1",0x38);
+    zlib_inflateInit_copy2((int)&local_38,"1.2.1",0x38);
     if (cVar3 == '\x03') {
       local_2c = pvVar8;
       local_28 = uVar11;
-      iVar9 = FUN_00a39640(&local_38,2);
+      iVar9 = zlib_inflate_copy2(&local_38,2);
       while (iVar9 != 1) {
         if (iVar9 != 0) {
           return;
         }
         local_34 = 1;
         if (local_28 == 0) break;
-        iVar9 = FUN_00a39640(&local_38,2);
+        iVar9 = zlib_inflate_copy2(&local_38,2);
       }
       local_54 = 1;
     }
@@ -15261,10 +15261,10 @@ void __fastcall FUN_00897d70(int param_1)
     _Memory = operator_new(uVar11);
     local_2c = _Memory;
     local_28 = uVar11;
-    iVar9 = FUN_00a39640(&local_38,2);
+    iVar9 = zlib_inflate_copy2(&local_38,2);
     while( true ) {
       if ((iVar9 == 1) || (local_28 == 0)) {
-        FUN_00a394c0((int)&local_38);
+        zlib_inflateEnd_copy2((int)&local_38);
         if (cVar3 == '\x05') {
           iVar9 = uVar13 * uVar12;
           if (0 < iVar9) {
@@ -15287,7 +15287,7 @@ void __fastcall FUN_00897d70(int param_1)
       }
       if (iVar9 != 0) break;
       local_34 = 1;
-      iVar9 = FUN_00a39640(&local_38,2);
+      iVar9 = zlib_inflate_copy2(&local_38,2);
     }
   }
   return;
@@ -15354,18 +15354,18 @@ void __fastcall FUN_00897fb0(int param_1)
   local_18 = 0;
   local_14 = 0;
   local_38 = iVar7 + iVar9;
-  FUN_00a39620((int)&local_38,"1.2.1",0x38);
+  zlib_inflateInit_copy2((int)&local_38,"1.2.1",0x38);
   if (cVar3 == '\x03') {
     local_2c = pvVar8;
     local_28 = uVar12;
-    iVar9 = FUN_00a39640(&local_38,2);
+    iVar9 = zlib_inflate_copy2(&local_38,2);
     while (iVar9 != 1) {
       if (iVar9 != 0) {
         return;
       }
       local_34 = 1;
       if (local_28 == 0) break;
-      iVar9 = FUN_00a39640(&local_38,2);
+      iVar9 = zlib_inflate_copy2(&local_38,2);
     }
     local_54 = 1;
   }
@@ -15376,15 +15376,15 @@ void __fastcall FUN_00897fb0(int param_1)
   _Memory = operator_new(uVar12);
   local_2c = _Memory;
   local_28 = uVar12;
-  iVar9 = FUN_00a39640(&local_38,2);
+  iVar9 = zlib_inflate_copy2(&local_38,2);
   while ((iVar9 != 1 && (local_28 != 0))) {
     if (iVar9 != 0) {
       return;
     }
     local_34 = 1;
-    iVar9 = FUN_00a39640(&local_38,2);
+    iVar9 = zlib_inflate_copy2(&local_38,2);
   }
-  FUN_00a394c0((int)&local_38);
+  zlib_inflateEnd_copy2((int)&local_38);
   if ((cVar3 == '\x05') && (iVar9 = uVar11 * uVar13, 0 < iVar9)) {
     puVar10 = (undefined1 *)((int)_Memory + 2);
     do {
@@ -16186,19 +16186,19 @@ void __fastcall FUN_008990b0(void *param_1)
   uStack_18 = 0;
   uStack_14 = 0;
   iStack_38 = iVar4 + iVar3;
-  FUN_00a39620((int)&iStack_38,"1.2.1",0x38);
+  zlib_inflateInit_copy2((int)&iStack_38,"1.2.1",0x38);
   pvStack_2c = _Memory;
   uStack_28 = uVar7;
-  iVar4 = FUN_00a39640(&iStack_38,2);
+  iVar4 = zlib_inflate_copy2(&iStack_38,2);
   while (iVar4 != 1) {
     if (iVar4 != 0) {
       return;
     }
     uStack_34 = 1;
     if (uStack_28 == 0) break;
-    iVar4 = FUN_00a39640(&iStack_38,2);
+    iVar4 = zlib_inflate_copy2(&iStack_38,2);
   }
-  FUN_00a394c0((int)&iStack_38);
+  zlib_inflateEnd_copy2((int)&iStack_38);
   if (0 < (int)uVar7) {
     do {
       local_48[iVar6] = (uint)*(byte *)((int)_Memory + iVar6) << 0x18 | local_48[iVar6] & 0xffffff;

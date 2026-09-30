@@ -3230,11 +3230,11 @@ undefined4 __cdecl FUN_0096cdf0(char *param_1,char *param_2)
 }
 
 
-//// FUNCTION FUN_0096ce70 @ 0096ce70 ////
+//// FUNCTION LHHttp_ParseURL @ 0096ce70 ////
 
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
 
-void __fastcall FUN_0096ce70(int param_1)
+void __fastcall LHHttp_ParseURL(int param_1)
 
 {
   char *pcVar1;
@@ -3321,7 +3321,7 @@ void __fastcall FUN_0096ce70(int param_1)
 undefined4 __fastcall FUN_0096cf90(int param_1)
 
 {
-  FUN_0096ce70(param_1);
+  LHHttp_ParseURL(param_1);
   return *(undefined4 *)(param_1 + 0x1c);
 }
 
@@ -3331,7 +3331,7 @@ undefined4 __fastcall FUN_0096cf90(int param_1)
 undefined4 __fastcall FUN_0096cfa0(int param_1)
 
 {
-  FUN_0096ce70(param_1);
+  LHHttp_ParseURL(param_1);
   return *(undefined4 *)(param_1 + 0x20);
 }
 
@@ -3341,7 +3341,7 @@ undefined4 __fastcall FUN_0096cfa0(int param_1)
 undefined2 __fastcall FUN_0096cfb0(int param_1)
 
 {
-  FUN_0096ce70(param_1);
+  LHHttp_ParseURL(param_1);
   return *(undefined2 *)(param_1 + 0x24);
 }
 
@@ -4593,9 +4593,9 @@ void __thiscall FUN_0096e6b0(void *this,char *param_1,char *param_2)
 }
 
 
-//// FUNCTION FUN_0096e7b0 @ 0096e7b0 ////
+//// FUNCTION LHHttp_BuildHeaderBlock @ 0096e7b0 ////
 
-undefined4 __fastcall FUN_0096e7b0(void *param_1)
+undefined4 __fastcall LHHttp_BuildHeaderBlock(void *param_1)
 
 {
   char cVar1;
@@ -4838,7 +4838,7 @@ LAB_0096ea23:
   } while (pcVar14[1] != '\0');
   builtin_strncpy(pcVar14 + 1," HTTP/1.1\r\n",0xc);
   if (param_3 != (void *)0x0) {
-    local_ec = (char *)FUN_0096e7b0(param_3);
+    local_ec = (char *)LHHttp_BuildHeaderBlock(param_3);
     local_f4 = local_ec;
     do {
       cVar1 = *local_f4;
@@ -4853,7 +4853,7 @@ LAB_0096ea23:
     FUN_0096e6b0(*(void **)((int)this + 0x214),"Content-Length:",local_d8);
     local_f4 = local_f4 + param_5 + 2;
   }
-  pcVar14 = (char *)FUN_0096e7b0(*(void **)((int)this + 0x214));
+  pcVar14 = (char *)LHHttp_BuildHeaderBlock(*(void **)((int)this + 0x214));
   pcVar7 = pcVar14;
   do {
     cVar1 = *pcVar7;
@@ -5154,11 +5154,11 @@ undefined4 __fastcall FUN_0096ed70(int *param_1)
 }
 
 
-//// FUNCTION FUN_0096f0d0 @ 0096f0d0 ////
+//// FUNCTION LHHttp_ParseResponseHeaders @ 0096f0d0 ////
 
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
 
-undefined4 __thiscall FUN_0096f0d0(void *this,int param_1)
+undefined4 __thiscall LHHttp_ParseResponseHeaders(void *this,int param_1)
 
 {
   void *this_00;
@@ -5583,7 +5583,7 @@ LAB_0096f860:
     do {
       iVar2 = FUN_0096ed70(this);
       if (iVar2 == 5) {
-        FUN_0096f0d0(this,(int)&local_838);
+        LHHttp_ParseResponseHeaders(this,(int)&local_838);
         if (local_838 == 200) goto LAB_0096f898;
         if (((299 < local_838) && (local_838 < 400)) && (local_824 != 0)) {
           _strncpy(local_810,*(char **)((int)this + 0xa38),0x7ff);
@@ -5591,12 +5591,12 @@ LAB_0096f860:
           FUN_0096dcb0(this);
           FUN_0096dbe0(this);
           FUN_0096d150(this,local_810,uVar1);
-          FUN_0096ce70((int)&local_838);
+          LHHttp_ParseURL((int)&local_838);
           iVar2 = local_814;
-          FUN_0096ce70((int)&local_838);
+          LHHttp_ParseURL((int)&local_838);
           iVar2 = FUN_0096e580(this,local_81c,(short)iVar2);
           if (iVar2 == 0) {
-            FUN_0096ce70((int)&local_838);
+            LHHttp_ParseURL((int)&local_838);
             iVar2 = FUN_0096e860(this,0,local_818,(void *)0x0,(char *)0x0,0);
             if (iVar2 == 8) {
               FUN_0096d7c0(&local_838);

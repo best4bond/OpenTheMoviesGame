@@ -514,9 +514,9 @@ void __thiscall FUN_00c18510(void *this,int param_1,void *param_2,uint param_3,i
 }
 
 
-//// FUNCTION FUN_00c186a0 @ 00c186a0 ////
+//// FUNCTION Ctor_vt00d9fcc8_00c186a0 @ 00c186a0 ////
 
-undefined4 * __fastcall FUN_00c186a0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00d9fcc8_00c186a0(undefined4 *param_1)
 
 {
   int iVar1;
@@ -529,7 +529,7 @@ undefined4 * __fastcall FUN_00c186a0(undefined4 *param_1)
   puStack_8 = &LAB_00d03936;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  FUN_00c17030(param_1);
+  Ctor_vt00d9fc78_00c17030(param_1);
   local_4 = 0;
   *param_1 = &PTR_FUN_00d9fcc8;
   FUN_00c1a730(param_1 + 0x2d);
@@ -831,12 +831,12 @@ uint __thiscall FUN_00c19200(void *this,int param_1,uint *param_2)
 }
 
 
-//// FUNCTION FUN_00c19300 @ 00c19300 ////
+//// FUNCTION Ctor_vt00da325c_00c19300 @ 00c19300 ////
 
-undefined4 * __fastcall FUN_00c19300(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da325c_00c19300(undefined4 *param_1)
 
 {
-  FUN_00c374d0(param_1);
+  Ctor_vt00da6ac8_00c374d0(param_1);
   *param_1 = &PTR_FUN_00da325c;
   param_1[4] = 0;
   param_1[5] = 0;
@@ -1668,12 +1668,12 @@ void __fastcall FUN_00c1a730(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1a750 @ 00c1a750 ////
+//// FUNCTION ScalarDeletingDtor_00c1a750 @ 00c1a750 ////
 
-undefined4 * __thiscall FUN_00c1a750(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1a750(void *this,byte param_1)
 
 {
-  FUN_00bdfc70(this);
+  SetVtable_00d9fbe8_00bdfc70(this);
   if ((param_1 & 1) != 0) {
     FUN_00c0efa0(this);
   }
@@ -2215,9 +2215,9 @@ switchD_00c1ad36_default:
 }
 
 
-//// FUNCTION FUN_00c1ae40 @ 00c1ae40 ////
+//// FUNCTION Wrap_DeleteCriticalSection_00c1ae40 @ 00c1ae40 ////
 
-void __fastcall FUN_00c1ae40(undefined4 *param_1)
+void __fastcall Wrap_DeleteCriticalSection_00c1ae40(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00da5924;
@@ -2226,9 +2226,9 @@ void __fastcall FUN_00c1ae40(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1ae80 @ 00c1ae80 ////
+//// FUNCTION ScalarDeletingDtor_00c1ae80 @ 00c1ae80 ////
 
-undefined4 * __thiscall FUN_00c1ae80(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1ae80(void *this,byte param_1)
 
 {
   *(undefined ***)this = &PTR_FUN_00da5924;
@@ -2324,9 +2324,9 @@ void __fastcall FUN_00c1b040(int param_1)
 }
 
 
-//// FUNCTION FUN_00c1b0b0 @ 00c1b0b0 ////
+//// FUNCTION Ctor_vt00da5928_00c1b0b0 @ 00c1b0b0 ////
 
-undefined4 * __fastcall FUN_00c1b0b0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da5928_00c1b0b0(undefined4 *param_1)
 
 {
   param_1[0x181] = 0;
@@ -2341,9 +2341,9 @@ undefined4 * __fastcall FUN_00c1b0b0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1b110 @ 00c1b110 ////
+//// FUNCTION Dtor_00c1b110 @ 00c1b110 ////
 
-void __fastcall FUN_00c1b110(undefined4 *param_1)
+void __fastcall Dtor_00c1b110(undefined4 *param_1)
 
 {
   void *local_c;
@@ -2472,12 +2472,12 @@ LAB_00c1b3aa:
 }
 
 
-//// FUNCTION FUN_00c1b3f0 @ 00c1b3f0 ////
+//// FUNCTION ScalarDeletingDtor_00c1b3f0 @ 00c1b3f0 ////
 
-undefined4 * __thiscall FUN_00c1b3f0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1b3f0(void *this,byte param_1)
 
 {
-  FUN_00c1b110(this);
+  Dtor_00c1b110(this);
   if ((param_1 & 1) != 0) {
     FUN_00c0efa0(this);
   }
@@ -2642,54 +2642,54 @@ undefined4 __fastcall FUN_00c1b6f0(char *param_1)
     FUN_00c4b170(local_28,pHVar3);
     FUN_00c4b0e0(local_30);
     local_c._0_1_ = 1;
-    bVar1 = FUN_00c4b120(local_30,pHVar3,"DirectSound\\Mixer Defaults",0xf003f);
+    bVar1 = Wrap_RegCreateKeyExA_00c4b120(local_30,pHVar3,"DirectSound\\Mixer Defaults",0xf003f);
     if ((CONCAT31(extraout_var,bVar1) != 0) &&
-       ((bVar1 = FUN_00c4b180(local_30,"Acceleration",(LPBYTE)&local_38),
+       ((bVar1 = Wrap_RegQueryValueExA_00c4b180(local_30,"Acceleration",(LPBYTE)&local_38),
         CONCAT31(extraout_var_00,bVar1) != 0 && (local_38 != 0)))) {
       if (local_38 == 8) {
         local_c = (uint)local_c._1_3_ << 8;
-        FUN_00c4b2f0(local_30);
+        Wrap_RegCloseKey_00c4b2f0(local_30);
         local_c = 0xffffffff;
-        FUN_00c4b2f0(local_28);
+        Wrap_RegCloseKey_00c4b2f0(local_28);
         ExceptionList = local_14;
         return 2;
       }
       if (local_38 == 0xf) {
         FUN_00c4b0e0(local_20);
         local_c = CONCAT31(local_c._1_3_,2);
-        bVar1 = FUN_00c4b120(local_20,pHVar3,"DirectSound\\Device Presence",0xf003f);
+        bVar1 = Wrap_RegCreateKeyExA_00c4b120(local_20,pHVar3,"DirectSound\\Device Presence",0xf003f);
         if ((CONCAT31(extraout_var_01,bVar1) == 0) ||
-           (((bVar1 = FUN_00c4b180(local_20,"VxD",(LPBYTE)&local_3c),
+           (((bVar1 = Wrap_RegQueryValueExA_00c4b180(local_20,"VxD",(LPBYTE)&local_3c),
              CONCAT31(extraout_var_02,bVar1) == 0 || (local_3c == 0)) &&
-            (bVar1 = FUN_00c4b180(local_20,"WDM",(LPBYTE)&local_3c),
+            (bVar1 = Wrap_RegQueryValueExA_00c4b180(local_20,"WDM",(LPBYTE)&local_3c),
             CONCAT31(extraout_var_03,bVar1) == 0)))) {
         }
         else {
           local_c._0_1_ = 1;
           if (local_3c == 1) {
-            FUN_00c4b2f0(local_20);
+            Wrap_RegCloseKey_00c4b2f0(local_20);
             local_c = (uint)local_c._1_3_ << 8;
-            FUN_00c4b2f0(local_30);
+            Wrap_RegCloseKey_00c4b2f0(local_30);
             local_c = 0xffffffff;
-            FUN_00c4b2f0(local_28);
+            Wrap_RegCloseKey_00c4b2f0(local_28);
             ExceptionList = local_14;
             return 1;
           }
         }
         local_c._0_1_ = 1;
-        FUN_00c4b2f0(local_20);
+        Wrap_RegCloseKey_00c4b2f0(local_20);
       }
       local_c = (uint)local_c._1_3_ << 8;
-      FUN_00c4b2f0(local_30);
+      Wrap_RegCloseKey_00c4b2f0(local_30);
       local_c = 0xffffffff;
-      FUN_00c4b2f0(local_28);
+      Wrap_RegCloseKey_00c4b2f0(local_28);
       ExceptionList = local_14;
       return 0;
     }
     local_c = (uint)local_c._1_3_ << 8;
-    FUN_00c4b2f0(local_30);
+    Wrap_RegCloseKey_00c4b2f0(local_30);
     local_c = 0xffffffff;
-    FUN_00c4b2f0(local_28);
+    Wrap_RegCloseKey_00c4b2f0(local_28);
   }
   ExceptionList = local_14;
   return 3;
@@ -2734,9 +2734,9 @@ void __fastcall FUN_00c1ba40(void *param_1)
 }
 
 
-//// FUNCTION FUN_00c1bab0 @ 00c1bab0 ////
+//// FUNCTION Wrap_CloseHandle_00c1bab0 @ 00c1bab0 ////
 
-void __fastcall FUN_00c1bab0(int param_1)
+void __fastcall Wrap_CloseHandle_00c1bab0(int param_1)
 
 {
   if (*(HANDLE *)(param_1 + 4) != (HANDLE)0x0) {
@@ -2747,10 +2747,10 @@ void __fastcall FUN_00c1bab0(int param_1)
 }
 
 
-//// FUNCTION FUN_00c1bb00 @ 00c1bb00 ////
+//// FUNCTION Wrap_CreateThread_00c1bb00 @ 00c1bb00 ////
 
 bool __thiscall
-FUN_00c1bb00(void *this,LPTHREAD_START_ROUTINE param_1,LPVOID param_2,LPSECURITY_ATTRIBUTES param_3,
+Wrap_CreateThread_00c1bb00(void *this,LPTHREAD_START_ROUTINE param_1,LPVOID param_2,LPSECURITY_ATTRIBUTES param_3,
             DWORD param_4,SIZE_T param_5)
 
 {
@@ -2763,9 +2763,9 @@ FUN_00c1bb00(void *this,LPTHREAD_START_ROUTINE param_1,LPVOID param_2,LPSECURITY
 }
 
 
-//// FUNCTION FUN_00c1bb40 @ 00c1bb40 ////
+//// FUNCTION Wrap_CloseHandle_00c1bb40 @ 00c1bb40 ////
 
-void __fastcall FUN_00c1bb40(int param_1)
+void __fastcall Wrap_CloseHandle_00c1bb40(int param_1)
 
 {
   if (*(HANDLE *)(param_1 + 4) != (HANDLE)0x0) {
@@ -2776,9 +2776,9 @@ void __fastcall FUN_00c1bb40(int param_1)
 }
 
 
-//// FUNCTION FUN_00c1bdb0 @ 00c1bdb0 ////
+//// FUNCTION Wrap_CloseHandle_00c1bdb0 @ 00c1bdb0 ////
 
-void __fastcall FUN_00c1bdb0(int param_1)
+void __fastcall Wrap_CloseHandle_00c1bdb0(int param_1)
 
 {
   if (*(HANDLE *)(param_1 + 4) != (HANDLE)0xffffffff) {
@@ -2789,9 +2789,9 @@ void __fastcall FUN_00c1bdb0(int param_1)
 }
 
 
-//// FUNCTION FUN_00c1bdd0 @ 00c1bdd0 ////
+//// FUNCTION Wrap_CloseHandle_00c1bdd0 @ 00c1bdd0 ////
 
-void __thiscall FUN_00c1bdd0(void *this,undefined4 param_1)
+void __thiscall Wrap_CloseHandle_00c1bdd0(void *this,undefined4 param_1)
 
 {
   if (*(HANDLE *)((int)this + 4) != (HANDLE)0xffffffff) {
@@ -2805,9 +2805,9 @@ void __thiscall FUN_00c1bdd0(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00c1be00 @ 00c1be00 ////
+//// FUNCTION Wrap_CloseHandle_00c1be00 @ 00c1be00 ////
 
-void __fastcall FUN_00c1be00(undefined4 *param_1)
+void __fastcall Wrap_CloseHandle_00c1be00(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00da5a40;
@@ -2819,9 +2819,9 @@ void __fastcall FUN_00c1be00(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1be20 @ 00c1be20 ////
+//// FUNCTION ScalarDeletingDtor_00c1be20 @ 00c1be20 ////
 
-undefined4 * __thiscall FUN_00c1be20(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1be20(void *this,byte param_1)
 
 {
   *(undefined ***)this = &PTR_FUN_00da5a40;
@@ -2837,9 +2837,9 @@ undefined4 * __thiscall FUN_00c1be20(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c1be60 @ 00c1be60 ////
+//// FUNCTION Wrap_CloseHandle_00c1be60 @ 00c1be60 ////
 
-void __fastcall FUN_00c1be60(undefined4 *param_1)
+void __fastcall Wrap_CloseHandle_00c1be60(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00da5a44;
@@ -2851,9 +2851,9 @@ void __fastcall FUN_00c1be60(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1be80 @ 00c1be80 ////
+//// FUNCTION ScalarDeletingDtor_00c1be80 @ 00c1be80 ////
 
-undefined4 * __thiscall FUN_00c1be80(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1be80(void *this,byte param_1)
 
 {
   *(undefined ***)this = &PTR_FUN_00da5a44;
@@ -2869,9 +2869,9 @@ undefined4 * __thiscall FUN_00c1be80(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c1bff0 @ 00c1bff0 ////
+//// FUNCTION Wrap_CloseHandle_00c1bff0 @ 00c1bff0 ////
 
-void __fastcall FUN_00c1bff0(int *param_1)
+void __fastcall Wrap_CloseHandle_00c1bff0(int *param_1)
 
 {
   (**(code **)(*param_1 + 0x18))();
@@ -2939,9 +2939,9 @@ void __fastcall FUN_00c1c4d0(int param_1)
 }
 
 
-//// FUNCTION FUN_00c1c600 @ 00c1c600 ////
+//// FUNCTION Wrap_CloseHandle_00c1c600 @ 00c1c600 ////
 
-void __fastcall FUN_00c1c600(undefined4 *param_1)
+void __fastcall Wrap_CloseHandle_00c1c600(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00da5a2c;
@@ -2953,9 +2953,9 @@ void __fastcall FUN_00c1c600(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1c630 @ 00c1c630 ////
+//// FUNCTION ScalarDeletingDtor_00c1c630 @ 00c1c630 ////
 
-undefined4 * __thiscall FUN_00c1c630(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1c630(void *this,byte param_1)
 
 {
   *(undefined ***)this = &PTR_FUN_00da5a2c;
@@ -2971,9 +2971,9 @@ undefined4 * __thiscall FUN_00c1c630(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c1c680 @ 00c1c680 ////
+//// FUNCTION Dtor_00c1c680 @ 00c1c680 ////
 
-void __fastcall FUN_00c1c680(undefined4 *param_1)
+void __fastcall Dtor_00c1c680(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00da5a2c;
@@ -2985,12 +2985,12 @@ void __fastcall FUN_00c1c680(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1c6b0 @ 00c1c6b0 ////
+//// FUNCTION ScalarDeletingDtor_00c1c6b0 @ 00c1c6b0 ////
 
-undefined4 * __thiscall FUN_00c1c6b0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1c6b0(void *this,byte param_1)
 
 {
-  FUN_00c1c680(this);
+  Dtor_00c1c680(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -2999,9 +2999,9 @@ undefined4 * __thiscall FUN_00c1c6b0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c1c6d0 @ 00c1c6d0 ////
+//// FUNCTION Dtor_00c1c6d0 @ 00c1c6d0 ////
 
-void __fastcall FUN_00c1c6d0(undefined4 *param_1)
+void __fastcall Dtor_00c1c6d0(undefined4 *param_1)
 
 {
   void *local_c;
@@ -3048,9 +3048,9 @@ void __fastcall FUN_00c1c6d0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1c7f0 @ 00c1c7f0 ////
+//// FUNCTION Ctor_vt00da5aa4_00c1c7f0 @ 00c1c7f0 ////
 
-undefined4 * __fastcall FUN_00c1c7f0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da5aa4_00c1c7f0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00da5aa4;
@@ -3073,12 +3073,12 @@ undefined4 * __fastcall FUN_00c1c7f0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1c880 @ 00c1c880 ////
+//// FUNCTION ScalarDeletingDtor_00c1c880 @ 00c1c880 ////
 
-undefined4 * __thiscall FUN_00c1c880(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1c880(void *this,byte param_1)
 
 {
-  FUN_00c1c6d0(this);
+  Dtor_00c1c6d0(this);
   if ((param_1 & 1) != 0) {
     FUN_00c0efa0(this);
   }
@@ -3119,9 +3119,9 @@ void __fastcall FUN_00c1c950(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1c980 @ 00c1c980 ////
+//// FUNCTION Dtor_00c1c980 @ 00c1c980 ////
 
-void __fastcall FUN_00c1c980(undefined4 *param_1)
+void __fastcall Dtor_00c1c980(undefined4 *param_1)
 
 {
   void *local_c;
@@ -3142,12 +3142,12 @@ void __fastcall FUN_00c1c980(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1c9e0 @ 00c1c9e0 ////
+//// FUNCTION ScalarDeletingDtor_00c1c9e0 @ 00c1c9e0 ////
 
-undefined4 * __thiscall FUN_00c1c9e0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1c9e0(void *this,byte param_1)
 
 {
-  FUN_00c1c980(this);
+  Dtor_00c1c980(this);
   if ((param_1 & 1) != 0) {
     FUN_00c0efa0(this);
   }
@@ -3188,7 +3188,7 @@ uint __thiscall FUN_00c1ca60(void *this,int param_1)
   uint uVar1;
   uint uVar2;
   
-  uVar1 = FUN_00be6590(param_1);
+  uVar1 = LH_Archive_TransferU32(param_1);
   if ((char)uVar1 == '\0') {
     return uVar1;
   }
@@ -3196,7 +3196,7 @@ uint __thiscall FUN_00c1ca60(void *this,int param_1)
   uVar1 = 0;
   if (*(uint *)((int)this + 4) != 0) {
     do {
-      uVar1 = FUN_00be6590(param_1);
+      uVar1 = LH_Archive_TransferU32(param_1);
       if ((char)uVar1 == '\0') {
         return uVar1 & 0xffffff00;
       }
@@ -3216,7 +3216,7 @@ uint __thiscall FUN_00c1caf0(void *this,int param_1)
   uint uVar1;
   uint uVar2;
   
-  uVar1 = FUN_00be6590(param_1);
+  uVar1 = LH_Archive_TransferU32(param_1);
   if ((char)uVar1 == '\0') {
     return uVar1;
   }
@@ -3293,7 +3293,7 @@ undefined4 __thiscall FUN_00c1cc90(void *this,int param_1)
   
   uVar2 = FUN_00c1ca60(this,param_1);
   if ((char)uVar2 != '\0') {
-    bVar1 = FUN_00bbfe60(param_1,(int *)((int)this + 8));
+    bVar1 = LH_Archive_SerializeString(param_1,(int *)((int)this + 8));
     if (bVar1) {
       uVar2 = FUN_00c1ca60((void *)((int)this + 0x10),param_1);
       if ((char)uVar2 != '\0') {
@@ -3325,9 +3325,9 @@ void __fastcall FUN_00c1cce0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1cd00 @ 00c1cd00 ////
+//// FUNCTION Dtor_00c1cd00 @ 00c1cd00 ////
 
-void __fastcall FUN_00c1cd00(undefined4 *param_1)
+void __fastcall Dtor_00c1cd00(undefined4 *param_1)
 
 {
   int *piVar1;
@@ -3379,7 +3379,7 @@ void __thiscall FUN_00c1cee0(void *this,int param_1)
                     /* WARNING: Subroutine does not return */
       _free(*(void **)this);
     }
-    FUN_00c1d2d0(this,param_1);
+    PKCArray_Allocate_00c1d2d0(this,param_1);
   }
   return;
 }
@@ -3432,9 +3432,9 @@ void __fastcall FUN_00c1d010(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1d2d0 @ 00c1d2d0 ////
+//// FUNCTION PKCArray_Allocate_00c1d2d0 @ 00c1d2d0 ////
 
-void __thiscall FUN_00c1d2d0(void *this,int param_1)
+void __thiscall PKCArray_Allocate_00c1d2d0(void *this,int param_1)
 
 {
   LPCSTR pCVar1;
@@ -3493,9 +3493,9 @@ void __thiscall FUN_00c1d2d0(void *this,int param_1)
 }
 
 
-//// FUNCTION FUN_00c1d460 @ 00c1d460 ////
+//// FUNCTION PKCArray_Allocate_00c1d460 @ 00c1d460 ////
 
-void __thiscall FUN_00c1d460(void *this,int param_1)
+void __thiscall PKCArray_Allocate_00c1d460(void *this,int param_1)
 
 {
   LPCSTR pCVar1;
@@ -3540,7 +3540,7 @@ void __thiscall FUN_00c1d460(void *this,int param_1)
     else {
       piVar2 = local_114 + 1;
       *local_114 = param_1;
-      _eh_vector_constructor_iterator_(piVar2,8,param_1,FUN_00be1e00,FUN_00be1f10);
+      _eh_vector_constructor_iterator_(piVar2,8,param_1,Ctor_vt00d9feb8_00be1e00,PKStringsCHeapString_Dtor);
     }
     *(int **)this = piVar2;
     if (piVar2 == (int *)0x0) {
@@ -3564,9 +3564,9 @@ void __thiscall FUN_00c1d460(void *this,int param_1)
 }
 
 
-//// FUNCTION FUN_00c1d630 @ 00c1d630 ////
+//// FUNCTION PKCArray_Allocate_00c1d630 @ 00c1d630 ////
 
-void __thiscall FUN_00c1d630(void *this,int param_1)
+void __thiscall PKCArray_Allocate_00c1d630(void *this,int param_1)
 
 {
   LPCSTR pCVar1;
@@ -3635,7 +3635,7 @@ void __thiscall FUN_00c1d7c0(void *this,int param_1)
                     /* WARNING: Subroutine does not return */
       _free(*(void **)this);
     }
-    FUN_00c1d2d0(this,param_1);
+    PKCArray_Allocate_00c1d2d0(this,param_1);
   }
   return;
 }
@@ -3654,13 +3654,13 @@ void __thiscall FUN_00c1d800(void *this,int param_1)
       if (piVar1[-1] != 0) {
         (**(code **)(*piVar1 + 4))(3);
         *(undefined4 *)this = 0;
-        FUN_00c1d460(this,param_1);
+        PKCArray_Allocate_00c1d460(this,param_1);
         return;
       }
                     /* WARNING: Subroutine does not return */
       _free(piVar1 + -1);
     }
-    FUN_00c1d460(this,param_1);
+    PKCArray_Allocate_00c1d460(this,param_1);
   }
   return;
 }
@@ -3676,7 +3676,7 @@ void __thiscall FUN_00c1d860(void *this,int param_1)
                     /* WARNING: Subroutine does not return */
       _free(*(void **)this);
     }
-    FUN_00c1d630(this,param_1);
+    PKCArray_Allocate_00c1d630(this,param_1);
   }
   return;
 }
@@ -3862,16 +3862,16 @@ void __fastcall FUN_00c1dc10(int *param_1)
   int *_Memory;
   
   this = param_1 + 1;
-  _Memory = (int *)FUN_00bcecf0(this);
+  _Memory = (int *)RedBlackTree_GetMinObject(this);
   while( true ) {
     if (_Memory == (int *)0x0) {
       return;
     }
     FUN_00bcff70(this,param_1,(int)_Memory);
     if (_Memory != (int *)0x0) break;
-    _Memory = (int *)FUN_00bcecf0(this);
+    _Memory = (int *)RedBlackTree_GetMinObject(this);
   }
-  FUN_00c1dda0(_Memory);
+  Dtor_00c1dda0(_Memory);
                     /* WARNING: Subroutine does not return */
   _free(_Memory);
 }
@@ -3890,20 +3890,20 @@ undefined4 * __thiscall FUN_00c1dd40(void *this,undefined4 param_1)
   puStack_8 = &LAB_00d03b13;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  FUN_00bcf160(this);
+  RedBlackTree_Node_Ctor(this);
   local_4 = 0;
   *(undefined4 *)((int)this + 0x14) = param_1;
-  FUN_00be1e00((undefined4 *)((int)this + 0x40));
+  Ctor_vt00d9feb8_00be1e00((undefined4 *)((int)this + 0x40));
   local_4 = CONCAT31(local_4._1_3_,1);
-  FUN_00be1e00((undefined4 *)((int)this + 0x48));
+  Ctor_vt00d9feb8_00be1e00((undefined4 *)((int)this + 0x48));
   ExceptionList = local_c;
   return this;
 }
 
 
-//// FUNCTION FUN_00c1dda0 @ 00c1dda0 ////
+//// FUNCTION Dtor_00c1dda0 @ 00c1dda0 ////
 
-void __fastcall FUN_00c1dda0(int *param_1)
+void __fastcall Dtor_00c1dda0(int *param_1)
 
 {
   void *local_c;
@@ -3914,22 +3914,22 @@ void __fastcall FUN_00c1dda0(int *param_1)
   local_c = ExceptionList;
   local_4 = 1;
   ExceptionList = &local_c;
-  FUN_00be1f10(param_1 + 0x12);
+  PKStringsCHeapString_Dtor(param_1 + 0x12);
   local_4 = local_4 & 0xffffff00;
-  FUN_00be1f10(param_1 + 0x10);
+  PKStringsCHeapString_Dtor(param_1 + 0x10);
   local_4 = 0xffffffff;
-  FUN_00bcf880(param_1);
+  RedBlackTree_Node_Dtor(param_1);
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c1de40 @ 00c1de40 ////
+//// FUNCTION ScalarDeletingDtor_00c1de40 @ 00c1de40 ////
 
-int * __thiscall FUN_00c1de40(void *this,byte param_1)
+int * __thiscall ScalarDeletingDtor_00c1de40(void *this,byte param_1)
 
 {
-  FUN_00c1dda0(this);
+  Dtor_00c1dda0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -3938,9 +3938,9 @@ int * __thiscall FUN_00c1de40(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c1dfe0 @ 00c1dfe0 ////
+//// FUNCTION Dtor_00c1dfe0 @ 00c1dfe0 ////
 
-void __fastcall FUN_00c1dfe0(undefined4 *param_1)
+void __fastcall Dtor_00c1dfe0(undefined4 *param_1)
 
 {
   int iVar1;
@@ -3992,16 +3992,16 @@ void __fastcall FUN_00c1dfe0(undefined4 *param_1)
     _free((void *)param_1[8]);
   }
   local_4 = local_4 & 0xffffff00;
-  FUN_00c4b930(param_1 + 2);
+  Dtor_00c4b930(param_1 + 2);
   *param_1 = &PTR_LAB_00da0f54;
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c1e120 @ 00c1e120 ////
+//// FUNCTION LHACodecsACMCCodecInstance_DecodeNextBlock @ 00c1e120 ////
 
-bool __fastcall FUN_00c1e120(int param_1)
+bool __fastcall LHACodecsACMCCodecInstance_DecodeNextBlock(int param_1)
 
 {
   int *piVar1;
@@ -4142,7 +4142,7 @@ undefined4 __thiscall FUN_00c1e3d0(void *this,undefined4 *param_1,uint param_2,i
       if (*(int *)((int)this + 0x54) == 0) {
         piVar2 = (int *)(**(code **)(*(int *)((int)this + 8) + 8))();
         if (*(int **)((int)this + 0x4c) == piVar2) break;
-        bVar1 = FUN_00c1e120((int)this);
+        bVar1 = LHACodecsACMCCodecInstance_DecodeNextBlock((int)this);
         if (!bVar1) {
           return (uint)extraout_var << 8;
         }
@@ -4215,7 +4215,7 @@ undefined4 * __thiscall WindowsACM_CodecInstance_Init(void *this,undefined4 para
   *(undefined ***)this = &PTR_LAB_00da5bd8;
   *(undefined4 *)((int)this + 4) = param_1;
   local_68 = this;
-  FUN_00c4b7f0((undefined4 *)((int)this + 8));
+  Ctor_vt00dacb84_00c4b7f0((undefined4 *)((int)this + 8));
   puVar10 = (undefined4 *)((int)this + 0x20);
   *(undefined4 *)((int)this + 0x1c) = 0;
   *puVar10 = 0;
@@ -4233,7 +4233,7 @@ undefined4 * __thiscall WindowsACM_CodecInstance_Init(void *this,undefined4 para
   local_4 = CONCAT31(local_4._1_3_,5);
   uVar3 = FUN_00c0bec0(local_64,param_2,3);
   if ((char)uVar3 == '\0') goto LAB_00c1e69b;
-  FUN_00c4b5a0((undefined4 *)((int)this + 8),param_2,local_5c,local_58);
+  PKDataReadAccessTypesCAccessWindow_Init((undefined4 *)((int)this + 8),param_2,local_5c,local_58);
   puVar4 = (undefined4 *)FUN_00c0b3a0(local_64);
   if (puVar4 == (undefined4 *)0x0) {
     LH_Assert(&param_2,"srcFormat != NULL\n");
@@ -4241,7 +4241,7 @@ undefined4 * __thiscall WindowsACM_CodecInstance_Init(void *this,undefined4 para
   }
   uVar9 = *(ushort *)(puVar4 + 4) + 0x12;
   pvVar5 = operator_new(uVar9);
-  FUN_00c0c7e0(puVar10,(int)pvVar5,uVar9);
+  PKCAutoDeleteArray_Set_00c0c7e0(puVar10,(int)pvVar5,uVar9);
   puVar6 = (undefined4 *)FUN_00bbc590(puVar10,0);
   puVar10 = puVar4;
   for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -4293,18 +4293,18 @@ undefined4 * __thiscall WindowsACM_CodecInstance_Init(void *this,undefined4 para
   *puVar10 = 0;
 LAB_00c1e69b:
   local_4 = CONCAT31(local_4._1_3_,4);
-  FUN_00c0bd10(local_64);
+  Dtor_00c0bd10(local_64);
   ExceptionList = local_c;
   return this;
 }
 
 
-//// FUNCTION FUN_00c1e6c0 @ 00c1e6c0 ////
+//// FUNCTION ScalarDeletingDtor_00c1e6c0 @ 00c1e6c0 ////
 
-undefined4 * __thiscall FUN_00c1e6c0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1e6c0(void *this,byte param_1)
 
 {
-  FUN_00c1dfe0(this);
+  Dtor_00c1dfe0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -4313,9 +4313,9 @@ undefined4 * __thiscall FUN_00c1e6c0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c1e7d0 @ 00c1e7d0 ////
+//// FUNCTION Dtor_00c1e7d0 @ 00c1e7d0 ////
 
-void __fastcall FUN_00c1e7d0(undefined4 *param_1)
+void __fastcall Dtor_00c1e7d0(undefined4 *param_1)
 
 {
   void *local_c;
@@ -4329,9 +4329,9 @@ void __fastcall FUN_00c1e7d0(undefined4 *param_1)
   local_4 = 2;
   FUN_00c4bac0((int)(param_1 + 10));
   local_4._0_1_ = 1;
-  FUN_00c4bbe0(param_1 + 10);
+  Dtor_00c4bbe0(param_1 + 10);
   local_4 = (uint)local_4._1_3_ << 8;
-  FUN_00bd9e50(param_1 + 2);
+  Dtor_00bd9e50(param_1 + 2);
   *param_1 = &PTR_LAB_00da0f54;
   ExceptionList = local_c;
   return;
@@ -4353,10 +4353,10 @@ undefined4 * __thiscall WMA_CodecInstance_Init(void *this,undefined4 param_1,int
   ExceptionList = &local_c;
   *(undefined1 *)((int)this + 4) = 0;
   *(undefined ***)this = &PTR_LAB_00da5c68;
-  FUN_00bd9d00((void *)((int)this + 8),param_2);
+  Ctor_vt00d9f52c_00bd9d00((void *)((int)this + 8),param_2);
   *(undefined4 *)((int)this + 0x20) = param_1;
   local_4._0_1_ = 1;
-  FUN_00c4bb90((undefined4 *)((int)this + 0x28));
+  Ctor_vt00dacbac_00c4bb90((undefined4 *)((int)this + 0x28));
   local_4 = CONCAT31(local_4._1_3_,2);
   FUN_00c4bc70((undefined4 *)((int)this + 0x28),(void *)((int)this + 8));
   *(undefined1 *)((int)this + 4) = 1;
@@ -4365,12 +4365,12 @@ undefined4 * __thiscall WMA_CodecInstance_Init(void *this,undefined4 param_1,int
 }
 
 
-//// FUNCTION FUN_00c1e8c0 @ 00c1e8c0 ////
+//// FUNCTION ScalarDeletingDtor_00c1e8c0 @ 00c1e8c0 ////
 
-undefined4 * __thiscall FUN_00c1e8c0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1e8c0(void *this,byte param_1)
 
 {
-  FUN_00c1e7d0(this);
+  Dtor_00c1e7d0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -4379,9 +4379,9 @@ undefined4 * __thiscall FUN_00c1e8c0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c1ea90 @ 00c1ea90 ////
+//// FUNCTION Dtor_00c1ea90 @ 00c1ea90 ////
 
-void __fastcall FUN_00c1ea90(undefined4 *param_1)
+void __fastcall Dtor_00c1ea90(undefined4 *param_1)
 
 {
   void *local_c;
@@ -4398,7 +4398,7 @@ void __fastcall FUN_00c1ea90(undefined4 *param_1)
     *(undefined1 *)((int)param_1 + 5) = 0;
   }
   local_4 = local_4 & 0xffffff00;
-  FUN_00bd9e50(param_1 + 0xb2);
+  Dtor_00bd9e50(param_1 + 0xb2);
   *param_1 = &PTR_LAB_00da0f54;
   ExceptionList = local_c;
   return;
@@ -4437,7 +4437,7 @@ LHACodecsOggVorbisCCodecInstance_Open(void *this,undefined4 param_1,int *param_2
   *(undefined1 *)((int)this + 4) = 0;
   *(undefined1 *)((int)this + 5) = 0;
   local_10 = this;
-  FUN_00bd9d00((void *)((int)this + 0x2c8),param_2);
+  Ctor_vt00d9f52c_00bd9d00((void *)((int)this + 0x2c8),param_2);
   *(undefined4 *)((int)this + 0x2e0) = param_1;
   iVar5 = (int)this + 8;
   local_4._0_1_ = 1;
@@ -4455,7 +4455,7 @@ LHACodecsOggVorbisCCodecInstance_Open(void *this,undefined4 param_1,int *param_2
   }
   else {
     *(undefined1 *)((int)this + 5) = 1;
-    iVar2 = FUN_00c4c270(iVar5);
+    iVar2 = GetField_4_00c4c270(iVar5);
     if (iVar2 != 0) {
       puVar4 = (undefined4 *)FUN_00c4c5e0(iVar5,-1);
       piVar6 = (int *)*puVar4;
@@ -4548,12 +4548,12 @@ LHACodecsOggVorbisCCodecInstance_Open(void *this,undefined4 param_1,int *param_2
 }
 
 
-//// FUNCTION FUN_00c1ef40 @ 00c1ef40 ////
+//// FUNCTION ScalarDeletingDtor_00c1ef40 @ 00c1ef40 ////
 
-undefined4 * __thiscall FUN_00c1ef40(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1ef40(void *this,byte param_1)
 
 {
-  FUN_00c1ea90(this);
+  Dtor_00c1ea90(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -4578,9 +4578,9 @@ void __fastcall FUN_00c1efe0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1f000 @ 00c1f000 ////
+//// FUNCTION Dtor_00c1f000 @ 00c1f000 ////
 
-void __fastcall FUN_00c1f000(undefined4 *param_1)
+void __fastcall Dtor_00c1f000(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5da8;
@@ -4593,12 +4593,12 @@ void __fastcall FUN_00c1f000(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1f060 @ 00c1f060 ////
+//// FUNCTION ScalarDeletingDtor_00c1f060 @ 00c1f060 ////
 
-undefined4 * __thiscall FUN_00c1f060(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1f060(void *this,byte param_1)
 
 {
-  FUN_00c1f000(this);
+  Dtor_00c1f000(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -4612,7 +4612,7 @@ undefined4 * __thiscall FUN_00c1f060(void *this,byte param_1)
 undefined4 * __fastcall FUN_00c1f080(undefined4 *param_1)
 
 {
-  FUN_00bcf160(param_1);
+  RedBlackTree_Node_Ctor(param_1);
   param_1[5] = 0;
   param_1[6] = 0;
   return param_1;
@@ -4639,7 +4639,7 @@ void FUN_00c1f0a0(void)
   puStack_8 = &LAB_00cff77b;
   pvStack_c = ExceptionList;
   ExceptionList = &pvStack_c;
-  uVar1 = FUN_00bcef20(in_ECX);
+  uVar1 = RedBlackTree_Node_IsInitialised(in_ECX);
   if ((char)uVar1 != '\0') {
     ppuStack_110 = &PTR_LAB_00d9db7c;
     uStack_10c = 0;
@@ -4665,7 +4665,7 @@ void FUN_00c1f0a0(void)
 int * __fastcall FUN_00c1f0b0(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
@@ -4679,7 +4679,7 @@ void __thiscall FUN_00c1f130(void *this,int param_1)
   void *_Memory;
   
   this_00 = (undefined4 *)((int)this + 4);
-  _Memory = (void *)FUN_00bcecf0(this_00);
+  _Memory = (void *)RedBlackTree_GetMinObject(this_00);
   if (_Memory == (void *)0x0) {
     return;
   }
@@ -4690,7 +4690,7 @@ void __thiscall FUN_00c1f130(void *this,int param_1)
                     /* WARNING: Subroutine does not return */
       _free(_Memory);
     }
-    _Memory = (void *)FUN_00bcf3f0(this_00,this,(int)_Memory);
+    _Memory = (void *)RedBlackTree_GetSuccessor(this_00,this,(int)_Memory);
   } while (_Memory != (void *)0x0);
   return;
 }
@@ -4705,14 +4705,14 @@ void __fastcall FUN_00c1f1a0(int *param_1)
   void *_Memory;
   
   this = param_1 + 1;
-  _Memory = (void *)FUN_00bcecf0(this);
+  _Memory = (void *)RedBlackTree_GetMinObject(this);
   while( true ) {
     if (_Memory == (void *)0x0) {
       return;
     }
     FUN_00bcff70(this,param_1,(int)_Memory);
     if (_Memory != (void *)0x0) break;
-    _Memory = (void *)FUN_00bcecf0(this);
+    _Memory = (void *)RedBlackTree_GetMinObject(this);
   }
   FUN_00c1f0a0();
                     /* WARNING: Subroutine does not return */
@@ -4730,8 +4730,8 @@ uint __fastcall FUN_00c1f1f0(int *param_1)
   ulonglong uVar3;
   
   uVar2 = 0;
-  for (iVar1 = FUN_00bcecf0(param_1 + 1); iVar1 != 0;
-      iVar1 = FUN_00bcf3f0(param_1 + 1,param_1,iVar1)) {
+  for (iVar1 = RedBlackTree_GetMinObject(param_1 + 1); iVar1 != 0;
+      iVar1 = RedBlackTree_GetSuccessor(param_1 + 1,param_1,iVar1)) {
     (**(code **)(**(int **)(iVar1 + 0x14) + 0x98))();
     FUN_00bddd90(*(int *)(iVar1 + 0x14) + 8);
     FUN_00bdddb0(*(int *)(iVar1 + 0x14) + 8);
@@ -4744,9 +4744,9 @@ uint __fastcall FUN_00c1f1f0(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c1f280 @ 00c1f280 ////
+//// FUNCTION CSFXTimeline_Advance @ 00c1f280 ////
 
-void __thiscall FUN_00c1f280(void *this,int param_1)
+void __thiscall CSFXTimeline_Advance(void *this,int param_1)
 
 {
   LPCSTR pCVar1;
@@ -4818,7 +4818,7 @@ void __fastcall FUN_00c1f3e0(int *param_1)
   FUN_00c1f1a0(param_1);
   local_4 = 0xffffffff;
   *param_1 = (int)&PTR_LAB_00da5de4;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   ExceptionList = local_c;
   return;
 }
@@ -4844,7 +4844,7 @@ void __thiscall FUN_00c1f430(void *this,float param_1,undefined4 param_2)
     puVar1 = (undefined4 *)0x0;
   }
   else {
-    FUN_00bcf160(puVar1);
+    RedBlackTree_Node_Ctor(puVar1);
     puVar1[5] = 0;
     puVar1[6] = 0;
   }
@@ -4869,7 +4869,7 @@ undefined4 __thiscall FUN_00c1f4c0(void *this,float param_1,int *param_2)
   ulonglong uVar5;
   
   this_00 = (undefined4 *)((int)this + 4);
-  iVar3 = FUN_00bcecf0(this_00);
+  iVar3 = RedBlackTree_GetMinObject(this_00);
   if ((iVar3 != 0) && (uVar4 = *(uint *)(iVar3 + 0x18), uVar4 <= *(uint *)((int)this + 0xc))) {
     FUN_00bcff70(this_00,this,iVar3);
     FUN_00c1f360(this,param_1,iVar3,uVar4);
@@ -4891,22 +4891,22 @@ undefined4 __thiscall FUN_00c1f4c0(void *this,float param_1,int *param_2)
 }
 
 
-//// FUNCTION FUN_00c1f560 @ 00c1f560 ////
+//// FUNCTION Ctor_vt00da5e40_00c1f560 @ 00c1f560 ////
 
-undefined4 * __fastcall FUN_00c1f560(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da5e40_00c1f560(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5de4;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da5e40;
   param_1[3] = 0;
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c1f5e0 @ 00c1f5e0 ////
+//// FUNCTION ScalarDeletingDtor_00c1f5e0 @ 00c1f5e0 ////
 
-void * __thiscall FUN_00c1f5e0(void *this,byte param_1)
+void * __thiscall ScalarDeletingDtor_00c1f5e0(void *this,byte param_1)
 
 {
   FUN_00c1f0a0();
@@ -4918,34 +4918,34 @@ void * __thiscall FUN_00c1f5e0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c1f680 @ 00c1f680 ////
+//// FUNCTION Dtor_00c1f680 @ 00c1f680 ////
 
-void __fastcall FUN_00c1f680(undefined4 *param_1)
+void __fastcall Dtor_00c1f680(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5de4;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c1f700 @ 00c1f700 ////
+//// FUNCTION Ctor_vt00da5de4_00c1f700 @ 00c1f700 ////
 
-undefined4 * __fastcall FUN_00c1f700(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da5de4_00c1f700(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5de4;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c1f720 @ 00c1f720 ////
+//// FUNCTION ScalarDeletingDtor_00c1f720 @ 00c1f720 ////
 
-undefined4 * __thiscall FUN_00c1f720(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1f720(void *this,byte param_1)
 
 {
-  FUN_00c1f680(this);
+  Dtor_00c1f680(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -4954,35 +4954,35 @@ undefined4 * __thiscall FUN_00c1f720(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c1f740 @ 00c1f740 ////
+//// FUNCTION Dtor_00c1f740 @ 00c1f740 ////
 
-void __fastcall FUN_00c1f740(undefined4 *param_1)
+void __fastcall Dtor_00c1f740(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5de4;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c1f750 @ 00c1f750 ////
+//// FUNCTION Ctor_vt00da5e40_00c1f750 @ 00c1f750 ////
 
-undefined4 * __fastcall FUN_00c1f750(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da5e40_00c1f750(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5de4;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da5e40;
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c1f770 @ 00c1f770 ////
+//// FUNCTION ScalarDeletingDtor_00c1f770 @ 00c1f770 ////
 
-undefined4 * __thiscall FUN_00c1f770(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1f770(void *this,byte param_1)
 
 {
-  FUN_00c1f740(this);
+  Dtor_00c1f740(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -5008,7 +5008,7 @@ void __thiscall FUN_00c1f790(void *this,undefined4 param_1)
   this_00 = operator_new(0x38);
   local_4 = 0;
   if (this_00 != (void *)0x0) {
-    FUN_00c26c10(this_00,this,param_1);
+    Ctor_vt00da6260_00c26c10(this_00,this,param_1);
   }
   ExceptionList = local_c;
   return;
@@ -5034,14 +5034,14 @@ int __fastcall FUN_00c1f820(int param_1)
   int iVar1;
   int iVar2;
   
-  iVar1 = FUN_00bcecf0((undefined4 *)(param_1 + 0x18));
+  iVar1 = RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x18));
   while( true ) {
     if (iVar1 == 0) {
       return 0;
     }
     iVar2 = FUN_00c26960(iVar1);
     if (iVar2 != 0) break;
-    iVar1 = FUN_00bcf3f0((void *)(param_1 + 0x18),(int *)(param_1 + 0x14),iVar1);
+    iVar1 = RedBlackTree_GetSuccessor((void *)(param_1 + 0x18),(int *)(param_1 + 0x14),iVar1);
   }
   return iVar2;
 }
@@ -5054,11 +5054,11 @@ void __fastcall FUN_00c1f8c0(int param_1)
 {
   void *pvVar1;
   
-  pvVar1 = (void *)FUN_00bcecf0((undefined4 *)(param_1 + 0x18));
+  pvVar1 = (void *)RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x18));
   if (pvVar1 != (void *)0x0) {
     do {
       FUN_00c26a50(pvVar1);
-      pvVar1 = (void *)FUN_00bcf3f0((void *)(param_1 + 0x18),(int *)(param_1 + 0x14),(int)pvVar1);
+      pvVar1 = (void *)RedBlackTree_GetSuccessor((void *)(param_1 + 0x18),(int *)(param_1 + 0x14),(int)pvVar1);
     } while (pvVar1 != (void *)0x0);
   }
   return;
@@ -5072,11 +5072,11 @@ void __thiscall FUN_00c1f900(void *this,undefined4 param_1)
 {
   void *this_00;
   
-  this_00 = (void *)FUN_00bcecf0((undefined4 *)((int)this + 0x18));
+  this_00 = (void *)RedBlackTree_GetMinObject((undefined4 *)((int)this + 0x18));
   if (this_00 != (void *)0x0) {
     do {
       FUN_00c26c00(this_00,param_1);
-      this_00 = (void *)FUN_00bcf3f0((void *)((int)this + 0x18),(int *)((int)this + 0x14),
+      this_00 = (void *)RedBlackTree_GetSuccessor((void *)((int)this + 0x18),(int *)((int)this + 0x14),
                                      (int)this_00);
     } while (this_00 != (void *)0x0);
   }
@@ -5092,7 +5092,7 @@ void __thiscall FUN_00c1f940(void *this,undefined4 param_1)
   undefined4 *puVar1;
   
   puVar1 = (undefined4 *)
-           FUN_00bcef50((void *)((int)this + 0x18),(void *)((int)this + 0x14),&param_1,&param_1);
+           RedBlackTree_Find((void *)((int)this + 0x18),(void *)((int)this + 0x14),&param_1,&param_1);
   if (puVar1 != (undefined4 *)0x0) {
     param_1 = 1;
                     /* WARNING: Could not recover jumptable at 0x00c1f96c. Too many branches */
@@ -5125,15 +5125,15 @@ void __fastcall FUN_00c1f980(undefined4 param_1)
   local_18 = local_14;
   local_1c = &PTR_LAB_00da1838;
   local_4 = 1;
-  FUN_00bcf140((void *)(*(int *)(extraout_EDX + 4) + 0xc),&local_1c);
+  RedBlackTree_ForEach((void *)(*(int *)(extraout_EDX + 4) + 0xc),&local_1c);
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c1f9f0 @ 00c1f9f0 ////
+//// FUNCTION Dtor_00c1f9f0 @ 00c1f9f0 ////
 
-void __fastcall FUN_00c1f9f0(int *param_1)
+void __fastcall Dtor_00c1f9f0(int *param_1)
 
 {
   int iVar1;
@@ -5145,25 +5145,25 @@ void __fastcall FUN_00c1f9f0(int *param_1)
   local_c = ExceptionList;
   local_4 = 3;
   ExceptionList = &local_c;
-  iVar1 = FUN_00bbea70(param_1 + 0xd);
+  iVar1 = PKString_GetLength(param_1 + 0xd);
   if (iVar1 != 0) {
     FUN_00bcff70((void *)(*param_1 + 0x20),(int *)(*param_1 + 0x1c),(int)param_1);
   }
-  iVar1 = FUN_00bcecf0(param_1 + 6);
+  iVar1 = RedBlackTree_GetMinObject(param_1 + 6);
   while (iVar1 != 0) {
     FUN_00c1f940(param_1,*(undefined4 *)(iVar1 + 0x1c));
-    iVar1 = FUN_00bcecf0(param_1 + 6);
+    iVar1 = RedBlackTree_GetMinObject(param_1 + 6);
   }
   FUN_00bcff70((void *)(*param_1 + 0x14),(int *)(*param_1 + 0x10),(int)param_1);
   local_4._0_1_ = 2;
-  FUN_00bcf880(param_1 + 0x14);
+  RedBlackTree_Node_Dtor(param_1 + 0x14);
   local_4._0_1_ = 1;
-  FUN_00bcf880(param_1 + 0xf);
+  RedBlackTree_Node_Dtor(param_1 + 0xf);
   local_4 = (uint)local_4._1_3_ << 8;
-  FUN_00be1f10(param_1 + 0xd);
+  PKStringsCHeapString_Dtor(param_1 + 0xd);
   local_4 = 0xffffffff;
   param_1[5] = (int)&PTR_LAB_00da5e94;
-  FUN_00bcffc0(param_1 + 6);
+  RedBlackTree_Dtor(param_1 + 6);
   ExceptionList = local_c;
   return;
 }
@@ -5191,7 +5191,7 @@ FUN_00c1fac0(void *this,int param_1,int param_2,int param_3,int *param_4,char *p
   *(int *)((int)this + 0xc) = param_4[1];
   *(int *)((int)this + 0x10) = param_4[2];
   *(undefined ***)((int)this + 0x14) = &PTR_LAB_00da5e94;
-  FUN_00bcf170((int *)((int)this + 0x18));
+  RedBlackTree_Ctor((int *)((int)this + 0x18));
   *(undefined ***)((int)this + 0x14) = &PTR_LAB_00da5ebc;
   *(int *)((int)this + 0x20) = *param_4;
   *(undefined1 *)((int)this + 0x24) = 0;
@@ -5199,16 +5199,16 @@ FUN_00c1fac0(void *this,int param_1,int param_2,int param_3,int *param_4,char *p
   *(int *)((int)this + 0x30) = param_4[4];
   this_00 = (int *)((int)this + 0x34);
   local_4 = 0;
-  FUN_00be1e00(this_00);
+  Ctor_vt00d9feb8_00be1e00(this_00);
   local_4._0_1_ = 1;
-  FUN_00bcf160((undefined4 *)((int)this + 0x3c));
+  RedBlackTree_Node_Ctor((undefined4 *)((int)this + 0x3c));
   local_4._0_1_ = 2;
-  FUN_00bcf160((undefined4 *)((int)this + 0x50));
+  RedBlackTree_Node_Ctor((undefined4 *)((int)this + 0x50));
   local_4 = CONCAT31(local_4._1_3_,3);
   FUN_00bcfac0((void *)(*(int *)this + 0x14),(int *)(*(int *)this + 0x10),(int)this);
   *(uint *)((int)this + 0x28) = (uint)(param_4[3] != 0);
   FUN_00bbfaa0(this_00,param_5);
-  iVar1 = FUN_00bbea70(this_00);
+  iVar1 = PKString_GetLength(this_00);
   if (iVar1 != 0) {
     FUN_00bcfac0((void *)(*(int *)this + 0x20),(int *)(*(int *)this + 0x1c),(int)this);
   }
@@ -5223,14 +5223,14 @@ FUN_00c1fac0(void *this,int param_1,int param_2,int param_3,int *param_4,char *p
 int * __fastcall FUN_00c1fbc0(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c1fc90 @ 00c1fc90 ////
+//// FUNCTION SetVtable_00da17dc_00c1fc90 @ 00c1fc90 ////
 
-void __fastcall FUN_00c1fc90(undefined4 *param_1)
+void __fastcall SetVtable_00da17dc_00c1fc90(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da17dc;
@@ -5238,12 +5238,12 @@ void __fastcall FUN_00c1fc90(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c1fca0 @ 00c1fca0 ////
+//// FUNCTION ScalarDeletingDtor_00c1fca0 @ 00c1fca0 ////
 
-undefined4 * __thiscall FUN_00c1fca0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1fca0(void *this,byte param_1)
 
 {
-  FUN_00c1fc90(this);
+  SetVtable_00da17dc_00c1fc90(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -5252,34 +5252,34 @@ undefined4 * __thiscall FUN_00c1fca0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c1fcc0 @ 00c1fcc0 ////
+//// FUNCTION Dtor_00c1fcc0 @ 00c1fcc0 ////
 
-void __fastcall FUN_00c1fcc0(undefined4 *param_1)
+void __fastcall Dtor_00c1fcc0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5e94;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c1fdd0 @ 00c1fdd0 ////
+//// FUNCTION Ctor_vt00da5e94_00c1fdd0 @ 00c1fdd0 ////
 
-undefined4 * __fastcall FUN_00c1fdd0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da5e94_00c1fdd0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5e94;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c1fdf0 @ 00c1fdf0 ////
+//// FUNCTION ScalarDeletingDtor_00c1fdf0 @ 00c1fdf0 ////
 
-undefined4 * __thiscall FUN_00c1fdf0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1fdf0(void *this,byte param_1)
 
 {
-  FUN_00c1fcc0(this);
+  Dtor_00c1fcc0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -5288,35 +5288,35 @@ undefined4 * __thiscall FUN_00c1fdf0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c1fe10 @ 00c1fe10 ////
+//// FUNCTION Dtor_00c1fe10 @ 00c1fe10 ////
 
-void __fastcall FUN_00c1fe10(undefined4 *param_1)
+void __fastcall Dtor_00c1fe10(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5e94;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c1fe40 @ 00c1fe40 ////
+//// FUNCTION Ctor_vt00da5ebc_00c1fe40 @ 00c1fe40 ////
 
-undefined4 * __fastcall FUN_00c1fe40(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da5ebc_00c1fe40(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5e94;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da5ebc;
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c1fe60 @ 00c1fe60 ////
+//// FUNCTION ScalarDeletingDtor_00c1fe60 @ 00c1fe60 ////
 
-undefined4 * __thiscall FUN_00c1fe60(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c1fe60(void *this,byte param_1)
 
 {
-  FUN_00c1fe10(this);
+  Dtor_00c1fe10(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -5338,9 +5338,9 @@ void __fastcall FUN_00c1ff30(int param_1)
 }
 
 
-//// FUNCTION FUN_00c20050 @ 00c20050 ////
+//// FUNCTION SetVtable_00da5ee4_00c20050 @ 00c20050 ////
 
-void __fastcall FUN_00c20050(undefined4 *param_1)
+void __fastcall SetVtable_00da5ee4_00c20050(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5ee4;
@@ -5717,7 +5717,7 @@ float10 __thiscall FUN_00c20480(void *param_1,float param_2)
     local_4 = 0;
     *(undefined4 *)((int)param_1 + 0x1c) = 0;
     while ((local_14 <= local_1c[0] && (local_10 <= local_1c[0]))) {
-      FUN_00c23640(local_1c,&local_24);
+      CCellRangeExaminer_GetRange_00c23640(local_1c,&local_24);
       FUN_00c20240(param_1,SQRT((float)local_24 * param_2 * (float)local_24 * param_2 +
                                 (float)local_20 * param_2 * (float)local_20 * param_2),1.0);
       local_14 = local_14 + 1;
@@ -5745,9 +5745,9 @@ undefined4 __thiscall FUN_00c205c0(void *this,uint param_1,float *param_2,float 
   int iVar1;
   float10 fVar2;
   
-  iVar1 = FUN_00c22cc0((void *)((int)this + 0x28),&param_1);
+  iVar1 = LH_SortedArray_FindObject_00c22cc0((void *)((int)this + 0x28),&param_1);
   if (iVar1 != 0) {
-    iVar1 = FUN_00c22c50((void *)(iVar1 + 4),param_2);
+    iVar1 = LH_SortedArray_FindObject_00c22c50((void *)(iVar1 + 4),param_2);
     if (iVar1 != 0) {
       iVar1 = *(int *)(iVar1 + 0x14);
       if (iVar1 == 0) {
@@ -5774,7 +5774,7 @@ void __fastcall FUN_00c207f0(void *param_1)
   uVar2 = 0;
   if (*(int *)((int)param_1 + 4) != 0) {
     do {
-      puVar1 = (undefined4 *)FUN_00c24310(param_1,uVar2);
+      puVar1 = (undefined4 *)PKCAutoDeleteArray_At_00c24310(param_1,uVar2);
       FUN_00c20290(puVar1);
       uVar2 = uVar2 + 1;
     } while (uVar2 < *(uint *)((int)param_1 + 4));
@@ -5794,7 +5794,7 @@ void __fastcall FUN_00c20820(int param_1)
   uVar2 = 0;
   if (*(int *)(param_1 + 0xc) != 0) {
     do {
-      iVar1 = FUN_00c24420((void *)(param_1 + 8),uVar2);
+      iVar1 = PKCAutoDeleteArray_At_00c24420((void *)(param_1 + 8),uVar2);
       *(undefined1 *)(*(int *)(iVar1 + 8) + 0x24) = 0;
       uVar2 = uVar2 + 1;
     } while (uVar2 < *(uint *)(param_1 + 0xc));
@@ -5894,15 +5894,15 @@ void __thiscall FUN_00c20850(void *this,float *param_1,int *param_2)
   local_a8 = 0;
   if (*(int *)((int)this + 4) != 0) {
     do {
-      piVar8 = (int *)FUN_00c24310(this,local_a8);
+      piVar8 = (int *)PKCAutoDeleteArray_At_00c24310(this,local_a8);
       FUN_00c20290(piVar8);
       local_44 = piVar8[2];
       iVar15 = piVar8[5];
       local_38 = *piVar8;
       local_30 = piVar8[1];
       local_90 = iVar15;
-      pvVar9 = (void *)FUN_00c23e50((int *)((int)this + 0x34));
-      FUN_00c23390(pvVar9,piVar8[1] + 1);
+      pvVar9 = (void *)PKCAutoDelete_Get_00c23e50((int *)((int)this + 0x34));
+      CMapAccess_SetCellCount_00c23390(pvVar9,piVar8[1] + 1);
       FUN_00c200e0(&local_64,&local_88,(float)piVar8[4],*param_1,param_1[1],&local_c0,&local_78);
       local_2c = iVar15 * iVar15;
       iVar14 = -iVar15;
@@ -6001,7 +6001,7 @@ void __thiscall FUN_00c20850(void *this,float *param_1,int *param_2)
                         fStack_68 = fVar6;
                       }
                       FUN_00bf1c90(afStack_18,&fStack_70,param_1);
-                      fVar19 = FUN_00bf1c20(afStack_18);
+                      fVar19 = Math_Vector3Length(afStack_18);
                       fStack_5c = (float)fVar19;
                       bVar7 = false;
                       uStack_d0 = 0;
@@ -6080,13 +6080,13 @@ void __fastcall FUN_00c20e20(int param_1)
   local_c = ExceptionList;
   local_4 = 0;
   ExceptionList = &local_c;
-  FUN_00c258c0(local_1c,(undefined4 *)(param_1 + 4));
+  Ctor_vt00da60e8_00c258c0(local_1c,(undefined4 *)(param_1 + 4));
   local_4._0_1_ = 1;
   do {
     iVar1 = FUN_00c22d10((int)local_1c);
   } while (iVar1 != 0);
   local_4 = (uint)local_4._1_3_ << 8;
-  FUN_00c248f0(local_1c);
+  Dtor_00c248f0(local_1c);
   local_4 = 0xffffffff;
   thunk_FUN_00c21b60((undefined4 *)(param_1 + 4));
   ExceptionList = local_c;
@@ -6115,9 +6115,9 @@ undefined4 * __fastcall FUN_00c20e90(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c20ed0 @ 00c20ed0 ////
+//// FUNCTION Dtor_00c20ed0 @ 00c20ed0 ////
 
-void __fastcall FUN_00c20ed0(undefined4 *param_1)
+void __fastcall Dtor_00c20ed0(undefined4 *param_1)
 
 {
   void *pvVar1;
@@ -6131,13 +6131,13 @@ void __fastcall FUN_00c20ed0(undefined4 *param_1)
   pvStack_c = ExceptionList;
   local_4 = 6;
   ExceptionList = &pvStack_c;
-  FUN_00c25920(local_1c,param_1 + 10);
+  Ctor_vt00da60ec_00c25920(local_1c,param_1 + 10);
   local_4._0_1_ = 7;
   do {
     iVar2 = FUN_00c22d60((int)local_1c);
   } while (iVar2 != 0);
   local_4._0_1_ = 6;
-  FUN_00c24940(local_1c);
+  Dtor_00c24940(local_1c);
   pvVar1 = (void *)param_1[0xd];
   if (pvVar1 != (void *)0x0) {
     if (*(void **)((int)pvVar1 + 4) != (void *)0x0) {
@@ -6148,7 +6148,7 @@ void __fastcall FUN_00c20ed0(undefined4 *param_1)
     _free(pvVar1);
   }
   local_4._0_1_ = 4;
-  FUN_00c22cb0(param_1 + 10);
+  LH_Array_FreeBuffer_00c22cb0(param_1 + 10);
   if ((void *)param_1[8] != (void *)0x0) {
                     /* WARNING: Subroutine does not return */
     _free((void *)param_1[8]);
@@ -6233,7 +6233,7 @@ int * __fastcall FUN_00c21010(int param_1)
   pvStack_c = ExceptionList;
   ExceptionList = &pvStack_c;
   local_178 = param_1;
-  piVar1 = (int *)FUN_00c24090((int *)(param_1 + 0x28));
+  piVar1 = (int *)PKCAutoDelete_Get_00c24090((int *)(param_1 + 0x28));
   local_184 = piVar1;
   puVar2 = operator_new(0x38);
   if (puVar2 == (undefined4 *)0x0) {
@@ -6261,12 +6261,12 @@ int * __fastcall FUN_00c21010(int param_1)
   DebugBreak();
 LAB_00c21119:
   (**(code **)(*piVar1 + 0x24))(&local_13c);
-  FUN_00c23740(piVar3,uStack_140);
-  FUN_00c25c90(piVar3 + 6,uStack_130);
-  FUN_00c238e0(piVar3 + 2,local_13c);
-  FUN_00c23aa0(piVar3 + 4,uStack_138);
-  FUN_00c23c70(piVar3 + 8,uStack_134);
-  FUN_00c25850(&iStack_12c);
+  PKCAutoDeleteArray_Resize_00c23740(piVar3,uStack_140);
+  PKCAutoDeleteArray_Resize_00c25c90(piVar3 + 6,uStack_130);
+  PKCAutoDeleteArray_Resize_00c238e0(piVar3 + 2,local_13c);
+  PKCAutoDeleteArray_Resize_00c23aa0(piVar3 + 4,uStack_138);
+  PKCAutoDeleteArray_Resize_00c23c70(piVar3 + 8,uStack_134);
+  Ctor_vt00da6118_00c25850(&iStack_12c);
   puStack_8 = (undefined1 *)0x1;
   uStack_168 = 0;
   local_184 = (int *)0x0;
@@ -6276,7 +6276,7 @@ LAB_00c21119:
   piVar5 = (int *)(**(code **)(*piVar1 + 0x18))();
   while (piVar5 != (int *)0x0) {
     uStack_19c = piVar5;
-    piVar1 = (int *)FUN_00c24310(piVar3,local_178);
+    piVar1 = (int *)PKCAutoDeleteArray_At_00c24310(piVar3,local_178);
     local_178 = local_178 + 1;
     fVar10 = (float10)(**(code **)(*piVar5 + 8))();
     piVar1[2] = (int)(float)fVar10;
@@ -6295,14 +6295,14 @@ LAB_00c21119:
       pvStack_164 = (void *)(iStack_17c + 0x14);
       do {
         piStack_198 = piVar8;
-        puVar2 = (undefined4 *)FUN_00c24420(piVar3 + 2,uStack_174);
+        puVar2 = (undefined4 *)PKCAutoDeleteArray_At_00c24420(piVar3 + 2,uStack_174);
         uStack_174 = uStack_174 + 1;
         if (piVar1[1] == 0) {
           *piVar1 = (int)puVar2;
         }
         piVar1[1] = piVar1[1] + 1;
         uStack_190 = (**(code **)(*piVar8 + 4))();
-        iVar6 = FUN_00bcef50(pvStack_164,(void *)(iStack_17c + 0x10),&uStack_190,&uStack_190);
+        iVar6 = RedBlackTree_Find(pvStack_164,(void *)(iStack_17c + 0x10),&uStack_190,&uStack_190);
         puVar2[2] = iVar6;
         puVar2[3] = piVar1;
         if (iVar6 == 0) {
@@ -6324,7 +6324,7 @@ LAB_00c21119:
         }
         piVar5 = (int *)(**(code **)(*piVar8 + 8))();
         while (piStack_194 = piVar5, piVar5 != (int *)0x0) {
-          piVar3 = (int *)FUN_00c24530(piVar3 + 4,uStack_16c);
+          piVar3 = (int *)PKCAutoDeleteArray_At_00c24530(piVar3 + 4,uStack_16c);
           uStack_16c = uStack_16c + 1;
           if (puVar2[1] == 0) {
             *puVar2 = piVar3;
@@ -6356,7 +6356,7 @@ LAB_00c21119:
   }
   uStack_19c = (int *)0x0;
   piStack_198 = (int *)0x0;
-  FUN_00c22db0(auStack_150);
+  Ctor_vt00da5fdc_00c22db0(auStack_150);
   puStack_8 = (undefined1 *)CONCAT31(puStack_8._1_3_,3);
   FUN_00c22de0(auStack_150,piVar3[7]);
   piVar1 = (int *)(**(code **)(*piVar1 + 0x1c))();
@@ -6364,23 +6364,23 @@ LAB_00c21119:
     local_188 = (int *)(iStack_17c + 0x10);
     do {
       piVar8 = local_188;
-      piVar5 = (int *)FUN_00c24640(piVar3 + 6,(uint)uStack_19c);
+      piVar5 = (int *)PKCAutoDeleteArray_At_00c24640(piVar3 + 6,(uint)uStack_19c);
       uStack_19c = (int *)((int)uStack_19c + 1);
       piStack_180 = piVar5;
       piStack_194 = (int *)(**(code **)(*piVar1 + 8))();
-      iVar6 = FUN_00bcef50(piVar8 + 1,piVar8,&piStack_194,&piStack_194);
+      iVar6 = RedBlackTree_Find(piVar8 + 1,piVar8,&piStack_194,&piStack_194);
       *piVar5 = iVar6;
       if (iVar6 == 0) {
         LH_Assert(&stack0xfffffe63,"atmosGroup->AtmosInMap != NULL\n");
         DebugBreak();
       }
-      FUN_00c22df0(auStack_160);
+      Ctor_vt00da5fe0_00c22df0(auStack_160);
       puStack_8 = (undefined1 *)CONCAT31(puStack_8._1_3_,4);
       uVar7 = (**(code **)*piVar1)();
       FUN_00c22e20(auStack_160,uVar7);
       piVar8 = (int *)(**(code **)(*piVar1 + 4))();
       while (piVar8 != (int *)0x0) {
-        puVar2 = (undefined4 *)FUN_00c24750(piVar3 + 8,(uint)piStack_198);
+        puVar2 = (undefined4 *)PKCAutoDeleteArray_At_00c24750(piVar3 + 8,(uint)piStack_198);
         piStack_198 = (int *)((int)piStack_198 + 1);
         puVar9 = (undefined4 *)(**(code **)(*piVar8 + 0x10))();
         *puVar2 = *puVar9;
@@ -6389,7 +6389,7 @@ LAB_00c21119:
         puVar2[3] = puVar9[3];
         puVar2[4] = puVar9[4];
         uStack_190 = (**(code **)*piVar8)();
-        iVar6 = FUN_00bcef50(auStack_128,&iStack_12c,&uStack_190,&uStack_190);
+        iVar6 = RedBlackTree_Find(auStack_128,&iStack_12c,&uStack_190,&uStack_190);
         if ((iVar6 == 0) || ((int *)(iVar6 + 4) == (int *)0x0)) {
           iVar6 = 0;
         }
@@ -6401,20 +6401,20 @@ LAB_00c21119:
           LH_Assert(&uStack_16d,"externalModel->Internal != NULL\n");
           DebugBreak();
         }
-        FUN_00c24f40(auStack_160,(int)puVar2);
+        LH_Container_AddObject_00c24f40(auStack_160,(int)puVar2);
         piVar8 = (int *)(**(code **)(*piVar8 + 4))();
         piVar5 = piStack_180;
       }
       thunk_FUN_00c25f60(piVar5 + 1,auStack_160);
-      FUN_00c24f10(auStack_150,(int)piVar5);
+      LH_Container_AddObject_00c24f10(auStack_150,(int)piVar5);
       piVar1 = (int *)(**(code **)(*piVar1 + 0xc))();
       puStack_8 = (undefined1 *)CONCAT31(puStack_8._1_3_,3);
-      FUN_00c22e10(auStack_160);
+      Dtor_00c22e10(auStack_160);
     } while (piVar1 != (int *)0x0);
   }
   thunk_FUN_00c25fa0(piVar3 + 10,auStack_150);
   puStack_8._0_1_ = 1;
-  FUN_00c22dd0(auStack_150);
+  Dtor_00c22dd0(auStack_150);
   uVar7 = uStack_168;
   piVar1 = local_184;
   if ((uStack_168 != 0) && (local_184 != (int *)0x0)) {
@@ -6427,7 +6427,7 @@ LAB_00c21119:
       piVar1 = FUN_00c24c90(local_188,uVar7 * 2 + 4,(int)piVar1 + 1);
     }
     puStack_8 = (undefined1 *)CONCAT31(puStack_8._1_3_,1);
-    FUN_00c23f20(piVar3 + 0xd,(int)piVar1);
+    PKCAutoDelete_Set_00c23f20(piVar3 + 0xd,(int)piVar1);
   }
   puStack_8 = (undefined1 *)0xffffffff;
   FUN_00c24e20(&iStack_12c);
@@ -6512,9 +6512,9 @@ undefined4 * __thiscall FUN_00c21870(void *this,undefined4 *param_1,undefined4 *
   ExceptionList = &local_c;
   *(undefined4 *)this = *param_1;
   *(undefined4 *)((int)this + 4) = *param_2;
-  FUN_00bcf160((undefined4 *)((int)this + 8));
+  RedBlackTree_Node_Ctor((undefined4 *)((int)this + 8));
   local_4 = 0;
-  FUN_00bcf160((undefined4 *)((int)this + 0x1c));
+  RedBlackTree_Node_Ctor((undefined4 *)((int)this + 0x1c));
   ExceptionList = local_c;
   return this;
 }
@@ -6525,7 +6525,7 @@ undefined4 * __thiscall FUN_00c21870(void *this,undefined4 *param_1,undefined4 *
 int * __fastcall FUN_00c218d0(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
@@ -6535,14 +6535,14 @@ int * __fastcall FUN_00c218d0(int *param_1)
 int * __fastcall FUN_00c218f0(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c21930 @ 00c21930 ////
+//// FUNCTION ScalarDeletingDtor_00c21930 @ 00c21930 ////
 
-void * __thiscall FUN_00c21930(void *this,byte param_1)
+void * __thiscall ScalarDeletingDtor_00c21930(void *this,byte param_1)
 
 {
   if (*(void **)((int)this + 4) != (void *)0x0) {
@@ -6570,17 +6570,17 @@ void __fastcall FUN_00c21960(int param_1)
   local_c = ExceptionList;
   local_4 = 0;
   ExceptionList = &local_c;
-  FUN_00bcf880((int *)(param_1 + 0x1c));
+  RedBlackTree_Node_Dtor((int *)(param_1 + 0x1c));
   local_4 = 0xffffffff;
-  FUN_00bcf880((int *)(param_1 + 8));
+  RedBlackTree_Node_Dtor((int *)(param_1 + 8));
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c21a10 @ 00c21a10 ////
+//// FUNCTION LH_Array_Reserve_00c21a10 @ 00c21a10 ////
 
-void __thiscall FUN_00c21a10(void *this,uint param_1)
+void __thiscall LH_Array_Reserve_00c21a10(void *this,uint param_1)
 
 {
   uint uVar1;
@@ -6625,9 +6625,9 @@ void __thiscall FUN_00c21a10(void *this,uint param_1)
 }
 
 
-//// FUNCTION FUN_00c21ad0 @ 00c21ad0 ////
+//// FUNCTION LH_Array_GetAt_00c21ad0 @ 00c21ad0 ////
 
-undefined4 __thiscall FUN_00c21ad0(void *this,uint param_1)
+undefined4 __thiscall LH_Array_GetAt_00c21ad0(void *this,uint param_1)
 
 {
   uint uVar1;
@@ -6642,18 +6642,18 @@ undefined4 __thiscall FUN_00c21ad0(void *this,uint param_1)
 }
 
 
-//// FUNCTION FUN_00c21b10 @ 00c21b10 ////
+//// FUNCTION GetField_8_00c21b10 @ 00c21b10 ////
 
-undefined4 __fastcall FUN_00c21b10(int param_1)
+undefined4 __fastcall GetField_8_00c21b10(int param_1)
 
 {
   return *(undefined4 *)(param_1 + 8);
 }
 
 
-//// FUNCTION FUN_00c21b20 @ 00c21b20 ////
+//// FUNCTION LH_Array_SetFilledSize_00c21b20 @ 00c21b20 ////
 
-void __thiscall FUN_00c21b20(void *this,uint param_1)
+void __thiscall LH_Array_SetFilledSize_00c21b20(void *this,uint param_1)
 
 {
   uint uVar1;
@@ -6680,9 +6680,9 @@ void __fastcall FUN_00c21b50(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c21b60 @ 00c21b60 ////
+//// FUNCTION LH_Array_FreeBuffer_00c21b60 @ 00c21b60 ////
 
-void __fastcall FUN_00c21b60(undefined4 *param_1)
+void __fastcall LH_Array_FreeBuffer_00c21b60(undefined4 *param_1)
 
 {
   undefined4 uStack_4;
@@ -6759,9 +6759,9 @@ int __thiscall FUN_00c21bc0(void *this,float *param_1,undefined1 *param_2)
 }
 
 
-//// FUNCTION FUN_00c21c90 @ 00c21c90 ////
+//// FUNCTION LH_Array_Reserve_00c21c90 @ 00c21c90 ////
 
-void __thiscall FUN_00c21c90(void *this,uint param_1)
+void __thiscall LH_Array_Reserve_00c21c90(void *this,uint param_1)
 
 {
   uint uVar1;
@@ -6806,9 +6806,9 @@ void __thiscall FUN_00c21c90(void *this,uint param_1)
 }
 
 
-//// FUNCTION FUN_00c21d50 @ 00c21d50 ////
+//// FUNCTION LH_Array_GetAt_00c21d50 @ 00c21d50 ////
 
-undefined4 __thiscall FUN_00c21d50(void *this,uint param_1)
+undefined4 __thiscall LH_Array_GetAt_00c21d50(void *this,uint param_1)
 
 {
   uint uVar1;
@@ -6823,18 +6823,18 @@ undefined4 __thiscall FUN_00c21d50(void *this,uint param_1)
 }
 
 
-//// FUNCTION FUN_00c21d90 @ 00c21d90 ////
+//// FUNCTION GetField_8_00c21d90 @ 00c21d90 ////
 
-undefined4 __fastcall FUN_00c21d90(int param_1)
+undefined4 __fastcall GetField_8_00c21d90(int param_1)
 
 {
   return *(undefined4 *)(param_1 + 8);
 }
 
 
-//// FUNCTION FUN_00c21da0 @ 00c21da0 ////
+//// FUNCTION LH_Array_SetFilledSize_00c21da0 @ 00c21da0 ////
 
-void __thiscall FUN_00c21da0(void *this,uint param_1)
+void __thiscall LH_Array_SetFilledSize_00c21da0(void *this,uint param_1)
 
 {
   uint uVar1;
@@ -6861,9 +6861,9 @@ void __fastcall FUN_00c21dd0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c21de0 @ 00c21de0 ////
+//// FUNCTION LH_Array_FreeBuffer_00c21de0 @ 00c21de0 ////
 
-void __fastcall FUN_00c21de0(undefined4 *param_1)
+void __fastcall LH_Array_FreeBuffer_00c21de0(undefined4 *param_1)
 
 {
   undefined4 uStack_4;
@@ -6940,9 +6940,9 @@ int __thiscall FUN_00c21e40(void *this,uint *param_1,undefined1 *param_2)
 }
 
 
-//// FUNCTION FUN_00c21f10 @ 00c21f10 ////
+//// FUNCTION LH_Array_SetAt_00c21f10 @ 00c21f10 ////
 
-void __thiscall FUN_00c21f10(void *this,uint param_1,undefined4 param_2)
+void __thiscall LH_Array_SetAt_00c21f10(void *this,uint param_1,undefined4 param_2)
 
 {
   uint uVar1;
@@ -6959,9 +6959,9 @@ void __thiscall FUN_00c21f10(void *this,uint param_1,undefined4 param_2)
 }
 
 
-//// FUNCTION FUN_00c21f50 @ 00c21f50 ////
+//// FUNCTION LH_Array_SetAt_00c21f50 @ 00c21f50 ////
 
-void __thiscall FUN_00c21f50(void *this,uint param_1,undefined4 param_2)
+void __thiscall LH_Array_SetAt_00c21f50(void *this,uint param_1,undefined4 param_2)
 
 {
   uint uVar1;
@@ -6992,15 +6992,15 @@ void __thiscall FUN_00c21f90(void *this,uint param_1)
     if (uVar2 < uVar1) {
       uVar2 = uVar1;
     }
-    FUN_00c21a10(this,uVar1 + uVar2);
+    LH_Array_Reserve_00c21a10(this,uVar1 + uVar2);
   }
   return;
 }
 
 
-//// FUNCTION FUN_00c21fd0 @ 00c21fd0 ////
+//// FUNCTION LH_Sort_Compare_00c21fd0 @ 00c21fd0 ////
 
-uint __fastcall FUN_00c21fd0(int *param_1)
+uint __fastcall LH_Sort_Compare_00c21fd0(int *param_1)
 
 {
   float *pfVar1;
@@ -7046,15 +7046,15 @@ void __thiscall FUN_00c22040(void *this,uint param_1)
     if (uVar2 < uVar1) {
       uVar2 = uVar1;
     }
-    FUN_00c21c90(this,uVar1 + uVar2);
+    LH_Array_Reserve_00c21c90(this,uVar1 + uVar2);
   }
   return;
 }
 
 
-//// FUNCTION FUN_00c22080 @ 00c22080 ////
+//// FUNCTION LH_Sort_Compare_00c22080 @ 00c22080 ////
 
-uint __fastcall FUN_00c22080(int *param_1)
+uint __fastcall LH_Sort_Compare_00c22080(int *param_1)
 
 {
   int iVar1;
@@ -7194,9 +7194,9 @@ void __fastcall FUN_00c221b0(undefined4 *param_1,undefined4 *param_2)
 }
 
 
-//// FUNCTION FUN_00c22330 @ 00c22330 ////
+//// FUNCTION LH_Sort_PushHeap_00c22330 @ 00c22330 ////
 
-void __fastcall FUN_00c22330(int param_1,int param_2,int param_3,float *param_4)
+void __fastcall LH_Sort_PushHeap_00c22330(int param_1,int param_2,int param_3,float *param_4)
 
 {
   float *pfVar1;
@@ -7281,9 +7281,9 @@ void __fastcall FUN_00c223d0(undefined4 *param_1,int param_2,undefined4 *param_3
 }
 
 
-//// FUNCTION FUN_00c22470 @ 00c22470 ////
+//// FUNCTION LH_Sort_PushHeap_00c22470 @ 00c22470 ////
 
-void __fastcall FUN_00c22470(int param_1,int param_2,int param_3,uint *param_4)
+void __fastcall LH_Sort_PushHeap_00c22470(int param_1,int param_2,int param_3,uint *param_4)
 
 {
   uint *puVar1;
@@ -7379,12 +7379,12 @@ void * __fastcall FUN_00c22710(void *param_1)
 }
 
 
-//// FUNCTION FUN_00c227d0 @ 00c227d0 ////
+//// FUNCTION ScalarDeletingDtor_00c227d0 @ 00c227d0 ////
 
-undefined4 * __thiscall FUN_00c227d0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c227d0(void *this,byte param_1)
 
 {
-  FUN_00c20050(this);
+  SetVtable_00da5ee4_00c20050(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -7425,24 +7425,24 @@ void __fastcall FUN_00c22820(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c22880 @ 00c22880 ////
+//// FUNCTION Dtor_00c22880 @ 00c22880 ////
 
-void __fastcall FUN_00c22880(undefined4 *param_1)
+void __fastcall Dtor_00c22880(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5f44;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c22940 @ 00c22940 ////
+//// FUNCTION Dtor_00c22940 @ 00c22940 ////
 
-void __fastcall FUN_00c22940(undefined4 *param_1)
+void __fastcall Dtor_00c22940(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5f6c;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
@@ -7469,12 +7469,12 @@ void __thiscall FUN_00c22a50(void *this,undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c22ab0 @ 00c22ab0 ////
+//// FUNCTION ScalarDeletingDtor_00c22ab0 @ 00c22ab0 ////
 
-undefined4 * __thiscall FUN_00c22ab0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c22ab0(void *this,byte param_1)
 
 {
-  FUN_00c22880(this);
+  Dtor_00c22880(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -7483,12 +7483,12 @@ undefined4 * __thiscall FUN_00c22ab0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c22ad0 @ 00c22ad0 ////
+//// FUNCTION ScalarDeletingDtor_00c22ad0 @ 00c22ad0 ////
 
-undefined4 * __thiscall FUN_00c22ad0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c22ad0(void *this,byte param_1)
 
 {
-  FUN_00c22940(this);
+  Dtor_00c22940(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -7517,9 +7517,9 @@ void __fastcall FUN_00c22b10(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c22b90 @ 00c22b90 ////
+//// FUNCTION ScalarDeletingDtor_00c22b90 @ 00c22b90 ////
 
-void * __thiscall FUN_00c22b90(void *this,byte param_1)
+void * __thiscall ScalarDeletingDtor_00c22b90(void *this,byte param_1)
 
 {
   FUN_00c21960((int)this);
@@ -7541,9 +7541,9 @@ undefined4 * __fastcall FUN_00c22c20(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c22c50 @ 00c22c50 ////
+//// FUNCTION LH_SortedArray_FindObject_00c22c50 @ 00c22c50 ////
 
-int __thiscall FUN_00c22c50(void *this,float *param_1)
+int __thiscall LH_SortedArray_FindObject_00c22c50(void *this,float *param_1)
 
 {
   uint uVar1;
@@ -7553,7 +7553,7 @@ int __thiscall FUN_00c22c50(void *this,float *param_1)
   if ((char)param_1 == '\0') {
     return 0;
   }
-  iVar2 = FUN_00c21ad0(this,uVar1);
+  iVar2 = LH_Array_GetAt_00c21ad0(this,uVar1);
   if (iVar2 == 0) {
     LH_Assert(&param_1,"object != NULL\n");
     DebugBreak();
@@ -7572,9 +7572,9 @@ undefined4 * __fastcall FUN_00c22ca0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c22cb0 @ 00c22cb0 ////
+//// FUNCTION LH_Array_FreeBuffer_00c22cb0 @ 00c22cb0 ////
 
-void __fastcall FUN_00c22cb0(undefined4 *param_1)
+void __fastcall LH_Array_FreeBuffer_00c22cb0(undefined4 *param_1)
 
 {
   undefined4 uStack_4;
@@ -7596,9 +7596,9 @@ void __fastcall FUN_00c22cb0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c22cc0 @ 00c22cc0 ////
+//// FUNCTION LH_SortedArray_FindObject_00c22cc0 @ 00c22cc0 ////
 
-int __thiscall FUN_00c22cc0(void *this,uint *param_1)
+int __thiscall LH_SortedArray_FindObject_00c22cc0(void *this,uint *param_1)
 
 {
   uint uVar1;
@@ -7608,7 +7608,7 @@ int __thiscall FUN_00c22cc0(void *this,uint *param_1)
   if ((char)param_1 == '\0') {
     return 0;
   }
-  iVar2 = FUN_00c21d50(this,uVar1);
+  iVar2 = LH_Array_GetAt_00c21d50(this,uVar1);
   if (iVar2 == 0) {
     LH_Assert(&param_1,"object != NULL\n");
     DebugBreak();
@@ -7627,16 +7627,16 @@ int __fastcall FUN_00c22d10(int param_1)
   int iVar2;
   
   this = (void *)(param_1 + 4);
-  iVar1 = FUN_00c21b10((int)this);
+  iVar1 = GetField_8_00c21b10((int)this);
   while( true ) {
     if (iVar1 == 0) {
       return 0;
     }
-    iVar1 = FUN_00c21b10((int)this);
-    iVar2 = FUN_00c21ad0(this,iVar1 - 1U);
-    FUN_00c21b20(this,iVar1 - 1U);
+    iVar1 = GetField_8_00c21b10((int)this);
+    iVar2 = LH_Array_GetAt_00c21ad0(this,iVar1 - 1U);
+    LH_Array_SetFilledSize_00c21b20(this,iVar1 - 1U);
     if (iVar2 != 0) break;
-    iVar1 = FUN_00c21b10((int)this);
+    iVar1 = GetField_8_00c21b10((int)this);
   }
   return iVar2;
 }
@@ -7652,24 +7652,24 @@ int __fastcall FUN_00c22d60(int param_1)
   int iVar2;
   
   this = (void *)(param_1 + 4);
-  iVar1 = FUN_00c21d90((int)this);
+  iVar1 = GetField_8_00c21d90((int)this);
   while( true ) {
     if (iVar1 == 0) {
       return 0;
     }
-    iVar1 = FUN_00c21d90((int)this);
-    iVar2 = FUN_00c21d50(this,iVar1 - 1U);
-    FUN_00c21da0(this,iVar1 - 1U);
+    iVar1 = GetField_8_00c21d90((int)this);
+    iVar2 = LH_Array_GetAt_00c21d50(this,iVar1 - 1U);
+    LH_Array_SetFilledSize_00c21da0(this,iVar1 - 1U);
     if (iVar2 != 0) break;
-    iVar1 = FUN_00c21d90((int)this);
+    iVar1 = GetField_8_00c21d90((int)this);
   }
   return iVar2;
 }
 
 
-//// FUNCTION FUN_00c22db0 @ 00c22db0 ////
+//// FUNCTION Ctor_vt00da5fdc_00c22db0 @ 00c22db0 ////
 
-undefined4 * __fastcall FUN_00c22db0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da5fdc_00c22db0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00da5fdc;
@@ -7678,13 +7678,13 @@ undefined4 * __fastcall FUN_00c22db0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c22dd0 @ 00c22dd0 ////
+//// FUNCTION Dtor_00c22dd0 @ 00c22dd0 ////
 
-void __fastcall FUN_00c22dd0(undefined4 *param_1)
+void __fastcall Dtor_00c22dd0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00da5fdc;
-  FUN_00c21de0(param_1 + 1);
+  LH_Array_FreeBuffer_00c21de0(param_1 + 1);
   return;
 }
 
@@ -7694,14 +7694,14 @@ void __fastcall FUN_00c22dd0(undefined4 *param_1)
 void __thiscall FUN_00c22de0(void *this,uint param_1)
 
 {
-  FUN_00c21c90((void *)((int)this + 4),param_1);
+  LH_Array_Reserve_00c21c90((void *)((int)this + 4),param_1);
   return;
 }
 
 
-//// FUNCTION FUN_00c22df0 @ 00c22df0 ////
+//// FUNCTION Ctor_vt00da5fe0_00c22df0 @ 00c22df0 ////
 
-undefined4 * __fastcall FUN_00c22df0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da5fe0_00c22df0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00da5fe0;
@@ -7710,13 +7710,13 @@ undefined4 * __fastcall FUN_00c22df0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c22e10 @ 00c22e10 ////
+//// FUNCTION Dtor_00c22e10 @ 00c22e10 ////
 
-void __fastcall FUN_00c22e10(undefined4 *param_1)
+void __fastcall Dtor_00c22e10(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00da5fe0;
-  FUN_00c21b60(param_1 + 1);
+  LH_Array_FreeBuffer_00c21b60(param_1 + 1);
   return;
 }
 
@@ -7726,17 +7726,17 @@ void __fastcall FUN_00c22e10(undefined4 *param_1)
 void __thiscall FUN_00c22e20(void *this,uint param_1)
 
 {
-  FUN_00c21a10((void *)((int)this + 4),param_1);
+  LH_Array_Reserve_00c21a10((void *)((int)this + 4),param_1);
   return;
 }
 
 
-//// FUNCTION FUN_00c22e30 @ 00c22e30 ////
+//// FUNCTION ScalarDeletingDtor_00c22e30 @ 00c22e30 ////
 
-undefined4 * __thiscall FUN_00c22e30(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c22e30(void *this,byte param_1)
 
 {
-  FUN_00c22dd0(this);
+  Dtor_00c22dd0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -7745,12 +7745,12 @@ undefined4 * __thiscall FUN_00c22e30(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c22e50 @ 00c22e50 ////
+//// FUNCTION ScalarDeletingDtor_00c22e50 @ 00c22e50 ////
 
-undefined4 * __thiscall FUN_00c22e50(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c22e50(void *this,byte param_1)
 
 {
-  FUN_00c22e10(this);
+  Dtor_00c22e10(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -7773,19 +7773,19 @@ void __fastcall FUN_00c22ea0(int param_1)
   this = (void *)(param_1 + 4);
   uVar3 = 0;
   uVar4 = 0;
-  iVar1 = FUN_00c21b10((int)this);
+  iVar1 = GetField_8_00c21b10((int)this);
   if (iVar1 != 0) {
     do {
-      iVar1 = FUN_00c21ad0(this,uVar4);
+      iVar1 = LH_Array_GetAt_00c21ad0(this,uVar4);
       if (iVar1 != 0) {
-        FUN_00c21f10(this,uVar3,iVar1);
+        LH_Array_SetAt_00c21f10(this,uVar3,iVar1);
         uVar3 = uVar3 + 1;
       }
       uVar4 = uVar4 + 1;
-      uVar2 = FUN_00c21b10((int)this);
+      uVar2 = GetField_8_00c21b10((int)this);
     } while (uVar4 < uVar2);
   }
-  FUN_00c21b20(this,uVar3);
+  LH_Array_SetFilledSize_00c21b20(this,uVar3);
   return;
 }
 
@@ -7804,19 +7804,19 @@ void __fastcall FUN_00c22ef0(int param_1)
   this = (void *)(param_1 + 4);
   uVar3 = 0;
   uVar4 = 0;
-  iVar1 = FUN_00c21d90((int)this);
+  iVar1 = GetField_8_00c21d90((int)this);
   if (iVar1 != 0) {
     do {
-      iVar1 = FUN_00c21d50(this,uVar4);
+      iVar1 = LH_Array_GetAt_00c21d50(this,uVar4);
       if (iVar1 != 0) {
-        FUN_00c21f50(this,uVar3,iVar1);
+        LH_Array_SetAt_00c21f50(this,uVar3,iVar1);
         uVar3 = uVar3 + 1;
       }
       uVar4 = uVar4 + 1;
-      uVar2 = FUN_00c21d90((int)this);
+      uVar2 = GetField_8_00c21d90((int)this);
     } while (uVar4 < uVar2);
   }
-  FUN_00c21da0(this,uVar3);
+  LH_Array_SetFilledSize_00c21da0(this,uVar3);
   return;
 }
 
@@ -7855,7 +7855,7 @@ void __thiscall FUN_00c22f80(void *this,undefined4 *param_1)
       FUN_00c22130(this,param_1);
     }
     if (*(int *)((int)this + 8) != 0) {
-      FUN_00c21a10(param_1,param_1[2] + *(int *)((int)this + 8));
+      LH_Array_Reserve_00c21a10(param_1,param_1[2] + *(int *)((int)this + 8));
       FUN_00c220e0(param_1,this);
       *(undefined4 *)((int)this + 8) = 0;
     }
@@ -7874,7 +7874,7 @@ void __thiscall FUN_00c22fd0(void *this,undefined4 *param_1)
       FUN_00c221b0(this,param_1);
     }
     if (*(int *)((int)this + 8) != 0) {
-      FUN_00c21c90(param_1,param_1[2] + *(int *)((int)this + 8));
+      LH_Array_Reserve_00c21c90(param_1,param_1[2] + *(int *)((int)this + 8));
       FUN_00c22160(param_1,this);
       *(undefined4 *)((int)this + 8) = 0;
     }
@@ -7883,9 +7883,9 @@ void __thiscall FUN_00c22fd0(void *this,undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c23040 @ 00c23040 ////
+//// FUNCTION LH_Sort_Med3_00c23040 @ 00c23040 ////
 
-void __fastcall FUN_00c23040(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
+void __fastcall LH_Sort_Med3_00c23040(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
 
 {
   float *pfVar1;
@@ -7935,9 +7935,9 @@ void __fastcall FUN_00c23040(undefined4 *param_1,undefined4 *param_2,undefined4 
 }
 
 
-//// FUNCTION FUN_00c23100 @ 00c23100 ////
+//// FUNCTION LH_Sort_AdjustHeap_00c23100 @ 00c23100 ////
 
-void __fastcall FUN_00c23100(int param_1,int param_2,int param_3,float *param_4)
+void __fastcall LH_Sort_AdjustHeap_00c23100(int param_1,int param_2,int param_3,float *param_4)
 
 {
   float *pfVar1;
@@ -7968,14 +7968,14 @@ void __fastcall FUN_00c23100(int param_1,int param_2,int param_3,float *param_4)
     *(undefined4 *)(param_1 + param_2 * 4) = *(undefined4 *)(param_1 + -4 + param_3 * 4);
     param_2 = param_3 + -1;
   }
-  FUN_00c22330(param_1,param_2,local_4,param_4);
+  LH_Sort_PushHeap_00c22330(param_1,param_2,local_4,param_4);
   return;
 }
 
 
-//// FUNCTION FUN_00c231c0 @ 00c231c0 ////
+//// FUNCTION LH_Sort_Med3_00c231c0 @ 00c231c0 ////
 
-void __fastcall FUN_00c231c0(int *param_1,int *param_2,int *param_3)
+void __fastcall LH_Sort_Med3_00c231c0(int *param_1,int *param_2,int *param_3)
 
 {
   uint *puVar1;
@@ -8021,9 +8021,9 @@ void __fastcall FUN_00c231c0(int *param_1,int *param_2,int *param_3)
 }
 
 
-//// FUNCTION FUN_00c23270 @ 00c23270 ////
+//// FUNCTION LH_Sort_AdjustHeap_00c23270 @ 00c23270 ////
 
-void __fastcall FUN_00c23270(int param_1,int param_2,int param_3,uint *param_4)
+void __fastcall LH_Sort_AdjustHeap_00c23270(int param_1,int param_2,int param_3,uint *param_4)
 
 {
   uint *puVar1;
@@ -8052,14 +8052,14 @@ void __fastcall FUN_00c23270(int param_1,int param_2,int param_3,uint *param_4)
     *(undefined4 *)(param_1 + param_2 * 4) = *(undefined4 *)(param_1 + -4 + param_3 * 4);
     param_2 = param_3 + -1;
   }
-  FUN_00c22470(param_1,param_2,local_4,param_4);
+  LH_Sort_PushHeap_00c22470(param_1,param_2,local_4,param_4);
   return;
 }
 
 
-//// FUNCTION FUN_00c23390 @ 00c23390 ////
+//// FUNCTION CMapAccess_SetCellCount_00c23390 @ 00c23390 ////
 
-void __thiscall FUN_00c23390(void *this,uint param_1)
+void __thiscall CMapAccess_SetCellCount_00c23390(void *this,uint param_1)
 
 {
   LPCSTR pCVar1;
@@ -8171,9 +8171,9 @@ int __fastcall FUN_00c23510(int param_1,int param_2,int param_3)
 }
 
 
-//// FUNCTION FUN_00c23640 @ 00c23640 ////
+//// FUNCTION CCellRangeExaminer_GetRange_00c23640 @ 00c23640 ////
 
-void __thiscall FUN_00c23640(void *this,int *param_1)
+void __thiscall CCellRangeExaminer_GetRange_00c23640(void *this,int *param_1)
 
 {
   LPCSTR pCVar1;
@@ -8210,9 +8210,9 @@ void __thiscall FUN_00c23640(void *this,int *param_1)
 }
 
 
-//// FUNCTION FUN_00c23740 @ 00c23740 ////
+//// FUNCTION PKCAutoDeleteArray_Resize_00c23740 @ 00c23740 ////
 
-void __thiscall FUN_00c23740(void *this,uint param_1)
+void __thiscall PKCAutoDeleteArray_Resize_00c23740(void *this,uint param_1)
 
 {
   void *pvVar1;
@@ -8299,9 +8299,9 @@ void __thiscall FUN_00c23740(void *this,uint param_1)
 }
 
 
-//// FUNCTION FUN_00c238e0 @ 00c238e0 ////
+//// FUNCTION PKCAutoDeleteArray_Resize_00c238e0 @ 00c238e0 ////
 
-void __thiscall FUN_00c238e0(void *this,uint param_1)
+void __thiscall PKCAutoDeleteArray_Resize_00c238e0(void *this,uint param_1)
 
 {
   undefined4 *puVar1;
@@ -8405,9 +8405,9 @@ void __fastcall FUN_00c23a70(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c23aa0 @ 00c23aa0 ////
+//// FUNCTION PKCAutoDeleteArray_Resize_00c23aa0 @ 00c23aa0 ////
 
-void __thiscall FUN_00c23aa0(void *this,uint param_1)
+void __thiscall PKCAutoDeleteArray_Resize_00c23aa0(void *this,uint param_1)
 
 {
   void *pvVar1;
@@ -8498,9 +8498,9 @@ void __thiscall FUN_00c23aa0(void *this,uint param_1)
 }
 
 
-//// FUNCTION FUN_00c23c70 @ 00c23c70 ////
+//// FUNCTION PKCAutoDeleteArray_Resize_00c23c70 @ 00c23c70 ////
 
-void __thiscall FUN_00c23c70(void *this,uint param_1)
+void __thiscall PKCAutoDeleteArray_Resize_00c23c70(void *this,uint param_1)
 
 {
   void *pvVar1;
@@ -8607,9 +8607,9 @@ void __fastcall FUN_00c23e10(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c23e50 @ 00c23e50 ////
+//// FUNCTION PKCAutoDelete_Get_00c23e50 @ 00c23e50 ////
 
-int __fastcall FUN_00c23e50(int *param_1)
+int __fastcall PKCAutoDelete_Get_00c23e50(int *param_1)
 
 {
   LPCSTR pCVar1;
@@ -8644,9 +8644,9 @@ int __fastcall FUN_00c23e50(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c23f20 @ 00c23f20 ////
+//// FUNCTION PKCAutoDelete_Set_00c23f20 @ 00c23f20 ////
 
-void __thiscall FUN_00c23f20(void *this,int param_1)
+void __thiscall PKCAutoDelete_Set_00c23f20(void *this,int param_1)
 
 {
   LPCSTR pCVar1;
@@ -8699,9 +8699,9 @@ void __thiscall FUN_00c23f20(void *this,int param_1)
 }
 
 
-//// FUNCTION FUN_00c24090 @ 00c24090 ////
+//// FUNCTION PKCAutoDelete_Get_00c24090 @ 00c24090 ////
 
-int __fastcall FUN_00c24090(int *param_1)
+int __fastcall PKCAutoDelete_Get_00c24090(int *param_1)
 
 {
   LPCSTR pCVar1;
@@ -8789,24 +8789,24 @@ void __thiscall FUN_00c24160(void *this,undefined4 *param_1,undefined4 *param_2)
 }
 
 
-//// FUNCTION FUN_00c242a0 @ 00c242a0 ////
+//// FUNCTION Dtor_00c242a0 @ 00c242a0 ////
 
-void __fastcall FUN_00c242a0(undefined4 *param_1)
+void __fastcall Dtor_00c242a0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5f44;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c242b0 @ 00c242b0 ////
+//// FUNCTION Dtor_00c242b0 @ 00c242b0 ////
 
-void __fastcall FUN_00c242b0(undefined4 *param_1)
+void __fastcall Dtor_00c242b0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5f6c;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
@@ -8821,31 +8821,31 @@ int __fastcall FUN_00c242c0(int param_1)
 }
 
 
-//// FUNCTION FUN_00c242d0 @ 00c242d0 ////
+//// FUNCTION Ctor_vt00da5f44_00c242d0 @ 00c242d0 ////
 
-undefined4 * __fastcall FUN_00c242d0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da5f44_00c242d0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5f44;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c242f0 @ 00c242f0 ////
+//// FUNCTION Ctor_vt00da5f6c_00c242f0 @ 00c242f0 ////
 
-undefined4 * __fastcall FUN_00c242f0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da5f6c_00c242f0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5f6c;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c24310 @ 00c24310 ////
+//// FUNCTION PKCAutoDeleteArray_At_00c24310 @ 00c24310 ////
 
-int __thiscall FUN_00c24310(void *this,uint param_1)
+int __thiscall PKCAutoDeleteArray_At_00c24310(void *this,uint param_1)
 
 {
   LPCSTR pCVar1;
@@ -8884,9 +8884,9 @@ int __thiscall FUN_00c24310(void *this,uint param_1)
 }
 
 
-//// FUNCTION FUN_00c24420 @ 00c24420 ////
+//// FUNCTION PKCAutoDeleteArray_At_00c24420 @ 00c24420 ////
 
-int __thiscall FUN_00c24420(void *this,uint param_1)
+int __thiscall PKCAutoDeleteArray_At_00c24420(void *this,uint param_1)
 
 {
   LPCSTR pCVar1;
@@ -8925,9 +8925,9 @@ int __thiscall FUN_00c24420(void *this,uint param_1)
 }
 
 
-//// FUNCTION FUN_00c24530 @ 00c24530 ////
+//// FUNCTION PKCAutoDeleteArray_At_00c24530 @ 00c24530 ////
 
-int __thiscall FUN_00c24530(void *this,uint param_1)
+int __thiscall PKCAutoDeleteArray_At_00c24530(void *this,uint param_1)
 
 {
   LPCSTR pCVar1;
@@ -8966,9 +8966,9 @@ int __thiscall FUN_00c24530(void *this,uint param_1)
 }
 
 
-//// FUNCTION FUN_00c24640 @ 00c24640 ////
+//// FUNCTION PKCAutoDeleteArray_At_00c24640 @ 00c24640 ////
 
-int __thiscall FUN_00c24640(void *this,uint param_1)
+int __thiscall PKCAutoDeleteArray_At_00c24640(void *this,uint param_1)
 
 {
   LPCSTR pCVar1;
@@ -9007,9 +9007,9 @@ int __thiscall FUN_00c24640(void *this,uint param_1)
 }
 
 
-//// FUNCTION FUN_00c24750 @ 00c24750 ////
+//// FUNCTION PKCAutoDeleteArray_At_00c24750 @ 00c24750 ////
 
-int __thiscall FUN_00c24750(void *this,uint param_1)
+int __thiscall PKCAutoDeleteArray_At_00c24750(void *this,uint param_1)
 
 {
   LPCSTR pCVar1;
@@ -9057,7 +9057,7 @@ void __fastcall FUN_00c24860(int *param_1)
   void *_Memory;
   
   this = param_1 + 1;
-  _Memory = (void *)FUN_00bcecf0(this);
+  _Memory = (void *)RedBlackTree_GetMinObject(this);
   if (_Memory != (void *)0x0) {
     do {
       FUN_00bcff70(this,param_1,(int)_Memory);
@@ -9067,16 +9067,16 @@ void __fastcall FUN_00c24860(int *param_1)
                     /* WARNING: Subroutine does not return */
         _free(_Memory);
       }
-      _Memory = (void *)FUN_00bcecf0(this);
+      _Memory = (void *)RedBlackTree_GetMinObject(this);
     } while (_Memory != (void *)0x0);
   }
   return;
 }
 
 
-//// FUNCTION FUN_00c248f0 @ 00c248f0 ////
+//// FUNCTION Dtor_00c248f0 @ 00c248f0 ////
 
-void __fastcall FUN_00c248f0(undefined4 *param_1)
+void __fastcall Dtor_00c248f0(undefined4 *param_1)
 
 {
   void *local_c;
@@ -9090,15 +9090,15 @@ void __fastcall FUN_00c248f0(undefined4 *param_1)
   local_4 = 0;
   FUN_00c22ea0((int)param_1);
   local_4 = 0xffffffff;
-  FUN_00c21b60(param_1 + 1);
+  LH_Array_FreeBuffer_00c21b60(param_1 + 1);
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c24940 @ 00c24940 ////
+//// FUNCTION Dtor_00c24940 @ 00c24940 ////
 
-void __fastcall FUN_00c24940(undefined4 *param_1)
+void __fastcall Dtor_00c24940(undefined4 *param_1)
 
 {
   void *local_c;
@@ -9112,18 +9112,18 @@ void __fastcall FUN_00c24940(undefined4 *param_1)
   local_4 = 0;
   FUN_00c22ef0((int)param_1);
   local_4 = 0xffffffff;
-  FUN_00c21de0(param_1 + 1);
+  LH_Array_FreeBuffer_00c21de0(param_1 + 1);
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c24990 @ 00c24990 ////
+//// FUNCTION ScalarDeletingDtor_00c24990 @ 00c24990 ////
 
-undefined4 * __thiscall FUN_00c24990(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c24990(void *this,byte param_1)
 
 {
-  FUN_00c248f0(this);
+  Dtor_00c248f0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -9132,12 +9132,12 @@ undefined4 * __thiscall FUN_00c24990(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c249b0 @ 00c249b0 ////
+//// FUNCTION ScalarDeletingDtor_00c249b0 @ 00c249b0 ////
 
-undefined4 * __thiscall FUN_00c249b0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c249b0(void *this,byte param_1)
 
 {
-  FUN_00c24940(this);
+  Dtor_00c24940(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -9197,13 +9197,13 @@ void __fastcall FUN_00c24a30(undefined4 *param_1,undefined4 *param_2,undefined4 
   if (0x28 < iVar1) {
     iVar1 = iVar1 + 1;
     iVar1 = (int)(iVar1 + (iVar1 >> 0x1f & 7U)) >> 3;
-    FUN_00c23040(param_1,param_1 + iVar1,param_1 + iVar1 * 2);
-    FUN_00c23040(param_2 + -iVar1,param_2,param_2 + iVar1);
-    FUN_00c23040(param_3 + iVar1 * -2,param_3 + -iVar1,param_3);
-    FUN_00c23040(param_1 + iVar1,param_2,param_3 + -iVar1);
+    LH_Sort_Med3_00c23040(param_1,param_1 + iVar1,param_1 + iVar1 * 2);
+    LH_Sort_Med3_00c23040(param_2 + -iVar1,param_2,param_2 + iVar1);
+    LH_Sort_Med3_00c23040(param_3 + iVar1 * -2,param_3 + -iVar1,param_3);
+    LH_Sort_Med3_00c23040(param_1 + iVar1,param_2,param_3 + -iVar1);
     return;
   }
-  FUN_00c23040(param_1,param_2,param_3);
+  LH_Sort_Med3_00c23040(param_1,param_2,param_3);
   return;
 }
 
@@ -9222,7 +9222,7 @@ void __fastcall FUN_00c24ad0(int param_1,int param_2)
   while (0 < iVar3) {
     iVar1 = iVar3 * 4;
     iVar3 = iVar3 + -1;
-    FUN_00c23100(param_1,iVar3,iVar2,*(float **)(param_1 + -4 + iVar1));
+    LH_Sort_AdjustHeap_00c23100(param_1,iVar3,iVar2,*(float **)(param_1 + -4 + iVar1));
   }
   return;
 }
@@ -9239,13 +9239,13 @@ void __fastcall FUN_00c24b30(int *param_1,int *param_2,int *param_3)
   if (0x28 < iVar1) {
     iVar1 = iVar1 + 1;
     iVar1 = (int)(iVar1 + (iVar1 >> 0x1f & 7U)) >> 3;
-    FUN_00c231c0(param_1,param_1 + iVar1,param_1 + iVar1 * 2);
-    FUN_00c231c0(param_2 + -iVar1,param_2,param_2 + iVar1);
-    FUN_00c231c0(param_3 + iVar1 * -2,param_3 + -iVar1,param_3);
-    FUN_00c231c0(param_1 + iVar1,param_2,param_3 + -iVar1);
+    LH_Sort_Med3_00c231c0(param_1,param_1 + iVar1,param_1 + iVar1 * 2);
+    LH_Sort_Med3_00c231c0(param_2 + -iVar1,param_2,param_2 + iVar1);
+    LH_Sort_Med3_00c231c0(param_3 + iVar1 * -2,param_3 + -iVar1,param_3);
+    LH_Sort_Med3_00c231c0(param_1 + iVar1,param_2,param_3 + -iVar1);
     return;
   }
-  FUN_00c231c0(param_1,param_2,param_3);
+  LH_Sort_Med3_00c231c0(param_1,param_2,param_3);
   return;
 }
 
@@ -9264,7 +9264,7 @@ void __fastcall FUN_00c24bd0(int param_1,int param_2)
   while (0 < iVar3) {
     iVar1 = iVar3 * 4;
     iVar3 = iVar3 + -1;
-    FUN_00c23270(param_1,iVar3,iVar2,*(uint **)(param_1 + -4 + iVar1));
+    LH_Sort_AdjustHeap_00c23270(param_1,iVar3,iVar2,*(uint **)(param_1 + -4 + iVar1));
   }
   return;
 }
@@ -9317,7 +9317,7 @@ int * __thiscall FUN_00c24c90(void *this,int param_1,uint param_2)
       DebugBreak();
     }
   }
-  FUN_00c23390(this,param_2);
+  CMapAccess_SetCellCount_00c23390(this,param_2);
   ExceptionList = local_c;
   return this;
 }
@@ -9339,33 +9339,33 @@ void __fastcall FUN_00c24e20(int *param_1)
   FUN_00c24860(param_1);
   local_4 = local_4 & 0xffffff00;
   param_1[3] = (int)&PTR_LAB_00da5f6c;
-  FUN_00bcffc0(param_1 + 4);
+  RedBlackTree_Dtor(param_1 + 4);
   local_4 = 0xffffffff;
   *param_1 = (int)&PTR_LAB_00da5f44;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c24e90 @ 00c24e90 ////
+//// FUNCTION Ctor_vt00da6118_00c24e90 @ 00c24e90 ////
 
-undefined4 * __fastcall FUN_00c24e90(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da6118_00c24e90(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5f44;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da6118;
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c24eb0 @ 00c24eb0 ////
+//// FUNCTION ScalarDeletingDtor_00c24eb0 @ 00c24eb0 ////
 
-undefined4 * __thiscall FUN_00c24eb0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c24eb0(void *this,byte param_1)
 
 {
-  FUN_00c242a0(this);
+  Dtor_00c242a0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -9374,24 +9374,24 @@ undefined4 * __thiscall FUN_00c24eb0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c24ed0 @ 00c24ed0 ////
+//// FUNCTION Ctor_vt00da6140_00c24ed0 @ 00c24ed0 ////
 
-undefined4 * __fastcall FUN_00c24ed0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da6140_00c24ed0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da5f6c;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da6140;
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c24ef0 @ 00c24ef0 ////
+//// FUNCTION ScalarDeletingDtor_00c24ef0 @ 00c24ef0 ////
 
-undefined4 * __thiscall FUN_00c24ef0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c24ef0(void *this,byte param_1)
 
 {
-  FUN_00c242b0(this);
+  Dtor_00c242b0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -9400,9 +9400,9 @@ undefined4 * __thiscall FUN_00c24ef0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c24f10 @ 00c24f10 ////
+//// FUNCTION LH_Container_AddObject_00c24f10 @ 00c24f10 ////
 
-void __thiscall FUN_00c24f10(void *this,int param_1)
+void __thiscall LH_Container_AddObject_00c24f10(void *this,int param_1)
 
 {
   int iVar1;
@@ -9417,9 +9417,9 @@ void __thiscall FUN_00c24f10(void *this,int param_1)
 }
 
 
-//// FUNCTION FUN_00c24f40 @ 00c24f40 ////
+//// FUNCTION LH_Container_AddObject_00c24f40 @ 00c24f40 ////
 
-void __thiscall FUN_00c24f40(void *this,int param_1)
+void __thiscall LH_Container_AddObject_00c24f40(void *this,int param_1)
 
 {
   int iVar1;
@@ -9434,16 +9434,16 @@ void __thiscall FUN_00c24f40(void *this,int param_1)
 }
 
 
-//// FUNCTION FUN_00c24f70 @ 00c24f70 ////
+//// FUNCTION LH_Array_AdoptRequireEmpty_00c24f70 @ 00c24f70 ////
 
-void __thiscall FUN_00c24f70(void *this,void *param_1)
+void __thiscall LH_Array_AdoptRequireEmpty_00c24f70(void *this,void *param_1)
 
 {
   int iVar1;
   undefined4 uStack_4;
   
   uStack_4 = this;
-  iVar1 = FUN_00c21b10((int)this + 4);
+  iVar1 = GetField_8_00c21b10((int)this + 4);
   if (iVar1 != 0) {
     LH_Assert((void *)((int)&uStack_4 + 3),"Array.Count () == 0\n");
     DebugBreak();
@@ -9453,16 +9453,16 @@ void __thiscall FUN_00c24f70(void *this,void *param_1)
 }
 
 
-//// FUNCTION FUN_00c24fb0 @ 00c24fb0 ////
+//// FUNCTION LH_Array_AdoptRequireEmpty_00c24fb0 @ 00c24fb0 ////
 
-void __thiscall FUN_00c24fb0(void *this,void *param_1)
+void __thiscall LH_Array_AdoptRequireEmpty_00c24fb0(void *this,void *param_1)
 
 {
   int iVar1;
   undefined4 uStack_4;
   
   uStack_4 = this;
-  iVar1 = FUN_00c21d90((int)this + 4);
+  iVar1 = GetField_8_00c21d90((int)this + 4);
   if (iVar1 != 0) {
     LH_Assert((void *)((int)&uStack_4 + 3),"Array.Count () == 0\n");
     DebugBreak();
@@ -9472,9 +9472,9 @@ void __thiscall FUN_00c24fb0(void *this,void *param_1)
 }
 
 
-//// FUNCTION FUN_00c24ff0 @ 00c24ff0 ////
+//// FUNCTION LH_Sort_UnguardedPartition_00c24ff0 @ 00c24ff0 ////
 
-void __fastcall FUN_00c24ff0(undefined4 *param_1,int *param_2,int *param_3,undefined4 param_4)
+void __fastcall LH_Sort_UnguardedPartition_00c24ff0(undefined4 *param_1,int *param_2,int *param_3,undefined4 param_4)
 
 {
   int *piVar1;
@@ -9655,9 +9655,9 @@ LAB_00c251ae:
 }
 
 
-//// FUNCTION FUN_00c25300 @ 00c25300 ////
+//// FUNCTION LH_Sort_InsertionSort_00c25300 @ 00c25300 ////
 
-void __fastcall FUN_00c25300(undefined4 *param_1,undefined4 *param_2)
+void __fastcall LH_Sort_InsertionSort_00c25300(undefined4 *param_1,undefined4 *param_2)
 
 {
   float *pfVar1;
@@ -9716,9 +9716,9 @@ void __fastcall FUN_00c25300(undefined4 *param_1,undefined4 *param_2)
 }
 
 
-//// FUNCTION FUN_00c25400 @ 00c25400 ////
+//// FUNCTION LH_Sort_UnguardedPartition_00c25400 @ 00c25400 ////
 
-void __fastcall FUN_00c25400(undefined4 *param_1,int *param_2,int *param_3,undefined4 param_4)
+void __fastcall LH_Sort_UnguardedPartition_00c25400(undefined4 *param_1,int *param_2,int *param_3,undefined4 param_4)
 
 {
   int *piVar1;
@@ -9888,9 +9888,9 @@ LAB_00c25582:
 }
 
 
-//// FUNCTION FUN_00c256d0 @ 00c256d0 ////
+//// FUNCTION LH_Sort_InsertionSort_00c256d0 @ 00c256d0 ////
 
-void __fastcall FUN_00c256d0(int *param_1,int *param_2)
+void __fastcall LH_Sort_InsertionSort_00c256d0(int *param_1,int *param_2)
 
 {
   uint *puVar1;
@@ -9946,9 +9946,9 @@ void __fastcall FUN_00c256d0(int *param_1,int *param_2)
 }
 
 
-//// FUNCTION FUN_00c25850 @ 00c25850 ////
+//// FUNCTION Ctor_vt00da6118_00c25850 @ 00c25850 ////
 
-undefined4 * __fastcall FUN_00c25850(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da6118_00c25850(undefined4 *param_1)
 
 {
   void *local_c;
@@ -9960,20 +9960,20 @@ undefined4 * __fastcall FUN_00c25850(undefined4 *param_1)
   local_c = ExceptionList;
   ExceptionList = &local_c;
   *param_1 = &PTR_LAB_00da5f44;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da6118;
   local_4 = 0;
   param_1[3] = &PTR_LAB_00da5f6c;
-  FUN_00bcf170(param_1 + 4);
+  RedBlackTree_Ctor(param_1 + 4);
   param_1[3] = &PTR_LAB_00da6140;
   ExceptionList = local_c;
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c258c0 @ 00c258c0 ////
+//// FUNCTION Ctor_vt00da60e8_00c258c0 @ 00c258c0 ////
 
-undefined4 * __thiscall FUN_00c258c0(void *this,void *param_1)
+undefined4 * __thiscall Ctor_vt00da60e8_00c258c0(void *this,void *param_1)
 
 {
   void *local_c;
@@ -9987,15 +9987,15 @@ undefined4 * __thiscall FUN_00c258c0(void *this,void *param_1)
   *(undefined ***)this = &PTR_FUN_00da60e8;
   FUN_00c21b50((undefined4 *)((int)this + 4));
   local_4 = 0;
-  FUN_00c24f70(this,param_1);
+  LH_Array_AdoptRequireEmpty_00c24f70(this,param_1);
   ExceptionList = local_c;
   return this;
 }
 
 
-//// FUNCTION FUN_00c25920 @ 00c25920 ////
+//// FUNCTION Ctor_vt00da60ec_00c25920 @ 00c25920 ////
 
-undefined4 * __thiscall FUN_00c25920(void *this,void *param_1)
+undefined4 * __thiscall Ctor_vt00da60ec_00c25920(void *this,void *param_1)
 
 {
   void *local_c;
@@ -10009,7 +10009,7 @@ undefined4 * __thiscall FUN_00c25920(void *this,void *param_1)
   *(undefined ***)this = &PTR_FUN_00da60ec;
   FUN_00c21dd0((undefined4 *)((int)this + 4));
   local_4 = 0;
-  FUN_00c24fb0(this,param_1);
+  LH_Array_AdoptRequireEmpty_00c24fb0(this,param_1);
   ExceptionList = local_c;
   return this;
 }
@@ -10026,7 +10026,7 @@ void __fastcall FUN_00c25980(undefined4 *param_1,int param_2)
   for (iVar2 = param_2 - (int)param_1; 1 < iVar2 >> 2; iVar2 = iVar2 + -4) {
     pfVar1 = *(float **)((int)param_1 + iVar2 + -4);
     *(undefined4 *)((int)param_1 + iVar2 + -4) = *param_1;
-    FUN_00c23100((int)param_1,0,iVar2 + -4 >> 2,pfVar1);
+    LH_Sort_AdjustHeap_00c23100((int)param_1,0,iVar2 + -4 >> 2,pfVar1);
   }
   return;
 }
@@ -10043,7 +10043,7 @@ void __fastcall FUN_00c259d0(undefined4 *param_1,int param_2)
   for (iVar2 = param_2 - (int)param_1; 1 < iVar2 >> 2; iVar2 = iVar2 + -4) {
     puVar1 = *(uint **)((int)param_1 + iVar2 + -4);
     *(undefined4 *)((int)param_1 + iVar2 + -4) = *param_1;
-    FUN_00c23270((int)param_1,0,iVar2 + -4 >> 2,puVar1);
+    LH_Sort_AdjustHeap_00c23270((int)param_1,0,iVar2 + -4 >> 2,puVar1);
   }
   return;
 }
@@ -10065,7 +10065,7 @@ void __fastcall FUN_00c25a80(int *param_1,int *param_2,int param_3,undefined4 pa
     if (iVar2 < 0x21) {
 LAB_00c25b13:
       if (1 < iVar2) {
-        FUN_00c25300(param_1,param_2);
+        LH_Sort_InsertionSort_00c25300(param_1,param_2);
       }
       return;
     }
@@ -10079,7 +10079,7 @@ LAB_00c25b13:
       }
       goto LAB_00c25b13;
     }
-    FUN_00c24ff0(&local_8,param_1,param_2,param_4);
+    LH_Sort_UnguardedPartition_00c24ff0(&local_8,param_1,param_2,param_4);
     piVar1 = local_4;
     param_3 = param_3 / 2 + (param_3 / 2) / 2;
     if ((int)((int)local_8 - (int)param_1 & 0xfffffffcU) <
@@ -10112,7 +10112,7 @@ void __fastcall FUN_00c25b70(int *param_1,int *param_2,int param_3,undefined4 pa
     if (iVar2 < 0x21) {
 LAB_00c25c03:
       if (1 < iVar2) {
-        FUN_00c256d0(param_1,param_2);
+        LH_Sort_InsertionSort_00c256d0(param_1,param_2);
       }
       return;
     }
@@ -10126,7 +10126,7 @@ LAB_00c25c03:
       }
       goto LAB_00c25c03;
     }
-    FUN_00c25400(&local_8,param_1,param_2,param_4);
+    LH_Sort_UnguardedPartition_00c25400(&local_8,param_1,param_2,param_4);
     piVar1 = local_4;
     param_3 = param_3 / 2 + (param_3 / 2) / 2;
     if ((int)((int)local_8 - (int)param_1 & 0xfffffffcU) <
@@ -10160,9 +10160,9 @@ void __fastcall FUN_00c25c60(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c25c90 @ 00c25c90 ////
+//// FUNCTION PKCAutoDeleteArray_Resize_00c25c90 @ 00c25c90 ////
 
-void __thiscall FUN_00c25c90(void *this,uint param_1)
+void __thiscall PKCAutoDeleteArray_Resize_00c25c90(void *this,uint param_1)
 
 {
   void *pvVar1;
@@ -10294,9 +10294,9 @@ void __fastcall FUN_00c25ed0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c25f00 @ 00c25f00 ////
+//// FUNCTION LH_Array_SortAndVerifyUnique_00c25f00 @ 00c25f00 ////
 
-void __fastcall FUN_00c25f00(int *param_1)
+void __fastcall LH_Array_SortAndVerifyUnique_00c25f00(int *param_1)
 
 {
   uint uVar1;
@@ -10304,7 +10304,7 @@ void __fastcall FUN_00c25f00(int *param_1)
   
   uStack_4 = param_1;
   FUN_00c25ea0(param_1);
-  uVar1 = FUN_00c21fd0(param_1);
+  uVar1 = LH_Sort_Compare_00c21fd0(param_1);
   if ((char)uVar1 == '\0') {
     LH_Assert((void *)((int)&uStack_4 + 3),"unique\n");
     DebugBreak();
@@ -10313,9 +10313,9 @@ void __fastcall FUN_00c25f00(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c25f30 @ 00c25f30 ////
+//// FUNCTION LH_Array_SortAndVerifyUnique_00c25f30 @ 00c25f30 ////
 
-void __fastcall FUN_00c25f30(int *param_1)
+void __fastcall LH_Array_SortAndVerifyUnique_00c25f30(int *param_1)
 
 {
   uint uVar1;
@@ -10323,7 +10323,7 @@ void __fastcall FUN_00c25f30(int *param_1)
   
   uStack_4 = param_1;
   FUN_00c25ed0(param_1);
-  uVar1 = FUN_00c22080(param_1);
+  uVar1 = LH_Sort_Compare_00c22080(param_1);
   if ((char)uVar1 == '\0') {
     LH_Assert((void *)((int)&uStack_4 + 3),"unique\n");
     DebugBreak();
@@ -10332,42 +10332,42 @@ void __fastcall FUN_00c25f30(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c25f60 @ 00c25f60 ////
+//// FUNCTION LH_Array_CopySorted_00c25f60 @ 00c25f60 ////
 
-void __thiscall FUN_00c25f60(void *this,void *param_1)
+void __thiscall LH_Array_CopySorted_00c25f60(void *this,void *param_1)
 
 {
   int iVar1;
   undefined4 uStack_4;
   
   uStack_4 = this;
-  iVar1 = FUN_00c21b10((int)this);
+  iVar1 = GetField_8_00c21b10((int)this);
   if (iVar1 != 0) {
     LH_Assert((void *)((int)&uStack_4 + 3),"Array.Count () == 0\n");
     DebugBreak();
   }
   FUN_00c24a00(param_1,this);
-  FUN_00c25f00(this);
+  LH_Array_SortAndVerifyUnique_00c25f00(this);
   return;
 }
 
 
-//// FUNCTION FUN_00c25fa0 @ 00c25fa0 ////
+//// FUNCTION LH_Array_CopySorted_00c25fa0 @ 00c25fa0 ////
 
-void __thiscall FUN_00c25fa0(void *this,void *param_1)
+void __thiscall LH_Array_CopySorted_00c25fa0(void *this,void *param_1)
 
 {
   int iVar1;
   undefined4 uStack_4;
   
   uStack_4 = this;
-  iVar1 = FUN_00c21d90((int)this);
+  iVar1 = GetField_8_00c21d90((int)this);
   if (iVar1 != 0) {
     LH_Assert((void *)((int)&uStack_4 + 3),"Array.Count () == 0\n");
     DebugBreak();
   }
   FUN_00c24a20(param_1,this);
-  FUN_00c25f30(this);
+  LH_Array_SortAndVerifyUnique_00c25f30(this);
   return;
 }
 
@@ -10505,7 +10505,7 @@ int * __thiscall FUN_00c261c0(void *this,int param_1,int param_2)
   *(undefined4 *)((int)this + 4) = 0xffffffff;
   *(undefined4 *)((int)this + 0xc) = 0;
   *(undefined4 *)((int)this + 0x10) = 0;
-  FUN_00bcf160((undefined4 *)((int)this + 0x14));
+  RedBlackTree_Node_Ctor((undefined4 *)((int)this + 0x14));
   local_4 = 0;
   FUN_00bcfac0((void *)(*(int *)this + 8),(int *)(*(int *)this + 4),(int)this);
   ExceptionList = local_c;
@@ -10513,9 +10513,9 @@ int * __thiscall FUN_00c261c0(void *this,int param_1,int param_2)
 }
 
 
-//// FUNCTION FUN_00c26240 @ 00c26240 ////
+//// FUNCTION Dtor_00c26240 @ 00c26240 ////
 
-void __fastcall FUN_00c26240(int *param_1)
+void __fastcall Dtor_00c26240(int *param_1)
 
 {
   int iVar1;
@@ -10537,7 +10537,7 @@ void __fastcall FUN_00c26240(int *param_1)
   }
   FUN_00bcff70((void *)(*param_1 + 8),(int *)(*param_1 + 4),(int)param_1);
   local_4 = 0xffffffff;
-  FUN_00bcf880(param_1 + 5);
+  RedBlackTree_Node_Dtor(param_1 + 5);
   ExceptionList = pvStack_c;
   return;
 }
@@ -10571,9 +10571,9 @@ void __thiscall FUN_00c26360(void *this,int param_1)
 }
 
 
-//// FUNCTION FUN_00c26390 @ 00c26390 ////
+//// FUNCTION Wrap_rand_00c26390 @ 00c26390 ////
 
-float10 FUN_00c26390(void)
+float10 Wrap_rand_00c26390(void)
 
 {
   int iVar1;
@@ -10681,9 +10681,9 @@ float * __thiscall FUN_00c264f0(void *this,float param_1)
   float10 fVar2;
   
   do {
-    fVar2 = FUN_00c26390();
+    fVar2 = Wrap_rand_00c26390();
     fVar1 = (float)(fVar2 * (float10)(param_1 + param_1) - (float10)param_1);
-    fVar2 = FUN_00c26390();
+    fVar2 = Wrap_rand_00c26390();
     fVar2 = fVar2 * (float10)(param_1 + param_1) - (float10)param_1;
   } while ((float10)(param_1 * param_1) <= (float10)fVar1 * (float10)fVar1 + fVar2 * fVar2);
   *(float *)((int)this + 4) = (float)fVar2;
@@ -10702,9 +10702,9 @@ float * __thiscall FUN_00c26560(void *this,float param_1)
   float10 fVar3;
   
   do {
-    fVar3 = FUN_00c26390();
+    fVar3 = Wrap_rand_00c26390();
     fVar1 = (float)(fVar3 * (float10)(param_1 + param_1) - (float10)param_1);
-    fVar3 = FUN_00c26390();
+    fVar3 = Wrap_rand_00c26390();
     fVar3 = fVar3 * (float10)(param_1 + param_1) - (float10)param_1;
   } while ((float10)(param_1 * param_1) <= (float10)fVar1 * (float10)fVar1 + fVar3 * fVar3);
   fVar2 = (float)((float10)1.0 / ((float10)fVar1 * (float10)fVar1 + fVar3 * fVar3));
@@ -10790,7 +10790,7 @@ void __thiscall FUN_00c26660(void *this,int *param_1,undefined4 param_2)
   fVar2 = (float10)FUN_00bdde10((int)piVar4);
   local_9c = (float)fVar2;
   local_8c = FUN_00bde0a0((int)piVar4);
-  uVar1 = FUN_00bde080((int)piVar4);
+  uVar1 = GetField_0x18_00bde080((int)piVar4);
   local_90 = CONCAT22(extraout_var,uVar1);
   fVar2 = FUN_00c26600((int)this,&local_9c);
   local_88 = (float)fVar2;
@@ -10846,8 +10846,8 @@ void __fastcall FUN_00c267e0(int param_1)
   int local_4;
   
   iVar3 = *(int *)(*(int *)(param_1 + 0x1c) + 0x30);
-  for (iVar2 = FUN_00bcecf0((undefined4 *)(iVar3 + 0x18)); iVar2 != 0;
-      iVar2 = FUN_00bcf3f0((void *)(iVar3 + 0x18),(int *)(iVar3 + 0x14),iVar2)) {
+  for (iVar2 = RedBlackTree_GetMinObject((undefined4 *)(iVar3 + 0x18)); iVar2 != 0;
+      iVar2 = RedBlackTree_GetSuccessor((void *)(iVar3 + 0x18),(int *)(iVar3 + 0x14),iVar2)) {
     local_14 = 0.0;
     local_10 = 0.0;
     local_8 = 0;
@@ -10858,12 +10858,12 @@ void __fastcall FUN_00c267e0(int param_1)
     fVar4 = (float10)FUN_00bdde10(*(int *)(iVar2 + 0x14) + 8);
     local_14 = (float)fVar4;
     local_4 = FUN_00bde0a0(*(int *)(iVar2 + 0x14) + 8);
-    uVar1 = FUN_00bde080(*(int *)(iVar2 + 0x14) + 8);
+    uVar1 = GetField_0x18_00bde080(*(int *)(iVar2 + 0x14) + 8);
     local_8 = CONCAT22(extraout_var,uVar1);
     (**(code **)(**(int **)(**(int **)(param_1 + 0x18) + 0x28) + 8))
               ((*(int **)(param_1 + 0x18))[2],&local_14);
   }
-  iVar3 = FUN_00bcecf0((undefined4 *)(param_1 + 0x24));
+  iVar3 = RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x24));
   if (iVar3 != 0) {
     do {
       local_14 = 0.0;
@@ -10877,11 +10877,11 @@ void __fastcall FUN_00c267e0(int param_1)
       fVar4 = (float10)FUN_00bdde10(iVar2);
       local_14 = (float)fVar4;
       local_4 = FUN_00bde0a0(iVar2);
-      uVar1 = FUN_00bde080(iVar2);
+      uVar1 = GetField_0x18_00bde080(iVar2);
       local_8 = CONCAT22(extraout_var_00,uVar1);
       (**(code **)(**(int **)(**(int **)(param_1 + 0x18) + 0x28) + 8))
                 ((*(int **)(param_1 + 0x18))[2],&local_14);
-      iVar3 = FUN_00bcf3f0((void *)(param_1 + 0x24),(int *)(param_1 + 0x20),iVar3);
+      iVar3 = RedBlackTree_GetSuccessor((void *)(param_1 + 0x24),(int *)(param_1 + 0x20),iVar3);
     } while (iVar3 != 0);
   }
   return;
@@ -10893,7 +10893,7 @@ void __fastcall FUN_00c267e0(int param_1)
 void __fastcall FUN_00c26960(int param_1)
 
 {
-  FUN_00bcecf0((undefined4 *)(param_1 + 0x24));
+  RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x24));
   return;
 }
 
@@ -10918,7 +10918,7 @@ void __thiscall FUN_00c26970(void *this,void *param_1)
   local_14 = 0.0;
   local_10 = 0;
   local_c = *(undefined4 *)(*(int *)((int)this + 0x18) + 0x28);
-  puVar1 = FUN_00bf3090((uint *)((int)param_1 + 0xac));
+  puVar1 = LHAudioParams_Get3DPosition((uint *)((int)param_1 + 0xac));
   local_10 = puVar1[4];
   local_14 = (float)puVar1[3];
   local_4 = puVar1[1];
@@ -10938,9 +10938,9 @@ void __fastcall FUN_00c26a10(int param_1)
 {
   int *_Memory;
   
-  _Memory = (int *)FUN_00bcecf0((undefined4 *)(param_1 + 0x24));
+  _Memory = (int *)RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x24));
   if (_Memory != (int *)0x0) {
-    FUN_00c27200(_Memory);
+    Dtor_00c27200(_Memory);
                     /* WARNING: Subroutine does not return */
     _free(_Memory);
   }
@@ -10972,9 +10972,9 @@ void __fastcall FUN_00c26a50(void *param_1)
 }
 
 
-//// FUNCTION FUN_00c26ad0 @ 00c26ad0 ////
+//// FUNCTION Dtor_00c26ad0 @ 00c26ad0 ////
 
-void __fastcall FUN_00c26ad0(undefined4 *param_1)
+void __fastcall Dtor_00c26ad0(undefined4 *param_1)
 
 {
   void *local_c;
@@ -10994,9 +10994,9 @@ void __fastcall FUN_00c26ad0(undefined4 *param_1)
   FUN_00c4f4b0();
   local_4._0_1_ = 1;
   param_1[8] = &PTR_LAB_00da6208;
-  FUN_00bcffc0(param_1 + 9);
+  RedBlackTree_Dtor(param_1 + 9);
   local_4 = (uint)local_4._1_3_ << 8;
-  FUN_00bcf880(param_1 + 1);
+  RedBlackTree_Node_Dtor(param_1 + 1);
   *param_1 = &PTR_LAB_00d9e7a0;
   ExceptionList = local_c;
   return;
@@ -11052,9 +11052,9 @@ void __thiscall FUN_00c26c00(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00c26c10 @ 00c26c10 ////
+//// FUNCTION Ctor_vt00da6260_00c26c10 @ 00c26c10 ////
 
-undefined4 * __thiscall FUN_00c26c10(void *this,undefined4 param_1,undefined4 param_2)
+undefined4 * __thiscall Ctor_vt00da6260_00c26c10(void *this,undefined4 param_1,undefined4 param_2)
 
 {
   void *local_c;
@@ -11066,12 +11066,12 @@ undefined4 * __thiscall FUN_00c26c10(void *this,undefined4 param_1,undefined4 pa
   local_4 = 0;
   ExceptionList = &local_c;
   *(undefined ***)this = &PTR_FUN_00da6260;
-  FUN_00bcf160((undefined4 *)((int)this + 4));
+  RedBlackTree_Node_Ctor((undefined4 *)((int)this + 4));
   *(undefined4 *)((int)this + 0x1c) = param_2;
   *(undefined4 *)((int)this + 0x18) = param_1;
   local_4._0_1_ = 1;
   *(undefined ***)((int)this + 0x20) = &PTR_LAB_00da6208;
-  FUN_00bcf170((int *)((int)this + 0x24));
+  RedBlackTree_Ctor((int *)((int)this + 0x24));
   *(undefined ***)((int)this + 0x20) = &PTR_LAB_00da6238;
   local_4._0_1_ = 2;
   FUN_00c4f490((undefined4 *)((int)this + 0x2c));
@@ -11109,18 +11109,18 @@ float10 FUN_00c26ce0(void)
   local_18 = &local_14;
   local_1c = &PTR_LAB_00da6230;
   local_4 = 1;
-  FUN_00bcf140((void *)(extraout_EDX + 0x24),&local_1c);
+  RedBlackTree_ForEach((void *)(extraout_EDX + 0x24),&local_1c);
   ExceptionList = local_c;
   return (float10)local_10;
 }
 
 
-//// FUNCTION FUN_00c26d40 @ 00c26d40 ////
+//// FUNCTION ScalarDeletingDtor_00c26d40 @ 00c26d40 ////
 
-int * __thiscall FUN_00c26d40(void *this,byte param_1)
+int * __thiscall ScalarDeletingDtor_00c26d40(void *this,byte param_1)
 
 {
-  FUN_00c27200(this);
+  Dtor_00c27200(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -11134,14 +11134,14 @@ int * __thiscall FUN_00c26d40(void *this,byte param_1)
 int * __fastcall FUN_00c26d70(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c26dd0 @ 00c26dd0 ////
+//// FUNCTION SetVtable_00d9f9dc_00c26dd0 @ 00c26dd0 ////
 
-void __fastcall FUN_00c26dd0(undefined4 *param_1)
+void __fastcall SetVtable_00d9f9dc_00c26dd0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00d9f9dc;
@@ -11149,9 +11149,9 @@ void __fastcall FUN_00c26dd0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c26e40 @ 00c26e40 ////
+//// FUNCTION SetVtable_00da61d4_00c26e40 @ 00c26e40 ////
 
-void __fastcall FUN_00c26e40(undefined4 *param_1)
+void __fastcall SetVtable_00da61d4_00c26e40(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da61d4;
@@ -11159,12 +11159,12 @@ void __fastcall FUN_00c26e40(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c26e50 @ 00c26e50 ////
+//// FUNCTION ScalarDeletingDtor_00c26e50 @ 00c26e50 ////
 
-undefined4 * __thiscall FUN_00c26e50(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c26e50(void *this,byte param_1)
 
 {
-  FUN_00c26e40(this);
+  SetVtable_00da61d4_00c26e40(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -11173,23 +11173,23 @@ undefined4 * __thiscall FUN_00c26e50(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c26ea0 @ 00c26ea0 ////
+//// FUNCTION Dtor_00c26ea0 @ 00c26ea0 ////
 
-void __fastcall FUN_00c26ea0(undefined4 *param_1)
+void __fastcall Dtor_00c26ea0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6208;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c26f90 @ 00c26f90 ////
+//// FUNCTION ScalarDeletingDtor_00c26f90 @ 00c26f90 ////
 
-undefined4 * __thiscall FUN_00c26f90(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c26f90(void *this,byte param_1)
 
 {
-  FUN_00c26dd0(this);
+  SetVtable_00d9f9dc_00c26dd0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -11198,23 +11198,23 @@ undefined4 * __thiscall FUN_00c26f90(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c26fb0 @ 00c26fb0 ////
+//// FUNCTION Ctor_vt00da6208_00c26fb0 @ 00c26fb0 ////
 
-undefined4 * __fastcall FUN_00c26fb0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da6208_00c26fb0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6208;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c26fd0 @ 00c26fd0 ////
+//// FUNCTION ScalarDeletingDtor_00c26fd0 @ 00c26fd0 ////
 
-undefined4 * __thiscall FUN_00c26fd0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c26fd0(void *this,byte param_1)
 
 {
-  FUN_00c26ea0(this);
+  Dtor_00c26ea0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -11223,13 +11223,13 @@ undefined4 * __thiscall FUN_00c26fd0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c26ff0 @ 00c26ff0 ////
+//// FUNCTION Dtor_00c26ff0 @ 00c26ff0 ////
 
-void __fastcall FUN_00c26ff0(undefined4 *param_1)
+void __fastcall Dtor_00c26ff0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6208;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
@@ -11251,30 +11251,30 @@ void __thiscall FUN_00c27000(void *this,undefined4 param_1)
   local_10 = param_1;
   local_4 = 0;
   ExceptionList = &local_c;
-  FUN_00bcf140(this,&local_14);
+  RedBlackTree_ForEach(this,&local_14);
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c27050 @ 00c27050 ////
+//// FUNCTION Ctor_vt00da6238_00c27050 @ 00c27050 ////
 
-undefined4 * __fastcall FUN_00c27050(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da6238_00c27050(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6208;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da6238;
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c27070 @ 00c27070 ////
+//// FUNCTION ScalarDeletingDtor_00c27070 @ 00c27070 ////
 
-undefined4 * __thiscall FUN_00c27070(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c27070(void *this,byte param_1)
 
 {
-  FUN_00c26ff0(this);
+  Dtor_00c26ff0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -11283,12 +11283,12 @@ undefined4 * __thiscall FUN_00c27070(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c270a0 @ 00c270a0 ////
+//// FUNCTION ScalarDeletingDtor_00c270a0 @ 00c270a0 ////
 
-undefined4 * __thiscall FUN_00c270a0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c270a0(void *this,byte param_1)
 
 {
-  FUN_00c26ad0(this);
+  Dtor_00c26ad0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -11323,7 +11323,7 @@ float * __thiscall FUN_00c27100(void *this,float *param_1)
   fVar4 = (float10)FUN_00bdde20(*(int *)(*(int *)((int)this + 4) + 8) + 8);
   fVar5 = (float10)FUN_00bdde10(*(int *)(*(int *)((int)this + 4) + 8) + 8);
   fVar3 = (float)FUN_00bde0a0(*(int *)(*(int *)((int)this + 4) + 8) + 8);
-  uVar2 = FUN_00bde080(*(int *)(*(int *)((int)this + 4) + 8) + 8);
+  uVar2 = GetField_0x18_00bde080(*(int *)(*(int *)((int)this + 4) + 8) + 8);
   *param_1 = (float)fVar5;
   param_1[1] = (float)fVar4;
   param_1[2] = fVar1;
@@ -11349,7 +11349,7 @@ int * __thiscall FUN_00c27180(void *this,int param_1,int param_2)
   ExceptionList = &local_c;
   *(int *)this = param_1;
   *(undefined4 *)((int)this + 4) = 0;
-  FUN_00bcf160((undefined4 *)((int)this + 8));
+  RedBlackTree_Node_Ctor((undefined4 *)((int)this + 8));
   local_4 = 0;
   FUN_00bcfac0((void *)(*(int *)this + 0x24),(int *)(*(int *)this + 0x20),(int)this);
   uVar1 = FUN_00beac00((void *)**(undefined4 **)(*(int *)this + 0x18),param_2);
@@ -11359,9 +11359,9 @@ int * __thiscall FUN_00c27180(void *this,int param_1,int param_2)
 }
 
 
-//// FUNCTION FUN_00c27200 @ 00c27200 ////
+//// FUNCTION Dtor_00c27200 @ 00c27200 ////
 
-void __fastcall FUN_00c27200(int *param_1)
+void __fastcall Dtor_00c27200(int *param_1)
 
 {
   void *local_c;
@@ -11376,15 +11376,15 @@ void __fastcall FUN_00c27200(int *param_1)
   param_1[1] = 0;
   FUN_00bcff70((void *)(*param_1 + 0x24),(int *)(*param_1 + 0x20),(int)param_1);
   local_4 = 0xffffffff;
-  FUN_00bcf880(param_1 + 2);
+  RedBlackTree_Node_Dtor(param_1 + 2);
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c272d0 @ 00c272d0 ////
+//// FUNCTION SetVtable_00da6268_00c272d0 @ 00c272d0 ////
 
-void __fastcall FUN_00c272d0(undefined4 *param_1)
+void __fastcall SetVtable_00da6268_00c272d0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6268;
@@ -11397,18 +11397,18 @@ void __fastcall FUN_00c272d0(undefined4 *param_1)
 undefined4 * __thiscall FUN_00c27300(void *this,undefined4 param_1)
 
 {
-  FUN_00bcf160(this);
+  RedBlackTree_Node_Ctor(this);
   *(undefined4 *)((int)this + 0x14) = param_1;
   return this;
 }
 
 
-//// FUNCTION FUN_00c27340 @ 00c27340 ////
+//// FUNCTION ScalarDeletingDtor_00c27340 @ 00c27340 ////
 
-int * __thiscall FUN_00c27340(void *this,byte param_1)
+int * __thiscall ScalarDeletingDtor_00c27340(void *this,byte param_1)
 
 {
-  FUN_00c4f780(this);
+  Dtor_00c4f780(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -11417,9 +11417,9 @@ int * __thiscall FUN_00c27340(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c27360 @ 00c27360 ////
+//// FUNCTION ScalarDeletingDtor_00c27360 @ 00c27360 ////
 
-int * __thiscall FUN_00c27360(void *this,byte param_1)
+int * __thiscall ScalarDeletingDtor_00c27360(void *this,byte param_1)
 
 {
   thunk_FUN_00bcf880(this);
@@ -11445,39 +11445,39 @@ void __thiscall FUN_00c273a0(void *this,int *param_1)
   param_1[2] = 0;
   param_1[3] = 0;
   param_1[1] = 0;
-  iVar1 = FUN_00bcecf0((undefined4 *)((int)this + 0x2c));
+  iVar1 = RedBlackTree_GetMinObject((undefined4 *)((int)this + 0x2c));
   if (iVar1 != 0) {
     do {
       *param_1 = *param_1 + 1;
-      iVar2 = FUN_00bcecf0((undefined4 *)(iVar1 + 0x34));
+      iVar2 = RedBlackTree_GetMinObject((undefined4 *)(iVar1 + 0x34));
       if (iVar2 != 0) {
         do {
           param_1[1] = param_1[1] + 1;
-          iVar3 = FUN_00bcecf0((undefined4 *)(iVar2 + 0x24));
+          iVar3 = RedBlackTree_GetMinObject((undefined4 *)(iVar2 + 0x24));
           if (iVar3 != 0) {
             do {
               param_1[2] = param_1[2] + 1;
-              iVar3 = FUN_00bcf3f0((void *)(iVar2 + 0x24),(int *)(iVar2 + 0x20),iVar3);
+              iVar3 = RedBlackTree_GetSuccessor((void *)(iVar2 + 0x24),(int *)(iVar2 + 0x20),iVar3);
             } while (iVar3 != 0);
           }
-          iVar2 = FUN_00bcf3f0((void *)(iVar1 + 0x34),(int *)(iVar1 + 0x30),iVar2);
+          iVar2 = RedBlackTree_GetSuccessor((void *)(iVar1 + 0x34),(int *)(iVar1 + 0x30),iVar2);
         } while (iVar2 != 0);
       }
-      iVar1 = FUN_00bcf3f0((void *)((int)this + 0x2c),(int *)((int)this + 0x28),iVar1);
+      iVar1 = RedBlackTree_GetSuccessor((void *)((int)this + 0x2c),(int *)((int)this + 0x28),iVar1);
     } while (iVar1 != 0);
   }
-  iVar1 = FUN_00bcecf0((undefined4 *)((int)this + 0x14));
+  iVar1 = RedBlackTree_GetMinObject((undefined4 *)((int)this + 0x14));
   if (iVar1 != 0) {
     do {
       param_1[4] = param_1[4] + 1;
-      iVar2 = FUN_00bcecf0((undefined4 *)(iVar1 + 0x1c));
+      iVar2 = RedBlackTree_GetMinObject((undefined4 *)(iVar1 + 0x1c));
       if (iVar2 != 0) {
         do {
           param_1[3] = param_1[3] + 1;
-          iVar2 = FUN_00bcf3f0((void *)(iVar1 + 0x1c),(int *)(iVar1 + 0x18),iVar2);
+          iVar2 = RedBlackTree_GetSuccessor((void *)(iVar1 + 0x1c),(int *)(iVar1 + 0x18),iVar2);
         } while (iVar2 != 0);
       }
-      iVar1 = FUN_00bcf3f0((void *)((int)this + 0x14),(int *)((int)this + 0x10),iVar1);
+      iVar1 = RedBlackTree_GetSuccessor((void *)((int)this + 0x14),(int *)((int)this + 0x10),iVar1);
     } while (iVar1 != 0);
   }
   return;
@@ -11496,17 +11496,17 @@ int __fastcall FUN_00c274e0(int param_1)
   ulonglong uVar4;
   
   iVar3 = 0;
-  iVar1 = FUN_00bcecf0((undefined4 *)(param_1 + 0x2c));
+  iVar1 = RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x2c));
   if (iVar1 != 0) {
     do {
-      iVar2 = FUN_00bced20((undefined4 *)(iVar1 + 0x28));
+      iVar2 = RedBlackTree_GetMaxObject((undefined4 *)(iVar1 + 0x28));
       if (iVar2 != 0) {
         FUN_00ad1180((double)(*(float *)(iVar2 + 0x28) / *(float *)(iVar1 + 0x20)),(short)unaff_EBP)
         ;
         uVar4 = FUN_00acd42c();
         iVar3 = iVar3 + (int)uVar4 * (int)uVar4;
       }
-      iVar1 = FUN_00bcf3f0((void *)(param_1 + 0x2c),(int *)(param_1 + 0x28),iVar1);
+      iVar1 = RedBlackTree_GetSuccessor((void *)(param_1 + 0x2c),(int *)(param_1 + 0x28),iVar1);
     } while (iVar1 != 0);
   }
   return iVar3;
@@ -11522,19 +11522,19 @@ undefined4 __fastcall FUN_00c27550(int param_1)
   int iVar1;
   void *this;
   
-  _Memory = (int *)FUN_00bced20((undefined4 *)(param_1 + 0x20));
+  _Memory = (int *)RedBlackTree_GetMaxObject((undefined4 *)(param_1 + 0x20));
   if (_Memory == (int *)0x0) {
     return 0;
   }
-  iVar1 = FUN_00bcf4e0((void *)(param_1 + 0x20),(int *)(param_1 + 0x1c),(int)_Memory);
+  iVar1 = RedBlackTree_GetPredecessor((void *)(param_1 + 0x20),(int *)(param_1 + 0x1c),(int)_Memory);
   if (iVar1 != 0) {
-    this = (void *)FUN_00bcecf0(_Memory + 0xc);
+    this = (void *)RedBlackTree_GetMinObject(_Memory + 0xc);
     while (this != (void *)0x0) {
       FUN_00c4fe90(this,iVar1);
-      this = (void *)FUN_00bcecf0(_Memory + 0xc);
+      this = (void *)RedBlackTree_GetMinObject(_Memory + 0xc);
     }
     FUN_00bcff70((void *)(param_1 + 0x20),(int *)(param_1 + 0x1c),(int)_Memory);
-    FUN_00c4f780(_Memory);
+    Dtor_00c4f780(_Memory);
                     /* WARNING: Subroutine does not return */
     _free(_Memory);
   }
@@ -11551,11 +11551,11 @@ void __fastcall FUN_00c275d0(int param_1)
   int *piVar2;
   int iVar3;
   
-  piVar1 = (int *)FUN_00bcecf0((undefined4 *)(param_1 + 0x2c));
+  piVar1 = (int *)RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x2c));
   if (piVar1 != (int *)0x0) {
     do {
-      piVar2 = (int *)FUN_00bcf3f0((void *)(param_1 + 0x2c),(int *)(param_1 + 0x28),(int)piVar1);
-      iVar3 = FUN_00bcecf0(piVar1 + 10);
+      piVar2 = (int *)RedBlackTree_GetSuccessor((void *)(param_1 + 0x2c),(int *)(param_1 + 0x28),(int)piVar1);
+      iVar3 = RedBlackTree_GetMinObject(piVar1 + 10);
       if ((iVar3 == 0) && (piVar1 != (int *)0x0)) {
         (**(code **)(*piVar1 + 0x1c))(1);
       }
@@ -11566,9 +11566,9 @@ void __fastcall FUN_00c275d0(int param_1)
 }
 
 
-//// FUNCTION FUN_00c27620 @ 00c27620 ////
+//// FUNCTION MapAnalysisImpCSolver_ProcessAll @ 00c27620 ////
 
-void __fastcall FUN_00c27620(int param_1)
+void __fastcall MapAnalysisImpCSolver_ProcessAll(int param_1)
 
 {
   void *this;
@@ -11601,20 +11601,20 @@ void __fastcall FUN_00c27620(int param_1)
   puStack_8 = &LAB_00d043b6;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  this = (void *)FUN_00bcecf0((undefined4 *)(param_1 + 0x2c));
+  this = (void *)RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x2c));
   if (this != (void *)0x0) {
     piVar4 = (int *)(param_1 + 0x28);
     local_218 = piVar4;
     do {
-      iVar1 = FUN_00bcecf0((undefined4 *)((int)this + 0x28));
+      iVar1 = RedBlackTree_GetMinObject((undefined4 *)((int)this + 0x28));
       if (iVar1 != 0) {
         local_21c = (void *)((int)this + 0x28);
         do {
-          this_00 = (void *)FUN_00bcecf0((undefined4 *)(iVar1 + 0x30));
+          this_00 = (void *)RedBlackTree_GetMinObject((undefined4 *)(iVar1 + 0x30));
           if (this_00 != (void *)0x0) {
             local_220 = (void *)(iVar1 + 0x30);
             do {
-              puVar2 = FUN_00c50b20(this,*(undefined4 *)((int)this_00 + 0x40));
+              puVar2 = MapAnalysisImpCProcessor_GetOrCreateGroup(this,*(undefined4 *)((int)this_00 + 0x40));
               if (puVar2 == (undefined4 *)0x0) {
                 local_214 = &PTR_LAB_00d9db7c;
                 local_210 = 0;
@@ -11641,7 +11641,7 @@ void __fastcall FUN_00c27620(int param_1)
                 local_234 = (local_234 / local_230) * *(float *)(iVar1 + 0x28);
                 local_230 = *(float *)(iVar1 + 0x28);
               }
-              puVar2 = FUN_00c502b0(puVar2,&local_234);
+              puVar2 = MapAnalysisImpCGroup_GetOrCreateGroupModel(puVar2,&local_234);
               if (puVar2 == (undefined4 *)0x0) {
                 local_110 = &PTR_LAB_00d9db7c;
                 local_10c = 0;
@@ -11660,14 +11660,14 @@ void __fastcall FUN_00c27620(int param_1)
                 DebugBreak();
               }
               FUN_00c4fec0(this_00,(int)puVar2);
-              this_00 = (void *)FUN_00bcf3f0(local_220,(int *)(iVar1 + 0x2c),(int)this_00);
+              this_00 = (void *)RedBlackTree_GetSuccessor(local_220,(int *)(iVar1 + 0x2c),(int)this_00);
             } while (this_00 != (void *)0x0);
           }
-          iVar1 = FUN_00bcf3f0(local_21c,(int *)((int)this + 0x24),iVar1);
+          iVar1 = RedBlackTree_GetSuccessor(local_21c,(int *)((int)this + 0x24),iVar1);
           piVar4 = local_218;
         } while (iVar1 != 0);
       }
-      this = (void *)FUN_00bcf3f0(piVar4 + 1,piVar4,(int)this);
+      this = (void *)RedBlackTree_GetSuccessor(piVar4 + 1,piVar4,(int)this);
     } while (this != (void *)0x0);
   }
   ExceptionList = local_c;
@@ -11682,10 +11682,10 @@ void __fastcall FUN_00c27920(int param_1)
 {
   int *piVar1;
   
-  piVar1 = (int *)FUN_00bcecf0((undefined4 *)(param_1 + 0x14));
+  piVar1 = (int *)RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x14));
   while (piVar1 != (int *)0x0) {
     (**(code **)(*piVar1 + 0x10))(1);
-    piVar1 = (int *)FUN_00bcecf0((undefined4 *)(param_1 + 0x14));
+    piVar1 = (int *)RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x14));
   }
   return;
 }
@@ -11698,7 +11698,7 @@ void __fastcall FUN_00c27950(int param_1)
 {
   int *_Memory;
   
-  _Memory = (int *)FUN_00bcecf0((undefined4 *)(param_1 + 8));
+  _Memory = (int *)RedBlackTree_GetMinObject((undefined4 *)(param_1 + 8));
   if (_Memory != (int *)0x0) {
     do {
       FUN_00bcff70((void *)(param_1 + 8),(int *)(param_1 + 4),(int)_Memory);
@@ -11707,7 +11707,7 @@ void __fastcall FUN_00c27950(int param_1)
                     /* WARNING: Subroutine does not return */
         _free(_Memory);
       }
-      _Memory = (int *)FUN_00bcecf0((undefined4 *)(param_1 + 8));
+      _Memory = (int *)RedBlackTree_GetMinObject((undefined4 *)(param_1 + 8));
     } while (_Memory != (int *)0x0);
   }
   return;
@@ -11721,16 +11721,16 @@ void __fastcall FUN_00c279a0(int param_1)
 {
   int *_Memory;
   
-  _Memory = (int *)FUN_00bcecf0((undefined4 *)(param_1 + 0x20));
+  _Memory = (int *)RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x20));
   if (_Memory != (int *)0x0) {
     do {
       FUN_00bcff70((void *)(param_1 + 0x20),(int *)(param_1 + 0x1c),(int)_Memory);
       if (_Memory != (int *)0x0) {
-        FUN_00c4f780(_Memory);
+        Dtor_00c4f780(_Memory);
                     /* WARNING: Subroutine does not return */
         _free(_Memory);
       }
-      _Memory = (int *)FUN_00bcecf0((undefined4 *)(param_1 + 0x20));
+      _Memory = (int *)RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x20));
     } while (_Memory != (int *)0x0);
   }
   return;
@@ -11744,10 +11744,10 @@ void __fastcall FUN_00c279f0(int param_1)
 {
   int *piVar1;
   
-  piVar1 = (int *)FUN_00bcecf0((undefined4 *)(param_1 + 0x2c));
+  piVar1 = (int *)RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x2c));
   while (piVar1 != (int *)0x0) {
     (**(code **)(*piVar1 + 0x1c))(1);
-    piVar1 = (int *)FUN_00bcecf0((undefined4 *)(param_1 + 0x2c));
+    piVar1 = (int *)RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x2c));
   }
   return;
 }
@@ -11788,7 +11788,7 @@ void __fastcall FUN_00c27a30(int param_1)
   local_c = ExceptionList;
   ExceptionList = &local_c;
   local_11c = param_1;
-  iVar1 = FUN_00bcecf0((undefined4 *)(param_1 + 8));
+  iVar1 = RedBlackTree_GetMinObject((undefined4 *)(param_1 + 8));
   if (iVar1 != 0) {
     local_118 = (void *)(param_1 + 8);
     do {
@@ -11798,7 +11798,7 @@ void __fastcall FUN_00c27a30(int param_1)
         this = (undefined4 *)0x0;
       }
       else {
-        this = FUN_00c50ca0(local_114);
+        this = Ctor_vt00dacf00_00c50ca0(local_114);
       }
       local_4 = 0xffffffff;
       if (this == (undefined4 *)0x0) {
@@ -11822,7 +11822,7 @@ void __fastcall FUN_00c27a30(int param_1)
       this[7] = 1;
       this[8] = *(undefined4 *)(iVar1 + 0x14);
       FUN_00c50c70(this,local_11c);
-      iVar1 = FUN_00bcf3f0(local_118,(int *)(local_11c + 4),iVar1);
+      iVar1 = RedBlackTree_GetSuccessor(local_118,(int *)(local_11c + 4),iVar1);
     } while (iVar1 != 0);
   }
   ExceptionList = local_c;
@@ -11839,23 +11839,23 @@ int __thiscall FUN_00c27ba0(void *this,float param_1,int param_2)
   int iVar2;
   
   iVar2 = 0;
-  iVar1 = FUN_00bcecf0((undefined4 *)((int)this + 0x2c));
+  iVar1 = RedBlackTree_GetMinObject((undefined4 *)((int)this + 0x2c));
   if (iVar1 != 0) {
     do {
       if (((*(float *)(iVar1 + 0x20) < param_1) && (*(int *)(iVar1 + 0x1c) == param_2)) &&
          ((iVar2 == 0 || (*(float *)(iVar2 + 0x20) < *(float *)(iVar1 + 0x20))))) {
         iVar2 = iVar1;
       }
-      iVar1 = FUN_00bcf3f0((void *)((int)this + 0x2c),(int *)((int)this + 0x28),iVar1);
+      iVar1 = RedBlackTree_GetSuccessor((void *)((int)this + 0x2c),(int *)((int)this + 0x28),iVar1);
     } while (iVar1 != 0);
   }
   return iVar2;
 }
 
 
-//// FUNCTION FUN_00c27c00 @ 00c27c00 ////
+//// FUNCTION Dtor_00c27c00 @ 00c27c00 ////
 
-void __fastcall FUN_00c27c00(undefined4 *param_1)
+void __fastcall Dtor_00c27c00(undefined4 *param_1)
 
 {
   void *local_c;
@@ -11872,16 +11872,16 @@ void __fastcall FUN_00c27c00(undefined4 *param_1)
   FUN_00c27950((int)param_1);
   local_4._0_1_ = 3;
   param_1[10] = &PTR_LAB_00da6398;
-  FUN_00bcffc0(param_1 + 0xb);
+  RedBlackTree_Dtor(param_1 + 0xb);
   local_4._0_1_ = 2;
   param_1[7] = &PTR_LAB_00da6370;
-  FUN_00bcffc0(param_1 + 8);
+  RedBlackTree_Dtor(param_1 + 8);
   local_4._0_1_ = 1;
   param_1[4] = &PTR_LAB_00da6348;
-  FUN_00bcffc0(param_1 + 5);
+  RedBlackTree_Dtor(param_1 + 5);
   local_4 = (uint)local_4._1_3_ << 8;
   param_1[1] = &PTR_LAB_00da6320;
-  FUN_00bcffc0(param_1 + 2);
+  RedBlackTree_Dtor(param_1 + 2);
   *param_1 = &PTR_LAB_00da6268;
   ExceptionList = local_c;
   return;
@@ -11915,17 +11915,17 @@ void __fastcall FUN_00c27fe0(int param_1)
   local_c = ExceptionList;
   ExceptionList = &local_c;
   local_120 = param_1;
-  iVar2 = FUN_00bcecf0((undefined4 *)(param_1 + 0x14));
+  iVar2 = RedBlackTree_GetMinObject((undefined4 *)(param_1 + 0x14));
   if (iVar2 != 0) {
     local_118 = (void *)(param_1 + 0x14);
     do {
-      this = (void *)FUN_00bcecf0((undefined4 *)(iVar2 + 0x1c));
+      this = (void *)RedBlackTree_GetMinObject((undefined4 *)(iVar2 + 0x1c));
       if (this != (void *)0x0) {
         local_11c = (void *)(iVar2 + 0x1c);
         do {
           puVar1 = (undefined4 *)((int)this + 0x48);
           puVar3 = (undefined4 *)
-                   FUN_00bcef50((void *)(param_1 + 0x20),(void *)(param_1 + 0x1c),puVar1,puVar1);
+                   RedBlackTree_Find((void *)(param_1 + 0x20),(void *)(param_1 + 0x1c),puVar1,puVar1);
           if (puVar3 == (undefined4 *)0x0) {
             local_114 = operator_new(0x3c);
             local_4 = 0;
@@ -11957,11 +11957,11 @@ void __fastcall FUN_00c27fe0(int param_1)
             FUN_00bcfac0((void *)(local_120 + 0x20),(int *)(local_120 + 0x1c),(int)puVar3);
           }
           FUN_00c4fe90(this,(int)puVar3);
-          this = (void *)FUN_00bcf3f0(local_11c,(int *)(iVar2 + 0x18),(int)this);
+          this = (void *)RedBlackTree_GetSuccessor(local_11c,(int *)(iVar2 + 0x18),(int)this);
           param_1 = local_120;
         } while (this != (void *)0x0);
       }
-      iVar2 = FUN_00bcf3f0(local_118,(int *)(param_1 + 0x10),iVar2);
+      iVar2 = RedBlackTree_GetSuccessor(local_118,(int *)(param_1 + 0x10),iVar2);
     } while (iVar2 != 0);
   }
   ExceptionList = local_c;
@@ -12005,7 +12005,7 @@ undefined4 * __thiscall FUN_00c281c0(void *this,int param_1,float param_2,float 
   fVar3 = *(float *)(param_1 + 0x28) / param_2;
   fVar1 = (fVar3 + fVar2) * 0.5;
   ExceptionList = &local_c;
-  puVar4 = (undefined4 *)FUN_00bcecf0((undefined4 *)((int)this + 0x2c));
+  puVar4 = (undefined4 *)RedBlackTree_GetMinObject((undefined4 *)((int)this + 0x2c));
   uVar11 = (undefined2)unaff_EDI;
   if (puVar4 != (undefined4 *)0x0) {
     do {
@@ -12016,7 +12016,7 @@ undefined4 * __thiscall FUN_00c281c0(void *this,int param_1,float param_2,float 
         puVar7 = puVar4;
       }
       puVar4 = (undefined4 *)
-               FUN_00bcf3f0((void *)((int)this + 0x2c),(int *)((int)this + 0x28),(int)puVar4);
+               RedBlackTree_GetSuccessor((void *)((int)this + 0x2c),(int *)((int)this + 0x28),(int)puVar4);
       uVar11 = (undefined2)unaff_EDI;
     } while (puVar4 != (undefined4 *)0x0);
     if (puVar7 != (undefined4 *)0x0) {
@@ -12026,7 +12026,7 @@ undefined4 * __thiscall FUN_00c281c0(void *this,int param_1,float param_2,float 
   }
   iVar5 = FUN_00c27ba0(this,fVar2,1);
   if (iVar5 == 0) {
-    puVar7 = (undefined4 *)FUN_00bcecf0((undefined4 *)((int)this + 0x2c));
+    puVar7 = (undefined4 *)RedBlackTree_GetMinObject((undefined4 *)((int)this + 0x2c));
   }
   else {
     fVar1 = *(float *)(iVar5 + 0x20);
@@ -12038,14 +12038,14 @@ undefined4 * __thiscall FUN_00c281c0(void *this,int param_1,float param_2,float 
     fVar2 = (float)uVar8;
     local_114 = fVar2 * fVar1;
     puVar7 = (undefined4 *)
-             FUN_00bcef50((void *)((int)this + 0x2c),(void *)((int)this + 0x28),&local_114,
+             RedBlackTree_Find((void *)((int)this + 0x2c),(void *)((int)this + 0x28),&local_114,
                           &local_114);
     if (puVar7 == (undefined4 *)0x0) {
       puVar4 = operator_new(0x40);
       local_4 = 0;
       puVar7 = (undefined4 *)0x0;
       if (puVar4 != (undefined4 *)0x0) {
-        puVar7 = FUN_00c50ca0(puVar4);
+        puVar7 = Ctor_vt00dacf00_00c50ca0(puVar4);
       }
       local_4 = 0xffffffff;
       if (puVar7 == (undefined4 *)0x0) {
@@ -12084,27 +12084,27 @@ undefined4 __thiscall FUN_00c28450(void *this,float param_1,float param_2)
   void *this_00;
   undefined4 *puVar1;
   
-  this_00 = (void *)FUN_00bcecf0((undefined4 *)((int)this + 0x20));
+  this_00 = (void *)RedBlackTree_GetMinObject((undefined4 *)((int)this + 0x20));
   while( true ) {
     if (this_00 == (void *)0x0) {
       return 1;
     }
     if (*(int *)((int)this_00 + 0x38) != 0) {
-      FUN_00c4f690((int)this_00);
+      MapAnalysisImpCRange_DetachFromProcessor((int)this_00);
     }
     puVar1 = FUN_00c281c0(this,(int)this_00,param_1,param_2);
     if (puVar1 == (undefined4 *)0x0) break;
     FUN_00c4f820(this_00,(int)puVar1);
-    this_00 = (void *)FUN_00bcf3f0((void *)((int)this + 0x20),(int *)((int)this + 0x1c),(int)this_00
+    this_00 = (void *)RedBlackTree_GetSuccessor((void *)((int)this + 0x20),(int *)((int)this + 0x1c),(int)this_00
                                   );
   }
   return 0;
 }
 
 
-//// FUNCTION FUN_00c284c0 @ 00c284c0 ////
+//// FUNCTION Ctor_vt00da649c_00c284c0 @ 00c284c0 ////
 
-undefined4 * __fastcall FUN_00c284c0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da649c_00c284c0(undefined4 *param_1)
 
 {
   void *local_c;
@@ -12117,19 +12117,19 @@ undefined4 * __fastcall FUN_00c284c0(undefined4 *param_1)
   *param_1 = &PTR_FUN_00da649c;
   local_4 = 0;
   param_1[1] = &PTR_LAB_00da6320;
-  FUN_00bcf170(param_1 + 2);
+  RedBlackTree_Ctor(param_1 + 2);
   param_1[1] = &PTR_LAB_00da63fc;
   local_4._0_1_ = 1;
   param_1[4] = &PTR_LAB_00da6348;
-  FUN_00bcf170(param_1 + 5);
+  RedBlackTree_Ctor(param_1 + 5);
   param_1[4] = &PTR_LAB_00da6424;
   local_4._0_1_ = 2;
   param_1[7] = &PTR_LAB_00da6370;
-  FUN_00bcf170(param_1 + 8);
+  RedBlackTree_Ctor(param_1 + 8);
   param_1[7] = &PTR_LAB_00da644c;
   local_4 = CONCAT31(local_4._1_3_,3);
   param_1[10] = &PTR_LAB_00da6398;
-  FUN_00bcf170(param_1 + 0xb);
+  RedBlackTree_Ctor(param_1 + 0xb);
   param_1[10] = &PTR_LAB_00da6474;
   ExceptionList = local_c;
   return param_1;
@@ -12162,7 +12162,7 @@ uint __thiscall FUN_00c28570(void *this,int param_1,float param_2,float param_3)
       uVar3 = FUN_00c274e0((int)this);
       if (uVar3 <= (uint)uVar4) {
         FUN_00c275d0((int)this);
-        uVar2 = FUN_00c27620((int)this);
+        uVar2 = MapAnalysisImpCSolver_ProcessAll((int)this);
         return CONCAT31((int3)((uint)uVar2 >> 8),1);
       }
       uVar2 = FUN_00c27550((int)this);
@@ -12190,7 +12190,7 @@ undefined4 * FUN_00c28610(void)
   puVar1 = operator_new(0x34);
   local_4 = 0;
   if (puVar1 != (undefined4 *)0x0) {
-    puVar1 = FUN_00c284c0(puVar1);
+    puVar1 = Ctor_vt00da649c_00c284c0(puVar1);
     ExceptionList = local_c;
     return puVar1;
   }
@@ -12204,7 +12204,7 @@ undefined4 * FUN_00c28610(void)
 int * __fastcall FUN_00c28670(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
@@ -12214,7 +12214,7 @@ int * __fastcall FUN_00c28670(int *param_1)
 int * __fastcall FUN_00c28690(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
@@ -12224,7 +12224,7 @@ int * __fastcall FUN_00c28690(int *param_1)
 int * __fastcall FUN_00c286b0(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
@@ -12234,105 +12234,105 @@ int * __fastcall FUN_00c286b0(int *param_1)
 int * __fastcall FUN_00c286d0(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c28bd0 @ 00c28bd0 ////
+//// FUNCTION Dtor_00c28bd0 @ 00c28bd0 ////
 
-void __fastcall FUN_00c28bd0(undefined4 *param_1)
+void __fastcall Dtor_00c28bd0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6320;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c28cc0 @ 00c28cc0 ////
+//// FUNCTION Dtor_00c28cc0 @ 00c28cc0 ////
 
-void __fastcall FUN_00c28cc0(undefined4 *param_1)
+void __fastcall Dtor_00c28cc0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6348;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c28dd0 @ 00c28dd0 ////
+//// FUNCTION Dtor_00c28dd0 @ 00c28dd0 ////
 
-void __fastcall FUN_00c28dd0(undefined4 *param_1)
+void __fastcall Dtor_00c28dd0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6370;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c28eb0 @ 00c28eb0 ////
+//// FUNCTION Dtor_00c28eb0 @ 00c28eb0 ////
 
-void __fastcall FUN_00c28eb0(undefined4 *param_1)
+void __fastcall Dtor_00c28eb0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6398;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c29000 @ 00c29000 ////
+//// FUNCTION Ctor_vt00da6320_00c29000 @ 00c29000 ////
 
-undefined4 * __fastcall FUN_00c29000(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da6320_00c29000(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6320;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c29020 @ 00c29020 ////
+//// FUNCTION Ctor_vt00da6348_00c29020 @ 00c29020 ////
 
-undefined4 * __fastcall FUN_00c29020(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da6348_00c29020(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6348;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c29040 @ 00c29040 ////
+//// FUNCTION Ctor_vt00da6370_00c29040 @ 00c29040 ////
 
-undefined4 * __fastcall FUN_00c29040(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da6370_00c29040(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6370;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c29060 @ 00c29060 ////
+//// FUNCTION Ctor_vt00da6398_00c29060 @ 00c29060 ////
 
-undefined4 * __fastcall FUN_00c29060(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da6398_00c29060(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6398;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c29080 @ 00c29080 ////
+//// FUNCTION ScalarDeletingDtor_00c29080 @ 00c29080 ////
 
-undefined4 * __thiscall FUN_00c29080(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c29080(void *this,byte param_1)
 
 {
-  FUN_00c28bd0(this);
+  Dtor_00c28bd0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -12341,12 +12341,12 @@ undefined4 * __thiscall FUN_00c29080(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c290a0 @ 00c290a0 ////
+//// FUNCTION ScalarDeletingDtor_00c290a0 @ 00c290a0 ////
 
-undefined4 * __thiscall FUN_00c290a0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c290a0(void *this,byte param_1)
 
 {
-  FUN_00c28cc0(this);
+  Dtor_00c28cc0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -12355,12 +12355,12 @@ undefined4 * __thiscall FUN_00c290a0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c290c0 @ 00c290c0 ////
+//// FUNCTION ScalarDeletingDtor_00c290c0 @ 00c290c0 ////
 
-undefined4 * __thiscall FUN_00c290c0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c290c0(void *this,byte param_1)
 
 {
-  FUN_00c28dd0(this);
+  Dtor_00c28dd0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -12369,12 +12369,12 @@ undefined4 * __thiscall FUN_00c290c0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c290e0 @ 00c290e0 ////
+//// FUNCTION ScalarDeletingDtor_00c290e0 @ 00c290e0 ////
 
-undefined4 * __thiscall FUN_00c290e0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c290e0(void *this,byte param_1)
 
 {
-  FUN_00c28eb0(this);
+  Dtor_00c28eb0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -12383,104 +12383,104 @@ undefined4 * __thiscall FUN_00c290e0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c29120 @ 00c29120 ////
+//// FUNCTION Dtor_00c29120 @ 00c29120 ////
 
-void __fastcall FUN_00c29120(undefined4 *param_1)
+void __fastcall Dtor_00c29120(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6320;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c29150 @ 00c29150 ////
+//// FUNCTION Dtor_00c29150 @ 00c29150 ////
 
-void __fastcall FUN_00c29150(undefined4 *param_1)
+void __fastcall Dtor_00c29150(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6348;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c29180 @ 00c29180 ////
+//// FUNCTION Dtor_00c29180 @ 00c29180 ////
 
-void __fastcall FUN_00c29180(undefined4 *param_1)
+void __fastcall Dtor_00c29180(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6370;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c291b0 @ 00c291b0 ////
+//// FUNCTION Dtor_00c291b0 @ 00c291b0 ////
 
-void __fastcall FUN_00c291b0(undefined4 *param_1)
+void __fastcall Dtor_00c291b0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6398;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c291e0 @ 00c291e0 ////
+//// FUNCTION Ctor_vt00da63fc_00c291e0 @ 00c291e0 ////
 
-undefined4 * __fastcall FUN_00c291e0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da63fc_00c291e0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6320;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da63fc;
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c29200 @ 00c29200 ////
+//// FUNCTION Ctor_vt00da6424_00c29200 @ 00c29200 ////
 
-undefined4 * __fastcall FUN_00c29200(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da6424_00c29200(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6348;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da6424;
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c29220 @ 00c29220 ////
+//// FUNCTION Ctor_vt00da644c_00c29220 @ 00c29220 ////
 
-undefined4 * __fastcall FUN_00c29220(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da644c_00c29220(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6370;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da644c;
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c29240 @ 00c29240 ////
+//// FUNCTION Ctor_vt00da6474_00c29240 @ 00c29240 ////
 
-undefined4 * __fastcall FUN_00c29240(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da6474_00c29240(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6398;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da6474;
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c29260 @ 00c29260 ////
+//// FUNCTION ScalarDeletingDtor_00c29260 @ 00c29260 ////
 
-undefined4 * __thiscall FUN_00c29260(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c29260(void *this,byte param_1)
 
 {
-  FUN_00c29120(this);
+  Dtor_00c29120(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -12489,12 +12489,12 @@ undefined4 * __thiscall FUN_00c29260(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c29280 @ 00c29280 ////
+//// FUNCTION ScalarDeletingDtor_00c29280 @ 00c29280 ////
 
-undefined4 * __thiscall FUN_00c29280(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c29280(void *this,byte param_1)
 
 {
-  FUN_00c29150(this);
+  Dtor_00c29150(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -12503,12 +12503,12 @@ undefined4 * __thiscall FUN_00c29280(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c292a0 @ 00c292a0 ////
+//// FUNCTION ScalarDeletingDtor_00c292a0 @ 00c292a0 ////
 
-undefined4 * __thiscall FUN_00c292a0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c292a0(void *this,byte param_1)
 
 {
-  FUN_00c29180(this);
+  Dtor_00c29180(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -12517,12 +12517,12 @@ undefined4 * __thiscall FUN_00c292a0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c292c0 @ 00c292c0 ////
+//// FUNCTION ScalarDeletingDtor_00c292c0 @ 00c292c0 ////
 
-undefined4 * __thiscall FUN_00c292c0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c292c0(void *this,byte param_1)
 
 {
-  FUN_00c291b0(this);
+  Dtor_00c291b0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -12531,12 +12531,12 @@ undefined4 * __thiscall FUN_00c292c0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c292e0 @ 00c292e0 ////
+//// FUNCTION ScalarDeletingDtor_00c292e0 @ 00c292e0 ////
 
-undefined4 * __thiscall FUN_00c292e0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c292e0(void *this,byte param_1)
 
 {
-  FUN_00c27c00(this);
+  Dtor_00c27c00(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -12562,7 +12562,7 @@ void __thiscall FUN_00c29320(void *this,undefined4 param_1)
   this_00 = operator_new(0x38);
   local_4 = 0;
   if (this_00 != (void *)0x0) {
-    FUN_00c51c70(this_00,this,param_1);
+    Ctor_vt00dad040_00c51c70(this_00,this,param_1);
   }
   ExceptionList = local_c;
   return;
@@ -12673,7 +12673,7 @@ void __thiscall FUN_00c29680(void *this,undefined4 param_1)
   undefined4 *puVar1;
   
   puVar1 = (undefined4 *)
-           FUN_00bcef50((void *)((int)this + 0x80),(void *)((int)this + 0x7c),&param_1,&param_1);
+           RedBlackTree_Find((void *)((int)this + 0x80),(void *)((int)this + 0x7c),&param_1,&param_1);
   if (puVar1 != (undefined4 *)0x0) {
     param_1 = 1;
                     /* WARNING: Could not recover jumptable at 0x00c296ac. Too many branches */
@@ -12707,7 +12707,7 @@ void __fastcall FUN_00c296c0(int *param_1)
     local_10 = &local_18;
     local_14 = &PTR_LAB_00da6554;
     local_4 = 1;
-    FUN_00bcf140(param_1 + 0x20,&local_14);
+    RedBlackTree_ForEach(param_1 + 0x20,&local_14);
     *(undefined1 *)(param_1 + 0x1e) = 0;
     ExceptionList = local_c;
     return;
@@ -12725,9 +12725,9 @@ void __fastcall FUN_00c296c0(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c29770 @ 00c29770 ////
+//// FUNCTION Dtor_00c29770 @ 00c29770 ////
 
-void __fastcall FUN_00c29770(undefined4 *param_1)
+void __fastcall Dtor_00c29770(undefined4 *param_1)
 
 {
   int iVar1;
@@ -12740,10 +12740,10 @@ void __fastcall FUN_00c29770(undefined4 *param_1)
   ExceptionList = &local_c;
   *param_1 = &PTR_LAB_00da6588;
   local_4 = 3;
-  iVar1 = FUN_00bcecf0(param_1 + 0x20);
+  iVar1 = RedBlackTree_GetMinObject(param_1 + 0x20);
   while (iVar1 != 0) {
     FUN_00c29680(param_1,*(undefined4 *)(iVar1 + 0x1c));
-    iVar1 = FUN_00bcecf0(param_1 + 0x20);
+    iVar1 = RedBlackTree_GetMinObject(param_1 + 0x20);
   }
   if ((*(byte *)(param_1 + 0x15) & 1) != 0) {
     FUN_00bf48c0(param_1,*(int *)(*(int *)(*(int *)param_1[0x18] + 4) + 0x48));
@@ -12752,14 +12752,14 @@ void __fastcall FUN_00c29770(undefined4 *param_1)
   FUN_00bcff70((void *)(param_1[0x18] + 0x14),(int *)(param_1[0x18] + 0x10),(int)param_1);
   FUN_00bcff70((void *)(param_1[0x18] + 8),(int *)(param_1[0x18] + 4),(int)param_1);
   local_4._0_1_ = 2;
-  FUN_00bcf880(param_1 + 0x2d);
+  RedBlackTree_Node_Dtor(param_1 + 0x2d);
   local_4._0_1_ = 1;
-  FUN_00bcf880(param_1 + 0x28);
+  RedBlackTree_Node_Dtor(param_1 + 0x28);
   local_4 = (uint)local_4._1_3_ << 8;
   param_1[0x1f] = &PTR_LAB_00da652c;
-  FUN_00bcffc0(param_1 + 0x20);
+  RedBlackTree_Dtor(param_1 + 0x20);
   local_4 = 0xffffffff;
-  FUN_00bf4760(param_1);
+  Dtor_00bf4760(param_1);
   ExceptionList = local_c;
   return;
 }
@@ -12786,16 +12786,16 @@ void __fastcall FUN_00c29870(undefined4 param_1)
   local_18 = local_14;
   local_1c = &PTR_LAB_00da1838;
   local_4 = 1;
-  FUN_00bcf140((void *)(*(int *)(extraout_EDX + 100) + 0xc),&local_1c);
+  RedBlackTree_ForEach((void *)(*(int *)(extraout_EDX + 100) + 0xc),&local_1c);
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c298e0 @ 00c298e0 ////
+//// FUNCTION Ctor_vt00da6588_00c298e0 @ 00c298e0 ////
 
 undefined4 * __thiscall
-FUN_00c298e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4
+Ctor_vt00da6588_00c298e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4
             ,char param_5,undefined4 param_6,undefined4 param_7,undefined4 *param_8,char param_9,
             char param_10,undefined4 param_11,undefined4 param_12,undefined1 param_13)
 
@@ -12808,7 +12808,7 @@ FUN_00c298e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   puStack_8 = &LAB_00d045c1;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  FUN_00bf46e0(this);
+  Ctor_vt00da2168_00bf46e0(this);
   *(undefined4 *)((int)this + 100) = param_2;
   *(undefined4 *)((int)this + 0x60) = param_1;
   *(undefined ***)this = &PTR_LAB_00da6588;
@@ -12819,7 +12819,7 @@ FUN_00c298e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   *(undefined1 *)((int)this + 0x78) = 0;
   local_4 = 0;
   *(undefined ***)((int)this + 0x7c) = &PTR_LAB_00da652c;
-  FUN_00bcf170((int *)((int)this + 0x80));
+  RedBlackTree_Ctor((int *)((int)this + 0x80));
   *(undefined ***)((int)this + 0x7c) = &PTR_LAB_00da655c;
   *(undefined4 *)((int)this + 0x8c) = param_11;
   *(undefined4 *)((int)this + 0x94) = param_12;
@@ -12828,9 +12828,9 @@ FUN_00c298e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   *(undefined1 *)((int)this + 0x91) = 0;
   *(undefined1 *)((int)this + 0x98) = 0;
   *(undefined4 *)((int)this + 0x9c) = param_7;
-  FUN_00bcf160((undefined4 *)((int)this + 0xa0));
+  RedBlackTree_Node_Ctor((undefined4 *)((int)this + 0xa0));
   local_4._0_1_ = 2;
-  FUN_00bcf160((undefined4 *)((int)this + 0xb4));
+  RedBlackTree_Node_Ctor((undefined4 *)((int)this + 0xb4));
   local_4 = CONCAT31(local_4._1_3_,3);
   *(uint *)((int)this + 200) = (uint)(param_9 != '\0') | -(uint)(param_10 != '\0') & 2;
   FUN_00bf46d0(this,param_3);
@@ -12857,14 +12857,14 @@ FUN_00c298e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 int * __fastcall FUN_00c29a80(int *param_1)
 
 {
-  FUN_00bcf170(param_1);
+  RedBlackTree_Ctor(param_1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c29b00 @ 00c29b00 ////
+//// FUNCTION SetVtable_00d9f9dc_00c29b00 @ 00c29b00 ////
 
-void __fastcall FUN_00c29b00(undefined4 *param_1)
+void __fastcall SetVtable_00d9f9dc_00c29b00(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00d9f9dc;
@@ -12872,9 +12872,9 @@ void __fastcall FUN_00c29b00(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c29b90 @ 00c29b90 ////
+//// FUNCTION SetVtable_00da64c4_00c29b90 @ 00c29b90 ////
 
-void __fastcall FUN_00c29b90(undefined4 *param_1)
+void __fastcall SetVtable_00da64c4_00c29b90(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da64c4;
@@ -12882,12 +12882,12 @@ void __fastcall FUN_00c29b90(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c29ba0 @ 00c29ba0 ////
+//// FUNCTION ScalarDeletingDtor_00c29ba0 @ 00c29ba0 ////
 
-undefined4 * __thiscall FUN_00c29ba0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c29ba0(void *this,byte param_1)
 
 {
-  FUN_00c29b90(this);
+  SetVtable_00da64c4_00c29b90(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -12896,9 +12896,9 @@ undefined4 * __thiscall FUN_00c29ba0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c29be0 @ 00c29be0 ////
+//// FUNCTION SetVtable_00da17dc_00c29be0 @ 00c29be0 ////
 
-void __fastcall FUN_00c29be0(undefined4 *param_1)
+void __fastcall SetVtable_00da17dc_00c29be0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da17dc;
@@ -12906,12 +12906,12 @@ void __fastcall FUN_00c29be0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c29bf0 @ 00c29bf0 ////
+//// FUNCTION ScalarDeletingDtor_00c29bf0 @ 00c29bf0 ////
 
-undefined4 * __thiscall FUN_00c29bf0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c29bf0(void *this,byte param_1)
 
 {
-  FUN_00c29be0(this);
+  SetVtable_00da17dc_00c29be0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -12920,23 +12920,23 @@ undefined4 * __thiscall FUN_00c29bf0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c29c20 @ 00c29c20 ////
+//// FUNCTION Dtor_00c29c20 @ 00c29c20 ////
 
-void __fastcall FUN_00c29c20(undefined4 *param_1)
+void __fastcall Dtor_00c29c20(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da652c;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
 
-//// FUNCTION FUN_00c29d70 @ 00c29d70 ////
+//// FUNCTION ScalarDeletingDtor_00c29d70 @ 00c29d70 ////
 
-undefined4 * __thiscall FUN_00c29d70(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c29d70(void *this,byte param_1)
 
 {
-  FUN_00c29b00(this);
+  SetVtable_00d9f9dc_00c29b00(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -12945,23 +12945,23 @@ undefined4 * __thiscall FUN_00c29d70(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c29d90 @ 00c29d90 ////
+//// FUNCTION Ctor_vt00da652c_00c29d90 @ 00c29d90 ////
 
-undefined4 * __fastcall FUN_00c29d90(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da652c_00c29d90(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da652c;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c29db0 @ 00c29db0 ////
+//// FUNCTION ScalarDeletingDtor_00c29db0 @ 00c29db0 ////
 
-undefined4 * __thiscall FUN_00c29db0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c29db0(void *this,byte param_1)
 
 {
-  FUN_00c29c20(this);
+  Dtor_00c29c20(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -12970,13 +12970,13 @@ undefined4 * __thiscall FUN_00c29db0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c29dd0 @ 00c29dd0 ////
+//// FUNCTION Dtor_00c29dd0 @ 00c29dd0 ////
 
-void __fastcall FUN_00c29dd0(undefined4 *param_1)
+void __fastcall Dtor_00c29dd0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da652c;
-  FUN_00bcffc0(param_1 + 1);
+  RedBlackTree_Dtor(param_1 + 1);
   return;
 }
 
@@ -12998,30 +12998,30 @@ void __thiscall FUN_00c29e00(void *this,undefined4 param_1)
   local_10 = param_1;
   local_4 = 0;
   ExceptionList = &local_c;
-  FUN_00bcf140(this,&local_14);
+  RedBlackTree_ForEach(this,&local_14);
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c29e50 @ 00c29e50 ////
+//// FUNCTION Ctor_vt00da655c_00c29e50 @ 00c29e50 ////
 
-undefined4 * __fastcall FUN_00c29e50(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da655c_00c29e50(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da652c;
-  FUN_00bcf170(param_1 + 1);
+  RedBlackTree_Ctor(param_1 + 1);
   *param_1 = &PTR_LAB_00da655c;
   return param_1;
 }
 
 
-//// FUNCTION FUN_00c29e70 @ 00c29e70 ////
+//// FUNCTION ScalarDeletingDtor_00c29e70 @ 00c29e70 ////
 
-undefined4 * __thiscall FUN_00c29e70(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c29e70(void *this,byte param_1)
 
 {
-  FUN_00c29dd0(this);
+  Dtor_00c29dd0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -13030,12 +13030,12 @@ undefined4 * __thiscall FUN_00c29e70(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c29ec0 @ 00c29ec0 ////
+//// FUNCTION ScalarDeletingDtor_00c29ec0 @ 00c29ec0 ////
 
-undefined4 * __thiscall FUN_00c29ec0(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c29ec0(void *this,byte param_1)
 
 {
-  FUN_00c29770(this);
+  Dtor_00c29770(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -13044,9 +13044,9 @@ undefined4 * __thiscall FUN_00c29ec0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c29ee0 @ 00c29ee0 ////
+//// FUNCTION SetVtable_00da6600_00c29ee0 @ 00c29ee0 ////
 
-void __fastcall FUN_00c29ee0(undefined4 *param_1)
+void __fastcall SetVtable_00da6600_00c29ee0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6600;
@@ -13054,9 +13054,9 @@ void __fastcall FUN_00c29ee0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c29f40 @ 00c29f40 ////
+//// FUNCTION SetVtable_00da6610_00c29f40 @ 00c29f40 ////
 
-void __fastcall FUN_00c29f40(undefined4 *param_1)
+void __fastcall SetVtable_00da6610_00c29f40(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da6610;
@@ -13092,7 +13092,7 @@ void __fastcall FUN_00c29f70(int *param_1)
   local_4 = 0;
   FUN_00bec660((void *)param_1[0xb],param_1);
   local_4 = 0xffffffff;
-  FUN_00bc1490(local_14);
+  PKCProtectionInstance_Leave(local_14);
   ExceptionList = local_c;
   return;
 }
@@ -13147,15 +13147,15 @@ void __thiscall FUN_00c2a070(void *this,float param_1,float param_2)
   local_4 = 0;
   FUN_00bca1a0((void *)((int)this + 0x34),param_1,0.0,param_2);
   local_4 = 0xffffffff;
-  FUN_00bc1490(local_14);
+  PKCProtectionInstance_Leave(local_14);
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c2a0e0 @ 00c2a0e0 ////
+//// FUNCTION Ctor_vt00da661c_00c2a0e0 @ 00c2a0e0 ////
 
-undefined4 * __thiscall FUN_00c2a0e0(void *this,undefined4 param_1,undefined4 param_2,float param_3)
+undefined4 * __thiscall Ctor_vt00da661c_00c2a0e0(void *this,undefined4 param_1,undefined4 param_2,float param_3)
 
 {
   int iVar1;
@@ -13169,9 +13169,9 @@ undefined4 * __thiscall FUN_00c2a0e0(void *this,undefined4 param_1,undefined4 pa
   local_4 = 0;
   ExceptionList = &pvStack_c;
   *(undefined ***)this = &PTR_FUN_00da661c;
-  FUN_00bcf160((undefined4 *)((int)this + 4));
+  RedBlackTree_Node_Ctor((undefined4 *)((int)this + 4));
   local_4._0_1_ = 1;
-  FUN_00bcf160((undefined4 *)((int)this + 0x18));
+  RedBlackTree_Node_Ctor((undefined4 *)((int)this + 0x18));
   *(undefined4 *)((int)this + 0x30) = param_2;
   *(undefined4 *)((int)this + 0x2c) = param_1;
   local_4._0_1_ = 2;
@@ -13190,9 +13190,9 @@ undefined4 * __thiscall FUN_00c2a0e0(void *this,undefined4 param_1,undefined4 pa
 }
 
 
-//// FUNCTION FUN_00c2a1a0 @ 00c2a1a0 ////
+//// FUNCTION Dtor_00c2a1a0 @ 00c2a1a0 ////
 
-void __fastcall FUN_00c2a1a0(undefined4 *param_1)
+void __fastcall Dtor_00c2a1a0(undefined4 *param_1)
 
 {
   void *local_c;
@@ -13209,21 +13209,21 @@ void __fastcall FUN_00c2a1a0(undefined4 *param_1)
   FUN_00bcff70((void *)(param_1[0xb] + 0xc),(int *)(param_1[0xb] + 8),(int)param_1);
   param_1[0x1a] = &PTR_LAB_00da6610;
   local_4._0_1_ = 1;
-  FUN_00bcf880(param_1 + 6);
+  RedBlackTree_Node_Dtor(param_1 + 6);
   local_4 = (uint)local_4._1_3_ << 8;
-  FUN_00bcf880(param_1 + 1);
+  RedBlackTree_Node_Dtor(param_1 + 1);
   *param_1 = &PTR_LAB_00da6600;
   ExceptionList = local_c;
   return;
 }
 
 
-//// FUNCTION FUN_00c2a300 @ 00c2a300 ////
+//// FUNCTION ScalarDeletingDtor_00c2a300 @ 00c2a300 ////
 
-undefined4 * __thiscall FUN_00c2a300(void *this,byte param_1)
+undefined4 * __thiscall ScalarDeletingDtor_00c2a300(void *this,byte param_1)
 
 {
-  FUN_00c2a1a0(this);
+  Dtor_00c2a1a0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -13265,9 +13265,9 @@ void __thiscall FUN_00c2a350(void *this,undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c2a370 @ 00c2a370 ////
+//// FUNCTION Wrap_rand_00c2a370 @ 00c2a370 ////
 
-void __fastcall FUN_00c2a370(int param_1)
+void __fastcall Wrap_rand_00c2a370(int param_1)
 
 {
   float fVar1;
@@ -13349,7 +13349,7 @@ void __thiscall FUN_00c2a470(void *this,float param_1)
   *(float *)((int)this + 0x40) = fVar1;
   if (*(float *)((int)this + 0x38) * 1000.0 < fVar1) {
     *(undefined4 *)((int)this + 0x40) = 0;
-    FUN_00c2a370((int)this);
+    Wrap_rand_00c2a370((int)this);
   }
   FUN_00bca1a0(this,*(float *)((int)this + 0x44),0.0,*(float *)((int)this + 0x3c));
   FUN_00bca3e0(this,param_1);
@@ -13512,9 +13512,9 @@ uint __fastcall FUN_00c2a850(int param_1)
 }
 
 
-//// FUNCTION FUN_00c2a870 @ 00c2a870 ////
+//// FUNCTION PKAllocatorsCPresizedMemory_Ctor @ 00c2a870 ////
 
-int * __thiscall FUN_00c2a870(void *this,int param_1,int param_2)
+int * __thiscall PKAllocatorsCPresizedMemory_Ctor(void *this,int param_1,int param_2)
 
 {
   uint uVar1;
@@ -13568,9 +13568,9 @@ int * __thiscall FUN_00c2a870(void *this,int param_1,int param_2)
 }
 
 
-//// FUNCTION FUN_00c2a990 @ 00c2a990 ////
+//// FUNCTION PKAllocatorsCPresizedMemory_Allocate @ 00c2a990 ////
 
-int * __fastcall FUN_00c2a990(int param_1)
+int * __fastcall PKAllocatorsCPresizedMemory_Allocate(int param_1)
 
 {
   uint uVar1;
@@ -13623,9 +13623,9 @@ int * __fastcall FUN_00c2a990(int param_1)
 }
 
 
-//// FUNCTION FUN_00c2aab0 @ 00c2aab0 ////
+//// FUNCTION PKAllocatorsCPresizedMemory_Free @ 00c2aab0 ////
 
-void __thiscall FUN_00c2aab0(void *this,undefined4 *param_1)
+void __thiscall PKAllocatorsCPresizedMemory_Free(void *this,undefined4 *param_1)
 
 {
   LPCSTR pCVar1;
