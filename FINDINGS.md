@@ -232,7 +232,44 @@ In v4 the three offsets sit at `0x1c`-`0x24`. In v5 and v6 three more dwords com
 
 **What ours adds for them:** the driver table above answers their open question about the `+576..` parameter block. They marked those fields as hypotheses.
 
-**Other overlap:** none I could use. Fable's `.big` archives and its LZO1X texture compression have no counterpart in our export (no LZO or zlib strings). `CSystem` in Fable is a different class (`CSystemManager`, `CSystemRegistry`). Their save format (`SAVE*.md`) and definition files (`.bin` defs) are Fable-specific, and our save format is the text-based SLVAR one. Their mesh notes are for `.big` mesh banks, which are unrelated to our `.msh`.
+**Correction:** an earlier version of this section said there was no other overlap and that our export has no zlib strings. Both statements were wrong, and the deep dive below replaces them. Fable's `.big` archives and its LZO1X texture codec still have no counterpart here. `CSystem` in Fable is a different class (`CSystemManager`, `CSystemRegistry`). Their save and definition-file formats are Fable-specific, and their mesh notes are for `.big` mesh banks, unrelated to our `.msh`.
+
+## Deep dive: what else matches Fable and Black & White
+
+I compared the export against both projects using several independent signals, then checked the results by hand. Files: `fable_matches.csv` (results), `tools/match_fable.py` (reproducible), `renames.csv` (verified names).
+
+**Signals used**
+1. Every quoted string in our export against every string in both repos (source, symbols, Ghidra dumps, docs).
+2. Normalised pseudo-C similarity (4-gram shingles with variable and address names removed) against the roughly 9,300 function bodies in Fable's Ghidra dumps.
+3. Function sizes. In the matched region 446 of 511 functions have exactly the same size in both binaries, so the code is the same source built the same way. Runs of 6 or more consecutive functions with identical sizes give matches even where Fable has no decompiled body.
+4. Class names, RTTI names and numeric constants against both repos' symbol lists and sources.
+
+**Result for Fable: a large shared library.** In our binary the window `0x00bc0000`-`0x00c9a000` holds Lionhead middleware that Fable also contains (in Fable it sits around `0x00c00000`-`0x00cb0000`). `fable_matches.csv` has 1,154 matched functions from 4,852 in that window. Confidence of each row:
+- 186 matched by body similarity alone (0.6 or higher).
+- 368 size-run matches with a body similarity of 0.6 or higher, so both signals agree.
+- 117 size-run matches where the body similarity is below 0.6 (likely right, since the sizes are identical, but not confirmed).
+- 483 size-run matches where Fable has no decompiled body to compare, so only the size sequence supports them.
+- 142 rows have a similarity of 0.95 or higher.
+
+What the shared code is: a dynamic OpenAL wrapper (`alcCreateContext`, `alSourcePlay`, ...), a DSP/codec stack (FFT and MDCT kernels, resamplers, convolution filters, gain and mixing loops), CPU feature detection, the `PK*` thread, semaphore and timer classes, hashing and bitstream helpers, DirectSound and COM helpers, and the game's HTTP client (a different generation of it, see below). It also includes libvorbis (`Xiph.Org libVorbis I 20030909`), libogg and zlib.
+
+**How far to trust Fable's names.** I checked every Fable name's provenance. None of the matched functions carry the PDB-derived names that Fable's BSim pass ported from `ego_r.exe` and `FableWin.exe`. All of them come from Fable's own automatic naming, which describes behaviour and is sometimes wrong. Two examples I found: Fable calls a 4,202-token audio convolution function `Graphics_RenderTextWithConditionalEffects`, and calls our Ogg page checksum `CRC32_ComputeBuffer`. So `fable_matches.csv` is a set of hints. `renames.csv` only takes names I checked against our own code.
+
+**Names verified and added to `renames.csv`**
+- zlib 1.1.x inflate: 21 functions (`inflate`, `inflateInit_`, `inflateInit2_`, `inflateReset`, `inflateEnd`, `inflateSetDictionary`, `adler32`, `zcalloc`, the `inflate_blocks_*`, `inflate_codes_*`, `inflate_trees_*`, `huft_build`, `inflate_flush` and `inflate_fast` families). The identifying signals: the message strings, `version[0]=='1'` with `stream_size==0x38`, `adler32`'s 65521 and 5552 constants, and a 1,440-entry (0x5a0) huft array. There is a second `adler32` copy at `00aa7700` in a different module. There is no deflate code and no `zError` strings, so this is a decode-only copy.
+- `Jenkins_Hash_Lookup2` (golden ratio `0x9e3779b9` and the lookup2 mix), `Ogg_PageChecksumSet` (an MSB-first CRC over an Ogg page, written at header bytes 22-25), `CPU_IsCpuidSupported`, `CPU_GetIntelBrandName`, `CPU_GetAMDBrandName`, `CPU_InitCapabilities`, `Math_IntegerSqrt`.
+- Three functions in the HTTP client, named by what they do: `LHHttp_ParseURL`, `LHHttp_BuildHeaderBlock`, `LHHttp_ParseResponseHeaders`.
+
+**HTTP client.** Our client (`"Lionhead Studios TheMovies Client (HTTPLib) 1.0"`, `0x0096....`) does the same job as Fable's `LHHttp2` (`0x0083f...`-`0x00841...`): parse the URL with default port 80, build headers with a default `User-Agent`, read `ServerCode` and `Location:`. It is a different implementation (plain `char*` fields, extra `X-MoviesContent-*` headers), so body similarity is only 0.2-0.36 and it is not a code match.
+
+**Result for Black & White: almost nothing beyond the `LHFile` container.**
+- Strings: 34 in common, all trivial except `"LiOnHeAd"` and the zlib error messages. Their `src/zlib` is zlib 1.1.3, which is the same structure as ours, but it is upstream zlib, not a Lionhead library.
+- Numeric constants: one match, 2π.
+- Class and RTTI names: no useful overlap (only generic ones like `Bubble` and `Config`, which mean different things).
+- The `LHFile` segment container matches, as documented above. The rest of B&W's Lionhead source (`LHMem`, `LHHeap2`, `LHParseFile`, `LH3DMath`, `LHLog`, `LH3DMesh`) has no counterpart. The compiler is MSVC 6 and the library generation differs, so size runs do not line up either.
+- Their repo has almost no decompiled function bodies I could compare, only source and symbol lists, so code-level matching was limited to strings, constants and names.
+
+**Limits.** The size and body signals only see the shared library. Fable's dumps hold about 9,300 bodies out of about 49,600 functions, so functions without a dumped body can only be matched by size runs. The 3,700 unmatched functions in our window may be Movies-specific or may be shared code that neither signal can catch.
 
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.

@@ -7735,9 +7735,9 @@ LAB_00bb8561:
 }
 
 
-//// FUNCTION FUN_00bb867a @ 00bb867a ////
+//// FUNCTION zlib_inflate_fast @ 00bb867a ////
 
-undefined4 FUN_00bb867a(int param_1,int param_2,int param_3,int param_4,int param_5,int *param_6)
+undefined4 zlib_inflate_fast(int param_1,int param_2,int param_3,int param_4,int param_5,int *param_6)
 
 {
   byte bVar1;
@@ -12704,9 +12704,9 @@ int * __thiscall FUN_00bbe6a0(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00bbe6d0 @ 00bbe6d0 ////
+//// FUNCTION Jenkins_Hash_Lookup2 @ 00bbe6d0 ////
 
-uint __fastcall FUN_00bbe6d0(byte *param_1,uint param_2,uint param_3)
+uint __fastcall Jenkins_Hash_Lookup2(byte *param_1,uint param_2,uint param_3)
 
 {
   int iVar1;
@@ -13473,7 +13473,7 @@ void __thiscall FUN_00bbf720(void *this,uint param_1)
   
   uVar1 = PKString_GetLength(this);
   pbVar2 = (byte *)FUN_00bbf3a0(this);
-  FUN_00bbe6d0(pbVar2,uVar1,param_1);
+  Jenkins_Hash_Lookup2(pbVar2,uVar1,param_1);
   return;
 }
 

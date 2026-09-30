@@ -26993,9 +26993,9 @@ undefined4 FUN_00c8c4e0(int param_1,undefined4 *param_2)
 }
 
 
-//// FUNCTION FUN_00c8c550 @ 00c8c550 ////
+//// FUNCTION Math_IntegerSqrt @ 00c8c550 ////
 
-int FUN_00c8c550(int param_1)
+int Math_IntegerSqrt(int param_1)
 
 {
   int iVar1;
@@ -27051,7 +27051,7 @@ FUN_00c8c5c0(void *this,uint param_1,int *param_2,uint param_3,int param_4,uint 
     uVar3 = __alldiv(param_3 - (uint)lVar2,
                      (param_4 - (int)((ulonglong)lVar2 >> 0x20)) - (uint)(param_3 < (uint)lVar2),
                      param_1 - 1,(int)(param_1 - 1) >> 0x1f);
-    iVar1 = FUN_00c8c550((int)uVar3);
+    iVar1 = Math_IntegerSqrt((int)uVar3);
     *param_2 = iVar1;
   }
   LeaveCriticalSection((LPCRITICAL_SECTION)((int)this + 0x7c));

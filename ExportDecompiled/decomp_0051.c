@@ -18052,9 +18052,9 @@ undefined4 __cdecl FUN_00aa7680(int *param_1,int param_2,int *param_3)
 }
 
 
-//// FUNCTION FUN_00aa7700 @ 00aa7700 ////
+//// FUNCTION zlib_adler32_2 @ 00aa7700 ////
 
-uint __cdecl FUN_00aa7700(uint param_1,byte *param_2,uint param_3)
+uint __cdecl zlib_adler32_2(uint param_1,byte *param_2,uint param_3)
 
 {
   uint uVar1;

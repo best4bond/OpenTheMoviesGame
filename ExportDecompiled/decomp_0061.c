@@ -10151,7 +10151,7 @@ uint __thiscall FUN_00be1260(void *this,undefined4 param_1,int *param_2)
   ExceptionList = &local_c;
   if (DAT_010d5e10 == '\0') {
     ExceptionList = &local_c;
-    FUN_00c0fd60();
+    CPU_InitCapabilities();
     uVar6 = extraout_var;
   }
   if (DAT_010d5e12 == '\0') {

@@ -4428,7 +4428,7 @@ int * FUN_00b21449(char *param_1,undefined4 param_2,undefined4 param_3,undefined
         piVar1[0x21] = (int)FUN_00b2065a;
         piVar1[0x22] = (int)FUN_00b206b0;
         piVar1[0x23] = (int)piVar1;
-        iVar2 = FUN_00b2dc1e((int)(piVar1 + 0x19),"1.1.4",0x38);
+        iVar2 = zlib_inflateInit_((int)(piVar1 + 0x19),"1.1.4",0x38);
         if (iVar2 == -6) {
           pcVar4 = "zlib version error";
         }
@@ -4494,7 +4494,7 @@ void FUN_00b2153f(int *param_1)
   param_1[0x21] = (int)FUN_00b2065a;
   param_1[0x22] = (int)FUN_00b206b0;
   param_1[0x23] = (int)param_1;
-  iVar2 = FUN_00b2dc1e((int)(param_1 + 0x19),"1.1.4",0x38);
+  iVar2 = zlib_inflateInit_((int)(param_1 + 0x19),"1.1.4",0x38);
   if (iVar2 == -6) {
     pcVar5 = "zlib version";
   }
@@ -4735,7 +4735,7 @@ LAB_00b2180f:
       FUN_00b2e124(piVar4,(byte *)piVar4[0x27],piVar4[0x1a]);
       piVar4[0x3f] = piVar4[0x3f] - piVar4[0x1a];
     }
-    pbVar6 = FUN_00b2dc34(piVar4 + 0x19,1);
+    pbVar6 = zlib_inflate(piVar4 + 0x19,1);
     if (pbVar6 == (byte *)0x1) {
       if (((piVar4[0x1d] != 0) || (piVar4[0x1a] != 0)) || (piVar4[0x3f] != 0)) {
                     /* WARNING: Subroutine does not return */
@@ -4975,7 +4975,7 @@ void FUN_00b21ce7(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
     }
     FUN_00b2b0f2((int)param_1,(void *)param_1[0x51]);
   }
-  FUN_00b2db02((int)(param_1 + 0x19));
+  zlib_inflateEnd((int)(param_1 + 0x19));
   uVar1 = param_1[0x12];
   uVar2 = param_1[0x10];
   puVar5 = param_1;
@@ -15711,7 +15711,7 @@ undefined4 FUN_00b2c73b(int param_1,byte *param_2,uint param_3)
     uVar3 = 0xfffffffe;
   }
   else {
-    uVar2 = FUN_00b666f7(*(uint *)(param_1 + 0x30),param_2,param_3);
+    uVar2 = zlib_adler32(*(uint *)(param_1 + 0x30),param_2,param_3);
     *(uint *)(param_1 + 0x30) = uVar2;
     if (2 < param_3) {
       uVar2 = *(int *)(iVar1 + 0x24) - 0x106;
@@ -16116,7 +16116,7 @@ uint __thiscall FUN_00b2cce5(void *this,undefined4 *param_1)
   else {
     unaff_EBX[1] = (int)pvVar1 - (int)local_8;
     if (*(int *)(unaff_EBX[7] + 0x18) == 0) {
-      uVar2 = FUN_00b666f7(unaff_EBX[0xc],(byte *)*unaff_EBX,(uint)local_8);
+      uVar2 = zlib_adler32(unaff_EBX[0xc],(byte *)*unaff_EBX,(uint)local_8);
       unaff_EBX[0xc] = uVar2;
     }
     puVar3 = (undefined4 *)*unaff_EBX;
@@ -16337,7 +16337,7 @@ LAB_00b2cf47:
     else {
       piVar2[1] = uVar8 - local_8;
       if (*(int *)(piVar2[7] + 0x18) == 0) {
-        uVar8 = FUN_00b666f7(piVar2[0xc],(byte *)*piVar2,local_8);
+        uVar8 = zlib_adler32(piVar2[0xc],(byte *)*piVar2,local_8);
         piVar2[0xc] = uVar8;
       }
       puVar10 = (undefined4 *)*piVar2;
@@ -16547,7 +16547,7 @@ FUN_00b2d8c2(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     if (param_1 != 0) {
       *(undefined4 *)(param_1 + 0x18) = 0;
       if (*(int *)(param_1 + 0x20) == 0) {
-        *(code **)(param_1 + 0x20) = FUN_00b67fa8;
+        *(code **)(param_1 + 0x20) = zlib_zcalloc;
         *(undefined4 *)(param_1 + 0x28) = 0;
       }
       if (*(int *)(param_1 + 0x24) == 0) {
@@ -16611,9 +16611,9 @@ FUN_00b2d8c2(int param_1,int param_2,int param_3,int param_4,int param_5,int par
 }
 
 
-//// FUNCTION FUN_00b2dac3 @ 00b2dac3 ////
+//// FUNCTION zlib_inflateReset @ 00b2dac3 ////
 
-undefined4 FUN_00b2dac3(int param_1)
+undefined4 zlib_inflateReset(int param_1)
 
 {
   uint *puVar1;
@@ -16627,16 +16627,16 @@ undefined4 FUN_00b2dac3(int param_1)
     *(undefined4 *)(param_1 + 8) = 0;
     *(undefined4 *)(param_1 + 0x18) = 0;
     *puVar1 = -(uint)(puVar1[3] != 0) & 7;
-    FUN_00b67fda(*(int **)(*(int *)(param_1 + 0x1c) + 0x14),param_1,(int *)0x0);
+    zlib_inflate_blocks_reset(*(int **)(*(int *)(param_1 + 0x1c) + 0x14),param_1,(int *)0x0);
     uVar2 = 0;
   }
   return uVar2;
 }
 
 
-//// FUNCTION FUN_00b2db02 @ 00b2db02 ////
+//// FUNCTION zlib_inflateEnd @ 00b2db02 ////
 
-undefined4 FUN_00b2db02(int param_1)
+undefined4 zlib_inflateEnd(int param_1)
 
 {
   int iVar1;
@@ -16648,7 +16648,7 @@ undefined4 FUN_00b2db02(int param_1)
   }
   else {
     if (*(int *)(iVar1 + 0x14) != 0) {
-      FUN_00b6880a(*(int **)(iVar1 + 0x14),param_1);
+      zlib_inflate_blocks_free(*(int **)(iVar1 + 0x14),param_1);
     }
     (**(code **)(param_1 + 0x24))(*(undefined4 *)(param_1 + 0x28),*(undefined4 *)(param_1 + 0x1c));
     *(undefined4 *)(param_1 + 0x1c) = 0;
@@ -16658,9 +16658,9 @@ undefined4 FUN_00b2db02(int param_1)
 }
 
 
-//// FUNCTION FUN_00b2db3f @ 00b2db3f ////
+//// FUNCTION zlib_inflateInit2_ @ 00b2db3f ////
 
-undefined4 FUN_00b2db3f(int param_1,int param_2,char *param_3,int param_4)
+undefined4 zlib_inflateInit2_(int param_1,int param_2,char *param_3,int param_4)
 
 {
   int iVar1;
@@ -16676,7 +16676,7 @@ undefined4 FUN_00b2db3f(int param_1,int param_2,char *param_3,int param_4)
   else {
     *(undefined4 *)(param_1 + 0x18) = 0;
     if (*(int *)(param_1 + 0x20) == 0) {
-      *(code **)(param_1 + 0x20) = FUN_00b67fa8;
+      *(code **)(param_1 + 0x20) = zlib_zcalloc;
       *(undefined4 *)(param_1 + 0x28) = 0;
     }
     if (*(int *)(param_1 + 0x24) == 0) {
@@ -16699,34 +16699,34 @@ undefined4 FUN_00b2db3f(int param_1,int param_2,char *param_3,int param_4)
       }
       else {
         *(int *)(*(int *)(param_1 + 0x1c) + 0x10) = param_2;
-        piVar2 = FUN_00b68040(param_1);
+        piVar2 = zlib_inflate_blocks_new(param_1);
         *(int **)(*(int *)(param_1 + 0x1c) + 0x14) = piVar2;
         if (*(int *)(*(int *)(param_1 + 0x1c) + 0x14) != 0) {
-          FUN_00b2dac3(param_1);
+          zlib_inflateReset(param_1);
           return 0;
         }
         uVar3 = 0xfffffffc;
       }
-      FUN_00b2db02(param_1);
+      zlib_inflateEnd(param_1);
     }
   }
   return uVar3;
 }
 
 
-//// FUNCTION FUN_00b2dc1e @ 00b2dc1e ////
+//// FUNCTION zlib_inflateInit_ @ 00b2dc1e ////
 
-void FUN_00b2dc1e(int param_1,char *param_2,int param_3)
+void zlib_inflateInit_(int param_1,char *param_2,int param_3)
 
 {
-  FUN_00b2db3f(param_1,0xf,param_2,param_3);
+  zlib_inflateInit2_(param_1,0xf,param_2,param_3);
   return;
 }
 
 
-//// FUNCTION FUN_00b2dc34 @ 00b2dc34 ////
+//// FUNCTION zlib_inflate @ 00b2dc34 ////
 
-byte * FUN_00b2dc34(int *param_1,int param_2)
+byte * zlib_inflate(int *param_1,int param_2)
 
 {
   byte bVar1;
@@ -16817,7 +16817,7 @@ switchD_00b2dc71_caseD_2:
     *(undefined4 *)(param_1[7] + 4) = 0;
     return (byte *)0xfffffffe;
   case 7:
-    pbVar3 = (byte *)FUN_00b680be(*(uint **)(param_1[7] + 0x14),param_1,pbVar3);
+    pbVar3 = (byte *)zlib_inflate_blocks(*(uint **)(param_1[7] + 0x14),param_1,pbVar3);
     if (pbVar3 == (byte *)0xfffffffd) {
       *(undefined4 *)param_1[7] = 0xd;
       *(undefined4 *)(param_1[7] + 4) = 0;
@@ -16830,7 +16830,7 @@ switchD_00b2dc71_caseD_2:
       if (pbVar3 != (byte *)0x1) {
         return pbVar3;
       }
-      FUN_00b67fda(*(int **)(param_1[7] + 0x14),(int)param_1,(int *)(param_1[7] + 4));
+      zlib_inflate_blocks_reset(*(int **)(param_1[7] + 0x14),(int)param_1,(int *)(param_1[7] + 4));
       puVar4 = (undefined4 *)param_1[7];
       if (puVar4[3] == 0) {
         *puVar4 = 8;
@@ -16940,9 +16940,9 @@ switchD_00b2dc71_caseD_5:
 }
 
 
-//// FUNCTION FUN_00b2df97 @ 00b2df97 ////
+//// FUNCTION zlib_inflateSetDictionary @ 00b2df97 ////
 
-undefined4 FUN_00b2df97(int param_1,byte *param_2,uint param_3)
+undefined4 zlib_inflateSetDictionary(int param_1,byte *param_2,uint param_3)
 
 {
   uint uVar1;
@@ -16953,7 +16953,7 @@ undefined4 FUN_00b2df97(int param_1,byte *param_2,uint param_3)
     uVar2 = 0xfffffffe;
   }
   else {
-    uVar1 = FUN_00b666f7(1,param_2,param_3);
+    uVar1 = zlib_adler32(1,param_2,param_3);
     if (uVar1 == *(uint *)(param_1 + 0x30)) {
       *(undefined4 *)(param_1 + 0x30) = 1;
       uVar1 = 1 << ((byte)*(undefined4 *)(*(int *)(param_1 + 0x1c) + 0x10) & 0x1f);
@@ -16962,7 +16962,7 @@ undefined4 FUN_00b2df97(int param_1,byte *param_2,uint param_3)
         param_2 = param_2 + (param_3 - uVar1);
         param_3 = uVar1;
       }
-      FUN_00b6883d(*(int *)(*(int *)(param_1 + 0x1c) + 0x14),(undefined4 *)param_2,param_3);
+      zlib_inflate_set_dictionary(*(int *)(*(int *)(param_1 + 0x1c) + 0x14),(undefined4 *)param_2,param_3);
       **(undefined4 **)(param_1 + 0x1c) = 7;
       uVar2 = 0;
     }
@@ -17027,7 +17027,7 @@ undefined4 FUN_00b2e00c(undefined4 *param_1)
       if (uVar6 == 4) {
         uVar8 = puVar5[2];
         uVar4 = puVar5[5];
-        FUN_00b2dac3((int)puVar5);
+        zlib_inflateReset((int)puVar5);
         puVar5[2] = uVar8;
         puVar5[5] = uVar4;
         *(undefined4 *)puVar5[7] = 7;
@@ -18162,7 +18162,7 @@ LAB_00b2f264:
           FUN_00b2e124(piVar3,(byte *)piVar3[0x27],piVar3[0x1a]);
           piVar3[0x3f] = piVar3[0x3f] - piVar3[0x1a];
         }
-        pbVar5 = FUN_00b2dc34(piVar3 + 0x19,1);
+        pbVar5 = zlib_inflate(piVar3 + 0x19,1);
         if (pbVar5 == (byte *)0x1) break;
         if (pbVar5 != (byte *)0x0) {
           pcVar6 = (char *)piVar3[0x1f];
@@ -18189,7 +18189,7 @@ LAB_00b2f264:
                     /* WARNING: Subroutine does not return */
       FUN_00b20535(piVar3,"Extra compression data");
     }
-    FUN_00b2dac3((int)(piVar3 + 0x19));
+    zlib_inflateReset((int)(piVar3 + 0x19));
     piVar3[0x16] = piVar3[0x16] | 8;
   }
   return;

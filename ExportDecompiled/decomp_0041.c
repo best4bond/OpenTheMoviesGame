@@ -15609,7 +15609,7 @@ switchD_00964244_caseD_4:
     *(undefined4 *)((int)this + 0x14) = 0;
     goto LAB_00964306;
   case 5:
-    FUN_0096f0d0(*(void **)((int)this + 0x10),(int)&local_34);
+    LHHttp_ParseResponseHeaders(*(void **)((int)this + 0x10),(int)&local_34);
     if (local_34 == 200) {
       _Src = FUN_0096d8f0(local_30,"X-MoviesContent-Length");
       if ((_Src != (char *)0x0) ||
@@ -16021,7 +16021,7 @@ uint __thiscall FUN_00964a70(void *this,void *param_1)
     local_c48 = 0;
     local_c44 = 0;
     local_c = 0;
-    FUN_0096f0d0(*(void **)((int)this + 0x10),(int)&local_c68);
+    LHHttp_ParseResponseHeaders(*(void **)((int)this + 0x10),(int)&local_c68);
     pcVar3 = FUN_0096d8f0(local_c64,"X-MoviesContent-Rav0");
     uVar4 = FUN_0096da50(*(int *)((int)this + 0x10));
     _Memory = operator_new(uVar4);

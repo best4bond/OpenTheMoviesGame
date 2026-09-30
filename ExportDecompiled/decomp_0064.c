@@ -8671,9 +8671,9 @@ undefined8 FUN_00c0f9a0(void)
 }
 
 
-//// FUNCTION FUN_00c0f9c0 @ 00c0f9c0 ////
+//// FUNCTION CPU_IsCpuidSupported @ 00c0f9c0 ////
 
-bool FUN_00c0f9c0(void)
+bool CPU_IsCpuidSupported(void)
 
 {
   uint uVar1;
@@ -8707,9 +8707,9 @@ bool FUN_00c0f9c0(void)
 }
 
 
-//// FUNCTION FUN_00c0f9f0 @ 00c0f9f0 ////
+//// FUNCTION CPU_GetIntelBrandName @ 00c0f9f0 ////
 
-char * __fastcall FUN_00c0f9f0(int param_1)
+char * __fastcall CPU_GetIntelBrandName(int param_1)
 
 {
   int iVar1;
@@ -8776,9 +8776,9 @@ LAB_00c0fa46:
 }
 
 
-//// FUNCTION FUN_00c0fad0 @ 00c0fad0 ////
+//// FUNCTION CPU_GetAMDBrandName @ 00c0fad0 ////
 
-char * __fastcall FUN_00c0fad0(int param_1)
+char * __fastcall CPU_GetAMDBrandName(int param_1)
 
 {
   int iVar1;
@@ -8968,7 +8968,7 @@ int __cdecl FUN_00c0fcc0(int param_1)
 }
 
 
-//// FUNCTION FUN_00c0fd60 @ 00c0fd60 ////
+//// FUNCTION CPU_InitCapabilities @ 00c0fd60 ////
 
 /* WARNING: Removing unreachable block (ram,0x00c10015) */
 /* WARNING: Removing unreachable block (ram,0x00c0ffbb) */
@@ -8983,7 +8983,7 @@ int __cdecl FUN_00c0fcc0(int param_1)
 /* WARNING: Removing unreachable block (ram,0x00c0fdf4) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00c0fd60(void)
+void CPU_InitCapabilities(void)
 
 {
   char *pcVar1;
@@ -9203,11 +9203,11 @@ void FUN_00c0fd60(void)
     switch(local_5c) {
     case 1:
       _DAT_010d5df8 = "Intel";
-      _DAT_010d5dfc = FUN_00c0f9f0((int)&local_5c);
+      _DAT_010d5dfc = CPU_GetIntelBrandName((int)&local_5c);
       break;
     case 2:
       _DAT_010d5df8 = "AMD";
-      _DAT_010d5dfc = FUN_00c0fad0((int)&local_5c);
+      _DAT_010d5dfc = CPU_GetAMDBrandName((int)&local_5c);
       break;
     case 3:
       if ((local_58 != 6) || (_DAT_010d5df8 = "Via", local_50 != 5)) {
@@ -10576,7 +10576,7 @@ undefined4 * FUN_00c12300(int param_1)
   ExceptionList = &local_c;
   if (DAT_010d5e10 == '\0') {
     ExceptionList = &local_c;
-    FUN_00c0fd60();
+    CPU_InitCapabilities();
   }
   if (DAT_010d5e15 == '\0') {
     if (param_1 == 0x100000) {

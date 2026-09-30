@@ -6210,9 +6210,9 @@ void __fastcall FUN_00c327a0(int param_1)
 }
 
 
-//// FUNCTION FUN_00c327e0 @ 00c327e0 ////
+//// FUNCTION Ogg_PageChecksumSet @ 00c327e0 ////
 
-void __fastcall FUN_00c327e0(int *param_1)
+void __fastcall Ogg_PageChecksumSet(int *param_1)
 
 {
   uint uVar1;
@@ -6448,7 +6448,7 @@ undefined4 __fastcall FUN_00c329f0(int *param_1,int *param_2)
   _memmove((void *)param_1[4],(void *)(param_1[4] + iVar7 * 4),(iVar8 - iVar7) * 4);
   _memmove((void *)param_1[5],(void *)(param_1[5] + iVar7 * 8),param_1[7] << 3);
   param_1[3] = param_1[3] + local_8;
-  FUN_00c327e0(param_2);
+  Ogg_PageChecksumSet(param_2);
   return 1;
 }
 
@@ -6613,7 +6613,7 @@ int __fastcall FUN_00c32d80(int *param_1,int *param_2)
   local_4 = param_1[6];
   local_8 = local_c + (int)piVar5;
   local_10 = piVar5;
-  FUN_00c327e0((int *)&local_10);
+  Ogg_PageChecksumSet((int *)&local_10);
   if (iVar1 == *(int *)((int)piVar5 + 0x16)) {
     iVar4 = *param_1;
     iVar1 = param_1[3];
@@ -14016,7 +14016,7 @@ void __cdecl FUN_00c3cb90(int *param_1,float *param_2)
   int iVar21;
   
   if (DAT_010d5e10 == '\0') {
-    FUN_00c0fd60();
+    CPU_InitCapabilities();
   }
   if (DAT_010d5e15 != '\0') {
     iVar20 = 8;
@@ -14119,7 +14119,7 @@ void __cdecl FUN_00c3ccd0(float *param_1,int *param_2)
   int *piVar21;
   
   if (DAT_010d5e10 == '\0') {
-    FUN_00c0fd60();
+    CPU_InitCapabilities();
   }
   if (DAT_010d5e15 != '\0') {
     iVar20 = 8;
@@ -14213,7 +14213,7 @@ void __cdecl FUN_00c3cdc0(float *param_1)
   int extraout_EDX;
   
   if (DAT_010d5e10 == '\0') {
-    FUN_00c0fd60();
+    CPU_InitCapabilities();
   }
   if (DAT_010d5e15 != '\0') {
     iVar2 = 8;
@@ -14278,7 +14278,7 @@ void __cdecl FUN_00c3cf00(float *param_1)
   int iVar2;
   
   if (DAT_010d5e10 == '\0') {
-    FUN_00c0fd60();
+    CPU_InitCapabilities();
   }
   if (DAT_010d5e15 != '\0') {
     iVar2 = 8;
