@@ -152,6 +152,32 @@ Loaded by `LH_LoadLUGAsset` (`00c009c0`, `decomp_0063.c`) on top of the segment 
 
 The parameter block at `0x240`-`0x27c` is decoded in the next subsection. The write side is `LH_BuildLUGAsset` (`00bd34d0`) with matching `LH_Save*` functions.
 
+### Sample record parameter block (`LH_BuildDriverTable`, `00c00660`)
+
+`LH_BuildDriverTable` turns each sample record into a 0x48-byte "driver" object. The record's `+0x244` dword is a flags word that says which optional fields are present. What each field means for playback is my inference from how it is used, not confirmed.
+
+| Record offset | Used as |
+|---|---|
+| 0x104 / 0x108 | driver +4 / +8: id and wave id |
+| 0x118 | two words. The low word goes to driver word 0xb and the high word to driver word 0xa. Fable's docs saw values `0x10000`, `0` and `40000` here |
+| 0x140 | group / category name string, 256 bytes (`"Arena"`, `"Balverine"`, ...). Copied into the driver |
+| 0x240 | dword copied to the driver, default 1 when 0. Fable saw 1, 300 and 1000 here, so it looks like a priority or weight |
+| 0x244 | flags word, see below |
+| 0x248 | dword, used only if flag `0x40` is set |
+| 0x250, 0x254 | words, used if flags `0x4` and `0x8` are set |
+| 0x258 | flag bits 1 and 2, used if flag `0x10` is set. They become driver flags 1 and 2 |
+| 0x25c, 0x25e | word pair forming a range. If both flags `0x20` and `0x1000` are set it is (0x25c, 0x25e). If only one is set that word is used for both ends. If neither, both are 0x7f. The pair is swapped so low <= high |
+| 0x260 | word, used if flag `0x1` is set, otherwise the driver value is 100 |
+| 0x264 | word, always copied |
+| 0x268 | float, used if flag `0x80` is set. Fable's data has values like 3.0 and 5.0, so this is a minimum distance |
+| 0x26c | float, used if flag `0x100` is set. Fable's values are like 25.0 and 35.0, so this is a maximum distance |
+| 0x270, 0x272 | two words, copied to driver words 0 and 1. Fable saw these as percentages up to 140 |
+| 0x274 | with flag `0x400` and a value of 2, clears driver flag 8 (otherwise flag 8 is set) |
+| 0x278 | if non-zero, sets driver flag 4 |
+| 0x27c | dword, default 1 when it is -1. Fable saw values like 4000, 800 and 10000 |
+
+The Fable docs also list this block as unknown. The distance floats and the alias meaning of `0x108` line up with what they observed in real files.
+
 ## `.pak` archives
 
 Only the parts I could read from the decompile are here. The per-entry fields are not decoded, so no extractor can be written from this alone.
@@ -183,32 +209,6 @@ In v4 the three offsets sit at `0x1c`-`0x24`. In v5 and v6 three more dwords com
 **Entries:** 0x38 bytes each. Only the flags dword at `+0x14` (pak index in bits 15-26) is known. The file-name/hash, offset and size fields have not been decoded.
 
 **Path handling** (`FUN_00ab0060`, `FUN_00ab0150`): paths are lower-cased and cut down to the part after `data\`. A file-type classifier checks the extensions `.msh`, `.pak`, `.cpak`, `.exe`, `.avi`, `.wmv`, `.fnt`. For `.msh` it treats names starting `head_` and `cos_` specially, with `_fat` and `_enh` suffixes (body-size and enhanced variants of costumes). A separate `"%s\%s%s%04d.pak"` format is used when generating numbered pak names.
-
-### Sample record parameter block (`LH_BuildDriverTable`, `00c00660`)
-
-`LH_BuildDriverTable` turns each sample record into a 0x48-byte "driver" object. The record's `+0x244` dword is a flags word that says which optional fields are present. What each field means for playback is my inference from how it is used, not confirmed.
-
-| Record offset | Used as |
-|---|---|
-| 0x104 / 0x108 | driver +4 / +8: id and wave id |
-| 0x118 | two words. The low word goes to driver word 0xb and the high word to driver word 0xa. Fable's docs saw values `0x10000`, `0` and `40000` here |
-| 0x140 | group / category name string, 256 bytes (`"Arena"`, `"Balverine"`, ...). Copied into the driver |
-| 0x240 | dword copied to the driver, default 1 when 0. Fable saw 1, 300 and 1000 here, so it looks like a priority or weight |
-| 0x244 | flags word, see below |
-| 0x248 | dword, used only if flag `0x40` is set |
-| 0x250, 0x254 | words, used if flags `0x4` and `0x8` are set |
-| 0x258 | flag bits 1 and 2, used if flag `0x10` is set. They become driver flags 1 and 2 |
-| 0x25c, 0x25e | word pair forming a range. If both flags `0x20` and `0x1000` are set it is (0x25c, 0x25e). If only one is set that word is used for both ends. If neither, both are 0x7f. The pair is swapped so low <= high |
-| 0x260 | word, used if flag `0x1` is set, otherwise the driver value is 100 |
-| 0x264 | word, always copied |
-| 0x268 | float, used if flag `0x80` is set. Fable's data has values like 3.0 and 5.0, so this is a minimum distance |
-| 0x26c | float, used if flag `0x100` is set. Fable's values are like 25.0 and 35.0, so this is a maximum distance |
-| 0x270, 0x272 | two words, copied to driver words 0 and 1. Fable saw these as percentages up to 140 |
-| 0x274 | with flag `0x400` and a value of 2, clears driver flag 8 (otherwise flag 8 is set) |
-| 0x278 | if non-zero, sets driver flag 4 |
-| 0x27c | dword, default 1 when it is -1. Fable saw values like 4000, 800 and 10000 |
-
-The Fable docs also list this block as unknown. The distance floats and the alias meaning of `0x108` line up with what they observed in real files.
 
 ## Comparison with the Fable decomp (`BuffJesus/FableDecomp`)
 
