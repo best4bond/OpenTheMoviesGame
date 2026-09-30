@@ -198,3 +198,712 @@ address,old_name,new_name,evidence
 00c60460,FUN_00c60460,vorbis_mdct_backward,libvorbis 1.0.1 (20030909): inverse MDCT
 00c606b0,FUN_00c606b0,vorbis_mdct_forward,libvorbis 1.0.1 (20030909): forward MDCT
 00bba8c0,FUN_00bba8c0,CodecFormat_DetectFromHeader,"reads 4 bytes: ""OggS"" 0x5367674f -> Ogg codec, ""RIFF"" 0x46464952 -> checks the fmt tag (0x50 MPEG2 Layer II, 0x69 Xbox ADPCM), 0x75b22630 -> WMA"
+00bc00d0,FUN_00bc00d0,SetVtable_00d9d9b4_00bc00d0,pattern: stores vtable 00d9d9b4 and returns; functions with the same vtable address belong to one class
+00bc0270,FUN_00bc0270,ScalarDeletingDtor_00bc0270,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc0b90,FUN_00bc0b90,ScalarDeletingDtor_00bc0b90,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc0bb0,FUN_00bc0bb0,ScalarDeletingDtor_00bc0bb0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc0bd0,FUN_00bc0bd0,ScalarDeletingDtor_00bc0bd0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc0c80,FUN_00bc0c80,ScalarDeletingDtor_00bc0c80,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc0d00,FUN_00bc0d00,ScalarDeletingDtor_00bc0d00,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc0d20,FUN_00bc0d20,ScalarDeletingDtor_00bc0d20,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc0d40,FUN_00bc0d40,ScalarDeletingDtor_00bc0d40,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc0f80,FUN_00bc0f80,LH_Array_GetAt_00bc0f80,pattern: asserts Index < FilledSize and returns element Index
+00bc0fe0,FUN_00bc0fe0,ScalarDeletingDtor_00bc0fe0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc1050,FUN_00bc1050,LH_SortedArray_FindIndex_00bc1050,"pattern: binary search by 32-bit key, returns index and found flag"
+00bc1130,FUN_00bc1130,LH_SortedArray_FindObject_00bc1130,pattern: binary search then asserts the found object != NULL
+00bc12c0,FUN_00bc12c0,ScalarDeletingDtor_00bc12c0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc1350,FUN_00bc1350,ScalarDeletingDtor_00bc1350,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc1620,FUN_00bc1620,SetVtable_00d9e540_00bc1620,pattern: stores vtable 00d9e540 and returns; functions with the same vtable address belong to one class
+00bc20b0,FUN_00bc20b0,ScalarDeletingDtor_00bc20b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc20d0,FUN_00bc20d0,ScalarDeletingDtor_00bc20d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc23f0,FUN_00bc23f0,ScalarDeletingDtor_00bc23f0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc2410,FUN_00bc2410,ScalarDeletingDtor_00bc2410,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc2490,FUN_00bc2490,ScalarDeletingDtor_00bc2490,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc24b0,FUN_00bc24b0,ScalarDeletingDtor_00bc24b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc24d0,FUN_00bc24d0,ScalarDeletingDtor_00bc24d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc6c70,FUN_00bc6c70,SetVtable_00d9e6c8_00bc6c70,pattern: stores vtable 00d9e6c8 and returns; functions with the same vtable address belong to one class
+00bc6ca0,FUN_00bc6ca0,SetVtable_00d9e7a0_00bc6ca0,pattern: stores vtable 00d9e7a0 and returns; functions with the same vtable address belong to one class
+00bc6cd0,FUN_00bc6cd0,SetVtable_00d9e7a0_00bc6cd0,pattern: stores vtable 00d9e7a0 and returns; functions with the same vtable address belong to one class
+00bc6d70,FUN_00bc6d70,ScalarDeletingDtor_00bc6d70,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc6d90,FUN_00bc6d90,ScalarDeletingDtor_00bc6d90,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc6de0,FUN_00bc6de0,ScalarDeletingDtor_00bc6de0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc6e00,FUN_00bc6e00,ScalarDeletingDtor_00bc6e00,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc6f20,FUN_00bc6f20,SetVtable_00d9e7b8_00bc6f20,pattern: stores vtable 00d9e7b8 and returns; functions with the same vtable address belong to one class
+00bc6fb0,FUN_00bc6fb0,SetVtable_00d9d9b4_00bc6fb0,pattern: stores vtable 00d9d9b4 and returns; functions with the same vtable address belong to one class
+00bc7230,FUN_00bc7230,ScalarDeletingDtor_00bc7230,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc72a0,FUN_00bc72a0,LH_Array_Reserve_00bc72a0,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00bc7360,FUN_00bc7360,GetField_8_00bc7360,pattern: returns the field at offset 8
+00bc7370,FUN_00bc7370,LH_Array_SetFilledSize_00bc7370,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00bc73b0,FUN_00bc73b0,LH_Array_FreeBuffer_00bc73b0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bc7470,FUN_00bc7470,LH_Array_GetAt_00bc7470,pattern: asserts Index < FilledSize and returns element Index
+00bc75e0,FUN_00bc75e0,ScalarDeletingDtor_00bc75e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc7780,FUN_00bc7780,ScalarDeletingDtor_00bc7780,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc77a0,FUN_00bc77a0,SetVtable_00d9e7b0_00bc77a0,pattern: stores vtable 00d9e7b0 and returns; functions with the same vtable address belong to one class
+00bc77b0,FUN_00bc77b0,SetVtable_00d9da84_00bc77b0,pattern: stores vtable 00d9da84 and returns; functions with the same vtable address belong to one class
+00bc8230,FUN_00bc8230,ScalarDeletingDtor_00bc8230,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc8250,FUN_00bc8250,ScalarDeletingDtor_00bc8250,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc8270,FUN_00bc8270,ScalarDeletingDtor_00bc8270,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc8290,FUN_00bc8290,ScalarDeletingDtor_00bc8290,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc8600,FUN_00bc8600,ScalarDeletingDtor_00bc8600,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc8620,FUN_00bc8620,ScalarDeletingDtor_00bc8620,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc8640,FUN_00bc8640,ScalarDeletingDtor_00bc8640,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc8660,FUN_00bc8660,ScalarDeletingDtor_00bc8660,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc8cb0,FUN_00bc8cb0,ScalarDeletingDtor_00bc8cb0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc8cd0,FUN_00bc8cd0,ScalarDeletingDtor_00bc8cd0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc8cf0,FUN_00bc8cf0,ScalarDeletingDtor_00bc8cf0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc8d10,FUN_00bc8d10,ScalarDeletingDtor_00bc8d10,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc9190,FUN_00bc9190,ScalarDeletingDtor_00bc9190,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bc93a0,FUN_00bc93a0,SetVtable_00d9ec7c_00bc93a0,pattern: stores vtable 00d9ec7c and returns; functions with the same vtable address belong to one class
+00bca4b0,FUN_00bca4b0,ScalarDeletingDtor_00bca4b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bca500,FUN_00bca500,SetVtable_00d9ecf8_00bca500,pattern: stores vtable 00d9ecf8 and returns; functions with the same vtable address belong to one class
+00bcb570,FUN_00bcb570,ScalarDeletingDtor_00bcb570,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bcb880,FUN_00bcb880,ScalarDeletingDtor_00bcb880,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bcbb60,FUN_00bcbb60,ScalarDeletingDtor_00bcbb60,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bcbb80,FUN_00bcbb80,ScalarDeletingDtor_00bcbb80,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bcbbd0,FUN_00bcbbd0,GetField_8_00bcbbd0,pattern: returns the field at offset 8
+00bcc020,FUN_00bcc020,LH_Array_GetAt_00bcc020,pattern: asserts Index < FilledSize and returns element Index
+00bcc060,FUN_00bcc060,LH_Array_SetAt_00bcc060,pattern: asserts Index < FilledSize and stores element Index
+00bcc0a0,FUN_00bcc0a0,GetField_8_00bcc0a0,pattern: returns the field at offset 8
+00bcc0b0,FUN_00bcc0b0,LH_Array_SetFilledSize_00bcc0b0,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00bcc0f0,FUN_00bcc0f0,LH_Array_FreeBuffer_00bcc0f0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bcc1b0,FUN_00bcc1b0,LH_Array_Reserve_00bcc1b0,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00bcc2a0,FUN_00bcc2a0,LH_Array_Reserve_00bcc2a0,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00bcc610,FUN_00bcc610,ScalarDeletingDtor_00bcc610,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bcc640,FUN_00bcc640,LH_Array_FreeBuffer_00bcc640,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bcc770,FUN_00bcc770,ScalarDeletingDtor_00bcc770,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bcc790,FUN_00bcc790,LH_Array_GetAt_00bcc790,pattern: asserts Index < FilledSize and returns element Index
+00bcc7d0,FUN_00bcc7d0,LH_Array_SetAt_00bcc7d0,pattern: asserts Index < FilledSize and stores element Index
+00bcc810,FUN_00bcc810,LH_Array_SetFilledSize_00bcc810,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00bcc840,FUN_00bcc840,LH_Array_FreeBuffer_00bcc840,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bcc9d0,FUN_00bcc9d0,LH_Array_IsSortedUnique_00bcc9d0,"pattern: checks keys at +4 strictly increase, asserting neighbours non-null"
+00bccc00,FUN_00bccc00,LH_Array_MedianOfThree_00bccc00,pattern: three compare-and-swap steps on keys at +4 (introsort pivot selection)
+00bccda0,FUN_00bccda0,LH_Array_PushHeap_00bccda0,"pattern: heap sift-up: parent index (i-1)/2, compares keys at +4"
+00bcced0,FUN_00bcced0,LH_Array_FreeBuffer_00bcced0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bccee0,FUN_00bccee0,LH_SortedArray_FindObject_00bccee0,pattern: binary search then asserts the found object != NULL
+00bcd030,FUN_00bcd030,ScalarDeletingDtor_00bcd030,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bcd270,FUN_00bcd270,LH_Array_AdjustHeap_00bcd270,pattern: heap sift-down with child pick then push_heap
+00bcdcc0,FUN_00bcdcc0,LH_Array_AdoptRequireEmpty_00bcdcc0,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00bcdd00,FUN_00bcdd00,LH_Array_AdoptRequireEmpty_00bcdd00,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00bce140,FUN_00bce140,LH_Array_SortAndVerifyUnique_00bce140,"pattern: sorts then asserts ""unique"""
+00bce170,FUN_00bce170,LH_Array_SortAndVerifyUnique_00bce170,"pattern: sorts then asserts ""unique"""
+00bce1a0,FUN_00bce1a0,LH_Array_CopySorted_00bce1a0,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00bce1e0,FUN_00bce1e0,LH_Array_CopySorted_00bce1e0,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00bce240,FUN_00bce240,SetVtable_00d9ee80_00bce240,pattern: stores vtable 00d9ee80 and returns; functions with the same vtable address belong to one class
+00bce620,FUN_00bce620,ScalarDeletingDtor_00bce620,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bcea50,FUN_00bcea50,ScalarDeletingDtor_00bcea50,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd00d0,FUN_00bd00d0,ScalarDeletingDtor_00bd00d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd0100,FUN_00bd0100,SetVtable_00d9f090_00bd0100,pattern: stores vtable 00d9f090 and returns; functions with the same vtable address belong to one class
+00bd0480,FUN_00bd0480,ScalarDeletingDtor_00bd0480,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd0910,FUN_00bd0910,GetField_8_00bd0910,pattern: returns the field at offset 8
+00bd0920,FUN_00bd0920,LH_Array_SetFilledSize_00bd0920,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00bd0960,FUN_00bd0960,LH_Array_FreeBuffer_00bd0960,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bd09c0,FUN_00bd09c0,LH_Array_GetAt_00bd09c0,pattern: asserts Index < FilledSize and returns element Index
+00bd0a00,FUN_00bd0a00,GetField_8_00bd0a00,pattern: returns the field at offset 8
+00bd0a10,FUN_00bd0a10,LH_Array_SetFilledSize_00bd0a10,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00bd0a50,FUN_00bd0a50,LH_Array_FreeBuffer_00bd0a50,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bd0ab0,FUN_00bd0ab0,LH_Array_GetAt_00bd0ab0,pattern: asserts Index < FilledSize and returns element Index
+00bd0af0,FUN_00bd0af0,GetField_8_00bd0af0,pattern: returns the field at offset 8
+00bd0b00,FUN_00bd0b00,LH_Array_SetFilledSize_00bd0b00,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00bd0b40,FUN_00bd0b40,LH_Array_FreeBuffer_00bd0b40,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bd0ba0,FUN_00bd0ba0,LH_Array_SetAt_00bd0ba0,pattern: asserts Index < FilledSize and stores element Index
+00bd0be0,FUN_00bd0be0,LH_Array_SetAt_00bd0be0,pattern: asserts Index < FilledSize and stores element Index
+00bd0c20,FUN_00bd0c20,LH_Array_SetAt_00bd0c20,pattern: asserts Index < FilledSize and stores element Index
+00bd0c60,FUN_00bd0c60,LH_Array_Reserve_00bd0c60,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00bd0d50,FUN_00bd0d50,LH_Array_Reserve_00bd0d50,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00bd0e40,FUN_00bd0e40,LH_Array_Reserve_00bd0e40,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00bd10a0,FUN_00bd10a0,LH_Array_FreeBuffer_00bd10a0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bd10c0,FUN_00bd10c0,LH_Array_FreeBuffer_00bd10c0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bd10f0,FUN_00bd10f0,LH_Array_FreeBuffer_00bd10f0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bd11f0,FUN_00bd11f0,LH_Map_GetObject_00bd11f0,pattern: lookup then asserts object != NULL
+00bd1220,FUN_00bd1220,LH_SortedArray_FindIndex_00bd1220,"pattern: binary search by 32-bit key, returns index and found flag"
+00bd1300,FUN_00bd1300,LH_SortedArray_FindIndex_00bd1300,"pattern: binary search by 32-bit key, returns index and found flag"
+00bd1600,FUN_00bd1600,LH_SortedArray_FindObject_00bd1600,pattern: binary search then asserts the found object != NULL
+00bd1650,FUN_00bd1650,LH_SortedArray_FindObject_00bd1650,pattern: binary search then asserts the found object != NULL
+00bd1790,FUN_00bd1790,ScalarDeletingDtor_00bd1790,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd17b0,FUN_00bd17b0,ScalarDeletingDtor_00bd17b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd17d0,FUN_00bd17d0,ScalarDeletingDtor_00bd17d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd1910,FUN_00bd1910,LH_Array_AdoptRequireEmpty_00bd1910,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00bd1950,FUN_00bd1950,LH_Array_AdoptRequireEmpty_00bd1950,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00bd1990,FUN_00bd1990,LH_Array_AdoptRequireEmpty_00bd1990,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00bd1af0,FUN_00bd1af0,ScalarDeletingDtor_00bd1af0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd1bf0,FUN_00bd1bf0,ScalarDeletingDtor_00bd1bf0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd3810,FUN_00bd3810,ScalarDeletingDtor_00bd3810,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd3830,FUN_00bd3830,LH_Array_GetAt_00bd3830,pattern: asserts Index < FilledSize and returns element Index
+00bd3880,FUN_00bd3880,SetVtable_00d9d9ac_00bd3880,pattern: stores vtable 00d9d9ac and returns; functions with the same vtable address belong to one class
+00bd3890,FUN_00bd3890,GetField_8_00bd3890,pattern: returns the field at offset 8
+00bd38a0,FUN_00bd38a0,GetField_8_00bd38a0,pattern: returns the field at offset 8
+00bd38e0,FUN_00bd38e0,LH_Array_FreeBuffer_00bd38e0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bd3950,FUN_00bd3950,GetField_8_00bd3950,pattern: returns the field at offset 8
+00bd3960,FUN_00bd3960,LH_Array_GetAt_00bd3960,pattern: asserts Index < FilledSize and returns element Index
+00bd39a0,FUN_00bd39a0,LH_Array_GetAt_00bd39a0,pattern: asserts Index < FilledSize and returns element Index
+00bd39e0,FUN_00bd39e0,LH_Array_Reserve_00bd39e0,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00bd3c60,FUN_00bd3c60,ScalarDeletingDtor_00bd3c60,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd3e80,FUN_00bd3e80,ScalarDeletingDtor_00bd3e80,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd3ed0,FUN_00bd3ed0,LH_Map_GetObject_00bd3ed0,pattern: lookup then asserts object != NULL
+00bd3ff0,FUN_00bd3ff0,ScalarDeletingDtor_00bd3ff0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd4010,FUN_00bd4010,LH_Map_GetObject_00bd4010,pattern: lookup then asserts object != NULL
+00bd4040,FUN_00bd4040,LH_Map_GetObject_00bd4040,pattern: lookup then asserts object != NULL
+00bd4940,FUN_00bd4940,LH_SortedArray_FindObject_00bd4940,pattern: binary search then asserts the found object != NULL
+00bd4f00,FUN_00bd4f00,ScalarDeletingDtor_00bd4f00,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd5540,FUN_00bd5540,LH_Container_AddObject_00bd5540,pattern: asserts Object != NULL then forwards
+00bd5760,FUN_00bd5760,LH_Array_SortAndVerifyUnique_00bd5760,"pattern: sorts then asserts ""unique"""
+00bd5790,FUN_00bd5790,LH_Array_CopySorted_00bd5790,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00bd6320,FUN_00bd6320,ScalarDeletingDtor_00bd6320,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd6370,FUN_00bd6370,LH_Array_Reserve_00bd6370,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00bd6430,FUN_00bd6430,GetField_8_00bd6430,pattern: returns the field at offset 8
+00bd6440,FUN_00bd6440,LH_Array_SetFilledSize_00bd6440,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00bd6480,FUN_00bd6480,LH_Array_FreeBuffer_00bd6480,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bd64e0,FUN_00bd64e0,LH_Array_Reserve_00bd64e0,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00bd65a0,FUN_00bd65a0,GetField_8_00bd65a0,pattern: returns the field at offset 8
+00bd65b0,FUN_00bd65b0,LH_Array_SetFilledSize_00bd65b0,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00bd65f0,FUN_00bd65f0,LH_Array_FreeBuffer_00bd65f0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00bd66d0,FUN_00bd66d0,LH_Array_GetAt_00bd66d0,pattern: asserts Index < FilledSize and returns element Index
+00bd6750,FUN_00bd6750,LH_Array_GetAt_00bd6750,pattern: asserts Index < FilledSize and returns element Index
+00bd6c60,FUN_00bd6c60,LH_Array_PushHeap_00bd6c60,"pattern: heap sift-up: parent index (i-1)/2, compares keys at +4"
+00bd6cf0,FUN_00bd6cf0,LH_Array_PushHeap_00bd6cf0,"pattern: heap sift-up: parent index (i-1)/2, compares keys at +4"
+00bd6d90,FUN_00bd6d90,ScalarDeletingDtor_00bd6d90,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bd7600,FUN_00bd7600,LH_Array_MedianOfThree_00bd7600,pattern: three compare-and-swap steps on keys at +4 (introsort pivot selection)
+00bd76b0,FUN_00bd76b0,LH_Array_AdjustHeap_00bd76b0,pattern: heap sift-down with child pick then push_heap
+00bd7750,FUN_00bd7750,LH_Array_MedianOfThree_00bd7750,pattern: three compare-and-swap steps on keys at +4 (introsort pivot selection)
+00bd7800,FUN_00bd7800,LH_Array_AdjustHeap_00bd7800,pattern: heap sift-down with child pick then push_heap
+00bd9a90,FUN_00bd9a90,SetVtable_00d9f524_00bd9a90,pattern: stores vtable 00d9f524 and returns; functions with the same vtable address belong to one class
+00bd9ef0,FUN_00bd9ef0,GetField_4_00bd9ef0,pattern: returns the field at offset 4
+00bda110,FUN_00bda110,ScalarDeletingDtor_00bda110,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bda200,FUN_00bda200,ScalarDeletingDtor_00bda200,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bda3d0,FUN_00bda3d0,ScalarDeletingDtor_00bda3d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bda3f0,FUN_00bda3f0,SetVtable_00d9f5cc_00bda3f0,pattern: stores vtable 00d9f5cc and returns; functions with the same vtable address belong to one class
+00bdad10,FUN_00bdad10,ScalarDeletingDtor_00bdad10,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdba80,FUN_00bdba80,LH_Array_GetAt_00bdba80,pattern: asserts Index < FilledSize and returns element Index
+00bdbac0,FUN_00bdbac0,GetField_8_00bdbac0,pattern: returns the field at offset 8
+00bdbad0,FUN_00bdbad0,GetField_8_00bdbad0,pattern: returns the field at offset 8
+00bdbae0,FUN_00bdbae0,LH_Array_GetAt_00bdbae0,pattern: asserts Index < FilledSize and returns element Index
+00bdbb20,FUN_00bdbb20,ScalarDeletingDtor_00bdbb20,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdbb40,FUN_00bdbb40,SetVtable_00d9f63c_00bdbb40,pattern: stores vtable 00d9f63c and returns; functions with the same vtable address belong to one class
+00bdbb80,FUN_00bdbb80,LH_Map_GetObject_00bdbb80,pattern: lookup then asserts object != NULL
+00bdbc90,FUN_00bdbc90,LH_SortedArray_FindObject_00bdbc90,pattern: binary search then asserts the found object != NULL
+00bdc9d0,FUN_00bdc9d0,SetVtable_00d9f6a8_00bdc9d0,pattern: stores vtable 00d9f6a8 and returns; functions with the same vtable address belong to one class
+00bdca80,FUN_00bdca80,SetVtable_00d9f6b4_00bdca80,pattern: stores vtable 00d9f6b4 and returns; functions with the same vtable address belong to one class
+00bdcbf0,FUN_00bdcbf0,SetVtable_00d9e7b0_00bdcbf0,pattern: stores vtable 00d9e7b0 and returns; functions with the same vtable address belong to one class
+00bdcf70,FUN_00bdcf70,ScalarDeletingDtor_00bdcf70,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdcf90,FUN_00bdcf90,ScalarDeletingDtor_00bdcf90,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdcfb0,FUN_00bdcfb0,ScalarDeletingDtor_00bdcfb0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdcff0,FUN_00bdcff0,ScalarDeletingDtor_00bdcff0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdd540,FUN_00bdd540,ScalarDeletingDtor_00bdd540,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdd560,FUN_00bdd560,ScalarDeletingDtor_00bdd560,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdda00,FUN_00bdda00,SetVtable_00d9f8a0_00bdda00,pattern: stores vtable 00d9f8a0 and returns; functions with the same vtable address belong to one class
+00bdda60,FUN_00bdda60,ScalarDeletingDtor_00bdda60,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdda80,FUN_00bdda80,SetVtable_00d9f898_00bdda80,pattern: stores vtable 00d9f898 and returns; functions with the same vtable address belong to one class
+00bddae0,FUN_00bddae0,ScalarDeletingDtor_00bddae0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bddb00,FUN_00bddb00,SetVtable_00d9f8a0_00bddb00,pattern: stores vtable 00d9f8a0 and returns; functions with the same vtable address belong to one class
+00bddba0,FUN_00bddba0,ScalarDeletingDtor_00bddba0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdde30,FUN_00bdde30,GetField_0xe_00bdde30,pattern: returns the field at offset 0xe
+00bdde50,FUN_00bdde50,GetField_8_00bdde50,pattern: returns the field at offset 8
+00bdde60,FUN_00bdde60,GetField_4_00bdde60,pattern: returns the field at offset 4
+00bdde70,FUN_00bdde70,GetField_0x10_00bdde70,pattern: returns the field at offset 0x10
+00bde080,FUN_00bde080,GetField_0x18_00bde080,pattern: returns the field at offset 0x18
+00bdee80,FUN_00bdee80,SetVtable_00d9f920_00bdee80,pattern: stores vtable 00d9f920 and returns; functions with the same vtable address belong to one class
+00bdf1d0,FUN_00bdf1d0,SetVtable_00d9f9dc_00bdf1d0,pattern: stores vtable 00d9f9dc and returns; functions with the same vtable address belong to one class
+00bdf2c0,FUN_00bdf2c0,SetVtable_00d9f9d4_00bdf2c0,pattern: stores vtable 00d9f9d4 and returns; functions with the same vtable address belong to one class
+00bdf2d0,FUN_00bdf2d0,ScalarDeletingDtor_00bdf2d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdf6f0,FUN_00bdf6f0,ScalarDeletingDtor_00bdf6f0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdf750,FUN_00bdf750,ScalarDeletingDtor_00bdf750,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdf770,FUN_00bdf770,ScalarDeletingDtor_00bdf770,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdf860,FUN_00bdf860,ScalarDeletingDtor_00bdf860,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdf880,FUN_00bdf880,ScalarDeletingDtor_00bdf880,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdf8b0,FUN_00bdf8b0,ScalarDeletingDtor_00bdf8b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdf8d0,FUN_00bdf8d0,SetVtable_00d9fbe8_00bdf8d0,pattern: stores vtable 00d9fbe8 and returns; functions with the same vtable address belong to one class
+00bdfa20,FUN_00bdfa20,ScalarDeletingDtor_00bdfa20,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdfb50,FUN_00bdfb50,SetVtable_00d9fbe8_00bdfb50,pattern: stores vtable 00d9fbe8 and returns; functions with the same vtable address belong to one class
+00bdfb70,FUN_00bdfb70,ScalarDeletingDtor_00bdfb70,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdfc70,FUN_00bdfc70,SetVtable_00d9fbe8_00bdfc70,pattern: stores vtable 00d9fbe8 and returns; functions with the same vtable address belong to one class
+00bdfca0,FUN_00bdfca0,ScalarDeletingDtor_00bdfca0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bdfcc0,FUN_00bdfcc0,SetVtable_00d9fbe8_00bdfcc0,pattern: stores vtable 00d9fbe8 and returns; functions with the same vtable address belong to one class
+00be08d0,FUN_00be08d0,ScalarDeletingDtor_00be08d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be0bf0,FUN_00be0bf0,ScalarDeletingDtor_00be0bf0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be0d00,FUN_00be0d00,ScalarDeletingDtor_00be0d00,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be0e30,FUN_00be0e30,ScalarDeletingDtor_00be0e30,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be0ed0,FUN_00be0ed0,ScalarDeletingDtor_00be0ed0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be0f20,FUN_00be0f20,ScalarDeletingDtor_00be0f20,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be1060,FUN_00be1060,ScalarDeletingDtor_00be1060,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be20e0,FUN_00be20e0,ScalarDeletingDtor_00be20e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be2490,FUN_00be2490,SetVtable_00d9fed4_00be2490,pattern: stores vtable 00d9fed4 and returns; functions with the same vtable address belong to one class
+00be2530,FUN_00be2530,SetVtable_00d9fee0_00be2530,pattern: stores vtable 00d9fee0 and returns; functions with the same vtable address belong to one class
+00be2810,FUN_00be2810,ScalarDeletingDtor_00be2810,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be2b50,FUN_00be2b50,ScalarDeletingDtor_00be2b50,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be2c00,FUN_00be2c00,ScalarDeletingDtor_00be2c00,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be2e00,FUN_00be2e00,ScalarDeletingDtor_00be2e00,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be3050,FUN_00be3050,ScalarDeletingDtor_00be3050,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be31d0,FUN_00be31d0,ScalarDeletingDtor_00be31d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be3350,FUN_00be3350,ScalarDeletingDtor_00be3350,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be57d0,FUN_00be57d0,SetVtable_00da0f54_00be57d0,pattern: stores vtable 00da0f54 and returns; functions with the same vtable address belong to one class
+00be5810,FUN_00be5810,ScalarDeletingDtor_00be5810,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be5990,FUN_00be5990,ScalarDeletingDtor_00be5990,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be59d0,FUN_00be59d0,GetField_8_00be59d0,pattern: returns the field at offset 8
+00be5a60,FUN_00be5a60,GetField_0xc_00be5a60,pattern: returns the field at offset 0xc
+00be6760,FUN_00be6760,ScalarDeletingDtor_00be6760,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be6970,FUN_00be6970,ScalarDeletingDtor_00be6970,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be6cb0,FUN_00be6cb0,ScalarDeletingDtor_00be6cb0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be6ff0,FUN_00be6ff0,ScalarDeletingDtor_00be6ff0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be7010,FUN_00be7010,SetVtable_00da1370_00be7010,pattern: stores vtable 00da1370 and returns; functions with the same vtable address belong to one class
+00be70b0,FUN_00be70b0,SetVtable_00da1370_00be70b0,pattern: stores vtable 00da1370 and returns; functions with the same vtable address belong to one class
+00be84b0,FUN_00be84b0,ScalarDeletingDtor_00be84b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be87b0,FUN_00be87b0,SetVtable_00da14e0_00be87b0,pattern: stores vtable 00da14e0 and returns; functions with the same vtable address belong to one class
+00be87c0,FUN_00be87c0,ScalarDeletingDtor_00be87c0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be8b20,FUN_00be8b20,LH_Array_SetAt_00be8b20,pattern: asserts Index < FilledSize and stores element Index
+00be8b60,FUN_00be8b60,LH_Array_SetFilledSize_00be8b60,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00be8ba0,FUN_00be8ba0,LH_Array_FreeBuffer_00be8ba0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00be8c50,FUN_00be8c50,LH_Array_Reserve_00be8c50,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00be8e50,FUN_00be8e50,LH_Array_FreeBuffer_00be8e50,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00be8f50,FUN_00be8f50,ScalarDeletingDtor_00be8f50,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be8f70,FUN_00be8f70,ScalarDeletingDtor_00be8f70,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00be8f90,FUN_00be8f90,LH_Map_GetObject_00be8f90,pattern: lookup then asserts object != NULL
+00be8fc0,FUN_00be8fc0,LH_SortedArray_FindIndex_00be8fc0,"pattern: binary search by 32-bit key, returns index and found flag"
+00be9ab0,FUN_00be9ab0,LH_Container_AddObject_00be9ab0,pattern: asserts Object != NULL then forwards
+00be9ae0,FUN_00be9ae0,LH_Array_AdoptRequireEmpty_00be9ae0,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00be9b20,FUN_00be9b20,LH_Array_AdoptRequireEmpty_00be9b20,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00be9e10,FUN_00be9e10,LH_Array_SortAndVerifyUnique_00be9e10,"pattern: sorts then asserts ""unique"""
+00be9e40,FUN_00be9e40,LH_Array_CopySorted_00be9e40,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00be9e80,FUN_00be9e80,LH_Array_CopySorted_00be9e80,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00be9ef0,FUN_00be9ef0,GetField_8_00be9ef0,pattern: returns the field at offset 8
+00bea190,FUN_00bea190,ScalarDeletingDtor_00bea190,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bea1b0,FUN_00bea1b0,ScalarDeletingDtor_00bea1b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00beaeb0,FUN_00beaeb0,ScalarDeletingDtor_00beaeb0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00beaed0,FUN_00beaed0,ScalarDeletingDtor_00beaed0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00beaf00,FUN_00beaf00,ScalarDeletingDtor_00beaf00,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00beb630,FUN_00beb630,ScalarDeletingDtor_00beb630,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00beb650,FUN_00beb650,ScalarDeletingDtor_00beb650,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00beb670,FUN_00beb670,ScalarDeletingDtor_00beb670,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bebb90,FUN_00bebb90,ScalarDeletingDtor_00bebb90,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bebbb0,FUN_00bebbb0,ScalarDeletingDtor_00bebbb0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bebbd0,FUN_00bebbd0,ScalarDeletingDtor_00bebbd0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bec050,FUN_00bec050,SetVtable_00d9f9dc_00bec050,pattern: stores vtable 00d9f9dc and returns; functions with the same vtable address belong to one class
+00bec120,FUN_00bec120,SetVtable_00da16b4_00bec120,pattern: stores vtable 00da16b4 and returns; functions with the same vtable address belong to one class
+00bec130,FUN_00bec130,ScalarDeletingDtor_00bec130,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bec170,FUN_00bec170,SetVtable_00da16b4_00bec170,pattern: stores vtable 00da16b4 and returns; functions with the same vtable address belong to one class
+00bec180,FUN_00bec180,ScalarDeletingDtor_00bec180,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bec310,FUN_00bec310,ScalarDeletingDtor_00bec310,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bec370,FUN_00bec370,ScalarDeletingDtor_00bec370,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bec390,FUN_00bec390,ScalarDeletingDtor_00bec390,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bec460,FUN_00bec460,ScalarDeletingDtor_00bec460,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bec480,FUN_00bec480,ScalarDeletingDtor_00bec480,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bec4b0,FUN_00bec4b0,SetVtable_00da17bc_00bec4b0,pattern: stores vtable 00da17bc and returns; functions with the same vtable address belong to one class
+00becc50,FUN_00becc50,SetVtable_00d9f9dc_00becc50,pattern: stores vtable 00d9f9dc and returns; functions with the same vtable address belong to one class
+00becc80,FUN_00becc80,SetVtable_00da17dc_00becc80,pattern: stores vtable 00da17dc and returns; functions with the same vtable address belong to one class
+00becc90,FUN_00becc90,ScalarDeletingDtor_00becc90,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bece60,FUN_00bece60,ScalarDeletingDtor_00bece60,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00becea0,FUN_00becea0,ScalarDeletingDtor_00becea0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00becf40,FUN_00becf40,ScalarDeletingDtor_00becf40,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00becf70,FUN_00becf70,ScalarDeletingDtor_00becf70,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bed0e0,FUN_00bed0e0,GetField_8_00bed0e0,pattern: returns the field at offset 8
+00bef490,FUN_00bef490,ScalarDeletingDtor_00bef490,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bef5a0,FUN_00bef5a0,SetVtable_00da1b28_00bef5a0,pattern: stores vtable 00da1b28 and returns; functions with the same vtable address belong to one class
+00beff10,FUN_00beff10,SetVtable_00da1b28_00beff10,pattern: stores vtable 00da1b28 and returns; functions with the same vtable address belong to one class
+00bf0300,FUN_00bf0300,ScalarDeletingDtor_00bf0300,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf0990,FUN_00bf0990,ScalarDeletingDtor_00bf0990,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1170,FUN_00bf1170,ScalarDeletingDtor_00bf1170,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1190,FUN_00bf1190,ScalarDeletingDtor_00bf1190,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf11b0,FUN_00bf11b0,ScalarDeletingDtor_00bf11b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf11d0,FUN_00bf11d0,ScalarDeletingDtor_00bf11d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf11f0,FUN_00bf11f0,ScalarDeletingDtor_00bf11f0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1210,FUN_00bf1210,ScalarDeletingDtor_00bf1210,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1230,FUN_00bf1230,ScalarDeletingDtor_00bf1230,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1250,FUN_00bf1250,ScalarDeletingDtor_00bf1250,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1270,FUN_00bf1270,ScalarDeletingDtor_00bf1270,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1290,FUN_00bf1290,ScalarDeletingDtor_00bf1290,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf12b0,FUN_00bf12b0,ScalarDeletingDtor_00bf12b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf12d0,FUN_00bf12d0,ScalarDeletingDtor_00bf12d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1880,FUN_00bf1880,ScalarDeletingDtor_00bf1880,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf18a0,FUN_00bf18a0,ScalarDeletingDtor_00bf18a0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf18c0,FUN_00bf18c0,ScalarDeletingDtor_00bf18c0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf18e0,FUN_00bf18e0,ScalarDeletingDtor_00bf18e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1900,FUN_00bf1900,ScalarDeletingDtor_00bf1900,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1920,FUN_00bf1920,ScalarDeletingDtor_00bf1920,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1940,FUN_00bf1940,ScalarDeletingDtor_00bf1940,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1960,FUN_00bf1960,ScalarDeletingDtor_00bf1960,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1980,FUN_00bf1980,ScalarDeletingDtor_00bf1980,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf19a0,FUN_00bf19a0,ScalarDeletingDtor_00bf19a0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf19c0,FUN_00bf19c0,ScalarDeletingDtor_00bf19c0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf19e0,FUN_00bf19e0,ScalarDeletingDtor_00bf19e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf1f60,FUN_00bf1f60,ScalarDeletingDtor_00bf1f60,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf33e0,FUN_00bf33e0,GetField_0x9c_00bf33e0,pattern: returns the field at offset 0x9c
+00bf35c0,FUN_00bf35c0,GetField_0x10_00bf35c0,pattern: returns the field at offset 0x10
+00bf3940,FUN_00bf3940,GetField_0x74_00bf3940,pattern: returns the field at offset 0x74
+00bf3a90,FUN_00bf3a90,GetField_0x68_00bf3a90,pattern: returns the field at offset 0x68
+00bf43b0,FUN_00bf43b0,ScalarDeletingDtor_00bf43b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf4990,FUN_00bf4990,ScalarDeletingDtor_00bf4990,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf4ff0,FUN_00bf4ff0,ScalarDeletingDtor_00bf4ff0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf61e0,FUN_00bf61e0,ScalarDeletingDtor_00bf61e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf7ec0,FUN_00bf7ec0,ScalarDeletingDtor_00bf7ec0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf86c0,FUN_00bf86c0,ScalarDeletingDtor_00bf86c0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf88d0,FUN_00bf88d0,ScalarDeletingDtor_00bf88d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bf88f0,FUN_00bf88f0,SetVtable_00da242c_00bf88f0,pattern: stores vtable 00da242c and returns; functions with the same vtable address belong to one class
+00bf8cc0,FUN_00bf8cc0,ScalarDeletingDtor_00bf8cc0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bfb0f0,FUN_00bfb0f0,LH_Array_Reserve_00bfb0f0,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00bfb1b0,FUN_00bfb1b0,GetField_8_00bfb1b0,pattern: returns the field at offset 8
+00bfb200,FUN_00bfb200,LH_Array_GetAt_00bfb200,pattern: asserts Index < FilledSize and returns element Index
+00bfbae0,FUN_00bfbae0,ScalarDeletingDtor_00bfbae0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bfbb00,FUN_00bfbb00,ScalarDeletingDtor_00bfbb00,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bfbda0,FUN_00bfbda0,ScalarDeletingDtor_00bfbda0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bfbdc0,FUN_00bfbdc0,ScalarDeletingDtor_00bfbdc0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bfbde0,FUN_00bfbde0,ScalarDeletingDtor_00bfbde0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bfbe00,FUN_00bfbe00,ScalarDeletingDtor_00bfbe00,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bfbe20,FUN_00bfbe20,ScalarDeletingDtor_00bfbe20,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bfbe40,FUN_00bfbe40,LH_Map_GetObject_00bfbe40,pattern: lookup then asserts object != NULL
+00bfd4c0,FUN_00bfd4c0,ScalarDeletingDtor_00bfd4c0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bfd500,FUN_00bfd500,LH_Container_AddObject_00bfd500,pattern: asserts Object != NULL then forwards
+00bfd530,FUN_00bfd530,LH_Container_AddObject_00bfd530,pattern: asserts Object != NULL then forwards
+00bfd560,FUN_00bfd560,LH_Array_AdoptRequireEmpty_00bfd560,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00bfd5a0,FUN_00bfd5a0,LH_Array_AdoptRequireEmpty_00bfd5a0,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00bfd5e0,FUN_00bfd5e0,LH_Array_AdoptRequireEmpty_00bfd5e0,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00bfd620,FUN_00bfd620,LH_Array_AdoptRequireEmpty_00bfd620,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00bfecc0,FUN_00bfecc0,LH_Array_SortAndVerifyUnique_00bfecc0,"pattern: sorts then asserts ""unique"""
+00bfecf0,FUN_00bfecf0,LH_Array_SortAndVerifyUnique_00bfecf0,"pattern: sorts then asserts ""unique"""
+00bfed50,FUN_00bfed50,LH_Array_CopySorted_00bfed50,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00bfed90,FUN_00bfed90,LH_Array_CopySorted_00bfed90,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00bfedd0,FUN_00bfedd0,LH_Array_CopySorted_00bfedd0,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00bfee10,FUN_00bfee10,LH_Array_CopySorted_00bfee10,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00bfee50,FUN_00bfee50,LH_Array_CopySorted_00bfee50,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00bfee90,FUN_00bfee90,LH_Array_CopySorted_00bfee90,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00bfeed0,FUN_00bfeed0,LH_Array_SortAndVerifyUnique_00bfeed0,"pattern: sorts then asserts ""unique"""
+00bff080,FUN_00bff080,LH_Array_CopySorted_00bff080,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00bff750,FUN_00bff750,ScalarDeletingDtor_00bff750,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bff820,FUN_00bff820,SetVtable_00d9d9b4_00bff820,pattern: stores vtable 00d9d9b4 and returns; functions with the same vtable address belong to one class
+00bff830,FUN_00bff830,ScalarDeletingDtor_00bff830,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bff8e0,FUN_00bff8e0,ScalarDeletingDtor_00bff8e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00bff900,FUN_00bff900,ScalarDeletingDtor_00bff900,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c00d00,FUN_00c00d00,SetVtable_00d9d9b4_00c00d00,pattern: stores vtable 00d9d9b4 and returns; functions with the same vtable address belong to one class
+00c00d50,FUN_00c00d50,LH_Array_Reserve_00c00d50,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00c00e10,FUN_00c00e10,LH_Array_SetAt_00c00e10,pattern: asserts Index < FilledSize and stores element Index
+00c00e50,FUN_00c00e50,LH_Array_SetFilledSize_00c00e50,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00c00e90,FUN_00c00e90,LH_Array_FreeBuffer_00c00e90,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00c00fe0,FUN_00c00fe0,LH_Array_Reserve_00c00fe0,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00c010a0,FUN_00c010a0,LH_Array_SetAt_00c010a0,pattern: asserts Index < FilledSize and stores element Index
+00c010e0,FUN_00c010e0,LH_Array_SetFilledSize_00c010e0,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00c01120,FUN_00c01120,LH_Array_FreeBuffer_00c01120,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00c01180,FUN_00c01180,LH_Array_Reserve_00c01180,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00c01240,FUN_00c01240,LH_Array_SetAt_00c01240,pattern: asserts Index < FilledSize and stores element Index
+00c01280,FUN_00c01280,LH_Array_SetFilledSize_00c01280,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00c012c0,FUN_00c012c0,LH_Array_FreeBuffer_00c012c0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00c01410,FUN_00c01410,LH_Array_GetAt_00c01410,pattern: asserts Index < FilledSize and returns element Index
+00c01b50,FUN_00c01b50,ScalarDeletingDtor_00c01b50,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c01c00,FUN_00c01c00,LH_SortedArray_FindObject_00c01c00,pattern: binary search then asserts the found object != NULL
+00c01f50,FUN_00c01f50,ScalarDeletingDtor_00c01f50,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c01f70,FUN_00c01f70,ScalarDeletingDtor_00c01f70,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c01f90,FUN_00c01f90,ScalarDeletingDtor_00c01f90,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c01fb0,FUN_00c01fb0,ScalarDeletingDtor_00c01fb0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c01fd0,FUN_00c01fd0,ScalarDeletingDtor_00c01fd0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c01ff0,FUN_00c01ff0,ScalarDeletingDtor_00c01ff0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c02010,FUN_00c02010,LH_Map_GetObject_00c02010,pattern: lookup then asserts object != NULL
+00c02040,FUN_00c02040,LH_Array_FreeBuffer_00c02040,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00c02050,FUN_00c02050,LH_Array_FreeBuffer_00c02050,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00c02140,FUN_00c02140,LH_Array_FreeBuffer_00c02140,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00c02360,FUN_00c02360,LH_Array_IsSortedUnique_00c02360,"pattern: checks keys at +4 strictly increase, asserting neighbours non-null"
+00c02590,FUN_00c02590,LH_Array_MedianOfThree_00c02590,pattern: three compare-and-swap steps on keys at +4 (introsort pivot selection)
+00c02800,FUN_00c02800,LH_Array_PushHeap_00c02800,"pattern: heap sift-up: parent index (i-1)/2, compares keys at +4"
+00c02de0,FUN_00c02de0,LH_SortedArray_FindObject_00c02de0,pattern: binary search then asserts the found object != NULL
+00c031e0,FUN_00c031e0,LH_Array_AdjustHeap_00c031e0,pattern: heap sift-down with child pick then push_heap
+00c03410,FUN_00c03410,LH_Container_AddObject_00c03410,pattern: asserts Object != NULL then forwards
+00c03450,FUN_00c03450,LH_Container_AddObject_00c03450,pattern: asserts Object != NULL then forwards
+00c034c0,FUN_00c034c0,LH_Array_AdoptRequireEmpty_00c034c0,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00c03500,FUN_00c03500,LH_Array_AdoptRequireEmpty_00c03500,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00c04b70,FUN_00c04b70,LH_Array_SortAndVerifyUnique_00c04b70,"pattern: sorts then asserts ""unique"""
+00c04be0,FUN_00c04be0,LH_Array_CopySorted_00c04be0,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00c04cb0,FUN_00c04cb0,LH_Array_SortAndVerifyUnique_00c04cb0,"pattern: sorts then asserts ""unique"""
+00c04ce0,FUN_00c04ce0,LH_Array_CopySorted_00c04ce0,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00c04d70,FUN_00c04d70,LH_Array_CopySorted_00c04d70,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00c04e40,FUN_00c04e40,LH_Array_CopySorted_00c04e40,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00c052f0,FUN_00c052f0,ScalarDeletingDtor_00c052f0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c05320,FUN_00c05320,ScalarDeletingDtor_00c05320,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c06560,FUN_00c06560,LH_Array_AdoptRequireEmpty_00c06560,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00c065a0,FUN_00c065a0,LH_Array_AdoptRequireEmpty_00c065a0,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00c06960,FUN_00c06960,ScalarDeletingDtor_00c06960,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c06980,FUN_00c06980,LH_Array_SetFilledSize_00c06980,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00c069b0,FUN_00c069b0,LH_Array_FreeBuffer_00c069b0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00c06a10,FUN_00c06a10,LH_Array_SetAt_00c06a10,pattern: asserts Index < FilledSize and stores element Index
+00c06a80,FUN_00c06a80,LH_Array_Reserve_00c06a80,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00c06be0,FUN_00c06be0,LH_Array_FreeBuffer_00c06be0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00c06f20,FUN_00c06f20,ScalarDeletingDtor_00c06f20,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c07130,FUN_00c07130,LH_Array_AdoptRequireEmpty_00c07130,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00c07370,FUN_00c07370,LH_Array_SetFilledSize_00c07370,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00c073a0,FUN_00c073a0,LH_Array_SetAt_00c073a0,pattern: asserts Index < FilledSize and stores element Index
+00c075c0,FUN_00c075c0,ScalarDeletingDtor_00c075c0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c077a0,FUN_00c077a0,LH_Array_AdoptRequireEmpty_00c077a0,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00c097f0,FUN_00c097f0,SetVtable_00da2dc4_00c097f0,pattern: stores vtable 00da2dc4 and returns; functions with the same vtable address belong to one class
+00c09b30,FUN_00c09b30,SetVtable_00d9da84_00c09b30,pattern: stores vtable 00d9da84 and returns; functions with the same vtable address belong to one class
+00c09e60,FUN_00c09e60,ScalarDeletingDtor_00c09e60,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c09e80,FUN_00c09e80,ScalarDeletingDtor_00c09e80,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c09ea0,FUN_00c09ea0,ScalarDeletingDtor_00c09ea0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c09ee0,FUN_00c09ee0,ScalarDeletingDtor_00c09ee0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0a300,FUN_00c0a300,ScalarDeletingDtor_00c0a300,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0ac30,FUN_00c0ac30,ScalarDeletingDtor_00c0ac30,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0ac70,FUN_00c0ac70,ScalarDeletingDtor_00c0ac70,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0b050,FUN_00c0b050,ScalarDeletingDtor_00c0b050,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0c300,FUN_00c0c300,SetVtable_00d9d9b4_00c0c300,pattern: stores vtable 00d9d9b4 and returns; functions with the same vtable address belong to one class
+00c0c3d0,FUN_00c0c3d0,LH_Array_Reserve_00c0c3d0,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00c0c490,FUN_00c0c490,LH_Array_SetFilledSize_00c0c490,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00c0c4d0,FUN_00c0c4d0,LH_Array_FreeBuffer_00c0c4d0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00c0c630,FUN_00c0c630,LH_Array_PushHeap_00c0c630,"pattern: heap sift-up: parent index (i-1)/2, compares keys at +4"
+00c0c7c0,FUN_00c0c7c0,ScalarDeletingDtor_00c0c7c0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0ca90,FUN_00c0ca90,ScalarDeletingDtor_00c0ca90,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0cce0,FUN_00c0cce0,LH_Array_MedianOfThree_00c0cce0,pattern: three compare-and-swap steps on keys at +4 (introsort pivot selection)
+00c0cd90,FUN_00c0cd90,LH_Array_AdjustHeap_00c0cd90,pattern: heap sift-down with child pick then push_heap
+00c0cea0,FUN_00c0cea0,ScalarDeletingDtor_00c0cea0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0d050,FUN_00c0d050,ScalarDeletingDtor_00c0d050,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0d070,FUN_00c0d070,ScalarDeletingDtor_00c0d070,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0dbf0,FUN_00c0dbf0,ScalarDeletingDtor_00c0dbf0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0e1b0,FUN_00c0e1b0,ScalarDeletingDtor_00c0e1b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0e270,FUN_00c0e270,ScalarDeletingDtor_00c0e270,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0ebf0,FUN_00c0ebf0,ScalarDeletingDtor_00c0ebf0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0eef0,FUN_00c0eef0,ScalarDeletingDtor_00c0eef0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c0f100,FUN_00c0f100,GetField_8_00c0f100,pattern: returns the field at offset 8
+00c0f260,FUN_00c0f260,ScalarDeletingDtor_00c0f260,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c10220,FUN_00c10220,ScalarDeletingDtor_00c10220,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c10ab0,FUN_00c10ab0,SetVtable_00da34b0_00c10ab0,pattern: stores vtable 00da34b0 and returns; functions with the same vtable address belong to one class
+00c117b0,FUN_00c117b0,ScalarDeletingDtor_00c117b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c12550,FUN_00c12550,ScalarDeletingDtor_00c12550,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c12580,FUN_00c12580,ScalarDeletingDtor_00c12580,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c125b0,FUN_00c125b0,ScalarDeletingDtor_00c125b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c125e0,FUN_00c125e0,ScalarDeletingDtor_00c125e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c12610,FUN_00c12610,ScalarDeletingDtor_00c12610,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c12640,FUN_00c12640,ScalarDeletingDtor_00c12640,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c126f0,FUN_00c126f0,ScalarDeletingDtor_00c126f0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c12830,FUN_00c12830,SetVtable_00d9fbe8_00c12830,pattern: stores vtable 00d9fbe8 and returns; functions with the same vtable address belong to one class
+00c12860,FUN_00c12860,ScalarDeletingDtor_00c12860,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c13730,FUN_00c13730,ScalarDeletingDtor_00c13730,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c13970,FUN_00c13970,ScalarDeletingDtor_00c13970,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c13a00,FUN_00c13a00,ScalarDeletingDtor_00c13a00,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c13fb0,FUN_00c13fb0,ScalarDeletingDtor_00c13fb0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c13fd0,FUN_00c13fd0,SetVtable_00d9fbe8_00c13fd0,pattern: stores vtable 00d9fbe8 and returns; functions with the same vtable address belong to one class
+00c144b0,FUN_00c144b0,ScalarDeletingDtor_00c144b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c14680,FUN_00c14680,ScalarDeletingDtor_00c14680,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c14730,FUN_00c14730,ScalarDeletingDtor_00c14730,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c151b0,FUN_00c151b0,ScalarDeletingDtor_00c151b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c15340,FUN_00c15340,SetVtable_00d9fbe8_00c15340,pattern: stores vtable 00d9fbe8 and returns; functions with the same vtable address belong to one class
+00c166a0,FUN_00c166a0,ScalarDeletingDtor_00c166a0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c16710,FUN_00c16710,SetVtable_00da3ac0_00c16710,pattern: stores vtable 00da3ac0 and returns; functions with the same vtable address belong to one class
+00c16b20,FUN_00c16b20,ScalarDeletingDtor_00c16b20,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1a750,FUN_00c1a750,ScalarDeletingDtor_00c1a750,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1ae80,FUN_00c1ae80,ScalarDeletingDtor_00c1ae80,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1b3f0,FUN_00c1b3f0,ScalarDeletingDtor_00c1b3f0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1be20,FUN_00c1be20,ScalarDeletingDtor_00c1be20,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1be80,FUN_00c1be80,ScalarDeletingDtor_00c1be80,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1c630,FUN_00c1c630,ScalarDeletingDtor_00c1c630,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1c6b0,FUN_00c1c6b0,ScalarDeletingDtor_00c1c6b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1c880,FUN_00c1c880,ScalarDeletingDtor_00c1c880,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1c9e0,FUN_00c1c9e0,ScalarDeletingDtor_00c1c9e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1de40,FUN_00c1de40,ScalarDeletingDtor_00c1de40,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1e6c0,FUN_00c1e6c0,ScalarDeletingDtor_00c1e6c0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1e8c0,FUN_00c1e8c0,ScalarDeletingDtor_00c1e8c0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1ef40,FUN_00c1ef40,ScalarDeletingDtor_00c1ef40,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1f060,FUN_00c1f060,ScalarDeletingDtor_00c1f060,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1f5e0,FUN_00c1f5e0,ScalarDeletingDtor_00c1f5e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1f720,FUN_00c1f720,ScalarDeletingDtor_00c1f720,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1f770,FUN_00c1f770,ScalarDeletingDtor_00c1f770,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1fc90,FUN_00c1fc90,SetVtable_00da17dc_00c1fc90,pattern: stores vtable 00da17dc and returns; functions with the same vtable address belong to one class
+00c1fca0,FUN_00c1fca0,ScalarDeletingDtor_00c1fca0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1fdf0,FUN_00c1fdf0,ScalarDeletingDtor_00c1fdf0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c1fe60,FUN_00c1fe60,ScalarDeletingDtor_00c1fe60,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c20050,FUN_00c20050,SetVtable_00da5ee4_00c20050,pattern: stores vtable 00da5ee4 and returns; functions with the same vtable address belong to one class
+00c21930,FUN_00c21930,ScalarDeletingDtor_00c21930,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c21a10,FUN_00c21a10,LH_Array_Reserve_00c21a10,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00c21ad0,FUN_00c21ad0,LH_Array_GetAt_00c21ad0,pattern: asserts Index < FilledSize and returns element Index
+00c21b10,FUN_00c21b10,GetField_8_00c21b10,pattern: returns the field at offset 8
+00c21b20,FUN_00c21b20,LH_Array_SetFilledSize_00c21b20,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00c21b60,FUN_00c21b60,LH_Array_FreeBuffer_00c21b60,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00c21c90,FUN_00c21c90,LH_Array_Reserve_00c21c90,"pattern: allocates n*4 bytes (asserts data != NULL), copies FilledSize elements from Data (asserts Data != NULL) and swaps the buffer"
+00c21d50,FUN_00c21d50,LH_Array_GetAt_00c21d50,pattern: asserts Index < FilledSize and returns element Index
+00c21d90,FUN_00c21d90,GetField_8_00c21d90,pattern: returns the field at offset 8
+00c21da0,FUN_00c21da0,LH_Array_SetFilledSize_00c21da0,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00c21de0,FUN_00c21de0,LH_Array_FreeBuffer_00c21de0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00c21f10,FUN_00c21f10,LH_Array_SetAt_00c21f10,pattern: asserts Index < FilledSize and stores element Index
+00c21f50,FUN_00c21f50,LH_Array_SetAt_00c21f50,pattern: asserts Index < FilledSize and stores element Index
+00c227d0,FUN_00c227d0,ScalarDeletingDtor_00c227d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c22ab0,FUN_00c22ab0,ScalarDeletingDtor_00c22ab0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c22ad0,FUN_00c22ad0,ScalarDeletingDtor_00c22ad0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c22b90,FUN_00c22b90,ScalarDeletingDtor_00c22b90,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c22c50,FUN_00c22c50,LH_SortedArray_FindObject_00c22c50,pattern: binary search then asserts the found object != NULL
+00c22cb0,FUN_00c22cb0,LH_Array_FreeBuffer_00c22cb0,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00c22cc0,FUN_00c22cc0,LH_SortedArray_FindObject_00c22cc0,pattern: binary search then asserts the found object != NULL
+00c22e30,FUN_00c22e30,ScalarDeletingDtor_00c22e30,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c22e50,FUN_00c22e50,ScalarDeletingDtor_00c22e50,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c24990,FUN_00c24990,ScalarDeletingDtor_00c24990,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c249b0,FUN_00c249b0,ScalarDeletingDtor_00c249b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c24eb0,FUN_00c24eb0,ScalarDeletingDtor_00c24eb0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c24ef0,FUN_00c24ef0,ScalarDeletingDtor_00c24ef0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c24f10,FUN_00c24f10,LH_Container_AddObject_00c24f10,pattern: asserts Object != NULL then forwards
+00c24f40,FUN_00c24f40,LH_Container_AddObject_00c24f40,pattern: asserts Object != NULL then forwards
+00c24f70,FUN_00c24f70,LH_Array_AdoptRequireEmpty_00c24f70,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00c24fb0,FUN_00c24fb0,LH_Array_AdoptRequireEmpty_00c24fb0,pattern: asserts the member array is empty (Array.Count () == 0) then forwards the argument and this+4
+00c25f00,FUN_00c25f00,LH_Array_SortAndVerifyUnique_00c25f00,"pattern: sorts then asserts ""unique"""
+00c25f30,FUN_00c25f30,LH_Array_SortAndVerifyUnique_00c25f30,"pattern: sorts then asserts ""unique"""
+00c25f60,FUN_00c25f60,LH_Array_CopySorted_00c25f60,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00c25fa0,FUN_00c25fa0,LH_Array_CopySorted_00c25fa0,"pattern: asserts the destination is empty, copies then sorts and verifies uniqueness"
+00c26d40,FUN_00c26d40,ScalarDeletingDtor_00c26d40,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c26dd0,FUN_00c26dd0,SetVtable_00d9f9dc_00c26dd0,pattern: stores vtable 00d9f9dc and returns; functions with the same vtable address belong to one class
+00c26e40,FUN_00c26e40,SetVtable_00da61d4_00c26e40,pattern: stores vtable 00da61d4 and returns; functions with the same vtable address belong to one class
+00c26e50,FUN_00c26e50,ScalarDeletingDtor_00c26e50,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c26f90,FUN_00c26f90,ScalarDeletingDtor_00c26f90,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c26fd0,FUN_00c26fd0,ScalarDeletingDtor_00c26fd0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c27070,FUN_00c27070,ScalarDeletingDtor_00c27070,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c270a0,FUN_00c270a0,ScalarDeletingDtor_00c270a0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c272d0,FUN_00c272d0,SetVtable_00da6268_00c272d0,pattern: stores vtable 00da6268 and returns; functions with the same vtable address belong to one class
+00c27340,FUN_00c27340,ScalarDeletingDtor_00c27340,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c27360,FUN_00c27360,ScalarDeletingDtor_00c27360,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c29080,FUN_00c29080,ScalarDeletingDtor_00c29080,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c290a0,FUN_00c290a0,ScalarDeletingDtor_00c290a0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c290c0,FUN_00c290c0,ScalarDeletingDtor_00c290c0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c290e0,FUN_00c290e0,ScalarDeletingDtor_00c290e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c29260,FUN_00c29260,ScalarDeletingDtor_00c29260,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c29280,FUN_00c29280,ScalarDeletingDtor_00c29280,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c292a0,FUN_00c292a0,ScalarDeletingDtor_00c292a0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c292c0,FUN_00c292c0,ScalarDeletingDtor_00c292c0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c292e0,FUN_00c292e0,ScalarDeletingDtor_00c292e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c29b00,FUN_00c29b00,SetVtable_00d9f9dc_00c29b00,pattern: stores vtable 00d9f9dc and returns; functions with the same vtable address belong to one class
+00c29b90,FUN_00c29b90,SetVtable_00da64c4_00c29b90,pattern: stores vtable 00da64c4 and returns; functions with the same vtable address belong to one class
+00c29ba0,FUN_00c29ba0,ScalarDeletingDtor_00c29ba0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c29be0,FUN_00c29be0,SetVtable_00da17dc_00c29be0,pattern: stores vtable 00da17dc and returns; functions with the same vtable address belong to one class
+00c29bf0,FUN_00c29bf0,ScalarDeletingDtor_00c29bf0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c29d70,FUN_00c29d70,ScalarDeletingDtor_00c29d70,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c29db0,FUN_00c29db0,ScalarDeletingDtor_00c29db0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c29e70,FUN_00c29e70,ScalarDeletingDtor_00c29e70,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c29ec0,FUN_00c29ec0,ScalarDeletingDtor_00c29ec0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c29ee0,FUN_00c29ee0,SetVtable_00da6600_00c29ee0,pattern: stores vtable 00da6600 and returns; functions with the same vtable address belong to one class
+00c29f40,FUN_00c29f40,SetVtable_00da6610_00c29f40,pattern: stores vtable 00da6610 and returns; functions with the same vtable address belong to one class
+00c2a300,FUN_00c2a300,ScalarDeletingDtor_00c2a300,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c2cee0,FUN_00c2cee0,GetField_0x1c0_00c2cee0,pattern: returns the field at offset 0x1c0
+00c2cef0,FUN_00c2cef0,GetField_0x1bc_00c2cef0,pattern: returns the field at offset 0x1bc
+00c2cf00,FUN_00c2cf00,GetField_0x1b8_00c2cf00,pattern: returns the field at offset 0x1b8
+00c2da20,FUN_00c2da20,SetVtable_00da6670_00c2da20,pattern: stores vtable 00da6670 and returns; functions with the same vtable address belong to one class
+00c2da30,FUN_00c2da30,SetVtable_00da6680_00c2da30,pattern: stores vtable 00da6680 and returns; functions with the same vtable address belong to one class
+00c2da40,FUN_00c2da40,SetVtable_00da6690_00c2da40,pattern: stores vtable 00da6690 and returns; functions with the same vtable address belong to one class
+00c2da50,FUN_00c2da50,SetVtable_00da66a0_00c2da50,pattern: stores vtable 00da66a0 and returns; functions with the same vtable address belong to one class
+00c2da60,FUN_00c2da60,SetVtable_00da66b0_00c2da60,pattern: stores vtable 00da66b0 and returns; functions with the same vtable address belong to one class
+00c2da70,FUN_00c2da70,SetVtable_00da66c0_00c2da70,pattern: stores vtable 00da66c0 and returns; functions with the same vtable address belong to one class
+00c2e8e0,FUN_00c2e8e0,ScalarDeletingDtor_00c2e8e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c2e900,FUN_00c2e900,ScalarDeletingDtor_00c2e900,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c2e920,FUN_00c2e920,ScalarDeletingDtor_00c2e920,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c2e940,FUN_00c2e940,ScalarDeletingDtor_00c2e940,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c2e960,FUN_00c2e960,ScalarDeletingDtor_00c2e960,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c2e980,FUN_00c2e980,ScalarDeletingDtor_00c2e980,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c2eac0,FUN_00c2eac0,ScalarDeletingDtor_00c2eac0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c2eae0,FUN_00c2eae0,ScalarDeletingDtor_00c2eae0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c2eb00,FUN_00c2eb00,ScalarDeletingDtor_00c2eb00,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c2eb20,FUN_00c2eb20,ScalarDeletingDtor_00c2eb20,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c2eb40,FUN_00c2eb40,ScalarDeletingDtor_00c2eb40,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c2eb60,FUN_00c2eb60,ScalarDeletingDtor_00c2eb60,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c2f790,FUN_00c2f790,ScalarDeletingDtor_00c2f790,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c36420,FUN_00c36420,ScalarDeletingDtor_00c36420,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c367c0,FUN_00c367c0,LH_Array_SetAt_00c367c0,pattern: asserts Index < FilledSize and stores element Index
+00c36800,FUN_00c36800,LH_Array_SetFilledSize_00c36800,pattern: asserts NewSize <= FilledSize then stores it (truncate)
+00c36840,FUN_00c36840,LH_Array_FreeBuffer_00c36840,pattern: asserts FilledSize == 0 before and after freeing the data pointer
+00c368f0,FUN_00c368f0,ScalarDeletingDtor_00c368f0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c36980,FUN_00c36980,ScalarDeletingDtor_00c36980,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c36a80,FUN_00c36a80,ScalarDeletingDtor_00c36a80,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c36c50,FUN_00c36c50,ScalarDeletingDtor_00c36c50,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c36f30,FUN_00c36f30,ScalarDeletingDtor_00c36f30,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c37540,FUN_00c37540,ScalarDeletingDtor_00c37540,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c37750,FUN_00c37750,ScalarDeletingDtor_00c37750,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c377f0,FUN_00c377f0,ScalarDeletingDtor_00c377f0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c37c10,FUN_00c37c10,ScalarDeletingDtor_00c37c10,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c39a30,FUN_00c39a30,SetVtable_00da6d38_00c39a30,pattern: stores vtable 00da6d38 and returns; functions with the same vtable address belong to one class
+00c39ac0,FUN_00c39ac0,SetVtable_00da6d7c_00c39ac0,pattern: stores vtable 00da6d7c and returns; functions with the same vtable address belong to one class
+00c39ad0,FUN_00c39ad0,SetVtable_00da6d74_00c39ad0,pattern: stores vtable 00da6d74 and returns; functions with the same vtable address belong to one class
+00c39b00,FUN_00c39b00,ScalarDeletingDtor_00c39b00,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c39b30,FUN_00c39b30,SetVtable_00da6e68_00c39b30,pattern: stores vtable 00da6e68 and returns; functions with the same vtable address belong to one class
+00c3a4a0,FUN_00c3a4a0,ScalarDeletingDtor_00c3a4a0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3acb0,FUN_00c3acb0,SetVtable_00da6fc8_00c3acb0,pattern: stores vtable 00da6fc8 and returns; functions with the same vtable address belong to one class
+00c3aee0,FUN_00c3aee0,ScalarDeletingDtor_00c3aee0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3b000,FUN_00c3b000,ScalarDeletingDtor_00c3b000,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3b0e0,FUN_00c3b0e0,ScalarDeletingDtor_00c3b0e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3b160,FUN_00c3b160,ScalarDeletingDtor_00c3b160,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3b1d0,FUN_00c3b1d0,SetVtable_00da34b0_00c3b1d0,pattern: stores vtable 00da34b0 and returns; functions with the same vtable address belong to one class
+00c3b210,FUN_00c3b210,ScalarDeletingDtor_00c3b210,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3b350,FUN_00c3b350,ScalarDeletingDtor_00c3b350,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3b370,FUN_00c3b370,ScalarDeletingDtor_00c3b370,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3bd10,FUN_00c3bd10,ScalarDeletingDtor_00c3bd10,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3c350,FUN_00c3c350,ScalarDeletingDtor_00c3c350,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3c540,FUN_00c3c540,SetVtable_00d9fbe8_00c3c540,pattern: stores vtable 00d9fbe8 and returns; functions with the same vtable address belong to one class
+00c3c550,FUN_00c3c550,ScalarDeletingDtor_00c3c550,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3c570,FUN_00c3c570,SetVtable_00d9fbe8_00c3c570,pattern: stores vtable 00d9fbe8 and returns; functions with the same vtable address belong to one class
+00c3c6b0,FUN_00c3c6b0,ScalarDeletingDtor_00c3c6b0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3ec70,FUN_00c3ec70,ScalarDeletingDtor_00c3ec70,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3fac0,FUN_00c3fac0,ScalarDeletingDtor_00c3fac0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c3ff80,FUN_00c3ff80,ScalarDeletingDtor_00c3ff80,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c40560,FUN_00c40560,ScalarDeletingDtor_00c40560,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c42170,FUN_00c42170,ScalarDeletingDtor_00c42170,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c42b40,FUN_00c42b40,ScalarDeletingDtor_00c42b40,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c433e0,FUN_00c433e0,ScalarDeletingDtor_00c433e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c440a0,FUN_00c440a0,ScalarDeletingDtor_00c440a0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c45d50,FUN_00c45d50,ScalarDeletingDtor_00c45d50,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c4b310,FUN_00c4b310,ScalarDeletingDtor_00c4b310,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c4b990,FUN_00c4b990,ScalarDeletingDtor_00c4b990,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c4ba40,FUN_00c4ba40,GetField_0x28_00c4ba40,pattern: returns the field at offset 0x28
+00c4ba50,FUN_00c4ba50,GetField_0x2c_00c4ba50,pattern: returns the field at offset 0x2c
+00c4c000,FUN_00c4c000,ScalarDeletingDtor_00c4c000,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c4c270,FUN_00c4c270,GetField_4_00c4c270,pattern: returns the field at offset 4
+00c4f9d0,FUN_00c4f9d0,ScalarDeletingDtor_00c4f9d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c4fa20,FUN_00c4fa20,ScalarDeletingDtor_00c4fa20,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c4fa40,FUN_00c4fa40,SetVtable_00dacc9c_00c4fa40,pattern: stores vtable 00dacc9c and returns; functions with the same vtable address belong to one class
+00c50030,FUN_00c50030,ScalarDeletingDtor_00c50030,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c50050,FUN_00c50050,SetVtable_00dacd0c_00c50050,pattern: stores vtable 00dacd0c and returns; functions with the same vtable address belong to one class
+00c50700,FUN_00c50700,ScalarDeletingDtor_00c50700,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c50770,FUN_00c50770,ScalarDeletingDtor_00c50770,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c50790,FUN_00c50790,ScalarDeletingDtor_00c50790,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c507b0,FUN_00c507b0,SetVtable_00dacdcc_00c507b0,pattern: stores vtable 00dacdcc and returns; functions with the same vtable address belong to one class
+00c51020,FUN_00c51020,ScalarDeletingDtor_00c51020,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c51040,FUN_00c51040,ScalarDeletingDtor_00c51040,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c510e0,FUN_00c510e0,ScalarDeletingDtor_00c510e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c51100,FUN_00c51100,ScalarDeletingDtor_00c51100,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c51150,FUN_00c51150,ScalarDeletingDtor_00c51150,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c51170,FUN_00c51170,SetVtable_00dacf20_00c51170,pattern: stores vtable 00dacf20 and returns; functions with the same vtable address belong to one class
+00c51520,FUN_00c51520,ScalarDeletingDtor_00c51520,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c51570,FUN_00c51570,ScalarDeletingDtor_00c51570,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c51590,FUN_00c51590,ScalarDeletingDtor_00c51590,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c51d30,FUN_00c51d30,ScalarDeletingDtor_00c51d30,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c51f70,FUN_00c51f70,ScalarDeletingDtor_00c51f70,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c51fc0,FUN_00c51fc0,ScalarDeletingDtor_00c51fc0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c51fe0,FUN_00c51fe0,ScalarDeletingDtor_00c51fe0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c52140,FUN_00c52140,ScalarDeletingDtor_00c52140,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c52ff0,FUN_00c52ff0,ScalarDeletingDtor_00c52ff0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c53010,FUN_00c53010,SetVtable_00dad054_00c53010,pattern: stores vtable 00dad054 and returns; functions with the same vtable address belong to one class
+00c53750,FUN_00c53750,ScalarDeletingDtor_00c53750,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c53b60,FUN_00c53b60,SetVtable_00dad0a0_00c53b60,pattern: stores vtable 00dad0a0 and returns; functions with the same vtable address belong to one class
+00c54020,FUN_00c54020,ScalarDeletingDtor_00c54020,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c54040,FUN_00c54040,SetVtable_00dad1a8_00c54040,pattern: stores vtable 00dad1a8 and returns; functions with the same vtable address belong to one class
+00c54d10,FUN_00c54d10,ScalarDeletingDtor_00c54d10,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c55620,FUN_00c55620,GetField_8_00c55620,pattern: returns the field at offset 8
+00c61a60,FUN_00c61a60,SetVtable_00dad3f8_00c61a60,pattern: stores vtable 00dad3f8 and returns; functions with the same vtable address belong to one class
+00c61a70,FUN_00c61a70,ScalarDeletingDtor_00c61a70,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c64620,FUN_00c64620,ScalarDeletingDtor_00c64620,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c64d80,FUN_00c64d80,ScalarDeletingDtor_00c64d80,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c64ef0,FUN_00c64ef0,ScalarDeletingDtor_00c64ef0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c65f20,FUN_00c65f20,ScalarDeletingDtor_00c65f20,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c66f30,FUN_00c66f30,ScalarDeletingDtor_00c66f30,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c67020,FUN_00c67020,ScalarDeletingDtor_00c67020,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c67490,FUN_00c67490,ScalarDeletingDtor_00c67490,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c690e0,FUN_00c690e0,ScalarDeletingDtor_00c690e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c75000,FUN_00c75000,SetVtable_00dad660_00c75000,pattern: stores vtable 00dad660 and returns; functions with the same vtable address belong to one class
+00c75ab0,FUN_00c75ab0,ScalarDeletingDtor_00c75ab0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c75ad0,FUN_00c75ad0,SetVtable_00d9fbe8_00c75ad0,pattern: stores vtable 00d9fbe8 and returns; functions with the same vtable address belong to one class
+00c75b80,FUN_00c75b80,ScalarDeletingDtor_00c75b80,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c7d210,FUN_00c7d210,ScalarDeletingDtor_00c7d210,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c7d2c0,FUN_00c7d2c0,SetVtable_00dad7d4_00c7d2c0,pattern: stores vtable 00dad7d4 and returns; functions with the same vtable address belong to one class
+00c7d530,FUN_00c7d530,ScalarDeletingDtor_00c7d530,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c7d830,FUN_00c7d830,SetVtable_00dad80c_00c7d830,pattern: stores vtable 00dad80c and returns; functions with the same vtable address belong to one class
+00c7dd40,FUN_00c7dd40,ScalarDeletingDtor_00c7dd40,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c7dd90,FUN_00c7dd90,ScalarDeletingDtor_00c7dd90,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c7ddc0,FUN_00c7ddc0,ScalarDeletingDtor_00c7ddc0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c82d20,FUN_00c82d20,SetVtable_00dad8d0_00c82d20,pattern: stores vtable 00dad8d0 and returns; functions with the same vtable address belong to one class
+00c8d7e0,FUN_00c8d7e0,ScalarDeletingDtor_00c8d7e0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c8d940,FUN_00c8d940,ScalarDeletingDtor_00c8d940,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c8d9d0,FUN_00c8d9d0,ScalarDeletingDtor_00c8d9d0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c91300,FUN_00c91300,ScalarDeletingDtor_00c91300,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c91a30,FUN_00c91a30,ScalarDeletingDtor_00c91a30,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c91a70,FUN_00c91a70,ScalarDeletingDtor_00c91a70,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c91df0,FUN_00c91df0,ScalarDeletingDtor_00c91df0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c934c0,FUN_00c934c0,ScalarDeletingDtor_00c934c0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c93a10,FUN_00c93a10,ScalarDeletingDtor_00c93a10,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c963a0,FUN_00c963a0,ScalarDeletingDtor_00c963a0,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c96620,FUN_00c96620,ScalarDeletingDtor_00c96620,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c99770,FUN_00c99770,ScalarDeletingDtor_00c99770,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
+00c99820,FUN_00c99820,ScalarDeletingDtor_00c99820,pattern: compiler-generated: calls the destructor then frees this when (flag & 1)
