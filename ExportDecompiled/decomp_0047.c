@@ -17803,7 +17803,7 @@ void __fastcall FUN_00a2c750(undefined4 *param_1)
   }
   param_1[0x1c] = 0;
   local_4 = 0xffffffff;
-  FUN_00c93230(param_1);
+  Dtor_00c93230(param_1);
   ExceptionList = pvStack_c;
   return;
 }
@@ -18303,7 +18303,7 @@ undefined4 * __thiscall FUN_00a2d1c0(void *this,undefined4 *param_1,void *param_
   puStack_8 = &LAB_00cfa328;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  FUN_00c93420(this,0,param_1,param_2,(undefined4 *)L"Video OutPut");
+  Ctor_vt00db12a4_00c93420(this,0,param_1,param_2,(undefined4 *)L"Video OutPut");
   local_4 = 0;
   *(undefined ***)this = &PTR_FUN_00d76dec;
   *(undefined ***)((int)this + 0x48) = &PTR_FUN_00d76d8c;
@@ -18374,7 +18374,7 @@ void __fastcall FUN_00a2d2f0(undefined4 *param_1)
   DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x4e));
   FUN_00c94ed0((int)(param_1 + 0x3c));
   local_4 = 0xffffffff;
-  FUN_00c93030(param_1);
+  Dtor_00c93030(param_1);
   ExceptionList = local_c;
   return;
 }
@@ -18437,7 +18437,7 @@ undefined4 * __thiscall FUN_00a2d930(void *this,int param_1,uint *param_2)
   puStack_8 = &LAB_00cfa3f3;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  FUN_00c93190(this,0,param_1);
+  Ctor_vt00db1314_00c93190(this,0,param_1);
   local_4 = 0;
   *(undefined ***)this = &PTR_FUN_00d76be4;
   *(undefined ***)((int)this + 0xc) = &PTR_FUN_00d76ba4;
@@ -18568,7 +18568,7 @@ undefined4 * __thiscall FUN_00a2db50(void *this,undefined4 *param_1,void *param_
   puStack_8 = &LAB_00cfa428;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  FUN_00c93420(this,0,param_1,param_2,(undefined4 *)L"Audio OutPut");
+  Ctor_vt00db12a4_00c93420(this,0,param_1,param_2,(undefined4 *)L"Audio OutPut");
   local_4 = 0;
   *(undefined ***)this = &PTR_FUN_00d76f2c;
   *(undefined ***)((int)this + 0x48) = &PTR_FUN_00d76ecc;
@@ -18607,7 +18607,7 @@ void __fastcall FUN_00a2dc20(undefined4 *param_1)
   DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x4e));
   FUN_00c94ed0((int)(param_1 + 0x3c));
   local_4 = 0xffffffff;
-  FUN_00c93030(param_1);
+  Dtor_00c93030(param_1);
   ExceptionList = local_c;
   return;
 }
@@ -18768,7 +18768,7 @@ undefined4 * __thiscall FUN_00a2e2e0(void *this,int param_1,uint *param_2)
   puStack_8 = &LAB_00cfa4f3;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  FUN_00c93190(this,0,param_1);
+  Ctor_vt00db1314_00c93190(this,0,param_1);
   local_4 = 0;
   *(undefined ***)this = &PTR_FUN_00d76c64;
   *(undefined ***)((int)this + 0xc) = &PTR_FUN_00d76c24;

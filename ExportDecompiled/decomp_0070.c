@@ -5491,7 +5491,7 @@ void FUN_00d15430(void)
 void FUN_00d15440(void)
 
 {
-  FUN_00c134d0(&DAT_010d5f50);
+  Dtor_00c134d0(&DAT_010d5f50);
   return;
 }
 
@@ -5531,7 +5531,7 @@ void FUN_00d15470(void)
 void FUN_00d15480(void)
 
 {
-  FUN_00c0f200((undefined4 *)&DAT_010da2d8);
+  Dtor_00c0f200((undefined4 *)&DAT_010da2d8);
   return;
 }
 
@@ -5541,7 +5541,7 @@ void FUN_00d15480(void)
 void FUN_00d15490(void)
 
 {
-  FUN_00c37770((undefined4 *)&DAT_010da230);
+  Dtor_00c37770((undefined4 *)&DAT_010da230);
   return;
 }
 

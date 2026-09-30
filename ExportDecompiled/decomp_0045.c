@@ -20433,7 +20433,7 @@ undefined4 * __thiscall FUN_009ed710(void *this,int param_1,undefined4 *param_2)
   puStack_8 = &LAB_00cf86d8;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  FUN_00c8d960(this,(undefined4 *)&DAT_00d73e38,0,param_1);
+  Ctor_vt00dadb70_00c8d960(this,(undefined4 *)&DAT_00d73e38,0,param_1);
   local_4 = 0;
   *(undefined ***)this = &PTR_LAB_00d73d74;
   *(undefined ***)((int)this + 0xc) = &PTR_FUN_00d73d34;
@@ -20468,7 +20468,7 @@ void __fastcall FUN_009ed7c0(int *param_1)
   local_4 = 0;
   _eh_vector_destructor_iterator_(param_1 + 0x5b,0x10,2,FUN_009ed170);
   local_4 = 0xffffffff;
-  FUN_00c8d910(param_1);
+  Dtor_00c8d910(param_1);
   ExceptionList = local_c;
   return;
 }

@@ -17242,7 +17242,7 @@ undefined4 * __thiscall FUN_00aa6340(void *this,int param_1,int *param_2)
       piVar1 = (int *)0x0;
     }
     else {
-      FUN_00c965d0(piVar1,0,(int)this,param_2,&DAT_00d7b610);
+      Ctor_vt00db1680_00c965d0(piVar1,0,(int)this,param_2,&DAT_00d7b610);
       *piVar1 = (int)&PTR_FUN_00d7b5b4;
       piVar1[3] = (int)&PTR_FUN_00d7b564;
       piVar1[4] = (int)&PTR_LAB_00d7b548;
@@ -17263,7 +17263,7 @@ undefined4 * __thiscall FUN_00aa6340(void *this,int param_1,int *param_2)
       piVar1 = (int *)0x0;
     }
     else {
-      piVar1 = FUN_00c95a00(this_00,0,(int)this,param_2,&DAT_00d73f30);
+      piVar1 = Ctor_vt00db15e8_00c95a00(this_00,0,(int)this,param_2,&DAT_00d73f30);
     }
     local_4 = (uint)local_4._1_3_ << 8;
     if (piVar1 != (int *)0x0) {

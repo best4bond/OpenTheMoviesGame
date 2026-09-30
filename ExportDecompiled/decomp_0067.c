@@ -174,7 +174,7 @@ void __thiscall FUN_00c42860(void *this,char param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c42b40(void *this,byte param_1)
 
 {
-  FUN_00c422f0(this);
+  Dtor_00c422f0(this);
   if ((param_1 & 1) != 0) {
     FUN_00c0efa0(this);
   }
@@ -349,9 +349,9 @@ void __fastcall FUN_00c42dd0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c42e20 @ 00c42e20 ////
+//// FUNCTION Ctor_vt00dac928_00c42e20 @ 00c42e20 ////
 
-undefined4 * __fastcall FUN_00c42e20(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dac928_00c42e20(undefined4 *param_1)
 
 {
   FUN_00c3c690(param_1);
@@ -424,7 +424,7 @@ void __thiscall FUN_00c42e60(void *this,int param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c433e0(void *this,byte param_1)
 
 {
-  FUN_00c43400(this);
+  Dtor_00c43400(this);
   if ((param_1 & 1) != 0) {
     FUN_00c0efa0(this);
   }
@@ -432,9 +432,9 @@ undefined4 * __thiscall ScalarDeletingDtor_00c433e0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c43400 @ 00c43400 ////
+//// FUNCTION Dtor_00c43400 @ 00c43400 ////
 
-void __fastcall FUN_00c43400(undefined4 *param_1)
+void __fastcall Dtor_00c43400(undefined4 *param_1)
 
 {
   undefined4 local_14;
@@ -788,12 +788,12 @@ void __thiscall FUN_00c43ce0(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00c43d30 @ 00c43d30 ////
+//// FUNCTION Ctor_vt00dac978_00c43d30 @ 00c43d30 ////
 
-undefined4 * __fastcall FUN_00c43d30(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dac978_00c43d30(undefined4 *param_1)
 
 {
-  FUN_00c17030(param_1);
+  Ctor_vt00d9fc78_00c17030(param_1);
   *param_1 = &PTR_FUN_00dac978;
   return param_1;
 }
@@ -1718,7 +1718,7 @@ undefined4 FUN_00c45580(int param_1,int param_2,int param_3,int param_4)
 undefined4 * __thiscall ScalarDeletingDtor_00c45d50(void *this,byte param_1)
 
 {
-  FUN_00c45d70(this);
+  Dtor_00c45d70(this);
   if ((param_1 & 1) != 0) {
     FUN_00c0efa0(this);
   }
@@ -1726,9 +1726,9 @@ undefined4 * __thiscall ScalarDeletingDtor_00c45d50(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c45d70 @ 00c45d70 ////
+//// FUNCTION Dtor_00c45d70 @ 00c45d70 ////
 
-void __fastcall FUN_00c45d70(undefined4 *param_1)
+void __fastcall Dtor_00c45d70(undefined4 *param_1)
 
 {
   void *local_c;
@@ -2241,9 +2241,9 @@ float10 __cdecl FUN_00c49620(float param_1)
 }
 
 
-//// FUNCTION FUN_00c49740 @ 00c49740 ////
+//// FUNCTION Ctor_vt00da6ce8_00c49740 @ 00c49740 ////
 
-undefined4 * __fastcall FUN_00c49740(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00da6ce8_00c49740(undefined4 *param_1)
 
 {
   void *local_c;
@@ -2329,7 +2329,7 @@ LAB_00c49910:
       puVar1 = (undefined4 *)0x0;
     }
     else {
-      puVar1 = FUN_00c7cd00(this_00,*(int *)(DAT_010da248 + 0xe4),0,0,1,&local_10);
+      puVar1 = Ctor_vt00dad7d0_00c7cd00(this_00,*(int *)(DAT_010da248 + 0xe4),0,0,1,&local_10);
     }
     *(undefined4 **)((int)this + 0xf8) = puVar1;
     if (puVar1 != (undefined4 *)0x0) {
@@ -3777,9 +3777,9 @@ void __thiscall FUN_00c4b790(void *this,int *param_1)
 }
 
 
-//// FUNCTION FUN_00c4b7f0 @ 00c4b7f0 ////
+//// FUNCTION Ctor_vt00dacb84_00c4b7f0 @ 00c4b7f0 ////
 
-undefined4 * __fastcall FUN_00c4b7f0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dacb84_00c4b7f0(undefined4 *param_1)
 
 {
   void *local_c;
@@ -3800,9 +3800,9 @@ undefined4 * __fastcall FUN_00c4b7f0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c4b840 @ 00c4b840 ////
+//// FUNCTION Ctor_vt00dacb84_00c4b840 @ 00c4b840 ////
 
-undefined4 * __thiscall FUN_00c4b840(void *this,int *param_1)
+undefined4 * __thiscall Ctor_vt00dacb84_00c4b840(void *this,int *param_1)
 
 {
   void *local_c;
@@ -3823,9 +3823,9 @@ undefined4 * __thiscall FUN_00c4b840(void *this,int *param_1)
 }
 
 
-//// FUNCTION FUN_00c4b8a0 @ 00c4b8a0 ////
+//// FUNCTION Ctor_vt00dacb84_00c4b8a0 @ 00c4b8a0 ////
 
-undefined4 * __thiscall FUN_00c4b8a0(void *this,int *param_1,int param_2,undefined4 param_3)
+undefined4 * __thiscall Ctor_vt00dacb84_00c4b8a0(void *this,int *param_1,int param_2,undefined4 param_3)
 
 {
   void *local_c;
@@ -3861,9 +3861,9 @@ void * __thiscall FUN_00c4b900(void *this,int param_1)
 }
 
 
-//// FUNCTION FUN_00c4b930 @ 00c4b930 ////
+//// FUNCTION Dtor_00c4b930 @ 00c4b930 ////
 
-void __fastcall FUN_00c4b930(undefined4 *param_1)
+void __fastcall Dtor_00c4b930(undefined4 *param_1)
 
 {
   void *local_c;
@@ -3877,7 +3877,7 @@ void __fastcall FUN_00c4b930(undefined4 *param_1)
   local_4 = 0;
   FUN_00c4b490((int)param_1);
   local_4 = 0xffffffff;
-  FUN_00bce890(param_1);
+  Dtor_00bce890(param_1);
   ExceptionList = local_c;
   return;
 }
@@ -3888,7 +3888,7 @@ void __fastcall FUN_00c4b930(undefined4 *param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c4b990(void *this,byte param_1)
 
 {
-  FUN_00c4b930(this);
+  Dtor_00c4b930(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -4018,9 +4018,9 @@ LAB_00c4bb40:
 }
 
 
-//// FUNCTION FUN_00c4bb90 @ 00c4bb90 ////
+//// FUNCTION Ctor_vt00dacbac_00c4bb90 @ 00c4bb90 ////
 
-undefined4 * __fastcall FUN_00c4bb90(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dacbac_00c4bb90(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00dacbac;
@@ -4044,9 +4044,9 @@ undefined4 * __fastcall FUN_00c4bb90(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c4bbe0 @ 00c4bbe0 ////
+//// FUNCTION Dtor_00c4bbe0 @ 00c4bbe0 ////
 
-void __fastcall FUN_00c4bbe0(undefined4 *param_1)
+void __fastcall Dtor_00c4bbe0(undefined4 *param_1)
 
 {
   int *piVar1;
@@ -4321,7 +4321,7 @@ FUN_00c4be10(void *this,undefined4 *param_1,undefined4 **param_2,undefined4 *par
 undefined4 * __thiscall ScalarDeletingDtor_00c4c000(void *this,byte param_1)
 
 {
-  FUN_00c4bbe0(this);
+  Dtor_00c4bbe0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -7284,9 +7284,9 @@ void __fastcall FUN_00c4f690(int param_1)
 }
 
 
-//// FUNCTION FUN_00c4f780 @ 00c4f780 ////
+//// FUNCTION Dtor_00c4f780 @ 00c4f780 ////
 
-void __fastcall FUN_00c4f780(int *param_1)
+void __fastcall Dtor_00c4f780(int *param_1)
 
 {
   int iVar1;
@@ -7312,9 +7312,9 @@ void __fastcall FUN_00c4f780(int *param_1)
   param_1[0xb] = (int)&PTR_LAB_00dacc20;
   FUN_00bcffc0(param_1 + 0xc);
   local_4 = (uint)local_4._1_3_ << 8;
-  FUN_00bcf880(param_1 + 5);
+  Dtor_00bcf880(param_1 + 5);
   local_4 = 0xffffffff;
-  FUN_00bcf880(param_1);
+  Dtor_00bcf880(param_1);
   ExceptionList = local_c;
   return;
 }
@@ -7361,9 +7361,9 @@ undefined4 * __fastcall FUN_00c4f850(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c4f910 @ 00c4f910 ////
+//// FUNCTION Dtor_00c4f910 @ 00c4f910 ////
 
-void __fastcall FUN_00c4f910(undefined4 *param_1)
+void __fastcall Dtor_00c4f910(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacc20;
@@ -7372,9 +7372,9 @@ void __fastcall FUN_00c4f910(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c4f9b0 @ 00c4f9b0 ////
+//// FUNCTION Ctor_vt00dacc20_00c4f9b0 @ 00c4f9b0 ////
 
-undefined4 * __fastcall FUN_00c4f9b0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dacc20_00c4f9b0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacc20;
@@ -7388,7 +7388,7 @@ undefined4 * __fastcall FUN_00c4f9b0(undefined4 *param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c4f9d0(void *this,byte param_1)
 
 {
-  FUN_00c4f910(this);
+  Dtor_00c4f910(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -7397,9 +7397,9 @@ undefined4 * __thiscall ScalarDeletingDtor_00c4f9d0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c4f9f0 @ 00c4f9f0 ////
+//// FUNCTION Dtor_00c4f9f0 @ 00c4f9f0 ////
 
-void __fastcall FUN_00c4f9f0(undefined4 *param_1)
+void __fastcall Dtor_00c4f9f0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacc20;
@@ -7408,9 +7408,9 @@ void __fastcall FUN_00c4f9f0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c4fa00 @ 00c4fa00 ////
+//// FUNCTION Ctor_vt00dacc74_00c4fa00 @ 00c4fa00 ////
 
-undefined4 * __fastcall FUN_00c4fa00(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dacc74_00c4fa00(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacc20;
@@ -7425,7 +7425,7 @@ undefined4 * __fastcall FUN_00c4fa00(undefined4 *param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c4fa20(void *this,byte param_1)
 
 {
-  FUN_00c4f9f0(this);
+  Dtor_00c4f9f0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -7444,9 +7444,9 @@ void __fastcall SetVtable_00dacc9c_00c4fa40(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c4fad0 @ 00c4fad0 ////
+//// FUNCTION Ctor_vt00daccb4_00c4fad0 @ 00c4fad0 ////
 
-undefined4 * __fastcall FUN_00c4fad0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00daccb4_00c4fad0(undefined4 *param_1)
 
 {
   void *local_c;
@@ -7613,9 +7613,9 @@ void __thiscall FUN_00c4fdd0(void *this,int param_1)
 }
 
 
-//// FUNCTION FUN_00c4fe00 @ 00c4fe00 ////
+//// FUNCTION Dtor_00c4fe00 @ 00c4fe00 ////
 
-void __fastcall FUN_00c4fe00(undefined4 *param_1)
+void __fastcall Dtor_00c4fe00(undefined4 *param_1)
 
 {
   void *local_c;
@@ -7637,11 +7637,11 @@ void __fastcall FUN_00c4fe00(undefined4 *param_1)
     FUN_00c4fbb0((int)param_1);
   }
   local_4._0_1_ = 2;
-  FUN_00bcf880(param_1 + 0xb);
+  Dtor_00bcf880(param_1 + 0xb);
   local_4._0_1_ = 1;
-  FUN_00bcf880(param_1 + 6);
+  Dtor_00bcf880(param_1 + 6);
   local_4 = (uint)local_4._1_3_ << 8;
-  FUN_00bcf880(param_1 + 1);
+  Dtor_00bcf880(param_1 + 1);
   *param_1 = &PTR_LAB_00dacc9c;
   ExceptionList = local_c;
   return;
@@ -7681,7 +7681,7 @@ void __thiscall FUN_00c4fec0(void *this,int param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c50030(void *this,byte param_1)
 
 {
-  FUN_00c4fe00(this);
+  Dtor_00c4fe00(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -7771,7 +7771,7 @@ undefined4 * __thiscall FUN_00c502b0(void *this,undefined4 *param_1)
     local_4 = 0;
     this_00 = (undefined4 *)0x0;
     if (local_114 != (undefined4 *)0x0) {
-      this_00 = FUN_00c7db40(local_114);
+      this_00 = Ctor_vt00dad8b4_00c7db40(local_114);
     }
     local_4 = 0xffffffff;
     if (this_00 == (undefined4 *)0x0) {
@@ -7803,9 +7803,9 @@ undefined4 * __thiscall FUN_00c502b0(void *this,undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c50410 @ 00c50410 ////
+//// FUNCTION Dtor_00c50410 @ 00c50410 ////
 
-void __fastcall FUN_00c50410(undefined4 *param_1)
+void __fastcall Dtor_00c50410(undefined4 *param_1)
 
 {
   int *piVar1;
@@ -7830,7 +7830,7 @@ void __fastcall FUN_00c50410(undefined4 *param_1)
   param_1[8] = &PTR_LAB_00dacd48;
   FUN_00bcffc0(param_1 + 9);
   local_4 = (uint)local_4._1_3_ << 8;
-  FUN_00bcf880(param_1 + 1);
+  Dtor_00bcf880(param_1 + 1);
   *param_1 = &PTR_LAB_00dacd0c;
   ExceptionList = pvStack_c;
   return;
@@ -7851,9 +7851,9 @@ void __thiscall FUN_00c504b0(void *this,int param_1)
 }
 
 
-//// FUNCTION FUN_00c504e0 @ 00c504e0 ////
+//// FUNCTION Ctor_vt00dacdb4_00c504e0 @ 00c504e0 ////
 
-undefined4 * __fastcall FUN_00c504e0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dacdb4_00c504e0(undefined4 *param_1)
 
 {
   void *local_c;
@@ -7887,9 +7887,9 @@ int * __fastcall FUN_00c50560(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c50620 @ 00c50620 ////
+//// FUNCTION Dtor_00c50620 @ 00c50620 ////
 
-void __fastcall FUN_00c50620(undefined4 *param_1)
+void __fastcall Dtor_00c50620(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacd48;
@@ -7898,9 +7898,9 @@ void __fastcall FUN_00c50620(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c506e0 @ 00c506e0 ////
+//// FUNCTION Ctor_vt00dacd48_00c506e0 @ 00c506e0 ////
 
-undefined4 * __fastcall FUN_00c506e0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dacd48_00c506e0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacd48;
@@ -7914,7 +7914,7 @@ undefined4 * __fastcall FUN_00c506e0(undefined4 *param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c50700(void *this,byte param_1)
 
 {
-  FUN_00c50620(this);
+  Dtor_00c50620(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -7923,9 +7923,9 @@ undefined4 * __thiscall ScalarDeletingDtor_00c50700(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c50720 @ 00c50720 ////
+//// FUNCTION Dtor_00c50720 @ 00c50720 ////
 
-void __fastcall FUN_00c50720(undefined4 *param_1)
+void __fastcall Dtor_00c50720(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacd48;
@@ -7934,9 +7934,9 @@ void __fastcall FUN_00c50720(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c50750 @ 00c50750 ////
+//// FUNCTION Ctor_vt00dacd8c_00c50750 @ 00c50750 ////
 
-undefined4 * __fastcall FUN_00c50750(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dacd8c_00c50750(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacd48;
@@ -7951,7 +7951,7 @@ undefined4 * __fastcall FUN_00c50750(undefined4 *param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c50770(void *this,byte param_1)
 
 {
-  FUN_00c50720(this);
+  Dtor_00c50720(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -7965,7 +7965,7 @@ undefined4 * __thiscall ScalarDeletingDtor_00c50770(void *this,byte param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c50790(void *this,byte param_1)
 
 {
-  FUN_00c50410(this);
+  Dtor_00c50410(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -8057,9 +8057,9 @@ void __fastcall FUN_00c50960(int param_1)
 }
 
 
-//// FUNCTION FUN_00c50a50 @ 00c50a50 ////
+//// FUNCTION Dtor_00c50a50 @ 00c50a50 ////
 
-void __fastcall FUN_00c50a50(undefined4 *param_1)
+void __fastcall Dtor_00c50a50(undefined4 *param_1)
 
 {
   int *piVar1;
@@ -8093,7 +8093,7 @@ void __fastcall FUN_00c50a50(undefined4 *param_1)
   param_1[9] = &PTR_LAB_00dace34;
   FUN_00bcffc0(param_1 + 10);
   local_4 = (uint)local_4._1_3_ << 8;
-  FUN_00bcf880(param_1 + 1);
+  Dtor_00bcf880(param_1 + 1);
   *param_1 = &PTR_LAB_00dacdcc;
   ExceptionList = pvStack_c;
   return;
@@ -8129,7 +8129,7 @@ undefined4 * __thiscall FUN_00c50b20(void *this,undefined4 param_1)
       this_00 = (undefined4 *)0x0;
     }
     else {
-      this_00 = FUN_00c504e0(local_114);
+      this_00 = Ctor_vt00dacdb4_00c504e0(local_114);
     }
     local_4 = 0xffffffff;
     if (this_00 == (undefined4 *)0x0) {
@@ -8171,9 +8171,9 @@ void __thiscall FUN_00c50c70(void *this,int param_1)
 }
 
 
-//// FUNCTION FUN_00c50ca0 @ 00c50ca0 ////
+//// FUNCTION Ctor_vt00dacf00_00c50ca0 @ 00c50ca0 ////
 
-undefined4 * __fastcall FUN_00c50ca0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dacf00_00c50ca0(undefined4 *param_1)
 
 {
   void *local_c;
@@ -8213,9 +8213,9 @@ int * __fastcall FUN_00c50d30(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c50e40 @ 00c50e40 ////
+//// FUNCTION Dtor_00c50e40 @ 00c50e40 ////
 
-void __fastcall FUN_00c50e40(undefined4 *param_1)
+void __fastcall Dtor_00c50e40(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dace34;
@@ -8224,9 +8224,9 @@ void __fastcall FUN_00c50e40(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c50f10 @ 00c50f10 ////
+//// FUNCTION Dtor_00c50f10 @ 00c50f10 ////
 
-void __fastcall FUN_00c50f10(undefined4 *param_1)
+void __fastcall Dtor_00c50f10(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dace5c;
@@ -8235,9 +8235,9 @@ void __fastcall FUN_00c50f10(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c50fe0 @ 00c50fe0 ////
+//// FUNCTION Ctor_vt00dace34_00c50fe0 @ 00c50fe0 ////
 
-undefined4 * __fastcall FUN_00c50fe0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dace34_00c50fe0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dace34;
@@ -8246,9 +8246,9 @@ undefined4 * __fastcall FUN_00c50fe0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c51000 @ 00c51000 ////
+//// FUNCTION Ctor_vt00dace5c_00c51000 @ 00c51000 ////
 
-undefined4 * __fastcall FUN_00c51000(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dace5c_00c51000(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dace5c;
@@ -8262,7 +8262,7 @@ undefined4 * __fastcall FUN_00c51000(undefined4 *param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c51020(void *this,byte param_1)
 
 {
-  FUN_00c50e40(this);
+  Dtor_00c50e40(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -8276,7 +8276,7 @@ undefined4 * __thiscall ScalarDeletingDtor_00c51020(void *this,byte param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c51040(void *this,byte param_1)
 
 {
-  FUN_00c50f10(this);
+  Dtor_00c50f10(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -8285,9 +8285,9 @@ undefined4 * __thiscall ScalarDeletingDtor_00c51040(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c51060 @ 00c51060 ////
+//// FUNCTION Dtor_00c51060 @ 00c51060 ////
 
-void __fastcall FUN_00c51060(undefined4 *param_1)
+void __fastcall Dtor_00c51060(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dace34;
@@ -8296,9 +8296,9 @@ void __fastcall FUN_00c51060(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c51070 @ 00c51070 ////
+//// FUNCTION Dtor_00c51070 @ 00c51070 ////
 
-void __fastcall FUN_00c51070(undefined4 *param_1)
+void __fastcall Dtor_00c51070(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dace5c;
@@ -8307,9 +8307,9 @@ void __fastcall FUN_00c51070(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c510a0 @ 00c510a0 ////
+//// FUNCTION Ctor_vt00daceb0_00c510a0 @ 00c510a0 ////
 
-undefined4 * __fastcall FUN_00c510a0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00daceb0_00c510a0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dace34;
@@ -8319,9 +8319,9 @@ undefined4 * __fastcall FUN_00c510a0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c510c0 @ 00c510c0 ////
+//// FUNCTION Ctor_vt00daced8_00c510c0 @ 00c510c0 ////
 
-undefined4 * __fastcall FUN_00c510c0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00daced8_00c510c0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dace5c;
@@ -8336,7 +8336,7 @@ undefined4 * __fastcall FUN_00c510c0(undefined4 *param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c510e0(void *this,byte param_1)
 
 {
-  FUN_00c51060(this);
+  Dtor_00c51060(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -8350,7 +8350,7 @@ undefined4 * __thiscall ScalarDeletingDtor_00c510e0(void *this,byte param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c51100(void *this,byte param_1)
 
 {
-  FUN_00c51070(this);
+  Dtor_00c51070(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -8364,7 +8364,7 @@ undefined4 * __thiscall ScalarDeletingDtor_00c51100(void *this,byte param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c51150(void *this,byte param_1)
 
 {
-  FUN_00c50a50(this);
+  Dtor_00c50a50(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -8402,9 +8402,9 @@ void __fastcall FUN_00c51220(int param_1)
 }
 
 
-//// FUNCTION FUN_00c51260 @ 00c51260 ////
+//// FUNCTION Dtor_00c51260 @ 00c51260 ////
 
-void __fastcall FUN_00c51260(undefined4 *param_1)
+void __fastcall Dtor_00c51260(undefined4 *param_1)
 
 {
   int *piVar1;
@@ -8429,7 +8429,7 @@ void __fastcall FUN_00c51260(undefined4 *param_1)
   param_1[6] = &PTR_LAB_00dacf58;
   FUN_00bcffc0(param_1 + 7);
   local_4 = (uint)local_4._1_3_ << 8;
-  FUN_00bcf880(param_1 + 1);
+  Dtor_00bcf880(param_1 + 1);
   *param_1 = &PTR_LAB_00dacf20;
   ExceptionList = pvStack_c;
   return;
@@ -8450,9 +8450,9 @@ void __thiscall FUN_00c51300(void *this,int param_1)
 }
 
 
-//// FUNCTION FUN_00c51330 @ 00c51330 ////
+//// FUNCTION Ctor_vt00dacfb8_00c51330 @ 00c51330 ////
 
-undefined4 * __fastcall FUN_00c51330(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dacfb8_00c51330(undefined4 *param_1)
 
 {
   void *local_c;
@@ -8486,9 +8486,9 @@ int * __fastcall FUN_00c513b0(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c51460 @ 00c51460 ////
+//// FUNCTION Dtor_00c51460 @ 00c51460 ////
 
-void __fastcall FUN_00c51460(undefined4 *param_1)
+void __fastcall Dtor_00c51460(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacf58;
@@ -8497,9 +8497,9 @@ void __fastcall FUN_00c51460(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c51500 @ 00c51500 ////
+//// FUNCTION Ctor_vt00dacf58_00c51500 @ 00c51500 ////
 
-undefined4 * __fastcall FUN_00c51500(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dacf58_00c51500(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacf58;
@@ -8513,7 +8513,7 @@ undefined4 * __fastcall FUN_00c51500(undefined4 *param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c51520(void *this,byte param_1)
 
 {
-  FUN_00c51460(this);
+  Dtor_00c51460(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -8522,9 +8522,9 @@ undefined4 * __thiscall ScalarDeletingDtor_00c51520(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c51540 @ 00c51540 ////
+//// FUNCTION Dtor_00c51540 @ 00c51540 ////
 
-void __fastcall FUN_00c51540(undefined4 *param_1)
+void __fastcall Dtor_00c51540(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacf58;
@@ -8533,9 +8533,9 @@ void __fastcall FUN_00c51540(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c51550 @ 00c51550 ////
+//// FUNCTION Ctor_vt00dacf90_00c51550 @ 00c51550 ////
 
-undefined4 * __fastcall FUN_00c51550(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dacf90_00c51550(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacf58;
@@ -8550,7 +8550,7 @@ undefined4 * __fastcall FUN_00c51550(undefined4 *param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c51570(void *this,byte param_1)
 
 {
-  FUN_00c51540(this);
+  Dtor_00c51540(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -8564,7 +8564,7 @@ undefined4 * __thiscall ScalarDeletingDtor_00c51570(void *this,byte param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c51590(void *this,byte param_1)
 
 {
-  FUN_00c51260(this);
+  Dtor_00c51260(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -8843,9 +8843,9 @@ void __fastcall FUN_00c51ab0(int param_1)
 }
 
 
-//// FUNCTION FUN_00c51b30 @ 00c51b30 ////
+//// FUNCTION Dtor_00c51b30 @ 00c51b30 ////
 
-void __fastcall FUN_00c51b30(undefined4 *param_1)
+void __fastcall Dtor_00c51b30(undefined4 *param_1)
 
 {
   void *local_c;
@@ -8866,7 +8866,7 @@ void __fastcall FUN_00c51b30(undefined4 *param_1)
   param_1[8] = &PTR_LAB_00dacff0;
   FUN_00bcffc0(param_1 + 9);
   local_4 = (uint)local_4._1_3_ << 8;
-  FUN_00bcf880(param_1 + 1);
+  Dtor_00bcf880(param_1 + 1);
   *param_1 = &PTR_LAB_00d9e7a0;
   ExceptionList = local_c;
   return;
@@ -8926,9 +8926,9 @@ void __fastcall FUN_00c51be0(int param_1)
 }
 
 
-//// FUNCTION FUN_00c51c70 @ 00c51c70 ////
+//// FUNCTION Ctor_vt00dad040_00c51c70 @ 00c51c70 ////
 
-undefined4 * __thiscall FUN_00c51c70(void *this,undefined4 param_1,undefined4 param_2)
+undefined4 * __thiscall Ctor_vt00dad040_00c51c70(void *this,undefined4 param_1,undefined4 param_2)
 
 {
   void *local_c;
@@ -8984,9 +8984,9 @@ int * __fastcall FUN_00c51d50(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c51ea0 @ 00c51ea0 ////
+//// FUNCTION Dtor_00c51ea0 @ 00c51ea0 ////
 
-void __fastcall FUN_00c51ea0(undefined4 *param_1)
+void __fastcall Dtor_00c51ea0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacff0;
@@ -8995,9 +8995,9 @@ void __fastcall FUN_00c51ea0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c51f50 @ 00c51f50 ////
+//// FUNCTION Ctor_vt00dacff0_00c51f50 @ 00c51f50 ////
 
-undefined4 * __fastcall FUN_00c51f50(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dacff0_00c51f50(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacff0;
@@ -9011,7 +9011,7 @@ undefined4 * __fastcall FUN_00c51f50(undefined4 *param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c51f70(void *this,byte param_1)
 
 {
-  FUN_00c51ea0(this);
+  Dtor_00c51ea0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -9020,9 +9020,9 @@ undefined4 * __thiscall ScalarDeletingDtor_00c51f70(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c51f90 @ 00c51f90 ////
+//// FUNCTION Dtor_00c51f90 @ 00c51f90 ////
 
-void __fastcall FUN_00c51f90(undefined4 *param_1)
+void __fastcall Dtor_00c51f90(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacff0;
@@ -9031,9 +9031,9 @@ void __fastcall FUN_00c51f90(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c51fa0 @ 00c51fa0 ////
+//// FUNCTION Ctor_vt00dad018_00c51fa0 @ 00c51fa0 ////
 
-undefined4 * __fastcall FUN_00c51fa0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dad018_00c51fa0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00dacff0;
@@ -9048,7 +9048,7 @@ undefined4 * __fastcall FUN_00c51fa0(undefined4 *param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c51fc0(void *this,byte param_1)
 
 {
-  FUN_00c51f90(this);
+  Dtor_00c51f90(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -9062,7 +9062,7 @@ undefined4 * __thiscall ScalarDeletingDtor_00c51fc0(void *this,byte param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c51fe0(void *this,byte param_1)
 
 {
-  FUN_00c51b30(this);
+  Dtor_00c51b30(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -9175,11 +9175,11 @@ int __fastcall FUN_00c52170(int param_1)
   *(undefined4 *)(param_1 + 0x10) = 0;
   *(undefined4 *)(param_1 + 0x14) = 0;
   *(undefined4 *)(param_1 + 0x18) = 0;
-  FUN_00be1e00((undefined4 *)(param_1 + 0x20));
+  Ctor_vt00d9feb8_00be1e00((undefined4 *)(param_1 + 0x20));
   local_4 = 0;
-  FUN_00be1e00((undefined4 *)(param_1 + 0x28));
+  Ctor_vt00d9feb8_00be1e00((undefined4 *)(param_1 + 0x28));
   local_4 = CONCAT31(local_4._1_3_,1);
-  FUN_00be1e00((undefined4 *)(param_1 + 0x30));
+  Ctor_vt00d9feb8_00be1e00((undefined4 *)(param_1 + 0x30));
   ExceptionList = local_c;
   return param_1;
 }
@@ -9190,7 +9190,7 @@ int __fastcall FUN_00c52170(int param_1)
 undefined4 * __fastcall FUN_00c521d0(undefined4 *param_1)
 
 {
-  FUN_00be1e00(param_1);
+  Ctor_vt00d9feb8_00be1e00(param_1);
   return param_1;
 }
 
@@ -9292,7 +9292,7 @@ void __thiscall FUN_00c52270(void *this,int param_1,int param_2,int param_3)
   ExceptionList = &pvStack_c;
   FUN_00c52170((int)local_94);
   local_4 = 0;
-  FUN_00be1e00(local_20);
+  Ctor_vt00d9feb8_00be1e00(local_20);
   local_4 = 1;
   piVar1 = (int *)FUN_00c52240((int)&local_98);
   (**(code **)(*piVar1 + 8))(param_1);
@@ -9301,7 +9301,7 @@ void __thiscall FUN_00c52270(void *this,int param_1,int param_2,int param_3)
   piVar1[3] = param_2;
   FUN_00c52250((int)this);
   pvStack_c = (void *)0x2;
-  FUN_00be1f10(auStack_28);
+  Dtor_00be1f10(auStack_28);
   pvStack_c = (void *)0xffffffff;
   FUN_00bcb500((int)&stack0xffffff64);
   ExceptionList = pvStack_14;
@@ -9332,7 +9332,7 @@ FUN_00c52350(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   ExceptionList = &pvStack_c;
   FUN_00c52170((int)local_94);
   local_4 = 0;
-  FUN_00be1e00(local_20);
+  Ctor_vt00d9feb8_00be1e00(local_20);
   local_4 = 1;
   puVar1 = (undefined4 *)FUN_00c52200((int)&local_98);
   *puVar1 = param_1;
@@ -9341,7 +9341,7 @@ FUN_00c52350(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   puVar1[3] = param_4;
   FUN_00c52250((int)this);
   puStack_8 = (undefined1 *)0x2;
-  FUN_00be1f10(&uStack_24);
+  Dtor_00be1f10(&uStack_24);
   puStack_8 = (undefined1 *)0xffffffff;
   FUN_00bcb500((int)&local_98);
   ExceptionList = pvStack_10;
@@ -9372,7 +9372,7 @@ FUN_00c52420(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   ExceptionList = &pvStack_c;
   FUN_00c52170((int)local_94);
   local_4 = 0;
-  FUN_00be1e00(local_20);
+  Ctor_vt00d9feb8_00be1e00(local_20);
   local_4 = 1;
   puVar1 = (undefined4 *)FUN_00c52220((int)&local_98);
   *puVar1 = param_1;
@@ -9381,7 +9381,7 @@ FUN_00c52420(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   puVar1[3] = param_4;
   FUN_00c52250((int)this);
   puStack_8 = (undefined1 *)0x2;
-  FUN_00be1f10(&uStack_24);
+  Dtor_00be1f10(&uStack_24);
   puStack_8 = (undefined1 *)0xffffffff;
   FUN_00bcb500((int)&local_98);
   ExceptionList = pvStack_10;
@@ -9411,14 +9411,14 @@ void __thiscall FUN_00c524f0(void *this,undefined4 param_1,undefined4 param_2)
   ExceptionList = &pvStack_c;
   FUN_00c52170((int)local_94);
   local_4 = 0;
-  FUN_00be1e00(local_20);
+  Ctor_vt00d9feb8_00be1e00(local_20);
   local_4 = 1;
   puVar1 = (undefined4 *)FUN_00c52210((int)&local_98);
   *puVar1 = param_1;
   puVar1[1] = param_2;
   FUN_00c52250((int)this);
   puStack_8 = (undefined1 *)0x2;
-  FUN_00be1f10(&uStack_24);
+  Dtor_00be1f10(&uStack_24);
   puStack_8 = (undefined1 *)0xffffffff;
   FUN_00bcb500((int)&local_98);
   ExceptionList = pvStack_10;
@@ -9448,13 +9448,13 @@ void __thiscall FUN_00c525b0(void *this,undefined4 param_1)
   ExceptionList = &pvStack_c;
   FUN_00c52170((int)local_94);
   local_4 = 0;
-  FUN_00be1e00(local_20);
+  Ctor_vt00d9feb8_00be1e00(local_20);
   local_4 = 1;
   puVar1 = (undefined4 *)FUN_00c52230((int)&local_98);
   *puVar1 = param_1;
   FUN_00c52250((int)this);
   puStack_8 = (undefined1 *)0x2;
-  FUN_00be1f10(&uStack_24);
+  Dtor_00be1f10(&uStack_24);
   puStack_8 = (undefined1 *)0xffffffff;
   FUN_00bcb500((int)&local_98);
   ExceptionList = pvStack_10;
@@ -9490,7 +9490,7 @@ FUN_00c52660(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   FUN_00c52170((int)local_94);
   local_4 = 0;
   uStack_a4 = 0xc526a8;
-  FUN_00be1e00(&local_20);
+  Ctor_vt00d9feb8_00be1e00(&local_20);
   local_4 = 1;
   uStack_a4 = 0xc526b8;
   puVar1 = (undefined4 *)FUN_00c521e0((int)&local_98);
@@ -9511,7 +9511,7 @@ FUN_00c52660(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   puVar1[0x10] = param_8;
   FUN_00c52250((int)this);
   uStack_14 = 2;
-  FUN_00be1f10(auStack_30);
+  Dtor_00be1f10(auStack_30);
   uStack_14 = 0xffffffff;
   FUN_00bcb500((int)&uStack_a4);
   ExceptionList = pvStack_1c;
@@ -9541,13 +9541,13 @@ void __thiscall FUN_00c527b0(void *this,undefined4 param_1)
   ExceptionList = &pvStack_c;
   FUN_00c52170((int)local_94);
   local_4 = 0;
-  FUN_00be1e00(local_20);
+  Ctor_vt00d9feb8_00be1e00(local_20);
   local_4 = 1;
   puVar1 = (undefined4 *)FUN_00c521f0((int)&local_98);
   *puVar1 = param_1;
   FUN_00c52250((int)this);
   puStack_8 = (undefined1 *)0x2;
-  FUN_00be1f10(&uStack_24);
+  Dtor_00be1f10(&uStack_24);
   puStack_8 = (undefined1 *)0xffffffff;
   FUN_00bcb500((int)&local_98);
   ExceptionList = pvStack_10;
@@ -9576,11 +9576,11 @@ void __fastcall FUN_00c52860(int param_1)
   ExceptionList = &pvStack_c;
   FUN_00c52170((int)local_94);
   local_4 = 0;
-  FUN_00be1e00(local_20);
+  Ctor_vt00d9feb8_00be1e00(local_20);
   local_4 = 1;
   FUN_00c52250(param_1);
   puStack_8 = (undefined1 *)0x2;
-  FUN_00be1f10(&uStack_24);
+  Dtor_00be1f10(&uStack_24);
   puStack_8 = (undefined1 *)0xffffffff;
   FUN_00bcb500((int)&local_98);
   ExceptionList = pvStack_10;
@@ -9678,7 +9678,7 @@ void __fastcall FUN_00c52900(int param_1)
       if ((((int)puVar3 < 1) || ((int)puVar4 < 1)) || ((int)puVar7 < 0)) {
         local_dc[0] = 0;
         if (this_00 != (undefined **)0x0) {
-          FUN_00bf7b80((int *)this_00);
+          Dtor_00bf7b80((int *)this_00);
                     /* WARNING: Subroutine does not return */
           _free(this_00);
         }
@@ -9696,7 +9696,7 @@ void __fastcall FUN_00c52900(int param_1)
     case 2:
       puVar8 = (undefined4 *)FUN_00c521f0((int)&local_a8);
       if (this_00 != (undefined **)0x0) {
-        FUN_00bf7b80((int *)this_00);
+        Dtor_00bf7b80((int *)this_00);
                     /* WARNING: Subroutine does not return */
         _free(this_00);
       }
@@ -9819,13 +9819,13 @@ LAB_00c52a92:
       }
     }
     local_c._0_1_ = 5;
-    FUN_00be1f10(local_30);
+    Dtor_00be1f10(local_30);
     local_c._0_1_ = 7;
-    FUN_00be1f10(local_74);
+    Dtor_00be1f10(local_74);
     local_c._0_1_ = 6;
-    FUN_00be1f10(local_7c);
+    Dtor_00be1f10(local_7c);
     local_c = (uint)local_c._1_3_ << 8;
-    FUN_00be1f10(local_84);
+    Dtor_00be1f10(local_84);
     if (local_104 != (int *)0x0) {
       (**(code **)(*local_104 + 4))(local_100);
       puStack_10 = (undefined1 *)0xffffffff;
@@ -9839,13 +9839,13 @@ LAB_00c52a92:
 }
 
 
-//// FUNCTION FUN_00c52e30 @ 00c52e30 ////
+//// FUNCTION Ctor_vt00dad088_00c52e30 @ 00c52e30 ////
 
-undefined4 * __fastcall FUN_00c52e30(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dad088_00c52e30(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00dad088;
-  FUN_00c53300(param_1 + 1);
+  Ctor_vt00dad064_00c53300(param_1 + 1);
   return param_1;
 }
 
@@ -9856,7 +9856,7 @@ void __fastcall FUN_00c52e50(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00dad088;
-  FUN_00c533e0(param_1 + 1);
+  Dtor_00c533e0(param_1 + 1);
   return;
 }
 
@@ -9884,7 +9884,7 @@ undefined4 * __fastcall FUN_00c52e60(undefined4 *param_1)
   local_c = ExceptionList;
   ExceptionList = &local_c;
   local_114 = param_1;
-  FUN_00c52e30(param_1);
+  Ctor_vt00dad088_00c52e30(param_1);
   local_4 = 0;
   param_1[0xd] = 0;
   local_120[1] = 0;
@@ -9934,7 +9934,7 @@ void __fastcall FUN_00c52f80(undefined4 *param_1)
   local_4 = 0;
   if (_Memory != (void *)0x0) {
     ExceptionList = &pvStack_c;
-    FUN_00bed120(_Memory);
+    Dtor_00bed120(_Memory);
                     /* WARNING: Subroutine does not return */
     _free(_Memory);
   }
@@ -9952,7 +9952,7 @@ void __fastcall FUN_00c52f80(undefined4 *param_1)
 int * __thiscall ScalarDeletingDtor_00c52ff0(void *this,byte param_1)
 
 {
-  FUN_00bf7b80(this);
+  Dtor_00bf7b80(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -9992,11 +9992,11 @@ undefined4 * __thiscall FUN_00c53060(void *this,undefined4 *param_1)
   *(undefined4 *)((int)this + 0x14) = param_1[5];
   *(undefined4 *)((int)this + 0x18) = param_1[6];
   *(undefined1 *)((int)this + 0x1c) = *(undefined1 *)(param_1 + 7);
-  FUN_00be2070((void *)((int)this + 0x20),(int)(param_1 + 8));
+  Ctor_vt00d9feb8_00be2070((void *)((int)this + 0x20),(int)(param_1 + 8));
   local_4 = 0;
-  FUN_00be2070((void *)((int)this + 0x28),(int)(param_1 + 10));
+  Ctor_vt00d9feb8_00be2070((void *)((int)this + 0x28),(int)(param_1 + 10));
   local_4 = CONCAT31(local_4._1_3_,1);
-  FUN_00be2070((void *)((int)this + 0x30),(int)(param_1 + 0xc));
+  Ctor_vt00d9feb8_00be2070((void *)((int)this + 0x30),(int)(param_1 + 0xc));
   *(undefined4 *)((int)this + 0x38) = param_1[0xe];
   *(undefined4 *)((int)this + 0x3c) = param_1[0xf];
   *(undefined4 *)((int)this + 0x40) = param_1[0x10];
@@ -10021,7 +10021,7 @@ undefined4 * __fastcall FUN_00c53150(undefined4 *param_1)
   *param_1 = 0;
   FUN_00c52170((int)(param_1 + 1));
   local_4 = 0;
-  FUN_00be1e00(param_1 + 0x1e);
+  Ctor_vt00d9feb8_00be1e00(param_1 + 0x1e);
   ExceptionList = local_c;
   return param_1;
 }
@@ -10043,7 +10043,7 @@ undefined4 * __thiscall FUN_00c531a0(void *this,undefined4 param_1)
   *(undefined4 *)this = param_1;
   FUN_00c52170((int)this + 4);
   local_4 = 0;
-  FUN_00be1e00((undefined4 *)((int)this + 0x78));
+  Ctor_vt00d9feb8_00be1e00((undefined4 *)((int)this + 0x78));
   ExceptionList = local_c;
   return this;
 }
@@ -10077,7 +10077,7 @@ undefined4 * __thiscall FUN_00c531f0(void *this,undefined4 *param_1)
   *(undefined4 *)((int)this + 0x70) = param_1[0x1c];
   *(undefined4 *)((int)this + 0x74) = param_1[0x1d];
   local_4 = 0;
-  FUN_00be2070((void *)((int)this + 0x78),(int)(param_1 + 0x1e));
+  Ctor_vt00d9feb8_00be2070((void *)((int)this + 0x78),(int)(param_1 + 0x1e));
   *(undefined4 *)((int)this + 0x80) = param_1[0x20];
   *(undefined4 *)((int)this + 0x84) = param_1[0x21];
   *(undefined4 *)((int)this + 0x88) = param_1[0x22];
@@ -10086,9 +10086,9 @@ undefined4 * __thiscall FUN_00c531f0(void *this,undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c53300 @ 00c53300 ////
+//// FUNCTION Ctor_vt00dad064_00c53300 @ 00c53300 ////
 
-undefined4 * __fastcall FUN_00c53300(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dad064_00c53300(undefined4 *param_1)
 
 {
   void *local_c;
@@ -10148,9 +10148,9 @@ bool __fastcall FUN_00c533b0(int param_1)
 }
 
 
-//// FUNCTION FUN_00c533e0 @ 00c533e0 ////
+//// FUNCTION Dtor_00c533e0 @ 00c533e0 ////
 
-void __fastcall FUN_00c533e0(undefined4 *param_1)
+void __fastcall Dtor_00c533e0(undefined4 *param_1)
 
 {
   void *pvVar1;
@@ -10210,7 +10210,7 @@ void * __fastcall FUN_00c53470(int *param_1)
   ExceptionList = &pvStack_c;
   FUN_00c52170((int)local_198);
   local_4 = (void *)0x1;
-  FUN_00be1e00(local_124);
+  Ctor_vt00d9feb8_00be1e00(local_124);
   local_4 = (void *)0x2;
   cVar2 = (**(code **)(*param_1 + 8))(&local_19c,0);
   if (cVar2 == '\0') {
@@ -10233,7 +10233,7 @@ void * __fastcall FUN_00c53470(int *param_1)
   pvVar1 = local_4;
   FUN_00c531f0(local_4,&uStack_1a4);
   pvStack_c = (void *)0x4;
-  FUN_00be1f10(auStack_12c);
+  Dtor_00be1f10(auStack_12c);
   pvStack_c = (void *)((uint)pvStack_c & 0xffffff00);
   FUN_00bcb500((int)&local_1a0);
   ExceptionList = pvStack_14;
@@ -10301,7 +10301,7 @@ void __thiscall FUN_00c535e0(void *this,int param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c53750(void *this,byte param_1)
 
 {
-  FUN_00c533e0(this);
+  Dtor_00c533e0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -10580,9 +10580,9 @@ void __fastcall FUN_00c53bd0(int param_1)
 }
 
 
-//// FUNCTION FUN_00c53bf0 @ 00c53bf0 ////
+//// FUNCTION Dtor_00c53bf0 @ 00c53bf0 ////
 
-void __fastcall FUN_00c53bf0(undefined4 *param_1)
+void __fastcall Dtor_00c53bf0(undefined4 *param_1)
 
 {
   *param_1 = &PTR_FUN_00dad0bc;
@@ -10733,9 +10733,9 @@ void __thiscall FUN_00c53ce0(void *this,int param_1,undefined4 param_2,undefined
 }
 
 
-//// FUNCTION FUN_00c53f20 @ 00c53f20 ////
+//// FUNCTION Ctor_vt00dad0bc_00c53f20 @ 00c53f20 ////
 
-undefined4 * __thiscall FUN_00c53f20(void *this,int param_1,undefined4 param_2,undefined4 param_3)
+undefined4 * __thiscall Ctor_vt00dad0bc_00c53f20(void *this,int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   void *local_c;
@@ -10778,7 +10778,7 @@ void __thiscall FUN_00c53f90(void *this,int param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c54020(void *this,byte param_1)
 
 {
-  FUN_00c53bf0(this);
+  Dtor_00c53bf0(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -10859,10 +10859,10 @@ int __fastcall FUN_00c54190(int param_1)
 }
 
 
-//// FUNCTION FUN_00c54320 @ 00c54320 ////
+//// FUNCTION Ctor_vt00dad260_00c54320 @ 00c54320 ////
 
 undefined4 * __thiscall
-FUN_00c54320(void *this,int *param_1,undefined4 param_2,undefined4 param_3,int param_4,
+Ctor_vt00dad260_00c54320(void *this,int *param_1,undefined4 param_2,undefined4 param_3,int param_4,
             undefined4 param_5,undefined4 param_6)
 
 {
@@ -10903,7 +10903,7 @@ FUN_00c54320(void *this,int *param_1,undefined4 param_2,undefined4 param_3,int p
   local_4 = 0;
   *(undefined4 *)((int)this + 0xc) = 0;
   local_11c = this;
-  FUN_00c549d0((PRTL_CRITICAL_SECTION_DEBUG)((int)this + 0x10),param_4);
+  Ctor_vt00dad1cc_00c549d0((PRTL_CRITICAL_SECTION_DEBUG)((int)this + 0x10),param_4);
   local_4._0_1_ = 1;
   FUN_00c54850((void *)((int)this + 0x24),(PRTL_CRITICAL_SECTION_DEBUG)((int)this + 0x10),param_4);
   *(int *)((int)this + 0x44) = param_4;
@@ -10937,7 +10937,7 @@ FUN_00c54320(void *this,int *param_1,undefined4 param_2,undefined4 param_3,int p
         local_14c = (undefined4 *)0x0;
       }
       else {
-        local_14c = FUN_00c53f20(local_120,*(int *)((int)this + 0x4c),param_5,
+        local_14c = Ctor_vt00dad0bc_00c53f20(local_120,*(int *)((int)this + 0x4c),param_5,
                                  *(undefined4 *)((int)this + 0x48));
       }
       local_4 = CONCAT31(local_4._1_3_,2);
@@ -10996,9 +10996,9 @@ void __fastcall FUN_00c54600(int param_1)
 }
 
 
-//// FUNCTION FUN_00c54610 @ 00c54610 ////
+//// FUNCTION Dtor_00c54610 @ 00c54610 ////
 
-void __fastcall FUN_00c54610(undefined4 *param_1)
+void __fastcall Dtor_00c54610(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
@@ -11178,9 +11178,9 @@ undefined4 __fastcall FUN_00c54950(LPCRITICAL_SECTION param_1)
 }
 
 
-//// FUNCTION FUN_00c549d0 @ 00c549d0 ////
+//// FUNCTION Ctor_vt00dad1cc_00c549d0 @ 00c549d0 ////
 
-undefined4 * __thiscall FUN_00c549d0(void *this,int param_1)
+undefined4 * __thiscall Ctor_vt00dad1cc_00c549d0(void *this,int param_1)
 
 {
   void *pvVar1;
@@ -11265,7 +11265,7 @@ undefined4 __fastcall FUN_00c54bf0(LPCRITICAL_SECTION param_1)
 undefined4 * __thiscall ScalarDeletingDtor_00c54d10(void *this,byte param_1)
 
 {
-  FUN_00c54610(this);
+  Dtor_00c54610(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);
@@ -21657,12 +21657,12 @@ void __thiscall FUN_00c63ba0(void *this,int param_1,int param_2,float param_3)
 }
 
 
-//// FUNCTION FUN_00c641d0 @ 00c641d0 ////
+//// FUNCTION Ctor_vt00dad424_00c641d0 @ 00c641d0 ////
 
-undefined4 * __fastcall FUN_00c641d0(undefined4 *param_1)
+undefined4 * __fastcall Ctor_vt00dad424_00c641d0(undefined4 *param_1)
 
 {
-  FUN_00c49740(param_1);
+  Ctor_vt00da6ce8_00c49740(param_1);
   param_1[0x47] = param_1 + 0x4a;
   *param_1 = &PTR_LAB_00dad424;
   param_1[0x49] = param_1 + 0x5a;
