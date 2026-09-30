@@ -271,6 +271,24 @@ What the shared code is: a dynamic OpenAL wrapper (`alcCreateContext`, `alSource
 
 **Limits.** The size and body signals only see the shared library. Fable's dumps hold about 9,300 bodies out of about 49,600 functions, so functions without a dumped body can only be matched by size runs. The 3,700 unmatched functions in our window may be Movies-specific or may be shared code that neither signal can catch.
 
+## libogg and libvorbis inside the binary
+
+The binary statically links **libogg (1.1-era)** and parts of **libvorbis 1.0.1 (`Xiph.Org libVorbis I 20030909`)**. I named them by reading the code next to the upstream sources (`xiph/ogg` tag `v1.1.1`, `xiph/vorbis` tag `v1.0.1`). The Fable hint names (`CBitstream::WriteBits`, `FFT_Radix4Transform`, `MDCT_Analysis`, ...) turned out to be its automatic guesses for these same functions, so the real names replace them. Function order follows the source files, which made the mapping reliable; each name was confirmed by a distinguishing constant, string or call pattern.
+
+**libogg** (40 names, `renames.csv`):
+- `framing.c`: `ogg_page_*` accessors, `ogg_stream_init/clear/destroy/reset/reset_serialno`, `_os_body_expand`, `_os_lacing_expand`, `ogg_page_checksum_set` (`00c327e0`), `ogg_stream_packetin`, `ogg_stream_flush` (the `"OggS"` header writer), `ogg_stream_pageout`, `ogg_stream_pagein`, `_packetout`, `ogg_stream_packetout/peek`, and `ogg_sync_init/clear/destroy/buffer/wrote/pageseek/reset`.
+- `bitwise.c`: `oggpack_writeinit/write/writealign/reset/writeclear`, `oggpackB_write`, `oggpack_readinit/look/adv/read/bytes`, using a 33-entry mask table at `0xf77f78`.
+
+**libvorbis** (69 names):
+- `info.c` in full: comment functions, `vorbis_info_init/clear`, the three `_vorbis_unpack_*` and `_vorbis_pack_*` functions, `vorbis_synthesis_headerin` (`00c301a0`), `vorbis_commentheader_out` and `vorbis_analysis_headerout`. The vendor string `"Xiph.Org libVorbis I 20030909"` is written by `_vorbis_pack_comment` (`00c30370`).
+- `sharedbook.c` and `codebook.c`: `_ilog`, `_float32_unpack`, `_make_words`, `_book_maptype1_quantvals`, `_book_unquantize`, static book clear/destroy, `vorbis_book_init_encode/init_decode/clear`, `_dist`, `_best`, bit reversal, `vorbis_staticbook_pack/unpack` (the `"BCV"` `0x564342` sync pattern), `vorbis_book_encode/errorv/decode`, `decodevs_add`, `decodev_set`, `decodevv_add`.
+- `smallft.c`: `drfti1`, `fdrffti`, `dradf2/4/g`, `drftf1`, `dradb2/3/4/g`, `drftb1`, `drft_forward`. Verified through the call structure of `drftf1` and `drftb1`, and the `{4,2,3,5}` factor table.
+- `mdct.c`: `mdct_init`, the 8/16/32-point butterflies, `butterfly_first`, `butterfly_generic`, `butterflies`, `mdct_clear`, `mdct_bitreverse`, `mdct_backward`, `mdct_forward`.
+
+**What is not there.** I found no `floor1` dB lookup table and nothing I could tie to floor, residue, mapping, windowing or psychoacoustic code, so those parts of libvorbis appear not to be linked. That was not exhaustively ruled out. The game's own codec layer (`LLACoda*`, `LHACodecsOggVorbisCCodecInstance`, `OggVorbisLibWrapper.cpp`) calls into the pieces above. For example `00c609a0` builds a 128-point `mdct_init` inside Lionhead's own code.
+
+**Other find.** `00bba8c0` (`CodecFormat_DetectFromHeader`) sniffs the first 4 bytes of an audio file to choose a codec: `"OggS"` selects Ogg, `"RIFF"` selects MPEG-2 Layer II (fmt tag `0x50`) or Xbox ADPCM (`0x69`), and `0x75b22630` selects WMA.
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
 - `.pak` entry layout (name/hash, offset, size, compression) and how a lookup by path finds an entry; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
