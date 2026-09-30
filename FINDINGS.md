@@ -43,7 +43,29 @@ So each scripted era value pulls a genre's popularity away from neutral, and the
 
 Not yet done: the DJ-era selection logic, and where the clip-name to event-name mapping data is loaded from.
 
+## Save/load framework (SLVAR / SLREGISTER)
+
+Re-checked against the export; the earlier conclusions hold.
+
+- `Savegame_SaveToDisk` (`004b37e0`), `Savegame_LoadFromDisk` (`004b2b40`, `decomp_0007.c`). Global `DAT_010583e0` is the direction flag (0 = write, 1 = read). The load path sets it to 1 and reads bracketed text sections in order: `[HEADER]`, `[STATICS]`, `[OBJECTS]`. It compares the save version against the literal `"ver17"`.
+- **`[STATICS]`:** `SLVAR_LoadOrSaveStatics` (`0098d400`, `decomp_0043.c`) processes static vars, static lists and static arrays, matching the log strings `" Static vars"`, `" Static lists"`, `" Static arrays"`. Static vars carry a type tag 0-6, dispatched through a `switch`.
+- **`[OBJECTS]`:** each object is written with its type name, then a factory lookup by name. If the name is unknown, the log says `"Failed To match type when loading ... Attempting to scan past. Have you SLREGISTERed it?"` (`decomp_0043.c:4876`), and loading skips forward instead of failing. So the framework's registration macro is `SLREGISTER`.
+- The registry of registered classes is filled by static constructors at startup, so it can't be listed statically.
+
+## Star Maker integration
+
+- `Game_CheckStarMakerNotRunning` at `00542aa0`: the export has the `"LionheadStudiosTheStarMaker"` mutex (`decomp_0011.c:6793`, `CreateMutexA`). The function is unnamed in this export, so check its address.
+- `Game_InitUserDataFolders` (`0056bd80`) builds the `My Documents\The Movies\` folder tree (including `Starmaker\`).
+
+## Rival studio AI (`CStudioAI`)
+
+All present in the export: `CStudioAI_CreateGlobalInstance` (`0041f4e0`), `CStudioAI_LoadTuningData` (`00515e00`), `CStudioAI_CreateRandomNew` (`00517a40`), `CStudioAI_SpawnDueRivalsAndScheduleDates` (`00510440`). Rival studios spawn from templates once their opening date has passed. `CStudioAI_CreateRandomNew` picks one of 6 random personalities, and a template spawn triggers the `TANNOY_NEW_STUDIOOPENED` announcement.
+
+## Disabled developer console
+
+`CVarSystem_Register_STUBBED` (`005434a0`, `decomp_0011.c`) is a stub in the retail build. Over 100 debug commands (`sbx_*`, `awd_*`, `gnd_*`, `sitt_*`, `ee_*`, `ass_*`) register through it and are inert.
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
-- `.lug`/`.met` audio banks, `.msh`, `.pak`.
-- Restore the Star Maker, `CStudioAI` and SLVAR/SLREGISTER serialization notes from git history (`git show 9b29b4e:FINDINGS.md`), re-checking each against the export.
+- `.lug`/`.met` audio banks (`LH_LoadLUGAsset` `00c009c0`, magic `"LiOnHeAd"` in `decomp_0064.c`), `.msh`, `.pak`.
+- Details of the older notes (SLVAR type functions, `CSystem`, the RTTI class list) can still be pulled from `git show 9b29b4e:FINDINGS.md`.
