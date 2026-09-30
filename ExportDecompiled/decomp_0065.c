@@ -3188,7 +3188,7 @@ uint __thiscall FUN_00c1ca60(void *this,int param_1)
   uint uVar1;
   uint uVar2;
   
-  uVar1 = FUN_00be6590(param_1);
+  uVar1 = LH_Archive_TransferU32(param_1);
   if ((char)uVar1 == '\0') {
     return uVar1;
   }
@@ -3196,7 +3196,7 @@ uint __thiscall FUN_00c1ca60(void *this,int param_1)
   uVar1 = 0;
   if (*(uint *)((int)this + 4) != 0) {
     do {
-      uVar1 = FUN_00be6590(param_1);
+      uVar1 = LH_Archive_TransferU32(param_1);
       if ((char)uVar1 == '\0') {
         return uVar1 & 0xffffff00;
       }
@@ -3216,7 +3216,7 @@ uint __thiscall FUN_00c1caf0(void *this,int param_1)
   uint uVar1;
   uint uVar2;
   
-  uVar1 = FUN_00be6590(param_1);
+  uVar1 = LH_Archive_TransferU32(param_1);
   if ((char)uVar1 == '\0') {
     return uVar1;
   }
@@ -3293,7 +3293,7 @@ undefined4 __thiscall FUN_00c1cc90(void *this,int param_1)
   
   uVar2 = FUN_00c1ca60(this,param_1);
   if ((char)uVar2 != '\0') {
-    bVar1 = FUN_00bbfe60(param_1,(int *)((int)this + 8));
+    bVar1 = LH_Archive_SerializeString(param_1,(int *)((int)this + 8));
     if (bVar1) {
       uVar2 = FUN_00c1ca60((void *)((int)this + 0x10),param_1);
       if ((char)uVar2 != '\0') {
@@ -5145,7 +5145,7 @@ void __fastcall FUN_00c1f9f0(int *param_1)
   local_c = ExceptionList;
   local_4 = 3;
   ExceptionList = &local_c;
-  iVar1 = FUN_00bbea70(param_1 + 0xd);
+  iVar1 = PKString_GetLength(param_1 + 0xd);
   if (iVar1 != 0) {
     FUN_00bcff70((void *)(*param_1 + 0x20),(int *)(*param_1 + 0x1c),(int)param_1);
   }
@@ -5208,7 +5208,7 @@ FUN_00c1fac0(void *this,int param_1,int param_2,int param_3,int *param_4,char *p
   FUN_00bcfac0((void *)(*(int *)this + 0x14),(int *)(*(int *)this + 0x10),(int)this);
   *(uint *)((int)this + 0x28) = (uint)(param_4[3] != 0);
   FUN_00bbfaa0(this_00,param_5);
-  iVar1 = FUN_00bbea70(this_00);
+  iVar1 = PKString_GetLength(this_00);
   if (iVar1 != 0) {
     FUN_00bcfac0((void *)(*(int *)this + 0x20),(int *)(*(int *)this + 0x1c),(int)this);
   }

@@ -9737,11 +9737,11 @@ undefined4 LH_IsNormalLUG(void)
   ExceptionList = &local_c;
   uVar2 = std__String__Constructor(local_1c,0xd9f374);
   local_4 = 0;
-  bVar1 = FUN_00c0a700(unaff_ESI,uVar2);
+  bVar1 = CLHSegmentReader_HasSegment(unaff_ESI,uVar2);
   if (bVar1) {
     uVar2 = std__String__Constructor(local_14,0xd9f1d4);
     local_4 = 1;
-    bVar1 = FUN_00c0a700(unaff_ESI,uVar2);
+    bVar1 = CLHSegmentReader_HasSegment(unaff_ESI,uVar2);
     if (bVar1) {
       ExceptionList = local_c;
       return 1;
@@ -9776,7 +9776,7 @@ void LH_LoadGlobalProperties(int *param_1,undefined4 *param_2)
   ExceptionList = &local_c;
   uVar1 = std__String__Constructor(local_2c,0xd9f1bc);
   local_4 = 0;
-  uVar1 = FUN_00c0a7d0(unaff_ESI,param_1,uVar1);
+  uVar1 = CLHSegmentReader_CacheSegment(unaff_ESI,param_1,uVar1);
   local_4 = 0xffffffff;
   if ((char)uVar1 == '\0') {
     FUN_00c06940(param_2);
@@ -9785,7 +9785,7 @@ void LH_LoadGlobalProperties(int *param_1,undefined4 *param_2)
   }
   uVar1 = std__String__Constructor(local_3c,0xd9f1bc);
   local_4 = 1;
-  piVar2 = (int *)FUN_00c0a750(unaff_ESI,uVar1);
+  piVar2 = (int *)CLHSegmentReader_GetCachedSegmentStream(unaff_ESI,uVar1);
   local_4 = 0xffffffff;
   local_3c[0] = &PTR_LAB_00d9d9b4;
   if (piVar2 == (int *)0x0) {
@@ -9796,7 +9796,7 @@ void LH_LoadGlobalProperties(int *param_1,undefined4 *param_2)
   }
   FUN_00bd9d00(local_24,piVar2);
   local_4 = 2;
-  FUN_00be6380(local_34,local_24);
+  LH_Archive_InitForLoading(local_34,local_24);
   uVar1 = LH_SerializeGlobalProperties(param_2,(int)local_34);
   if ((char)uVar1 == '\0') {
     pvVar3 = LH_BeginErrorMessage(unaff_EBX);
@@ -9830,7 +9830,7 @@ void __thiscall LH_ValidateFileBank(void *this,int *param_1)
   ExceptionList = &local_c;
   uVar1 = std__String__Constructor(local_14,0xd9f148);
   local_4 = 0;
-  uVar1 = FUN_00c0a7d0(this,param_1,uVar1);
+  uVar1 = CLHSegmentReader_CacheSegment(this,param_1,uVar1);
   local_4 = 0xffffffff;
   local_14[0] = &PTR_LAB_00d9d9b4;
   if ((char)uVar1 == '\0') {
@@ -9884,7 +9884,7 @@ void LH_OpenWavSegment(int param_1,void *param_2,undefined4 *param_3)
   ExceptionList = &local_c;
   uVar1 = std__String__Constructor(local_14,0xd9f374);
   local_4 = 0;
-  uVar1 = FUN_00c0a720(param_2,uVar1,param_3,&local_18);
+  uVar1 = CLHSegmentReader_GetSegmentOffsetAndSize(param_2,uVar1,param_3,&local_18);
   local_4 = 0xffffffff;
   local_14[0] = &PTR_LAB_00d9d9b4;
   if ((char)uVar1 == '\0') {
@@ -9920,12 +9920,12 @@ void LH_LoadRLMParams(int *param_1,void *param_2)
   ExceptionList = &local_c;
   uVar1 = std__String__Constructor(local_2c,0xd9f344);
   local_4 = 0;
-  uVar1 = FUN_00c0a7d0(unaff_ESI,param_1,uVar1);
+  uVar1 = CLHSegmentReader_CacheSegment(unaff_ESI,param_1,uVar1);
   local_4 = 0xffffffff;
   if ((char)uVar1 != '\0') {
     uVar1 = std__String__Constructor(local_3c,0xd9f344);
     local_4 = 1;
-    piVar2 = (int *)FUN_00c0a750(unaff_ESI,uVar1);
+    piVar2 = (int *)CLHSegmentReader_GetCachedSegmentStream(unaff_ESI,uVar1);
     local_4 = 0xffffffff;
     local_3c[0] = &PTR_LAB_00d9d9b4;
     if (piVar2 == (int *)0x0) {
@@ -9936,7 +9936,7 @@ void LH_LoadRLMParams(int *param_1,void *param_2)
     }
     FUN_00bd9d00(local_24,piVar2);
     local_4 = 2;
-    FUN_00be6380(local_34,local_24);
+    LH_Archive_InitForLoading(local_34,local_24);
     uVar1 = FUN_00c07320(param_2,(int)local_34);
     if ((char)uVar1 == '\0') {
       pvVar3 = LH_BeginErrorMessage(unaff_EBX);
@@ -10017,7 +10017,7 @@ void __fastcall LH_LoadSampleBankTable(void *param_1,void *param_2,int param_3,i
   ExceptionList = &local_c;
   uVar1 = std__String__Constructor(local_2c,0xd9f1d4);
   local_4 = 0;
-  uVar1 = FUN_00c0a7d0(param_2,param_4,uVar1);
+  uVar1 = CLHSegmentReader_CacheSegment(param_2,param_4,uVar1);
   local_4 = 0xffffffff;
   if ((char)uVar1 == '\0') {
     pvVar2 = LH_BeginErrorMessage(param_3);
@@ -10027,7 +10027,7 @@ void __fastcall LH_LoadSampleBankTable(void *param_1,void *param_2,int param_3,i
   }
   uVar1 = std__String__Constructor(local_34,0xd9f1d4);
   local_4 = 1;
-  piVar3 = (int *)FUN_00c0a750(param_2,uVar1);
+  piVar3 = (int *)CLHSegmentReader_GetCachedSegmentStream(param_2,uVar1);
   local_4 = 0xffffffff;
   local_34[0] = &PTR_LAB_00d9d9b4;
   if (piVar3 == (int *)0x0) {
@@ -10133,12 +10133,12 @@ void __thiscall LH_LoadBankCriteriaInfo(void *this,int param_1,int *param_2,void
   ExceptionList = &local_14;
   uVar3 = std__String__Constructor(local_38,0xd9f32c);
   local_c = 0;
-  uVar3 = FUN_00c0a7d0(this,param_2,uVar3);
+  uVar3 = CLHSegmentReader_CacheSegment(this,param_2,uVar3);
   local_c = 0xffffffff;
   if ((char)uVar3 != '\0') {
     uVar3 = std__String__Constructor(local_40,0xd9f32c);
     local_c = 1;
-    piVar4 = (int *)FUN_00c0a750(this,uVar3);
+    piVar4 = (int *)CLHSegmentReader_GetCachedSegmentStream(this,uVar3);
     local_c = 0xffffffff;
     local_40[0] = &PTR_LAB_00d9d9b4;
     if (piVar4 == (int *)0x0) {
@@ -10149,8 +10149,8 @@ void __thiscall LH_LoadBankCriteriaInfo(void *this,int param_1,int *param_2,void
     }
     FUN_00bd9d00(local_30,piVar4);
     local_c = 2;
-    FUN_00be6380(local_48,local_30);
-    cVar1 = FUN_00be6590((int)local_48);
+    LH_Archive_InitForLoading(local_48,local_30);
+    cVar1 = LH_Archive_TransferU32((int)local_48);
     if (cVar1 == '\0') {
       pvVar5 = LH_BeginErrorMessage(param_1);
       pcVar7 = "Could not read the number of criteria entries!";
@@ -10163,7 +10163,7 @@ LAB_00c001f9:
       if (local_4c != 0) {
         do {
           piVar4 = (int *)FUN_00c02cc0(param_3,uVar6);
-          bVar2 = FUN_00bbfe60((int)local_48,piVar4);
+          bVar2 = LH_Archive_SerializeString((int)local_48,piVar4);
           if (!bVar2) {
             pvVar5 = LH_BeginErrorMessage(param_1);
             pcVar7 = "Could not read the criteria name (index=";
@@ -10173,7 +10173,7 @@ LAB_00c001e1:
             pcVar7 = ")";
             goto LAB_00c001f9;
           }
-          cVar1 = FUN_00c03440((uint)local_48,piVar4 + 2);
+          cVar1 = LH_Archive_SerializeCriteriaSampleIds((uint)local_48,piVar4 + 2);
           if (cVar1 == '\0') {
             pvVar5 = LH_BeginErrorMessage(param_1);
             pcVar7 = "Could not read in the driver table for criteria entry (index=";
@@ -10254,12 +10254,12 @@ void LH_BuildTriggersFromCriteria(void *param_1,void *param_2)
       pppuVar9 = &local_20;
       uVar8 = 3;
       local_4 = CONCAT31(local_4._1_3_,2);
-      iVar1 = FUN_00bbea70(piVar2);
+      iVar1 = PKString_GetLength(piVar2);
       FUN_00bbfb80(piVar2,iVar1 + -4,uVar8,(int *)pppuVar9);
       iVar1 = FUN_00bbf6e0(&local_20,"SUB");
       if (iVar1 == 0) {
         iVar10 = 4;
-        iVar1 = FUN_00bbea70(piVar2);
+        iVar1 = PKString_GetLength(piVar2);
         FUN_00bbf1f0(piVar2,iVar1 + -4,iVar10);
       }
       FUN_00c03450(local_40,(int)piVar2);
@@ -10571,14 +10571,14 @@ void LH_LoadLUGAsset(int *param_1,undefined4 *param_2,int param_3)
   puStack_8 = &LAB_00d0284f;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  FUN_00c0a980(local_18);
+  CLHSegmentReader_Constructor(local_18);
   local_4 = 0;
   uVar3 = LH_DecodeSegmentStructure(local_18,param_1);
   if ((char)uVar3 == '\0') {
     this = LH_BeginErrorMessage(iVar1);
     LH_LogErrorMessage(this,"There were problems decoding the file segment structure");
     local_4 = 0xffffffff;
-    FUN_00c0a780(local_18);
+    CLHSegmentReader_Destructor(local_18);
     ExceptionList = local_c;
     return;
   }
@@ -10648,7 +10648,7 @@ void LH_LoadLUGAsset(int *param_1,undefined4 *param_2,int param_3)
   }
 LAB_00c00bdb:
   local_4 = 0xffffffff;
-  FUN_00c0a780(local_18);
+  CLHSegmentReader_Destructor(local_18);
   ExceptionList = local_c;
   return;
 }
@@ -13228,12 +13228,12 @@ void __thiscall FUN_00c03410(void *this,int param_1)
 }
 
 
-//// FUNCTION FUN_00c03440 @ 00c03440 ////
+//// FUNCTION LH_Archive_SerializeCriteriaSampleIds @ 00c03440 ////
 
-void __fastcall FUN_00c03440(uint param_1,void *param_2)
+void __fastcall LH_Archive_SerializeCriteriaSampleIds(uint param_1,void *param_2)
 
 {
-  FUN_00bd4d30(param_2,param_1);
+  LH_Archive_SerializeU32Array(param_2,param_1);
   return;
 }
 

@@ -531,7 +531,7 @@ uint __thiscall LH_SerializeResourceHeaderArray(void *this,int param_1)
       LH_Assert(&local_16,"Count () == 0\n");
       DebugBreak();
     }
-    uVar3 = FUN_00be6590(param_1);
+    uVar3 = LH_Archive_TransferU32(param_1);
     if ((char)uVar3 != '\0') {
       FUN_00c01180(this,local_14);
       puVar4 = local_10;
@@ -579,7 +579,7 @@ LAB_00c0615a:
   }
   else {
     local_10 = (undefined4 *)LH_Array_GetCount((int)this);
-    uVar3 = FUN_00be6590(param_1);
+    uVar3 = LH_Archive_TransferU32(param_1);
     if ((char)uVar3 != '\0') {
       puVar4 = (undefined4 *)0x0;
       if (local_10 != (undefined4 *)0x0) {
@@ -633,7 +633,7 @@ uint __thiscall LH_SerializeDriverArray(void *this,int param_1)
       LH_Assert(&local_16,"Count () == 0\n");
       DebugBreak();
     }
-    uVar3 = FUN_00be6590(param_1);
+    uVar3 = LH_Archive_TransferU32(param_1);
     if ((char)uVar3 != '\0') {
       FUN_00c00d50(this,local_14);
       puVar4 = local_10;
@@ -681,7 +681,7 @@ LAB_00c0632a:
   }
   else {
     local_10 = (undefined2 *)FUN_00bd3890((int)this);
-    uVar3 = FUN_00be6590(param_1);
+    uVar3 = LH_Archive_TransferU32(param_1);
     if ((char)uVar3 != '\0') {
       puVar4 = (undefined2 *)0x0;
       if (local_10 != (undefined2 *)0x0) {
@@ -735,7 +735,7 @@ uint __thiscall LH_SerializeRLMParamArray(void *this,uint param_1)
       LH_Assert(&local_16,"Count () == 0\n");
       DebugBreak();
     }
-    uVar3 = FUN_00be6590(param_1);
+    uVar3 = LH_Archive_TransferU32(param_1);
     if ((char)uVar3 != '\0') {
       FUN_00c00fe0(this,local_14);
       puVar4 = local_10;
@@ -783,7 +783,7 @@ LAB_00c064fa:
   }
   else {
     local_10 = (undefined4 *)FUN_00bd38a0((int)this);
-    uVar3 = FUN_00be6590(param_1);
+    uVar3 = LH_Archive_TransferU32(param_1);
     if ((char)uVar3 != '\0') {
       puVar4 = (undefined4 *)0x0;
       if (local_10 != (undefined4 *)0x0) {
@@ -1058,15 +1058,15 @@ undefined4 __thiscall LH_SerializeGlobalProperties(void *this,int param_1)
 {
   char cVar1;
   
-  cVar1 = FUN_00be6590(param_1);
+  cVar1 = LH_Archive_TransferU32(param_1);
   if ((cVar1 != '\0') && (*(int *)this == 4)) {
-    cVar1 = FUN_00be6590(param_1);
+    cVar1 = LH_Archive_TransferU32(param_1);
     if (cVar1 != '\0') {
-      cVar1 = FUN_00be6590(param_1);
+      cVar1 = LH_Archive_TransferU32(param_1);
       if (cVar1 != '\0') {
-        cVar1 = FUN_00be6590(param_1);
+        cVar1 = LH_Archive_TransferU32(param_1);
         if (cVar1 != '\0') {
-          cVar1 = FUN_00be6590(param_1);
+          cVar1 = LH_Archive_TransferU32(param_1);
           if (cVar1 != '\0') {
             cVar1 = FUN_00c071d0(param_1,(void *)((int)this + 0x14));
             if (cVar1 != '\0') {
@@ -1565,7 +1565,7 @@ uint __thiscall FUN_00c06f50(void *this,int param_1)
       LH_Assert(&local_16,"Count () == 0\n");
       DebugBreak();
     }
-    uVar3 = FUN_00be6590(param_1);
+    uVar3 = LH_Archive_TransferU32(param_1);
     if ((char)uVar3 != '\0') {
       FUN_00c06a80(this,local_14);
       puVar4 = local_10;
@@ -1615,7 +1615,7 @@ LAB_00c070fa:
   }
   else {
     local_10 = (undefined4 *)FUN_00bfb1b0((int)this);
-    uVar3 = FUN_00be6590(param_1);
+    uVar3 = LH_Archive_TransferU32(param_1);
     if ((char)uVar3 != '\0') {
       puVar4 = (undefined4 *)0x0;
       if (local_10 != (undefined4 *)0x0) {
@@ -1710,7 +1710,7 @@ undefined4 FUN_00c07210(int param_1)
 {
   char cVar1;
   
-  cVar1 = FUN_00be6590(param_1);
+  cVar1 = LH_Archive_TransferU32(param_1);
   if (cVar1 != '\0') {
     cVar1 = FUN_00be65e0(param_1);
     if (cVar1 != '\0') {
@@ -1776,7 +1776,7 @@ undefined4 __thiscall FUN_00c07320(void *this,int param_1)
 {
   char cVar1;
   
-  cVar1 = FUN_00be6590(param_1);
+  cVar1 = LH_Archive_TransferU32(param_1);
   if ((cVar1 != '\0') && (*(int *)this == 1)) {
     cVar1 = FUN_00c07840(param_1,(void *)((int)this + 4));
     if (cVar1 != '\0') {
@@ -2026,7 +2026,7 @@ uint __thiscall FUN_00c075f0(void *this,int param_1)
       LH_Assert(&local_16,"Count () == 0\n");
       DebugBreak();
     }
-    uVar3 = FUN_00be6590(param_1);
+    uVar3 = LH_Archive_TransferU32(param_1);
     if ((char)uVar3 != '\0') {
       FUN_00bd39e0(this,local_14);
       pvVar5 = (void *)0x0;
@@ -2068,7 +2068,7 @@ LAB_00c07771:
   }
   else {
     local_10 = (void *)FUN_00bd3950((int)this);
-    uVar3 = FUN_00be6590(param_1);
+    uVar3 = LH_Archive_TransferU32(param_1);
     if ((char)uVar3 != '\0') {
       pvVar6 = (void *)0x0;
       pvVar5 = local_10;
@@ -4259,9 +4259,9 @@ uint __fastcall LH_GetFirstSegmentInfo(int *param_1,void *param_2)
 }
 
 
-//// FUNCTION FUN_00c0a3e0 @ 00c0a3e0 ////
+//// FUNCTION CLHSegmentReader_Clear @ 00c0a3e0 ////
 
-void __fastcall FUN_00c0a3e0(int *param_1)
+void __fastcall CLHSegmentReader_Clear(int *param_1)
 
 {
   int *this;
@@ -4277,7 +4277,7 @@ void __fastcall FUN_00c0a3e0(int *param_1)
     if (_Memory != (int *)0x0) break;
     _Memory = (int *)FUN_00bcecf0(this);
   }
-  FUN_00c0abc0(_Memory);
+  CLHSegmentEntry_Destructor(_Memory);
                     /* WARNING: Subroutine does not return */
   _free(_Memory);
 }
@@ -4313,7 +4313,7 @@ uint __thiscall LH_DecodeSegmentStructure(void *this,int *param_1)
   local_14 = ExceptionList;
   ExceptionList = &local_14;
   local_14c = this;
-  FUN_00c0a3e0(this);
+  CLHSegmentReader_Clear(this);
   FUN_00bd9d00(local_140,param_1);
   local_c = 0;
   uVar2 = LH_VerifyLUGHeader(local_140);
@@ -4347,7 +4347,7 @@ LAB_00c0a624:
           puVar5 = (undefined4 *)0x0;
         }
         else {
-          puVar5 = FUN_00c0ab70(local_124);
+          puVar5 = CLHSegmentEntry_Constructor(local_124);
         }
         local_c._0_1_ = 1;
         if (puVar5 == (undefined4 *)0x0) {
@@ -4379,7 +4379,7 @@ LAB_00c0a624:
       iVar3 = FUN_00bd9f00((int)local_140);
     } while (iVar3 != 0);
     if (bVar1) {
-      FUN_00c0a3e0(this);
+      CLHSegmentReader_Clear(this);
       local_c = 0xffffffff;
       uVar2 = FUN_00bd9e50(local_140);
       ExceptionList = local_14;
@@ -4393,9 +4393,9 @@ LAB_00c0a624:
 }
 
 
-//// FUNCTION FUN_00c0a700 @ 00c0a700 ////
+//// FUNCTION CLHSegmentReader_HasSegment @ 00c0a700 ////
 
-bool __thiscall FUN_00c0a700(void *this,undefined4 param_1)
+bool __thiscall CLHSegmentReader_HasSegment(void *this,undefined4 param_1)
 
 {
   int iVar1;
@@ -4405,10 +4405,10 @@ bool __thiscall FUN_00c0a700(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00c0a720 @ 00c0a720 ////
+//// FUNCTION CLHSegmentReader_GetSegmentOffsetAndSize @ 00c0a720 ////
 
 undefined4 __thiscall
-FUN_00c0a720(void *this,undefined4 param_1,undefined4 *param_2,undefined4 *param_3)
+CLHSegmentReader_GetSegmentOffsetAndSize(void *this,undefined4 param_1,undefined4 *param_2,undefined4 *param_3)
 
 {
   undefined4 uVar1;
@@ -4425,9 +4425,9 @@ FUN_00c0a720(void *this,undefined4 param_1,undefined4 *param_2,undefined4 *param
 }
 
 
-//// FUNCTION FUN_00c0a750 @ 00c0a750 ////
+//// FUNCTION CLHSegmentReader_GetCachedSegmentStream @ 00c0a750 ////
 
-int __thiscall FUN_00c0a750(void *this,undefined4 param_1)
+int __thiscall CLHSegmentReader_GetCachedSegmentStream(void *this,undefined4 param_1)
 
 {
   int iVar1;
@@ -4441,9 +4441,9 @@ int __thiscall FUN_00c0a750(void *this,undefined4 param_1)
 }
 
 
-//// FUNCTION FUN_00c0a780 @ 00c0a780 ////
+//// FUNCTION CLHSegmentReader_Destructor @ 00c0a780 ////
 
-void __fastcall FUN_00c0a780(int *param_1)
+void __fastcall CLHSegmentReader_Destructor(int *param_1)
 
 {
   void *local_c;
@@ -4454,7 +4454,7 @@ void __fastcall FUN_00c0a780(int *param_1)
   local_c = ExceptionList;
   local_4 = 0;
   ExceptionList = &local_c;
-  FUN_00c0a3e0(param_1);
+  CLHSegmentReader_Clear(param_1);
   local_4 = 0xffffffff;
   *param_1 = (int)&PTR_LAB_00da3034;
   FUN_00bcffc0(param_1 + 1);
@@ -4463,9 +4463,9 @@ void __fastcall FUN_00c0a780(int *param_1)
 }
 
 
-//// FUNCTION FUN_00c0a7d0 @ 00c0a7d0 ////
+//// FUNCTION CLHSegmentReader_CacheSegment @ 00c0a7d0 ////
 
-undefined4 __thiscall FUN_00c0a7d0(void *this,int *param_1,undefined4 param_2)
+undefined4 __thiscall CLHSegmentReader_CacheSegment(void *this,int *param_1,undefined4 param_2)
 
 {
   int *this_00;
@@ -4552,9 +4552,9 @@ undefined4 __thiscall FUN_00c0a7d0(void *this,int *param_1,undefined4 param_2)
 }
 
 
-//// FUNCTION FUN_00c0a980 @ 00c0a980 ////
+//// FUNCTION CLHSegmentReader_Constructor @ 00c0a980 ////
 
-undefined4 * __fastcall FUN_00c0a980(undefined4 *param_1)
+undefined4 * __fastcall CLHSegmentReader_Constructor(undefined4 *param_1)
 
 {
   *param_1 = &PTR_LAB_00da3034;
@@ -4611,9 +4611,9 @@ void __fastcall FUN_00c0ab10(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c0ab70 @ 00c0ab70 ////
+//// FUNCTION CLHSegmentEntry_Constructor @ 00c0ab70 ////
 
-undefined4 * __fastcall FUN_00c0ab70(undefined4 *param_1)
+undefined4 * __fastcall CLHSegmentEntry_Constructor(undefined4 *param_1)
 
 {
   void *local_c;
@@ -4635,9 +4635,9 @@ undefined4 * __fastcall FUN_00c0ab70(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c0abc0 @ 00c0abc0 ////
+//// FUNCTION CLHSegmentEntry_Destructor @ 00c0abc0 ////
 
-void __fastcall FUN_00c0abc0(int *param_1)
+void __fastcall CLHSegmentEntry_Destructor(int *param_1)
 
 {
   void *pvStack_c;
@@ -4667,7 +4667,7 @@ void __fastcall FUN_00c0abc0(int *param_1)
 int * __thiscall FUN_00c0ac30(void *this,byte param_1)
 
 {
-  FUN_00c0abc0(this);
+  CLHSegmentEntry_Destructor(this);
   if ((param_1 & 1) != 0) {
                     /* WARNING: Subroutine does not return */
     _free(this);

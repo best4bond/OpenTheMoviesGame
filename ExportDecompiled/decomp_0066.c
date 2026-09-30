@@ -9675,19 +9675,19 @@ undefined4 __thiscall FUN_00c36df0(void *this,int param_1)
   char cVar1;
   bool bVar2;
   
-  cVar1 = FUN_00be6590(param_1);
+  cVar1 = LH_Archive_TransferU32(param_1);
   if (cVar1 != '\0') {
-    bVar2 = FUN_00bbfe60(param_1,(int *)((int)this + 4));
+    bVar2 = LH_Archive_SerializeString(param_1,(int *)((int)this + 4));
     if (bVar2) {
-      cVar1 = FUN_00be6590(param_1);
+      cVar1 = LH_Archive_TransferU32(param_1);
       if (cVar1 != '\0') {
-        cVar1 = FUN_00be6590(param_1);
+        cVar1 = LH_Archive_TransferU32(param_1);
         if (cVar1 != '\0') {
           cVar1 = FUN_00be65c0(param_1);
           if (cVar1 != '\0') {
             cVar1 = FUN_00be65c0(param_1);
             if (cVar1 != '\0') {
-              cVar1 = FUN_00be6590(param_1);
+              cVar1 = LH_Archive_TransferU32(param_1);
               if (cVar1 != '\0') {
                 cVar1 = FUN_00be65a0(param_1);
                 if (cVar1 != '\0') {
@@ -9792,17 +9792,17 @@ undefined4 __thiscall FUN_00c37030(void *this,int param_1)
   char cVar1;
   bool bVar2;
   
-  cVar1 = FUN_00be6590(param_1);
+  cVar1 = LH_Archive_TransferU32(param_1);
   if (cVar1 != '\0') {
-    cVar1 = FUN_00be6590(param_1);
+    cVar1 = LH_Archive_TransferU32(param_1);
     if (cVar1 != '\0') {
-      bVar2 = FUN_00bbfe60(param_1,(int *)((int)this + 0xc));
+      bVar2 = LH_Archive_SerializeString(param_1,(int *)((int)this + 0xc));
       if (bVar2) {
         cVar1 = FUN_00be65c0(param_1);
         if (cVar1 != '\0') {
           cVar1 = FUN_00be65c0(param_1);
           if (cVar1 != '\0') {
-            cVar1 = FUN_00be6590(param_1);
+            cVar1 = LH_Archive_TransferU32(param_1);
             if (cVar1 != '\0') {
               cVar1 = FUN_00be65a0(param_1);
               if (cVar1 != '\0') {
@@ -9814,7 +9814,7 @@ undefined4 __thiscall FUN_00c37030(void *this,int param_1)
                     if (cVar1 != '\0') {
                       cVar1 = FUN_00be65c0(param_1);
                       if (cVar1 != '\0') {
-                        cVar1 = FUN_00be6590(param_1);
+                        cVar1 = LH_Archive_TransferU32(param_1);
                         if (cVar1 != '\0') {
                           cVar1 = FUN_00be65c0(param_1);
                           if (cVar1 != '\0') {
@@ -9960,7 +9960,7 @@ undefined4 __fastcall FUN_00c37390(uint param_1,int *param_2)
   bool bVar1;
   char cVar2;
   
-  bVar1 = FUN_00bbfe60(param_1,param_2);
+  bVar1 = LH_Archive_SerializeString(param_1,param_2);
   if (bVar1) {
     cVar2 = FUN_00c37470(param_1,param_2 + 2);
     if (cVar2 != '\0') {
@@ -10000,7 +10000,7 @@ uint __thiscall FUN_00c373f0(void *this,uint param_1)
   
   bVar1 = LH_Archive_IsLoading(param_1);
   if (bVar1) {
-    uVar2 = FUN_00be6590(param_1);
+    uVar2 = LH_Archive_TransferU32(param_1);
     if ((char)uVar2 == '\0') {
 LAB_00c3745f:
       return uVar2 & 0xffffff00;
@@ -10008,7 +10008,7 @@ LAB_00c3745f:
     FUN_00c042d0(this,param_1);
   }
   else {
-    uVar2 = FUN_00be6590(param_1);
+    uVar2 = LH_Archive_TransferU32(param_1);
     if ((char)uVar2 == '\0') goto LAB_00c3745f;
   }
   uVar4 = 0;
@@ -10046,11 +10046,11 @@ undefined4 __thiscall FUN_00c37480(void *this,int param_1)
   bool bVar1;
   char cVar2;
   
-  bVar1 = FUN_00bbfe60(param_1,this);
+  bVar1 = LH_Archive_SerializeString(param_1,this);
   if (bVar1) {
-    cVar2 = FUN_00be6590(param_1);
+    cVar2 = LH_Archive_TransferU32(param_1);
     if (cVar2 != '\0') {
-      cVar2 = FUN_00be6590(param_1);
+      cVar2 = LH_Archive_TransferU32(param_1);
       if (cVar2 != '\0') {
         cVar2 = FUN_00be65a0(param_1);
         if (cVar2 != '\0') {

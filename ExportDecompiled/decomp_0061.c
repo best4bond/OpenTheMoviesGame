@@ -393,9 +393,9 @@ void __fastcall FUN_00bd4c60(int param_1,int param_2,int param_3,uint *param_4)
 }
 
 
-//// FUNCTION FUN_00bd4d30 @ 00bd4d30 ////
+//// FUNCTION LH_Archive_SerializeU32Array @ 00bd4d30 ////
 
-uint __thiscall FUN_00bd4d30(void *this,uint param_1)
+uint __thiscall LH_Archive_SerializeU32Array(void *this,uint param_1)
 
 {
   bool bVar1;
@@ -404,7 +404,7 @@ uint __thiscall FUN_00bd4d30(void *this,uint param_1)
   
   bVar1 = LH_Archive_IsLoading(param_1);
   if (bVar1) {
-    uVar2 = FUN_00be6590(param_1);
+    uVar2 = LH_Archive_TransferU32(param_1);
     if ((char)uVar2 == '\0') {
 LAB_00bd4d9f:
       return uVar2 & 0xffffff00;
@@ -412,7 +412,7 @@ LAB_00bd4d9f:
     FUN_00bd45c0(this,param_1);
   }
   else {
-    uVar2 = FUN_00be6590(param_1);
+    uVar2 = LH_Archive_TransferU32(param_1);
     if ((char)uVar2 == '\0') goto LAB_00bd4d9f;
   }
   uVar3 = 0;
@@ -420,7 +420,7 @@ LAB_00bd4d9f:
   if (*(int *)((int)this + 4) != 0) {
     do {
       FUN_00bd4710(this,uVar3);
-      uVar2 = FUN_00be6590(param_1);
+      uVar2 = LH_Archive_TransferU32(param_1);
       if ((char)uVar2 == '\0') {
         return uVar2 & 0xffffff00;
       }
@@ -817,7 +817,7 @@ int __fastcall FUN_00bd5370(undefined4 *param_1)
   }
   FUN_00bd9d00(local_24,(int *)local_34);
   local_4._0_1_ = 1;
-  FUN_00be6380(local_3c,local_24);
+  LH_Archive_InitForLoading(local_3c,local_24);
   local_40 = operator_new(0x48);
   local_4._0_1_ = 2;
   if (local_40 == (undefined4 *)0x0) {
@@ -876,7 +876,7 @@ int __fastcall FUN_00bd5370(undefined4 *param_1)
 void __fastcall FUN_00bd5530(uint param_1,void *param_2)
 
 {
-  FUN_00bd4d30(param_2,param_1);
+  LH_Archive_SerializeU32Array(param_2,param_1);
   return;
 }
 
@@ -1195,25 +1195,25 @@ undefined4 __thiscall FUN_00bd5af0(void *this,void *param_1)
   LH_PrintResourceID(this_01,*(undefined4 *)((int)this + 0x30));
   LH_LogErrorMessage(this_01,"\"");
   LH_LogErrorMessage(this_01,">\n");
-  iVar1 = FUN_00bbea70((int *)((int)this + 0x5c));
+  iVar1 = PKString_GetLength((int *)((int)this + 0x5c));
   if (iVar1 != 0) {
     LH_LogErrorMessage(this_01,"\t<Comments>");
     FUN_00bbf750(this_01,(int *)((int)this + 0x5c));
     LH_LogErrorMessage(this_01,"</Comments>\n");
   }
-  iVar1 = FUN_00bbea70((int *)((int)this + 0x74));
+  iVar1 = PKString_GetLength((int *)((int)this + 0x74));
   if (iVar1 != 0) {
     LH_LogErrorMessage(this_01,"\t<Engineer>");
     FUN_00bbf750(this_01,(int *)((int)this + 0x74));
     LH_LogErrorMessage(this_01,"</Engineer>\n");
   }
-  iVar1 = FUN_00bbea70((int *)((int)this + 0x6c));
+  iVar1 = PKString_GetLength((int *)((int)this + 0x6c));
   if (iVar1 != 0) {
     LH_LogErrorMessage(this_01,"\t<Subject>");
     FUN_00bbf750(this_01,(int *)((int)this + 0x6c));
     LH_LogErrorMessage(this_01,"</Subject>\n");
   }
-  iVar1 = FUN_00bbea70((int *)((int)this + 100));
+  iVar1 = PKString_GetLength((int *)((int)this + 100));
   if (iVar1 != 0) {
     LH_LogErrorMessage(this_01,"\t<Title>");
     FUN_00bbf750(this_01,(int *)((int)this + 100));
@@ -13728,9 +13728,9 @@ bool __fastcall LH_Archive_IsLoading(int param_1)
 }
 
 
-//// FUNCTION FUN_00be6380 @ 00be6380 ////
+//// FUNCTION LH_Archive_InitForLoading @ 00be6380 ////
 
-void __thiscall FUN_00be6380(void *this,undefined4 param_1)
+void __thiscall LH_Archive_InitForLoading(void *this,undefined4 param_1)
 
 {
   *(undefined4 *)this = param_1;
@@ -13824,9 +13824,9 @@ undefined4 __fastcall FUN_00be6490(int param_1)
 }
 
 
-//// FUNCTION FUN_00be6560 @ 00be6560 ////
+//// FUNCTION LH_Archive_Transfer @ 00be6560 ////
 
-void __fastcall FUN_00be6560(int param_1)
+void __fastcall LH_Archive_Transfer(int param_1)
 
 {
   bool bVar1;
@@ -13849,12 +13849,12 @@ void __fastcall FUN_00be6560(int param_1)
 }
 
 
-//// FUNCTION FUN_00be6590 @ 00be6590 ////
+//// FUNCTION LH_Archive_TransferU32 @ 00be6590 ////
 
-void __fastcall FUN_00be6590(int param_1)
+void __fastcall LH_Archive_TransferU32(int param_1)
 
 {
-  FUN_00be6560(param_1);
+  LH_Archive_Transfer(param_1);
   return;
 }
 
@@ -13864,7 +13864,7 @@ void __fastcall FUN_00be6590(int param_1)
 void __fastcall FUN_00be65a0(int param_1)
 
 {
-  FUN_00be6560(param_1);
+  LH_Archive_Transfer(param_1);
   return;
 }
 
@@ -13874,7 +13874,7 @@ void __fastcall FUN_00be65a0(int param_1)
 void __fastcall FUN_00be65c0(int param_1)
 
 {
-  FUN_00be6560(param_1);
+  LH_Archive_Transfer(param_1);
   return;
 }
 
@@ -13884,7 +13884,7 @@ void __fastcall FUN_00be65c0(int param_1)
 void __fastcall FUN_00be65d0(int param_1)
 
 {
-  FUN_00be6560(param_1);
+  LH_Archive_Transfer(param_1);
   return;
 }
 
@@ -13894,7 +13894,7 @@ void __fastcall FUN_00be65d0(int param_1)
 void __fastcall FUN_00be65e0(int param_1)
 
 {
-  FUN_00be6560(param_1);
+  LH_Archive_Transfer(param_1);
   return;
 }
 
@@ -13911,10 +13911,10 @@ bool __thiscall FUN_00be65f0(void *this,int param_1)
   
   bVar1 = LH_Archive_IsLoading((int)this);
   if (!bVar1) {
-    uVar3 = FUN_00be6590(extraout_ECX);
+    uVar3 = LH_Archive_TransferU32(extraout_ECX);
     return (bool)uVar3;
   }
-  cVar2 = FUN_00be6590(extraout_ECX);
+  cVar2 = LH_Archive_TransferU32(extraout_ECX);
   if (cVar2 == '\0') {
     return false;
   }

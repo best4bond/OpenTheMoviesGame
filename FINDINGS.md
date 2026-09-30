@@ -1,5 +1,7 @@
 # The Movies: Stunts & Effects — Reverse Engineering Findings
 
+Function names proposed so far are in `renames.csv`. `python3 tools/apply_renames.py` applies them to `ExportDecompiled/`.
+
 Rewrite in progress. Evidence comes from the Ghidra export in `ExportDecompiled/` (`index.csv` maps address → file). Addresses are for `MoviesSE.exe`.
 
 ## Genre popularity (`AudienceTaste`)
@@ -210,6 +212,10 @@ In v4 the three offsets sit at `0x1c`-`0x24`. In v5 and v6 three more dwords com
 
 **Path handling** (`FUN_00ab0060`, `FUN_00ab0150`): paths are lower-cased and cut down to the part after `data\`. A file-type classifier checks the extensions `.msh`, `.pak`, `.cpak`, `.exe`, `.avi`, `.wmv`, `.fnt`. For `.msh` it treats names starting `head_` and `cos_` specially, with `_fat` and `_enh` suffixes (body-size and enhanced variants of costumes). A separate `"%s\%s%s%04d.pak"` format is used when generating numbered pak names.
 
+### Criteria segment, confirmed in our loader
+
+`LH_LoadBankCriteriaInfo` reads a count, then per entry a string (`00bbfe60`, a u32 length followed by the bytes) and a list of sample ids (`00c03440`, a u32 count then that many u32s). That is the same layout Fable's docs give. All of these calls go through a shared bidirectional archive object: field `+4` is 0 when loading (`LH_Archive_IsLoading`), so the same serializer code reads or writes depending on mode.
+
 ## Comparison with the Fable decomp (`BuffJesus/FableDecomp`)
 
 *Fable: The Lost Chapters* (Lionhead, 2004-05, MSVC 7.1) shares more with our binary than Black & White does, but only in a few places. Their `docs/formats/AUDIO.md` (Part B) documents `.lug` from real files, and I used it to cross-check ours.
@@ -230,5 +236,5 @@ In v4 the three offsets sit at `0x1c`-`0x24`. In v5 and v6 three more dwords com
 
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
-- Criteria segment fields in our own loader (`FUN_00c03440`) against Fable's layout; `.pak` entry layout (name/hash, offset, size, compression) and how a lookup by path finds an entry; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
+- `.pak` entry layout (name/hash, offset, size, compression) and how a lookup by path finds an entry; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
 - Details of the older notes (SLVAR type functions, `CSystem`, the RTTI class list) can still be pulled from `git show 9b29b4e:FINDINGS.md`.

@@ -8758,7 +8758,7 @@ uint FUN_00bb9730(int *param_1)
   pcVar1 = (char *)FUN_00bbf3a0((int *)&local_90);
   uVar2 = FUN_00bbf610(local_98,pcVar1,iVar5);
   if (-1 < (int)uVar2) {
-    iVar3 = FUN_00bbea70((int *)&local_90);
+    iVar3 = PKString_GetLength((int *)&local_90);
     iVar3 = uVar2 + iVar3;
     FUN_00bbfaa0(&local_90,"");
     LH_LogErrorMessage(&local_90,"</");
@@ -12852,9 +12852,9 @@ void FUN_00bbe9c0(void)
 }
 
 
-//// FUNCTION FUN_00bbea70 @ 00bbea70 ////
+//// FUNCTION PKString_GetLength @ 00bbea70 ////
 
-int __fastcall FUN_00bbea70(int *param_1)
+int __fastcall PKString_GetLength(int *param_1)
 
 {
   char *pcVar1;
@@ -12922,7 +12922,7 @@ void __thiscall FUN_00bbeb50(void *this,undefined4 param_1,uint param_2)
   puStack_8 = &LAB_00cfe670;
   pvStack_c = ExceptionList;
   ExceptionList = &pvStack_c;
-  uVar1 = FUN_00bbea70(this);
+  uVar1 = PKString_GetLength(this);
   uVar4 = param_2 + 1 + uVar1;
   iVar2 = (**(code **)(*(int *)this + 0x10))(uVar4,local_114);
   if (unaff_EBX < uVar4) {
@@ -13010,7 +13010,7 @@ int __thiscall FUN_00bbed60(void *this,int *param_1)
   void *local_4;
   
   local_4 = this;
-  iVar1 = FUN_00bbea70(this);
+  iVar1 = PKString_GetLength(this);
   *param_1 = iVar1;
   iVar1 = (**(code **)(*(int *)this + 0x10))(iVar1);
   if (&stack0x00000000 == (undefined1 *)0x4) {
@@ -13071,7 +13071,7 @@ int * __thiscall FUN_00bbf120(void *this,undefined4 param_1,int param_2,uint par
   int *local_4;
   
   local_4 = this;
-  piVar2 = (int *)FUN_00bbea70(this);
+  piVar2 = (int *)PKString_GetLength(this);
   if ((param_2 != 0) && (param_3 != 0)) {
     piVar6 = (int *)((int)piVar2 + param_3);
     iVar3 = (**(code **)(*(int *)this + 0x10))(piVar6,&local_4);
@@ -13130,7 +13130,7 @@ int __thiscall FUN_00bbf1f0(void *this,int param_1,int param_2)
   if (param_1 < 0) {
     param_1 = 0;
   }
-  iVar1 = FUN_00bbea70(this);
+  iVar1 = PKString_GetLength(this);
   if ((param_1 < iVar1) && (iVar4 != 0)) {
     iVar3 = iVar1 - param_1;
     if (iVar3 < iVar4) {
@@ -13325,7 +13325,7 @@ void __thiscall FUN_00bbf4f0(void *this,undefined4 param_1,char *param_2)
   char cVar1;
   char *pcVar2;
   
-  FUN_00bbea70(this);
+  PKString_GetLength(this);
   if (param_2 != (char *)0x0) {
     pcVar2 = param_2;
     do {
@@ -13364,7 +13364,7 @@ int __thiscall FUN_00bbf560(void *this,char param_1,int param_2)
   int iVar2;
   uint *puVar3;
   
-  iVar1 = FUN_00bbea70(this);
+  iVar1 = PKString_GetLength(this);
   iVar2 = FUN_00bbf3a0(this);
   if (param_2 < iVar1) {
     puVar3 = FUN_00acecd0((uint *)(iVar2 + param_2),param_1);
@@ -13393,7 +13393,7 @@ int __thiscall FUN_00bbf610(void *this,char *param_1,int param_2)
       pcVar2 = pcVar2 + 1;
     } while (cVar1 != '\0');
     if (pcVar2 != param_1 + 1) {
-      iVar3 = FUN_00bbea70(this);
+      iVar3 = PKString_GetLength(this);
       if (param_2 <= iVar3) {
         iVar3 = FUN_00bbf3a0(this);
         puVar4 = FUN_00ace080((uint *)(iVar3 + param_2),param_1);
@@ -13471,7 +13471,7 @@ void __thiscall FUN_00bbf720(void *this,uint param_1)
   uint uVar1;
   byte *pbVar2;
   
-  uVar1 = FUN_00bbea70(this);
+  uVar1 = PKString_GetLength(this);
   pbVar2 = (byte *)FUN_00bbf3a0(this);
   FUN_00bbe6d0(pbVar2,uVar1,param_1);
   return;
@@ -13586,7 +13586,7 @@ int * __thiscall FUN_00bbfb30(void *this,uint param_1,int *param_2)
   if ((int)param_1 < 0) {
     param_1 = 0;
   }
-  iVar1 = FUN_00bbea70(this);
+  iVar1 = PKString_GetLength(this);
   if (iVar1 <= (int)param_1) {
     (**(code **)(*param_2 + 8))(this);
     return param_2;
@@ -13617,7 +13617,7 @@ int * __thiscall FUN_00bbfb80(void *this,int param_1,uint param_2,int *param_3)
   if ((int)param_2 < 0) {
     uVar4 = 0;
   }
-  uVar2 = FUN_00bbea70(this);
+  uVar2 = PKString_GetLength(this);
   if ((int)uVar2 < (int)(iVar5 + uVar4)) {
     uVar4 = uVar2 - iVar5;
   }
@@ -13784,7 +13784,7 @@ void __thiscall FUN_00bbfe10(void *this,int param_1,int *param_2)
 {
   int iVar1;
   
-  iVar1 = FUN_00bbea70(this);
+  iVar1 = PKString_GetLength(this);
   FUN_00bbfb80(this,param_1,iVar1 - param_1,param_2);
   return;
 }
@@ -13803,9 +13803,9 @@ void __thiscall FUN_00bbfe40(void *this,int *param_1)
 }
 
 
-//// FUNCTION FUN_00bbfe60 @ 00bbfe60 ////
+//// FUNCTION LH_Archive_SerializeString @ 00bbfe60 ////
 
-bool __fastcall FUN_00bbfe60(int param_1,int *param_2)
+bool __fastcall LH_Archive_SerializeString(int param_1,int *param_2)
 
 {
   bool bVar1;
@@ -13830,7 +13830,7 @@ bool __fastcall FUN_00bbfe60(int param_1,int *param_2)
   ExceptionList = &local_c;
   bVar1 = LH_Archive_IsLoading(param_1);
   if (bVar1) {
-    cVar2 = FUN_00be6590(param_1);
+    cVar2 = LH_Archive_TransferU32(param_1);
     if (cVar2 == '\0') {
       ExceptionList = local_c;
       return false;
@@ -13853,7 +13853,7 @@ bool __fastcall FUN_00bbfe60(int param_1,int *param_2)
         local_4 = (char *)0xffffffff;
         DebugBreak();
       }
-      cVar2 = FUN_00be6560(param_1);
+      cVar2 = LH_Archive_Transfer(param_1);
       if (cVar2 != '\0') {
         _Memory[unaff_EDI] = '\0';
         FUN_00bbfaa0(param_2,_Memory);
@@ -13866,15 +13866,15 @@ bool __fastcall FUN_00bbfe60(int param_1,int *param_2)
     FUN_00bbfaa0(param_2,"");
   }
   else {
-    iVar4 = FUN_00bbea70(param_2);
-    cVar2 = FUN_00be6590(param_1);
+    iVar4 = PKString_GetLength(param_2);
+    cVar2 = LH_Archive_TransferU32(param_1);
     if (cVar2 == '\0') {
       ExceptionList = local_c;
       return false;
     }
     if (iVar4 != 0) {
       FUN_00bbf3a0(param_2);
-      cVar2 = FUN_00be6560(param_1);
+      cVar2 = LH_Archive_Transfer(param_1);
       ExceptionList = pvStack_14;
       return cVar2 != '\0';
     }

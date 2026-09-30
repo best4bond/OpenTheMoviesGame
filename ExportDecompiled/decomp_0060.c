@@ -4501,7 +4501,7 @@ void * __fastcall FUN_00bc98d0(void *param_1,int *param_2,uint param_3,uint para
   do {
     if (param_3 <= uVar2) break;
     if ((param_4 & 1) != 0) {
-      iVar1 = FUN_00bbea70(local_20);
+      iVar1 = PKString_GetLength(local_20);
       if (iVar1 != 0) {
         LH_LogErrorMessage(local_20," + ");
       }
@@ -12118,12 +12118,12 @@ undefined4 __fastcall LH_GetFileSegmentBankInfo(void *param_1)
   ExceptionList = &local_c;
   uVar2 = std__String__Constructor(local_2c,0xd9f148);
   local_4 = 0;
-  bVar1 = FUN_00c0a700(param_1,uVar2);
+  bVar1 = CLHSegmentReader_HasSegment(param_1,uVar2);
   local_4 = 0xffffffff;
   if (bVar1) {
     uVar2 = std__String__Constructor(local_34,0xd9f148);
     local_4 = 1;
-    piVar3 = (int *)FUN_00c0a750(param_1,uVar2);
+    piVar3 = (int *)CLHSegmentReader_GetCachedSegmentStream(param_1,uVar2);
     FUN_00bd9d60(local_24,piVar3);
     local_4 = CONCAT31(local_4._1_3_,3);
     local_34[0] = &PTR_LAB_00d9d9b4;
@@ -12394,7 +12394,7 @@ uint __fastcall FUN_00bd2380(int *param_1,int *param_2,uint param_3)
       *(undefined1 *)puVar3 = 0;
       puVar3 = (undefined4 *)((int)puVar3 + 1);
     }
-    uVar7 = FUN_00bbea70(param_2);
+    uVar7 = PKString_GetLength(param_2);
     if (param_3 < uVar7) {
       uVar7 = param_3;
     }
@@ -12440,7 +12440,7 @@ bool __fastcall FUN_00bd2490(int *param_1,int *param_2)
   char cVar1;
   uint uVar2;
   
-  uVar2 = FUN_00bbea70(param_2);
+  uVar2 = PKString_GetLength(param_2);
   if ((uVar2 != 0) && (uVar2 < 0x20)) {
     uVar2 = FUN_00bd2380(param_1,param_2,0x20);
     if ((char)uVar2 != '\0') {
@@ -12916,7 +12916,7 @@ LAB_00bd2dd7:
       else {
         FUN_00bd9d00(local_20c,local_23c);
         local_4._0_1_ = 7;
-        FUN_00be6380(local_214,local_20c);
+        LH_Archive_InitForLoading(local_214,local_20c);
         uVar8 = LH_DeserializeMetaDataSegment(local_1f4,local_214);
         if ((char)uVar8 != '\0') {
           local_4._0_1_ = 6;
@@ -13127,7 +13127,7 @@ undefined4 __fastcall LH_SaveBankCriteriaInfo(int *param_1,int param_2)
       if (piVar4[3] != 0) {
         do {
           FUN_00bd4820(piVar4 + 2,uVar8);
-          FUN_00bbea70(piVar4);
+          PKString_GetLength(piVar4);
           uVar8 = uVar8 + 1;
           uVar7 = local_30[0];
         } while (uVar8 < (uint)piVar4[3]);
@@ -13145,7 +13145,7 @@ undefined4 __fastcall LH_SaveBankCriteriaInfo(int *param_1,int param_2)
   uVar6 = extraout_var;
   if (bVar1) {
     FUN_00be63a0(local_20,param_1);
-    FUN_00be6590((int)local_20);
+    LH_Archive_TransferU32((int)local_20);
     uVar6 = extraout_var_00;
     if (extraout_AL != '\0') {
       uVar7 = 0;
@@ -13167,7 +13167,7 @@ undefined4 __fastcall LH_SaveBankCriteriaInfo(int *param_1,int param_2)
               LH_LogErrorMessage(local_28,"SUB");
               LH_PrintResourceID(local_28,uVar8 + 1);
             }
-            bVar1 = FUN_00bbfe60((int)local_20,(int *)local_28);
+            bVar1 = LH_Archive_SerializeString((int)local_20,(int *)local_28);
             if (!bVar1) {
 LAB_00bd32df:
               local_c = 0xffffffff;
@@ -13342,7 +13342,7 @@ bool __cdecl LH_BuildLUGAsset(int param_1,undefined4 param_2,int *param_3)
   iVar8 = *piVar1;
   iVar14 = 0;
   pvStack_4 = (void *)0x0;
-  iVar5 = FUN_00bbea70(aiStack_3c);
+  iVar5 = PKString_GetLength(aiStack_3c);
   iVar6 = FUN_00bbf3a0(aiStack_3c);
   cVar2 = (**(code **)(iVar8 + 4))(iVar6,iVar5);
   if ((cVar2 != '\0') && (cVar2 = FUN_00bd4ab0(pvStack_4,&param_1), cVar2 != '\0')) {
