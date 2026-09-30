@@ -291,7 +291,7 @@ void __thiscall FUN_00bf35d0(void *this,int param_1)
   else {
     pfVar2 = &local_10;
   }
-  fVar3 = FUN_00bf1c20(pfVar2);
+  fVar3 = Math_Vector3Length(pfVar2);
   FUN_00c2cc90((int *)((int)this + 0x20),(float)fVar3);
   return;
 }

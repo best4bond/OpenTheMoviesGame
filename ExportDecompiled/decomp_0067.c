@@ -20895,9 +20895,9 @@ void __fastcall FUN_00c62a40(int param_1)
 }
 
 
-//// FUNCTION FUN_00c62a50 @ 00c62a50 ////
+//// FUNCTION Math_Pow10_x87_c @ 00c62a50 ////
 
-float10 __cdecl FUN_00c62a50(float param_1)
+float10 __cdecl Math_Pow10_x87_c(float param_1)
 
 {
   float10 fVar1;

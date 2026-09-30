@@ -6001,7 +6001,7 @@ void __thiscall FUN_00c20850(void *this,float *param_1,int *param_2)
                         fStack_68 = fVar6;
                       }
                       FUN_00bf1c90(afStack_18,&fStack_70,param_1);
-                      fVar19 = FUN_00bf1c20(afStack_18);
+                      fVar19 = Math_Vector3Length(afStack_18);
                       fStack_5c = (float)fVar19;
                       bVar7 = false;
                       uStack_d0 = 0;

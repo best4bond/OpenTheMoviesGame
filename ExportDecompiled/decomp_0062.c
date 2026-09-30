@@ -9216,9 +9216,9 @@ undefined4 __fastcall FUN_00bf1ba0(float *param_1,float *param_2)
 }
 
 
-//// FUNCTION FUN_00bf1c20 @ 00bf1c20 ////
+//// FUNCTION Math_Vector3Length @ 00bf1c20 ////
 
-float10 __fastcall FUN_00bf1c20(float *param_1)
+float10 __fastcall Math_Vector3Length(float *param_1)
 
 {
   return SQRT((float10)param_1[2] * (float10)param_1[2] +
@@ -9481,7 +9481,7 @@ void __thiscall FUN_00bf20d0(void *this,float *param_1,float *param_2)
   float10 fVar9;
   float local_c [3];
   
-  fVar9 = FUN_00bf1c20(param_2);
+  fVar9 = Math_Vector3Length(param_2);
   if ((float10)0.0 == fVar9) {
     fVar8 = *(float *)((int)this + 0x68);
     param_1[1] = *(float *)((int)this + 0x78);
@@ -9492,8 +9492,8 @@ void __thiscall FUN_00bf20d0(void *this,float *param_1,float *param_2)
   local_c[1] = 0.0;
   local_c[2] = 1.0;
   FUN_00bf1a20(param_2,local_c);
-  FUN_00bf1c20(param_2);
-  FUN_00bf1c20(local_c);
+  Math_Vector3Length(param_2);
+  Math_Vector3Length(local_c);
   fVar9 = (float10)FUN_00ad1010();
   fVar8 = (float)fVar9;
   if (fVar9 < (float10)*(float *)((int)this + 0x60) ==

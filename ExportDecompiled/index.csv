@@ -30937,7 +30937,7 @@ address,name,body_size,file,status
 00bf1ab0,"FUN_00bf1ab0",31,decomp_0062.c,ok
 00bf1b00,"FUN_00bf1b00",151,decomp_0062.c,ok
 00bf1ba0,"FUN_00bf1ba0",52,decomp_0062.c,ok
-00bf1c20,"FUN_00bf1c20",33,decomp_0062.c,ok
+00bf1c20,"Math_Vector3Length",33,decomp_0062.c,ok
 00bf1c90,"FUN_00bf1c90",33,decomp_0062.c,ok
 00bf1cc0,"FUN_00bf1cc0",33,decomp_0062.c,ok
 00bf1d50,"FUN_00bf1d50",8,decomp_0062.c,ok
@@ -31831,7 +31831,7 @@ address,name,body_size,file,status
 00c109c0,"FUN_00c109c0",89,decomp_0064.c,ok
 00c10a20,"FUN_00c10a20",89,decomp_0064.c,ok
 00c10ab0,"SetVtable_00da34b0_00c10ab0",7,decomp_0064.c,ok
-00c10af0,"FUN_00c10af0",75,decomp_0064.c,ok
+00c10af0,"Math_Pow10_x87",75,decomp_0064.c,ok
 00c10b40,"FUN_00c10b40",109,decomp_0064.c,ok
 00c10d80,"FUN_00c10d80",144,decomp_0064.c,ok
 00c10e70,"FUN_00c10e70",144,decomp_0064.c,ok
@@ -31843,7 +31843,7 @@ address,name,body_size,file,status
 00c11710,"FUN_00c11710",152,decomp_0064.c,ok
 00c117b0,"ScalarDeletingDtor_00c117b0",30,decomp_0064.c,ok
 00c11800,"FUN_00c11800",680,decomp_0064.c,ok
-00c11ab0,"FUN_00c11ab0",75,decomp_0064.c,ok
+00c11ab0,"Math_Pow10_x87_b",75,decomp_0064.c,ok
 00c11b10,"FUN_00c11b10",109,decomp_0064.c,ok
 00c11b90,"FUN_00c11b90",16,decomp_0064.c,ok
 00c11c50,"FUN_00c11c50",23,decomp_0064.c,ok
@@ -33453,7 +33453,7 @@ address,name,body_size,file,status
 00c62450,"FUN_00c62450",45,decomp_0067.c,ok
 00c62930,"FUN_00c62930",272,decomp_0067.c,ok
 00c62a40,"FUN_00c62a40",8,decomp_0067.c,ok
-00c62a50,"FUN_00c62a50",75,decomp_0067.c,ok
+00c62a50,"Math_Pow10_x87_c",75,decomp_0067.c,ok
 00c62ad0,"FUN_00c62ad0",109,decomp_0067.c,ok
 00c62b40,"FUN_00c62b40",64,decomp_0067.c,ok
 00c62c50,"FUN_00c62c50",621,decomp_0067.c,ok
@@ -33578,7 +33578,7 @@ address,name,body_size,file,status
 00c69030,"Dtor_00c69030",54,decomp_0068.c,ok
 00c69070,"FUN_00c69070",109,decomp_0068.c,ok
 00c690e0,"ScalarDeletingDtor_00c690e0",27,decomp_0068.c,ok
-00c69120,"FUN_00c69120",75,decomp_0068.c,ok
+00c69120,"Math_Pow10_x87_d",75,decomp_0068.c,ok
 00c69190,"FUN_00c69190",109,decomp_0068.c,ok
 00c69200,"FUN_00c69200",10,decomp_0068.c,ok
 00c69210,"FUN_00c69210",10,decomp_0068.c,ok
@@ -33746,15 +33746,15 @@ address,name,body_size,file,status
 00c7dde0,"FUN_00c7dde0",30,decomp_0068.c,ok
 00c7de00,"FUN_00c7de00",8,decomp_0068.c,ok
 00c7de10,"FUN_00c7de10",25,decomp_0068.c,ok
-00c7de30,"FUN_00c7de30",24,decomp_0068.c,ok
+00c7de30,"Util_CeilLog2",24,decomp_0068.c,ok
 00c7df90,"FUN_00c7df90",484,decomp_0068.c,ok
 00c7e180,"FUN_00c7e180",29,decomp_0068.c,ok
 00c7e1a0,"FUN_00c7e1a0",2343,decomp_0068.c,ok
 00c7ead0,"FUN_00c7ead0",1274,decomp_0068.c,ok
 00c7efe0,"FUN_00c7efe0",25,decomp_0068.c,ok
 00c7f000,"FUN_00c7f000",52,decomp_0068.c,ok
-00c7f080,"FUN_00c7f080",14,decomp_0068.c,ok
-00c7f090,"FUN_00c7f090",20,decomp_0068.c,ok
+00c7f080,"Util_BitLength",14,decomp_0068.c,ok
+00c7f090,"Util_PopCount",20,decomp_0068.c,ok
 00c7f190,"FUN_00c7f190",332,decomp_0068.c,ok
 00c7f2f0,"FUN_00c7f2f0",444,decomp_0068.c,ok
 00c7f4c0,"FUN_00c7f4c0",879,decomp_0068.c,ok
@@ -33768,8 +33768,8 @@ address,name,body_size,file,status
 00c80570,"FUN_00c80570",596,decomp_0068.c,ok
 00c807d0,"FUN_00c807d0",399,decomp_0068.c,ok
 00c80960,"FUN_00c80960",25,decomp_0068.c,ok
-00c809a0,"FUN_00c809a0",14,decomp_0068.c,ok
-00c809b0,"FUN_00c809b0",24,decomp_0068.c,ok
+00c809a0,"Util_BitLength_b",14,decomp_0068.c,ok
+00c809b0,"Util_CeilLog2_b",24,decomp_0068.c,ok
 00c809d0,"FUN_00c809d0",421,decomp_0068.c,ok
 00c80b80,"FUN_00c80b80",568,decomp_0068.c,ok
 00c80dd0,"FUN_00c80dd0",21,decomp_0068.c,ok

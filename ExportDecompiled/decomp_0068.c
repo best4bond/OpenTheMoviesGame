@@ -2843,9 +2843,9 @@ undefined4 * __thiscall ScalarDeletingDtor_00c690e0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00c69120 @ 00c69120 ////
+//// FUNCTION Math_Pow10_x87_d @ 00c69120 ////
 
-float10 __cdecl FUN_00c69120(float param_1)
+float10 __cdecl Math_Pow10_x87_d(float param_1)
 
 {
   float10 fVar1;
@@ -15469,9 +15469,9 @@ void __fastcall FUN_00c7de10(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c7de30 @ 00c7de30 ////
+//// FUNCTION Util_CeilLog2 @ 00c7de30 ////
 
-int __fastcall FUN_00c7de30(int param_1)
+int __fastcall Util_CeilLog2(int param_1)
 
 {
   int iVar1;
@@ -15524,10 +15524,10 @@ uint * __fastcall FUN_00c7df90(int param_1,int *param_2)
     if (0 < (int)(uVar3 + 1)) {
       local_8 = puVar2 + 0x222;
       do {
-        iVar5 = FUN_00c7de30(*(int *)(param_1 + 4));
+        iVar5 = Util_CeilLog2(*(int *)(param_1 + 4));
         uVar3 = oggpack_read(param_2,iVar5);
         local_8[-0x100] = uVar3;
-        iVar5 = FUN_00c7de30(*(int *)(param_1 + 4));
+        iVar5 = Util_CeilLog2(*(int *)(param_1 + 4));
         uVar4 = oggpack_read(param_2,iVar5);
         *local_8 = uVar4;
         if (((((int)uVar3 < 0) || ((int)uVar4 < 0)) || (uVar3 == uVar4)) ||
@@ -16389,9 +16389,9 @@ void __fastcall FUN_00c7f000(int param_1)
 }
 
 
-//// FUNCTION FUN_00c7f080 @ 00c7f080 ////
+//// FUNCTION Util_BitLength @ 00c7f080 ////
 
-int __fastcall FUN_00c7f080(uint param_1)
+int __fastcall Util_BitLength(uint param_1)
 
 {
   int iVar1;
@@ -16404,9 +16404,9 @@ int __fastcall FUN_00c7f080(uint param_1)
 }
 
 
-//// FUNCTION FUN_00c7f090 @ 00c7f090 ////
+//// FUNCTION Util_PopCount @ 00c7f090 ////
 
-int __fastcall FUN_00c7f090(uint param_1)
+int __fastcall Util_PopCount(uint param_1)
 
 {
   int iVar1;
@@ -16459,7 +16459,7 @@ uint * __fastcall FUN_00c7f190(int param_1,int *param_2)
         uVar3 = uVar3 | uVar4 << 3;
       }
       *local_c = uVar3;
-      iVar6 = FUN_00c7f090(uVar3);
+      iVar6 = Util_PopCount(uVar3);
       iVar6 = local_8 + iVar6;
       iVar7 = iVar7 + 1;
       local_c = local_c + 1;
@@ -16534,7 +16534,7 @@ int * __fastcall FUN_00c7f2f0(int param_1,int param_2)
   if (0 < piVar2[1]) {
     puVar7 = (uint *)(param_2 + 0x14);
     do {
-      _NumOfElements = FUN_00c7f080(*puVar7);
+      _NumOfElements = Util_BitLength(*puVar7);
       if (_NumOfElements != 0) {
         if ((int)local_10 < (int)_NumOfElements) {
           local_10 = _NumOfElements;
@@ -17599,9 +17599,9 @@ void __fastcall FUN_00c80960(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c809a0 @ 00c809a0 ////
+//// FUNCTION Util_BitLength_b @ 00c809a0 ////
 
-int __fastcall FUN_00c809a0(uint param_1)
+int __fastcall Util_BitLength_b(uint param_1)
 
 {
   int iVar1;
@@ -17614,9 +17614,9 @@ int __fastcall FUN_00c809a0(uint param_1)
 }
 
 
-//// FUNCTION FUN_00c809b0 @ 00c809b0 ////
+//// FUNCTION Util_CeilLog2_b @ 00c809b0 ////
 
-int __fastcall FUN_00c809b0(int param_1)
+int __fastcall Util_CeilLog2_b(int param_1)
 
 {
   int iVar1;
@@ -17688,7 +17688,7 @@ void __fastcall FUN_00c809d0(uint *param_1,int *param_2)
     } while (local_c != (uint *)0x0);
   }
   oggpack_write(param_2,param_1[0xd0] - 1,2);
-  uVar1 = FUN_00c809b0(uVar1);
+  uVar1 = Util_CeilLog2_b(uVar1);
   oggpack_write(param_2,uVar1,4);
   iVar2 = 0;
   local_14 = (uint *)0x0;
@@ -18635,10 +18635,10 @@ undefined4 __fastcall FUN_00c81dc0(int param_1,int param_2,uint *param_3,undefin
   piVar4 = (int *)(param_1 + 4);
   oggpack_write(piVar4,1,1);
   *(int *)(param_2 + 0x51c) = *(int *)(param_2 + 0x51c) + 1;
-  iVar6 = FUN_00c809a0(*(int *)(param_2 + 0x50c) - 1);
+  iVar6 = Util_BitLength_b(*(int *)(param_2 + 0x50c) - 1);
   *(int *)(param_2 + 0x518) = *(int *)(param_2 + 0x518) + iVar6 * 2;
   oggpack_write(piVar4,local_104[0],iVar6);
-  iVar6 = FUN_00c809a0(*(int *)(param_2 + 0x50c) - 1);
+  iVar6 = Util_BitLength_b(*(int *)(param_2 + 0x50c) - 1);
   oggpack_write(piVar4,local_104[1],iVar6);
   local_168 = 0;
   local_178 = (int *)0x2;

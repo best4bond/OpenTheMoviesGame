@@ -1582,7 +1582,7 @@ addr,size,name,source_file_or_bracket,category,fable_hint,fable_method,fable_bod
 00bf1ab0,31,FUN_00bf1ab0,between PKCThreadManager and PKCTimerManager,unclassified,,,
 00bf1b00,151,FUN_00bf1b00,between PKCThreadManager and PKCTimerManager,unclassified,Math_Vector3Normalize,body,0.72
 00bf1ba0,52,FUN_00bf1ba0,between PKCThreadManager and PKCTimerManager,unclassified,,,
-00bf1c20,33,FUN_00bf1c20,between PKCThreadManager and PKCTimerManager,unclassified,Math_Vector3Length,body,1.00
+00bf1c20,33,Math_Vector3Length,between PKCThreadManager and PKCTimerManager,named,Math_Vector3Length,body,1.00
 00bf1c90,33,FUN_00bf1c90,between PKCThreadManager and PKCTimerManager,unclassified,,,
 00bf1cc0,33,FUN_00bf1cc0,between PKCThreadManager and PKCTimerManager,unclassified,,,
 00bf1d50,8,FUN_00bf1d50,between PKCThreadManager and PKCTimerManager,unclassified,,,
@@ -2476,7 +2476,7 @@ addr,size,name,source_file_or_bracket,category,fable_hint,fable_method,fable_bod
 00c109c0,89,FUN_00c109c0,between PKAllocatorsCPooledMemory and CVSTParameters,unclassified,,,
 00c10a20,89,FUN_00c10a20,between PKAllocatorsCPooledMemory and CVSTParameters,unclassified,,,
 00c10ab0,7,SetVtable_00da34b0_00c10ab0,between PKAllocatorsCPooledMemory and CVSTParameters,vtable setter,,,
-00c10af0,75,FUN_00c10af0,between PKAllocatorsCPooledMemory and CVSTParameters,unclassified,Pow2_Float,body,0.96
+00c10af0,75,Math_Pow10_x87,between PKAllocatorsCPooledMemory and CVSTParameters,named,Pow2_Float,body,0.96
 00c10b40,109,FUN_00c10b40,between PKAllocatorsCPooledMemory and CVSTParameters,unclassified,,,
 00c10d80,144,FUN_00c10d80,between PKAllocatorsCPooledMemory and CVSTParameters,unclassified,SetVWindowsForDeprecatedDrawInterface,size-run,
 00c10e70,144,FUN_00c10e70,between PKAllocatorsCPooledMemory and CVSTParameters,unclassified,SetVWindowsForDeprecatedDrawInterface,size-run,
@@ -2488,7 +2488,7 @@ addr,size,name,source_file_or_bracket,category,fable_hint,fable_method,fable_bod
 00c11710,152,FUN_00c11710,between PKAllocatorsCPooledMemory and CVSTParameters,unclassified,Audio_ApplyEffectChain,size-run,0.76
 00c117b0,30,ScalarDeletingDtor_00c117b0,between PKAllocatorsCPooledMemory and CVSTParameters,scalar deleting destructor,`vector_deleting_destructor',size-run,
 00c11800,680,FUN_00c11800,between PKAllocatorsCPooledMemory and CVSTParameters,unclassified,Audio_MixStereoSamples,size-run,0.84
-00c11ab0,75,FUN_00c11ab0,between PKAllocatorsCPooledMemory and CVSTParameters,unclassified,Pow2_Float,size-run,0.96
+00c11ab0,75,Math_Pow10_x87_b,between PKAllocatorsCPooledMemory and CVSTParameters,named,Pow2_Float,size-run,0.96
 00c11b10,109,FUN_00c11b10,between PKAllocatorsCPooledMemory and CVSTParameters,unclassified,,,
 00c11b90,16,FUN_00c11b90,between PKAllocatorsCPooledMemory and CVSTParameters,unclassified,,,
 00c11c50,23,FUN_00c11c50,between PKAllocatorsCPooledMemory and CVSTParameters,unclassified,,,
@@ -4098,7 +4098,7 @@ addr,size,name,source_file_or_bracket,category,fable_hint,fable_method,fable_bod
 00c62450,45,FUN_00c62450,between CCodaFrameStreamer and LLAChannelCInitParams,unclassified,,,
 00c62930,272,FUN_00c62930,between CCodaFrameStreamer and LLAChannelCInitParams,unclassified,NormalizeVectorPair,body,0.87
 00c62a40,8,FUN_00c62a40,between CCodaFrameStreamer and LLAChannelCInitParams,unclassified,,,
-00c62a50,75,FUN_00c62a50,between CCodaFrameStreamer and LLAChannelCInitParams,unclassified,Pow2_Float,size-run,0.96
+00c62a50,75,Math_Pow10_x87_c,between CCodaFrameStreamer and LLAChannelCInitParams,named,Pow2_Float,size-run,0.96
 00c62ad0,109,FUN_00c62ad0,between CCodaFrameStreamer and LLAChannelCInitParams,unclassified,Math_ScaleByLog2,size-run,0.75
 00c62b40,64,FUN_00c62b40,between CCodaFrameStreamer and LLAChannelCInitParams,unclassified,Math_ComputeLogValue,size-run,0.20
 00c62c50,621,FUN_00c62c50,between CCodaFrameStreamer and LLAChannelCInitParams,unclassified,CTCHeroStats::SetupCharacterStateInitial,size-run,0.19
@@ -4223,7 +4223,7 @@ addr,size,name,source_file_or_bracket,category,fable_hint,fable_method,fable_bod
 00c69030,54,Dtor_00c69030,between LLAChannelCInitParams and MapAnalysisImpCGroupModel,destructor,OnDie,size-run,
 00c69070,109,FUN_00c69070,between LLAChannelCInitParams and MapAnalysisImpCGroupModel,unclassified,CTCHeroStats_NotifyObservers,size-run,0.65
 00c690e0,27,ScalarDeletingDtor_00c690e0,between LLAChannelCInitParams and MapAnalysisImpCGroupModel,scalar deleting destructor,`vector_deleting_destructor',size-run,
-00c69120,75,FUN_00c69120,between LLAChannelCInitParams and MapAnalysisImpCGroupModel,unclassified,Math_Pow2_Fast,size-run,0.96
+00c69120,75,Math_Pow10_x87_d,between LLAChannelCInitParams and MapAnalysisImpCGroupModel,named,Math_Pow2_Fast,size-run,0.96
 00c69190,109,FUN_00c69190,between LLAChannelCInitParams and MapAnalysisImpCGroupModel,unclassified,CAudioChannel_GetOutputGain,size-run,0.75
 00c69200,10,FUN_00c69200,between LLAChannelCInitParams and MapAnalysisImpCGroupModel,unclassified,Clear,size-run,
 00c69210,10,FUN_00c69210,between LLAChannelCInitParams and MapAnalysisImpCGroupModel,unclassified,AddExclusiveObserver,size-run,
@@ -4391,15 +4391,15 @@ addr,size,name,source_file_or_bracket,category,fable_hint,fable_method,fable_bod
 00c7dde0,30,FUN_00c7dde0,between MapAnalysisImpCGroupModel and ?,unclassified,,,
 00c7de00,8,FUN_00c7de00,between MapAnalysisImpCGroupModel and ?,unclassified,,,
 00c7de10,25,FUN_00c7de10,between MapAnalysisImpCGroupModel and ?,unclassified,,,
-00c7de30,24,FUN_00c7de30,between MapAnalysisImpCGroupModel and ?,unclassified,Util_BitWidth,size-run,1.00
+00c7de30,24,Util_CeilLog2,between MapAnalysisImpCGroupModel and ?,named,Util_BitWidth,size-run,1.00
 00c7df90,484,FUN_00c7df90,between MapAnalysisImpCGroupModel and ?,unclassified,C3DGeneratorObject_Parse,size-run,0.41
 00c7e180,29,FUN_00c7e180,between MapAnalysisImpCGroupModel and ?,unclassified,Float10_NormalizeAbsValue,size-run,0.54
 00c7e1a0,2343,FUN_00c7e1a0,between MapAnalysisImpCGroupModel and ?,unclassified,CPlayer::ProcessAudioFrame,size-run,0.44
 00c7ead0,1274,FUN_00c7ead0,between MapAnalysisImpCGroupModel and ?,unclassified,Mesh_BlendMorphStreams,size-run,0.85
 00c7efe0,25,FUN_00c7efe0,between MapAnalysisImpCGroupModel and ?,unclassified,"_Cons_val<std::allocator<C3DGeneratorObject>,C3DGeneratorObject,C3DGeneratorObject>",size-run,
 00c7f000,52,FUN_00c7f000,between MapAnalysisImpCGroupModel and ?,unclassified,C3DGeneratorObject_Destroy,size-run,0.29
-00c7f080,14,FUN_00c7f080,between MapAnalysisImpCGroupModel and ?,unclassified,Util_CountHighBits,size-run,1.00
-00c7f090,20,FUN_00c7f090,between MapAnalysisImpCGroupModel and ?,unclassified,Util_PopCount,size-run,1.00
+00c7f080,14,Util_BitLength,between MapAnalysisImpCGroupModel and ?,named,Util_CountHighBits,size-run,1.00
+00c7f090,20,Util_PopCount,between MapAnalysisImpCGroupModel and ?,named,Util_PopCount,size-run,1.00
 00c7f190,332,FUN_00c7f190,between MapAnalysisImpCGroupModel and ?,unclassified,C3DGeneratorObject_ParseAlt,size-run,0.30
 00c7f2f0,444,FUN_00c7f2f0,between MapAnalysisImpCGroupModel and ?,unclassified,Math_BuildBasisVectors,size-run,0.69
 00c7f4c0,879,FUN_00c7f4c0,between MapAnalysisImpCGroupModel and ?,unclassified,Audio_ComputeTimeFrequencyMap,size-run,0.99
@@ -4413,8 +4413,8 @@ addr,size,name,source_file_or_bracket,category,fable_hint,fable_method,fable_bod
 00c80570,596,FUN_00c80570,between MapAnalysisImpCGroupModel and ?,unclassified,Environment_TransformVertexArray,size-run,0.93
 00c807d0,399,FUN_00c807d0,between MapAnalysisImpCGroupModel and ?,unclassified,CDefinitionManager::ProcessPropertyDefinition,size-run,0.72
 00c80960,25,FUN_00c80960,between MapAnalysisImpCGroupModel and ?,unclassified,"_Cons_val<std::allocator<C3DGeneratorObject>,C3DGeneratorObject,C3DGeneratorObject>",size-run,
-00c809a0,14,FUN_00c809a0,between MapAnalysisImpCGroupModel and ?,unclassified,Util_CountBits,size-run,1.00
-00c809b0,24,FUN_00c809b0,between MapAnalysisImpCGroupModel and ?,unclassified,Math_Log2Int,size-run,1.00
+00c809a0,14,Util_BitLength_b,between MapAnalysisImpCGroupModel and ?,named,Util_CountBits,size-run,1.00
+00c809b0,24,Util_CeilLog2_b,between MapAnalysisImpCGroupModel and ?,named,Math_Log2Int,size-run,1.00
 00c809d0,421,FUN_00c809d0,between MapAnalysisImpCGroupModel and ?,unclassified,C3DGeneratorObject_Write,size-run,0.51
 00c80b80,568,FUN_00c80b80,between MapAnalysisImpCGroupModel and ?,unclassified,C3DGeneratorObject_ParseComplex,size-run,0.30
 00c80dd0,21,FUN_00c80dd0,between MapAnalysisImpCGroupModel and ?,unclassified,Int_Compare,size-run,0.88

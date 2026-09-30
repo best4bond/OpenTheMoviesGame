@@ -9727,9 +9727,9 @@ void __fastcall SetVtable_00da34b0_00c10ab0(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00c10af0 @ 00c10af0 ////
+//// FUNCTION Math_Pow10_x87 @ 00c10af0 ////
 
-float10 __cdecl FUN_00c10af0(float param_1)
+float10 __cdecl Math_Pow10_x87(float param_1)
 
 {
   float10 fVar1;
@@ -10206,9 +10206,9 @@ void __thiscall FUN_00c11800(void *this,int param_1,int param_2)
 }
 
 
-//// FUNCTION FUN_00c11ab0 @ 00c11ab0 ////
+//// FUNCTION Math_Pow10_x87_b @ 00c11ab0 ////
 
-float10 __cdecl FUN_00c11ab0(float param_1)
+float10 __cdecl Math_Pow10_x87_b(float param_1)
 
 {
   float10 fVar1;
