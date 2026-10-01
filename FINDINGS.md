@@ -500,6 +500,36 @@ It is a lookup table over the costume clothing textures (`com_<f|m>_<era>_<item>
 
 **`.cam`** (51 set cameras: `set_corridortz4.cam`, `set_diner.cam`, `set_beach.cam`, ...). Loaded by `FUN_009aca20` from the set-loading code (`decomp_0002.c:1620`), which then reads the frame count at +8 minus 1. Layout: u32 0, u32 file size, u32 frame count, a zero dword, then `count × 28` bytes. The size relation `16 + 28 × count` holds for all 51 files (101 to 901 frames). Each frame is 7 floats. In `set_corridortz4.cam` frame 0 is (−2.62, −4.27, 1.93), (8.93, 7.29, 1.81), 1.143. The first triple is a position, the second a point it looks at (about 12 units away), and the last value 1.143 stays the same across frames, so it reads as a field of view in radians (about 65 degrees). Frame 250 is on the opposite side of the set at (0.19, 2.80, 1.83), so a file is a sweep of candidate camera placements around the set (one frame per placement), not a time-based move. That reading is a guess from the numbers.
 
+## `.sdb`, `.stx` and `.trl`
+
+No code in `MoviesSE.exe` mentions `.sdb`, `.stx` or "Serenity", so all of this comes from the data.
+
+**`.sdb` (Serenity UI database).** `tools/sdb_parse.py` parses `title.sdb`, `titlebe.sdb` and `titlele.sdb` completely; every entry's offset, size and hash check out. Layout:
+
+| Item | Layout |
+|---|---|
+| Version | two u16: 1, 0 |
+| Size, count | u32 total size (= file length, 14,212), u32 entry count (23) |
+| Entries | 12 + 44 × `i`: `char name[32]` (padded with `0xFF`), u32 size, u32 hash, u32 offset |
+| Data | starts at `12 + 44 × count` (0x400) and the entries are contiguous |
+
+`titlebe.sdb` is big-endian and `titlele.sdb` is little-endian: the header words flip, and the little-endian file is the same layout built for a little-endian target (the name `be`/`le` says as much). `title.sdb` equals the big-endian one in layout (I did not diff the payloads byte for byte).
+
+The hash is `h = h × 53 + c` over the upper-cased file name including its extension, mod 2³². It matches all 23 entries (for example `TITLE17.SER` gives 135,053,302). The generated header `title.h` uses the same hash for its enum values: `SERENITY_OPTIONS = 2702635344` is the hash of `OPTIONS` and `SERENITY_NEWGAME = 1731261864` is the hash of `NEWGAME`, while the one-letter names `A` and `B` hash to their ASCII codes 65 and 66. So UI code refers to screens and widgets by this hash.
+
+The entries are typed by extension: `.SER` (a screen: header, a section-offset table, then widget records), `.DCT` (a dictionary-like table), `.QWD` (44 bytes) and `.BTN` (168 or 356 bytes). Every payload starts with a big-endian version `0x00010000` and its own size, which equals the entry size. A `.QWD` is `version, size, id, previous id, 1.0, 1.0, -128 (0xFFFFFF80), -64 or -128`, which looks like a quad with two scale floats and an offset; the ids (1, 3, 5, 9, 0xb...) are the widget ids that the `.SER` records reference. A `.BTN` starts `version, size, id, 1.0, 0, 0, 1.0, 0`, which looks like a 2×2 matrix. I have not decoded the `.SER` section bodies (the 10,104-byte `title18.SER` has 0x79 sections).
+
+**`.stx`** (`title7.stx`, 112 bytes, little-endian): u16 version 1, u32 size (0x70, equal to the file length), u16 0, u16 3, u32 6, then 6 vertices of 16 bytes each (int32 x, int32 y, int32 z, u32 colour `0xFF000000`) and 2 bytes of padding. The six vertices are two triangles forming a rectangle about 248 × 173 units, centred near the origin, so this is a coloured UI quad, probably the black backing of a title screen element. The `3` is probably a primitive type (triangle list) and I did not test that.
+
+**`.trl`** (`samplemovie.trl`, 90,755 bytes): a saved movie project. It begins with a u32 `0x11` (17, the version), zeros, and a u32 `0x10a0` (4,256) at 0x14. What follows is a mix of UTF-16 and 8-bit strings:
+- The title `War is Hell`, the producer-style entries (`Marie Colwell`, `Love Lies Bleeding`, a `{role_director}` placeholder) and a long list of cast names such as `Donald Marshall`, `Commander Venus` and `Captain Verm`.
+- Film settings: `genre_horror`, `filmsize_70mm`, `filmstock_digital`, `camera_digital`, `sound_digital`, `rig_crane`, and a table of the five genres (`genre_action`, `genre_comedy`, `genre_horror`, `genre_romance`, `genre_sci-fi`) with a float for each.
+- Twelve scenes, each starting with `scene_<name>` and a `.flm` file (`001_field_battle_e.flm`, `001_incoming.flm`, `001_shot_react_injury_shot.flm`...), followed by the set mesh (`set_landscape_battlefield.msh`), a backdrop (`bd_battlefield_day.dds`) and slider values (`sld_attackers`, `sld_duration`, `sld_violence`...).
+- Per-actor entries that restate the whole costume chain: head (`head_m_white_joe.hd`), `.cos` file (`m_war_gerww1_1.cos`), make-up textures (`mup_eyes_v00.dds`, `mup_beard_v12.dds`), hair mesh (`hair_80s_m2.msh`), then props (`p_gun_mauser.msh`).
+- Embedded JPEG data (starts at `0x114c`, `0x1842`, `0x12cd8` and others; the big one at the end carries Adobe Photoshop 7.0 metadata dated 2005-07-06), which are the cast and film thumbnails.
+
+So the movie file is where the earlier formats meet: a project names its `.flm` animation, a set, and each actor's `.hd`, `.cos` and `.msh` assets. The binary framing around the strings (record sizes, the offset table) is not decoded, so this is a content map, not a parser. The `.flm` animations are still unexamined and are the natural next file to look at.
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
 - Check `tools/pak_lookup.py` against a version 5 or 6 pak; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
