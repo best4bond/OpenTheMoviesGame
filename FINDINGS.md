@@ -471,6 +471,18 @@ Every head has the same vertex count, so the heads are variants of one topology.
 
 `.ccs` again: the stale pointer values (for example `e0 c5 96 19` right after the first name) show it is also a memory dump of a live structure, so its layout follows an in-memory class. Its loader still is not found. Both places that mention `*.ccs` only list files, and the announcer selection reads head and age from an ini file.
 
+## `.fas` and `.cam` (layouts from the data, checked on every file)
+
+**`InfoTextures.fas`** (`Data\Costume\Datas\`, loaded whole by the function at `00a71cc0`, about `decomp_0049.c:21160`). 20,292 bytes: a zero dword, a count (390), a dword the loader overwrites with `buffer + 12` (so entries start at 0x0c), then 390 entries of 0x34 bytes (390 × 52 + 12 = 20,292 exactly). Each entry is a 32-byte texture name (padded with `0xCD` stale bytes) and five dwords:
+- Dword 0: a year (1900, 1920, 1950, 1980...). It matches the decade in the name (`com_f_20s_1_*` has 1920), or is 0 for one shoe entry. It is the era the texture belongs to.
+- Dword 1: a small number 1–11. I don't know what it is; the same garment's `v00`, `v01` variants don't map to it directly.
+- Dword 2: a garment slot id. `panels` is 8, `shoes` 9, `skirt` 2, `shorts` 1, which agrees with the part names in the filename.
+- Dword 3: a flag-like value, 7 in 293 of the 390 entries.
+- Dword 4: always 0.
+It is a lookup table over the costume clothing textures (`com_<f|m>_<era>_<item>_v<variant>.dds`). I found no code that reads entries after the load, so the meanings above are inferred from the values and names only.
+
+**`.cam`** (51 set cameras: `set_corridortz4.cam`, `set_diner.cam`, `set_beach.cam`, ...). Loaded by `FUN_009aca20` from the set-loading code (`decomp_0002.c:1620`), which then reads the frame count at +8 minus 1. Layout: u32 0, u32 file size, u32 frame count, a zero dword, then `count × 28` bytes. The size relation `16 + 28 × count` holds for all 51 files (101 to 901 frames). Each frame is 7 floats. In `set_corridortz4.cam` frame 0 is (−2.62, −4.27, 1.93), (8.93, 7.29, 1.81), 1.143. The first triple is a position, the second a point it looks at (about 12 units away), and the last value 1.143 stays the same across frames, so it reads as a field of view in radians (about 65 degrees). Frame 250 is on the opposite side of the set at (0.19, 2.80, 1.83), so a file is a sweep of candidate camera placements around the set (one frame per placement), not a time-based move. That reading is a guess from the numbers.
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
 - Check `tools/pak_lookup.py` against a version 5 or 6 pak; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
