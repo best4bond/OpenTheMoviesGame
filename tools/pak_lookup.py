@@ -56,6 +56,8 @@ def entry(data, hdr, i):
 
 def read(data, hdr, e):
     """Return the file bytes: inner header +4 unpacked, +8 compressed, +0xc flags (bit0 stored), data at +0x10."""
+    if e["packed"] == 0:
+        return b""                                   # empty file (e.g. sandbox.cfg)
     blk = data[e["offset"]: e["offset"] + e["packed"]]
     _, usize, csize, fl = struct.unpack_from("<4I", blk, 0)
     body = blk[0x10:]

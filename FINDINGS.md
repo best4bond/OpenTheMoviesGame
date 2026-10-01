@@ -381,6 +381,21 @@ The tree also lists third-party folders (`lzo`, `zlib`, `stlport`, `dxtc`, `xcr2
 
 `premium_costumes0000.pak` holds `.ini` costume definitions as plain text (`category_premium.ini`, `m_70s_3.ini`, ...), `.cos` costume files, `.msh` meshes and `.dds` thumbnails. A costume `.ini` has fields such as `cost`, `start`, `end` (years available), `glamour`, `boredom`, a `[fashionable]` block (`start`, `peak`, `end`) and an `[age]` block (`min`, `max`) and `[physique]`. This is data for the fashion and costume-appeal system, so the data files are readable as written. I did not commit the extracted files.
 
+## `MISC0000.pak`: the general data archive
+
+A third pak (version 5, 7.4 MB, 3,925 entries, 256 buckets) parses with `tools/pak_lookup.py`: 3,925 of 3,925 entries decode and every unpacked size matches. One entry (`sandbox.cfg`) is empty (offset 0, sizes 0), which the reader now returns as empty bytes instead of crashing. The hash check passes for 3,900 entries; the other 25 all have a 31-character stored name, which is the 32-byte inline name field cut off, so they are checked against the wrong string. That is a limit of the check, not of the format.
+
+What it holds, by extension: `.ini` 3,178 (props, set dressing, costume, facility, research packs, script templates), `.cos` 372, `.mfl` 83 and `.hd` 83, `.cam` 51, `.ccs` 34, `.lnd` 25, `.csv` 21, `.png` 15, `.prx` 11, plus a few `.txt`, `.dds`, `.m`, `.cfg`, `.psd`, `.xls`, `.bmp`, `.jpg`, `.dat`, `.lst`, `.rob`, `.sdb`, `.stx`, `.fas`, `.trl`, `.h`.
+
+Formats recognised from the first bytes. Anything not labelled "plain text" is only a first look:
+- **Plain text, readable now:** `.ini` (INI sections such as `[script]`, `[cast/1]`, `[quality]`), `.csv`, `.txt`, `.cfg`, `.lst` (`head_f_black_heroine.msh 0.6` pairs), `.rob` (`[prop] [x y z] [angle] [scale]` placement lists), `.h` (generated enums for the `Serenity` UI, e.g. `SERENITY_NEWGAME = 1731261864`, so names are hashed to 32-bit ids).
+- **Scripts:** the `data\scripts\qmm\*` and `family` files are the movie/story script templates (`title = PROJECT_TITLE_14680`, `genre = genre_romance`, `quality = 0.38`, cast with `gender`, `costume`, `roletype`). `scriptquality.ini` sets `max_length = 180`, `max_set_changes = 10`, `max_costume_changes = 10`, `num_scenes = 15`, `max_lead_roles = 3`, `max_nonlead_roles = 5`. These look like the limits the film-quality scorer uses.
+- **Flash UI:** `.mfl` and `.m`/`.mf` files start `FWS` version 6, i.e. uncompressed SWF 6 movies, with `.dds` texture names (`ui\flash\*.dds`) in the tag data. Standard SWF tooling should open them.
+- **Standard formats:** `.png`, `.jpg`, `.dds`, `.bmp`, `.psd`, `.xls`, `.prx` (UTF-16 Windows Media profile XML).
+- **Binary, undecoded:** `.cos` (starts `07 00 00 00`, then a mesh name `cos_f_50s_3.msh` in a 0x80-byte slot, so a costume binding: mesh, textures, parameters), `.ccs` (a count, then `f_30s_4.cos` and texture names such as `mup_nails_v05.dds`, so a costume set), `.hd` (a header with a `head_*.dds` name, then 40+ KB of head data), `.lnd` (terrain: a count, then 32-byte layer names like `Land_sand00`, `Land_grass00`), `.cam` (floats, camera tracks for sets), `.fas` (`infotextures.fas`: a table of 0x24-byte entries with texture names), `.sdb` (a Serenity table: names such as `title.SER` with id words), `.stx`, `.trl` (a movie trailer file with UTF-16 titles, e.g. `War is Hell`), `.dat` (`head_shape.dat`, u16 index triples).
+
+None of the extracted data is committed. Next worthwhile targets: `.cos` and `.ccs` (small, structured, and tied to the already-decoded meshes) and `.lnd`.
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
 - Check `tools/pak_lookup.py` against a version 5 or 6 pak; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
