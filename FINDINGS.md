@@ -436,7 +436,24 @@ After the records the file ends with nothing (most files), or one all-zero 0x78 
 
 So a `.cos` ties a body mesh to texture overrides and the hats and glasses worn with it. Together with the mesh and skeleton work, the costume side of the asset chain is now readable end to end: `.ini` rules, `.cos` bindings, `.msh` geometry, `.dds` textures.
 
-**`.ccs`** (34 files, `f_announce_*.ccs` / `m_announce_*.ccs`, one per decade 1925-2005 and sex, so the announcer outfits). The first dword is the file size (true for all 34), then a zero dword and a 32-byte `.cos` name (`f_30s_4.cos`), then variable-length records: sizes step in units of 44 bytes (752, 796, 840, 884, 928, 972, 1016) and optional 32-byte texture names such as `mup_nails_v05.dds` and `mup_beard_v12.dds` (make-up). I did not find the loader, so the record layout is not decoded.
+**`.ccs`** (34 files, `f_announce_*.ccs` / `m_announce_*.ccs`, one per decade 1925-2005 and sex, so the announcer outfits). The loader is `FUN_009d0b40` (`decomp_0045.c`, near line 670): it appends `.ccs` to the name, reads the whole file, and hands the buffer to `FUN_009cd120`, which copies `*(u32*)buf` bytes and sets `buf[0x2c] = buf + 0x30` when the count at `buf[0x28]` is non-zero. It then reads the base costume name from `buf + 8` and looks up `data/costume/datas/<name>`. The file is therefore a flat dump of a live structure with one stale pointer, and the layout below holds for all 34 files (size = `0x30 + 44 × count`, count 17 to 21):
+
+| Offset | Field |
+|---|---|
+| 0x00 | u32 total size (equals the file length) |
+| 0x04 | u32, 0 in all 34 |
+| 0x08 | 32-byte base costume name (`f_30s_4.cos`, `m_tuxedo.cos`) |
+| 0x28 | u32 record count |
+| 0x2c | stale pointer, rewritten at load to `+0x30` |
+| 0x30 | `count` records of 44 bytes |
+
+Record: `u8 kind`, `u8 key`, `u16 0`, `u32 slot`, `u32 value`, `char name[32]`.
+- Record 0 is all zero except `value` (0 or 1), so it looks like a default entry.
+- The `key` bytes 1…`count−1` are each used once per file, but the records are not in key order, so `key` is not a type id. Entries with `kind` 1-6 always have `slot` 1 (clothing-style entries) and the rest have `kind` 0.
+- For `kind` 0, `slot` is stable across files and the name tells what it is: 2 and 3 are `mup_eyes_v00/v01.dds` (the two eyes), 4 `mup_lips_*`, 5 `mup_beard_*` (male), 7 a hair mesh (`hair_30s_f2.msh`), 10 `mup_meyebrow_*` (male), 11 `mup_feyebrow_*` (female), 12 `mup_nails_*`. Slots 6, 8, 9 and 13 carry no name in the samples.
+- `name` is empty unless the slot needs an asset (the `mup_*` texture or the hair mesh).
+
+So an announcer file is "this base costume, plus this make-up and hair for the era". The make-up textures follow `mup_<part>_v<NN>.dds`. I did not find the code that walks the records, so `kind`, `key` and `value` are described by their values only.
 
 ## `.lnd` landscape files (verified layout)
 
