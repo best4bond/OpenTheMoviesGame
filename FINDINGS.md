@@ -186,7 +186,7 @@ The Fable docs also list this block as unknown. The distance floats and the alia
 
 ## `.pak` archives
 
-Decoded from the decompile and checked against one real version-4 pak (`premium_costumes0000.pak`, 45 entries, 713,207 bytes). All 45 entries matched on bucket range, both hashes and decoded size. Versions 5 and 6 are still unchecked.
+Decoded from the decompile and checked against one real version-4 pak (`premium_costumes0000.pak`, 45 entries, 713,207 bytes). All 45 entries matched on bucket range, both hashes and decoded size. Version 5 is checked on a second real pak (`meshscene0001.pak`, 9,578 entries, 26 MB): all 9,578 entries match. Version 6 is still unchecked.
 
 **Discovery** (`FUN_00a96360`, `decomp_0051.c`): scans `data\Pak\*.*pak`, then the per-user folder `...\Lionhead Studios\TheMovies\` for `*.cpak` (the folder is from `SHGetSpecialFolderPathA` with CSIDL `0x23`, the common application data folder). `.cpak` files are user content and go through a separate loader (`FUN_00aafc30`) from the normal `.pak` path.
 
@@ -210,7 +210,7 @@ Decoded from the decompile and checked against one real version-4 pak (`premium_
 | 0x24 | v4: offset of the string blob |
 | 0x28, 0x2c, 0x30 | v5/6: offsets of the entry table, the 8-byte table and the string blob |
 
-In v4 the three offsets sit at `0x1c`-`0x24`. In v5 and v6 three more dwords come first (`0x1c`-`0x24`, kept but not used in the parts I read), and the offsets move to `0x28`-`0x30`. The loader copies the tables into memory: `count * 0x38` bytes of entries, `count2 * 8` bytes of small records, and the string blob.
+In v4 the three offsets sit at `0x1c`-`0x24`. In v5 and v6 three more dwords come first (`0x1c`-`0x24`, zero in the v5 sample), and the offsets move to `0x28`-`0x30`. The v5 header is 0x34 bytes. In the v5 sample the entries start at 52 (`0x34`) and the data starts at 539,492, the end of the string blob. The loader copies the tables into memory: `count * 0x38` bytes of entries, `count2 * 8` bytes of small records, and the string blob.
 
 **Entries (0x38 bytes), decoded from the lookup and load code:**
 

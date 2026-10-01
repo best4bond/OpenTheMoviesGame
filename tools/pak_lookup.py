@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Reference implementation of The Movies .pak path hashing and header/entry parsing,
 transcribed from MoviesSE.exe (see FINDINGS.md, ".pak archives").
-Checked on one version-4 pak (premium_costumes0000.pak, 45 entries): header, bucket table, both hashes
-and decoding all match. Versions 5 and 6 are still unchecked.
+Checked on a version-4 pak (premium_costumes0000.pak, 45 entries) and a version-5 pak
+(meshscene0001.pak, 9,578 entries): header, bucket table, both hashes and decoding all match.
+Version 6 is still unchecked.
 
 Usage: pak_lookup.py FILE.pak            list header and entries
        pak_lookup.py FILE.pak --verify   check hashes, buckets and sizes
@@ -93,3 +94,13 @@ if __name__ == "__main__":
         for i in range(h["count"]):
             e = entry(d, h, i)
             print(full_path(d, h, e), e["offset"], e["packed"], e["unpacked"])
+
+
+def unzcmp(blob):
+    """Decode the second layer used by .msh/.flm files: "zcmp", size-4, unpacked size, zlib size, 0, zlib stream."""
+    if blob[:4] != b"zcmp":
+        return blob
+    _, usize, csize = struct.unpack_from("<3I", blob, 4)
+    out = zlib.decompress(blob[20:20 + csize])
+    assert len(out) == usize
+    return out
