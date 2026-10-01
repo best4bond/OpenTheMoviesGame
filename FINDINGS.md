@@ -69,6 +69,10 @@ All present in the export: `CStudioAI_CreateGlobalInstance` (`0041f4e0`), `CStud
 
 ## `.msh` mesh format
 
+Checked against the 11 real costume meshes from `premium_costumes0000.pak`: the file header, version 10, control byte `0xC2` and the 0x24-byte header all match (see the container note below). The texture-name table at `0x24` holds 32-byte NUL-padded names (the sample has one: `cos_m_30s_1.dds`), and the first material record follows it at `0x44`. The vertex and primitive sections are not yet checked.
+
+**Container.** In a pak these meshes are stored, not compressed, because the file itself is a `zcmp` container: `"zcmp"`, then file size minus 4, the unpacked size, the zlib size, a zero dword, and a zlib stream at `+0x14`. The unpacked data is the version-10 mesh. That is the second compression layer.
+
 Parsed by `LH_LoadMeshBinary` (`009deb10`, `decomp_0045.c`). Details below come from the loaders' own annotations in the export plus a re-read of the code; none were checked against real `.msh` files here.
 
 **File header** (`LH_LoadMeshHeader`, `009dadd0`), 0x24 bytes when the control byte is `0xC2`:
@@ -182,7 +186,7 @@ The Fable docs also list this block as unknown. The distance floats and the alia
 
 ## `.pak` archives
 
-Decoded from the decompile; the layout has not been checked against a real `.pak` file.
+Decoded from the decompile and checked against one real version-4 pak (`premium_costumes0000.pak`, 45 entries, 713,207 bytes). All 45 entries matched on bucket range, both hashes and decoded size. Versions 5 and 6 are still unchecked.
 
 **Discovery** (`FUN_00a96360`, `decomp_0051.c`): scans `data\Pak\*.*pak`, then the per-user folder `...\Lionhead Studios\TheMovies\` for `*.cpak` (the folder is from `SHGetSpecialFolderPathA` with CSIDL `0x23`, the common application data folder). `.cpak` files are user content and go through a separate loader (`FUN_00aafc30`) from the normal `.pak` path.
 
@@ -224,9 +228,9 @@ In v4 the three offsets sit at `0x1c`-`0x24`. In v5 and v6 three more dwords com
 
 **Lookup** (`PakFile_FindEntry`, `00a9b5a0`): the bucket table at pak `+0x2c` has 256 records of `{start index, end index}`, indexed by `hash1 & 0xff`. Within a bucket the entries are binary-searched by `hash1`. When `hash1` matches but `hash2` does not, the code scans neighbouring entries with equal `hash1` for the matching `hash2`. `Pak_FindEntry` (`00a10550`) tries each loaded pak from the first to the last, and `Pak_FindEntryLastPakFirst` (`00a105b0`) tries them from the last to the first, which gives patch paks priority.
 
-**Reading a file** (`Pak_LoadFile`, `00a108f0`): a loose file (pak index `0xfff`) is read from disk. Otherwise it seeks to entry `+0x08`, reads entry `+0x0c` bytes, and passes the block to `Pak_DecodeEntryData` (`00afb9d0`). The block has its own 0x10-byte inner header: `+0x04` unpacked size, `+0x08` compressed size, `+0x0c` flags (bit 0 set = stored uncompressed), and the data at `+0x10`. Compressed data is a zlib stream (`Zlib_InflateBuffer`, `00afb800`, `inflateInit_` then `inflate` with `Z_FINISH`). This explains Dragon UnPACKer's note that some Movies pak files "have 2 compression headers": the inner header sits in front of the zlib stream's own header. I have not checked that match against its source.
+**Header words (version 4), from the real file:** `[0]=4`, `[1]=4687` (offset of the first data block, which is also where the header, entries, bucket table and string blob end), `[2]=0`, `[3]=45` entries, `[4]=256` buckets, `[5]=5` directory strings, `[6]=79` blob bytes, `[7]=40` entry table offset, `[8]=2560` bucket table offset, `[9]=4608` blob offset. The string blob is NUL-separated directory strings starting with an empty one (`""`, `data\costume\`, `data\costume\datas\`, `data\meshes\`, `data\textures\thumbs\costumes\`), and an entry's directory string plus its inline name is the full path whose hashes it carries. On disk the pak-index bits in the flags are `0xfff`; the game overwrites them at load. Entries are sorted by `(hash1 & 0xff, hash1)`, bucket records are `{first index, one past last}`, and the data blocks follow each other without gaps to the end of the file.
 
-`tools/pak_lookup.py` implements the hashing, header parsing, entry parsing and decoding from this description. **It is untested against a real pak file**, because I have none here. Running it on one would confirm or break the layout above. Unknown still: entry `+0x14` bit 0, the inner header's first dword, and how the 8-byte bucket records handle empty buckets.
+**Reading a file** (`Pak_LoadFile`, `00a108f0`): a loose file (pak index `0xfff`) is read from disk. Otherwise it seeks to entry `+0x08`, reads entry `+0x0c` bytes, and passes the block to `Pak_DecodeEntryData` (`00afb9d0`). The block has its own 0x10-byte header: `+0x00` the block size (equal to entry `+0x0c`), `+0x04` unpacked size, `+0x08` compressed size, `+0x0c` flags (bit 0 set = stored uncompressed), then the data at `+0x10`. A compressed block holds a zlib stream (`Zlib_InflateBuffer`, `00afb800`) padded with 0-3 bytes. In the sample, 37 blocks were compressed (flag 0) and 8 stored (flag 1). The stored ones are the `.msh` meshes, which are already compressed (see below). That explains Dragon UnPACKer's note about files with "2 compression headers"; I did not check its source.
 
 **Path handling** (`FUN_00ab0060`, `FUN_00ab0150`): paths are lower-cased and cut down to the part after `data\`. A file-type classifier checks the extensions `.msh`, `.pak`, `.cpak`, `.exe`, `.avi`, `.wmv`, `.fnt`. For `.msh` it treats names starting `head_` and `cos_` specially, with `_fat` and `_enh` suffixes (body-size and enhanced variants of costumes). A separate `"%s\%s%s%04d.pak"` format is used when generating numbered pak names.
 
@@ -337,7 +341,11 @@ These are class names only, with no method names, so they help me pick the right
 
 The tree also lists third-party folders (`lzo`, `zlib`, `stlport`, `dxtc`, `xcr2`). That matches Fable's LZO texture codec and its own zlib, and says nothing new about ours.
 
+## Game data seen in the sample pak
+
+`premium_costumes0000.pak` holds `.ini` costume definitions as plain text (`category_premium.ini`, `m_70s_3.ini`, ...), `.cos` costume files, `.msh` meshes and `.dds` thumbnails. A costume `.ini` has fields such as `cost`, `start`, `end` (years available), `glamour`, `boredom`, a `[fashionable]` block (`start`, `peak`, `end`) and an `[age]` block (`min`, `max`) and `[physique]`. This is data for the fashion and costume-appeal system, so the data files are readable as written. I did not commit the extracted files.
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
-- Check `tools/pak_lookup.py` against a real pak; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
+- Check `tools/pak_lookup.py` against a version 5 or 6 pak; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
 - Details of the older notes (SLVAR type functions, `CSystem`, the RTTI class list) can still be pulled from `git show 9b29b4e:FINDINGS.md`.
