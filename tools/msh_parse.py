@@ -94,3 +94,24 @@ if __name__ == "__main__":
             print(" bones", len(bones), bones[0][0], bones[-1][0], "tail", len(tail), cstr(tail[:32]))
     else:
         m = parse(open(f, "rb").read()); print(m["textures"], m["pos_after_prims"], len(m["rest"]))
+
+def hullset(t):
+    """Trailer after the skeleton: name32, then the serialized collision-hull set
+    (LH_LoadMeshCollisionHullSet 00a76060 / LH_LoadCollisionHullPiece 00a73d40):
+    u32 total size, u16 N, u8 flags (bit0 = 6 bbox floats follow), u8, 2 stale pointers,
+    [6 floats], N stale pointer slots, N pieces, then one more piece (the whole hull).
+    A piece is 0x18 bytes of header (u16 count, 2 bytes, 4 dwords, 1 stale) + count*12 bytes of 3 floats."""
+    name = cstr(t[:32]); s = t[32:]
+    size, n, flags, _ = struct.unpack_from("<IHBB", s, 0)
+    p = 16
+    bbox = None
+    if flags & 1:
+        bbox = struct.unpack_from("<6f", s, p); p += 24
+    p += 4 * n
+    pieces = []
+    for _ in range(n + 1):
+        cnt, b2, b3 = struct.unpack_from("<HBB", s, p)
+        hdr = struct.unpack_from("<4I", s, p + 4)
+        pts = [struct.unpack_from("<3f", s, p + 0x18 + 12 * i) for i in range(cnt)]
+        pieces.append(dict(count=cnt, b2=b2, b3=b3, hdr=hdr, pts=pts)); p += 0x18 + 12 * cnt
+    return dict(name=name, size=size, n=n, flags=flags, bbox=bbox, pieces=pieces, used=p, total=len(s))

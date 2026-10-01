@@ -137,7 +137,18 @@ The `0x38` block really holds bbox, then UV bounds: for `cos_m_30s_1` the bounds
 
 After the last primitive comes the skeleton: one dword (`0x1e449a00` in `cos_m_30s_1`; meaning unknown), a bone count (30 in every sample), then bones of 0x54 bytes: 32-byte NUL-padded name, an int32 parent (−1 for the root), and 12 floats (a 3×4 matrix). Every sample runs `root`, `lowgut`, `gut`, `chest`, `neck`, then the right arm chain (`control2_arm_r`, `arm_r`, `forearm_r`, `hand_r`, `fingers_r`, `fingers2_r`, `thumb_r`, `thumb2_r`), the left arm chain, both legs (`leg_*`, `shin_*`, `foot_*`, `toes_*`) and ends at `head`.
 
-The file ends with a 1.5–2 KB trailer: a 32-byte submesh name (`cos_30s_m1`, `object02`, `cos_wes_f06`, `body01`, `wolf` and so on), then a block that contains saved pointer values (`0x19f6xxxx`) and floats. It looks like a serialized in-memory structure, probably the collision/hull set (`LH_LoadMeshCollisionHullSet`, `00a76060`). It is not decoded.
+The file ends with a 1.5–2 KB trailer: a 32-byte submesh name (`cos_30s_m1`, `object02`, `cos_wes_f06`, `body01`, `wolf` and so on), then the serialized collision-hull set (`LH_LoadMeshCollisionHullSet`, `00a76060`, with `LH_LoadCollisionHullPiece`, `00a73d40`). `hullset()` in `tools/msh_parse.py` reads it byte-exactly on all 11 meshes (the used length equals both the stored size and the remaining file):
+
+| Item | Layout |
+|---|---|
+| Size | u32 = byte length of the whole set (it equals the trailer length minus the 32-byte name) |
+| Counts | u16 `N` pieces (18–26 here), u8 flags (bit 0 = 6 floats follow), u8 |
+| Pointers | two dwords that are stale in-memory pointers (`0x19f6xxxx`) |
+| Floats | 6 floats when flag bit 0 is set. The values (e.g. 0.049, 0.0, 0.813, 0.186, 0.923, 0.814) look like a box, but the axis order is unclear, so I have not named them |
+| Slots | `N` more stale pointers, rebuilt by the loader |
+| Pieces | `N` pieces, then one extra piece |
+
+A piece is a 0x18-byte header (u16 point count, 2 bytes, 4 dwords that read as a plane equation, 1 stale dword) followed by `count × 3` floats. In `cos_m_30s_1` the `N` pieces have 3–6 points each and look like polygon faces of a convex hull in the mesh's own coordinates; the extra last piece is an 8-point outline at z = 0, which is the footprint of the figure. The stale pointers show the file was written by dumping a live structure to disk, the same thing seen in the 25 `.cos` files with stale name text.
 
 Still open: the second count in the header, the two undecoded bytes in the submesh record, the 3×4 transform's use, the vertex-extra floats, and the trailer. Direct 32-byte float vertices (flag bit 0x20 clear) and the 2nd-UV block are in the parser from the code but no sample uses them.
 
@@ -392,7 +403,7 @@ Formats recognised from the first bytes. Anything not labelled "plain text" is o
 - **Scripts:** the `data\scripts\qmm\*` and `family` files are the movie/story script templates (`title = PROJECT_TITLE_14680`, `genre = genre_romance`, `quality = 0.38`, cast with `gender`, `costume`, `roletype`). `scriptquality.ini` sets `max_length = 180`, `max_set_changes = 10`, `max_costume_changes = 10`, `num_scenes = 15`, `max_lead_roles = 3`, `max_nonlead_roles = 5`. These look like the limits the film-quality scorer uses.
 - **Flash UI:** `.mfl` and `.m`/`.mf` files start `FWS` version 6, i.e. uncompressed SWF 6 movies, with `.dds` texture names (`ui\flash\*.dds`) in the tag data. Standard SWF tooling should open them.
 - **Standard formats:** `.png`, `.jpg`, `.dds`, `.bmp`, `.psd`, `.xls`, `.prx` (UTF-16 Windows Media profile XML).
-- **Binary, undecoded:** `.cos` (starts `07 00 00 00`, then a mesh name `cos_f_50s_3.msh` in a 0x80-byte slot, so a costume binding: mesh, textures, parameters), `.ccs` (a count, then `f_30s_4.cos` and texture names such as `mup_nails_v05.dds`, so a costume set), `.hd` (a header with a `head_*.dds` name, then 40+ KB of head data), `.lnd` (terrain: a count, then 32-byte layer names like `Land_sand00`, `Land_grass00`), `.cam` (floats, camera tracks for sets), `.fas` (`infotextures.fas`: a table of 0x24-byte entries with texture names), `.sdb` (a Serenity table: names such as `title.SER` with id words), `.stx`, `.trl` (a movie trailer file with UTF-16 titles, e.g. `War is Hell`), `.dat` (`head_shape.dat`, u16 index triples).
+- **Binary, undecoded:** `.cos` (starts `07 00 00 00`, then a mesh name `cos_f_50s_3.msh` in a 0x80-byte slot, so a costume binding: mesh, textures, parameters), `.ccs` (a count, then `f_30s_4.cos` and texture names such as `mup_nails_v05.dds`, so a costume set), `.hd` (decoded below), `.lnd` (terrain: a count, then 32-byte layer names like `Land_sand00`, `Land_grass00`), `.cam` (floats, camera tracks for sets), `.fas` (`infotextures.fas`: a table of 0x24-byte entries with texture names), `.sdb` (a Serenity table: names such as `title.SER` with id words), `.stx`, `.trl` (a movie trailer file with UTF-16 titles, e.g. `War is Hell`), `.dat` (`head_shape.dat`, u16 index triples).
 
 None of the extracted data is committed. Next worthwhile targets: `.cos` and `.ccs` (small, structured, and tied to the already-decoded meshes) and `.lnd`.
 
@@ -442,6 +453,23 @@ So a `.cos` ties a body mesh to texture overrides and the hats and glasses worn 
 The 6-bit vertex values look like terrain tile indices. In `1980_clean.lnd` the first byte is 48 (`0x30`) for 62,000 of the 66,049 vertices and the other two are mostly 15 (`0x0f`). One reading that fits is `layer = v >> 3`, `variant = v & 7`, which would make 48 layer 6 (`Land_sidewalk02`) and 15 layer 1 (`Land_grass00`). That is a guess I have not checked against the renderer.
 
 Bitmap A has 4,400 set bits in the `*_clean` lots, about 6,000-6,900 in the decade maps, and 0 in `thumb.lnd` and `viewer.lnd`, which suggests it marks occupied or blocked cells. The same caution applies. There is no height data in the file, so terrain height must live elsewhere.
+
+## `.hd` head files and `head_shape.dat` (verified)
+
+`tools/hd_parse.py` checks all 83 `.hd` files and `head_shape.dat`.
+
+`.hd` is the same size in every file (71,860 bytes):
+- `0x00`: u32 version (4).
+- `0x04` and `0x08`: two skin tints as BGRA bytes (the first file has `5b 84 b1 ff`, i.e. R 177, G 132, B 91, a plausible skin tone).
+- `0x0c`: the 32-byte face texture name (`head_m_chinese_man3.dds`).
+- `0x2c`-`0x93`: reserved, zero in all 83 files.
+- `0x94`: 2,988 vertices of 6 floats, position xyz then a unit normal. All 2,988 normals in the checked file are unit length, and the positions span x −0.05…0.19, y ±0.085, z up to 1.86, so this is a head about 0.24 m deep, 0.17 m wide, standing at figure height.
+
+Every head has the same vertex count, so the heads are variants of one topology. That fits the game picking a head by name and applying the `_head` and `_age` morph values seen in the announcer code, where the head blend factor is clamped to 0–1 by `FUN_009d0e50`. I did not find a loader for the `.hd` body, so the 2,988 is the file layout rather than a value read from code, and there is no triangle list in the file. The triangles must come from another place.
+
+`head_shape.dat` (5,260 bytes): a u32 triangle count (876) and 876 × 3 u16 vertex indices (maximum index 754). It is generated by a dev-time tool function (near `009d7aa0`) that remaps triangle indices and writes `Data\Hairs\head_shape.dat`. It looks like the hair-cap or scalp patch of the head, since it indexes only the first 755 vertices.
+
+`.ccs` again: the stale pointer values (for example `e0 c5 96 19` right after the first name) show it is also a memory dump of a live structure, so its layout follows an in-memory class. Its loader still is not found. Both places that mention `*.ccs` only list files, and the announcer selection reads head and age from an ini file.
 
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
