@@ -396,6 +396,37 @@ Formats recognised from the first bytes. Anything not labelled "plain text" is o
 
 None of the extracted data is committed. Next worthwhile targets: `.cos` and `.ccs` (small, structured, and tied to the already-decoded meshes) and `.lnd`.
 
+## `.cos` costume files (verified) and `.ccs` costume sets (first look)
+
+`tools/cos_parse.py` parses all 372 `.cos` files in `MISC0000.pak` and accounts for every byte. It is written from the costume loader `FUN_009ced70` (builds the path `Data\Costume\Datas\%s`), its header reader `FUN_009cc940`, and the two part-record readers `FUN_009cd880` and `FUN_009cd980`.
+
+Header (`0xa4` bytes, or `0xa8` when byte 4 bit 1 is set):
+
+| Offset | Field |
+|---|---|
+| 0x00 | version dword (7 in every sample; the code handles <7 and <6) |
+| 0x04 | flag byte. Bit 1 = a dword follows the header (always 0 or 1 here). Bit 0 and the other bits are undecoded |
+| 0x05 | byte, bit 0 used (always 1 in the samples) |
+| 0x06 | byte: count of "A" records (low 5 bits) |
+| 0x07 | byte, bit 0 used |
+| 0x08 | byte, bits 0-1 used. 0x09 byte, 0x0a u16 |
+| 0x0c | four 32-byte name fields. Only the first is used in the samples: the mesh (`cos_f_50s_3.msh`) |
+| 0x8c | dword: count of "B" records (low 5 bits) |
+| 0x90 | version >= 7: five dwords. Two of them look like a year range (1900, 2010; 1947, 1962) |
+| 0xa4 | dword, present when byte 4 bit 1 is set |
+
+The loader packs the counts from bytes 6 and 0x8c into its own flag word. I first read the counts from the dword at 0xa4, which was wrong for 357 of 372 files; the byte 6 and dword 0x8c reading is right.
+
+Records, 0x78 bytes each in every sample:
+- **A** (a texture/material override): name32 (a texture such as `com_f_80s_stockings_v00.dds`), 4 dwords, name32 (the slot name, e.g. `cos_tights`), 4 flag bytes (bit 3 set means a 0x24-byte block follows), then the block.
+- **B** (an attached item): name32 (a mesh such as `hat_f_gen_v02.msh` or `acc_glasses_v00.msh`), 4 bytes (`01 06 00 00`: bit 1 of byte 1 adds a dword, bit 2 adds the 0x24 block), 3 dwords, name32 (the attach point, e.g. `cos_hat`, `cos_glasses`), optional dword, then the 0x24 block (floats, a small transform or tint).
+
+After the records the file ends with nothing (most files), or one all-zero 0x78 record (4 files), or 64 bytes of stale name text (25 files, exactly the ones whose dword at 0xa4 is 1; it includes fragments like `head Studios Ltd\Th` and `of View: 1`, so uninitialised memory was written to disk).
+
+So a `.cos` ties a body mesh to texture overrides and the hats and glasses worn with it. Together with the mesh and skeleton work, the costume side of the asset chain is now readable end to end: `.ini` rules, `.cos` bindings, `.msh` geometry, `.dds` textures.
+
+**`.ccs`** (34 files, `f_announce_*.ccs` / `m_announce_*.ccs`, one per decade 1925-2005 and sex, so the announcer outfits). The first dword is the file size (true for all 34), then a zero dword and a 32-byte `.cos` name (`f_30s_4.cos`), then variable-length records: sizes step in units of 44 bytes (752, 796, 840, 884, 928, 972, 1016) and optional 32-byte texture names such as `mup_nails_v05.dds` and `mup_beard_v12.dds` (make-up). I did not find the loader, so the record layout is not decoded.
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
 - Check `tools/pak_lookup.py` against a version 5 or 6 pak; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
