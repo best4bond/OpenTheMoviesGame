@@ -427,6 +427,22 @@ So a `.cos` ties a body mesh to texture overrides and the hats and glasses worn 
 
 **`.ccs`** (34 files, `f_announce_*.ccs` / `m_announce_*.ccs`, one per decade 1925-2005 and sex, so the announcer outfits). The first dword is the file size (true for all 34), then a zero dword and a 32-byte `.cos` name (`f_30s_4.cos`), then variable-length records: sizes step in units of 44 bytes (752, 796, 840, 884, 928, 972, 1016) and optional 32-byte texture names such as `mup_nails_v05.dds` and `mup_beard_v12.dds` (make-up). I did not find the loader, so the record layout is not decoded.
 
+## `.lnd` landscape files (verified layout)
+
+`tools/lnd_parse.py` parses all 25 `.lnd` files in `MISC0000.pak` to the byte (214,763 bytes for version 2, 206,571 for version 1). It follows `FUN_009e5540`, which `FUN_009e5ec0` calls after reading `data/<name>.lnd` (the lot loader uses `lots/basic_lot` as its fallback, and then `CLot_ApplySizeTier`).
+
+| Item | Layout |
+|---|---|
+| Header | u32 version (1 or 2), u32 `N` layers |
+| Layer names | `N` × 32-byte names. Every sample has the same seven: `Land_sand00`, `Land_grass00`, `Land_grass02`, `Land_grass01`, `Land_earth00`, `Land_tarmac00`, and `Land_sidewalk02` (`cit_streetpavement_01` in `gl.lnd`) |
+| Vertex data | 257 × 257 vertices × 3 bytes. The loader keeps `byte & 0x3f` of each byte and widens each vertex to 4 bytes |
+| Bitmap A | 8,192 bytes = 256 × 256 bits, loaded into `g_OccupancyGrid256_A` |
+| Bitmap B | 8,192 more bytes in version 2 files only. The loader path I read does not read them and instead zeroes `g_OccupancyGrid256_B` for version > 1, so what these bytes hold is open |
+
+The 6-bit vertex values look like terrain tile indices. In `1980_clean.lnd` the first byte is 48 (`0x30`) for 62,000 of the 66,049 vertices and the other two are mostly 15 (`0x0f`). One reading that fits is `layer = v >> 3`, `variant = v & 7`, which would make 48 layer 6 (`Land_sidewalk02`) and 15 layer 1 (`Land_grass00`). That is a guess I have not checked against the renderer.
+
+Bitmap A has 4,400 set bits in the `*_clean` lots, about 6,000-6,900 in the decade maps, and 0 in `thumb.lnd` and `viewer.lnd`, which suggests it marks occupied or blocked cells. The same caution applies. There is no height data in the file, so terrain height must live elsewhere.
+
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
 - Check `tools/pak_lookup.py` against a version 5 or 6 pak; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
