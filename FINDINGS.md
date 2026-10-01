@@ -69,11 +69,11 @@ All present in the export: `CStudioAI_CreateGlobalInstance` (`0041f4e0`), `CStud
 
 ## `.msh` mesh format
 
-Checked against the 11 real costume meshes from `premium_costumes0000.pak`: the file header, version 10, control byte `0xC2` and the 0x24-byte header all match (see the container note below). The texture-name table at `0x24` holds 32-byte NUL-padded names (the sample has one: `cos_m_30s_1.dds`), and the first material record follows it at `0x44`. The vertex and primitive sections are not yet checked.
+Checked against the 11 real costume meshes from `premium_costumes0000.pak`: the file header, version 10, control byte `0xC2` and the 0x24-byte header all match (see the container note below). The texture-name table at `0x24` holds 32-byte NUL-padded names (the sample has one: `cos_m_30s_1.dds`), and the first material record follows it at `0x44`. The rest of the layout is now checked too: `tools/msh_parse.py` walks all 11 meshes (header, textures, materials, submesh records, primitives, skeleton) with every triangle index below the vertex count and the bone table ending on a plausible 30-bone `root`…`head` rig in each. The section "Verified layout" below records what the parser relies on.
 
 **Container.** In a pak these meshes are stored, not compressed, because the file itself is a `zcmp` container: `"zcmp"`, then file size minus 4, the unpacked size, the zlib size, a zero dword, and a zlib stream at `+0x14`. The unpacked data is the version-10 mesh. That is the second compression layer.
 
-Parsed by `LH_LoadMeshBinary` (`009deb10`, `decomp_0045.c`). Details below come from the loaders' own annotations in the export plus a re-read of the code; none were checked against real `.msh` files here.
+Parsed by `LH_LoadMeshBinary` (`009deb10`, `decomp_0045.c`). Details below come from the loaders' own annotations in the export plus a re-read of the code; the "Verified layout" section is what holds on real files.
 
 **File header** (`LH_LoadMeshHeader`, `009dadd0`), 0x24 bytes when the control byte is `0xC2`:
 
@@ -104,6 +104,42 @@ After the header the loader reads `TriangleCount * 6` bytes of indices (three ui
 - UV = `lerp(uvMin, uvMax, t)`.
 
 The first 10 floats of the quantization block (bbox min/max and UV min/max) are used, and the last 4 are undecoded.
+
+**Verified layout** (11 costume meshes, `tools/msh_parse.py`; all parse, the last one byte-exact into the trailer).
+
+Corrections to the notes above:
+- The header dwords are: version, `NumTextureNames`, `NumMaterials`, then two more counts that were both 1 in every sample. Dword `0x0c` is the submesh count (the other is undecoded).
+- Materials here are 0x18 bytes (bit 2 of byte 0x0e is set in every sample), with no separate dword after them. A material's last dword is 0.
+- Textures can number more than materials (`cos_f_wes_5` has 3 names for 2 materials).
+
+Submesh record, which follows the materials immediately:
+
+| Offset | Field |
+|---|---|
+| 0x00 | u8 primitive count, 2 bytes undecoded, u8 flags (bit 0x10 = a 4-byte pair of u16 follows the record) |
+| 0x04 | 12 floats: a 3×4 transform. The `cos_*` samples carry the identity here with a different 4th row, so treat the exact layout as undecoded |
+| 0x34 | optional u16, u16 (when flag 0x10 set) |
+
+Each primitive follows its submesh record, in order:
+
+| Item | Layout |
+|---|---|
+| Header | dword `0` (always 0 here), `TriangleCount`, `VertexCount`, 4 flag bytes. All samples have `71 00 03 00` |
+| flag byte 0 bit 0x10 | 3 dwords (the first looks like a hash, the second was `0xFFFFFFFF`) |
+| flag byte 0 bit 0x20 | quantization block, 14 floats = 0x38 bytes. Order: bbox min xyz, bbox max xyz, uv min, uv max, then 4 zeros |
+| flag byte 0 bit 0x40 | one dword = the pair count used below |
+| Indices | `TriangleCount × 3` u16, then pad to 4 bytes. Every index is below `VertexCount` in all 11 files |
+| Vertices | `VertexCount × 16` bytes (8 × u16, see dequantization above) when bit 0x20 is set |
+| per-vertex extra | `VertexCount × 0x14` bytes when flag byte 0 bit 0 is set. In the samples these hold floats such as 0.65 and 0.7, probably skinning weights |
+| Pair table | `pairCount × 8` bytes of `(vertex index, small value 0–9)`; the indices are ascending, so it likely marks vertices that attach to something |
+
+The `0x38` block really holds bbox, then UV bounds: for `cos_m_30s_1` the bounds are x −0.144…0.234, y −0.923…0.923, z −0.0005…1.63 and uv 0.0009…1.0015, which is a plausible 1.63-tall figure.
+
+After the last primitive comes the skeleton: one dword (`0x1e449a00` in `cos_m_30s_1`; meaning unknown), a bone count (30 in every sample), then bones of 0x54 bytes: 32-byte NUL-padded name, an int32 parent (−1 for the root), and 12 floats (a 3×4 matrix). Every sample runs `root`, `lowgut`, `gut`, `chest`, `neck`, then the right arm chain (`control2_arm_r`, `arm_r`, `forearm_r`, `hand_r`, `fingers_r`, `fingers2_r`, `thumb_r`, `thumb2_r`), the left arm chain, both legs (`leg_*`, `shin_*`, `foot_*`, `toes_*`) and ends at `head`.
+
+The file ends with a 1.5–2 KB trailer: a 32-byte submesh name (`cos_30s_m1`, `object02`, `cos_wes_f06`, `body01`, `wolf` and so on), then a block that contains saved pointer values (`0x19f6xxxx`) and floats. It looks like a serialized in-memory structure, probably the collision/hull set (`LH_LoadMeshCollisionHullSet`, `00a76060`). It is not decoded.
+
+Still open: the second count in the header, the two undecoded bytes in the submesh record, the 3×4 transform's use, the vertex-extra floats, and the trailer. Direct 32-byte float vertices (flag bit 0x20 clear) and the 2nd-UV block are in the parser from the code but no sample uses them.
 
 Other mesh functions: collision hulls (`LH_LoadMeshCollisionHullSet` `00a76060`, `LH_LoadCollisionHullPiece` `00a73d40`), extra polygon data (`LH_LoadAuxPolygonChunk` `009e7270`), and a debug text exporter (`LH_ExportMeshDebugText` `009dc3e0`).
 
