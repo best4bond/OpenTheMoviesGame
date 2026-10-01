@@ -20915,7 +20915,7 @@ uint FUN_009c7c40(void)
                     /* WARNING: Subroutine does not return */
     _free(local_2c);
   }
-  piVar2 = (int *)FUN_00afb9d0((int)_Memory);
+  piVar2 = (int *)Pak_DecodeEntryData((int)_Memory);
   if (*piVar2 != 1) {
                     /* WARNING: Subroutine does not return */
     _free(_Memory);

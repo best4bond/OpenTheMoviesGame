@@ -2227,7 +2227,7 @@ uint __cdecl FUN_00aafc30(char *param_1)
     this = FUN_00a9b2d0(local_50);
   }
   local_4 = 0xffffffff;
-  iVar5 = FUN_00a9b6b0(this,local_54);
+  iVar5 = PakFile_ParseHeader(this,local_54);
   if (iVar5 == 0) {
     if (this != (undefined4 *)0x0) {
       FUN_00a9b2f0((int)this);
@@ -2261,9 +2261,9 @@ uint __cdecl FUN_00aafc30(char *param_1)
 }
 
 
-//// FUNCTION FUN_00aafeb0 @ 00aafeb0 ////
+//// FUNCTION Pak_OpenPak @ 00aafeb0 ////
 
-uint __cdecl FUN_00aafeb0(uint *param_1,undefined4 *param_2,int param_3)
+uint __cdecl Pak_OpenPak(uint *param_1,undefined4 *param_2,int param_3)
 
 {
   size_t sVar1;
@@ -2306,7 +2306,7 @@ uint __cdecl FUN_00aafeb0(uint *param_1,undefined4 *param_2,int param_3)
   local_64 = (int *)0x0;
   puVar3 = FUN_00ace080(param_1,".cpak");
   if (puVar3 == (uint *)0x0) {
-    local_64 = (int *)FUN_00a9be50((char *)param_1);
+    local_64 = (int *)PakFile_Load((char *)param_1);
     if (local_64 == (int *)0x0) {
       return 0;
     }
@@ -2671,9 +2671,9 @@ LAB_00ab0465:
 }
 
 
-//// FUNCTION FUN_00ab0480 @ 00ab0480 ////
+//// FUNCTION Pak_DeletePakEntriesTool @ 00ab0480 ////
 
-uint __cdecl FUN_00ab0480(uint *param_1,char *param_2)
+uint __cdecl Pak_DeletePakEntriesTool(uint *param_1,char *param_2)
 
 {
   char cVar1;
@@ -2703,7 +2703,7 @@ uint __cdecl FUN_00ab0480(uint *param_1,char *param_2)
   FUN_00a10b50(local_38);
   local_4._0_1_ = 0;
   local_4._1_3_ = 0;
-  uVar4 = FUN_00aafeb0(param_1,&local_60,(int)local_38);
+  uVar4 = Pak_OpenPak(param_1,&local_60,(int)local_38);
   if ((char)uVar4 == '\0') {
     FID_conflict__wprintf((wchar_t *)"Error: can\'t open pak file\n");
     local_4 = 0xffffffff;
@@ -2964,7 +2964,7 @@ uint __cdecl FUN_00ab09b0(uint *param_1,char *param_2,char param_3)
   ExceptionList = &local_c;
   FUN_00a10b50(local_38);
   local_4 = 0;
-  uVar3 = FUN_00aafeb0(param_1,&local_64,(int)local_38);
+  uVar3 = Pak_OpenPak(param_1,&local_64,(int)local_38);
   if ((char)uVar3 == '\0') {
     FID_conflict__wprintf((wchar_t *)"Error: can\'t open pak file\n");
     local_4 = 0xffffffff;
@@ -3013,7 +3013,7 @@ uint __cdecl FUN_00ab09b0(uint *param_1,char *param_2,char param_3)
         iVar6 = FUN_00a10150(local_10,*(long *)(iVar8 + 8),0);
         if (iVar6 == 0) {
           FUN_00a100f0(pvVar5,*(size_t *)(iVar8 + 0xc),1,local_10);
-          _Memory = (void *)FUN_00afb9d0((int)pvVar5);
+          _Memory = (void *)Pak_DecodeEntryData((int)pvVar5);
           if (_Memory == (void *)0x0) {
                     /* WARNING: Subroutine does not return */
             _free(pvVar5);
@@ -3556,8 +3556,8 @@ undefined4 __cdecl FUN_00ab1450(undefined4 param_1,void *param_2)
       }
       FUN_00ab0060(local_178,local_19c);
       local_4._0_1_ = 1;
-      FUN_00a9c980((int *)local_118,(char *)local_178[0]);
-      puVar4 = FUN_00a9b5a0(param_2,local_118);
+      Pak_HashPath((int *)local_118,(char *)local_178[0]);
+      puVar4 = PakFile_FindEntry(param_2,local_118);
       if (puVar4 == (uint *)0x0) {
         local_138 = local_12c;
         local_12c[0] = '\0';
@@ -3766,7 +3766,7 @@ uint __cdecl FUN_00ab19e0(uint *param_1,undefined4 param_2,uint param_3)
   local_4._0_1_ = 3;
   FUN_00a10b50(local_168);
   local_4._0_1_ = 4;
-  uVar6 = FUN_00aafeb0(param_1,&local_1cc,(int)local_13c);
+  uVar6 = Pak_OpenPak(param_1,&local_1cc,(int)local_13c);
   if ((char)uVar6 == '\0') {
     FID_conflict__wprintf((wchar_t *)"Error: can\'t open pak file\n");
     local_4._0_1_ = 3;
@@ -3789,7 +3789,7 @@ uint __cdecl FUN_00ab19e0(uint *param_1,undefined4 param_2,uint param_3)
     _free(in_stack_00000024);
   }
   FID_conflict__wprintf((wchar_t *)"\tCombine: PAK A opended\n");
-  uVar6 = FUN_00aafeb0(in_stack_00000024,&local_1bc,(int)local_168);
+  uVar6 = Pak_OpenPak(in_stack_00000024,&local_1bc,(int)local_168);
   pvVar15 = local_1cc;
   if ((char)uVar6 == '\0') {
     if (local_1cc != (void *)0x0) {
@@ -4189,8 +4189,8 @@ LAB_00ab1f3f:
       }
       FUN_00ab0060(&local_1ec,(char *)pbStack_190);
       local_4._0_1_ = 0xd;
-      FUN_00a9c980((int *)local_198,(char *)local_1ec);
-      puVar12 = FUN_00a9b5a0(local_1f4,local_198);
+      Pak_HashPath((int *)local_198,(char *)local_1ec);
+      puVar12 = PakFile_FindEntry(local_1f4,local_198);
       if (puVar12 != (uint *)0x0) {
         piStack_16c = FUN_0048f2c0(local_1c8,&pbStack_190);
         if (piStack_16c == local_1c4) goto LAB_00ab274a;
@@ -4248,11 +4248,11 @@ LAB_00ab274a:
     ppiVar13 = &piStack_16c;
   }
   if (*ppiVar13 == local_1c4) {
-    puVar14 = FUN_00a9b5a0(local_1bc,local_198);
+    puVar14 = PakFile_FindEntry(local_1bc,local_198);
     puVar18 = local_168;
   }
   else {
-    puVar14 = FUN_00a9b5a0(local_1cc,local_198);
+    puVar14 = PakFile_FindEntry(local_1cc,local_198);
     puVar18 = local_13c;
   }
   if (puVar14 == (uint *)0x0) {
@@ -4439,8 +4439,8 @@ uint __cdecl FUN_00ab2c30(int param_1,uint *param_2,char *param_3,undefined4 par
       }
       FUN_00ab0060(&local_170,local_190);
       local_4._0_1_ = 4;
-      FUN_00a9c980((int *)local_144,local_170);
-      puVar8 = FUN_00a9b5a0(this,local_144);
+      Pak_HashPath((int *)local_144,local_170);
+      puVar8 = PakFile_FindEntry(this,local_144);
       if (puVar8 != (uint *)0x0) {
         FID_conflict__wprintf((wchar_t *)"Writing %s...",local_170);
         puVar9 = (undefined4 *)FUN_00afb8b0(puVar6,uVar4);
@@ -4558,9 +4558,9 @@ uint __cdecl FUN_00ab3350(uint *param_1,undefined4 param_2,uint param_3)
     local_4._0_1_ = 3;
     FUN_00a10b50((undefined1 *)local_64);
     local_4._0_1_ = 4;
-    uVar7 = FUN_00aafeb0(param_1,&local_c0,(int)local_38);
+    uVar7 = Pak_OpenPak(param_1,&local_c0,(int)local_38);
     if ((char)uVar7 != '\0') {
-      uVar7 = FUN_00aafeb0(in_stack_00000024,&local_bc,(int)local_64);
+      uVar7 = Pak_OpenPak(in_stack_00000024,&local_bc,(int)local_64);
       pvVar3 = local_c0;
       if ((char)uVar7 != '\0') {
         if (DAT_00e6e4a4 < *(int *)((int)local_bc + 0x1c)) {
@@ -4923,8 +4923,8 @@ LAB_00ab37c9:
             }
             FUN_00ab0060(&local_e4,(char *)pbStack_88);
             local_4 = CONCAT31(local_4._1_3_,0xd);
-            FUN_00a9c980((int *)local_90,(char *)local_e4);
-            puVar15 = FUN_00a9b5a0(puStack_94,local_90);
+            Pak_HashPath((int *)local_90,(char *)local_e4);
+            puVar15 = PakFile_FindEntry(puStack_94,local_90);
             if (puVar15 == (uint *)0x0) {
 LAB_00ab3ee5:
             }
@@ -4962,11 +4962,11 @@ LAB_00ab3e3a:
                 ppiVar12 = &piStack_68;
               }
               if (*ppiVar12 == local_b0) {
-                puVar13 = FUN_00a9b5a0(local_bc,local_90);
+                puVar13 = PakFile_FindEntry(local_bc,local_90);
                 puVar11 = local_64;
               }
               else {
-                puVar13 = FUN_00a9b5a0(local_c0,local_90);
+                puVar13 = PakFile_FindEntry(local_c0,local_90);
                 puVar11 = local_38;
               }
               if (puVar13 == (uint *)0x0) {
@@ -5204,8 +5204,8 @@ uint __cdecl FUN_00ab4270(int param_1,uint *param_2,void *param_3,undefined4 par
       }
       FUN_00ab0060(&pcStack_170,pcStack_190);
       local_4._0_1_ = 4;
-      FUN_00a9c980((int *)auStack_144,pcStack_170);
-      puVar7 = FUN_00a9b5a0(puVar5,auStack_144);
+      Pak_HashPath((int *)auStack_144,pcStack_170);
+      puVar7 = PakFile_FindEntry(puVar5,auStack_144);
       if (puVar7 != (uint *)0x0) {
         FID_conflict__wprintf((wchar_t *)"Writing %s...",pcStack_170);
         _Memory = (undefined4 *)FUN_00afb8b0(puVar9,uVar4);
@@ -5405,8 +5405,8 @@ uint FUN_00ab42df(void)
       }
       FUN_00ab0060(&stack0x00000030,pcStack00000010);
       uStack0000019c = 4;
-      FUN_00a9c980((int *)&stack0x0000005c,in_stack_00000030);
-      puVar3 = FUN_00a9b5a0(puVar5,(uint *)&stack0x0000005c);
+      Pak_HashPath((int *)&stack0x0000005c,in_stack_00000030);
+      puVar3 = PakFile_FindEntry(puVar5,(uint *)&stack0x0000005c);
       if (puVar3 != (uint *)0x0) {
         FID_conflict__wprintf((wchar_t *)"Writing %s...",in_stack_00000030);
         _Memory = (undefined4 *)FUN_00afb8b0(puVar9,uVar4);

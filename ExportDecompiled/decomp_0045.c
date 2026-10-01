@@ -2869,7 +2869,7 @@ undefined4 __cdecl FUN_009d3660(undefined4 *param_1,uint *param_2)
     return CONCAT31((int3)(uVar1 >> 8),1);
   }
   if (DAT_010b9351 != '\0') {
-    uVar1 = FUN_00a10810((char *)*param_1);
+    uVar1 = Pak_GetFileSize((char *)*param_1);
     if (uVar1 != 0) {
       if (param_2 != (uint *)0x0) {
         *param_2 = uVar1;
@@ -2918,7 +2918,7 @@ uint __cdecl FUN_009d3720(undefined4 *param_1)
   
   uVar1 = FUN_00a101b0((uchar *)*param_1);
   if (uVar1 == 0) {
-    if ((DAT_010b9351 != '\0') && (uVar1 = FUN_00a10810((char *)*param_1), uVar1 != 0)) {
+    if ((DAT_010b9351 != '\0') && (uVar1 = Pak_GetFileSize((char *)*param_1), uVar1 != 0)) {
       return uVar1;
     }
     uVar1 = 0;
@@ -3020,8 +3020,8 @@ undefined4 __cdecl FUN_009d38d0(undefined4 *param_1)
     return 4;
   }
   if (DAT_010b9351 != '\0') {
-    puVar2 = FUN_00a105b0((char *)*param_1);
-    iVar1 = FUN_00a106c0((int)puVar2);
+    puVar2 = Pak_FindEntryLastPakFirst((char *)*param_1);
+    iVar1 = Pak_GetPakRecordForEntry((int)puVar2);
     if (iVar1 != 0) {
       return *(undefined4 *)(iVar1 + 0x24);
     }
@@ -3457,7 +3457,7 @@ undefined4 __cdecl FUN_009d3de0(undefined4 *param_1,undefined4 *param_2,char par
     *param_2 = 0;
     uVar15 = FUN_00a101b0((uchar *)*param_1);
     if ((uVar15 == 0) &&
-       ((DAT_010b9351 == '\0' || (uVar15 = FUN_00a10810((char *)*param_1), uVar15 == 0)))) {
+       ((DAT_010b9351 == '\0' || (uVar15 = Pak_GetFileSize((char *)*param_1), uVar15 == 0)))) {
       if (0x14 < local_310) {
                     /* WARNING: Subroutine does not return */
         _free(local_318);
@@ -3885,7 +3885,7 @@ uint __cdecl FUN_009d4900(undefined4 *param_1)
       if (iVar3 == 0) {
         FUN_009b8c30(&local_6c,local_4c);
         local_4 = CONCAT31(local_4._1_3_,1);
-        uVar1 = FUN_00a10810((char *)local_6c);
+        uVar1 = Pak_GetFileSize((char *)local_6c);
         if (uVar1 != 0) {
           if (0x14 < local_64) {
                     /* WARNING: Subroutine does not return */
@@ -11406,7 +11406,7 @@ void __thiscall LH_LoadMeshBinary(void *this,uint *param_1)
                        AsyncLoadJob_ExecuteSync reads the whole file into memory.
                        
                        Checks for a "zcmp" 4-byte tag at buffer start (whole-file compression,
-                       decompressed via FUN_00afb9d0 if present - not seen in any real sample
+                       decompressed via Pak_DecodeEntryData if present - not seen in any real sample
                        checked). Calls LH_LoadMeshHeader to read the fixed 0x24-byte header and
                        requires FormatVersion==10 or aborts.
                        
@@ -11476,7 +11476,7 @@ void __thiscall LH_LoadMeshBinary(void *this,uint *param_1)
       && (ExceptionList = &local_c, *(char *)((int)param_1 + 2) == 'm')) &&
      (ExceptionList = &local_c, *(char *)((int)param_1 + 3) == 'p')) {
     ExceptionList = &local_c;
-    param_1 = (uint *)FUN_00afb9d0((int)(param_1 + 1));
+    param_1 = (uint *)Pak_DecodeEntryData((int)(param_1 + 1));
     local_184 = param_1;
   }
   local_1e1 = '\0';

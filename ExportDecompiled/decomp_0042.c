@@ -14722,7 +14722,7 @@ LAB_0097b88a:
   }
   local_165 = '\0';
   if ((((*pcVar7 == 'z') && (pcVar7[1] == 'c')) && (pcVar7[2] == 'm')) && (pcVar7[3] == 'p')) {
-    local_154 = (char *)FUN_00afb9d0((int)(pcVar7 + 4));
+    local_154 = (char *)Pak_DecodeEntryData((int)(pcVar7 + 4));
                     /* WARNING: Subroutine does not return */
     _free((void *)(bVar21 - 1 & (uint)pcVar7));
   }

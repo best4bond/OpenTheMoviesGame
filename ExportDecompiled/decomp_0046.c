@@ -18760,9 +18760,9 @@ void * __thiscall FUN_00a104c0(void *this,byte param_1)
 }
 
 
-//// FUNCTION FUN_00a104e0 @ 00a104e0 ////
+//// FUNCTION Pak_NormalisePath @ 00a104e0 ////
 
-void __cdecl FUN_00a104e0(char *param_1,char *param_2)
+void __cdecl Pak_NormalisePath(char *param_1,char *param_2)
 
 {
   char cVar1;
@@ -18805,9 +18805,9 @@ void __cdecl FUN_00a104e0(char *param_1,char *param_2)
 }
 
 
-//// FUNCTION FUN_00a10550 @ 00a10550 ////
+//// FUNCTION Pak_FindEntry @ 00a10550 ////
 
-uint * __cdecl FUN_00a10550(char *param_1)
+uint * __cdecl Pak_FindEntry(char *param_1)
 
 {
   uint *puVar1;
@@ -18815,12 +18815,12 @@ uint * __cdecl FUN_00a10550(char *param_1)
   uint local_10c [2];
   char local_104 [260];
   
-  FUN_00a104e0(param_1,local_104);
-  FUN_00a9c980((int *)local_10c,local_104);
+  Pak_NormalisePath(param_1,local_104);
+  Pak_HashPath((int *)local_10c,local_104);
   iVar2 = 0;
   if (0 < DAT_010b9358) {
     do {
-      puVar1 = FUN_00a9b5a0(*(void **)(DAT_010b9354 + iVar2 * 4),local_10c);
+      puVar1 = PakFile_FindEntry(*(void **)(DAT_010b9354 + iVar2 * 4),local_10c);
       if (puVar1 != (uint *)0x0) {
         return puVar1;
       }
@@ -18831,9 +18831,9 @@ uint * __cdecl FUN_00a10550(char *param_1)
 }
 
 
-//// FUNCTION FUN_00a105b0 @ 00a105b0 ////
+//// FUNCTION Pak_FindEntryLastPakFirst @ 00a105b0 ////
 
-uint * __cdecl FUN_00a105b0(char *param_1)
+uint * __cdecl Pak_FindEntryLastPakFirst(char *param_1)
 
 {
   int iVar1;
@@ -18844,15 +18844,15 @@ uint * __cdecl FUN_00a105b0(char *param_1)
   if (DAT_010b9358 < 1) {
     return (uint *)0x0;
   }
-  FUN_00a104e0(param_1,local_104);
-  FUN_00a9c980((int *)local_10c,local_104);
+  Pak_NormalisePath(param_1,local_104);
+  Pak_HashPath((int *)local_10c,local_104);
   iVar1 = DAT_010b9358;
   do {
     iVar1 = iVar1 + -1;
     if (iVar1 < 0) {
       return (uint *)0x0;
     }
-    puVar2 = FUN_00a9b5a0(*(void **)(DAT_010b9354 + iVar1 * 4),local_10c);
+    puVar2 = PakFile_FindEntry(*(void **)(DAT_010b9354 + iVar1 * 4),local_10c);
   } while (puVar2 == (uint *)0x0);
   return puVar2;
 }
@@ -18894,9 +18894,9 @@ void __cdecl FUN_00a10680(char *param_1,void *param_2)
 }
 
 
-//// FUNCTION FUN_00a106c0 @ 00a106c0 ////
+//// FUNCTION Pak_GetPakRecordForEntry @ 00a106c0 ////
 
-int __cdecl FUN_00a106c0(int param_1)
+int __cdecl Pak_GetPakRecordForEntry(int param_1)
 
 {
   uint uVar1;
@@ -18938,9 +18938,9 @@ void __fastcall FUN_00a10740(int param_1)
 }
 
 
-//// FUNCTION FUN_00a10810 @ 00a10810 ////
+//// FUNCTION Pak_GetFileSize @ 00a10810 ////
 
-uint __cdecl FUN_00a10810(char *param_1)
+uint __cdecl Pak_GetFileSize(char *param_1)
 
 {
   char cVar1;
@@ -18959,7 +18959,7 @@ uint __cdecl FUN_00a10810(char *param_1)
   puStack_8 = &LAB_00cf97c8;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  puVar2 = FUN_00a10550(param_1);
+  puVar2 = Pak_FindEntry(param_1);
   if (puVar2 == (uint *)0x0) {
     ExceptionList = local_c;
     return 0;
@@ -18989,11 +18989,11 @@ uint __cdecl FUN_00a10810(char *param_1)
 }
 
 
-//// FUNCTION FUN_00a108f0 @ 00a108f0 ////
+//// FUNCTION Pak_LoadFile @ 00a108f0 ////
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-undefined4 __cdecl FUN_00a108f0(char *param_1,undefined4 *param_2,uint *param_3)
+undefined4 __cdecl Pak_LoadFile(char *param_1,undefined4 *param_2,uint *param_3)
 
 {
   char cVar1;
@@ -19015,7 +19015,7 @@ undefined4 __cdecl FUN_00a108f0(char *param_1,undefined4 *param_2,uint *param_3)
   puStack_8 = &LAB_00cf97f0;
   local_c = ExceptionList;
   ExceptionList = &local_c;
-  puVar2 = FUN_00a10550(param_1);
+  puVar2 = Pak_FindEntry(param_1);
   if (puVar2 == (uint *)0x0) {
     ExceptionList = local_c;
     return 0;
@@ -19081,7 +19081,7 @@ undefined4 __cdecl FUN_00a108f0(char *param_1,undefined4 *param_2,uint *param_3)
     _Memory = operator_new(puVar2[3]);
     FUN_00a10150(*(FILE **)(pcVar3 + 0x28),puVar2[2],0);
     FUN_00a100f0(_Memory,puVar2[3],1,*(FILE **)(pcVar3 + 0x28));
-    FUN_00afb9d0((int)_Memory);
+    Pak_DecodeEntryData((int)_Memory);
                     /* WARNING: Subroutine does not return */
     _free(_Memory);
   }
@@ -19159,7 +19159,7 @@ undefined4 __cdecl FUN_00a10c30(char *param_1,undefined4 *param_2,uint param_3)
   
   local_4 = (undefined4 *)0x0;
   local_8 = 0;
-  uVar1 = FUN_00a108f0(param_1,&local_4,&local_8);
+  uVar1 = Pak_LoadFile(param_1,&local_4,&local_8);
   if ((char)uVar1 == '\0') {
     return 0;
   }

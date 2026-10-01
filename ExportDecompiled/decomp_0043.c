@@ -3348,7 +3348,7 @@ LAB_00988eaf:
           }
           bVar16 = FUN_00984820((char *)_Memory);
           if (bVar16) {
-            local_1a4 = (int *)FUN_00afb9d0((int)(_Memory + 1));
+            local_1a4 = (int *)Pak_DecodeEntryData((int)(_Memory + 1));
                     /* WARNING: Subroutine does not return */
             _free(_Memory);
           }
@@ -14931,7 +14931,7 @@ undefined4 __fastcall FUN_0099c150(uint param_1)
     _free(local_12c);
   }
   if (sVar4 != 0) {
-    uVar5 = FUN_00afb9d0((int)_Memory);
+    uVar5 = Pak_DecodeEntryData((int)_Memory);
     *(undefined4 *)(param_1 + 0x34) = uVar5;
   }
                     /* WARNING: Subroutine does not return */

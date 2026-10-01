@@ -7121,7 +7121,7 @@ undefined4 * __cdecl FUN_00a99960(char *param_1)
     puVar3 = FUN_00a9c890(local_158[0]);
   }
   local_4 = CONCAT31(local_4._1_3_,1);
-  puVar4 = (undefined4 *)FUN_00a9c980((int *)local_158,local_150);
+  puVar4 = (undefined4 *)Pak_HashPath((int *)local_158,local_150);
   *puVar3 = *puVar4;
   puVar3[1] = puVar4[1];
   uVar5 = FUN_00a98270(local_110);
@@ -8342,7 +8342,7 @@ void FUN_00a9af50(void)
   {
     puVar6 = *(uint **)(local_18 + uVar5 * 4);
     local_84 = (int *)0x0;
-    uVar2 = FUN_00aafeb0(puVar6,&local_84,(int)(DAT_010b935c + DAT_010b9360 * 0xb));
+    uVar2 = Pak_OpenPak(puVar6,&local_84,(int)(DAT_010b935c + DAT_010b9360 * 0xb));
     if ((char)uVar2 != '\0') {
       pcVar3 = _strrchr((char *)puVar6,0x5c);
       _Source = (uint *)(pcVar3 + 1);
@@ -8449,9 +8449,9 @@ void __fastcall FUN_00a9b2f0(int param_1)
 }
 
 
-//// FUNCTION FUN_00a9b350 @ 00a9b350 ////
+//// FUNCTION PakFile_BinarySearchHash1 @ 00a9b350 ////
 
-int __thiscall FUN_00a9b350(void *this,uint *param_1,int param_2,int param_3,int param_4)
+int __thiscall PakFile_BinarySearchHash1(void *this,uint *param_1,int param_2,int param_3,int param_4)
 
 {
   uint uVar1;
@@ -8474,9 +8474,9 @@ int __thiscall FUN_00a9b350(void *this,uint *param_1,int param_2,int param_3,int
 }
 
 
-//// FUNCTION FUN_00a9b3b0 @ 00a9b3b0 ////
+//// FUNCTION PakFile_ScanBackForHash2 @ 00a9b3b0 ////
 
-undefined4 __thiscall FUN_00a9b3b0(void *this,int *param_1,int param_2,int *param_3)
+undefined4 __thiscall PakFile_ScanBackForHash2(void *this,int *param_1,int param_2,int *param_3)
 
 {
   int *piVar1;
@@ -8497,9 +8497,9 @@ undefined4 __thiscall FUN_00a9b3b0(void *this,int *param_1,int param_2,int *para
 }
 
 
-//// FUNCTION FUN_00a9b3f0 @ 00a9b3f0 ////
+//// FUNCTION PakFile_ScanForwardForHash2 @ 00a9b3f0 ////
 
-uint __thiscall FUN_00a9b3f0(void *this,int *param_1,int param_2,int *param_3)
+uint __thiscall PakFile_ScanForwardForHash2(void *this,int *param_1,int param_2,int *param_3)
 
 {
   int *in_EAX;
@@ -8590,9 +8590,9 @@ undefined1 * __thiscall FUN_00a9b440(void *this,undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00a9b5a0 @ 00a9b5a0 ////
+//// FUNCTION PakFile_FindEntry @ 00a9b5a0 ////
 
-uint * __thiscall FUN_00a9b5a0(void *this,uint *param_1)
+uint * __thiscall PakFile_FindEntry(void *this,uint *param_1)
 
 {
   int iVar1;
@@ -8619,7 +8619,7 @@ uint * __thiscall FUN_00a9b5a0(void *this,uint *param_1)
   if (1 < (uint)(iVar1 - iVar7)) {
     if ((*(uint *)(iVar2 + iVar7 * 0x38) <= uVar3) &&
        (uVar3 <= *(uint *)(iVar4 * 0x38 + -0x38 + iVar2))) {
-      iVar7 = FUN_00a9b350(this,param_1,(uint)(iVar1 + iVar7) >> 1,iVar7,iVar1);
+      iVar7 = PakFile_BinarySearchHash1(this,param_1,(uint)(iVar1 + iVar7) >> 1,iVar7,iVar1);
       puVar5 = param_1;
       puVar6 = (uint *)(iVar7 * 0x38 + iVar2);
       if (uVar3 == *puVar6) {
@@ -8627,9 +8627,9 @@ uint * __thiscall FUN_00a9b5a0(void *this,uint *param_1)
           return puVar6;
         }
         param_1 = (uint *)0x0;
-        uVar8 = FUN_00a9b3b0(this,(int *)puVar5,iVar7,(int *)&param_1);
+        uVar8 = PakFile_ScanBackForHash2(this,(int *)puVar5,iVar7,(int *)&param_1);
         if (((char)uVar8 == '\0') &&
-           (uVar8 = FUN_00a9b3f0(this,(int *)puVar5,iVar7,(int *)&param_1), (char)uVar8 == '\0')) {
+           (uVar8 = PakFile_ScanForwardForHash2(this,(int *)puVar5,iVar7,(int *)&param_1), (char)uVar8 == '\0')) {
           return (uint *)0x0;
         }
         return (uint *)((int)param_1 * 0x38 + iVar2);
@@ -8646,9 +8646,9 @@ uint * __thiscall FUN_00a9b5a0(void *this,uint *param_1)
 }
 
 
-//// FUNCTION FUN_00a9b6b0 @ 00a9b6b0 ////
+//// FUNCTION PakFile_ParseHeader @ 00a9b6b0 ////
 
-int __thiscall FUN_00a9b6b0(void *this,int *param_1)
+int __thiscall PakFile_ParseHeader(void *this,int *param_1)
 
 {
   int iVar1;
@@ -9076,9 +9076,9 @@ void __cdecl FUN_00a9bd80(int param_1,int param_2,int param_3,int param_4)
 }
 
 
-//// FUNCTION FUN_00a9be50 @ 00a9be50 ////
+//// FUNCTION PakFile_Load @ 00a9be50 ////
 
-void __cdecl FUN_00a9be50(char *param_1)
+void __cdecl PakFile_Load(char *param_1)
 
 {
   char cVar1;
@@ -9144,7 +9144,7 @@ void __cdecl FUN_00a9be50(char *param_1)
           puVar8 = puVar8 + 1;
         }
       }
-      FUN_00a9b6b0(this,_Memory);
+      PakFile_ParseHeader(this,_Memory);
                     /* WARNING: Subroutine does not return */
       _free(_Memory);
     }
@@ -9657,9 +9657,9 @@ undefined4 * __fastcall FUN_00a9c890(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00a9c980 @ 00a9c980 ////
+//// FUNCTION Pak_HashPath @ 00a9c980 ////
 
-void __cdecl FUN_00a9c980(int *param_1,char *param_2)
+void __cdecl Pak_HashPath(int *param_1,char *param_2)
 
 {
   char *pcVar1;

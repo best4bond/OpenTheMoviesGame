@@ -1868,3 +1868,20 @@ address,old_name,new_name,evidence
 00bf3050,FUN_00bf3050,LHAudioParams_GetIs3D,"the predicate that callers assert as ""GetIs3D ()""/""!GetIs3D ()"" (bf3090, bf3260, bf3510 ...); name from those assertions"
 00bf3090,FUN_00bf3090,LHAudioParams_Get3DPosition,asserts GetIs3D () then returns the vector at +8
 00be76f0,FUN_00be76f0,CDistanceModel_GetRolloffType,"locks, maps the stored value 0/1/2 to the returned rolloff type, asserts on anything else (E_MODEL_ROLLOFF_TYPE_* clue; class name from the CDistanceModel source file in the Fable tree)"
+00a9c980,FUN_00a9c980,Pak_HashPath,"two hashes of an upper/lower-cased path: h1 = h1*0x17 + (c & ~0x20), h2 = h2*5 + tolower(c); stored at entry +0 and +4"
+00a9b5a0,FUN_00a9b5a0,PakFile_FindEntry,"bucket table at pak+0x2c indexed by hash1 & 0xff (8-byte {start,end}); binary search by hash1 over 0x38-byte entries; hash2 breaks ties"
+00a9b350,FUN_00a9b350,PakFile_BinarySearchHash1,binary search of the entry array by the first hash
+00a9b3b0,FUN_00a9b3b0,PakFile_ScanBackForHash2,walks backwards over equal hash1 entries until hash2 matches
+00a9b3f0,FUN_00a9b3f0,PakFile_ScanForwardForHash2,walks forward over equal hash1 entries until hash2 matches
+00a104e0,FUN_00a104e0,Pak_NormalisePath,"strips a leading ""./"" and turns '/' into '\\'"
+00a10550,FUN_00a10550,Pak_FindEntry,"normalise, hash, then try each loaded pak from first to last"
+00a105b0,FUN_00a105b0,Pak_FindEntryLastPakFirst,"same, searching the loaded paks from last to first"
+00a106c0,FUN_00a106c0,Pak_GetPakRecordForEntry,pak index = (entry flags >> 15) & 0xfff; record = table at 0x010b935c + index*0x2c; 0xfff means not in a pak
+00a108f0,FUN_00a108f0,Pak_LoadFile,"finds the entry; loose files (index 0xfff) are read from disk, pak entries are fseek'd to entry+8 and read entry+0xc bytes then decoded by Pak_DecodeEntryData"
+00a10810,FUN_00a10810,Pak_GetFileSize,returns entry +0x10 (unpacked size) or the on-disk size for a loose file
+00afb9d0,FUN_00afb9d0,Pak_DecodeEntryData,"per-entry inner header: +4 unpacked size, +8 compressed size, +0xc flags (bit 0 = stored); data at +0x10; stored data is copied, otherwise inflated"
+00afb800,FUN_00afb800,Zlib_InflateBuffer,inflateInit_ then inflate with Z_FINISH over a 0x38-byte z_stream; checks the output size equals the expected size
+00aafeb0,FUN_00aafeb0,Pak_OpenPak,"max 0xffe paks; parses the header, keeps the FILE*, xors the pak index into every entry's flags (bits 15-26)"
+00a9be50,FUN_00a9be50,PakFile_Load,reads the header buffer then ParseHeader
+00a9b6b0,FUN_00a9b6b0,PakFile_ParseHeader,"accepts versions 4/5/6 and copies the entry table, bucket table and string blob"
+00ab0480,FUN_00ab0480,Pak_DeletePakEntriesTool,"debug/maintenance code: opens a pak, prints ""Deleting %s"" for every entry using base dir + directory string + inline name"

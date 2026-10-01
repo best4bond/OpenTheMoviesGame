@@ -182,7 +182,7 @@ The Fable docs also list this block as unknown. The distance floats and the alia
 
 ## `.pak` archives
 
-Only the parts I could read from the decompile are here. The per-entry fields are not decoded, so no extractor can be written from this alone.
+Decoded from the decompile; the layout has not been checked against a real `.pak` file.
 
 **Discovery** (`FUN_00a96360`, `decomp_0051.c`): scans `data\Pak\*.*pak`, then the per-user folder `...\Lionhead Studios\TheMovies\` for `*.cpak` (the folder is from `SHGetSpecialFolderPathA` with CSIDL `0x23`, the common application data folder). `.cpak` files are user content and go through a separate loader (`FUN_00aafc30`) from the normal `.pak` path.
 
@@ -208,7 +208,25 @@ Only the parts I could read from the decompile are here. The per-entry fields ar
 
 In v4 the three offsets sit at `0x1c`-`0x24`. In v5 and v6 three more dwords come first (`0x1c`-`0x24`, kept but not used in the parts I read), and the offsets move to `0x28`-`0x30`. The loader copies the tables into memory: `count * 0x38` bytes of entries, `count2 * 8` bytes of small records, and the string blob.
 
-**Entries:** 0x38 bytes each. Only the flags dword at `+0x14` (pak index in bits 15-26) is known. The file-name/hash, offset and size fields have not been decoded.
+**Entries (0x38 bytes), decoded from the lookup and load code:**
+
+| Offset | Meaning |
+|---|---|
+| 0x00 | hash 1 of the path (entries are sorted by this) |
+| 0x04 | hash 2 of the path (breaks ties) |
+| 0x08 | file offset of the data in the pak |
+| 0x0c | bytes to read from the pak (includes the 0x10-byte inner header) |
+| 0x10 | unpacked size (`Pak_GetFileSize`) |
+| 0x14 | flags: bit 0 unknown; bits 1-14 offset of the directory string in the string blob; bits 15-26 pak index (set at load time, `0xfff` = loose file not in a pak) |
+| 0x18 | 32-byte inline file name, NUL terminated |
+
+**Hashing** (`Pak_HashPath`, `00a9c980`): the path is normalised (leading `./` removed, `/` turned into `\`). Then, with 32-bit wraparound, `h1 = h1*0x17 + (c & ~0x20)` and `h2 = h2*5 + tolower(c)` over the characters. `c & ~0x20` turns lower case into upper case, so the lookup is case-insensitive.
+
+**Lookup** (`PakFile_FindEntry`, `00a9b5a0`): the bucket table at pak `+0x2c` has 256 records of `{start index, end index}`, indexed by `hash1 & 0xff`. Within a bucket the entries are binary-searched by `hash1`. When `hash1` matches but `hash2` does not, the code scans neighbouring entries with equal `hash1` for the matching `hash2`. `Pak_FindEntry` (`00a10550`) tries each loaded pak from the first to the last, and `Pak_FindEntryLastPakFirst` (`00a105b0`) tries them from the last to the first, which gives patch paks priority.
+
+**Reading a file** (`Pak_LoadFile`, `00a108f0`): a loose file (pak index `0xfff`) is read from disk. Otherwise it seeks to entry `+0x08`, reads entry `+0x0c` bytes, and passes the block to `Pak_DecodeEntryData` (`00afb9d0`). The block has its own 0x10-byte inner header: `+0x04` unpacked size, `+0x08` compressed size, `+0x0c` flags (bit 0 set = stored uncompressed), and the data at `+0x10`. Compressed data is a zlib stream (`Zlib_InflateBuffer`, `00afb800`, `inflateInit_` then `inflate` with `Z_FINISH`). This explains Dragon UnPACKer's note that some Movies pak files "have 2 compression headers": the inner header sits in front of the zlib stream's own header. I have not checked that match against its source.
+
+`tools/pak_lookup.py` implements the hashing, header parsing, entry parsing and decoding from this description. **It is untested against a real pak file**, because I have none here. Running it on one would confirm or break the layout above. Unknown still: entry `+0x14` bit 0, the inner header's first dword, and how the 8-byte bucket records handle empty buckets.
 
 **Path handling** (`FUN_00ab0060`, `FUN_00ab0150`): paths are lower-cased and cut down to the part after `data\`. A file-type classifier checks the extensions `.msh`, `.pak`, `.cpak`, `.exe`, `.avi`, `.wmv`, `.fnt`. For `.msh` it treats names starting `head_` and `cos_` specially, with `_fat` and `_enh` suffixes (body-size and enhanced variants of costumes). A separate `"%s\%s%s%04d.pak"` format is used when generating numbered pak names.
 
@@ -321,5 +339,5 @@ The tree also lists third-party folders (`lzo`, `zlib`, `stlport`, `dxtc`, `xcr2
 
 ## TODO
 - DJ-era selection; timeline event data sources; `info.sm` field meanings.
-- `.pak` entry layout (name/hash, offset, size, compression) and how a lookup by path finds an entry; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
+- Check `tools/pak_lookup.py` against a real pak; the newer META Data `.lug` route; the rest of the sample record and the RLM/criteria segment layouts.
 - Details of the older notes (SLVAR type functions, `CSystem`, the RTTI class list) can still be pulled from `git show 9b29b4e:FINDINGS.md`.

@@ -21239,9 +21239,9 @@ FUN_00afb6f0(void *this,int param_1,int param_2,undefined4 *param_3,undefined4 p
 }
 
 
-//// FUNCTION FUN_00afb800 @ 00afb800 ////
+//// FUNCTION Zlib_InflateBuffer @ 00afb800 ////
 
-undefined4 * __thiscall FUN_00afb800(void *this,int param_1,uint param_2,int param_3)
+undefined4 * __thiscall Zlib_InflateBuffer(void *this,int param_1,uint param_2,int param_3)
 
 {
   undefined4 *puVar1;
@@ -21359,9 +21359,9 @@ undefined4 __cdecl FUN_00afb8b0(uint *param_1,uint param_2)
 }
 
 
-//// FUNCTION FUN_00afb9d0 @ 00afb9d0 ////
+//// FUNCTION Pak_DecodeEntryData @ 00afb9d0 ////
 
-void __cdecl FUN_00afb9d0(int param_1)
+void __cdecl Pak_DecodeEntryData(int param_1)
 
 {
   undefined4 *puVar1;
@@ -21392,7 +21392,7 @@ void __cdecl FUN_00afb9d0(int param_1)
   local_18 = 0;
   local_14 = 0;
   local_10 = 0;
-  FUN_00afb800(local_38,param_1 + 0x10,uVar3,*(int *)(param_1 + 8));
+  Zlib_InflateBuffer(local_38,param_1 + 0x10,uVar3,*(int *)(param_1 + 8));
   return;
 }
 
