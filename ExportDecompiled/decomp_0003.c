@@ -14055,14 +14055,14 @@ void __fastcall FUN_00447c00(int param_1)
 }
 
 
-//// FUNCTION FUN_00447c30 @ 00447c30 ////
+//// FUNCTION Game_MainLoop @ 00447c30 ////
 
-void FUN_00447c30(byte *param_1)
+void Game_MainLoop(byte *param_1)
 
 {
   char cVar1;
   void *this;
-  int *_Memory;
+  int *gameState;
   int iVar2;
   void *pvStack_c;
   undefined1 *puStack_8;
@@ -14075,26 +14075,26 @@ void FUN_00447c30(byte *param_1)
   this = operator_new(0xcc);
   local_4 = 0;
   if (this == (void *)0x0) {
-    _Memory = (int *)0x0;
+    gameState = (int *)0x0;
   }
   else {
-    _Memory = FUN_004291c0(this,param_1);
+    gameState = FUN_004291c0(this,param_1);
   }
-  cVar1 = *(char *)((int)_Memory + 6);
+  cVar1 = *(char *)((int)gameState + 6);
   local_4 = 0xffffffff;
   while (cVar1 == '\0') {
     FUN_009b3890();
     for (iVar2 = FUN_00566b10(DAT_0104cdf4); iVar2 != 0; iVar2 = iVar2 + -1) {
-      FUN_00423530(_Memory);
+      Game_TickOneFrame(gameState);
     }
-    FUN_00423670((int)_Memory);
-    if (*(char *)((int)_Memory + 6) != '\0') break;
+    FUN_00423670((int)gameState);
+    if (*(char *)((int)gameState + 6) != '\0') break;
     cVar1 = FUN_005422b0();
-    *(char *)((int)_Memory + 6) = cVar1;
+    *(char *)((int)gameState + 6) = cVar1;
   }
-  FUN_00423750((int)_Memory);
+  FUN_00423750((int)gameState);
                     /* WARNING: Subroutine does not return */
-  _free(_Memory);
+  _free(gameState);
 }
 
 

@@ -6397,9 +6397,9 @@ void __fastcall FUN_0041ff20(int param_1)
 }
 
 
-//// FUNCTION FUN_00420170 @ 00420170 ////
+//// FUNCTION Game_TickState0_Transition @ 00420170 ////
 
-void __thiscall FUN_00420170(void *this,uint param_1)
+void __thiscall Game_TickState0_Transition(void *this,uint param_1)
 
 {
   void *this_00;
@@ -8130,9 +8130,9 @@ void __thiscall FUN_00422750(void *this,undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_00422b00 @ 00422b00 ////
+//// FUNCTION Game_TickActiveGameplay @ 00422b00 ////
 
-void __fastcall FUN_00422b00(int param_1)
+void __fastcall Game_TickActiveGameplay(int gameState)
 
 {
   code *pcVar1;
@@ -8141,7 +8141,7 @@ void __fastcall FUN_00422b00(int param_1)
   int *piVar4;
   undefined4 extraout_EDX;
   
-  *(undefined1 *)(param_1 + 7) = 0;
+  *(undefined1 *)(gameState + 7) = 0;
   FUN_009a1570();
   iVar2 = FUN_0071b2a0();
   FUN_0053c820(iVar2 + 0x50);
@@ -8152,27 +8152,27 @@ void __fastcall FUN_00422b00(int param_1)
   if ((char)uVar3 == '\0') {
     FUN_00554680();
   }
-  FUN_0053c550();
+  SimObjectQueue_TickPending();
   piVar4 = (int *)FUN_005ef380();
   (**(code **)(*piVar4 + 0xc))();
   FUN_00746710();
-  if ((*(byte *)(param_1 + 0x88) & 1) == 0) {
+  if ((*(byte *)(gameState + 0x88) & 1) == 0) {
     iVar2 = GlobalStatRegistry_Get();
     FUN_008c88a0(iVar2);
     FUN_00525df0();
-    if (*(int *)(param_1 + 0xb0) != 0) {
-      if (((*(int *)(param_1 + 0xb4) - *(int *)(param_1 + 0xb0)) / 0xc != 0) &&
-         (pcVar1 = *(code **)(*(int *)(param_1 + 0xb4) + -8), pcVar1 != (code *)0x0)) {
+    if (*(int *)(gameState + 0xb0) != 0) {
+      if (((*(int *)(gameState + 0xb4) - *(int *)(gameState + 0xb0)) / 0xc != 0) &&
+         (pcVar1 = *(code **)(*(int *)(gameState + 0xb4) + -8), pcVar1 != (code *)0x0)) {
         (*pcVar1)();
       }
     }
     piVar4 = (int *)FUN_0071b2a0();
     (**(code **)(*piVar4 + 0x28))();
-    if (*(char *)(param_1 + 0xc5) != '\0') {
+    if (*(char *)(gameState + 0xc5) != '\0') {
       FUN_006a44f0();
-      *(undefined1 *)(param_1 + 0xc5) = 0;
+      *(undefined1 *)(gameState + 0xc5) = 0;
     }
-    if ((*(byte *)(param_1 + 0x88) & 1) == 0) {
+    if ((*(byte *)(gameState + 0x88) & 1) == 0) {
       if (DAT_00f885f4 != 0) {
         FUN_0053c820(DAT_00f885f4 + 0xa0);
       }
@@ -8190,9 +8190,9 @@ void __fastcall FUN_00422b00(int param_1)
 }
 
 
-//// FUNCTION FUN_00422c30 @ 00422c30 ////
+//// FUNCTION Game_TickPaused @ 00422c30 ////
 
-void __fastcall FUN_00422c30(int param_1)
+void __fastcall Game_TickPaused(int gameState)
 
 {
   code *pcVar1;
@@ -8200,7 +8200,12 @@ void __fastcall FUN_00422c30(int param_1)
   undefined4 uVar3;
   int *piVar4;
   
-  *(undefined1 *)(param_1 + 7) = 0;
+                    /* Named "Paused" by inference, not proof: this is structurally near-identical
+                       to Game_TickActiveGameplay except it never calls
+                       Campaign_AdvanceYearIfDecadeElapsed. Reached via Game_TickOneFrame's switch
+                       case 3 specifically; the other 4 non-default cases (0,1,2,4,5) route to other
+                       still-unnamed tick variants not yet traced. */
+  *(undefined1 *)(gameState + 7) = 0;
   FUN_009a1570();
   iVar2 = FUN_0071b2a0();
   FUN_0053c820(iVar2 + 0x50);
@@ -8209,21 +8214,21 @@ void __fastcall FUN_00422c30(int param_1)
   if ((char)uVar3 == '\0') {
     FUN_00554680();
   }
-  FUN_0053c550();
+  SimObjectQueue_TickPending();
   FUN_00746710();
   piVar4 = (int *)FUN_005ef380();
   (**(code **)(*piVar4 + 0xc))();
-  if ((*(byte *)(param_1 + 0x88) & 1) == 0) {
+  if ((*(byte *)(gameState + 0x88) & 1) == 0) {
     FUN_00525df0();
-    if (*(int *)(param_1 + 0xb0) != 0) {
-      if (((*(int *)(param_1 + 0xb4) - *(int *)(param_1 + 0xb0)) / 0xc != 0) &&
-         (pcVar1 = *(code **)(*(int *)(param_1 + 0xb4) + -8), pcVar1 != (code *)0x0)) {
+    if (*(int *)(gameState + 0xb0) != 0) {
+      if (((*(int *)(gameState + 0xb4) - *(int *)(gameState + 0xb0)) / 0xc != 0) &&
+         (pcVar1 = *(code **)(*(int *)(gameState + 0xb4) + -8), pcVar1 != (code *)0x0)) {
         (*pcVar1)();
       }
     }
     piVar4 = (int *)FUN_0071b2a0();
     (**(code **)(*piVar4 + 0x28))();
-    if ((*(byte *)(param_1 + 0x88) & 1) == 0) {
+    if ((*(byte *)(gameState + 0x88) & 1) == 0) {
       if (DAT_00f885f4 != 0) {
         FUN_0053c820(DAT_00f885f4 + 0xa0);
       }
@@ -8240,9 +8245,9 @@ void __fastcall FUN_00422c30(int param_1)
 }
 
 
-//// FUNCTION FUN_00422d20 @ 00422d20 ////
+//// FUNCTION Game_TickState1 @ 00422d20 ////
 
-void __fastcall FUN_00422d20(int param_1)
+void __fastcall Game_TickState1(int gameState)
 
 {
   code *pcVar1;
@@ -8263,15 +8268,15 @@ void __fastcall FUN_00422d20(int param_1)
   (**(code **)(*piVar4 + 0xc))();
   FUN_00746710();
   FUN_00525df0();
-  if ((((*(int *)(param_1 + 0xb0) != 0) &&
-       ((*(int *)(param_1 + 0xb4) - *(int *)(param_1 + 0xb0)) / 0xc != 0)) &&
-      (pcVar1 = *(code **)(*(int *)(param_1 + 0xb4) + -8), pcVar1 != (code *)0x0)) &&
-     ((*pcVar1)(), (*(byte *)(param_1 + 0x88) & 1) != 0)) {
+  if ((((*(int *)(gameState + 0xb0) != 0) &&
+       ((*(int *)(gameState + 0xb4) - *(int *)(gameState + 0xb0)) / 0xc != 0)) &&
+      (pcVar1 = *(code **)(*(int *)(gameState + 0xb4) + -8), pcVar1 != (code *)0x0)) &&
+     ((*pcVar1)(), (*(byte *)(gameState + 0x88) & 1) != 0)) {
     return;
   }
   piVar4 = (int *)FUN_0071b2a0();
   (**(code **)(*piVar4 + 0x28))();
-  if ((*(byte *)(param_1 + 0x88) & 1) != 0) {
+  if ((*(byte *)(gameState + 0x88) & 1) != 0) {
     return;
   }
   uVar3 = FUN_00544030(DAT_0104c8f4);
@@ -8283,9 +8288,9 @@ void __fastcall FUN_00422d20(int param_1)
 }
 
 
-//// FUNCTION FUN_00422e00 @ 00422e00 ////
+//// FUNCTION Game_TickState4 @ 00422e00 ////
 
-void __fastcall FUN_00422e00(int param_1)
+void __fastcall Game_TickState4(int gameState)
 
 {
   char cVar1;
@@ -8293,7 +8298,7 @@ void __fastcall FUN_00422e00(int param_1)
   int *piVar3;
   undefined4 extraout_EDX;
   
-  FUN_00422d20(param_1);
+  Game_TickState1(gameState);
   iVar2 = GlobalStatRegistry_Get();
   cVar1 = FUN_008c39b0(iVar2);
   if (cVar1 != '\0') {
@@ -8308,9 +8313,9 @@ void __fastcall FUN_00422e00(int param_1)
 }
 
 
-//// FUNCTION FUN_00422e40 @ 00422e40 ////
+//// FUNCTION Game_TickState2 @ 00422e40 ////
 
-void __fastcall FUN_00422e40(int param_1,undefined4 param_2)
+void __fastcall Game_TickState2(int gameState,undefined4 param_2)
 
 {
   code *pcVar1;
@@ -8330,19 +8335,19 @@ void __fastcall FUN_00422e40(int param_1,undefined4 param_2)
   FUN_00746710();
   FUN_00525df0();
   (**(code **)(*DAT_0104d82c + 0xc))();
-  if ((((*(int *)(param_1 + 0xb0) != 0) &&
-       ((*(int *)(param_1 + 0xb4) - *(int *)(param_1 + 0xb0)) / 0xc != 0)) &&
-      (pcVar1 = *(code **)(*(int *)(param_1 + 0xb4) + -8), pcVar1 != (code *)0x0)) &&
-     ((*pcVar1)(), (*(byte *)(param_1 + 0x88) & 1) != 0)) {
+  if ((((*(int *)(gameState + 0xb0) != 0) &&
+       ((*(int *)(gameState + 0xb4) - *(int *)(gameState + 0xb0)) / 0xc != 0)) &&
+      (pcVar1 = *(code **)(*(int *)(gameState + 0xb4) + -8), pcVar1 != (code *)0x0)) &&
+     ((*pcVar1)(), (*(byte *)(gameState + 0x88) & 1) != 0)) {
     return;
   }
   piVar5 = (int *)FUN_0071b2a0();
   (**(code **)(*piVar5 + 0x28))();
-  if (*(char *)(param_1 + 0xc5) != '\0') {
+  if (*(char *)(gameState + 0xc5) != '\0') {
     FUN_006a44f0();
-    *(undefined1 *)(param_1 + 0xc5) = 0;
+    *(undefined1 *)(gameState + 0xc5) = 0;
   }
-  if ((*(byte *)(param_1 + 0x88) & 1) != 0) {
+  if ((*(byte *)(gameState + 0x88) & 1) != 0) {
     return;
   }
   uVar4 = FUN_00544030(DAT_0104c8f4);
@@ -8363,9 +8368,9 @@ void __fastcall FUN_00422e40(int param_1,undefined4 param_2)
 }
 
 
-//// FUNCTION FUN_00422f40 @ 00422f40 ////
+//// FUNCTION Game_TickState5 @ 00422f40 ////
 
-void __fastcall FUN_00422f40(int param_1,undefined4 param_2)
+void __fastcall Game_TickState5(int gameState,undefined4 param_2)
 
 {
   code *pcVar1;
@@ -8385,19 +8390,19 @@ void __fastcall FUN_00422f40(int param_1,undefined4 param_2)
   FUN_00746710();
   FUN_00525df0();
   (**(code **)(*DAT_0104d82c + 0xc))();
-  if ((((*(int *)(param_1 + 0xb0) != 0) &&
-       ((*(int *)(param_1 + 0xb4) - *(int *)(param_1 + 0xb0)) / 0xc != 0)) &&
-      (pcVar1 = *(code **)(*(int *)(param_1 + 0xb4) + -8), pcVar1 != (code *)0x0)) &&
-     ((*pcVar1)(), (*(byte *)(param_1 + 0x88) & 1) != 0)) {
+  if ((((*(int *)(gameState + 0xb0) != 0) &&
+       ((*(int *)(gameState + 0xb4) - *(int *)(gameState + 0xb0)) / 0xc != 0)) &&
+      (pcVar1 = *(code **)(*(int *)(gameState + 0xb4) + -8), pcVar1 != (code *)0x0)) &&
+     ((*pcVar1)(), (*(byte *)(gameState + 0x88) & 1) != 0)) {
     return;
   }
   piVar5 = (int *)FUN_0071b2a0();
   (**(code **)(*piVar5 + 0x28))();
-  if (*(char *)(param_1 + 0xc5) != '\0') {
+  if (*(char *)(gameState + 0xc5) != '\0') {
     FUN_006a44f0();
-    *(undefined1 *)(param_1 + 0xc5) = 0;
+    *(undefined1 *)(gameState + 0xc5) = 0;
   }
-  if ((*(byte *)(param_1 + 0x88) & 1) != 0) {
+  if ((*(byte *)(gameState + 0x88) & 1) != 0) {
     return;
   }
   uVar4 = FUN_00544030(DAT_0104c8f4);
@@ -8663,69 +8668,114 @@ undefined4 FUN_004234d0(void)
 }
 
 
-//// FUNCTION FUN_00423530 @ 00423530 ////
+//// FUNCTION Game_TickOneFrame @ 00423530 ////
 
-void __fastcall FUN_00423530(int *param_1)
+void __fastcall Game_TickOneFrame(int *gameState)
 
 {
   void *pvVar1;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
   
-  param_1[0x22] = param_1[0x22] & 0xfffffffe;
+                    /* Top-level per-tick game-state dispatcher, called once per simulation tick
+                       from Game_MainLoop (which may call this multiple times per rendered frame via
+                       a fixed-timestep accumulator). Switches on *(param_1[0x2d]-0xc), a
+                       game-state/mode value.
+                       
+                       CORRECTED 2026-10-01 (debugger DLL, hooks on Game_TickActiveGameplay/
+                       Game_TickPaused/SimObjectQueue_TickPending): case 0 is NOT mutually exclusive
+                       with the trailing Game_TickActiveGameplay call the way cases 1-5 are. Cases
+                       1/2/3/4/5 all end in an explicit `return` inside their case body. Case 0 only
+                       returns early if the flag byte at param_1+199 is set (chaining into
+                       Game_TickState4 instead); when that flag is clear - the overwhelmingly common
+                       case during ordinary play (7175/7910 = ~91% of ticks in one real session) -
+                       case 0 just `break`s out of the switch and falls through into the trailing
+                       Game_TickActiveGameplay(...) call after the switch block. So state 0 calls
+                       BOTH Game_TickState0_Transition (lightweight per-tick bookkeeping/
+                       notification) AND Game_TickActiveGameplay on the same tick. This DISPROVES
+                       the
+                       previous claim below that "none of states 0/1/2/4/5 call
+                       Campaign_AdvanceYearIfDecadeElapsed or SimObjectQueue_TickPending" - state 0
+                       very much does, via this fallthrough, for the large majority of real
+                       gameplay ticks. State 0 is therefore effectively "normal gameplay in
+                       progress", not a distinct non-gameplay/transition screen - confirmed via
+                       hooked call counts, not just runtime inference this time
+                       (SimObjectQueue_TickPending's
+                       total call count across one session matched Game_TickActiveGameplay +
+                       Game_TickPaused's combined count exactly: 7175 + 223 = 7398).
+                       
+                       case 1 -> Game_TickState1 (reduced tick, no calendar/sim-queue advance), case
+                       2 -> Game_TickState2, case 3 -> Game_TickPaused (now hook-confirmed: its call
+                       count in one session, 223, lined up exactly with the single ~22s dwell
+                       logged at state 3 that session - roughly a 10Hz reduced tick rate while
+                       paused), case 4 -> Game_TickState4 (wraps State1 plus extra stat-registry
+                       checks), case 5 -> Game_TickState5 (near-twin of State2), default (any value
+                       NOT 0-5) -> Game_TickActiveGameplay directly (same call as case 0's
+                       fallthrough).
+                       
+                       Which literal screen each of states 1/2/4/5 corresponds to is still not
+                       proven by code - named by structural role only. Runtime correlation so far
+                       (see project_the_movies_re.md, 2026-10-01 entries) tentatively suggests state
+                       2 = a loading screen (one-off ~13s dwell right after startup, before the
+                       first entry into state 0) and state 5 = a brief notification/toast rather
+                       than a modal pause (now that Paused is confidently state 3, a different
+                       earlier guess that 5 was "paused/modal" is superseded). State 1 appears in
+                       short, repeated bursts alternating with state 0, not yet confidently mapped
+                       to a specific screen. */
+  gameState[0x22] = gameState[0x22] & 0xfffffffe;
   FUN_0053d440();
   FUN_0053c8c0();
   FUN_009a1560(0);
   FUN_006a0020();
-  switch(*(undefined4 *)(param_1[0x2d] + -0xc)) {
+  switch(*(undefined4 *)(gameState[0x2d] + -0xc)) {
   case 0:
-    FUN_00420170(param_1,(uint)*(byte *)((int)param_1 + 199));
-    FUN_009a1560(*(undefined1 *)((int)param_1 + 199));
-    if (*(char *)((int)param_1 + 199) != '\0') {
-      FUN_00422e00((int)param_1);
+    Game_TickState0_Transition(gameState,(uint)*(byte *)((int)gameState + 199));
+    FUN_009a1560(*(undefined1 *)((int)gameState + 199));
+    if (*(char *)((int)gameState + 199) != '\0') {
+      Game_TickState4((int)gameState);
       pvVar1 = (void *)FUN_004f3b20();
       FUN_004fb1c0(pvVar1);
-      *param_1 = *param_1 + 1;
+      *gameState = *gameState + 1;
       return;
     }
     break;
   case 1:
-    FUN_00422d20((int)param_1);
+    Game_TickState1((int)gameState);
     pvVar1 = (void *)FUN_004f3b20();
     FUN_004fb1c0(pvVar1);
-    *param_1 = *param_1 + 1;
+    *gameState = *gameState + 1;
     return;
   case 2:
-    FUN_00422e40((int)param_1,extraout_EDX);
+    Game_TickState2((int)gameState,extraout_EDX);
     pvVar1 = (void *)FUN_004f3b20();
     FUN_004fb1c0(pvVar1);
-    *param_1 = *param_1 + 1;
+    *gameState = *gameState + 1;
     return;
   case 3:
-    FUN_00422c30((int)param_1);
+    Game_TickPaused((int)gameState);
     pvVar1 = (void *)FUN_004f3b20();
     FUN_004fb1c0(pvVar1);
-    *param_1 = *param_1 + 1;
+    *gameState = *gameState + 1;
     return;
   case 4:
     FUN_009a1560(1);
-    FUN_00422e00((int)param_1);
+    Game_TickState4((int)gameState);
     pvVar1 = (void *)FUN_004f3b20();
     FUN_004fb1c0(pvVar1);
-    *param_1 = *param_1 + 1;
+    *gameState = *gameState + 1;
     return;
   case 5:
     FUN_009a1560(1);
-    FUN_00422f40((int)param_1,extraout_EDX_00);
+    Game_TickState5((int)gameState,extraout_EDX_00);
     pvVar1 = (void *)FUN_004f3b20();
     FUN_004fb1c0(pvVar1);
-    *param_1 = *param_1 + 1;
+    *gameState = *gameState + 1;
     return;
   }
-  FUN_00422b00((int)param_1);
+  Game_TickActiveGameplay((int)gameState);
   pvVar1 = (void *)FUN_004f3b20();
   FUN_004fb1c0(pvVar1);
-  *param_1 = *param_1 + 1;
+  *gameState = *gameState + 1;
   return;
 }
 

@@ -5612,9 +5612,9 @@ bool __cdecl FUN_004b1010(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_004b1130 @ 004b1130 ////
+//// FUNCTION AutosaveSystem_TriggerAutosave @ 004b1130 ////
 
-void __cdecl FUN_004b1130(wchar_t *param_1,uint param_2,uint param_3)
+void __cdecl AutosaveSystem_TriggerAutosave(wchar_t *param_1,uint param_2,uint param_3)
 
 {
   int iVar1;
@@ -5629,6 +5629,26 @@ void __cdecl FUN_004b1130(wchar_t *param_1,uint param_2,uint param_3)
   undefined1 *puStack_8;
   int local_4;
   
+                    /* AutosaveSystem_TriggerAutosave - __cdecl(wchar_t* message, uint length, uint
+                       capacity), a CBasicString<wchar_t>-unpacked param triple matching this
+                       codebase's usual wide-string-argument convention. Allocates a save-state
+                       object (operator_new(0xac)) if one doesn't already exist at
+                       *(DAT_0104a978+0x74), calls through two vtable slots on it (offsets 0 and 4
+                       relative to DAT_0104a978+0x60 - likely a "begin"/"prepare" pair), then marks
+                       save-in-progress state at offsets 0x78/0x7c/0xa8 of the save-state object.
+                       
+                       Called from exactly 3 places: FUN_004b3ae0 (the WinMain shutdown-tail
+                       function - likely a final save-on-exit), one not-yet-named caller at
+                       0x6879aa, and WInterface::Tick itself (VA 0x6a3790) - confirming
+                       WInterface::Tick's own existing comment ("handles quicksave triggers") was
+                       accurate. WInterface::Tick is already hooked by the debugger DLL; this
+                       function is now ALSO hooked separately (2026-10-01) specifically to get a
+                       precise "an autosave/quicksave just started here" signal, distinct from
+                       WInterface::Tick's own per-frame noise - added after the game crashed
+                       (nvd3dum.dll access violation, 0xc0000005) while injected, with the user
+                       suspecting an autosave was in progress at the time. See
+                       project_the_movies_re.md for the crash details and whether this hook
+                       corroborates the theory on a future capture. */
   puStack_8 = &LAB_00ca6fc3;
   pvStack_c = ExceptionList;
   local_4 = 0;
@@ -7771,7 +7791,7 @@ void FUN_004b3ae0(void)
       if (((int)uVar8 < (int)uVar7) && (DAT_00e67b9e == '\0')) {
         puStack_90 = &stack0xffffff34;
         FUN_00421240(&stack0xffffff34,L"autosave.jad",0xffffffff);
-        FUN_004b1130(in_stack_ffffff34,in_stack_ffffff38,in_stack_ffffff3c);
+        AutosaveSystem_TriggerAutosave(in_stack_ffffff34,in_stack_ffffff38,in_stack_ffffff3c);
       }
     }
   }
@@ -8340,7 +8360,7 @@ void AutosaveSystem_Constructor(void)
     local_28 = 0x10;
     local_2c[0x10] = '\0';
     local_4 = 3;
-    lVar2 = Config_GetOrCreateInt(DAT_0104c7e4,&local_2c,1);
+    lVar2 = Config_GetOrCreateInt(g_configRegistryPath,&local_2c,1);
     local_4 = 0xffffffff;
     if (0x14 < local_24) {
                     /* WARNING: Subroutine does not return */

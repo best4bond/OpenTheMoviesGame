@@ -1,3 +1,1590 @@
+//// FUNCTION __Getcvt @ 00accdf6 ////
+
+/* WARNING: Function: __SEH_prolog replaced with injection: SEH_prolog */
+/* WARNING: Function: __SEH_epilog replaced with injection: EH_epilog3 */
+/* Library Function - Single Match
+    __Getcvt
+   
+   Library: Visual Studio 2003 Release */
+
+_Cvtvec * __cdecl __Getcvt(_Cvtvec *__return_storage_ptr__)
+
+{
+  _Cvtvec *p_Var1;
+  LONG *pLVar2;
+  int iVar3;
+  uint *puVar4;
+  
+  pLVar2 = (LONG *)FUN_00ad7110();
+  InterlockedIncrement(pLVar2);
+  iVar3 = FUN_00ad710a();
+  if (iVar3 != 0) {
+    pLVar2 = (LONG *)FUN_00ad7110();
+    InterlockedDecrement(pLVar2);
+    __lock(0xc);
+  }
+  puVar4 = ____lc_handle_func();
+  p_Var1 = (_Cvtvec *)puVar4[2];
+  ____lc_codepage_func();
+  FUN_00acce64();
+  return p_Var1;
+}
+
+
+//// FUNCTION FUN_00acce64 @ 00acce64 ////
+
+void FUN_00acce64(void)
+
+{
+  LONG *lpAddend;
+  int unaff_EBP;
+  
+  if (*(int *)(unaff_EBP + -0x1c) == 0) {
+    lpAddend = (LONG *)FUN_00ad7110();
+    InterlockedDecrement(lpAddend);
+  }
+  else {
+    FUN_00ad700c(0xc);
+  }
+  return;
+}
+
+
+//// FUNCTION __Wcrtomb @ 00accfef ////
+
+/* WARNING: Function: __SEH_prolog replaced with injection: SEH_prolog */
+/* WARNING: Function: __SEH_epilog replaced with injection: EH_epilog3 */
+/* Library Function - Single Match
+    __Wcrtomb
+   
+   Library: Visual Studio 2003 Release */
+
+int __cdecl __Wcrtomb(char *param_1,wchar_t param_2,mbstate_t *param_3,_Cvtvec *param_4)
+
+{
+  LONG *pLVar1;
+  int iVar2;
+  
+  pLVar1 = (LONG *)FUN_00ad7110();
+  InterlockedIncrement(pLVar1);
+  iVar2 = FUN_00ad710a();
+  if (iVar2 != 0) {
+    pLVar1 = (LONG *)FUN_00ad7110();
+    InterlockedDecrement(pLVar1);
+    __lock(0xc);
+  }
+  iVar2 = ___Wcrtomb_lk(param_1,param_2,0,&param_4->_Page);
+  FUN_00acd05d();
+  return iVar2;
+}
+
+
+//// FUNCTION FUN_00acd05d @ 00acd05d ////
+
+void FUN_00acd05d(void)
+
+{
+  LONG *lpAddend;
+  int unaff_EBP;
+  
+  if (*(int *)(unaff_EBP + -0x1c) == 0) {
+    lpAddend = (LONG *)FUN_00ad7110();
+    InterlockedDecrement(lpAddend);
+  }
+  else {
+    FUN_00ad700c(0xc);
+  }
+  return;
+}
+
+
+//// FUNCTION _wctob @ 00acd097 ////
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* Library Function - Single Match
+    _wctob
+   
+   Library: Visual Studio 2003 Release */
+
+int __cdecl _wctob(wint_t _WCh)
+
+{
+  int iVar1;
+  char local_10 [8];
+  undefined4 local_8;
+  
+  local_8 = DAT_00e9a098;
+  if ((_WCh != 0xffff) &&
+     (iVar1 = __Wcrtomb(local_10,_WCh,(mbstate_t *)0x0,(_Cvtvec *)0x0), iVar1 == 1)) {
+    return (int)local_10[0];
+  }
+  return -1;
+}
+
+
+//// FUNCTION __Stod @ 00acd0d8 ////
+
+/* Library Function - Single Match
+    __Stod
+   
+   Library: Visual Studio 2003 Release */
+
+double __cdecl __Stod(char *param_1,char **param_2,long param_3)
+
+{
+  long lVar1;
+  int iVar2;
+  bool bVar3;
+  double dVar4;
+  
+  dVar4 = _strtod(param_1,param_2);
+  bVar3 = param_3 < 0;
+  lVar1 = param_3;
+  if (0 < param_3) {
+    lVar1 = 0;
+    do {
+      param_3 = param_3 + -1;
+      dVar4 = dVar4 * 10.0;
+    } while (param_3 != 0);
+    bVar3 = false;
+  }
+  if (bVar3) {
+    iVar2 = -lVar1;
+    do {
+      iVar2 = iVar2 + -1;
+      dVar4 = dVar4 * 0.1;
+    } while (iVar2 != 0);
+  }
+  return dVar4;
+}
+
+
+//// FUNCTION FUN_00acd10c @ 00acd10c ////
+
+float10 __cdecl FUN_00acd10c(char *param_1,char **param_2,long param_3)
+
+{
+  double dVar1;
+  
+  dVar1 = __Stod(param_1,param_2,param_3);
+  return (float10)dVar1;
+}
+
+
+//// FUNCTION FUN_00acd121 @ 00acd121 ////
+
+float10 __cdecl FUN_00acd121(char *param_1,char **param_2,long param_3)
+
+{
+  double dVar1;
+  
+  dVar1 = __Stod(param_1,param_2,param_3);
+  return (float10)dVar1;
+}
+
+
+//// FUNCTION FUN_00acd14f @ 00acd14f ////
+
+void __fastcall FUN_00acd14f(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_FUN_00d7dd1c;
+  FUN_00ace1d8(param_1);
+  return;
+}
+
+
+//// FUNCTION FUN_00acd15a @ 00acd15a ////
+
+undefined4 * __thiscall FUN_00acd15a(void *this,byte param_1)
+
+{
+  FUN_00acd14f(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_00acd18e @ 00acd18e ////
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00acd18e(void)
+
+{
+  undefined **local_14 [3];
+  char *local_8;
+  
+  if ((_DAT_010cbb68 & 1) == 0) {
+    _DAT_010cbb68 = _DAT_010cbb68 | 1;
+    local_8 = "bad allocation";
+    exception::exception((exception *)&DAT_010cbb5c,&local_8);
+    _DAT_010cbb5c = &PTR_FUN_00d7dd1c;
+    _atexit(FUN_00d153be);
+  }
+  exception::exception((exception *)local_14,(exception *)&DAT_010cbb5c);
+  local_14[0] = &PTR_FUN_00d7dd1c;
+                    /* WARNING: Subroutine does not return */
+  __CxxThrowException_8(local_14,&DAT_00e3edd4);
+}
+
+
+//// FUNCTION FUN_00acd226 @ 00acd226 ////
+
+void __cdecl FUN_00acd226(LPCRITICAL_SECTION param_1)
+
+{
+  InitializeCriticalSection((LPCRITICAL_SECTION)param_1);
+  return;
+}
+
+
+//// FUNCTION FUN_00acd231 @ 00acd231 ////
+
+void __cdecl FUN_00acd231(LPCRITICAL_SECTION param_1)
+
+{
+  DeleteCriticalSection((LPCRITICAL_SECTION)param_1);
+  return;
+}
+
+
+//// FUNCTION FUN_00acd23c @ 00acd23c ////
+
+void __cdecl FUN_00acd23c(LPCRITICAL_SECTION param_1)
+
+{
+  EnterCriticalSection((LPCRITICAL_SECTION)param_1);
+  return;
+}
+
+
+//// FUNCTION FUN_00acd247 @ 00acd247 ////
+
+void __cdecl FUN_00acd247(LPCRITICAL_SECTION param_1)
+
+{
+  LeaveCriticalSection((LPCRITICAL_SECTION)param_1);
+  return;
+}
+
+
+//// FUNCTION __Atexit @ 00acd252 ////
+
+/* Library Function - Single Match
+    __Atexit
+   
+   Library: Visual Studio 2003 Release */
+
+void __cdecl __Atexit(_func_9331 *param_1)
+
+{
+  if (DAT_00e99cb0 == 0) {
+                    /* WARNING: Subroutine does not return */
+    _abort();
+  }
+  DAT_00e99cb0 = DAT_00e99cb0 + -1;
+  *(_func_9331 **)(DAT_00e99cb0 * 4 + 0x10cbb8c) = param_1;
+  return;
+}
+
+
+//// FUNCTION FUN_00acd288 @ 00acd288 ////
+
+void FUN_00acd288(void)
+
+{
+  int iVar1;
+  
+  while (DAT_00e99cb0 < 10) {
+    iVar1 = DAT_00e99cb0 * 4;
+    DAT_00e99cb0 = DAT_00e99cb0 + 1;
+    (**(code **)(iVar1 + 0x10cbb8c))();
+  }
+  return;
+}
+
+
+//// FUNCTION _strncpy @ 00acd2a0 ////
+
+/* Library Function - Single Match
+    _strncpy
+   
+   Library: Visual Studio */
+
+char * __cdecl _strncpy(char *_Dest,char *_Source,size_t _Count)
+
+{
+  uint uVar1;
+  uint uVar2;
+  char cVar3;
+  uint uVar4;
+  uint *puVar5;
+  
+  if (_Count == 0) {
+    return _Dest;
+  }
+  puVar5 = (uint *)_Dest;
+  if (((uint)_Source & 3) != 0) {
+    while( true ) {
+      uVar4 = *(uint *)_Source;
+      _Source = (char *)((int)_Source + 1);
+      *(char *)puVar5 = (char)uVar4;
+      puVar5 = (uint *)((int)puVar5 + 1);
+      _Count = _Count - 1;
+      if (_Count == 0) {
+        return _Dest;
+      }
+      if ((char)uVar4 == '\0') break;
+      if (((uint)_Source & 3) == 0) {
+        uVar4 = _Count >> 2;
+        goto joined_r0x00acd2ec;
+      }
+    }
+    do {
+      if (((uint)puVar5 & 3) == 0) {
+        uVar4 = _Count >> 2;
+        cVar3 = '\0';
+        if (uVar4 == 0) goto LAB_00acd333;
+        goto LAB_00acd3a9;
+      }
+      *(char *)puVar5 = '\0';
+      puVar5 = (uint *)((int)puVar5 + 1);
+      _Count = _Count - 1;
+    } while (_Count != 0);
+    return _Dest;
+  }
+  uVar4 = _Count >> 2;
+  if (uVar4 != 0) {
+    do {
+      uVar1 = *(uint *)_Source;
+      uVar2 = *(uint *)_Source;
+      _Source = (char *)((int)_Source + 4);
+      if (((uVar1 ^ 0xffffffff ^ uVar1 + 0x7efefeff) & 0x81010100) != 0) {
+        if ((char)uVar2 == '\0') {
+          *puVar5 = 0;
+joined_r0x00acd3a5:
+          while( true ) {
+            uVar4 = uVar4 - 1;
+            puVar5 = puVar5 + 1;
+            if (uVar4 == 0) break;
+LAB_00acd3a9:
+            *puVar5 = 0;
+          }
+          cVar3 = '\0';
+          _Count = _Count & 3;
+          if (_Count != 0) goto LAB_00acd333;
+          return _Dest;
+        }
+        if ((char)(uVar2 >> 8) == '\0') {
+          *puVar5 = uVar2 & 0xff;
+          goto joined_r0x00acd3a5;
+        }
+        if ((uVar2 & 0xff0000) == 0) {
+          *puVar5 = uVar2 & 0xffff;
+          goto joined_r0x00acd3a5;
+        }
+        if ((uVar2 & 0xff000000) == 0) {
+          *puVar5 = uVar2;
+          goto joined_r0x00acd3a5;
+        }
+      }
+      *puVar5 = uVar2;
+      puVar5 = puVar5 + 1;
+      uVar4 = uVar4 - 1;
+joined_r0x00acd2ec:
+    } while (uVar4 != 0);
+    _Count = _Count & 3;
+    if (_Count == 0) {
+      return _Dest;
+    }
+  }
+  do {
+    cVar3 = (char)*(uint *)_Source;
+    _Source = (char *)((int)_Source + 1);
+    *(char *)puVar5 = cVar3;
+    puVar5 = (uint *)((int)puVar5 + 1);
+    if (cVar3 == '\0') {
+      while (_Count = _Count - 1, _Count != 0) {
+LAB_00acd333:
+        *(char *)puVar5 = cVar3;
+        puVar5 = (uint *)((int)puVar5 + 1);
+      }
+      return _Dest;
+    }
+    _Count = _Count - 1;
+  } while (_Count != 0);
+  return _Dest;
+}
+
+
+//// FUNCTION FUN_00acd3c4 @ 00acd3c4 ////
+
+void FUN_00acd3c4(void)
+
+{
+  return;
+}
+
+
+//// FUNCTION FUN_00acd3c5 @ 00acd3c5 ////
+
+void FUN_00acd3c5(void)
+
+{
+  PTR_FUN_00e9a604 = __cfltcvt;
+  PTR_FUN_00e9a608 = &LAB_00ad8948;
+  PTR_FUN_00e9a60c = __fassign;
+  PTR_FUN_00e9a610 = __forcdecpt;
+  PTR_FUN_00e9a614 = &LAB_00ad8993;
+  PTR_FUN_00e9a618 = __cfltcvt;
+  return;
+}
+
+
+//// FUNCTION __fpmath @ 00acd40d ////
+
+/* Library Function - Single Match
+    __fpmath
+   
+   Library: Visual Studio 2003 Release */
+
+void __cdecl __fpmath(int param_1)
+
+{
+  FUN_00acd3c5();
+  DAT_010cbbbc = __ms_p5_mp_test_fdiv();
+  if (param_1 != 0) {
+    __setdefaultprecision();
+  }
+  return;
+}
+
+
+//// FUNCTION FUN_00acd42c @ 00acd42c ////
+
+ulonglong FUN_00acd42c(void)
+
+{
+  ulonglong uVar1;
+  uint uVar2;
+  float fVar3;
+  float10 in_ST0;
+  undefined4 local_20;
+  undefined4 uStack_1c;
+  
+  uVar1 = (ulonglong)ROUND(in_ST0);
+  local_20 = (uint)uVar1;
+  uStack_1c = (float)(uVar1 >> 0x20);
+  fVar3 = (float)in_ST0;
+  if ((local_20 != 0) || (fVar3 = uStack_1c, (uVar1 & 0x7fffffff00000000) != 0)) {
+    if ((int)fVar3 < 0) {
+      uVar1 = uVar1 + (0x80000000 < (uint)-(float)(in_ST0 - (float10)(longlong)uVar1));
+    }
+    else {
+      uVar2 = (uint)(0x80000000 < (uint)(float)(in_ST0 - (float10)(longlong)uVar1));
+      uVar1 = CONCAT44((int)uStack_1c - (uint)(local_20 < uVar2),local_20 - uVar2);
+    }
+  }
+  return uVar1;
+}
+
+
+//// FUNCTION _free @ 00acd4a1 ////
+
+/* WARNING: Function: __SEH_prolog replaced with injection: SEH_prolog */
+/* WARNING: Function: __SEH_epilog replaced with injection: EH_epilog3 */
+/* Library Function - Single Match
+    _free
+   
+   Library: Visual Studio 2003 Release */
+
+void __cdecl _free(void *_Memory)
+
+{
+  uint *puVar1;
+  
+  if (_Memory != (void *)0x0) {
+    if (DAT_010dadec == 3) {
+      __lock(4);
+      puVar1 = (uint *)___sbh_find_block((int)_Memory);
+      if (puVar1 != (uint *)0x0) {
+        ___sbh_free_block(puVar1,(int)_Memory);
+      }
+      FUN_00acd4f4();
+      if (puVar1 != (uint *)0x0) {
+        return;
+      }
+    }
+    HeapFree(hHeap_010dade8,0,_Memory);
+  }
+  return;
+}
+
+
+//// FUNCTION FUN_00acd4f4 @ 00acd4f4 ////
+
+void FUN_00acd4f4(void)
+
+{
+  FUN_00ad700c(4);
+  return;
+}
+
+
+//// FUNCTION __heap_alloc @ 00acd512 ////
+
+/* WARNING: Function: __SEH_prolog replaced with injection: SEH_prolog */
+/* WARNING: Function: __SEH_epilog replaced with injection: EH_epilog3 */
+/* Library Function - Single Match
+    __heap_alloc
+   
+   Library: Visual Studio 2003 Release */
+
+void * __cdecl __heap_alloc(size_t _Size)
+
+{
+  int *piVar1;
+  LPVOID pvVar2;
+  
+  if ((DAT_010dadec == 3) && (_Size <= DAT_010dadd8)) {
+    __lock(4);
+    piVar1 = ___sbh_alloc_block((uint *)_Size);
+    FUN_00acd584();
+    if (piVar1 != (int *)0x0) {
+      return piVar1;
+    }
+  }
+  if (_Size == 0) {
+    _Size = 1;
+  }
+  if (DAT_010dadec != 1) {
+    _Size = _Size + 0xf & 0xfffffff0;
+  }
+  pvVar2 = HeapAlloc(hHeap_010dade8,0,_Size);
+  return pvVar2;
+}
+
+
+//// FUNCTION FUN_00acd584 @ 00acd584 ////
+
+void FUN_00acd584(void)
+
+{
+  FUN_00ad700c(4);
+  return;
+}
+
+
+//// FUNCTION __nh_malloc @ 00acd58d ////
+
+/* Library Function - Single Match
+    __nh_malloc
+   
+   Library: Visual Studio 2003 Release */
+
+void * __cdecl __nh_malloc(size_t _Size,int _NhFlag)
+
+{
+  void *pvVar1;
+  int iVar2;
+  
+  if (_Size < 0xffffffe1) {
+    do {
+      pvVar1 = __heap_alloc(_Size);
+      if (pvVar1 != (void *)0x0) {
+        return pvVar1;
+      }
+      if (_NhFlag == 0) {
+        return (void *)0x0;
+      }
+      iVar2 = __callnewh(_Size);
+    } while (iVar2 != 0);
+  }
+  return (void *)0x0;
+}
+
+
+//// FUNCTION _malloc @ 00acd5b9 ////
+
+/* Library Function - Single Match
+    _malloc
+   
+   Library: Visual Studio 2003 Release */
+
+void * __cdecl _malloc(size_t _Size)
+
+{
+  void *pvVar1;
+  
+  pvVar1 = __nh_malloc(_Size,DAT_010cbdbc);
+  return pvVar1;
+}
+
+
+//// FUNCTION _JumpToContinuation @ 00acd5d0 ////
+
+/* Library Function - Single Match
+    void __stdcall _JumpToContinuation(void *,struct EHRegistrationNode *)
+   
+   Library: Visual Studio 2003 Release */
+
+void _JumpToContinuation(void *param_1,EHRegistrationNode *param_2)
+
+{
+  ExceptionList = *(void **)ExceptionList;
+                    /* WARNING: Could not recover jumptable at 0x00acd5f9. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*param_1)();
+  return;
+}
+
+
+//// FUNCTION _CallMemberFunction0 @ 00acd600 ////
+
+/* Library Function - Single Match
+    void __stdcall _CallMemberFunction0(void *,void *)
+   
+   Library: Visual Studio 2003 Release */
+
+void _CallMemberFunction0(void *param_1,void *param_2)
+
+{
+  LOCK();
+  UNLOCK();
+                    /* WARNING: Could not recover jumptable at 0x00acd605. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*param_2)();
+  return;
+}
+
+
+//// FUNCTION FID_conflict:_CallMemberFunction1 @ 00acd607 ////
+
+/* Library Function - Multiple Matches With Different Base Names
+    void __stdcall _CallMemberFunction1(void *,void *,void *)
+    void __stdcall _CallMemberFunction2(void *,void *,void *,int)
+   
+   Library: Visual Studio 2003 Release */
+
+void FID_conflict__CallMemberFunction1(undefined4 param_1,undefined *UNRECOVERED_JUMPTABLE)
+
+{
+  LOCK();
+  UNLOCK();
+                    /* WARNING: Could not recover jumptable at 0x00acd60c. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(code *)UNRECOVERED_JUMPTABLE)();
+  return;
+}
+
+
+//// FUNCTION FID_conflict:_CallMemberFunction1 @ 00acd60e ////
+
+/* Library Function - Multiple Matches With Different Base Names
+    void __stdcall _CallMemberFunction1(void *,void *,void *)
+    void __stdcall _CallMemberFunction2(void *,void *,void *,int)
+   
+   Library: Visual Studio 2003 Release */
+
+void FID_conflict__CallMemberFunction1(undefined4 param_1,undefined *UNRECOVERED_JUMPTABLE)
+
+{
+  LOCK();
+  UNLOCK();
+                    /* WARNING: Could not recover jumptable at 0x00acd613. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(code *)UNRECOVERED_JUMPTABLE)();
+  return;
+}
+
+
+//// FUNCTION _UnwindNestedFrames @ 00acd615 ////
+
+/* Library Function - Single Match
+    void __stdcall _UnwindNestedFrames(struct EHRegistrationNode *,struct EHExceptionRecord *)
+   
+   Library: Visual Studio 2003 Release */
+
+void _UnwindNestedFrames(EHRegistrationNode *param_1,EHExceptionRecord *param_2)
+
+{
+  void *pvVar1;
+  
+  pvVar1 = ExceptionList;
+  RtlUnwind(param_1,(PVOID)0xacd63e,(PEXCEPTION_RECORD)param_2,(PVOID)0x0);
+  *(uint *)(param_2 + 4) = *(uint *)(param_2 + 4) & 0xfffffffd;
+  *(void **)pvVar1 = ExceptionList;
+  ExceptionList = pvVar1;
+  return;
+}
+
+
+//// FUNCTION ___CxxFrameHandler @ 00acd667 ////
+
+/* Library Function - Single Match
+    ___CxxFrameHandler
+   
+   Library: Visual Studio 2003 Release */
+
+undefined4 __cdecl
+___CxxFrameHandler(EHExceptionRecord *param_1,EHRegistrationNode *param_2,_CONTEXT *param_3,
+                  void *param_4)
+
+{
+  _s_FuncInfo *in_EAX;
+  undefined4 uVar1;
+  
+  uVar1 = ___InternalCxxFrameHandler
+                    (param_1,param_2,param_3,param_4,in_EAX,0,(EHRegistrationNode *)0x0,'\0');
+  return uVar1;
+}
+
+
+//// FUNCTION _CallSETranslator @ 00acd6f2 ////
+
+/* Library Function - Single Match
+    int __cdecl _CallSETranslator(struct EHExceptionRecord *,struct EHRegistrationNode *,void *,void
+   *,struct _s_FuncInfo const *,int,struct EHRegistrationNode *)
+   
+   Library: Visual Studio 2003 Release */
+
+int __cdecl
+_CallSETranslator(EHExceptionRecord *param_1,EHRegistrationNode *param_2,void *param_3,void *param_4
+                 ,_s_FuncInfo *param_5,int param_6,EHRegistrationNode *param_7)
+
+{
+  _ptiddata p_Var1;
+  undefined4 uVar2;
+  EHExceptionRecord **ppEVar3;
+  int local_38;
+  EHExceptionRecord *local_34;
+  void *local_30;
+  undefined4 *local_2c;
+  code *local_28;
+  undefined4 local_24;
+  _s_FuncInfo *local_20;
+  EHRegistrationNode *local_1c;
+  int local_18;
+  EHRegistrationNode *local_14;
+  undefined1 *local_10;
+  undefined1 *local_c;
+  int local_8;
+  
+  local_c = &stack0xfffffffc;
+  local_10 = &stack0xffffffc4;
+  if (param_1 == (EHExceptionRecord *)0x123) {
+    *(undefined4 *)param_2 = 0xacd78d;
+    local_38 = 1;
+  }
+  else {
+    local_28 = TranslatorGuardHandler;
+    local_24 = DAT_00e9a098;
+    local_20 = param_5;
+    local_1c = param_2;
+    local_18 = param_6;
+    local_14 = param_7;
+    local_8 = 0;
+    local_2c = ExceptionList;
+    ExceptionList = &local_2c;
+    local_34 = param_1;
+    local_30 = param_3;
+    ppEVar3 = &local_34;
+    uVar2 = *(undefined4 *)param_1;
+    p_Var1 = __getptd();
+    (*(code *)p_Var1->_NLG_dwCode)(uVar2,ppEVar3);
+    local_38 = 0;
+    if (local_8 != 0) {
+      *local_2c = *(undefined4 *)ExceptionList;
+    }
+    ExceptionList = local_2c;
+  }
+  return local_38;
+}
+
+
+//// FUNCTION TranslatorGuardHandler @ 00acd7b9 ////
+
+/* Library Function - Single Match
+    enum _EXCEPTION_DISPOSITION __cdecl TranslatorGuardHandler(struct EHExceptionRecord *,struct
+   TranslatorGuardRN *,void *,void *)
+   
+   Library: Visual Studio 2003 Release */
+
+_EXCEPTION_DISPOSITION __cdecl
+TranslatorGuardHandler
+          (EHExceptionRecord *param_1,TranslatorGuardRN *param_2,void *param_3,void *param_4)
+
+{
+  _EXCEPTION_DISPOSITION _Var1;
+  code *local_8;
+  
+  if (*(int *)(param_2 + 8) == DAT_00e9a098) {
+    if ((*(uint *)(param_1 + 4) & 0x66) == 0) {
+      ___InternalCxxFrameHandler
+                (param_1,*(EHRegistrationNode **)(param_2 + 0x10),param_3,(void *)0x0,
+                 *(_s_FuncInfo **)(param_2 + 0xc),*(int *)(param_2 + 0x14),
+                 *(EHRegistrationNode **)(param_2 + 0x18),'\x01');
+      if (*(int *)(param_2 + 0x24) == 0) {
+        _UnwindNestedFrames((EHRegistrationNode *)param_2,param_1);
+      }
+      _CallSETranslator((EHExceptionRecord *)0x123,(EHRegistrationNode *)&local_8,(void *)0x0,
+                        (void *)0x0,(_s_FuncInfo *)0x0,0,(EHRegistrationNode *)0x0);
+                    /* WARNING: Could not recover jumptable at 0x00acd863. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      _Var1 = (*local_8)();
+      return _Var1;
+    }
+    *(undefined4 *)(param_2 + 0x24) = 1;
+  }
+  else {
+    *(uint *)(param_1 + 4) = *(uint *)(param_1 + 4) | 8;
+  }
+  return 1;
+}
+
+
+//// FUNCTION _GetRangeOfTrysToCheck @ 00acd86b ////
+
+/* Library Function - Single Match
+    struct _s_TryBlockMapEntry const * __cdecl _GetRangeOfTrysToCheck(struct _s_FuncInfo const
+   *,int,int,unsigned int *,unsigned int *)
+   
+   Library: Visual Studio 2003 Release */
+
+_s_TryBlockMapEntry * __cdecl
+_GetRangeOfTrysToCheck(_s_FuncInfo *param_1,int param_2,int param_3,uint *param_4,uint *param_5)
+
+{
+  uint uVar1;
+  TryBlockMapEntry *pTVar2;
+  uint uVar3;
+  uint uVar4;
+  uint uVar5;
+  
+  uVar1 = param_1->nTryBlocks;
+  pTVar2 = param_1->pTryBlockMap;
+  uVar5 = uVar1;
+  uVar4 = uVar1;
+  while (uVar3 = uVar5, -1 < param_2) {
+    if (uVar1 == 0xffffffff) {
+      _inconsistency();
+    }
+    uVar1 = uVar1 - 1;
+    if (((pTVar2[uVar1].tryHigh < param_3) && (param_3 <= pTVar2[uVar1].catchHigh)) ||
+       (uVar5 = uVar3, uVar1 == -1)) {
+      param_2 = param_2 + -1;
+      uVar5 = uVar1;
+      uVar4 = uVar3;
+    }
+  }
+  uVar1 = uVar1 + 1;
+  *param_4 = uVar1;
+  *param_5 = uVar4;
+  if ((param_1->nTryBlocks < uVar4) || (uVar4 < uVar1)) {
+    _inconsistency();
+  }
+  return pTVar2 + uVar1;
+}
+
+
+//// FUNCTION _CreateFrameInfo @ 00acd8e5 ////
+
+/* Library Function - Single Match
+    struct FrameInfo * __cdecl _CreateFrameInfo(struct FrameInfo *,void *)
+   
+   Library: Visual Studio 2003 Release */
+
+FrameInfo * __cdecl _CreateFrameInfo(FrameInfo *param_1,void *param_2)
+
+{
+  _ptiddata p_Var1;
+  
+  *(void **)param_1 = param_2;
+  p_Var1 = __getptd();
+  *(void **)(param_1 + 4) = p_Var1->_curexception;
+  p_Var1 = __getptd();
+  p_Var1->_curexception = param_1;
+  return param_1;
+}
+
+
+//// FUNCTION IsExceptionObjectToBeDestroyed @ 00acd90d ////
+
+/* Library Function - Single Match
+    int __cdecl IsExceptionObjectToBeDestroyed(void *)
+   
+   Library: Visual Studio 2003 Release */
+
+int __cdecl IsExceptionObjectToBeDestroyed(void *param_1)
+
+{
+  _ptiddata p_Var1;
+  int *piVar2;
+  
+  p_Var1 = __getptd();
+  piVar2 = p_Var1->_curexception;
+  while( true ) {
+    if (piVar2 == (int *)0x0) {
+      return 1;
+    }
+    if ((void *)*piVar2 == param_1) break;
+    piVar2 = (int *)piVar2[1];
+  }
+  return 0;
+}
+
+
+//// FUNCTION _FindAndUnlinkFrame @ 00acd92e ////
+
+/* Library Function - Single Match
+    void __cdecl _FindAndUnlinkFrame(struct FrameInfo *)
+   
+   Library: Visual Studio 2003 Release */
+
+void __cdecl _FindAndUnlinkFrame(FrameInfo *param_1)
+
+{
+  FrameInfo *pFVar1;
+  _ptiddata p_Var2;
+  FrameInfo *pFVar3;
+  
+  p_Var2 = __getptd();
+  if (param_1 == p_Var2->_curexception) {
+    p_Var2 = __getptd();
+    p_Var2->_curexception = *(void **)(param_1 + 4);
+    return;
+  }
+  p_Var2 = __getptd();
+  pFVar1 = p_Var2->_curexception;
+  do {
+    pFVar3 = pFVar1;
+    if (*(int *)(pFVar3 + 4) == 0) {
+      _inconsistency();
+      return;
+    }
+    pFVar1 = *(FrameInfo **)(pFVar3 + 4);
+  } while (param_1 != *(FrameInfo **)(pFVar3 + 4));
+  *(undefined4 *)(pFVar3 + 4) = *(undefined4 *)(param_1 + 4);
+  return;
+}
+
+
+//// FUNCTION _CallCatchBlock2 @ 00acd97a ////
+
+/* Library Function - Single Match
+    void * __cdecl _CallCatchBlock2(struct EHRegistrationNode *,struct _s_FuncInfo const *,void
+   *,int,unsigned long)
+   
+   Library: Visual Studio 2003 Release */
+
+void * __cdecl
+_CallCatchBlock2(EHRegistrationNode *param_1,_s_FuncInfo *param_2,void *param_3,int param_4,
+                ulong param_5)
+
+{
+  void *pvVar1;
+  void *local_1c;
+  undefined1 *local_18;
+  undefined4 local_14;
+  _s_FuncInfo *local_10;
+  EHRegistrationNode *local_c;
+  int local_8;
+  
+  local_14 = DAT_00e9a098;
+  local_10 = param_2;
+  local_8 = param_4 + 1;
+  local_18 = &LAB_00acd6b7;
+  local_c = param_1;
+  local_1c = ExceptionList;
+  ExceptionList = &local_1c;
+  pvVar1 = (void *)__CallSettingFrame_12(param_3,param_1,param_5);
+  ExceptionList = local_1c;
+  return pvVar1;
+}
+
+
+//// FUNCTION __global_unwind2 @ 00acd9d4 ////
+
+/* Library Function - Single Match
+    __global_unwind2
+   
+   Libraries: Visual Studio 1998 Debug, Visual Studio 1998 Release, Visual Studio 2003 Debug, Visual
+   Studio 2003 Release */
+
+void __cdecl __global_unwind2(PVOID param_1)
+
+{
+  RtlUnwind(param_1,(PVOID)0xacd9ec,(PEXCEPTION_RECORD)0x0,(PVOID)0x0);
+  return;
+}
+
+
+//// FUNCTION __local_unwind2 @ 00acda16 ////
+
+/* Library Function - Single Match
+    __local_unwind2
+   
+   Library: Visual Studio 2003 Release */
+
+void __cdecl __local_unwind2(int param_1,int param_2)
+
+{
+  int iVar1;
+  int iVar2;
+  void *pvStack_1c;
+  undefined1 *puStack_18;
+  undefined4 local_14;
+  int iStack_10;
+  
+  iStack_10 = param_1;
+  puStack_18 = &LAB_00acd9f4;
+  pvStack_1c = ExceptionList;
+  ExceptionList = &pvStack_1c;
+  while( true ) {
+    iVar1 = *(int *)(param_1 + 8);
+    iVar2 = *(int *)(param_1 + 0xc);
+    if ((iVar2 == -1) || (iVar2 == param_2)) break;
+    local_14 = *(undefined4 *)(iVar1 + iVar2 * 0xc);
+    *(undefined4 *)(param_1 + 0xc) = local_14;
+    if (*(int *)(iVar1 + 4 + iVar2 * 0xc) == 0) {
+      FUN_00acdaaa();
+      (**(code **)(iVar1 + 8 + iVar2 * 0xc))();
+    }
+  }
+  ExceptionList = pvStack_1c;
+  return;
+}
+
+
+//// FUNCTION __abnormal_termination @ 00acda7e ////
+
+/* Library Function - Single Match
+    __abnormal_termination
+   
+   Library: Visual Studio 2003 Release */
+
+int __cdecl __abnormal_termination(void)
+
+{
+  int iVar1;
+  
+  iVar1 = 0;
+  if ((*(undefined1 **)((int)ExceptionList + 4) == &LAB_00acd9f4) &&
+     (*(int *)((int)ExceptionList + 8) == *(int *)(*(int *)((int)ExceptionList + 0xc) + 0xc))) {
+    iVar1 = 1;
+  }
+  return iVar1;
+}
+
+
+//// FUNCTION __NLG_Notify1 @ 00acdaa1 ////
+
+/* Library Function - Single Match
+    __NLG_Notify1
+   
+   Libraries: Visual Studio 2017 Debug, Visual Studio 2017 Release, Visual Studio 2019 Debug, Visual
+   Studio 2019 Release */
+
+void __fastcall __NLG_Notify1(undefined4 param_1)
+
+{
+  undefined4 in_EAX;
+  undefined4 unaff_EBP;
+  
+  DAT_00e99d3c = param_1;
+  DAT_00e99d38 = in_EAX;
+  DAT_00e99d40 = unaff_EBP;
+  return;
+}
+
+
+//// FUNCTION FUN_00acdaaa @ 00acdaaa ////
+
+void FUN_00acdaaa(void)
+
+{
+  undefined4 in_EAX;
+  int unaff_EBP;
+  
+  DAT_00e99d3c = *(undefined4 *)(unaff_EBP + 8);
+  DAT_00e99d38 = in_EAX;
+  DAT_00e99d40 = unaff_EBP;
+  return;
+}
+
+
+//// FUNCTION FUN_00acdae6 @ 00acdae6 ////
+
+/* WARNING: Function: __SEH_prolog replaced with injection: SEH_prolog */
+/* WARNING: Function: __SEH_epilog replaced with injection: EH_epilog3 */
+
+void __fastcall FUN_00acdae6(undefined4 *param_1)
+
+{
+  *param_1 = &type_info::vftable;
+  __lock(0xe);
+  if ((void *)param_1[1] != (void *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    _free((void *)param_1[1]);
+  }
+  FUN_00acdb23();
+  return;
+}
+
+
+//// FUNCTION FUN_00acdb23 @ 00acdb23 ////
+
+void FUN_00acdb23(void)
+
+{
+  FUN_00ad700c(0xe);
+  return;
+}
+
+
+//// FUNCTION FUN_00acdb2c @ 00acdb2c ////
+
+undefined4 * __thiscall FUN_00acdb2c(void *this,byte param_1)
+
+{
+  FUN_00acdae6(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_00acdb9e @ 00acdb9e ////
+
+int __fastcall FUN_00acdb9e(int param_1)
+
+{
+  return param_1 + 8;
+}
+
+
+//// FUNCTION __ArrayUnwind @ 00acdbc4 ////
+
+/* WARNING: Function: __SEH_prolog replaced with injection: SEH_prolog */
+/* WARNING: Function: __SEH_epilog replaced with injection: EH_epilog3 */
+/* Library Function - Single Match
+    void __stdcall __ArrayUnwind(void *,unsigned int,int,void (__thiscall*)(void *))
+   
+   Library: Visual Studio 2003 Release */
+
+void __ArrayUnwind(void *param_1,uint param_2,int param_3,_func_void_void_ptr *param_4)
+
+{
+  void *unaff_EDI;
+  
+  while( true ) {
+    param_3 = param_3 + -1;
+    if (param_3 < 0) break;
+    (*param_4)(unaff_EDI);
+  }
+  return;
+}
+
+
+//// FUNCTION `eh_vector_destructor_iterator' @ 00acdc22 ////
+
+/* WARNING: Function: __SEH_prolog replaced with injection: SEH_prolog */
+/* WARNING: Function: __SEH_epilog replaced with injection: EH_epilog3 */
+/* Library Function - Single Match
+    void __stdcall `eh vector destructor iterator'(void *,unsigned int,int,void (__thiscall*)(void
+   *))
+   
+   Library: Visual Studio 2003 Release */
+
+void _eh_vector_destructor_iterator_
+               (void *param_1,uint param_2,int param_3,_func_void_void_ptr *param_4)
+
+{
+  void *unaff_EDI;
+  
+  while( true ) {
+    param_3 = param_3 + -1;
+    if (param_3 < 0) break;
+    (*param_4)(unaff_EDI);
+  }
+  FUN_00acdc6a();
+  return;
+}
+
+
+//// FUNCTION FUN_00acdc6a @ 00acdc6a ////
+
+void FUN_00acdc6a(void)
+
+{
+  int unaff_EBP;
+  
+  if (*(int *)(unaff_EBP + -0x1c) == 0) {
+    __ArrayUnwind(*(void **)(unaff_EBP + 8),*(uint *)(unaff_EBP + 0xc),*(int *)(unaff_EBP + 0x10),
+                  *(_func_void_void_ptr **)(unaff_EBP + 0x14));
+  }
+  return;
+}
+
+
+//// FUNCTION `eh_vector_constructor_iterator' @ 00acdc82 ////
+
+/* WARNING: Function: __SEH_prolog replaced with injection: SEH_prolog */
+/* WARNING: Function: __SEH_epilog replaced with injection: EH_epilog3 */
+/* Library Function - Single Match
+    void __stdcall `eh vector constructor iterator'(void *,unsigned int,int,void (__thiscall*)(void
+   *),void (__thiscall*)(void *))
+   
+   Library: Visual Studio 2003 Release */
+
+void _eh_vector_constructor_iterator_
+               (void *param_1,uint param_2,int param_3,_func_void_void_ptr *param_4,
+               _func_void_void_ptr *param_5)
+
+{
+  void *unaff_EDI;
+  undefined4 local_20;
+  
+  for (local_20 = 0; local_20 < param_3; local_20 = local_20 + 1) {
+    (*param_4)(unaff_EDI);
+  }
+  FUN_00acdccc();
+  return;
+}
+
+
+//// FUNCTION FUN_00acdccc @ 00acdccc ////
+
+void FUN_00acdccc(void)
+
+{
+  int unaff_EBP;
+  
+  if (*(int *)(unaff_EBP + -0x20) == 0) {
+    __ArrayUnwind(*(void **)(unaff_EBP + 8),*(uint *)(unaff_EBP + 0xc),*(int *)(unaff_EBP + -0x1c),
+                  *(_func_void_void_ptr **)(unaff_EBP + 0x18));
+  }
+  return;
+}
+
+
+//// FUNCTION _memmove @ 00acdcf0 ////
+
+/* Library Function - Single Match
+    _memmove
+   
+   Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release */
+
+void * __cdecl _memmove(void *_Dst,void *_Src,size_t _Size)
+
+{
+  uint uVar1;
+  uint uVar2;
+  undefined4 *puVar3;
+  undefined4 *puVar4;
+  
+  if ((_Src < _Dst) && (_Dst < (void *)(_Size + (int)_Src))) {
+    puVar3 = (undefined4 *)((_Size - 4) + (int)_Src);
+    puVar4 = (undefined4 *)((_Size - 4) + (int)_Dst);
+    if (((uint)puVar4 & 3) == 0) {
+      uVar1 = _Size >> 2;
+      uVar2 = _Size & 3;
+      if (7 < uVar1) {
+        for (; uVar1 != 0; uVar1 = uVar1 - 1) {
+          *puVar4 = *puVar3;
+          puVar3 = puVar3 + -1;
+          puVar4 = puVar4 + -1;
+        }
+        switch(uVar2) {
+        case 0:
+          return _Dst;
+        case 2:
+          goto switchD_00acdeab_caseD_2;
+        case 3:
+          goto switchD_00acdeab_caseD_3;
+        }
+        goto switchD_00acdeab_caseD_1;
+      }
+    }
+    else {
+      switch(_Size) {
+      case 0:
+        goto switchD_00acdeab_caseD_0;
+      case 1:
+        goto switchD_00acdeab_caseD_1;
+      case 2:
+        goto switchD_00acdeab_caseD_2;
+      case 3:
+        goto switchD_00acdeab_caseD_3;
+      default:
+        uVar1 = _Size - ((uint)puVar4 & 3);
+        switch((uint)puVar4 & 3) {
+        case 1:
+          uVar2 = uVar1 & 3;
+          *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar3 + 3);
+          puVar3 = (undefined4 *)((int)puVar3 + -1);
+          uVar1 = uVar1 >> 2;
+          puVar4 = (undefined4 *)((int)puVar4 - 1);
+          if (7 < uVar1) {
+            for (; uVar1 != 0; uVar1 = uVar1 - 1) {
+              *puVar4 = *puVar3;
+              puVar3 = puVar3 + -1;
+              puVar4 = puVar4 + -1;
+            }
+            switch(uVar2) {
+            case 0:
+              return _Dst;
+            case 2:
+              goto switchD_00acdeab_caseD_2;
+            case 3:
+              goto switchD_00acdeab_caseD_3;
+            }
+            goto switchD_00acdeab_caseD_1;
+          }
+          break;
+        case 2:
+          uVar2 = uVar1 & 3;
+          *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar3 + 3);
+          uVar1 = uVar1 >> 2;
+          *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar3 + 2);
+          puVar3 = (undefined4 *)((int)puVar3 + -2);
+          puVar4 = (undefined4 *)((int)puVar4 - 2);
+          if (7 < uVar1) {
+            for (; uVar1 != 0; uVar1 = uVar1 - 1) {
+              *puVar4 = *puVar3;
+              puVar3 = puVar3 + -1;
+              puVar4 = puVar4 + -1;
+            }
+            switch(uVar2) {
+            case 0:
+              return _Dst;
+            case 2:
+              goto switchD_00acdeab_caseD_2;
+            case 3:
+              goto switchD_00acdeab_caseD_3;
+            }
+            goto switchD_00acdeab_caseD_1;
+          }
+          break;
+        case 3:
+          uVar2 = uVar1 & 3;
+          *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar3 + 3);
+          *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar3 + 2);
+          uVar1 = uVar1 >> 2;
+          *(undefined1 *)((int)puVar4 + 1) = *(undefined1 *)((int)puVar3 + 1);
+          puVar3 = (undefined4 *)((int)puVar3 + -3);
+          puVar4 = (undefined4 *)((int)puVar4 - 3);
+          if (7 < uVar1) {
+            for (; uVar1 != 0; uVar1 = uVar1 - 1) {
+              *puVar4 = *puVar3;
+              puVar3 = puVar3 + -1;
+              puVar4 = puVar4 + -1;
+            }
+            switch(uVar2) {
+            case 0:
+              return _Dst;
+            case 2:
+              goto switchD_00acdeab_caseD_2;
+            case 3:
+              goto switchD_00acdeab_caseD_3;
+            }
+            goto switchD_00acdeab_caseD_1;
+          }
+        }
+      }
+    }
+    switch(uVar1) {
+    case 7:
+      puVar4[7 - uVar1] = puVar3[7 - uVar1];
+    case 6:
+      puVar4[6 - uVar1] = puVar3[6 - uVar1];
+    case 5:
+      puVar4[5 - uVar1] = puVar3[5 - uVar1];
+    case 4:
+      puVar4[4 - uVar1] = puVar3[4 - uVar1];
+    case 3:
+      puVar4[3 - uVar1] = puVar3[3 - uVar1];
+    case 2:
+      puVar4[2 - uVar1] = puVar3[2 - uVar1];
+    case 1:
+      puVar4[1 - uVar1] = puVar3[1 - uVar1];
+      puVar3 = puVar3 + -uVar1;
+      puVar4 = puVar4 + -uVar1;
+    }
+    switch(uVar2) {
+    case 1:
+switchD_00acdeab_caseD_1:
+      *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar3 + 3);
+      return _Dst;
+    case 2:
+switchD_00acdeab_caseD_2:
+      *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar3 + 3);
+      *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar3 + 2);
+      return _Dst;
+    case 3:
+switchD_00acdeab_caseD_3:
+      *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar3 + 3);
+      *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar3 + 2);
+      *(undefined1 *)((int)puVar4 + 1) = *(undefined1 *)((int)puVar3 + 1);
+      return _Dst;
+    }
+switchD_00acdeab_caseD_0:
+    return _Dst;
+  }
+  puVar3 = _Dst;
+  if (((uint)_Dst & 3) == 0) {
+    uVar1 = _Size >> 2;
+    uVar2 = _Size & 3;
+    if (7 < uVar1) {
+      for (; uVar1 != 0; uVar1 = uVar1 - 1) {
+        *puVar3 = *(undefined4 *)_Src;
+        _Src = (undefined4 *)((int)_Src + 4);
+        puVar3 = puVar3 + 1;
+      }
+      switch(uVar2) {
+      case 0:
+        return _Dst;
+      case 2:
+        goto switchD_00acdd25_caseD_2;
+      case 3:
+        goto switchD_00acdd25_caseD_3;
+      }
+      goto switchD_00acdd25_caseD_1;
+    }
+  }
+  else {
+    switch(_Size) {
+    case 0:
+      goto switchD_00acdd25_caseD_0;
+    case 1:
+      goto switchD_00acdd25_caseD_1;
+    case 2:
+      goto switchD_00acdd25_caseD_2;
+    case 3:
+      goto switchD_00acdd25_caseD_3;
+    default:
+      uVar1 = (_Size - 4) + ((uint)_Dst & 3);
+      switch((uint)_Dst & 3) {
+      case 1:
+        uVar2 = uVar1 & 3;
+        *(undefined1 *)_Dst = *(undefined1 *)_Src;
+        *(undefined1 *)((int)_Dst + 1) = *(undefined1 *)((int)_Src + 1);
+        uVar1 = uVar1 >> 2;
+        *(undefined1 *)((int)_Dst + 2) = *(undefined1 *)((int)_Src + 2);
+        _Src = (void *)((int)_Src + 3);
+        puVar3 = (undefined4 *)((int)_Dst + 3);
+        if (7 < uVar1) {
+          for (; uVar1 != 0; uVar1 = uVar1 - 1) {
+            *puVar3 = *(undefined4 *)_Src;
+            _Src = (undefined4 *)((int)_Src + 4);
+            puVar3 = puVar3 + 1;
+          }
+          switch(uVar2) {
+          case 0:
+            return _Dst;
+          case 2:
+            goto switchD_00acdd25_caseD_2;
+          case 3:
+            goto switchD_00acdd25_caseD_3;
+          }
+          goto switchD_00acdd25_caseD_1;
+        }
+        break;
+      case 2:
+        uVar2 = uVar1 & 3;
+        *(undefined1 *)_Dst = *(undefined1 *)_Src;
+        uVar1 = uVar1 >> 2;
+        *(undefined1 *)((int)_Dst + 1) = *(undefined1 *)((int)_Src + 1);
+        _Src = (void *)((int)_Src + 2);
+        puVar3 = (undefined4 *)((int)_Dst + 2);
+        if (7 < uVar1) {
+          for (; uVar1 != 0; uVar1 = uVar1 - 1) {
+            *puVar3 = *(undefined4 *)_Src;
+            _Src = (undefined4 *)((int)_Src + 4);
+            puVar3 = puVar3 + 1;
+          }
+          switch(uVar2) {
+          case 0:
+            return _Dst;
+          case 2:
+            goto switchD_00acdd25_caseD_2;
+          case 3:
+            goto switchD_00acdd25_caseD_3;
+          }
+          goto switchD_00acdd25_caseD_1;
+        }
+        break;
+      case 3:
+        uVar2 = uVar1 & 3;
+        *(undefined1 *)_Dst = *(undefined1 *)_Src;
+        _Src = (void *)((int)_Src + 1);
+        uVar1 = uVar1 >> 2;
+        puVar3 = (undefined4 *)((int)_Dst + 1);
+        if (7 < uVar1) {
+          for (; uVar1 != 0; uVar1 = uVar1 - 1) {
+            *puVar3 = *(undefined4 *)_Src;
+            _Src = (undefined4 *)((int)_Src + 4);
+            puVar3 = puVar3 + 1;
+          }
+          switch(uVar2) {
+          case 0:
+            return _Dst;
+          case 2:
+            goto switchD_00acdd25_caseD_2;
+          case 3:
+            goto switchD_00acdd25_caseD_3;
+          }
+          goto switchD_00acdd25_caseD_1;
+        }
+      }
+    }
+  }
+  switch(uVar1) {
+  case 7:
+    puVar3[uVar1 - 7] = *(undefined4 *)((int)_Src + (uVar1 - 7) * 4);
+  case 6:
+    puVar3[uVar1 - 6] = *(undefined4 *)((int)_Src + (uVar1 - 6) * 4);
+  case 5:
+    puVar3[uVar1 - 5] = *(undefined4 *)((int)_Src + (uVar1 - 5) * 4);
+  case 4:
+    puVar3[uVar1 - 4] = *(undefined4 *)((int)_Src + (uVar1 - 4) * 4);
+  case 3:
+    puVar3[uVar1 - 3] = *(undefined4 *)((int)_Src + (uVar1 - 3) * 4);
+  case 2:
+    puVar3[uVar1 - 2] = *(undefined4 *)((int)_Src + (uVar1 - 2) * 4);
+  case 1:
+    puVar3[uVar1 - 1] = *(undefined4 *)((int)_Src + (uVar1 - 1) * 4);
+    _Src = (void *)((int)_Src + uVar1 * 4);
+    puVar3 = puVar3 + uVar1;
+  }
+  switch(uVar2) {
+  case 1:
+switchD_00acdd25_caseD_1:
+    *(undefined1 *)puVar3 = *(undefined1 *)_Src;
+    return _Dst;
+  case 2:
+switchD_00acdd25_caseD_2:
+    *(undefined1 *)puVar3 = *(undefined1 *)_Src;
+    *(undefined1 *)((int)puVar3 + 1) = *(undefined1 *)((int)_Src + 1);
+    return _Dst;
+  case 3:
+switchD_00acdd25_caseD_3:
+    *(undefined1 *)puVar3 = *(undefined1 *)_Src;
+    *(undefined1 *)((int)puVar3 + 1) = *(undefined1 *)((int)_Src + 1);
+    *(undefined1 *)((int)puVar3 + 2) = *(undefined1 *)((int)_Src + 2);
+    return _Dst;
+  }
+switchD_00acdd25_caseD_0:
+  return _Dst;
+}
+
+
 //// FUNCTION FUN_00ace02d @ 00ace02d ////
 
 int __cdecl FUN_00ace02d(short *param_1)
@@ -5642,7 +7229,7 @@ LAB_00ad2518:
   uVar5 = 0;
   local_24 = pbVar3;
   pHVar1 = GetModuleHandleA((LPCSTR)0x0);
-  iVar2 = FUN_00542b20((HINSTANCE)pHVar1,uVar5,pbVar3);
+  iVar2 = WinMain((HINSTANCE)pHVar1,uVar5,pbVar3);
   local_30 = iVar2;
   if (local_20 == 0) {
                     /* WARNING: Subroutine does not return */
@@ -17140,4777 +18727,6 @@ undefined4 __cdecl UnDecorator::getLexicalFrame(void)
   this = (DName *)operator+(-0x14,(DName *)0x60);
   DName::operator+(this,cVar1);
   return in_stack_00000004;
-}
-
-
-//// FUNCTION getVfTableType @ 00adc0ae ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getVfTableType(class DName const &)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getVfTableType(DName *param_1)
-
-{
-  int iVar1;
-  DName *this;
-  DName *pDVar2;
-  DName *this_00;
-  char *extraout_EDX;
-  DName *in_stack_00000008;
-  char cVar3;
-  char *pcVar4;
-  undefined1 local_24 [8];
-  DName local_1c [8];
-  DName local_14 [8];
-  DName local_c [8];
-  
-  DName::DName(local_c,in_stack_00000008);
-  iVar1 = DName::isValid(local_c);
-  if ((iVar1 == 0) || (*DAT_010cbdf4 == '\0')) {
-    iVar1 = DName::isValid(local_c);
-    if (iVar1 != 0) {
-      pDVar2 = (DName *)operator+((DNameStatus)local_24,(DName *)0x2);
-      DName::operator=(local_c,pDVar2);
-    }
-  }
-  else {
-    getDataIndirectType();
-    pDVar2 = local_1c;
-    this = (DName *)DName::operator+(local_14,(char)local_24);
-    pDVar2 = (DName *)DName::operator+(this,pDVar2);
-    DName::operator=(local_c,pDVar2);
-    iVar1 = DName::isValid(local_c);
-    if (iVar1 != 0) {
-      if (*DAT_010cbdf4 != '@') {
-        pcVar4 = "{for ";
-        do {
-          DName::operator+=(local_c,pcVar4);
-          do {
-            iVar1 = DName::isValid(local_c);
-            if (((iVar1 == 0) || (*DAT_010cbdf4 == '\0')) || (*DAT_010cbdf4 == '@')) {
-              iVar1 = DName::isValid(local_c);
-              if (iVar1 != 0) {
-                if (*DAT_010cbdf4 == '\0') {
-                  DName::operator+=(this_00,2);
-                }
-                DName::operator+=(local_c,'}');
-              }
-              if (*DAT_010cbdf4 == '@') goto LAB_00adc1dc;
-              goto LAB_00adc20b;
-            }
-            cVar3 = (char)local_24;
-            getScope();
-            pDVar2 = (DName *)operator+((char)local_14,(DName *)0x60);
-            pDVar2 = (DName *)DName::operator+(pDVar2,cVar3);
-            DName::operator+=(local_c,pDVar2);
-            if (*DAT_010cbdf4 == '@') {
-              DAT_010cbdf4 = DAT_010cbdf4 + 1;
-            }
-            iVar1 = DName::isValid(local_c);
-          } while ((iVar1 == 0) || (*extraout_EDX == '@'));
-          pcVar4 = "s ";
-        } while( true );
-      }
-LAB_00adc1dc:
-      DAT_010cbdf4 = DAT_010cbdf4 + 1;
-    }
-  }
-LAB_00adc20b:
-  DName::DName(param_1,local_c);
-  return param_1;
-}
-
-
-//// FUNCTION getStringEncoding @ 00adc21c ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getStringEncoding(char *,int)
-   
-   Library: Visual Studio 2003 Release */
-
-char * __cdecl UnDecorator::getStringEncoding(char *param_1,int param_2)
-
-{
-  char *pcVar1;
-  char cVar2;
-  DNameStatus DVar3;
-  undefined1 local_14 [8];
-  DName local_c [8];
-  
-  DName::DName(local_c,(char *)param_2);
-  pcVar1 = DAT_010cbdf4;
-  cVar2 = *DAT_010cbdf4;
-  DAT_010cbdf4 = DAT_010cbdf4 + 1;
-  if ((cVar2 == '@') && (cVar2 = *DAT_010cbdf4, DAT_010cbdf4 = pcVar1 + 2, cVar2 == '_')) {
-    DAT_010cbdf4 = pcVar1 + 3;
-    getDimension(SUB41(local_14,0));
-    getDimension(SUB41(local_14,0));
-    cVar2 = *DAT_010cbdf4;
-    if (cVar2 != '\0') {
-      do {
-        if (cVar2 == '@') break;
-        DAT_010cbdf4 = DAT_010cbdf4 + 1;
-        cVar2 = *DAT_010cbdf4;
-      } while (cVar2 != '\0');
-      if (*DAT_010cbdf4 != '\0') {
-        DAT_010cbdf4 = DAT_010cbdf4 + 1;
-        DName::DName((DName *)param_1,local_c);
-        return param_1;
-      }
-    }
-    DAT_010cbdf4 = DAT_010cbdf4 + -1;
-    DVar3 = 2;
-  }
-  else {
-    DVar3 = 1;
-  }
-  DName::DName((DName *)param_1,DVar3);
-  return param_1;
-}
-
-
-//// FUNCTION getSignedDimension @ 00adc2bc ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getSignedDimension(void)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getSignedDimension(void)
-
-{
-  DName *in_stack_00000004;
-  
-  if (*DAT_010cbdf4 == '\0') {
-    DName::DName(in_stack_00000004,2);
-  }
-  else if (*DAT_010cbdf4 == '?') {
-    DAT_010cbdf4 = DAT_010cbdf4 + 1;
-    getDimension(true);
-    operator+(SUB41(in_stack_00000004,0),(DName *)0x2d);
-  }
-  else {
-    getDimension(SUB41(in_stack_00000004,0));
-  }
-  return in_stack_00000004;
-}
-
-
-//// FUNCTION getTemplateConstant @ 00adc30c ////
-
-/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getTemplateConstant(void)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getTemplateConstant(void)
-
-{
-  int iVar1;
-  char *pcVar2;
-  DName *pDVar3;
-  long lVar4;
-  DName *pDVar5;
-  DName *in_stack_00000004;
-  char cVar6;
-  char *pcVar7;
-  DNameStatus DVar8;
-  DName local_d4 [8];
-  char local_cc [16];
-  DName local_bc [16];
-  undefined1 local_ac [32];
-  char local_8c [8];
-  DName local_84 [8];
-  char local_7c;
-  char local_7b;
-  char local_7a;
-  char local_18 [8];
-  DName local_10 [8];
-  undefined4 local_8;
-  
-  pcVar2 = DAT_010cbdf4;
-  local_8 = DAT_00e9a098;
-  cVar6 = *DAT_010cbdf4;
-  DAT_010cbdf4 = DAT_010cbdf4 + 1;
-  if (cVar6 < 'E') {
-    if (cVar6 == 'D') {
-LAB_00adc462:
-      getSignedDimension();
-      if ((DAT_010cbe04._1_1_ & 0x40) != 0) {
-        DName::getString(local_84,local_18,0x10);
-        lVar4 = _atol(local_18);
-        pcVar2 = (char *)(*DAT_010cbe08)(lVar4);
-        if (pcVar2 != (char *)0x0) {
-LAB_00adc49a:
-          DName::DName(in_stack_00000004,pcVar2);
-          return in_stack_00000004;
-        }
-      }
-      if (cVar6 == 'D') {
-        pcVar7 = "`template-parameter";
-        pcVar2 = local_8c;
-      }
-      else {
-        pcVar7 = "`non-type-template-parameter";
-        pcVar2 = local_cc;
-      }
-      pDVar5 = in_stack_00000004;
-      pDVar3 = (DName *)operator+(pcVar2,(DName *)pcVar7);
-      DName::operator+(pDVar3,(char *)pDVar5);
-      return in_stack_00000004;
-    }
-    if (cVar6 == '\0') {
-LAB_00adc43a:
-      DAT_010cbdf4 = pcVar2;
-      DVar8 = 2;
-      goto LAB_00adc57f;
-    }
-    if (cVar6 == '0') {
-      getSignedDimension();
-      return in_stack_00000004;
-    }
-    pDVar5 = in_stack_00000004;
-    if (cVar6 == '1') {
-      if (*DAT_010cbdf4 != '@') {
-        getDecoratedName();
-        pDVar3 = (DName *)DName::DName(local_bc,"&");
-LAB_00adc41b:
-        DName::operator+(pDVar3,pDVar5);
-        return in_stack_00000004;
-      }
-      DAT_010cbdf4 = pcVar2 + 2;
-      pcVar2 = "NULL";
-      goto LAB_00adc49a;
-    }
-    if (cVar6 == '2') {
-      getSignedDimension();
-      getSignedDimension();
-      iVar1 = DName::isValid(local_84);
-      pcVar2 = DAT_010cbdf4;
-      if ((iVar1 == 0) || (iVar1 = DName::isValid(local_10), pcVar2 = DAT_010cbdf4, iVar1 == 0))
-      goto LAB_00adc43a;
-      pcVar2 = DName::getString(local_84,&local_7b,100);
-      if (pcVar2 != (char *)0x0) {
-        local_7c = local_7b;
-        if (local_7b == '-') {
-          local_7b = local_7a;
-          local_7a = '.';
-        }
-        else {
-          local_7b = '.';
-        }
-        cVar6 = (char)local_ac;
-        pDVar3 = (DName *)DName::DName(local_d4,&local_7c);
-        pDVar3 = (DName *)DName::operator+(pDVar3,cVar6);
-        goto LAB_00adc41b;
-      }
-    }
-  }
-  else {
-    if (cVar6 == 'E') {
-      getDecoratedName();
-      return in_stack_00000004;
-    }
-    if ('E' < cVar6) {
-      if (cVar6 < 'K') {
-        DName::DName(local_84,'{');
-        if (('G' < cVar6) && (cVar6 < 'K')) {
-          pDVar5 = (DName *)getDecoratedName();
-          DName::operator+=(local_84,pDVar5);
-          DName::operator+=(local_84,',');
-        }
-        if (cVar6 == 'F') {
-LAB_00adc53e:
-          pDVar5 = (DName *)getSignedDimension();
-          DName::operator+=(local_84,pDVar5);
-          DName::operator+=(local_84,',');
-        }
-        else {
-          if (cVar6 == 'G') {
-LAB_00adc521:
-            pDVar5 = (DName *)getSignedDimension();
-            DName::operator+=(local_84,pDVar5);
-            DName::operator+=(local_84,',');
-            goto LAB_00adc53e;
-          }
-          if (cVar6 != 'H') {
-            if (cVar6 == 'I') goto LAB_00adc53e;
-            if (cVar6 != 'J') goto LAB_00adc56e;
-            goto LAB_00adc521;
-          }
-        }
-        pDVar5 = (DName *)getSignedDimension();
-        DName::operator+=(local_84,pDVar5);
-LAB_00adc56e:
-        DName::operator+(local_84,(char)in_stack_00000004);
-        return in_stack_00000004;
-      }
-      if (cVar6 == 'Q') goto LAB_00adc462;
-    }
-  }
-  DVar8 = 1;
-LAB_00adc57f:
-  DName::DName(in_stack_00000004,DVar8);
-  return in_stack_00000004;
-}
-
-
-//// FUNCTION getPtrRefDataType @ 00adc5a4 ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getPtrRefDataType(class DName const &,int)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getPtrRefDataType(DName *param_1,int param_2)
-
-{
-  char cVar1;
-  int iVar2;
-  int in_stack_0000000c;
-  DName local_c [8];
-  
-  cVar1 = *DAT_010cbdf4;
-  if (cVar1 == '\0') {
-    operator+((DNameStatus)param_1,(DName *)0x2);
-  }
-  else if ((in_stack_0000000c == 0) || (cVar1 != 'X')) {
-    if (cVar1 == 'Y') {
-      DAT_010cbdf4 = DAT_010cbdf4 + 1;
-      getArrayType(param_1);
-    }
-    else if ((cVar1 == '_') && (DAT_010cbdf4[1] == 'Z')) {
-      DAT_010cbdf4 = DAT_010cbdf4 + 2;
-      getBasicDataType(local_c);
-      operator+((char *)param_1,(DName *)"__box ");
-    }
-    else {
-      getBasicDataType(param_1);
-    }
-  }
-  else {
-    DAT_010cbdf4 = DAT_010cbdf4 + 1;
-    iVar2 = DName::isEmpty((DName *)param_2);
-    if (iVar2 == 0) {
-      operator+((char *)param_1,(DName *)"void ");
-    }
-    else {
-      DName::DName(param_1,"void");
-    }
-  }
-  return param_1;
-}
-
-
-//// FUNCTION getTemplateArgumentList @ 00adc677 ////
-
-/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getTemplateArgumentList(void)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getTemplateArgumentList(void)
-
-{
-  char cVar1;
-  char *pcVar2;
-  DName *pDVar3;
-  long lVar4;
-  char *pcVar5;
-  int iVar6;
-  DName *in_stack_00000004;
-  char *pcVar7;
-  char local_6c [8];
-  char local_64 [8];
-  DName local_5c [8];
-  char local_54 [8];
-  char local_4c [16];
-  DName local_3c [8];
-  undefined4 local_34;
-  uint local_30;
-  int local_2c;
-  undefined4 local_28;
-  uint local_24;
-  undefined4 local_20;
-  uint local_1c;
-  char local_18 [16];
-  undefined4 local_8;
-  
-  local_24 = local_24 & 0xfffffe00;
-  local_8 = DAT_00e9a098;
-  local_2c = 1;
-  local_28 = 0;
-  DAT_010cbe0d = 1;
-  do {
-    if ((*DAT_010cbdf4 == '\0') || (*DAT_010cbdf4 == '@')) break;
-    if (local_2c == 0) {
-      DName::operator+=((DName *)&local_28,',');
-    }
-    else {
-      local_2c = 0;
-    }
-    pcVar2 = DAT_010cbdf4;
-    cVar1 = *DAT_010cbdf4;
-    iVar6 = cVar1 + -0x30;
-    if ((iVar6 < 0) || (9 < iVar6)) {
-      local_1c = local_1c & 0xfffffe00;
-      local_20 = 0;
-      if (cVar1 == 'X') {
-        DAT_010cbdf4 = DAT_010cbdf4 + 1;
-        pcVar7 = "void";
-LAB_00adc778:
-        DName::operator=((DName *)&local_20,pcVar7);
-      }
-      else {
-        if ((cVar1 == '$') && (DAT_010cbdf4[1] != '$')) {
-          DAT_010cbdf4 = DAT_010cbdf4 + 1;
-          pDVar3 = (DName *)getTemplateConstant();
-        }
-        else if (cVar1 == '?') {
-          getSignedDimension();
-          if ((DAT_010cbe04._1_1_ & 0x40) == 0) {
-            pcVar7 = local_64;
-            pcVar5 = local_4c;
-          }
-          else {
-            DName::getString(local_3c,local_18,0x10);
-            lVar4 = _atol(local_18);
-            pcVar7 = (char *)(*DAT_010cbe08)(lVar4);
-            if (pcVar7 != (char *)0x0) goto LAB_00adc778;
-            pcVar7 = local_6c;
-            pcVar5 = local_54;
-          }
-          pDVar3 = (DName *)operator+(pcVar5,(DName *)"`template-parameter");
-          pDVar3 = (DName *)DName::operator+(pDVar3,pcVar7);
-        }
-        else {
-          local_30 = local_30 & 0xfffffe00;
-          local_34 = 0;
-          pDVar3 = (DName *)getPrimaryDataType(local_5c);
-        }
-        DName::operator=((DName *)&local_20,pDVar3);
-      }
-      if ((1 < (int)DAT_010cbdf4 - (int)pcVar2) && (*(int *)DAT_010cbdf0 != 9)) {
-        Replicator::operator+=(DAT_010cbdf0,(DName *)&local_20);
-      }
-      pDVar3 = (DName *)&local_20;
-    }
-    else {
-      DAT_010cbdf4 = DAT_010cbdf4 + 1;
-      pDVar3 = Replicator::operator[](DAT_010cbdf0,iVar6);
-    }
-    DName::operator+=((DName *)&local_28,pDVar3);
-  } while ((local_24 & 0xf) == 0);
-  DAT_010cbe0d = 0;
-  DName::DName(in_stack_00000004,(DName *)&local_28);
-  return in_stack_00000004;
-}
-
-
-//// FUNCTION getOperatorName @ 00adc831 ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getOperatorName(bool,bool *)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getOperatorName(bool param_1,bool *param_2)
-
-{
-  int iVar1;
-  char cVar2;
-  char *pcVar3;
-  DName *pDVar4;
-  DName *this;
-  int iVar5;
-  DName *pDVar6;
-  DName *this_00;
-  bool bVar7;
-  bool bVar8;
-  undefined3 in_stack_00000005;
-  undefined1 *in_stack_0000000c;
-  char *pcVar9;
-  DNameStatus DVar10;
-  char *pcVar11;
-  undefined1 local_94 [16];
-  DName local_84 [8];
-  undefined1 local_7c [8];
-  undefined1 local_74 [8];
-  undefined1 local_6c [8];
-  undefined1 local_64 [24];
-  undefined1 local_4c [8];
-  undefined1 local_44 [8];
-  undefined1 local_3c [16];
-  undefined1 local_2c [8];
-  char local_24 [8];
-  DName local_1c [5];
-  byte local_17;
-  undefined4 local_14;
-  uint local_10;
-  undefined4 local_c;
-  uint local_8;
-  
-  cVar2 = *DAT_010cbdf4;
-  local_8 = local_8 & 0xfffffe00;
-  local_10 = local_10 & 0xfffffe00;
-  bVar7 = false;
-  pcVar3 = DAT_010cbdf4 + 1;
-  local_c = 0;
-  local_14 = 0;
-  pcVar9 = pcVar3;
-  if (cVar2 < 'B') {
-    if (cVar2 == 'A') goto LAB_00adccd7;
-    if (cVar2 == '\0') goto LAB_00adc97b;
-    if ('/' < cVar2) {
-      if (cVar2 < '2') {
-        local_14 = 0;
-        if ((char)param_2 != '\0') {
-          DAT_010cbdf4 = pcVar3;
-          getTemplateArgumentList();
-          pDVar6 = (DName *)operator+((char)local_94,(DName *)0x3c);
-          DName::operator+=((DName *)&local_14,pDVar6);
-          cVar2 = DName::getLastChar((DName *)&local_14);
-          if (cVar2 == '>') {
-            DName::operator+=((DName *)&local_14,' ');
-          }
-          DName::operator+=((DName *)&local_14,'>');
-          if (in_stack_0000000c != (undefined1 *)0x0) {
-            *in_stack_0000000c = 1;
-          }
-          if (*DAT_010cbdf4 == '\0') {
-            pDVar6 = (DName *)&local_14;
-            goto LAB_00adcc70;
-          }
-          pcVar3 = DAT_010cbdf4 + 1;
-        }
-        DAT_010cbdf4 = pcVar3;
-        pDVar6 = (DName *)getZName(SUB41(local_3c,0));
-        DName::operator=((DName *)&local_c,pDVar6);
-        DAT_010cbdf4 = pcVar3;
-        iVar5 = DName::isEmpty((DName *)&local_c);
-        if ((iVar5 == 0) && (pcVar3[-1] == '1')) {
-          pDVar6 = (DName *)operator+((char)local_6c,(DName *)0x7e);
-          DName::operator=((DName *)&local_c,pDVar6);
-        }
-        iVar5 = DName::isEmpty((DName *)&local_14);
-        if (iVar5 == 0) {
-          DName::operator+=((DName *)&local_c,(DName *)&local_14);
-        }
-        goto LAB_00adcc6d;
-      }
-      if (cVar2 < ':') {
-        pcVar9 = *(char **)("GAIsProcessorFeaturePresent" + *DAT_010cbdf4 * 4 + 10);
-        DAT_010cbdf4 = pcVar3;
-        goto LAB_00adcc3b;
-      }
-    }
-  }
-  else {
-    if (cVar2 == 'B') {
-      bVar7 = true;
-LAB_00adccd7:
-      cVar2 = *DAT_010cbdf4;
-      DAT_010cbdf4 = pcVar3;
-      DName::operator=((DName *)&local_c,*(char **)(&DAT_00d7eb04 + cVar2 * 4));
-      pcVar3 = DAT_010cbdf4;
-      if (bVar7) {
-        iVar5 = DName::isEmpty((DName *)&local_c);
-        if (iVar5 == 0) {
-          local_8 = local_8 | 0x20;
-        }
-      }
-      else {
-LAB_00adcc43:
-        DAT_010cbdf4 = pcVar3;
-        iVar5 = DName::isEmpty((DName *)&local_c);
-        if (iVar5 == 0) {
-          pDVar6 = (DName *)operator+(local_24,(DName *)"operator");
-          DName::operator=((DName *)&local_c,pDVar6);
-        }
-      }
-LAB_00adcc6d:
-      pDVar6 = (DName *)&local_c;
-LAB_00adcc70:
-      DName::DName(_param_1,pDVar6);
-      return _param_1;
-    }
-    if (cVar2 < 'C') goto LAB_00adcae8;
-    if (cVar2 < '[') goto LAB_00adccd7;
-    if (cVar2 == '_') {
-      iVar5 = (int)*pcVar3;
-      pcVar3 = DAT_010cbdf4 + 2;
-      pcVar9 = pcVar3;
-      pDVar6 = _param_1;
-      if (iVar5 < 0x51) {
-        if (iVar5 == 0x50) {
-          pcVar9 = DAT_010cbdf4 + 1;
-          DAT_010cbdf4 = pcVar3;
-          DName::operator=((DName *)&local_c,*(char **)(&DAT_00d7eb94 + *pcVar9 * 4));
-          pDVar4 = (DName *)getOperatorName(SUB41(local_4c,0),(bool *)0x0);
-          DName::operator=((DName *)&local_14,pDVar4);
-          iVar5 = DName::isEmpty((DName *)&local_14);
-          if (((iVar5 != 0) || (iVar5 = DName::isEmpty(this_00), iVar5 != 0)) ||
-             (pcVar9 = DAT_010cbdf4, (local_10 & 0x40) == 0)) {
-LAB_00adcaae:
-            pDVar4 = (DName *)&local_c;
-LAB_00adcc29:
-            DName::operator+(pDVar4,pDVar6);
-            return _param_1;
-          }
-        }
-        else if (iVar5 < 0x40) {
-          if (iVar5 == 0x3f) {
-            cVar2 = *pcVar3;
-            pcVar3 = DAT_010cbdf4 + 3;
-            if (cVar2 == '\0') goto LAB_00adc97b;
-            pcVar9 = pcVar3;
-            if (cVar2 == '0') {
-              pcVar9 = "`anonymous namespace\'";
-              DAT_010cbdf4 = pcVar3;
-LAB_00adca51:
-              getStringEncoding((char *)local_1c,(int)pcVar9);
-              local_17 = local_17 | 1;
-              pDVar6 = local_1c;
-              goto LAB_00adcc70;
-            }
-          }
-          else {
-            if (iVar5 == 0) {
-LAB_00adc97b:
-              pcVar9 = pcVar3 + -1;
-              goto LAB_00adc981;
-            }
-            if (0x2f < iVar5) {
-              if (iVar5 < 0x37) {
-                pcVar9 = (&PTR_LAB_00d7ebb0)[DAT_010cbdf4[1]];
-                DAT_010cbdf4 = pcVar3;
-                goto LAB_00adcc3b;
-              }
-              if (iVar5 < 0x3a) {
-                pcVar11 = (&PTR_LAB_00d7ebb0)[DAT_010cbdf4[1]];
-                DAT_010cbdf4 = pcVar3;
-                goto LAB_00adccca;
-              }
-            }
-          }
-        }
-        else if (0x40 < iVar5) {
-          if (iVar5 < 0x43) goto LAB_00adccbf;
-          if (iVar5 == 0x43) {
-            pcVar9 = "`string\'";
-            DAT_010cbdf4 = pcVar3;
-            goto LAB_00adca51;
-          }
-          if (0x43 < iVar5) {
-            bVar8 = SBORROW4(iVar5,0x4f);
-            iVar1 = -0x4f;
-            bVar7 = iVar5 == 0x4f;
-            goto LAB_00adcae2;
-          }
-        }
-      }
-      else {
-        if (iVar5 < 0x57) {
-          if (iVar5 < 0x55) {
-            if (iVar5 != 0x51) {
-              if (iVar5 != 0x52) {
-                if (0x52 < iVar5) {
-                  bVar8 = SBORROW4(iVar5,0x54);
-                  iVar1 = -0x54;
-                  bVar7 = iVar5 == 0x54;
-LAB_00adcae2:
-                  if (bVar7 || bVar8 != iVar5 + iVar1 < 0) goto LAB_00adccbf;
-                }
-                goto LAB_00adcae8;
-              }
-              pcVar9 = DAT_010cbdf4 + 1;
-              DAT_010cbdf4 = pcVar3;
-              DName::operator=((DName *)&local_c,*(char **)(&DAT_00d7eb94 + *pcVar9 * 4));
-              DName::operator=((DName *)&local_14,(&PTR_DAT_00d7ec50)[*DAT_010cbdf4]);
-              pcVar9 = DAT_010cbdf4;
-              cVar2 = *DAT_010cbdf4;
-              DAT_010cbdf4 = DAT_010cbdf4 + 1;
-              if (cVar2 == '0') {
-                getDataType(local_1c);
-                pDVar4 = local_84;
-                this = (DName *)DName::operator+(local_1c,(char)local_24);
-                pDVar4 = (DName *)DName::operator+(this,pDVar4);
-                goto LAB_00adcc29;
-              }
-              if (cVar2 == '1') {
-                DName::operator+((DName *)&local_c,local_1c);
-                cVar2 = (char)local_2c;
-                pDVar6 = (DName *)getSignedDimension();
-                pDVar6 = (DName *)DName::operator+(pDVar6,cVar2);
-                DName::operator+=(local_1c,pDVar6);
-                cVar2 = (char)local_7c;
-                pDVar6 = (DName *)getSignedDimension();
-                pDVar6 = (DName *)DName::operator+(pDVar6,cVar2);
-                DName::operator+=(local_1c,pDVar6);
-                cVar2 = (char)local_44;
-                pDVar6 = (DName *)getSignedDimension();
-                pDVar6 = (DName *)DName::operator+(pDVar6,cVar2);
-                DName::operator+=(local_1c,pDVar6);
-                cVar2 = (char)local_64;
-                pDVar6 = (DName *)getDimension(SUB41(local_74,0));
-                pDVar6 = (DName *)DName::operator+(pDVar6,cVar2);
-                DName::operator+=(local_1c,pDVar6);
-                DName::operator+(local_1c,param_1);
-                return _param_1;
-              }
-              if (('1' < cVar2) && (cVar2 < '5')) goto LAB_00adcaae;
-LAB_00adc981:
-              DAT_010cbdf4 = pcVar9;
-              DVar10 = 2;
-              goto LAB_00adcaea;
-            }
-          }
-          else {
-            pcVar9 = *(char **)(&DAT_00d7eb94 + DAT_010cbdf4[1] * 4);
-            DAT_010cbdf4 = pcVar3;
-LAB_00adcc3b:
-            DName::operator=((DName *)&local_c,pcVar9);
-            pcVar3 = DAT_010cbdf4;
-          }
-          goto LAB_00adcc43;
-        }
-        if (0x57 < iVar5) {
-          if (iVar5 < 0x5a) {
-LAB_00adccbf:
-            pcVar11 = *(char **)(&DAT_00d7eb94 + DAT_010cbdf4[1] * 4);
-            DAT_010cbdf4 = pcVar3;
-LAB_00adccca:
-            DName::DName(_param_1,pcVar11);
-            return _param_1;
-          }
-          if (iVar5 == 0x5f) {
-            pcVar9 = DAT_010cbdf4 + 3;
-            if (('@' < *pcVar3) && (*pcVar3 < 'E')) {
-              pcVar11 = (&PTR_DAT_00d7ebf8)[DAT_010cbdf4[2]];
-              DAT_010cbdf4 = pcVar9;
-              goto LAB_00adccca;
-            }
-          }
-        }
-      }
-    }
-  }
-LAB_00adcae8:
-  DAT_010cbdf4 = pcVar9;
-  DVar10 = 1;
-LAB_00adcaea:
-  DName::DName(_param_1,DVar10);
-  return _param_1;
-}
-
-
-//// FUNCTION getTemplateName @ 00adcd0b ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getTemplateName(bool)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getTemplateName(bool param_1)
-
-{
-  undefined4 uVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
-  char cVar4;
-  DName *pDVar5;
-  int iVar6;
-  undefined3 in_stack_00000005;
-  char in_stack_00000008;
-  Replicator local_d4 [60];
-  Replicator local_98 [60];
-  Replicator local_5c [60];
-  undefined1 local_20 [8];
-  undefined1 local_18 [8];
-  undefined4 local_10;
-  ushort local_c;
-  char local_5;
-  
-  uVar3 = DAT_010cbdf0;
-  uVar2 = DAT_010cbdec;
-  uVar1 = DAT_010cbde8;
-  if ((*DAT_010cbdf4 == '?') && (DAT_010cbdf4[1] == '$')) {
-    DAT_010cbdf4 = DAT_010cbdf4 + 2;
-    Replicator::Replicator(local_98);
-    Replicator::Replicator(local_5c);
-    Replicator::Replicator(local_d4);
-    local_10 = 0;
-    local_c = local_c & 0xfe00;
-    DAT_010cbde8 = local_98;
-    DAT_010cbdec = local_5c;
-    DAT_010cbdf0 = local_d4;
-    local_5 = '\0';
-    if (*DAT_010cbdf4 == '?') {
-      DAT_010cbdf4 = DAT_010cbdf4 + 1;
-      pDVar5 = (DName *)getOperatorName(SUB41(local_18,0),(bool *)0x1);
-    }
-    else {
-      pDVar5 = (DName *)getZName(SUB41(local_18,0));
-    }
-    DName::operator=((DName *)&local_10,pDVar5);
-    iVar6 = DName::isEmpty((DName *)&local_10);
-    if (iVar6 != 0) {
-      DAT_010cbe0c = 1;
-    }
-    if (local_5 == '\0') {
-      getTemplateArgumentList();
-      pDVar5 = (DName *)operator+((char)local_20,(DName *)0x3c);
-      DName::operator+=((DName *)&local_10,pDVar5);
-      cVar4 = DName::getLastChar((DName *)&local_10);
-      if (cVar4 == '>') {
-        DName::operator+=((DName *)&local_10,' ');
-      }
-      DName::operator+=((DName *)&local_10,'>');
-      if (in_stack_00000008 != '\0') {
-        DAT_010cbdf4 = DAT_010cbdf4 + 1;
-      }
-    }
-    DAT_010cbde8 = (Replicator *)uVar1;
-    DAT_010cbdec = (Replicator *)uVar2;
-    DAT_010cbdf0 = (Replicator *)uVar3;
-    DName::DName(_param_1,(DName *)&local_10);
-  }
-  else {
-    DName::DName(_param_1,1);
-  }
-  return _param_1;
-}
-
-
-//// FUNCTION getZName @ 00adce5d ////
-
-/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getZName(bool)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getZName(bool param_1)
-
-{
-  DName *pDVar1;
-  long lVar2;
-  DName *pDVar3;
-  int iVar4;
-  char *pcVar5;
-  byte *pbVar6;
-  char *pcVar7;
-  undefined3 in_stack_00000005;
-  char in_stack_00000008;
-  DName local_38 [8];
-  DName local_30 [8];
-  DName local_28 [4];
-  int local_24;
-  undefined4 local_20;
-  ushort local_1c;
-  char local_18 [16];
-  undefined4 local_8;
-  
-  local_8 = DAT_00e9a098;
-  iVar4 = (char)*DAT_010cbdf4 + -0x30;
-  if ((-1 < iVar4) && (iVar4 < 10)) {
-    DAT_010cbdf4 = DAT_010cbdf4 + 1;
-    pDVar1 = Replicator::operator[](DAT_010cbdec,iVar4);
-    goto LAB_00add022;
-  }
-  local_20 = 0;
-  local_1c = local_1c & 0xfe00;
-  if (*DAT_010cbdf4 == 0x3f) {
-    pDVar1 = (DName *)getTemplateName(SUB41(local_28,0));
-    DName::operator=((DName *)&local_20,pDVar1);
-    pbVar6 = DAT_010cbdf4 + 1;
-    if (*DAT_010cbdf4 != 0x40) {
-      DName::operator=((DName *)&local_20,(*DAT_010cbdf4 == 0) + 1);
-      pbVar6 = DAT_010cbdf4;
-    }
-  }
-  else {
-    pcVar5 = "template-parameter-";
-    pcVar7 = "template-parameter-";
-    iVar4 = 0x12;
-    pbVar6 = DAT_010cbdf4;
-    do {
-      if ((*pbVar6 == 0) || (*pbVar6 != *pcVar7)) break;
-      pbVar6 = pbVar6 + 1;
-      pcVar7 = pcVar7 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    if (*pbVar6 == *pcVar7) {
-      DAT_010cbdf4 = DAT_010cbdf4 + 0x13;
-      local_24 = 0;
-    }
-    else {
-      pcVar5 = "generic-type-";
-      pcVar7 = "generic-type-";
-      iVar4 = 0xc;
-      pbVar6 = DAT_010cbdf4;
-      do {
-        if ((*pbVar6 == 0) || (*pbVar6 != *pcVar7)) break;
-        pbVar6 = pbVar6 + 1;
-        pcVar7 = pcVar7 + 1;
-        iVar4 = iVar4 + -1;
-      } while (iVar4 != 0);
-      local_24 = (uint)*pbVar6 - (uint)(byte)*pcVar7;
-      if (local_24 != 0) {
-        pDVar1 = (DName *)DName::DName(local_30,(char **)&DAT_010cbdf4,'@');
-        DName::operator=((DName *)&local_20,pDVar1);
-        pbVar6 = DAT_010cbdf4;
-        goto LAB_00add005;
-      }
-      DAT_010cbdf4 = DAT_010cbdf4 + 0xd;
-    }
-    getSignedDimension();
-    if ((DAT_010cbe04._1_1_ & 0x40) == 0) {
-      DName::operator=((DName *)&local_20,"`");
-      pDVar1 = local_30;
-      pDVar3 = local_38;
-    }
-    else {
-      DName::getString(local_28,local_18,0x10);
-      lVar2 = _atol(local_18);
-      pcVar7 = (char *)(*DAT_010cbe08)(lVar2);
-      if (pcVar7 != (char *)0x0) {
-        DName::operator=((DName *)&local_20,pcVar7);
-        pbVar6 = DAT_010cbdf4;
-        goto LAB_00add005;
-      }
-      DName::operator=((DName *)&local_20,"`");
-      pDVar1 = local_38;
-      pDVar3 = local_30;
-    }
-    pDVar3 = (DName *)operator+((char *)pDVar3,(DName *)pcVar5);
-    pDVar1 = (DName *)DName::operator+(pDVar3,(char *)pDVar1);
-    DName::operator+=((DName *)&local_20,pDVar1);
-    pbVar6 = DAT_010cbdf4;
-  }
-LAB_00add005:
-  DAT_010cbdf4 = pbVar6;
-  if ((in_stack_00000008 != '\0') && (*(int *)DAT_010cbdec != 9)) {
-    Replicator::operator+=(DAT_010cbdec,(DName *)&local_20);
-  }
-  pDVar1 = (DName *)&local_20;
-LAB_00add022:
-  DName::DName(_param_1,pDVar1);
-  return _param_1;
-}
-
-
-//// FUNCTION getScopedName @ 00add038 ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getScopedName(void)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getScopedName(void)
-
-{
-  DName *pDVar1;
-  DName *pDVar2;
-  int iVar3;
-  DName *this;
-  DName *in_stack_00000004;
-  char *pcVar4;
-  DName local_24 [8];
-  char local_1c [8];
-  DName local_14 [8];
-  undefined4 local_c;
-  uint local_8;
-  
-  local_c = 0;
-  local_8 = local_8 & 0xfffffe00;
-  pDVar1 = (DName *)getZName(SUB41(local_14,0));
-  DName::operator=((DName *)&local_c,pDVar1);
-  if (((local_8 & 0xf) == 0) && (*DAT_010cbdf4 != '\0')) {
-    if (*DAT_010cbdf4 != '@') {
-      pDVar1 = local_14;
-      pcVar4 = local_1c;
-      pDVar2 = (DName *)getScope();
-      pDVar2 = (DName *)DName::operator+(pDVar2,pcVar4);
-      pDVar1 = (DName *)DName::operator+(pDVar2,pDVar1);
-      DName::operator=((DName *)&local_c,pDVar1);
-      goto LAB_00add0ad;
-    }
-  }
-  else {
-LAB_00add0ad:
-    if (*DAT_010cbdf4 != '@') {
-      if (*DAT_010cbdf4 == '\0') {
-        iVar3 = DName::isEmpty((DName *)&local_c);
-        if (iVar3 == 0) {
-          pDVar1 = local_24;
-          pcVar4 = local_1c;
-          pDVar2 = (DName *)DName::DName(local_14,2);
-          pDVar2 = (DName *)DName::operator+(pDVar2,pcVar4);
-          pDVar1 = (DName *)DName::operator+(pDVar2,pDVar1);
-          DName::operator=((DName *)&local_c,pDVar1);
-        }
-        else {
-          DName::operator=(this,2);
-        }
-      }
-      else {
-        local_c = 0;
-        if (((byte)local_8 & 0xf) != 3) {
-          local_8 = local_8 & 0xfffffff1 | 1;
-        }
-      }
-      goto LAB_00add122;
-    }
-  }
-  DAT_010cbdf4 = DAT_010cbdf4 + 1;
-LAB_00add122:
-  DName::DName(in_stack_00000004,(DName *)&local_c);
-  return in_stack_00000004;
-}
-
-
-//// FUNCTION getECSUDataType @ 00add143 ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getECSUDataType(void)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getECSUDataType(void)
-
-{
-  char cVar1;
-  DName *pDVar2;
-  uint uVar3;
-  uint uVar4;
-  DName *in_stack_00000004;
-  char *pcVar5;
-  char local_1c [8];
-  undefined4 local_14;
-  uint local_10;
-  undefined4 local_c;
-  uint local_8;
-  
-  pcVar5 = DAT_010cbdf4;
-  uVar4 = 1;
-  uVar3 = ~(DAT_010cbe04 >> 0xf) & 1;
-  if ((uVar3 == 0) || ((DAT_010cbe04 & 0x1000) != 0)) {
-    uVar4 = 0;
-  }
-  cVar1 = *DAT_010cbdf4;
-  local_c = 0;
-  local_8 = local_8 & 0xfffffe00;
-  DAT_010cbdf4 = DAT_010cbdf4 + 1;
-  if (cVar1 == '\0') {
-    DAT_010cbdf4 = pcVar5;
-    DName::DName(in_stack_00000004,"nknown ecsu\'");
-    return in_stack_00000004;
-  }
-  if (cVar1 == 'T') {
-    pcVar5 = "union ";
-  }
-  else if (cVar1 == 'U') {
-    pcVar5 = "struct ";
-  }
-  else if (cVar1 == 'V') {
-    pcVar5 = "class ";
-  }
-  else {
-    if (cVar1 == 'W') {
-      getEnumType();
-      pDVar2 = (DName *)operator+(local_1c,(DName *)"enum ");
-      DName::operator=((DName *)&local_c,pDVar2);
-      goto LAB_00add1ed;
-    }
-    if (cVar1 == 'X') {
-      pcVar5 = "coclass ";
-    }
-    else {
-      uVar3 = uVar4;
-      if (cVar1 != 'Y') goto LAB_00add1ed;
-      pcVar5 = "cointerface ";
-    }
-  }
-  DName::operator=((DName *)&local_c,pcVar5);
-  uVar3 = uVar4;
-LAB_00add1ed:
-  local_14 = 0;
-  local_10 = local_10 & 0xfffffe00;
-  if (uVar3 != 0) {
-    DName::operator=((DName *)&local_14,(DName *)&local_c);
-  }
-  getScopedName();
-  DName::operator+=((DName *)&local_14,(DName *)&local_c);
-  DName::DName(in_stack_00000004,(DName *)&local_14);
-  return in_stack_00000004;
-}
-
-
-//// FUNCTION getSymbolName @ 00add242 ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getSymbolName(void)
-   
-   Library: Visual Studio 2003 Release */
-
-undefined4 __cdecl UnDecorator::getSymbolName(void)
-
-{
-  undefined4 in_stack_00000004;
-  bool bVar1;
-  
-  bVar1 = SUB41(in_stack_00000004,0);
-  if (*DAT_010cbdf4 == '?') {
-    if (DAT_010cbdf4[1] == '$') {
-      getTemplateName(bVar1);
-    }
-    else {
-      DAT_010cbdf4 = DAT_010cbdf4 + 1;
-      getOperatorName(bVar1,(bool *)0x0);
-    }
-  }
-  else {
-    getZName(bVar1);
-  }
-  return in_stack_00000004;
-}
-
-
-//// FUNCTION getBasedType @ 00add288 ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getBasedType(void)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getBasedType(void)
-
-{
-  char cVar1;
-  char *pcVar2;
-  DName *pDVar3;
-  DName *in_stack_00000004;
-  DName local_c [8];
-  
-  pcVar2 = UScore(0);
-  DName::DName(local_c,pcVar2);
-  if (*DAT_010cbdf4 == '\0') {
-    DName::operator+=(local_c,2);
-  }
-  else {
-    cVar1 = *DAT_010cbdf4;
-    DAT_010cbdf4 = DAT_010cbdf4 + 1;
-    if (cVar1 == '0') {
-      DName::operator+=(local_c,"void");
-    }
-    else if (cVar1 == '2') {
-      pDVar3 = (DName *)getScopedName();
-      DName::operator+=(local_c,pDVar3);
-    }
-    else if (cVar1 == '5') {
-      DName::DName(in_stack_00000004,1);
-      return in_stack_00000004;
-    }
-  }
-  DName::operator+=(local_c,") ");
-  DName::DName(in_stack_00000004,local_c);
-  return in_stack_00000004;
-}
-
-
-//// FUNCTION composeDeclaration @ 00add31a ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::composeDeclaration(class DName const &)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::composeDeclaration(DName *param_1)
-
-{
-  uint uVar1;
-  uint uVar2;
-  DName *pDVar3;
-  DName *pDVar4;
-  int iVar5;
-  uint uVar6;
-  DName *this;
-  bool bVar7;
-  DName *in_stack_00000008;
-  char cVar8;
-  char *pcVar9;
-  DName local_44 [8];
-  undefined4 local_3c;
-  uint local_38;
-  undefined4 local_34;
-  uint local_30;
-  undefined4 local_2c;
-  uint local_28;
-  undefined4 local_24;
-  uint local_20;
-  char local_1c [4];
-  int local_18;
-  undefined4 local_14;
-  uint local_10;
-  uint local_c;
-  uint local_8;
-  
-  local_24 = 0;
-  local_20 = local_20 & 0xfffffe00;
-  uVar1 = getTypeEncoding();
-  local_18 = DName::isUDC(in_stack_00000008);
-  if (uVar1 == 0xffff) {
-    DName::DName(param_1,1);
-    return param_1;
-  }
-  if (uVar1 == 0xfffe) {
-    operator+((DNameStatus)param_1,(DName *)0x2);
-    return param_1;
-  }
-  if (uVar1 == 0xfffd) {
-    DName::DName(param_1,in_stack_00000008);
-    return param_1;
-  }
-  local_8 = uVar1 & 0x8000;
-  if (local_8 == 0) {
-LAB_00add844:
-    DName::operator+=((DName *)&local_24,in_stack_00000008);
-    if (local_8 == 0) {
-      if (((uVar1 & 0x7c00) == 0x6800) || ((uVar1 & 0x7c00) == 0x7000)) {
-        getVfTableType(param_1);
-        return param_1;
-      }
-      if ((uVar1 & 0x7c00) == 0x6000) {
-        getDimension(SUB41(&local_3c,0));
-        pDVar3 = local_44;
-        pDVar4 = param_1;
-        this = (DName *)DName::operator+((DName *)&local_24,(char)&local_34);
-        pDVar3 = (DName *)DName::operator+(this,pDVar3);
-        DName::operator+(pDVar3,(char *)pDVar4);
-        return param_1;
-      }
-      if ((uVar1 & 0x7c00) == 0x7c00) {
-        getVdispMapType(param_1);
-        return param_1;
-      }
-      uVar2 = uVar1 & 0x6000;
-    }
-    else {
-      uVar2 = (uVar1 & 0x1800) - 0x800;
-    }
-    if (uVar2 == 0) {
-      uVar2 = uVar1 & 0x400;
-    }
-    else {
-      uVar2 = uVar1 & 0x1000;
-    }
-    if ((uVar2 == 0) || ((uVar1 & 0x1b00) != 0x1000 || local_8 == 0)) {
-      if (local_8 == 0) {
-        uVar2 = uVar1 & 0x6000;
-      }
-      else {
-        uVar2 = (uVar1 & 0x1800) - 0x800;
-      }
-      if (uVar2 == 0) {
-        uVar2 = uVar1 & 0x400;
-      }
-      else {
-        uVar2 = uVar1 & 0x1000;
-      }
-      if ((uVar2 != 0) && ((uVar1 & 0x1b00) == 0x1100 && local_8 != 0)) {
-        pcVar9 = "`template static data member constructor helper\'";
-        goto LAB_00add947;
-      }
-      if (local_8 == 0) {
-        uVar2 = uVar1 & 0x6000;
-      }
-      else {
-        uVar2 = (uVar1 & 0x1800) - 0x800;
-      }
-      if (uVar2 == 0) {
-        uVar2 = uVar1 & 0x400;
-      }
-      else {
-        uVar2 = uVar1 & 0x1000;
-      }
-      if ((uVar2 != 0) && ((uVar1 & 0x1b00) == 0x1200 && local_8 != 0)) {
-        pcVar9 = "`template static data member destructor helper\'";
-        goto LAB_00add947;
-      }
-      if (local_8 == 0) {
-        if ((uVar1 & 0x7c00) == 0x7800) goto LAB_00addd1a;
-        goto LAB_00adda12;
-      }
-LAB_00adda18:
-      uVar2 = (uVar1 & 0x1800) - 0x800;
-    }
-    else {
-      pcVar9 = "`local static destructor helper\'";
-LAB_00add947:
-      DName::operator+=((DName *)&local_24,pcVar9);
-LAB_00adda12:
-      if (local_8 != 0) goto LAB_00adda18;
-      uVar2 = uVar1 & 0x6000;
-    }
-    if (uVar2 == 0) {
-      uVar2 = uVar1 & 0x400;
-    }
-    else {
-      uVar2 = uVar1 & 0x1000;
-    }
-    if ((uVar2 == 0) ||
-       (((uVar1 & 0x1b00) != 0x1100 || local_8 == 0 && ((uVar1 & 0x1b00) != 0x1200 || local_8 == 0))
-       )) {
-      pDVar3 = (DName *)getExternalDataType(local_44);
-    }
-    else {
-      pDVar3 = (DName *)operator+((char *)local_44,(DName *)&DAT_00d21764);
-    }
-LAB_00adda99:
-    DName::operator=((DName *)&local_24,pDVar3);
-  }
-  else {
-    local_10 = uVar1 & 0x1800;
-    local_c = (uint)(local_10 == 0x800);
-    if (local_c == 0) {
-      uVar2 = uVar1 & 0x1000;
-    }
-    else {
-      uVar2 = uVar1 & 0x400;
-    }
-    if ((uVar2 != 0) && ((uVar1 & 0x1b00) == 0x1000)) goto LAB_00add844;
-    if (local_c == 0) {
-      uVar2 = uVar1 & 0x1000;
-    }
-    else {
-      uVar2 = uVar1 & 0x400;
-    }
-    if ((uVar2 != 0) && (((uVar1 & 0x1b00) == 0x1100 || ((uVar1 & 0x1b00) == 0x1200))))
-    goto LAB_00add844;
-    if ((uVar1 & 0x4000) != 0) {
-      if (((~(DAT_010cbe04 >> 1) & 1) == 0) || ((~(DAT_010cbe04 >> 3) & 1) == 0)) {
-        pDVar3 = (DName *)getBasedType();
-        DName::operator|=((DName *)&local_24,pDVar3);
-      }
-      else {
-        getBasedType();
-        pDVar3 = (DName *)operator+((char)&local_34,(DName *)0x20);
-        DName::operator=((DName *)&local_24,pDVar3);
-      }
-    }
-    if (local_c == 0) {
-      uVar2 = uVar1 & 0x1000;
-    }
-    else {
-      uVar2 = uVar1 & 0x400;
-    }
-    if ((uVar2 == 0) || (local_10 != 0x1800)) {
-      local_28 = local_28 & 0xfffffe00;
-      local_30 = local_30 & 0xfffffe00;
-      local_10 = local_10 & 0xfffffe00;
-      local_2c = 0;
-      local_34 = 0;
-      local_14 = 0;
-      if (local_c == 0) {
-        uVar2 = uVar1 & 0x1000;
-      }
-      else {
-        uVar2 = uVar1 & 0x400;
-      }
-      if (uVar2 != 0) {
-        if ((local_c != 0) && ((uVar1 & 0x700) == 0x500)) {
-          getDimension(SUB41(&local_3c,0));
-          DName::operator=((DName *)&local_2c,(DName *)&local_3c);
-        }
-        getDimension(SUB41(&local_3c,0));
-        DName::operator=((DName *)&local_34,(DName *)&local_3c);
-      }
-      if ((local_c != 0) && ((uVar1 & 0x700) != 0x200)) {
-        if (((byte)DAT_010cbe04 & 0x60) == 0x60) {
-          pDVar3 = (DName *)getThisType();
-          DName::operator|=((DName *)&local_14,pDVar3);
-        }
-        else {
-          pDVar3 = (DName *)getThisType();
-          DName::operator=((DName *)&local_14,pDVar3);
-        }
-      }
-      if (((~(DAT_010cbe04 >> 1) & 1) == 0) || ((~(DAT_010cbe04 >> 4) & 1) == 0)) {
-        pDVar3 = (DName *)getCallingConvention();
-        DName::operator|=((DName *)&local_24,pDVar3);
-      }
-      else {
-        pDVar3 = (DName *)&local_3c;
-        pDVar4 = (DName *)getCallingConvention();
-        pDVar3 = (DName *)DName::operator+(pDVar4,pDVar3);
-        DName::operator=((DName *)&local_24,pDVar3);
-      }
-      iVar5 = DName::isEmpty(in_stack_00000008);
-      if (iVar5 == 0) {
-        iVar5 = DName::isEmpty((DName *)&local_24);
-        if ((iVar5 == 0) && ((DAT_010cbe04 & 0x1000) == 0)) {
-          pDVar3 = (DName *)operator+((char)local_44,(DName *)0x20);
-          DName::operator+=((DName *)&local_24,pDVar3);
-        }
-        else {
-          DName::operator=((DName *)&local_24,in_stack_00000008);
-        }
-      }
-      local_38 = local_38 & 0xfffffe00;
-      pDVar3 = (DName *)0x0;
-      local_3c = 0;
-      if (local_18 == 0) {
-        pDVar3 = HeapManager::getMemory((HeapManager *)&DAT_010cbdd4,8,0);
-        if (pDVar3 == (DName *)0x0) {
-          pDVar3 = (DName *)0x0;
-        }
-        else {
-          *(undefined4 *)pDVar3 = 0;
-          *(uint *)(pDVar3 + 4) = *(uint *)(pDVar3 + 4) & 0xfffffe00;
-        }
-        pDVar4 = (DName *)getReturnType(local_44);
-        DName::operator=((DName *)&local_3c,pDVar4);
-      }
-      else {
-        getReturnType(local_44);
-        pDVar4 = (DName *)operator+(local_1c,(DName *)&DAT_00d21764);
-        DName::operator+=((DName *)&local_24,pDVar4);
-        if ((DAT_010cbe04 & 0x1000) != 0) goto LAB_00addd1a;
-      }
-      uVar2 = local_c;
-      if (local_c == 0) {
-        uVar6 = uVar1 & 0x1000;
-      }
-      else {
-        uVar6 = uVar1 & 0x400;
-      }
-      if (uVar6 != 0) {
-        if ((local_c == 0) || ((uVar1 & 0x700) != 0x500)) {
-          DName::operator+=((DName *)&local_24,"`adjustor{");
-        }
-        else {
-          cVar8 = (char)local_44;
-          pDVar4 = (DName *)operator+(local_1c,(DName *)"`vtordisp{");
-          pDVar4 = (DName *)DName::operator+(pDVar4,cVar8);
-          DName::operator+=((DName *)&local_24,pDVar4);
-        }
-        pDVar4 = (DName *)DName::operator+((DName *)&local_34,(char *)local_44);
-        DName::operator+=((DName *)&local_24,pDVar4);
-      }
-      cVar8 = (char)local_44;
-      getArgumentTypes();
-      pDVar4 = (DName *)operator+((char)&local_2c,(DName *)0x28);
-      pDVar4 = (DName *)DName::operator+(pDVar4,cVar8);
-      DName::operator+=((DName *)&local_24,pDVar4);
-      if ((uVar2 != 0) && ((uVar1 & 0x700) != 0x200)) {
-        DName::operator+=((DName *)&local_24,(DName *)&local_14);
-      }
-      if ((~(DAT_010cbe04 >> 8) & 1) == 0) {
-        pDVar4 = (DName *)getThrowTypes();
-        DName::operator|=((DName *)&local_24,pDVar4);
-      }
-      else {
-        pDVar4 = (DName *)getThrowTypes();
-        DName::operator+=((DName *)&local_24,pDVar4);
-      }
-      if (((~(DAT_010cbe04 >> 2) & 1) == 0) || (pDVar3 == (DName *)0x0)) goto LAB_00addaa2;
-      DName::operator=(pDVar3,(DName *)&local_24);
-      pDVar3 = (DName *)&local_3c;
-      goto LAB_00adda99;
-    }
-    getDimension(SUB41(&local_3c,0));
-    cVar8 = (char)&local_34;
-    pDVar3 = (DName *)&local_2c;
-    pDVar4 = (DName *)DName::operator+(in_stack_00000008,(char)local_1c);
-    pDVar3 = (DName *)DName::operator+(pDVar4,pDVar3);
-    pDVar3 = (DName *)DName::operator+(pDVar3,cVar8);
-    DName::operator+=((DName *)&local_24,pDVar3);
-    pcVar9 = (char *)&local_3c;
-    pDVar3 = (DName *)getVCallThunkType();
-    pDVar3 = (DName *)DName::operator+(pDVar3,pcVar9);
-    DName::operator+=((DName *)&local_24,pDVar3);
-    if (((~(DAT_010cbe04 >> 1) & 1) != 0) && ((~(DAT_010cbe04 >> 4) & 1) != 0)) {
-      pDVar3 = (DName *)&local_3c;
-      cVar8 = (char)&local_34;
-      getCallingConvention();
-      pDVar4 = (DName *)operator+((char)local_1c,(DName *)0x20);
-      pDVar4 = (DName *)DName::operator+(pDVar4,cVar8);
-      pDVar3 = (DName *)DName::operator+(pDVar4,pDVar3);
-      goto LAB_00adda99;
-    }
-    pDVar3 = (DName *)getCallingConvention();
-    DName::operator|=((DName *)&local_24,pDVar3);
-  }
-LAB_00addaa2:
-  if (local_8 == 0) {
-    uVar2 = uVar1 & 0x6000;
-  }
-  else {
-    uVar2 = (uVar1 & 0x1800) - 0x800;
-  }
-  if (uVar2 == 0) {
-    if ((~(DAT_010cbe04 >> 9) & 1) != 0) {
-      if (local_8 == 0) {
-        uVar2 = uVar1 & 0x6000;
-      }
-      else {
-        uVar2 = (uVar1 & 0x1800) - 0x800;
-      }
-      if ((uVar2 == 0) && (local_8 == 0 || (uVar1 & 0x700) == 0x200)) {
-        pDVar3 = (DName *)operator+((char *)local_44,(DName *)"static ");
-        DName::operator=((DName *)&local_24,pDVar3);
-      }
-      if (local_8 == 0) {
-LAB_00addb5c:
-        uVar2 = uVar1 & 0x6000;
-LAB_00addb60:
-        if (uVar2 == 0) {
-          uVar2 = uVar1 & 0x400;
-        }
-        else {
-          uVar2 = uVar1 & 0x1000;
-        }
-        if (uVar2 == 0) goto LAB_00addbe8;
-        if (local_8 == 0) {
-          uVar2 = uVar1 & 0x6000;
-        }
-        else {
-          uVar2 = (uVar1 & 0x1800) - 0x800;
-        }
-        if ((uVar2 != 0) || ((uVar1 & 0x700) != 0x500)) {
-          if (local_8 == 0) {
-            uVar2 = uVar1 & 0x6000;
-          }
-          else {
-            uVar2 = (uVar1 & 0x1800) - 0x800;
-          }
-          if ((uVar2 != 0) || ((uVar1 & 0x700) != 0x400)) goto LAB_00addbe8;
-        }
-      }
-      else if ((uVar1 & 0x700) != 0x100) {
-        if (local_8 == 0) goto LAB_00addb5c;
-        uVar2 = (uVar1 & 0x1800) - 0x800;
-        goto LAB_00addb60;
-      }
-      pDVar3 = (DName *)operator+((char *)local_44,(DName *)"virtual ");
-      DName::operator=((DName *)&local_24,pDVar3);
-    }
-LAB_00addbe8:
-    if ((~(DAT_010cbe04 >> 7) & 1) != 0) {
-      if (local_8 == 0) {
-        uVar2 = uVar1 & 0x6000;
-      }
-      else {
-        uVar2 = (uVar1 & 0x1800) - 0x800;
-      }
-      if (uVar2 == 0) {
-        if (local_8 == 0) {
-          bVar7 = (uVar1 & 0x1800) != 0x800;
-        }
-        else {
-          bVar7 = ((byte)uVar1 & 0xc0) != 0x40;
-        }
-        if (bVar7) goto LAB_00addc3c;
-        pcVar9 = "private: ";
-LAB_00addcb7:
-        pDVar3 = (DName *)operator+((char *)local_44,(DName *)pcVar9);
-        DName::operator=((DName *)&local_24,pDVar3);
-      }
-      else {
-LAB_00addc3c:
-        if (local_8 == 0) {
-          uVar2 = uVar1 & 0x6000;
-        }
-        else {
-          uVar2 = (uVar1 & 0x1800) - 0x800;
-        }
-        if (uVar2 == 0) {
-          if (local_8 == 0) {
-            bVar7 = (uVar1 & 0x1800) != 0x1000;
-          }
-          else {
-            bVar7 = ((byte)uVar1 & 0xc0) != 0x80;
-          }
-          if (!bVar7) {
-            pcVar9 = "protected: ";
-            goto LAB_00addcb7;
-          }
-        }
-        if (local_8 == 0) {
-          uVar2 = uVar1 & 0x6000;
-        }
-        else {
-          uVar2 = (uVar1 & 0x1800) - 0x800;
-        }
-        if (uVar2 == 0) {
-          if (local_8 == 0) {
-            uVar2 = uVar1 & 0x1800;
-          }
-          else {
-            uVar2 = uVar1 & 0xc0;
-          }
-          if (uVar2 == 0) {
-            pcVar9 = "public: ";
-            goto LAB_00addcb7;
-          }
-        }
-      }
-    }
-  }
-  if (local_8 == 0) {
-    uVar2 = uVar1 & 0x6000;
-  }
-  else {
-    uVar2 = (uVar1 & 0x1800) - 0x800;
-  }
-  if (uVar2 == 0) {
-    uVar1 = uVar1 & 0x400;
-  }
-  else {
-    uVar1 = uVar1 & 0x1000;
-  }
-  if (uVar1 != 0) {
-    pDVar3 = (DName *)operator+((char *)local_44,(DName *)"[thunk]:");
-    DName::operator=((DName *)&local_24,pDVar3);
-  }
-LAB_00addd1a:
-  DName::DName(param_1,(DName *)&local_24);
-  return param_1;
-}
-
-
-//// FUNCTION getDecoratedName @ 00addd2e ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getDecoratedName(void)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getDecoratedName(void)
-
-{
-  bool bVar1;
-  int iVar2;
-  DName *pDVar3;
-  DName *pDVar4;
-  DName *in_stack_00000004;
-  DNameStatus DVar5;
-  DName local_24 [8];
-  DName local_1c [8];
-  undefined4 local_14;
-  ushort local_10;
-  DName local_c [4];
-  uint local_8;
-  
-  if ((DAT_010cbe04 & 0x2000) != 0) {
-    DAT_010cbe04 = DAT_010cbe04 & 0xffffdfff;
-    getDataType((DName *)&local_14);
-    DAT_010cbe04 = DAT_010cbe04 | 0x2000;
-    pDVar3 = (DName *)&local_14;
-    goto LAB_00addeb5;
-  }
-  if (*DAT_010cbdf4 == '?') {
-    DAT_010cbdf4 = DAT_010cbdf4 + 1;
-    getSymbolName();
-    iVar2 = DName::isEmpty(local_c);
-    if ((iVar2 == 0) && ((local_8 & 0x20) != 0)) {
-      bVar1 = true;
-    }
-    else {
-      bVar1 = false;
-    }
-    iVar2 = DName::isValid(local_c);
-    if (iVar2 != 0) {
-      if ((*DAT_010cbdf4 != '\0') && (*DAT_010cbdf4 != '@')) {
-        getScope();
-        iVar2 = DName::isEmpty((DName *)&local_14);
-        if (iVar2 == 0) {
-          if (DAT_010cbe0c == '\0') {
-            pDVar3 = local_24;
-            pDVar4 = local_1c;
-          }
-          else {
-            DAT_010cbe0c = '\0';
-            pDVar3 = (DName *)DName::operator+(local_c,local_1c);
-            DName::operator=(local_c,pDVar3);
-            if (*DAT_010cbdf4 == '@') goto LAB_00adde52;
-            pDVar3 = (DName *)getScope();
-            DName::operator=((DName *)&local_14,pDVar3);
-            pDVar3 = local_1c;
-            pDVar4 = local_24;
-          }
-          pDVar4 = (DName *)DName::operator+((DName *)&local_14,(char *)pDVar4);
-          pDVar3 = (DName *)DName::operator+(pDVar4,pDVar3);
-          DName::operator=(local_c,pDVar3);
-        }
-      }
-LAB_00adde52:
-      if ((bVar1) && (iVar2 = DName::isEmpty(local_c), iVar2 == 0)) {
-        local_8 = local_8 | 0x20;
-      }
-      iVar2 = DName::isEmpty(local_c);
-      if ((iVar2 == 0) && ((local_8 & 0x100) == 0)) {
-        if (*DAT_010cbdf4 != '\0') {
-          if (*DAT_010cbdf4 != '@') goto LAB_00added4;
-          DAT_010cbdf4 = DAT_010cbdf4 + 1;
-        }
-        if (((DAT_010cbe04 & 0x1000) == 0) || (bVar1)) {
-          composeDeclaration(in_stack_00000004);
-          return in_stack_00000004;
-        }
-        local_14 = 0;
-        local_10 = local_10 & 0xfe00;
-        composeDeclaration(local_24);
-      }
-    }
-    pDVar3 = local_c;
-LAB_00addeb5:
-    DName::DName(in_stack_00000004,pDVar3);
-    return in_stack_00000004;
-  }
-  if (*DAT_010cbdf4 == '\0') {
-    DVar5 = 2;
-    goto LAB_00addeda;
-  }
-LAB_00added4:
-  DVar5 = 1;
-LAB_00addeda:
-  DName::DName(in_stack_00000004,DVar5);
-  return in_stack_00000004;
-}
-
-
-//// FUNCTION getScope @ 00addee8 ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getScope(void)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getScope(void)
-
-{
-  undefined1 uVar1;
-  int iVar2;
-  DName *this;
-  DName *pDVar3;
-  DName *pDVar4;
-  DName *this_00;
-  char *pcVar5;
-  DName *in_stack_00000004;
-  char cVar6;
-  undefined1 local_98 [8];
-  DName local_90 [8];
-  DName local_88 [8];
-  undefined1 local_80 [8];
-  undefined1 local_78 [8];
-  DName local_70 [8];
-  DName local_68 [8];
-  char local_60 [8];
-  char local_58 [8];
-  undefined1 local_50 [8];
-  undefined1 local_48 [16];
-  undefined1 local_38 [8];
-  DName local_30 [8];
-  DName local_28 [8];
-  DName local_20 [8];
-  DName local_18 [8];
-  undefined4 local_10;
-  uint local_c;
-  char local_5;
-  
-  local_c = local_c & 0xfffffe00;
-  local_10 = 0;
-  local_5 = '\0';
-  while ((((local_c & 0xf) == 0 && (*DAT_010cbdf4 != '\0')) && (*DAT_010cbdf4 != '@'))) {
-    if ((DAT_010cbe0c != '\0') && (DAT_010cbe0d == '\0')) goto LAB_00ade179;
-    iVar2 = DName::isEmpty((DName *)&local_10);
-    if (iVar2 == 0) {
-      pDVar4 = (DName *)operator+(local_58,(DName *)&DAT_00d7f2d8);
-      DName::operator=((DName *)&local_10,pDVar4);
-      if (local_5 != '\0') {
-        pDVar4 = (DName *)operator+((char)local_80,(DName *)0x5b);
-        DName::operator=((DName *)&local_10,pDVar4);
-        local_5 = '\0';
-      }
-    }
-    if (*DAT_010cbdf4 == '?') {
-      pcVar5 = DAT_010cbdf4 + 1;
-      cVar6 = *pcVar5;
-      if (cVar6 == '$') {
-        pDVar4 = local_70;
-        uVar1 = SUB41(local_20,0);
-        goto LAB_00ade0e8;
-      }
-      if (cVar6 == '%') {
-joined_r0x00ade09d:
-        while (cVar6 != '@') {
-          pcVar5 = pcVar5 + 1;
-          cVar6 = *pcVar5;
-        }
-        DAT_010cbdf4 = pcVar5 + 1;
-        pDVar4 = (DName *)operator+(local_60,(DName *)"`anonymous namespace\'");
-        goto LAB_00ade0f9;
-      }
-      if (cVar6 == '?') {
-        if ((DAT_010cbdf4[2] != '_') || (DAT_010cbdf4[3] != '?')) {
-          pDVar4 = local_68;
-          cVar6 = (char)local_38;
-          DAT_010cbdf4 = pcVar5;
-          getDecoratedName();
-          pDVar3 = (DName *)operator+((char)local_50,(DName *)0x60);
-          pDVar3 = (DName *)DName::operator+(pDVar3,cVar6);
-          goto LAB_00ade0f2;
-        }
-        pDVar4 = local_30;
-        DAT_010cbdf4 = DAT_010cbdf4 + 2;
-        pDVar3 = (DName *)getOperatorName(SUB41(local_98,0),(bool *)0x0);
-        pDVar4 = (DName *)DName::operator+(pDVar3,pDVar4);
-        DName::operator=((DName *)&local_10,pDVar4);
-        if (*DAT_010cbdf4 == '@') {
-          DAT_010cbdf4 = DAT_010cbdf4 + 1;
-        }
-      }
-      else {
-        if (cVar6 == 'A') goto joined_r0x00ade09d;
-        if (cVar6 != 'I') {
-          pDVar4 = local_90;
-          DAT_010cbdf4 = pcVar5;
-          pDVar3 = (DName *)getLexicalFrame();
-          goto LAB_00ade0f2;
-        }
-        pDVar4 = local_88;
-        cVar6 = (char)local_48;
-        DAT_010cbdf4 = DAT_010cbdf4 + 2;
-        pDVar3 = (DName *)getZName(SUB41(local_78,0));
-        pDVar3 = (DName *)DName::operator+(pDVar3,cVar6);
-        pDVar4 = (DName *)DName::operator+(pDVar3,pDVar4);
-        DName::operator=((DName *)&local_10,pDVar4);
-        local_5 = '\x01';
-      }
-    }
-    else {
-      pDVar4 = local_28;
-      uVar1 = SUB41(local_18,0);
-LAB_00ade0e8:
-      pDVar3 = (DName *)getZName((bool)uVar1);
-LAB_00ade0f2:
-      pDVar4 = (DName *)DName::operator+(pDVar3,pDVar4);
-LAB_00ade0f9:
-      DName::operator=((DName *)&local_10,pDVar4);
-    }
-  }
-  if (*DAT_010cbdf4 == '\0') {
-    iVar2 = DName::isEmpty((DName *)&local_10);
-    if (iVar2 == 0) {
-      pDVar4 = local_18;
-      pDVar3 = local_28;
-      this = (DName *)DName::DName(local_20,2);
-      pDVar3 = (DName *)DName::operator+(this,(char *)pDVar3);
-      pDVar4 = (DName *)DName::operator+(pDVar3,pDVar4);
-      DName::operator=((DName *)&local_10,pDVar4);
-    }
-    else {
-      DName::operator=(this_00,2);
-    }
-  }
-  else if ((*DAT_010cbdf4 != '@') && (local_10 = 0, ((byte)local_c & 0xf) != 3)) {
-    local_c = local_c & 0xfffffff1 | 1;
-  }
-LAB_00ade179:
-  DName::DName(in_stack_00000004,(DName *)&local_10);
-  return in_stack_00000004;
-}
-
-
-//// FUNCTION getFunctionIndirectType @ 00ade18f ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getFunctionIndirectType(class DName const &)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getFunctionIndirectType(DName *param_1)
-
-{
-  char *pcVar1;
-  DName *pDVar2;
-  DName *pDVar3;
-  int iVar4;
-  uint uVar5;
-  bool bVar6;
-  bool bVar7;
-  DName *in_stack_00000008;
-  char cVar8;
-  DNameStatus DVar9;
-  DName local_34 [8];
-  undefined1 local_2c [8];
-  DName local_24 [8];
-  DName local_1c [8];
-  undefined4 local_14;
-  uint local_10;
-  DName local_c [8];
-  
-  cVar8 = *DAT_010cbdf4;
-  if (cVar8 == '\0') {
-    operator+((DNameStatus)param_1,(DName *)0x2);
-    return param_1;
-  }
-  if (((cVar8 < '6') || ('9' < cVar8)) && (cVar8 != '_')) {
-    DName::DName(param_1,1);
-    return param_1;
-  }
-  uVar5 = (int)cVar8 - 0x36;
-  pcVar1 = DAT_010cbdf4 + 1;
-  if (uVar5 == 0x29) {
-    cVar8 = *pcVar1;
-    if (cVar8 == '\0') {
-      DAT_010cbdf4 = pcVar1;
-      operator+((DNameStatus)param_1,(DName *)0x2);
-      return param_1;
-    }
-    uVar5 = (int)cVar8 - 0x3d;
-    DAT_010cbdf4 = DAT_010cbdf4 + 2;
-    if ((int)uVar5 < 4) goto LAB_00ade21f;
-    bVar7 = SBORROW4(uVar5,7);
-    iVar4 = cVar8 + -0x44;
-    bVar6 = uVar5 == 7;
-LAB_00ade21d:
-    if (!bVar6 && bVar7 == iVar4 < 0) goto LAB_00ade21f;
-  }
-  else {
-    DAT_010cbdf4 = pcVar1;
-    if (-1 < (int)uVar5) {
-      bVar7 = SBORROW4(uVar5,3);
-      iVar4 = cVar8 + -0x39;
-      bVar6 = uVar5 == 3;
-      goto LAB_00ade21d;
-    }
-LAB_00ade21f:
-    uVar5 = 0xffffffff;
-  }
-  if (uVar5 == 0xffffffff) {
-    DName::DName(param_1,1);
-    return param_1;
-  }
-  local_14 = 0;
-  local_10 = local_10 & 0xfffffe00;
-  DName::DName(local_c,in_stack_00000008);
-  if ((uVar5 & 2) != 0) {
-    pDVar2 = (DName *)operator+((char *)local_24,(DName *)&DAT_00d7f2d8);
-    DName::operator=(local_c,pDVar2);
-    if (*DAT_010cbdf4 == '\0') {
-      pDVar2 = (DName *)operator+((DNameStatus)local_34,(DName *)0x2);
-    }
-    else {
-      pDVar2 = local_24;
-      getScope();
-      pDVar3 = (DName *)operator+((char)local_34,(DName *)0x20);
-      pDVar2 = (DName *)DName::operator+(pDVar3,pDVar2);
-    }
-    DName::operator=(local_c,pDVar2);
-    if (*DAT_010cbdf4 == '\0') {
-      operator+((DNameStatus)param_1,(DName *)0x2);
-      return param_1;
-    }
-    if (*DAT_010cbdf4 != '@') {
-      DVar9 = 1;
-      goto LAB_00ade4c0;
-    }
-    DAT_010cbdf4 = DAT_010cbdf4 + 1;
-    if (((byte)DAT_010cbe04 & 0x60) == 0x60) {
-      pDVar2 = (DName *)getThisType();
-      DName::operator|=((DName *)&local_14,pDVar2);
-    }
-    else {
-      pDVar2 = (DName *)getThisType();
-      DName::operator=((DName *)&local_14,pDVar2);
-    }
-  }
-  if ((uVar5 & 4) != 0) {
-    if ((~(DAT_010cbe04 >> 1) & 1) == 0) {
-      pDVar2 = (DName *)getBasedType();
-      DName::operator|=(local_c,pDVar2);
-    }
-    else {
-      pDVar2 = local_34;
-      getBasedType();
-      pDVar3 = (DName *)operator+((char)local_24,(DName *)0x20);
-      pDVar2 = (DName *)DName::operator+(pDVar3,pDVar2);
-      DName::operator=(local_c,pDVar2);
-    }
-  }
-  if ((~(DAT_010cbe04 >> 1) & 1) == 0) {
-    pDVar2 = (DName *)getCallingConvention();
-    DName::operator|=(local_c,pDVar2);
-  }
-  else {
-    pDVar2 = local_34;
-    pDVar3 = (DName *)getCallingConvention();
-    pDVar2 = (DName *)DName::operator+(pDVar3,pDVar2);
-    DName::operator=(local_c,pDVar2);
-  }
-  iVar4 = DName::isEmpty(in_stack_00000008);
-  if (iVar4 == 0) {
-    cVar8 = (char)local_34;
-    pDVar2 = (DName *)operator+((char)local_2c,(DName *)0x28);
-    pDVar2 = (DName *)DName::operator+(pDVar2,cVar8);
-    DName::operator=(local_c,pDVar2);
-  }
-  pDVar2 = HeapManager::getMemory((HeapManager *)&DAT_010cbdd4,8,0);
-  if (pDVar2 == (DName *)0x0) {
-    pDVar2 = (DName *)0x0;
-  }
-  else {
-    *(undefined4 *)pDVar2 = 0;
-    *(uint *)(pDVar2 + 4) = *(uint *)(pDVar2 + 4) & 0xfffffe00;
-  }
-  getReturnType(local_1c);
-  cVar8 = (char)local_34;
-  getArgumentTypes();
-  pDVar3 = (DName *)operator+((char)local_24,(DName *)0x28);
-  pDVar3 = (DName *)DName::operator+(pDVar3,cVar8);
-  DName::operator+=(local_c,pDVar3);
-  if ((((byte)DAT_010cbe04 & 0x60) != 0x60) && ((uVar5 & 2) != 0)) {
-    DName::operator+=(local_c,(DName *)&local_14);
-  }
-  if ((~(DAT_010cbe04 >> 8) & 1) == 0) {
-    pDVar3 = (DName *)getThrowTypes();
-    DName::operator|=(local_c,pDVar3);
-  }
-  else {
-    pDVar3 = (DName *)getThrowTypes();
-    DName::operator+=(local_c,pDVar3);
-  }
-  if (pDVar2 != (DName *)0x0) {
-    DName::operator=(pDVar2,local_c);
-    DName::DName(param_1,local_1c);
-    return param_1;
-  }
-  DVar9 = 3;
-LAB_00ade4c0:
-  DName::DName(param_1,DVar9);
-  return param_1;
-}
-
-
-//// FUNCTION getDataIndirectType @ 00ade4d0 ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getDataIndirectType(class DName const
-   &,char,class DName const &,int)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl
-UnDecorator::getDataIndirectType(DName *param_1,char param_2,DName *param_3,int param_4)
-
-{
-  int iVar1;
-  DName *pDVar2;
-  DName *pDVar3;
-  DName *extraout_ECX;
-  DName *this;
-  DName *this_00;
-  DName *extraout_EDX;
-  DName *extraout_EDX_00;
-  int extraout_EDX_01;
-  uint uVar4;
-  undefined3 in_stack_00000009;
-  int in_stack_00000014;
-  char cVar5;
-  char *pcVar6;
-  Tokens TVar7;
-  DNameStatus DVar8;
-  DName local_4c [8];
-  char local_44 [8];
-  char local_3c [8];
-  undefined1 local_34 [8];
-  DName local_2c [8];
-  undefined4 local_24;
-  uint local_20;
-  undefined4 local_1c;
-  uint local_18;
-  undefined4 local_14;
-  uint local_10;
-  DName local_c [4];
-  uint local_8;
-  
-  pcVar6 = DAT_010cbdf4;
-  local_14 = 0;
-  local_10 = local_10 & 0xfffffe00;
-  if (*DAT_010cbdf4 != '\0') {
-    if (*DAT_010cbdf4 == '$') {
-      DAT_010cbdf4 = DAT_010cbdf4 + 1;
-      iVar1 = (int)*DAT_010cbdf4;
-      if (iVar1 == 0x41) {
-        pcVar6 = "__gc ";
-      }
-      else {
-        if (iVar1 != 0x42) {
-          DAT_010cbdf4 = pcVar6 + 3;
-          uVar4 = (iVar1 + 0xfffffcd) * 0x10 + (int)pcVar6[2];
-          DName::operator=((DName *)&local_14,"__gc[");
-          if (1 < uVar4) {
-            iVar1 = uVar4 - 1;
-            do {
-              pDVar2 = (DName *)DName::operator+((DName *)&local_14,(char *)&local_24);
-              DName::operator=((DName *)&local_14,pDVar2);
-              iVar1 = iVar1 + -1;
-            } while (iVar1 != 0);
-          }
-          pDVar2 = (DName *)DName::operator+((DName *)&local_14,(char *)&local_1c);
-          DName::operator=((DName *)&local_14,pDVar2);
-          iVar1 = DName::isEmpty(_param_2);
-          if (iVar1 == 0) {
-            if (((byte)extraout_ECX[4] & 0x80) == 0) {
-              pDVar2 = local_2c;
-              cVar5 = (char)local_34;
-              pDVar3 = (DName *)operator+((char)local_3c,(DName *)0x28);
-              pDVar3 = (DName *)DName::operator+(pDVar3,cVar5);
-            }
-            else {
-              pDVar2 = local_c;
-              pDVar3 = extraout_ECX;
-            }
-            pDVar2 = (DName *)DName::operator+(pDVar3,pDVar2);
-            DName::operator=((DName *)&local_14,pDVar2);
-          }
-          DAT_010cbdf4 = DAT_010cbdf4 + 1;
-          pDVar2 = (DName *)&local_14;
-          goto LAB_00ade9b4;
-        }
-        pcVar6 = "__pin ";
-      }
-      DName::operator=((DName *)&local_14,pcVar6);
-      DAT_010cbdf4 = DAT_010cbdf4 + 1;
-    }
-    local_18 = local_18 & 0xfffffe00;
-    local_1c = 0;
-    local_24 = 0;
-    uVar4 = (int)*DAT_010cbdf4 - (((*DAT_010cbdf4 < 'A') - 1 & 0x2b) + 0x16);
-    local_20 = local_20 & 0xfffffe00;
-    do {
-      if (uVar4 == 4) {
-        if (((~(DAT_010cbe04 >> 1) & 1) != 0) && ((~(DAT_010cbe04 >> 0x11) & 1) != 0)) {
-          iVar1 = DName::isEmpty((DName *)&local_1c);
-          TVar7 = 7;
-          if (iVar1 == 0) {
-            UScore(7);
-            pcVar6 = local_44;
-            cVar5 = (char)local_4c;
-            goto LAB_00ade718;
-          }
-LAB_00ade734:
-          pcVar6 = UScore(TVar7);
-          pDVar2 = (DName *)&local_1c;
-LAB_00ade6b3:
-          DName::operator=(pDVar2,pcVar6);
-        }
-      }
-      else if (uVar4 == 5) {
-        if ((~(DAT_010cbe04 >> 1) & 1) != 0) {
-          iVar1 = DName::isEmpty((DName *)&local_24);
-          if (iVar1 != 0) {
-            pcVar6 = UScore(9);
-            pDVar2 = (DName *)&local_24;
-            goto LAB_00ade6b3;
-          }
-          UScore(9);
-          pDVar2 = local_2c;
-          pDVar3 = (DName *)DName::operator+(this,(char)local_c);
-          pDVar3 = (DName *)DName::operator+(pDVar3,(char *)pDVar2);
-          pDVar2 = (DName *)&local_24;
-          goto LAB_00ade72c;
-        }
-      }
-      else {
-        if (uVar4 != 8) goto LAB_00ade741;
-        if ((~(DAT_010cbe04 >> 1) & 1) != 0) {
-          iVar1 = DName::isEmpty((DName *)&local_1c);
-          TVar7 = 8;
-          if (iVar1 != 0) goto LAB_00ade734;
-          UScore(8);
-          pcVar6 = local_3c;
-          cVar5 = (char)local_34;
-LAB_00ade718:
-          pDVar2 = (DName *)DName::operator+((DName *)&local_1c,cVar5);
-          pDVar3 = (DName *)DName::operator+(pDVar2,pcVar6);
-          pDVar2 = (DName *)&local_1c;
-LAB_00ade72c:
-          DName::operator=(pDVar2,pDVar3);
-        }
-      }
-      DAT_010cbdf4 = DAT_010cbdf4 + 1;
-      uVar4 = (int)*DAT_010cbdf4 - (((*DAT_010cbdf4 < 'A') - 1 & 0x2b) + 0x16);
-    } while( true );
-  }
-  if (in_stack_00000014 == 0) {
-    iVar1 = DName::isEmpty(_param_2);
-    if (iVar1 == 0) {
-      if (((*(byte *)(extraout_EDX_01 + 4) & 0x10) == 0) &&
-         (iVar1 = DName::isEmpty((DName *)param_4), iVar1 == 0)) {
-        cVar5 = (char)local_4c;
-        pDVar2 = param_1;
-        pDVar3 = (DName *)operator+((DNameStatus)local_44,(DName *)0x2);
-        pDVar3 = (DName *)DName::operator+(pDVar3,cVar5);
-        DName::operator+(pDVar3,pDVar2);
-        return param_1;
-      }
-LAB_00adea22:
-      operator+((DNameStatus)param_1,(DName *)0x2);
-      return param_1;
-    }
-    iVar1 = DName::isEmpty((DName *)param_4);
-    if (iVar1 == 0) goto LAB_00adea22;
-  }
-  DVar8 = 2;
-  goto LAB_00adea33;
-LAB_00ade741:
-  DAT_010cbdf4 = DAT_010cbdf4 + 1;
-  if (0x1f < uVar4) {
-LAB_00ade9bf:
-    DVar8 = 1;
-LAB_00adea33:
-    DName::DName(param_1,DVar8);
-    return param_1;
-  }
-  DName::DName(local_c,(char)param_3);
-  pDVar2 = (DName *)DName::operator+((DName *)&local_14,local_4c);
-  DName::operator=(local_c,pDVar2);
-  iVar1 = DName::isEmpty((DName *)&local_1c);
-  if (iVar1 == 0) {
-    pDVar2 = local_4c;
-    pDVar3 = (DName *)DName::operator+(local_c,(char)local_44);
-    pDVar2 = (DName *)DName::operator+(pDVar3,pDVar2);
-    DName::operator=(local_c,pDVar2);
-  }
-  iVar1 = DName::isEmpty((DName *)&local_24);
-  if (iVar1 == 0) {
-    pDVar2 = local_4c;
-    pDVar3 = (DName *)DName::operator+(this_00,(char)local_44);
-    pDVar2 = (DName *)DName::operator+(pDVar3,pDVar2);
-    DName::operator=(local_c,pDVar2);
-  }
-  if ((uVar4 & 0x10) != 0) {
-    if (in_stack_00000014 != 0) goto LAB_00ade9bf;
-    if ((char)param_3 == '\0') {
-      if (*DAT_010cbdf4 != '\0') {
-        pDVar2 = (DName *)getScope();
-        DName::operator|=(local_c,pDVar2);
-        goto LAB_00ade862;
-      }
-    }
-    else {
-      pDVar2 = (DName *)operator+((char *)local_4c,(DName *)&DAT_00d7f2d8);
-      DName::operator=(local_c,pDVar2);
-      pDVar2 = local_4c;
-      if (*DAT_010cbdf4 == '\0') {
-        pDVar2 = (DName *)operator+((DNameStatus)pDVar2,(DName *)0x2);
-      }
-      else {
-        pDVar3 = (DName *)getScope();
-        pDVar2 = (DName *)DName::operator+(pDVar3,pDVar2);
-      }
-      DName::operator=(local_c,pDVar2);
-LAB_00ade862:
-      cVar5 = *DAT_010cbdf4;
-      if (cVar5 != '\0') {
-        DAT_010cbdf4 = DAT_010cbdf4 + 1;
-        if (cVar5 != '@') goto LAB_00ade9bf;
-        goto LAB_00ade887;
-      }
-    }
-    DName::operator+=(local_c,2);
-  }
-LAB_00ade887:
-  if ((~(DAT_010cbe04 >> 1) & 1) == 0) {
-    if (((byte)uVar4 & 0xc) == 0xc) {
-      pDVar2 = (DName *)getBasedType();
-      DName::operator|=(local_c,pDVar2);
-    }
-  }
-  else if (((byte)uVar4 & 0xc) == 0xc) {
-    if (in_stack_00000014 != 0) goto LAB_00ade9bf;
-    pDVar2 = local_4c;
-    pDVar3 = (DName *)getBasedType();
-    pDVar2 = (DName *)DName::operator+(pDVar3,pDVar2);
-    DName::operator=(local_c,pDVar2);
-  }
-  if ((uVar4 & 2) != 0) {
-    pDVar2 = (DName *)operator+((char *)local_4c,(DName *)"volatile ");
-    DName::operator=(local_c,pDVar2);
-  }
-  if ((uVar4 & 1) != 0) {
-    pDVar2 = (DName *)operator+((char *)local_4c,(DName *)"const ");
-    DName::operator=(local_c,pDVar2);
-  }
-  if (in_stack_00000014 == 0) {
-    iVar1 = DName::isEmpty(_param_2);
-    if (iVar1 == 0) {
-      uVar4 = *(uint *)(extraout_EDX + 4);
-      pDVar2 = extraout_EDX;
-      if (((uVar4 & 0x10) == 0) &&
-         (iVar1 = DName::isEmpty((DName *)param_4), pDVar2 = extraout_EDX_00, iVar1 == 0)) {
-        pDVar2 = local_4c;
-        cVar5 = (char)local_44;
-        pDVar3 = (DName *)operator+((char)local_3c,(DName *)0x20);
-        pDVar3 = (DName *)DName::operator+(pDVar3,cVar5);
-        pDVar2 = (DName *)DName::operator+(pDVar3,pDVar2);
-LAB_00ade9a4:
-        DName::operator+=(local_c,pDVar2);
-      }
-      else {
-        if (-1 < (char)uVar4) goto LAB_00ade997;
-        DName::operator=(local_c,pDVar2);
-      }
-    }
-    else {
-      iVar1 = DName::isEmpty((DName *)param_4);
-      if (iVar1 == 0) {
-LAB_00ade997:
-        pDVar2 = (DName *)operator+((char)local_4c,(DName *)0x20);
-        goto LAB_00ade9a4;
-      }
-    }
-  }
-  local_8 = local_8 | 0x10;
-  pDVar2 = local_c;
-LAB_00ade9b4:
-  DName::DName(param_1,pDVar2);
-  return param_1;
-}
-
-
-//// FUNCTION operator_char* @ 00adea42 ////
-
-/* Library Function - Single Match
-    public: __thiscall UnDecorator::operator char *(void)
-   
-   Library: Visual Studio 2003 Release */
-
-char * __thiscall UnDecorator::operator_char_(UnDecorator *this)
-
-{
-  char cVar1;
-  DName *pDVar2;
-  int iVar3;
-  char *pcVar4;
-  char *pcVar5;
-  char local_24 [16];
-  undefined4 local_14;
-  uint local_10;
-  undefined4 local_c;
-  uint local_8;
-  
-  local_c = 0;
-  local_14 = 0;
-  local_8 = local_8 & 0xfffffe00;
-  local_10 = local_10 & 0xfffffe00;
-  if (DAT_010cbdf8 == (char *)0x0) goto LAB_00adead8;
-  if (*DAT_010cbdf8 == '?') {
-    if (DAT_010cbdf8[1] != '@') {
-      if (DAT_010cbdf8[1] == '$') {
-        pDVar2 = (DName *)getTemplateName(SUB41(local_24,0));
-        DName::operator=((DName *)&local_c,pDVar2);
-        if (((byte)local_8 & 0xf) != 1) goto LAB_00adead8;
-        local_8 = local_8 & 0xfffffff0;
-        DAT_010cbdf4 = DAT_010cbdf8;
-      }
-      goto LAB_00adeac5;
-    }
-    DAT_010cbdf4 = DAT_010cbdf4 + 2;
-    getDecoratedName();
-    pDVar2 = (DName *)operator+(local_24,(DName *)&DAT_00d7f444);
-  }
-  else {
-LAB_00adeac5:
-    pDVar2 = (DName *)getDecoratedName();
-  }
-  DName::operator=((DName *)&local_c,pDVar2);
-LAB_00adead8:
-  iVar3 = (int)(local_8 << 0x1c) >> 0x1c;
-  if (iVar3 == 3) {
-    return (char *)0x0;
-  }
-  if (((*DAT_010cbdf4 == '\0') || ((DAT_010cbe04._1_1_ & 0x10) != 0)) && (iVar3 != 1)) {
-    DName::operator=((DName *)&local_14,(DName *)&local_c);
-  }
-  else {
-    DName::operator=((DName *)&local_14,DAT_010cbdf8);
-  }
-  if (DAT_010cbdfc == (char *)0x0) {
-    iVar3 = DName::length((DName *)&local_14);
-    DAT_010cbe00 = iVar3 + 1;
-    DAT_010cbdfc = (char *)(*DAT_010cbdd4)(iVar3 + 8U & 0xfffffff8);
-    if (DAT_010cbdfc == (char *)0x0) {
-      return (char *)0x0;
-    }
-  }
-  DName::getString((DName *)&local_14,DAT_010cbdfc,DAT_010cbe00);
-  pcVar4 = DAT_010cbdfc;
-  pcVar5 = DAT_010cbdfc;
-  while (cVar1 = *pcVar4, cVar1 != '\0') {
-    if (cVar1 == ' ') {
-      *pcVar5 = ' ';
-      pcVar5 = pcVar5 + 1;
-      do {
-        pcVar4 = pcVar4 + 1;
-      } while (*pcVar4 == ' ');
-    }
-    else {
-      *pcVar5 = cVar1;
-      pcVar5 = pcVar5 + 1;
-      pcVar4 = pcVar4 + 1;
-    }
-  }
-  *pcVar5 = '\0';
-  return DAT_010cbdfc;
-}
-
-
-//// FUNCTION getPtrRefType @ 00adeb8d ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getPtrRefType(class DName const &,class DName
-   const &,char)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getPtrRefType(DName *param_1,DName *param_2,char param_3)
-
-{
-  char cVar1;
-  int iVar2;
-  DName *extraout_ECX;
-  undefined3 in_stack_0000000d;
-  DName *in_stack_00000010;
-  DName local_c [8];
-  
-  cVar1 = *DAT_010cbdf4;
-  if (cVar1 == '\0') {
-    DName::DName(local_c,2);
-    DName::operator+=(local_c,(char)in_stack_00000010);
-    iVar2 = DName::isEmpty(param_2);
-    if (iVar2 == 0) {
-      DName::operator+=(local_c,extraout_ECX);
-    }
-    iVar2 = DName::isEmpty(_param_3);
-    if (iVar2 == 0) {
-      iVar2 = DName::isEmpty(param_2);
-      if (iVar2 == 0) {
-        DName::operator+=(local_c,' ');
-      }
-      DName::operator+=(local_c,_param_3);
-    }
-    DName::DName(param_1,local_c);
-  }
-  else if (((cVar1 < '6') || ('9' < cVar1)) && (cVar1 != '_')) {
-    getDataIndirectType(local_c,param_3,in_stack_00000010,(int)param_2);
-    getPtrRefDataType(param_1,(int)local_c);
-  }
-  else {
-    DName::DName(local_c,(char)in_stack_00000010);
-    iVar2 = DName::isEmpty(param_2);
-    if (iVar2 == 0) {
-      iVar2 = DName::isEmpty(_param_3);
-      if ((iVar2 != 0) || (((byte)_param_3[4] & 0x10) == 0)) {
-        DName::operator+=(local_c,param_2);
-      }
-    }
-    iVar2 = DName::isEmpty(_param_3);
-    if (iVar2 == 0) {
-      DName::operator+=(local_c,_param_3);
-    }
-    getFunctionIndirectType(param_1);
-  }
-  return param_1;
-}
-
-
-//// FUNCTION ___unDName @ 00adecf4 ////
-
-/* WARNING: Function: __SEH_prolog replaced with injection: SEH_prolog */
-/* WARNING: Function: __SEH_epilog replaced with injection: EH_epilog3 */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Library Function - Single Match
-    ___unDName
-   
-   Library: Visual Studio 2003 Release */
-
-char * __cdecl
-___unDName(char *param_1,char *param_2,int param_3,int param_4,undefined4 param_5,ushort param_6)
-
-{
-  int iVar1;
-  UnDecorator local_98 [120];
-  char *local_20;
-  undefined4 uStack_c;
-  undefined *local_8;
-  
-  local_8 = &DAT_00d7f450;
-  uStack_c = 0xaded03;
-  if ((param_4 != 0) && (iVar1 = FUN_00ad7039(5), iVar1 != 0)) {
-    __lock(5);
-    local_8 = (undefined *)0x0;
-    DAT_010cbdd4 = param_4;
-    _DAT_010cbdd8 = param_5;
-    _DAT_010cbde4 = 0;
-    _DAT_010cbddc = 0;
-    _DAT_010cbde0 = 0;
-    UnDecorator::UnDecorator
-              (local_98,param_1,param_2,param_3,(_func_char_ptr_long *)0x0,(uint)param_6);
-    local_20 = UnDecorator::operator_char_(local_98);
-    HeapManager::Destructor((HeapManager *)&DAT_010cbdd4);
-    local_8 = (undefined *)0xffffffff;
-    FUN_00aded8b();
-    return local_20;
-  }
-  return (char *)0x0;
-}
-
-
-//// FUNCTION FUN_00aded8b @ 00aded8b ////
-
-void FUN_00aded8b(void)
-
-{
-  FUN_00ad700c(5);
-  return;
-}
-
-
-//// FUNCTION getBasicDataType @ 00adee34 ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getBasicDataType(class DName const &)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getBasicDataType(DName *param_1)
-
-{
-  byte bVar1;
-  byte *pbVar2;
-  DName *pDVar3;
-  int iVar4;
-  uint uVar5;
-  uint uVar6;
-  DName *in_stack_00000008;
-  char *pcVar7;
-  DName local_28 [8];
-  DName local_20 [4];
-  byte local_1c;
-  DName local_18 [4];
-  byte local_14;
-  undefined4 local_10;
-  uint local_c;
-  byte local_5;
-  
-  pbVar2 = DAT_010cbdf4;
-  bVar1 = *DAT_010cbdf4;
-  if (bVar1 == 0) {
-    operator+((DNameStatus)param_1,(DName *)0x2);
-    return param_1;
-  }
-  DAT_010cbdf4 = DAT_010cbdf4 + 1;
-  local_10 = 0;
-  uVar6 = (uint)bVar1;
-  local_c = local_c & 0xfffffe00;
-  uVar5 = 0xffffffff;
-  if (uVar6 < 0x4e) {
-    if (uVar6 == 0x4d) {
-      pcVar7 = "float";
-    }
-    else {
-      switch(uVar6) {
-      case 0x43:
-      case 0x44:
-      case 0x45:
-        pcVar7 = "char";
-        break;
-      case 0x46:
-      case 0x47:
-        pcVar7 = "short";
-        break;
-      case 0x48:
-      case 0x49:
-        pcVar7 = "int";
-        break;
-      case 0x4a:
-      case 0x4b:
-        pcVar7 = "long";
-        break;
-      default:
-        goto LAB_00adef9a;
-      }
-    }
-    goto LAB_00adee85;
-  }
-  if (uVar6 == 0x4e) {
-LAB_00adf05b:
-    DName::operator+=((DName *)&local_10,"double");
-LAB_00adf068:
-    if (uVar5 != 0xffffffff) {
-LAB_00adefdc:
-      local_10 = 0;
-      local_c = local_c & 0xfffffe00;
-      DName::DName(local_18,in_stack_00000008);
-      if (uVar5 != 0xfffffffe) {
-        iVar4 = DName::isEmpty(in_stack_00000008);
-        if (iVar4 != 0) {
-          if ((uVar5 & 1) == 0) {
-            if ((uVar5 & 2) != 0) {
-              DName::operator=((DName *)&local_10,"volatile");
-            }
-          }
-          else {
-            DName::operator=((DName *)&local_10,"const");
-            if ((uVar5 & 2) != 0) {
-              DName::operator+=((DName *)&local_10," volatile");
-            }
-          }
-        }
-        getPtrRefType(param_1,(DName *)&local_10,(char)local_18);
-        return param_1;
-      }
-      local_14 = local_14 | 0x80;
-      getPtrRefType(local_20,(DName *)&local_10,(char)local_18);
-      if ((local_1c & 0x80) == 0) {
-        DName::operator+=(local_20,"[]");
-      }
-      pDVar3 = local_20;
-      goto LAB_00adf027;
-    }
-LAB_00adf071:
-    if (uVar6 == 0x43) {
-      pcVar7 = "signed ";
-      pDVar3 = local_18;
-LAB_00adf0d1:
-      pDVar3 = (DName *)operator+((char *)pDVar3,(DName *)pcVar7);
-      DName::operator=((DName *)&local_10,pDVar3);
-    }
-    else {
-      if ((((uVar6 == 0x45) || (uVar6 == 0x47)) || (uVar6 == 0x49)) || (uVar6 == 0x4b)) {
-        pcVar7 = "unsigned ";
-        pDVar3 = local_20;
-        goto LAB_00adf0d1;
-      }
-      if ((uVar6 == 0x5f) &&
-         (((local_5 == 0x45 || (local_5 == 0x47)) ||
-          ((local_5 == 0x49 || ((local_5 == 0x4b || (local_5 == 0x4d)))))))) {
-        pcVar7 = "unsigned ";
-        pDVar3 = local_28;
-        goto LAB_00adf0d1;
-      }
-    }
-    iVar4 = DName::isEmpty(in_stack_00000008);
-    if (iVar4 == 0) {
-      pDVar3 = (DName *)operator+((char)local_28,(DName *)0x20);
-      DName::operator+=((DName *)&local_10,pDVar3);
-    }
-  }
-  else {
-    if (uVar6 == 0x4f) {
-      DName::operator=((DName *)&local_10,"long ");
-      goto LAB_00adf05b;
-    }
-    if (0x4f < uVar6) {
-      if (uVar6 < 0x54) {
-        uVar5 = uVar6 & 3;
-        goto LAB_00adf068;
-      }
-      if (uVar6 != 0x5f) goto LAB_00adef9a;
-      local_5 = *DAT_010cbdf4;
-      DAT_010cbdf4 = pbVar2 + 2;
-      if (local_5 < 0x4e) {
-        if (local_5 < 0x4c) {
-          if (local_5 < 0x48) {
-            if (local_5 < 0x46) {
-              if (local_5 == 0x24) {
-                getBasicDataType(local_20);
-                operator+((char *)param_1,(DName *)"__w64 ");
-                return param_1;
-              }
-              if ((local_5 < 0x44) || (0x45 < local_5)) goto LAB_00adefc5;
-              pcVar7 = "__int8";
-            }
-            else {
-              pcVar7 = "__int16";
-            }
-          }
-          else if (local_5 < 0x48) {
-LAB_00adefc5:
-            pcVar7 = "UNKNOWN";
-          }
-          else if (local_5 < 0x4a) {
-            pcVar7 = "__int32";
-          }
-          else {
-            if (0x4b < local_5) goto LAB_00adefc5;
-            pcVar7 = "__int64";
-          }
-        }
-        else {
-          pcVar7 = "__int128";
-        }
-LAB_00adee85:
-        DName::operator=((DName *)&local_10,pcVar7);
-        goto LAB_00adf071;
-      }
-      if (local_5 == 0x4e) {
-        pcVar7 = "bool";
-        goto LAB_00adee85;
-      }
-      if (local_5 != 0x4f) {
-        if (local_5 != 0x57) {
-          if ((local_5 < 0x58) || (0x59 < local_5)) goto LAB_00adefc5;
-          goto LAB_00adef9a;
-        }
-        pcVar7 = "wchar_t";
-        goto LAB_00adee85;
-      }
-      uVar5 = 0xfffffffe;
-      goto LAB_00adefdc;
-    }
-LAB_00adef9a:
-    DAT_010cbdf4 = DAT_010cbdf4 + -1;
-    pDVar3 = (DName *)getECSUDataType();
-    DName::operator=((DName *)&local_10,pDVar3);
-    iVar4 = DName::isEmpty((DName *)&local_10);
-    if (iVar4 == 0) goto LAB_00adf071;
-  }
-  pDVar3 = (DName *)&local_10;
-LAB_00adf027:
-  DName::DName(param_1,pDVar3);
-  return param_1;
-}
-
-
-//// FUNCTION getPrimaryDataType @ 00adf1a7 ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getPrimaryDataType(class DName const &)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getPrimaryDataType(DName *param_1)
-
-{
-  char cVar1;
-  int iVar2;
-  char *pcVar3;
-  DName *in_stack_00000008;
-  DName local_1c [8];
-  undefined4 local_14;
-  uint local_10;
-  undefined4 local_c;
-  uint local_8;
-  
-  cVar1 = *DAT_010cbdf4;
-  local_8 = local_8 & 0xfffffe00;
-  local_c = 0;
-  pcVar3 = DAT_010cbdf4;
-  if (cVar1 != '\0') {
-    if (cVar1 != '$') {
-      if (cVar1 != 'A') {
-        if (cVar1 != 'B') {
-          getBasicDataType(param_1);
-          return param_1;
-        }
-        DName::operator=((DName *)&local_c,"volatile");
-        iVar2 = DName::isEmpty(in_stack_00000008);
-        if (iVar2 == 0) {
-          DName::operator+=((DName *)&local_c,' ');
-        }
-      }
-      DName::DName((DName *)&local_14,in_stack_00000008);
-      DAT_010cbdf4 = DAT_010cbdf4 + 1;
-      local_10 = local_10 | 0x10;
-      getPtrRefType(param_1,(DName *)&local_c,(char)&local_14);
-      return param_1;
-    }
-    if (DAT_010cbdf4[1] == '$') {
-      pcVar3 = DAT_010cbdf4 + 2;
-      cVar1 = *pcVar3;
-      if (cVar1 != '\0') {
-        if (cVar1 == 'A') {
-          DAT_010cbdf4 = DAT_010cbdf4 + 3;
-          getFunctionIndirectType(param_1);
-          return param_1;
-        }
-        if (cVar1 == 'B') {
-          DAT_010cbdf4 = DAT_010cbdf4 + 3;
-          getPtrRefDataType(param_1,(int)in_stack_00000008);
-          return param_1;
-        }
-        if (cVar1 == 'C') {
-          local_10 = local_10 & 0xfffffe00;
-          DAT_010cbdf4 = DAT_010cbdf4 + 3;
-          local_14 = 0;
-          getDataIndirectType(local_1c,(char)in_stack_00000008,(DName *)0x0,(int)&local_14);
-          getBasicDataType(param_1);
-          return param_1;
-        }
-        goto LAB_00adf26f;
-      }
-    }
-    else if (DAT_010cbdf4[1] != '\0') {
-LAB_00adf26f:
-      DAT_010cbdf4 = pcVar3;
-      DName::DName(param_1,1);
-      return param_1;
-    }
-  }
-  DAT_010cbdf4 = pcVar3;
-  operator+((DNameStatus)param_1,(DName *)0x2);
-  return param_1;
-}
-
-
-//// FUNCTION getDataType @ 00adf2d7 ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getDataType(class DName *)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getDataType(DName *param_1)
-
-{
-  char cVar1;
-  int iVar2;
-  DName *pDVar3;
-  DName *in_stack_00000008;
-  DName local_1c [8];
-  undefined4 local_14;
-  ushort local_10;
-  DName local_c [8];
-  
-  DName::DName(local_c,in_stack_00000008);
-  cVar1 = *DAT_010cbdf4;
-  if (cVar1 == '\0') {
-    operator+((DNameStatus)param_1,(DName *)0x2);
-  }
-  else {
-    if (cVar1 == '?') {
-      DAT_010cbdf4 = DAT_010cbdf4 + 1;
-      local_10 = local_10 & 0xfe00;
-      local_14 = 0;
-      pDVar3 = (DName *)getDataIndirectType(local_1c,(char)local_c,(DName *)0x0,(int)&local_14);
-      DName::operator=(local_c,pDVar3);
-    }
-    else if (cVar1 == 'X') {
-      DAT_010cbdf4 = DAT_010cbdf4 + 1;
-      iVar2 = DName::isEmpty(local_c);
-      if (iVar2 == 0) {
-        operator+((char *)param_1,(DName *)"void ");
-        return param_1;
-      }
-      DName::DName(param_1,"void");
-      return param_1;
-    }
-    getPrimaryDataType(param_1);
-  }
-  return param_1;
-}
-
-
-//// FUNCTION getExternalDataType @ 00adf385 ////
-
-/* Library Function - Single Match
-    private: static class DName __cdecl UnDecorator::getExternalDataType(class DName const &)
-   
-   Library: Visual Studio 2003 Release */
-
-DName * __cdecl UnDecorator::getExternalDataType(DName *param_1)
-
-{
-  DName *pDVar1;
-  DName *this;
-  DName *this_00;
-  undefined1 local_24 [8];
-  DName local_1c [8];
-  DName local_14 [8];
-  DName local_c [8];
-  
-  pDVar1 = HeapManager::getMemory((HeapManager *)&DAT_010cbdd4,8,0);
-  this_00 = (DName *)0x0;
-  if (pDVar1 != (DName *)0x0) {
-    *(ushort *)(pDVar1 + 4) = *(ushort *)(pDVar1 + 4) & 0xfe00;
-    *(undefined4 *)pDVar1 = 0;
-    this_00 = pDVar1;
-  }
-  getDataType(local_14);
-  getDataIndirectType();
-  pDVar1 = local_1c;
-  this = (DName *)DName::operator+(local_c,(char)local_24);
-  pDVar1 = (DName *)DName::operator+(this,pDVar1);
-  DName::operator=(this_00,pDVar1);
-  DName::DName(param_1,local_14);
-  return param_1;
-}
-
-
-//// FUNCTION __msize @ 00adf3f5 ////
-
-/* WARNING: Function: __SEH_prolog replaced with injection: SEH_prolog */
-/* WARNING: Function: __SEH_epilog replaced with injection: EH_epilog3 */
-/* Library Function - Single Match
-    __msize
-   
-   Library: Visual Studio 2003 Release */
-
-size_t __cdecl __msize(void *_Memory)
-
-{
-  uint uVar1;
-  SIZE_T SVar2;
-  size_t local_20;
-  
-  if (DAT_010dadec == 3) {
-    __lock(4);
-    uVar1 = ___sbh_find_block((int)_Memory);
-    if (uVar1 != 0) {
-      local_20 = *(int *)((int)_Memory + -4) - 9;
-    }
-    FUN_00adf462();
-    if (uVar1 != 0) {
-      return local_20;
-    }
-  }
-  SVar2 = HeapSize(hHeap_010dade8,0,_Memory);
-  return SVar2;
-}
-
-
-//// FUNCTION FUN_00adf462 @ 00adf462 ////
-
-void FUN_00adf462(void)
-
-{
-  FUN_00ad700c(4);
-  return;
-}
-
-
-//// FUNCTION FUN_00adf46b @ 00adf46b ////
-
-/* WARNING: Function: __SEH_prolog replaced with injection: SEH_prolog */
-/* WARNING: Function: __SEH_epilog replaced with injection: EH_epilog3 */
-
-undefined4 FUN_00adf46b(void)
-
-{
-  return 1;
-}
-
-
-//// FUNCTION ___sse2_available_init @ 00adf4a0 ////
-
-/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
-/* WARNING: Removing unreachable block (ram,0x00adf4e4) */
-/* WARNING: Removing unreachable block (ram,0x00adf4d1) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Library Function - Single Match
-    ___sse2_available_init
-   
-   Library: Visual Studio 2003 Release */
-
-undefined4 ___sse2_available_init(void)
-
-{
-  int *piVar1;
-  uint uVar2;
-  int iVar3;
-  byte in_AF;
-  byte in_TF;
-  byte in_IF;
-  byte in_NT;
-  byte in_AC;
-  byte in_VIF;
-  byte in_VIP;
-  byte in_ID;
-  uint uVar4;
-  uint local_20;
-  int local_1c;
-  uint local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_8;
-  
-  local_8 = DAT_00e9a098;
-  local_20 = 0;
-  local_1c = 0;
-  local_18 = local_18 & 0xffffff00;
-  uVar4 = (uint)(in_NT & 1) * 0x4000 | (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 | 0x40
-          | (uint)(in_AF & 1) * 0x10 | 4 | (uint)(in_ID & 1) * 0x200000 |
-          (uint)(in_VIP & 1) * 0x100000 | (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000
-  ;
-  uVar2 = uVar4 ^ 0x200000;
-  if (((uint)((uVar2 & 0x4000) != 0) * 0x4000 | (uint)((uVar2 & 0x200) != 0) * 0x200 |
-       (uint)((uVar2 & 0x100) != 0) * 0x100 | (uint)((uVar2 & 0x40) != 0) * 0x40 |
-       (uint)((uVar2 & 0x10) != 0) * 0x10 | (uint)((uVar2 & 4) != 0) * 4 |
-       (uint)((uVar2 & 0x200000) != 0) * 0x200000 | (uint)((uVar2 & 0x40000) != 0) * 0x40000) !=
-      uVar4) {
-    iVar3 = cpuid_basic_info(0);
-    local_18 = *(uint *)(iVar3 + 4);
-    local_14 = *(undefined4 *)(iVar3 + 8);
-    local_10 = *(undefined4 *)(iVar3 + 0xc);
-    piVar1 = (int *)cpuid_Version_info(1);
-    local_1c = *piVar1;
-    local_20 = piVar1[2];
-  }
-  _DAT_010dadc4 = 0;
-  DAT_010dadc0 = 0;
-  if (((local_20 & 0x4000000) != 0) && (iVar3 = FUN_00adf46b(), iVar3 != 0)) {
-    _DAT_010dadc4 = 1;
-    iVar3 = _strncmp("AuthenticAMD",(char *)&local_18,0xc);
-    if ((iVar3 != 0) ||
-       (uVar2 = local_1c >> 8 & 0xf,
-       (~-(uint)(uVar2 != 0xf) & local_1c >> 0x14 & 0xffU) + uVar2 != 0xf)) {
-      DAT_010dadc0 = 1;
-    }
-  }
-  return 0;
-}
-
-
-//// FUNCTION FUN_00adf590 @ 00adf590 ////
-
-void FUN_00adf590(void)
-
-{
-  float10 in_ST0;
-  float10 in_ST1;
-  
-  FUN_00adf5a9((double)in_ST1,SUB84((double)in_ST0,0),(uint)((ulonglong)(double)in_ST0 >> 0x20));
-  return;
-}
-
-
-//// FUNCTION FUN_00adf5a9 @ 00adf5a9 ////
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-float10 __cdecl FUN_00adf5a9(double param_1,int param_2,uint param_3)
-
-{
-  byte bVar1;
-  ushort uVar2;
-  uint uVar3;
-  uint uVar4;
-  uint uVar5;
-  int iVar6;
-  uint uVar7;
-  uint uVar8;
-  int iVar9;
-  ushort uVar10;
-  double dVar11;
-  double dVar12;
-  double dVar13;
-  undefined1 auVar14 [16];
-  undefined1 auVar15 [16];
-  undefined1 auVar16 [16];
-  undefined1 auVar17 [16];
-  undefined1 auVar18 [16];
-  longlong lVar19;
-  ulonglong uVar20;
-  ulonglong in_XMM2_Qb;
-  undefined1 auVar21 [16];
-  longlong lVar24;
-  undefined1 auVar22 [16];
-  undefined1 auVar23 [16];
-  undefined1 in_XMM3 [16];
-  undefined1 auVar25 [16];
-  ulonglong uVar26;
-  double dVar27;
-  double dVar28;
-  double dVar29;
-  double dVar30;
-  double dVar31;
-  double dVar32;
-  double dVar33;
-  double dVar34;
-  
-  dVar11 = (double)((ulonglong)param_1 >> 0x2c);
-  uVar10 = (ushort)((ulonglong)param_1 >> 0x30);
-  uVar3 = (SUB82(dVar11,0) & 0xff) + 1 & 0x1fe;
-  dVar33 = (double)((ulonglong)param_1 & 0xfffffffffffff | 0x3ff0000000000000) *
-           *(double *)(&DAT_00d7f530 + uVar3 * 4);
-  dVar29 = *(double *)(&DAT_00d7f530 + uVar3 * 4);
-  dVar12 = *(double *)(&DAT_00d7f940 + uVar3 * 8);
-  dVar31 = *(double *)(&UNK_00d7f948 + uVar3 * 8);
-  uVar3 = 0x7fef - uVar10;
-  iVar6 = SUB84(param_1,0);
-  uVar7 = (uint)((ulonglong)param_1 >> 0x20);
-  dVar30 = param_1;
-  if ((uVar10 - 0x10 | uVar3) < 0x80000000) {
-    uVar3 = 0;
-    uVar8 = 0x3fe7f;
-LAB_00adf626:
-    uVar4 = ((ushort)((ulonglong)dVar33 >> 0x26) & 0xff) + 1 & 0x1fe;
-    dVar27 = (double)((ulonglong)dVar30 & 0xfffffffffffff | DAT_00d82dd0);
-    dVar13 = (double)((ulonglong)dVar27 & 0xfffffffff8000000);
-    in_XMM3._8_8_ = in_XMM3._8_8_ >> 0x1f;
-    dVar27 = dVar27 - dVar13;
-    uVar5 = ((ushort)((ulonglong)(dVar33 * *(double *)(&DAT_00d80150 + uVar4 * 4)) >> 0x1f) & 0x1ff)
-            + 1 & 0x3fe;
-    dVar28 = dVar29 * *(double *)(&DAT_00d80150 + uVar4 * 4) *
-             *(double *)(&DAT_00d80d70 + uVar5 * 4);
-    dVar33 = dVar33 * *(double *)(&DAT_00d80150 + uVar4 * 4) *
-             *(double *)(&DAT_00d80d70 + uVar5 * 4);
-    dVar30 = dVar12 + *(double *)(&DAT_00d80560 + uVar4 * 8) +
-             (double)(int)((longlong)dVar11 - (ulonglong)uVar8 >> 8) +
-             *(double *)(&DAT_00d81580 + uVar5 * 8);
-    dVar32 = dVar31 + *(double *)(&DAT_00d80568 + uVar4 * 8) +
-             *(double *)(&DAT_00d81588 + uVar5 * 8);
-    dVar12 = (double)((ulonglong)dVar28 & 0xfffffffff8000000);
-    dVar28 = dVar28 - dVar12;
-    dVar34 = dVar33 + -1.442694902420044;
-    dVar31 = dVar30 + dVar34;
-    dVar29 = (double)CONCAT44(param_3,param_2);
-    uVar2 = (ushort)(param_3 >> 0x10);
-    dVar30 = dVar30 - dVar31;
-    in_XMM3._0_8_ = 0xfffffffff8000000;
-    uVar4 = (uint)(ushort)((ulonglong)dVar31 >> 0x30);
-    dVar12 = (((dVar33 - dVar12 * dVar13) - dVar13 * dVar28) - dVar12 * dVar27) - dVar27 * dVar28;
-    dVar33 = dVar34 - dVar12;
-    dVar11 = dVar31 - dVar12;
-    uVar8 = uVar2 & 0x7ff0;
-    if (uVar8 < 0x7ff0) {
-      iVar6 = (uVar8 - 0x3ff0) + (uVar4 & 0x7ff0);
-      if ((0x40a0U - iVar6 | iVar6 - 0x3c70U) < 0x80000000) {
-LAB_00adf778:
-        dVar13 = (double)((ulonglong)dVar29 & 0xfffffffff8000000);
-        dVar27 = (double)((ulonglong)dVar11 & 0xfffffffff8000000);
-        dVar12 = (dVar30 + dVar34) - (dVar12 - (dVar31 - dVar11));
-        dVar31 = dVar13 * dVar27 * 128.0;
-        uVar7 = (uint)ROUND(dVar31);
-        dVar29 = dVar13 * (dVar11 - dVar27) + dVar27 * (dVar29 - dVar13) +
-                 (dVar11 - dVar27) * (dVar29 - dVar13);
-        if (0 < (int)(0x1ff7f - uVar7 | uVar7 + 0x1e1ff)) {
-          iVar6 = (uVar7 & 0x7f) * 0x10;
-          auVar14._0_8_ = (double)((ulonglong)((uVar3 + uVar7 & 0xffffff80) + 0x1ff80) << 0x2d);
-          auVar14._8_4_ = 0;
-          auVar14._12_4_ = (int)((ulonglong)auVar14._0_8_ >> 0x20);
-          dVar30 = *(double *)(&DAT_00d825b0 + iVar6) * auVar14._0_8_;
-          dVar29 = (dVar31 - ((dVar31 + 6755399441055744.0) - 6755399441055744.0)) * 0.0078125 +
-                   dVar29 + ((dVar33 * 0.16015105075297303 + dVar33 * dVar33 * -0.08325619496072671)
-                             * dVar33 * dVar33 +
-                             dVar33 * 9.597935033233511e-08 + dVar33 * dVar33 * -0.3465736568077919
-                            + dVar32 + dVar12) * (double)CONCAT44(param_3,param_2);
-          return (float10)(dVar29 * dVar29 * dVar30 *
-                           (dVar29 * 0.0013333558146428443 + 0.009618129107628477) * dVar29 * dVar29
-                           + *(double *)(&UNK_00d825b8 + iVar6) * auVar14._8_8_ +
-                           (dVar29 * 0.055504108664821576 + 0.2402265069591007) * dVar29 * dVar29 *
-                           dVar30 + dVar29 * 0.6931471805599453 * dVar30 + dVar30);
-        }
-        if ((int)uVar7 < 1) {
-          if ((int)uVar7 < -0x3fdff) {
-LAB_00ae000a:
-            dVar29 = (double)((ulonglong)uVar3 << 0x2d);
-            iVar9 = 0x19;
-            goto LAB_00adfdb1;
-          }
-          uVar3 = uVar3 + 0x80;
-          uVar8 = (uVar7 & 0xffffff80) + 0x3fe80;
-          uVar10 = 0;
-        }
-        else {
-          if (0x3ffff < uVar7) goto LAB_00ae002d;
-          uVar3 = uVar3 + 0x3ff00;
-          uVar8 = uVar7 - 0x80 & 0xffffff80;
-          uVar10 = 0x3ff0;
-        }
-        iVar6 = (uVar7 & 0x7f) * 0x10;
-        uVar7 = ((int)-(uVar8 - 0x1ff80) >> 7) + 2;
-        auVar18._0_8_ = (double)((ulonglong)uVar8 << 0x2d);
-        auVar18._8_4_ = 0;
-        auVar18._12_4_ = (int)((ulonglong)auVar18._0_8_ >> 0x20);
-        dVar11 = *(double *)(&DAT_00d825b0 + iVar6) * auVar18._0_8_;
-        dVar12 = (dVar31 - ((dVar31 + 6755399441055744.0) - 6755399441055744.0)) * 0.0078125 +
-                 dVar29 + ((dVar33 * 0.16015105075297303 + dVar33 * dVar33 * -0.08325619496072671) *
-                           dVar33 * dVar33 +
-                           dVar33 * 9.597935033233511e-08 + dVar33 * dVar33 * -0.3465736568077919 +
-                          dVar32 + dVar12) * (double)CONCAT44(param_3,param_2);
-        dVar29 = (double)((ulonglong)uVar3 << 0x2d);
-        uVar26 = (ulonglong)(uVar7 + (uVar7 & 0x20));
-        dVar31 = (double)(-1L << uVar26 & (ulonglong)dVar11);
-        dVar12 = dVar12 * dVar12 * dVar11 *
-                 (dVar12 * 0.0013333558146428443 + 0.009618129107628477) * dVar12 * dVar12 +
-                 *(double *)(&UNK_00d825b8 + iVar6) * auVar18._8_8_ +
-                 (dVar12 * 0.055504108664821576 + 0.2402265069591007) * dVar12 * dVar12 * dVar11 +
-                 dVar12 * 0.6931471805599453 * dVar11;
-        dVar30 = (double)((ulonglong)(dVar31 + dVar12) & -1L << uVar26);
-        dVar12 = dVar12 + (dVar31 - dVar30) + (dVar11 - dVar31);
-        if ((int)(uVar8 - 0x1ff80) < 1) {
-          dVar29 = dVar12 * dVar29 + dVar30 * dVar29;
-          dVar29 = dVar29 + (double)((ulonglong)uVar10 << 0x30) * dVar29;
-          iVar9 = 0x18;
-          if ((((ushort)((ulonglong)dVar29 >> 0x30) & 0x7ff0) != 0x7ff0) &&
-             (iVar9 = 0x19, ((ulonglong)dVar29 & 0x7ff0000000000000) != 0)) {
-            return (float10)dVar29;
-          }
-        }
-        else {
-          dVar29 = (dVar12 + dVar30) * dVar29;
-          dVar29 = dVar29 + (double)((ulonglong)uVar10 << 0x30) * dVar29;
-          iVar9 = 0x18;
-          if ((((ushort)((ulonglong)dVar29 >> 0x30) & 0x7ff0) != 0x7ff0) &&
-             (iVar9 = 0x19, ((ulonglong)dVar29 & 0x7ff0000000000000) != 0)) {
-            return (float10)dVar29;
-          }
-        }
-      }
-      else {
-        dVar31 = dVar29 * dVar11;
-        uVar7 = (ushort)((ulonglong)dVar31 >> 0x30) & 0x7ff0;
-        uVar8 = uVar7 - 0x3c70;
-        if ((0x40a0 - uVar7 | uVar8) < 0x80000000) goto LAB_00adf778;
-        if (0x7fffffff < uVar8) {
-          return (float10)(double)((ulonglong)(uVar3 | 0x1ff80) << 0x2d);
-        }
-        if (((uVar2 ^ (uVar10 & 0x7ff0) + 0xc010) & 0x8000) != 0) goto LAB_00ae000a;
-LAB_00ae002d:
-        iVar9 = 0x18;
-        if (uVar3 == 0) {
-          dVar29 = INFINITY;
-        }
-        else {
-          dVar29 = -INFINITY;
-        }
-      }
-      goto LAB_00adfdb1;
-    }
-    dVar29 = (double)CONCAT44(param_3,param_2);
-    auVar21._8_8_ = in_XMM2_Qb;
-    auVar21._0_8_ = dVar29;
-    dVar12 = (double)CONCAT44(uVar3,uVar4);
-    if (iVar6 != 0) goto LAB_00adfcbc;
-    if (uVar7 == 0x3ff00000) goto LAB_00adfd9a;
-    dVar12 = (double)CONCAT44(uVar3,uVar7);
-    if (uVar7 != 0xbff00000) goto LAB_00adfcbc;
-    auVar16._0_4_ = -(uint)((int)((ulonglong)dVar29 & 0xfffffffffffff) == 0);
-    auVar16._4_4_ = -(uint)((int)(((ulonglong)dVar29 & 0xfffffffffffff) >> 0x20) == 0);
-    auVar16._8_4_ = -(uint)((int)(in_XMM3._8_8_ & in_XMM2_Qb) == 0);
-    auVar16._12_4_ = -(uint)((int)((in_XMM3._8_8_ & in_XMM2_Qb) >> 0x20) == 0);
-    if ((ushort)((ushort)(SUB161(auVar16 >> 7,0) & 1) | (ushort)(SUB161(auVar16 >> 0xf,0) & 1) << 1
-                 | (ushort)(SUB161(auVar16 >> 0x17,0) & 1) << 2 |
-                 (ushort)(SUB161(auVar16 >> 0x1f,0) & 1) << 3 |
-                 (ushort)(SUB161(auVar16 >> 0x27,0) & 1) << 4 |
-                 (ushort)(SUB161(auVar16 >> 0x2f,0) & 1) << 5 |
-                 (ushort)(SUB161(auVar16 >> 0x37,0) & 1) << 6 |
-                 (ushort)(SUB161(auVar16 >> 0x3f,0) & 1) << 7 |
-                 (ushort)(SUB161(auVar16 >> 0x47,0) & 1) << 8 |
-                 (ushort)(SUB161(auVar16 >> 0x4f,0) & 1) << 9 |
-                 (ushort)(SUB161(auVar16 >> 0x57,0) & 1) << 10 |
-                 (ushort)(SUB161(auVar16 >> 0x5f,0) & 1) << 0xb |
-                 (ushort)((byte)(auVar16._12_4_ >> 7) & 1) << 0xc |
-                 (ushort)((byte)(auVar16._12_4_ >> 0xf) & 1) << 0xd |
-                 (ushort)((byte)(auVar16._12_4_ >> 0x17) & 1) << 0xe |
-                (ushort)(byte)(auVar16._12_4_ >> 0x1f) << 0xf) == 0xff) {
-      return (float10)1;
-    }
-  }
-  else {
-    auVar21._4_4_ = param_3;
-    auVar21._0_4_ = param_2;
-    in_XMM3._0_8_ = 0x7fffffffffffffff;
-    auVar21._8_8_ = in_XMM2_Qb;
-    uVar8 = param_3 & 0x7fffffff;
-    if (uVar8 < 0x7ff00000) {
-      if (param_2 == 0 && uVar8 == 0) {
-        dVar29 = 1.0;
-        iVar9 = 0x1a;
-        if (iVar6 != 0 || ((ulonglong)param_1 & 0x7fffffff00000000) != 0) {
-          iVar9 = 0x1d;
-          if (((uVar7 & 0x7fffffff) < 0x7ff00001) &&
-             (((uVar7 & 0x7fffffff) < 0x7ff00000 || (iVar6 == 0)))) {
-            return (float10)1.0;
-          }
-        }
-        goto LAB_00adfdb1;
-      }
-      if ((int)uVar3 < 0) {
-        auVar25._8_8_ = in_XMM3._8_8_ << 0x34;
-        auVar25._0_8_ = 0xfff0000000000000;
-        iVar9 = (uVar8 >> 0x14) - 0x3f3;
-        in_XMM3 = (undefined1  [16])0x0;
-        uVar26 = (ulonglong)
-                 CONCAT22((ushort)(-1 < iVar9) * (short)((uint)iVar9 >> 0x10),
-                          (ushort)(-1 < (short)iVar9) * (short)iVar9);
-        lVar19 = SUB168(auVar21 | auVar25,0) << uVar26;
-        lVar24 = SUB168(auVar21 | auVar25,8) << uVar26;
-        auVar22._0_4_ = -(uint)((int)lVar19 == 0);
-        auVar22._4_4_ = -(uint)((int)((ulonglong)lVar19 >> 0x20) == 0);
-        auVar22._8_4_ = -(uint)((int)lVar24 == 0);
-        auVar22._12_4_ = -(uint)((int)((ulonglong)lVar24 >> 0x20) == 0);
-        bVar1 = SUB161(auVar22 >> 7,0) & 1 | (SUB161(auVar22 >> 0xf,0) & 1) << 1 |
-                (SUB161(auVar22 >> 0x17,0) & 1) << 2 | (SUB161(auVar22 >> 0x1f,0) & 1) << 3 |
-                (SUB161(auVar22 >> 0x27,0) & 1) << 4 | (SUB161(auVar22 >> 0x2f,0) & 1) << 5 |
-                (SUB161(auVar22 >> 0x37,0) & 1) << 6 | SUB161(auVar22 >> 0x3f,0) << 7;
-        uVar8 = 0x7fef - uVar3 & 0x7fff;
-        uVar26 = auVar22._8_8_;
-        if (0x7fef < uVar8) {
-          auVar15._0_4_ = -(uint)((int)((ulonglong)param_1 & 0xfffffffffffff) == 0);
-          auVar15._4_4_ = -(uint)((int)(((ulonglong)param_1 & 0xfffffffffffff) >> 0x20) == 0);
-          auVar15._8_4_ = 0xffffffff;
-          auVar15._12_4_ = 0xffffffff;
-          if ((byte)(SUB161(auVar15 >> 7,0) & 1 | (SUB161(auVar15 >> 0xf,0) & 1) << 1 |
-                     (SUB161(auVar15 >> 0x17,0) & 1) << 2 | (SUB161(auVar15 >> 0x1f,0) & 1) << 3 |
-                     (SUB161(auVar15 >> 0x27,0) & 1) << 4 | (SUB161(auVar15 >> 0x2f,0) & 1) << 5 |
-                     (SUB161(auVar15 >> 0x37,0) & 1) << 6 | SUB161(auVar15 >> 0x3f,0) << 7) == 0xff)
-          {
-            if (((ulonglong)param_1 & 0x8000000000000000) != 0) {
-              if ((bVar1 != 0xff) ||
-                 (uVar20 = (ulonglong)(((param_3 & 0x7fffffff) >> 0x14) - 0x3f4),
-                 lVar19 = CONCAT44(param_3,param_2) << uVar20, lVar24 = uVar26 << uVar20,
-                 auVar23._0_4_ = -(uint)((int)lVar19 == 0),
-                 auVar23._4_4_ = -(uint)((int)((ulonglong)lVar19 >> 0x20) == 0),
-                 auVar23._8_4_ = -(uint)((int)lVar24 == 0),
-                 auVar23._12_4_ = -(uint)((int)((ulonglong)lVar24 >> 0x20) == 0),
-                 (byte)(SUB161(auVar23 >> 7,0) & 1 | (SUB161(auVar23 >> 0xf,0) & 1) << 1 |
-                        (SUB161(auVar23 >> 0x17,0) & 1) << 2 | (SUB161(auVar23 >> 0x1f,0) & 1) << 3
-                        | (SUB161(auVar23 >> 0x27,0) & 1) << 4 |
-                        (SUB161(auVar23 >> 0x2f,0) & 1) << 5 | (SUB161(auVar23 >> 0x37,0) & 1) << 6
-                       | SUB161(auVar23 >> 0x3f,0) << 7) == 0xff)) {
-                if ((param_3 & 0x80000000) != 0) {
-                  return (float10)0;
-                }
-                goto LAB_00adfd2e;
-              }
-              if ((param_3 & 0x80000000) == 0) {
-                return (float10)-INFINITY;
-              }
-              goto LAB_00adfbc9;
-            }
-            if ((param_3 & 0x80000000) != 0) {
-              return (float10)0;
-            }
-            goto LAB_00adfd2e;
-          }
-          goto LAB_00adfc0f;
-        }
-        if (bVar1 == 0xff) {
-          uVar20 = (ulonglong)(((param_3 & 0x7fffffff) >> 0x14) - 0x3f4);
-          in_XMM3 = ZEXT816(0x8000000000000000);
-          lVar19 = CONCAT44(param_3,param_2) << uVar20;
-          lVar24 = uVar26 << uVar20;
-          auVar21._0_4_ = -(uint)((int)lVar19 == 0);
-          auVar21._4_4_ = -(uint)((int)((ulonglong)lVar19 >> 0x20) == in_XMM3._4_4_);
-          auVar21._8_4_ = -(uint)((int)lVar24 == 0);
-          auVar21._12_4_ = -(uint)((int)((ulonglong)lVar24 >> 0x20) == 0);
-          uVar3 = (ushort)((ushort)(SUB161(auVar21 >> 7,0) & 1) |
-                           (ushort)(SUB161(auVar21 >> 0xf,0) & 1) << 1 |
-                           (ushort)(SUB161(auVar21 >> 0x17,0) & 1) << 2 |
-                           (ushort)(SUB161(auVar21 >> 0x1f,0) & 1) << 3 |
-                           (ushort)(SUB161(auVar21 >> 0x27,0) & 1) << 4 |
-                           (ushort)(SUB161(auVar21 >> 0x2f,0) & 1) << 5 |
-                           (ushort)(SUB161(auVar21 >> 0x37,0) & 1) << 6 |
-                          (ushort)(SUB161(auVar21 >> 0x3f,0) & 1) << 7) + 0x3ff01 & 0x40000;
-          if (0xf < uVar8) {
-            uVar8 = 0xbfe7f;
-            in_XMM3 = ZEXT816(0xfffffffffffff);
-            in_XMM2_Qb = auVar21._8_8_;
-            goto LAB_00adf626;
-          }
-          goto LAB_00adfa44;
-        }
-        uVar20 = (ulonglong)param_1 >> 0x20;
-        in_XMM2_Qb = uVar26 >> 0x20;
-        uVar3 = 0;
-        uVar8 = 0;
-        if (iVar6 != 0 || ((ulonglong)param_1 & 0x7fffffff00000000) != 0) {
-          dVar29 = -NAN;
-          iVar9 = 0x1c;
-          goto LAB_00adfdb1;
-        }
-LAB_00adfaca:
-        dVar30 = dVar11;
-        if ((uVar8 & 0x7fffffff) == 0) {
-          if ((param_3 & 0x80000000) == 0) {
-            if ((uVar8 & uVar3 << 0xd) == 0) {
-              return (float10)0;
-            }
-LAB_00adfbc9:
-            return (float10)-0.0;
-          }
-          dVar29 = (double)((ulonglong)(uVar8 & uVar3 << 0xd | 0x7ff00000) << 0x20);
-          iVar9 = 0x1b;
-          goto LAB_00adfdb1;
-        }
-      }
-      else {
-        uVar3 = 0;
-LAB_00adfa44:
-        dVar33 = 2.225073858507201e-308;
-        in_XMM2_Qb = auVar21._8_8_;
-        uVar20 = 0x3ff0000000000000;
-        dVar11 = param_1 * 1.8446744073709552e+19;
-        uVar8 = uVar7;
-        dVar30 = dVar11;
-        if (iVar6 == 0) goto LAB_00adfaca;
-      }
-      dVar11 = (double)((ulonglong)ABS(dVar30) >> 0x2c);
-      uVar8 = (SUB82(dVar11,0) & 0xff) + 1 & 0x1fe;
-      dVar33 = (double)((ulonglong)dVar33 & (ulonglong)dVar30 | uVar20) *
-               *(double *)(&DAT_00d7f530 + uVar8 * 4);
-      dVar29 = *(double *)(&DAT_00d7f530 + uVar8 * 4);
-      dVar12 = *(double *)(&DAT_00d7f940 + uVar8 * 8);
-      dVar31 = *(double *)(&UNK_00d7f948 + uVar8 * 8);
-      uVar8 = 0x43e7f;
-      goto LAB_00adf626;
-    }
-    dVar12 = param_1;
-    if ((0x7fefffff < (uVar7 & 0x7fffffff)) && ((0x7ff00000 < (uVar7 & 0x7fffffff) || (iVar6 != 0)))
-       ) {
-LAB_00adfc0f:
-      dVar29 = param_1 + param_1;
-      iVar9 = 0x3ee;
-      goto LAB_00adfdb1;
-    }
-LAB_00adfcbc:
-    dVar29 = auVar21._0_8_;
-    uVar26 = in_XMM3._8_8_ & auVar21._8_8_;
-    auVar17._0_4_ = -(uint)((int)((ulonglong)dVar29 & 0xfffffffffffff) == 0);
-    auVar17._4_4_ = -(uint)((int)(((ulonglong)dVar29 & 0xfffffffffffff) >> 0x20) == 0);
-    auVar17._8_4_ = -(uint)((int)uVar26 == 0);
-    auVar17._12_4_ = -(uint)((int)(uVar26 >> 0x20) == 0);
-    if ((byte)(SUB161(auVar17 >> 7,0) & 1 | (SUB161(auVar17 >> 0xf,0) & 1) << 1 |
-               (SUB161(auVar17 >> 0x17,0) & 1) << 2 | (SUB161(auVar17 >> 0x1f,0) & 1) << 3 |
-               (SUB161(auVar17 >> 0x27,0) & 1) << 4 | (SUB161(auVar17 >> 0x2f,0) & 1) << 5 |
-               (SUB161(auVar17 >> 0x37,0) & 1) << 6 | SUB161(auVar17 >> 0x3f,0) << 7) == 0xff) {
-      if (dVar12 != -1.0) {
-        if ((auVar21._6_2_ & 0x8000) == 0) {
-          if ((uVar10 & 0x7ff0) < 0x3ff0) {
-            return (float10)0;
-          }
-        }
-        else if (0x3fef < (uVar10 & 0x7ff0)) {
-          return (float10)0;
-        }
-LAB_00adfd2e:
-        return (float10)INFINITY;
-      }
-LAB_00adfd9a:
-      dVar29 = (double)CONCAT44(param_3,param_2) + -NAN;
-      iVar9 = 0x1c;
-      goto LAB_00adfdb1;
-    }
-  }
-  dVar29 = dVar29 + dVar29;
-  iVar9 = 0x3ee;
-LAB_00adfdb1:
-  ___libm_error_support(&param_1,(undefined8 *)&param_2,(undefined8 *)&stack0xfffffff4,iVar9);
-  return (float10)dVar29;
-}
-
-
-//// FUNCTION __trandisp1 @ 00ae02f0 ////
-
-/* Library Function - Single Match
-    __trandisp1
-   
-   Library: Visual Studio */
-
-void __fastcall __trandisp1(undefined4 param_1,int param_2)
-
-{
-  float10 fVar1;
-  byte bVar2;
-  undefined2 uVar3;
-  int unaff_EBP;
-  float10 in_ST0;
-  
-  if (*(char *)(param_2 + 0xe) == '\x05') {
-    uVar3 = (undefined2)
-            CONCAT31((uint3)((byte)((ushort)*(undefined2 *)(unaff_EBP + -0xa4) >> 8) & 0xfe | 2),
-                     0x3f);
-  }
-  else {
-    uVar3 = 0x133f;
-  }
-  *(undefined2 *)(unaff_EBP + -0xa2) = uVar3;
-  fVar1 = (float10)0;
-  *(int *)(unaff_EBP + -0x94) = param_2;
-  *(ushort *)(unaff_EBP + -0xa0) =
-       (ushort)NAN(in_ST0) << 8 | (ushort)(in_ST0 < fVar1) << 9 | (ushort)(in_ST0 != fVar1) << 10 |
-       (ushort)(in_ST0 == fVar1) << 0xe;
-  *(undefined1 *)(unaff_EBP + -0x90) = 0;
-  bVar2 = (char)(*(char *)(unaff_EBP + -0x9f) << 1) >> 1;
-                    /* WARNING: Could not recover jumptable at 0x00ae0355. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  (**(code **)(param_2 + (char)(&DAT_00e9a6ac)[(byte)((bVar2 & 7) << 1 | (char)bVar2 < '\0')] + 0x10
-              ))();
-  return;
-}
-
-
-//// FUNCTION __trandisp2 @ 00ae0357 ////
-
-/* Library Function - Single Match
-    __trandisp2
-   
-   Libraries: Visual Studio 1998, Visual Studio 2003, Visual Studio 2005, Visual Studio 2008 */
-
-void __fastcall __trandisp2(undefined4 param_1,int param_2)
-
-{
-  float10 fVar1;
-  char cVar2;
-  byte bVar3;
-  undefined2 uVar4;
-  int unaff_EBP;
-  float10 in_ST0;
-  float10 in_ST1;
-  
-  if (*(char *)(param_2 + 0xe) == '\x05') {
-    uVar4 = (undefined2)
-            CONCAT31((uint3)((byte)((ushort)*(undefined2 *)(unaff_EBP + -0xa4) >> 8) & 0xfe | 2),
-                     0x3f);
-  }
-  else {
-    uVar4 = 0x133f;
-  }
-  *(undefined2 *)(unaff_EBP + -0xa2) = uVar4;
-  fVar1 = (float10)0;
-  *(int *)(unaff_EBP + -0x94) = param_2;
-  *(ushort *)(unaff_EBP + -0xa0) =
-       (ushort)NAN(in_ST0) << 8 | (ushort)(in_ST0 < fVar1) << 9 | (ushort)(in_ST0 != fVar1) << 10 |
-       (ushort)(in_ST0 == fVar1) << 0xe;
-  *(undefined1 *)(unaff_EBP + -0x90) = 0;
-  fVar1 = (float10)0;
-  *(ushort *)(unaff_EBP + -0xa0) =
-       (ushort)NAN(in_ST1) << 8 | (ushort)(in_ST1 < fVar1) << 9 | (ushort)(in_ST1 != fVar1) << 10 |
-       (ushort)(in_ST1 == fVar1) << 0xe;
-  bVar3 = (char)(*(char *)(unaff_EBP + -0x9f) << 1) >> 1;
-  cVar2 = (char)(*(char *)(unaff_EBP + -0x9f) << 1) >> 1;
-                    /* WARNING: Could not recover jumptable at 0x00ae03e1. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  (**(code **)(param_2 + (char)((&DAT_00e9a6ac)[(byte)(cVar2 << 1 | cVar2 < '\0') & 0xf] |
-                               (&DAT_00e9a6ac)[(byte)((bVar3 & 7) << 1 | (char)bVar3 < '\0')] << 2)
-              + 0x10))();
-  return;
-}
-
-
-//// FUNCTION FUN_00ae04c0 @ 00ae04c0 ////
-
-float10 __fastcall
-FUN_00ae04c0(undefined4 param_1,int param_2,undefined2 param_3,undefined4 param_4,undefined4 param_5
-            ,undefined4 param_6,undefined4 param_7,undefined4 param_8)
-
-{
-  float10 in_ST0;
-  int local_24;
-  undefined4 uStack_20;
-  undefined4 uStack_1c;
-  undefined4 uStack_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  double dStack_c;
-  
-  local_14 = param_7;
-  local_10 = param_8;
-  dStack_c = (double)in_ST0;
-  uStack_1c = param_5;
-  uStack_18 = param_6;
-  uStack_20 = param_1;
-  __87except(param_2,&local_24,&param_3);
-  return (float10)dStack_c;
-}
-
-
-//// FUNCTION __startOneArgErrorHandling @ 00ae04d7 ////
-
-/* Library Function - Single Match
-    __startOneArgErrorHandling
-   
-   Library: Visual Studio 2003 Release */
-
-float10 __fastcall
-__startOneArgErrorHandling
-          (undefined4 param_1,int param_2,ushort param_3,undefined4 param_4,undefined4 param_5,
-          undefined4 param_6)
-
-{
-  float10 in_ST0;
-  int local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
-  double local_c;
-  
-  local_c = (double)in_ST0;
-  local_1c = param_5;
-  local_18 = param_6;
-  local_20 = param_1;
-  __87except(param_2,&local_24,&param_3);
-  return (float10)local_c;
-}
-
-
-//// FUNCTION FUN_00ae0520 @ 00ae0520 ////
-
-undefined1  [10] FUN_00ae0520(void)
-
-{
-  float10 in_ST0;
-  float10 fVar1;
-  undefined1 auVar2 [10];
-  
-  fVar1 = (float10)f2xm1(-(ROUND(in_ST0) - in_ST0));
-  auVar2 = (undefined1  [10])fscale((float10)1 + fVar1,ROUND(in_ST0));
-  return auVar2;
-}
-
-
-//// FUNCTION FUN_00ae0535 @ 00ae0535 ////
-
-void FUN_00ae0535(void)
-
-{
-  return;
-}
-
-
-//// FUNCTION FUN_00ae054c @ 00ae054c ////
-
-undefined4 FUN_00ae054c(void)
-
-{
-  uint in_EAX;
-  
-  if ((in_EAX & 0x80000) != 0) {
-    return 7;
-  }
-  return 1;
-}
-
-
-//// FUNCTION __fload_withFB @ 00ae0565 ////
-
-/* Library Function - Single Match
-    __fload_withFB
-   
-   Library: Visual Studio */
-
-uint __fastcall __fload_withFB(undefined4 param_1,int param_2)
-
-{
-  uint uVar1;
-  
-  uVar1 = *(uint *)(param_2 + 4) & 0x7ff00000;
-  if (uVar1 != 0x7ff00000) {
-    return uVar1;
-  }
-  return *(uint *)(param_2 + 4);
-}
-
-
-//// FUNCTION FUN_00ae05a8 @ 00ae05a8 ////
-
-uint __cdecl FUN_00ae05a8(undefined4 param_1,uint param_2)
-
-{
-  if ((param_2 & 0x7ff00000) != 0x7ff00000) {
-    return param_2 & 0x7ff00000;
-  }
-  return param_2;
-}
-
-
-//// FUNCTION FUN_00ae05be @ 00ae05be ////
-
-void FUN_00ae05be(void)
-
-{
-  return;
-}
-
-
-//// FUNCTION __math_exit @ 00ae05cb ////
-
-/* Library Function - Single Match
-    __math_exit
-   
-   Library: Visual Studio */
-
-void __fastcall
-__math_exit(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
-
-{
-  ushort in_FPUStatusWord;
-  ushort unaff_retaddr;
-  
-  if (((unaff_retaddr != 0x27f) && ((unaff_retaddr & 0x20) != 0)) &&
-     ((in_FPUStatusWord & 0x20) != 0)) {
-    __startOneArgErrorHandling(param_1,param_2,unaff_retaddr,param_3,param_4,param_5);
-    return;
-  }
-  return;
-}
-
-
-//// FUNCTION FUN_00ae0609 @ 00ae0609 ////
-
-void __fastcall
-FUN_00ae0609(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5
-            ,undefined4 param_6,undefined4 param_7)
-
-{
-  ushort in_FPUStatusWord;
-  float10 in_ST0;
-  ushort unaff_retaddr;
-  uint uStack_4;
-  
-  uStack_4 = (uint)((ulonglong)(double)in_ST0 >> 0x20);
-  if (((ulonglong)(double)in_ST0 & 0x7ff0000000000000) == 0) {
-    fscale(in_ST0,(float10)1536.0);
-  }
-  else if ((uStack_4 & 0x7ff00000) == 0x7ff00000) {
-    fscale(in_ST0,(float10)-1536.0);
-  }
-  else if (((unaff_retaddr == 0x27f) || ((unaff_retaddr & 0x20) != 0)) ||
-          ((in_FPUStatusWord & 0x20) == 0)) {
-    return;
-  }
-  if (param_2 == 0x1d) {
-    FUN_00ae04c0(param_1,0x1d,unaff_retaddr,param_3,param_4,param_5,param_6,param_7);
-    return;
-  }
-  __startOneArgErrorHandling(param_1,param_2,unaff_retaddr,param_3,param_4,param_5);
-  return;
-}
-
-
-//// FUNCTION __d_inttype @ 00ae06ac ////
-
-/* Library Function - Single Match
-    __d_inttype
-   
-   Library: Visual Studio 2003 Release */
-
-undefined4 __cdecl __d_inttype(double param_1)
-
-{
-  uint uVar1;
-  float10 fVar2;
-  
-  uVar1 = __fpclass(param_1);
-  if ((uVar1 & 0x90) == 0) {
-    fVar2 = __frnd(param_1);
-    if ((double)fVar2 == param_1) {
-      fVar2 = __frnd(param_1 / 2.0);
-      if ((float10)(param_1 / 2.0) == fVar2) {
-        return 2;
-      }
-      return 1;
-    }
-  }
-  return 0;
-}
-
-
-//// FUNCTION __powhlp @ 00ae071a ////
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Library Function - Single Match
-    __powhlp
-   
-   Library: Visual Studio 2003 Release */
-
-undefined4 __cdecl __powhlp(int param_1,int param_2,double param_3,double *param_4)
-
-{
-  double dVar1;
-  double dVar2;
-  int iVar3;
-  undefined4 uVar4;
-  
-  dVar1 = (double)CONCAT44(param_2,param_1);
-  uVar4 = 0;
-  if (dVar1 < 0.0) {
-    dVar1 = -dVar1;
-  }
-  dVar2 = _DAT_00e9a960;
-  if (param_3._4_4_ == 0x7ff00000) {
-    if (param_3._0_4_ != 0) goto LAB_00ae07c5;
-    if (1.0 < dVar1) goto LAB_00ae0875;
-    if (1.0 <= dVar1) goto LAB_00ae0778;
-  }
-  else {
-    if (param_3 == -INFINITY) {
-      if (1.0 < dVar1) {
-        dVar2 = 0.0;
-        goto LAB_00ae0875;
-      }
-      if (dVar1 < 1.0) goto LAB_00ae0875;
-LAB_00ae0778:
-      uVar4 = 1;
-      dVar2 = _DAT_00e9a968;
-      goto LAB_00ae0875;
-    }
-LAB_00ae07c5:
-    if (param_2 != 0x7ff00000) {
-      if (param_2 != -0x100000) {
-        return 0;
-      }
-      if (param_1 != 0) {
-        return 0;
-      }
-      iVar3 = __d_inttype(param_3);
-      if (param_3 <= 0.0) {
-        if (0.0 <= param_3) {
-          dVar2 = 1.0;
-        }
-        else {
-          dVar2 = _DAT_00e9a980;
-          if (iVar3 != 1) {
-            dVar2 = 0.0;
-          }
-        }
-      }
-      else {
-        dVar2 = _DAT_00e9a960;
-        if (iVar3 == 1) {
-          dVar2 = -_DAT_00e9a960;
-        }
-      }
-      goto LAB_00ae0875;
-    }
-    if (param_1 != 0) {
-      return 0;
-    }
-    if (0.0 < param_3) goto LAB_00ae0875;
-    if (0.0 <= param_3) {
-      dVar2 = 1.0;
-      goto LAB_00ae0875;
-    }
-  }
-  dVar2 = 0.0;
-LAB_00ae0875:
-  *param_4 = dVar2;
-  return uVar4;
-}
-
-
-//// FUNCTION __flsbuf @ 00ae087c ////
-
-/* Library Function - Single Match
-    __flsbuf
-   
-   Library: Visual Studio 2003 Release */
-
-int __cdecl __flsbuf(int _Ch,FILE *_File)
-
-{
-  uint uVar1;
-  uint _FileHandle;
-  char *_Buf;
-  char *pcVar2;
-  FILE *_File_00;
-  int iVar3;
-  undefined *puVar4;
-  FILE *_MaxCharCount;
-  
-  _File_00 = _File;
-  uVar1 = _File->_flag;
-  _FileHandle = _File->_file;
-  if (((uVar1 & 0x82) == 0) || ((uVar1 & 0x40) != 0)) {
-LAB_00ae0988:
-    _File->_flag = uVar1 | 0x20;
-  }
-  else {
-    if ((uVar1 & 1) != 0) {
-      _File->_cnt = 0;
-      if ((uVar1 & 0x10) == 0) goto LAB_00ae0988;
-      _File->_ptr = _File->_base;
-      _File->_flag = uVar1 & 0xfffffffe;
-    }
-    uVar1 = _File->_flag;
-    _File->_cnt = 0;
-    _File = (FILE *)0x0;
-    _File_00->_flag = uVar1 & 0xffffffef | 2;
-    if (((uVar1 & 0x10c) == 0) &&
-       (((_File_00 != (FILE *)&DAT_00e99dd0 && (_File_00 != (FILE *)&DAT_00e99df0)) ||
-        (iVar3 = __isatty(_FileHandle), iVar3 == 0)))) {
-      __getbuf(_File_00);
-    }
-    if ((_File_00->_flag & 0x108) == 0) {
-      _MaxCharCount = (FILE *)0x1;
-      _File = (FILE *)__write(_FileHandle,&_Ch,1);
-    }
-    else {
-      _Buf = _File_00->_base;
-      pcVar2 = _File_00->_ptr;
-      _File_00->_ptr = _Buf + 1;
-      _MaxCharCount = (FILE *)(pcVar2 + -(int)_Buf);
-      _File_00->_cnt = _File_00->_bufsiz + -1;
-      if ((int)_MaxCharCount < 1) {
-        if (_FileHandle == 0xffffffff) {
-          puVar4 = &DAT_00e9a928;
-        }
-        else {
-          puVar4 = (undefined *)
-                   ((&DAT_010daa80)[(int)_FileHandle >> 5] + (_FileHandle & 0x1f) * 0x24);
-        }
-        if ((puVar4[4] & 0x20) != 0) {
-          __lseek(_FileHandle,0,2);
-        }
-      }
-      else {
-        _File = (FILE *)__write(_FileHandle,_Buf,(uint)_MaxCharCount);
-      }
-      *_File_00->_base = (char)_Ch;
-    }
-    if (_File == _MaxCharCount) {
-      return _Ch & 0xff;
-    }
-    _File_00->_flag = _File_00->_flag | 0x20;
-  }
-  return -1;
-}
-
-
-//// FUNCTION write_char @ 00ae0995 ////
-
-/* Library Function - Single Match
-    _write_char
-   
-   Library: Visual Studio 2003 Release */
-
-void __cdecl write_char(uint param_1)
-
-{
-  FILE *in_EAX;
-  uint uVar1;
-  int *unaff_ESI;
-  
-  if (((in_EAX->_flag & 0x40) == 0) || (in_EAX->_base != (char *)0x0)) {
-    uVar1 = __putwc_lk(param_1,in_EAX);
-    if ((short)uVar1 == -1) {
-      *unaff_ESI = -1;
-      return;
-    }
-  }
-  *unaff_ESI = *unaff_ESI + 1;
-  return;
-}
-
-
-//// FUNCTION write_multi_char @ 00ae09ba ////
-
-/* Library Function - Single Match
-    _write_multi_char
-   
-   Libraries: Visual Studio 2003 Release, Visual Studio 2005 Release */
-
-void __cdecl write_multi_char(uint param_1,int param_2)
-
-{
-  int *in_EAX;
-  
-  do {
-    if (param_2 < 1) {
-      return;
-    }
-    param_2 = param_2 + -1;
-    write_char(param_1);
-  } while (*in_EAX != -1);
-  return;
-}
-
-
-//// FUNCTION write_string @ 00ae09df ////
-
-/* Library Function - Single Match
-    _write_string
-   
-   Library: Visual Studio 2003 Release */
-
-void __cdecl write_string(int param_1)
-
-{
-  int *in_EAX;
-  ushort *in_ECX;
-  int unaff_EDI;
-  
-  if (((*(byte *)(unaff_EDI + 0xc) & 0x40) == 0) || (*(int *)(unaff_EDI + 8) != 0)) {
-    do {
-      if (param_1 < 1) {
-        return;
-      }
-      param_1 = param_1 + -1;
-      write_char((uint)*in_ECX);
-      in_ECX = in_ECX + 1;
-    } while (*in_EAX != -1);
-  }
-  else {
-    *in_EAX = *in_EAX + param_1;
-  }
-  return;
-}
-
-
-//// FUNCTION FUN_00ae0a31 @ 00ae0a31 ////
-
-/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
-
-int __cdecl FUN_00ae0a31(undefined4 param_1,short *param_2,wchar_t *param_3)
-
-{
-  short sVar1;
-  wchar_t wVar2;
-  short *psVar3;
-  undefined2 uVar4;
-  wchar_t *pwVar5;
-  uint uVar6;
-  wchar_t *pwVar7;
-  int extraout_ECX;
-  ushort uVar8;
-  undefined4 unaff_EBX;
-  uint uVar9;
-  uint uVar10;
-  int iVar11;
-  wchar_t *pwVar12;
-  bool bVar13;
-  ulonglong uVar14;
-  uint local_45c;
-  uint local_458;
-  uint local_450;
-  uint local_44c;
-  undefined4 local_448;
-  int local_444;
-  int local_440;
-  size_t local_43c;
-  int local_438;
-  wchar_t *local_434;
-  char local_430;
-  undefined1 local_42f;
-  undefined2 local_42c;
-  short local_42a;
-  int local_428;
-  uint local_424;
-  int local_420;
-  int local_41c;
-  wchar_t *local_418;
-  size_t local_414;
-  uint local_410;
-  uint local_40c;
-  wchar_t local_408 [255];
-  undefined2 local_209;
-  undefined4 local_8;
-  
-  local_8 = DAT_00e9a098;
-  sVar1 = *param_2;
-  uVar9 = CONCAT22((short)((uint)unaff_EBX >> 0x10),sVar1);
-  local_444 = 0;
-  local_414 = 0;
-  local_41c = 0;
-  local_434 = (wchar_t *)0x0;
-  psVar3 = param_2;
-  pwVar7 = param_3;
-  do {
-    if (sVar1 == 0) {
-      return local_41c;
-    }
-    uVar14 = (ulonglong)uVar9;
-    uVar4 = (undefined2)(uVar9 >> 0x10);
-    param_2 = psVar3 + 1;
-    if (local_41c < 0) {
-      return local_41c;
-    }
-    uVar8 = (ushort)uVar9;
-    if ((uVar8 < 0x20) || (0x78 < uVar8)) {
-      uVar6 = 0;
-    }
-    else {
-      uVar6 = (int)(char)(&DAT_00d82e88)[uVar9 & 0xffff] & 0xf;
-    }
-    local_444 = (int)(char)(&DAT_00d82ea8)[uVar6 * 8 + local_444] >> 4;
-    param_3 = pwVar7;
-    switch(local_444) {
-    case 0:
-switchD_00ae0abc_caseD_0:
-      local_428 = 1;
-      write_char(uVar9);
-      break;
-    case 1:
-      local_410 = 0xffffffff;
-      local_448 = 0;
-      local_438 = 0;
-      local_424 = 0;
-      local_420 = 0;
-      local_40c = 0;
-      local_428 = 0;
-      break;
-    case 2:
-      uVar9 = uVar9 & 0xffff;
-      if (uVar9 == 0x20) {
-        local_40c = local_40c | 2;
-      }
-      else if (uVar9 == 0x23) {
-        local_40c = local_40c | 0x80;
-      }
-      else if (uVar9 == 0x2b) {
-        local_40c = local_40c | 1;
-      }
-      else if (uVar9 == 0x2d) {
-        local_40c = local_40c | 4;
-      }
-      else if (uVar9 == 0x30) {
-        local_40c = local_40c | 8;
-      }
-      break;
-    case 3:
-      if (uVar8 == 0x2a) {
-        local_424 = *(uint *)pwVar7;
-        param_3 = pwVar7 + 2;
-        if ((int)local_424 < 0) {
-          local_40c = local_40c | 4;
-          local_424 = -local_424;
-        }
-      }
-      else {
-        local_424 = ((uVar9 & 0xffff) - 0x30) + local_424 * 10;
-      }
-      break;
-    case 4:
-      local_410 = 0;
-      break;
-    case 5:
-      if (uVar8 == 0x2a) {
-        local_410 = *(uint *)pwVar7;
-        param_3 = pwVar7 + 2;
-        if ((int)local_410 < 0) {
-          local_410 = 0xffffffff;
-        }
-      }
-      else {
-        local_410 = ((uVar9 & 0xffff) - 0x30) + local_410 * 10;
-      }
-      break;
-    case 6:
-      uVar6 = uVar9 & 0xffff;
-      if (uVar6 == 0x49) {
-        sVar1 = *param_2;
-        if ((sVar1 == 0x36) && (psVar3[2] == 0x34)) {
-          param_2 = psVar3 + 3;
-          local_40c = local_40c | 0x8000;
-        }
-        else if ((sVar1 == 0x33) && (psVar3[2] == 0x32)) {
-          param_2 = psVar3 + 3;
-          local_40c = local_40c & 0xffff7fff;
-        }
-        else if (((((sVar1 != 100) && (sVar1 != 0x69)) && (sVar1 != 0x6f)) &&
-                 ((sVar1 != 0x75 && (sVar1 != 0x78)))) && (sVar1 != 0x58)) {
-          local_444 = 0;
-          goto switchD_00ae0abc_caseD_0;
-        }
-      }
-      else if (uVar6 == 0x68) {
-        local_40c = local_40c | 0x20;
-      }
-      else if (uVar6 == 0x6c) {
-        local_40c = local_40c | 0x10;
-      }
-      else if (uVar6 == 0x77) {
-        local_40c = local_40c | 0x800;
-      }
-      break;
-    case 7:
-      uVar6 = uVar9 & 0xffff;
-      if (uVar6 < 0x68) {
-        if (uVar6 < 0x65) {
-          if (uVar6 < 0x59) {
-            if (uVar6 != 0x58) {
-              if (uVar6 == 0x43) {
-                if ((local_40c & 0x830) == 0) {
-                  local_40c = local_40c | 0x20;
-                }
-                goto LAB_00ae0d86;
-              }
-              if ((uVar6 != 0x45) && (uVar6 != 0x47)) {
-                uVar14 = (ulonglong)uVar9;
-                if (uVar6 == 0x53) {
-                  if ((local_40c & 0x830) == 0) {
-                    local_40c = local_40c | 0x20;
-                  }
-                  goto LAB_00ae0ce4;
-                }
-                goto LAB_00ae10ff;
-              }
-              local_448 = 1;
-              uVar9 = uVar9 + 0x20;
-              goto LAB_00ae0d5b;
-            }
-LAB_00ae0fa5:
-            local_440 = 7;
-LAB_00ae0fa8:
-            local_414 = 0x10;
-            if ((local_40c & 0x80) != 0) {
-              local_42a = (short)local_440 + 0x51;
-              local_42c = 0x30;
-              local_420 = 2;
-            }
-            goto LAB_00ae0de8;
-          }
-          if (uVar6 == 0x5a) {
-            param_3 = pwVar7 + 2;
-            psVar3 = *(short **)pwVar7;
-            pwVar7 = (wchar_t *)PTR_DAT_00e9a6c0;
-            pwVar5 = (wchar_t *)PTR_DAT_00e9a6c0;
-            if ((psVar3 == (short *)0x0) ||
-               (local_418 = *(wchar_t **)(psVar3 + 2), pwVar5 = (wchar_t *)PTR_DAT_00e9a6c0,
-               local_418 == (wchar_t *)0x0)) goto LAB_00ae0f25;
-            local_414 = (size_t)*psVar3;
-            if ((local_40c & 0x800) == 0) {
-              local_428 = 0;
-            }
-            else {
-              uVar14 = (ulonglong)uVar9;
-              local_414 = (int)local_414 / 2;
-              local_428 = 1;
-            }
-          }
-          else if (uVar6 == 99) {
-LAB_00ae0d86:
-            wVar2 = *pwVar7;
-            local_44c = (uint)(ushort)wVar2;
-            local_428 = 1;
-            if ((local_40c & 0x20) == 0) {
-              local_408[0] = wVar2;
-            }
-            else {
-              local_430 = (char)wVar2;
-              local_42f = 0;
-              iVar11 = _mbtowc(local_408,&local_430,cbMultiByte_00e9a94c);
-              if (iVar11 < 0) {
-                local_438 = 1;
-              }
-            }
-            local_414 = 1;
-            uVar14 = (ulonglong)uVar9;
-            param_3 = pwVar7 + 2;
-            local_418 = local_408;
-          }
-          else {
-            uVar14 = (ulonglong)uVar9;
-            if (uVar6 == 100) goto LAB_00ae0ddd;
-          }
-        }
-        else {
-LAB_00ae0d5b:
-          local_40c = local_40c | 0x40;
-          pwVar12 = local_408;
-          pwVar5 = local_408;
-          if ((int)local_410 < 0) {
-            local_410 = 6;
-          }
-          else if (local_410 == 0) {
-            if ((short)uVar9 == 0x67) {
-              local_410 = 1;
-            }
-          }
-          else {
-            if (0x200 < (int)local_410) {
-              local_410 = 0x200;
-            }
-            if ((0xa3 < (int)local_410) &&
-               (local_418 = local_408, local_434 = _malloc(local_410 + 0x15d), pwVar12 = local_434,
-               pwVar5 = local_434, local_434 == (wchar_t *)0x0)) {
-              local_410 = 0xa3;
-              pwVar12 = local_408;
-              pwVar5 = local_418;
-            }
-          }
-          local_418 = pwVar5;
-          local_45c = *(uint *)pwVar7;
-          param_3 = pwVar7 + 4;
-          local_458 = *(uint *)(pwVar7 + 2);
-          (*(code *)PTR_FUN_00e9a604)(&local_45c,pwVar12,(int)(char)uVar9,local_410,local_448);
-          uVar6 = local_40c & 0x80;
-          if ((uVar6 != 0) && (local_410 == 0)) {
-            (*(code *)PTR_FUN_00e9a610)(pwVar12);
-          }
-          if (((short)uVar9 == 0x67) && (uVar6 == 0)) {
-            (*(code *)PTR_FUN_00e9a608)(pwVar12);
-          }
-          pwVar7 = pwVar12;
-          pwVar5 = local_418;
-          if ((byte)*pwVar12 == 0x2d) {
-            local_40c = local_40c | 0x100;
-            pwVar7 = (wchar_t *)((int)pwVar12 + 1);
-            pwVar5 = (wchar_t *)((int)pwVar12 + 1);
-          }
-LAB_00ae0f25:
-          local_418 = pwVar5;
-          local_414 = _strlen((char *)pwVar7);
-          uVar14 = (ulonglong)uVar9;
-        }
-LAB_00ae10ff:
-        uVar4 = (undefined2)(uVar14 >> 0x10);
-        if (local_438 == 0) {
-          if ((local_40c & 0x40) != 0) {
-            if ((local_40c & 0x100) == 0) {
-              if ((local_40c & 1) == 0) {
-                if ((local_40c & 2) == 0) goto LAB_00ae113a;
-                local_42c = 0x20;
-              }
-              else {
-                local_42c = 0x2b;
-              }
-            }
-            else {
-              local_42c = 0x2d;
-            }
-            local_420 = 1;
-          }
-LAB_00ae113a:
-          iVar11 = (local_424 - local_420) - local_414;
-          if ((local_40c & 0xc) == 0) {
-            write_multi_char(0x20,iVar11);
-          }
-          write_string(local_420);
-          if (((local_40c & 8) != 0) && ((local_40c & 4) == 0)) {
-            write_multi_char(0x30,iVar11);
-          }
-          if ((local_428 == 0) && (0 < (int)local_414)) {
-            local_43c = local_414;
-            pwVar7 = local_418;
-            do {
-              local_43c = local_43c - 1;
-              local_450 = _mbtowc((wchar_t *)&local_44c,(char *)pwVar7,cbMultiByte_00e9a94c);
-              if ((int)local_450 < 1) break;
-              write_char(local_44c);
-              pwVar7 = (wchar_t *)((int)pwVar7 + local_450);
-            } while (0 < (int)local_43c);
-          }
-          else {
-            write_string(local_414);
-          }
-          uVar4 = (undefined2)((uint)iVar11 >> 0x10);
-          if ((local_40c & 4) != 0) {
-            write_multi_char(0x20,iVar11);
-          }
-        }
-      }
-      else {
-        if (uVar6 == 0x69) {
-LAB_00ae0ddd:
-          local_40c = local_40c | 0x40;
-LAB_00ae0de1:
-          local_414 = 10;
-LAB_00ae0de8:
-          if ((local_40c & 0x8000) == 0) {
-            param_3 = pwVar7 + 2;
-            if ((local_40c & 0x20) == 0) {
-              uVar9 = *(uint *)pwVar7;
-              if ((local_40c & 0x40) == 0) {
-                uVar6 = 0;
-                goto LAB_00ae1049;
-              }
-            }
-            else if ((local_40c & 0x40) == 0) {
-              uVar9 = (uint)(ushort)*pwVar7;
-            }
-            else {
-              uVar9 = (uint)*pwVar7;
-            }
-            uVar6 = (int)uVar9 >> 0x1f;
-          }
-          else {
-            uVar9 = *(uint *)pwVar7;
-            uVar6 = *(uint *)(pwVar7 + 2);
-            param_3 = pwVar7 + 4;
-          }
-LAB_00ae1049:
-          if ((((local_40c & 0x40) != 0) && ((int)uVar6 < 1)) && ((int)uVar6 < 0)) {
-            bVar13 = uVar9 != 0;
-            uVar9 = -uVar9;
-            uVar6 = -(uVar6 + bVar13);
-            local_40c = local_40c | 0x100;
-          }
-          uVar14 = CONCAT44(uVar6,uVar9);
-          if ((local_40c & 0x8000) == 0) {
-            uVar6 = 0;
-          }
-          if ((int)local_410 < 0) {
-            local_410 = 1;
-          }
-          else {
-            local_40c = local_40c & 0xfffffff7;
-            if (0x200 < (int)local_410) {
-              local_410 = 0x200;
-            }
-          }
-          if (uVar9 == 0 && uVar6 == 0) {
-            local_420 = 0;
-          }
-          pwVar7 = &local_209;
-          while( true ) {
-            uVar10 = (uint)uVar14;
-            uVar9 = local_410 - 1;
-            if (((int)local_410 < 1) && (uVar10 == 0 && uVar6 == 0)) break;
-            local_410 = uVar9;
-            uVar14 = __aulldvrm(uVar10,uVar6,local_414,(int)local_414 >> 0x1f);
-            uVar6 = (uint)(uVar14 >> 0x20);
-            iVar11 = extraout_ECX + 0x30;
-            if (0x39 < iVar11) {
-              iVar11 = iVar11 + local_440;
-            }
-            *(byte *)pwVar7 = (byte)iVar11;
-            pwVar7 = (wchar_t *)((int)pwVar7 + -1);
-            local_450 = uVar10;
-          }
-          local_414 = (int)&local_209 + -(int)pwVar7;
-          local_418 = (wchar_t *)((int)pwVar7 + 1);
-          local_410 = uVar9;
-          if (((local_40c & 0x200) != 0) && ((*(byte *)local_418 != 0x30 || (local_414 == 0)))) {
-            *(byte *)pwVar7 = 0x30;
-            local_414 = (int)&local_209 + -(int)pwVar7 + 1;
-            local_418 = pwVar7;
-          }
-          goto LAB_00ae10ff;
-        }
-        if (uVar6 != 0x6e) {
-          if (uVar6 == 0x6f) {
-            local_414 = 8;
-            if ((local_40c & 0x80) != 0) {
-              local_40c = local_40c | 0x200;
-            }
-            goto LAB_00ae0de8;
-          }
-          if (uVar6 == 0x70) {
-            local_410 = 8;
-            goto LAB_00ae0fa5;
-          }
-          if (uVar6 == 0x73) {
-LAB_00ae0ce4:
-            uVar6 = local_410;
-            if (local_410 == 0xffffffff) {
-              uVar6 = 0x7fffffff;
-            }
-            param_3 = pwVar7 + 2;
-            local_418 = *(wchar_t **)pwVar7;
-            if ((local_40c & 0x20) == 0) {
-              if (local_418 == (wchar_t *)0x0) {
-                local_418 = (wchar_t *)PTR_DAT_00e9a6c4;
-              }
-              local_428 = 1;
-              for (pwVar7 = local_418; (uVar6 != 0 && (uVar6 = uVar6 - 1, *pwVar7 != L'\0'));
-                  pwVar7 = pwVar7 + 1) {
-              }
-              uVar14 = (ulonglong)uVar9;
-              local_414 = (int)pwVar7 - (int)local_418 >> 1;
-            }
-            else {
-              if (local_418 == (wchar_t *)0x0) {
-                local_418 = (wchar_t *)PTR_DAT_00e9a6c0;
-              }
-              local_414 = 0;
-              pwVar7 = local_418;
-              uVar14 = CONCAT44(uVar6,uVar9);
-              if (0 < (int)uVar6) {
-                do {
-                  uVar14 = CONCAT44(uVar6,uVar9);
-                  if ((byte)*pwVar7 == 0) break;
-                  if ((PTR_DAT_00e9a2f0[(uint)(byte)*pwVar7 * 2 + 1] & 0x80) != 0) {
-                    pwVar7 = (wchar_t *)((int)pwVar7 + 1);
-                  }
-                  pwVar7 = (wchar_t *)((int)pwVar7 + 1);
-                  local_414 = local_414 + 1;
-                  uVar14 = CONCAT44(uVar6,uVar9);
-                } while ((int)local_414 < (int)uVar6);
-              }
-            }
-            goto LAB_00ae10ff;
-          }
-          if (uVar6 != 0x75) {
-            if (uVar6 != 0x78) goto LAB_00ae10ff;
-            local_440 = 0x27;
-            goto LAB_00ae0fa8;
-          }
-          goto LAB_00ae0de1;
-        }
-        param_3 = pwVar7 + 2;
-        if ((local_40c & 0x20) == 0) {
-          **(int **)pwVar7 = local_41c;
-        }
-        else {
-          *(undefined2 *)*(int **)pwVar7 = (undefined2)local_41c;
-        }
-        local_438 = 1;
-      }
-      if (local_434 != (wchar_t *)0x0) {
-                    /* WARNING: Subroutine does not return */
-        _free(local_434);
-      }
-    }
-    sVar1 = *param_2;
-    uVar9 = CONCAT22(uVar4,sVar1);
-    psVar3 = param_2;
-    pwVar7 = param_3;
-  } while( true );
-}
-
-
-//// FUNCTION ___loctotime_t @ 00ae1261 ////
-
-/* Library Function - Single Match
-    ___loctotime_t
-   
-   Library: Visual Studio 2003 Release */
-
-int __cdecl
-___loctotime_t(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)
-
-{
-  int iVar1;
-  int iVar2;
-  int iVar3;
-  tm local_28;
-  
-  iVar2 = param_1 + -0x76c;
-  if ((iVar2 < 0x46) || (0x8a < iVar2)) {
-    iVar1 = -1;
-  }
-  else {
-    iVar3 = *(int *)(&DAT_00e9acd0 + param_2 * 4) + param_3;
-    if ((((iVar2 % 4 == 0) && (iVar2 % 100 != 0)) || (param_1 % 400 == 0)) && (2 < param_2)) {
-      iVar3 = iVar3 + 1;
-    }
-    ___tzset();
-    local_28.tm_min = param_5;
-    local_28.tm_mon = param_2 + -1;
-    iVar1 = ((param_4 +
-             (iVar2 * 0x16d +
-             (param_1 + -0x76d) / 4 + iVar3 + ((param_1 + -0x641) / 400 - (param_1 + -0x76d) / 100))
-             * 0x18) * 0x3c + param_5) * 0x3c + DAT_00e9a250 + 0x7c558180 + param_6;
-    local_28.tm_hour = param_4;
-    local_28.tm_sec = param_6;
-    if ((param_7 == 1) ||
-       (((param_7 == -1 && (DAT_00e9a254 != 0)) &&
-        (local_28.tm_year = iVar2, local_28.tm_yday = iVar3, iVar2 = __isindst(&local_28),
-        iVar2 != 0)))) {
-      iVar1 = iVar1 + DAT_00e9a258;
-    }
-  }
-  return iVar1;
-}
-
-
-//// FUNCTION __wchartodigit @ 00ae136f ////
-
-/* Library Function - Single Match
-    __wchartodigit
-   
-   Library: Visual Studio 2003 Release */
-
-int __cdecl __wchartodigit(ushort param_1)
-
-{
-  int iVar1;
-  bool bVar2;
-  
-  if (0x2f < param_1) {
-    if (param_1 < 0x3a) {
-      return param_1 - 0x30;
-    }
-    iVar1 = 0xff10;
-    if (param_1 < 0xff10) {
-      iVar1 = 0x660;
-      if (param_1 < 0x660) {
-        return -1;
-      }
-      if (param_1 < 0x66a) goto LAB_00ae14db;
-      iVar1 = 0x6f0;
-      if (param_1 < 0x6f0) {
-        return -1;
-      }
-      if (param_1 < 0x6fa) goto LAB_00ae14db;
-      iVar1 = 0x966;
-      if (param_1 < 0x966) {
-        return -1;
-      }
-      if (param_1 < 0x970) goto LAB_00ae14db;
-      iVar1 = 0x9e6;
-      if (param_1 < 0x9e6) {
-        return -1;
-      }
-      if (param_1 < 0x9f0) goto LAB_00ae14db;
-      iVar1 = 0xa66;
-      if (param_1 < 0xa66) {
-        return -1;
-      }
-      if (param_1 < 0xa70) goto LAB_00ae14db;
-      iVar1 = 0xae6;
-      if (param_1 < 0xae6) {
-        return -1;
-      }
-      if (param_1 < 0xaf0) goto LAB_00ae14db;
-      iVar1 = 0xb66;
-      if (param_1 < 0xb66) {
-        return -1;
-      }
-      if (param_1 < 0xb70) goto LAB_00ae14db;
-      iVar1 = 0xc66;
-      if (param_1 < 0xc66) {
-        return -1;
-      }
-      if (param_1 < 0xc70) goto LAB_00ae14db;
-      iVar1 = 0xce6;
-      if (param_1 < 0xce6) {
-        return -1;
-      }
-      if (param_1 < 0xcf0) goto LAB_00ae14db;
-      iVar1 = 0xd66;
-      if (param_1 < 0xd66) {
-        return -1;
-      }
-      if (param_1 < 0xd70) goto LAB_00ae14db;
-      iVar1 = 0xe50;
-      if (param_1 < 0xe50) {
-        return -1;
-      }
-      if (param_1 < 0xe5a) goto LAB_00ae14db;
-      iVar1 = 0xed0;
-      if (param_1 < 0xed0) {
-        return -1;
-      }
-      if (param_1 < 0xeda) goto LAB_00ae14db;
-      iVar1 = 0xf20;
-      if (param_1 < 0xf20) {
-        return -1;
-      }
-      if (param_1 < 0xf2a) goto LAB_00ae14db;
-      iVar1 = 0x1040;
-      if (param_1 < 0x1040) {
-        return -1;
-      }
-      if (param_1 < 0x104a) goto LAB_00ae14db;
-      iVar1 = 0x17e0;
-      if (param_1 < 0x17e0) {
-        return -1;
-      }
-      if (param_1 < 0x17ea) goto LAB_00ae14db;
-      iVar1 = 0x1810;
-      if (param_1 < 0x1810) {
-        return -1;
-      }
-      bVar2 = param_1 < 0x181a;
-    }
-    else {
-      bVar2 = param_1 < 0xff1a;
-    }
-    if (bVar2) {
-LAB_00ae14db:
-      return (uint)param_1 - iVar1;
-    }
-  }
-  return -1;
-}
-
-
-//// FUNCTION ___iswctype_mt @ 00ae14e5 ////
-
-/* Library Function - Single Match
-    ___iswctype_mt
-   
-   Library: Visual Studio 2003 Release */
-
-uint __cdecl ___iswctype_mt(int param_1,WCHAR param_2,ushort param_3)
-
-{
-  BOOL BVar1;
-  uint local_8;
-  
-  if (param_2 != L'\xffff') {
-    if ((ushort)param_2 < 0x100) {
-      local_8 = (uint)*(ushort *)(PTR_DAT_00e9a2f4 + (uint)(ushort)param_2 * 2);
-      goto LAB_00ae1531;
-    }
-    BVar1 = FUN_00aebf8e(1,&param_2,1,(LPWORD)&local_8,*(UINT *)(param_1 + 4),
-                         *(LCID *)(param_1 + 0x14));
-    if (BVar1 != 0) goto LAB_00ae1531;
-  }
-  local_8 = 0;
-LAB_00ae1531:
-  return local_8 & 0xffff & (uint)param_3;
-}
-
-
-//// FUNCTION _iswctype @ 00ae153c ////
-
-/* Library Function - Single Match
-    _iswctype
-   
-   Library: Visual Studio 2003 Release */
-
-int __cdecl _iswctype(wint_t _C,wctype_t _Type)
-
-{
-  _ptiddata p_Var1;
-  pthreadlocinfo ptVar2;
-  uint uVar3;
-  
-  if (_C < 0x100) {
-    return (uint)(*(ushort *)(PTR_DAT_00e9a2f4 + (uint)_C * 2) & _Type);
-  }
-  if (_C == 0xffff) {
-    return 0;
-  }
-  p_Var1 = __getptd();
-  ptVar2 = (pthreadlocinfo)p_Var1->_tfpecode;
-  if (ptVar2 != (pthreadlocinfo)PTR_DAT_00e9a474) {
-    ptVar2 = ___updatetlocinfo();
-  }
-  uVar3 = ___iswctype_mt((int)ptVar2,_C,_Type);
-  return uVar3;
-}
-
-
-//// FUNCTION write_char @ 00ae1593 ////
-
-/* Library Function - Single Match
-    _write_char
-   
-   Library: Visual Studio 2003 Release */
-
-void __cdecl write_char(void)
-
-{
-  int *piVar1;
-  byte in_AL;
-  uint uVar2;
-  FILE *in_ECX;
-  int *unaff_ESI;
-  
-  if (((in_ECX->_flag & 0x40) == 0) || (in_ECX->_base != (char *)0x0)) {
-    piVar1 = &in_ECX->_cnt;
-    *piVar1 = *piVar1 + -1;
-    if (*piVar1 < 0) {
-      uVar2 = __flsbuf((int)(char)in_AL,in_ECX);
-    }
-    else {
-      *in_ECX->_ptr = in_AL;
-      in_ECX->_ptr = in_ECX->_ptr + 1;
-      uVar2 = (uint)in_AL;
-    }
-    if (uVar2 == 0xffffffff) {
-      *unaff_ESI = -1;
-      return;
-    }
-  }
-  *unaff_ESI = *unaff_ESI + 1;
-  return;
 }
 
 

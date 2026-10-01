@@ -1,3 +1,618 @@
+//// FUNCTION FUN_00d11e10 @ 00d11e10 ////
+
+void FUN_00d11e10(void)
+
+{
+  FUN_0053fff0((undefined4 *)&DAT_0104c7a4);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11e20 @ 00d11e20 ////
+
+void FUN_00d11e20(void)
+
+{
+  FUN_00540320(0x104c754);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11e30 @ 00d11e30 ////
+
+void FUN_00d11e30(void)
+
+{
+  FUN_00540360(0x104c77c);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11e40 @ 00d11e40 ////
+
+void FUN_00d11e40(void)
+
+{
+  FUN_004e4b30(&DAT_0104c8f8);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11e50 @ 00d11e50 ////
+
+void FUN_00d11e50(void)
+
+{
+  FUN_00546230(&DAT_0104c904);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11e60 @ 00d11e60 ////
+
+void FUN_00d11e60(void)
+
+{
+  FUN_00546260(&DAT_0104c910);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11e70 @ 00d11e70 ////
+
+void FUN_00d11e70(void)
+
+{
+  FUN_00546290(&DAT_0104c91c);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11e80 @ 00d11e80 ////
+
+void FUN_00d11e80(void)
+
+{
+  FUN_005462c0(&DAT_0104c928);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11e90 @ 00d11e90 ////
+
+void FUN_00d11e90(void)
+
+{
+  FUN_0054a090(&DAT_0104c934);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11ea0 @ 00d11ea0 ////
+
+void FUN_00d11ea0(void)
+
+{
+  if (0x14 < DAT_00e52be4) {
+                    /* WARNING: Subroutine does not return */
+    _free(PTR_DAT_00e52bdc);
+  }
+  return;
+}
+
+
+//// FUNCTION FUN_00d11ec0 @ 00d11ec0 ////
+
+void FUN_00d11ec0(void)
+
+{
+  if (0x14 < DAT_0104c96c) {
+                    /* WARNING: Subroutine does not return */
+    _free(DAT_0104c964);
+  }
+  return;
+}
+
+
+//// FUNCTION FUN_00d11ee0 @ 00d11ee0 ////
+
+void FUN_00d11ee0(void)
+
+{
+  if (0x14 < DAT_00e52c04) {
+                    /* WARNING: Subroutine does not return */
+    _free(PTR_DAT_00e52bfc);
+  }
+  return;
+}
+
+
+//// FUNCTION FUN_00d11f00 @ 00d11f00 ////
+
+void FUN_00d11f00(void)
+
+{
+  if (0x14 < DAT_00e52c24) {
+                    /* WARNING: Subroutine does not return */
+    _free(PTR_DAT_00e52c1c);
+  }
+  return;
+}
+
+
+//// FUNCTION FUN_00d11f20 @ 00d11f20 ////
+
+void FUN_00d11f20(void)
+
+{
+  if (0x14 < DAT_00e52c44) {
+                    /* WARNING: Subroutine does not return */
+    _free(PTR_DAT_00e52c3c);
+  }
+  return;
+}
+
+
+//// FUNCTION FUN_00d11f40 @ 00d11f40 ////
+
+void FUN_00d11f40(void)
+
+{
+  FUN_0054c9d0(&DAT_0104c94c);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11f50 @ 00d11f50 ////
+
+void FUN_00d11f50(void)
+
+{
+  FUN_005536c0(&DAT_0104c98c);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11f60 @ 00d11f60 ////
+
+void FUN_00d11f60(void)
+
+{
+  FUN_00556bb0((undefined4 *)&DAT_0104cd38);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11f70 @ 00d11f70 ////
+
+void FUN_00d11f70(void)
+
+{
+  if (DAT_0104cd88 != (undefined4 *)0x0) {
+    FUN_00405fe0(DAT_0104cd88,DAT_0104cd8c);
+                    /* WARNING: Subroutine does not return */
+    _free(DAT_0104cd88);
+  }
+  DAT_0104cd88 = (undefined4 *)0x0;
+  DAT_0104cd8c = (undefined4 *)0x0;
+  DAT_0104cd90 = 0;
+  return;
+}
+
+
+//// FUNCTION FUN_00d11fc0 @ 00d11fc0 ////
+
+void FUN_00d11fc0(void)
+
+{
+  FUN_00490060(&DAT_0104cd78);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11fd0 @ 00d11fd0 ////
+
+void FUN_00d11fd0(void)
+
+{
+  FUN_00490060(&DAT_0104cd6c);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11fe0 @ 00d11fe0 ////
+
+void FUN_00d11fe0(void)
+
+{
+  FUN_0055f4d0((undefined4 *)&DAT_0104cd98);
+  return;
+}
+
+
+//// FUNCTION FUN_00d11ff0 @ 00d11ff0 ////
+
+void FUN_00d11ff0(void)
+
+{
+  if (DAT_0104cde8 != (undefined4 *)0x0) {
+    FUN_00481090(DAT_0104cde8,DAT_0104cdec);
+                    /* WARNING: Subroutine does not return */
+    _free(DAT_0104cde8);
+  }
+  DAT_0104cde8 = (undefined4 *)0x0;
+  DAT_0104cdec = (undefined4 *)0x0;
+  DAT_0104cdf0 = 0;
+  return;
+}
+
+
+//// FUNCTION FUN_00d12040 @ 00d12040 ////
+
+void FUN_00d12040(void)
+
+{
+  FUN_005609c0(&DAT_0104cdd8);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12050 @ 00d12050 ////
+
+void FUN_00d12050(void)
+
+{
+  FUN_005609c0(&DAT_0104cdcc);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12060 @ 00d12060 ////
+
+void FUN_00d12060(void)
+
+{
+  _eh_vector_destructor_iterator_(&PTR_DAT_00e52f60,0x20,0xb,FUN_00401490);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12080 @ 00d12080 ////
+
+void FUN_00d12080(void)
+
+{
+  if (0x14 < DAT_0104ce00) {
+                    /* WARNING: Subroutine does not return */
+    _free(DAT_0104cdf8);
+  }
+  return;
+}
+
+
+//// FUNCTION FUN_00d120a0 @ 00d120a0 ////
+
+void FUN_00d120a0(void)
+
+{
+  FUN_00447f20(&DAT_0104ce38);
+  return;
+}
+
+
+//// FUNCTION FUN_00d120b0 @ 00d120b0 ////
+
+void FUN_00d120b0(void)
+
+{
+  FUN_0056ea50((undefined4 *)&DAT_0104ce98);
+  return;
+}
+
+
+//// FUNCTION FUN_00d120c0 @ 00d120c0 ////
+
+void FUN_00d120c0(void)
+
+{
+  FUN_00571980((undefined4 *)&DAT_0104cecc);
+  return;
+}
+
+
+//// FUNCTION FUN_00d120d0 @ 00d120d0 ////
+
+void FUN_00d120d0(void)
+
+{
+  FUN_00572b70((undefined4 *)&DAT_0104cf00);
+  return;
+}
+
+
+//// FUNCTION FUN_00d120e0 @ 00d120e0 ////
+
+void FUN_00d120e0(void)
+
+{
+  FUN_00573ba0(&DAT_0104cf6c);
+  return;
+}
+
+
+//// FUNCTION FUN_00d120f0 @ 00d120f0 ////
+
+void FUN_00d120f0(void)
+
+{
+  FUN_00574c80((undefined4 *)&DAT_0104cf38);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12100 @ 00d12100 ////
+
+void FUN_00d12100(void)
+
+{
+  FUN_00580dd0((undefined4 *)&DAT_0104cfc0);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12110 @ 00d12110 ////
+
+void FUN_00d12110(void)
+
+{
+  FUN_00580dd0((undefined4 *)&DAT_0104cff4);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12120 @ 00d12120 ////
+
+void FUN_00d12120(void)
+
+{
+  FUN_0050dd50((undefined4 *)&DAT_0104d054);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12130 @ 00d12130 ////
+
+void FUN_00d12130(void)
+
+{
+  FUN_0050dd50((undefined4 *)&DAT_0104d088);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12140 @ 00d12140 ////
+
+void FUN_00d12140(void)
+
+{
+  _eh_vector_destructor_iterator_(&DAT_0104d0c8,0x20,0x11,FUN_00401490);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12160 @ 00d12160 ////
+
+void FUN_00d12160(void)
+
+{
+  _eh_vector_destructor_iterator_(&DAT_0104d2e8,0x20,0x11,FUN_00401490);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12180 @ 00d12180 ////
+
+void FUN_00d12180(void)
+
+{
+  _eh_vector_destructor_iterator_(&PTR_DAT_00e54078,0x20,0x11,FUN_00401490);
+  return;
+}
+
+
+//// FUNCTION FUN_00d121a0 @ 00d121a0 ////
+
+void FUN_00d121a0(void)
+
+{
+  FUN_004022e0(&DAT_0104d510);
+  return;
+}
+
+
+//// FUNCTION FUN_00d121b0 @ 00d121b0 ////
+
+void FUN_00d121b0(void)
+
+{
+  FUN_004022e0(&DAT_0104d528);
+  return;
+}
+
+
+//// FUNCTION FUN_00d121c0 @ 00d121c0 ////
+
+void FUN_00d121c0(void)
+
+{
+  _eh_vector_destructor_iterator_(&DAT_0104d550,0x20,5,FUN_00401490);
+  return;
+}
+
+
+//// FUNCTION FUN_00d121e0 @ 00d121e0 ////
+
+void FUN_00d121e0(void)
+
+{
+  FUN_005a1ca0((undefined4 *)&DAT_0104d5f0);
+  return;
+}
+
+
+//// FUNCTION FUN_00d121f0 @ 00d121f0 ////
+
+void FUN_00d121f0(void)
+
+{
+  FUN_00515830((undefined4 *)&DAT_0104d628);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12200 @ 00d12200 ////
+
+void FUN_00d12200(void)
+
+{
+  if (10 < DAT_00e544dc) {
+                    /* WARNING: Subroutine does not return */
+    _free(PTR_DAT_00e544d4);
+  }
+  return;
+}
+
+
+//// FUNCTION FUN_00d12220 @ 00d12220 ////
+
+void FUN_00d12220(void)
+
+{
+  FUN_00435e20((undefined4 *)&DAT_0104d668);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12230 @ 00d12230 ////
+
+void FUN_00d12230(void)
+
+{
+  FUN_0050dda0((undefined4 *)&DAT_0104d680);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12240 @ 00d12240 ////
+
+void FUN_00d12240(void)
+
+{
+  FUN_005c9880(&DAT_0104d6d4);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12250 @ 00d12250 ////
+
+void FUN_00d12250(void)
+
+{
+  FUN_005ceff0((undefined4 *)&DAT_0104d720);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12260 @ 00d12260 ////
+
+void FUN_00d12260(void)
+
+{
+  FUN_005d47a0((undefined4 *)&DAT_0104d758);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12270 @ 00d12270 ////
+
+void FUN_00d12270(void)
+
+{
+  FUN_005e1a20(&DAT_0104d7f4);
+  return;
+}
+
+
+//// FUNCTION FUN_00d12280 @ 00d12280 ////
+
+void FUN_00d12280(void)
+
+{
+  int iVar1;
+  undefined4 *puVar2;
+  
+  puVar2 = DAT_0104d810;
+  if ((DAT_0104d810 != (undefined4 *)0x0) &&
+     (iVar1 = DAT_0104d810[0x12], DAT_0104d810[0x12] = iVar1 + -1, iVar1 + -1 == 0)) {
+    (**(code **)*puVar2)(1);
+  }
+  DAT_0104d810 = (undefined4 *)0x0;
+  return;
+}
+
+
+//// FUNCTION FUN_00d122b0 @ 00d122b0 ////
+
+void FUN_00d122b0(void)
+
+{
+  if (0x14 < DAT_00e54efc) {
+                    /* WARNING: Subroutine does not return */
+    _free(PTR_DAT_00e54ef4);
+  }
+  return;
+}
+
+
+//// FUNCTION FUN_00d122d0 @ 00d122d0 ////
+
+void FUN_00d122d0(void)
+
+{
+  if (0x14 < DAT_00e54f1c) {
+                    /* WARNING: Subroutine does not return */
+    _free(PTR_DAT_00e54f14);
+  }
+  return;
+}
+
+
+//// FUNCTION FUN_00d122f0 @ 00d122f0 ////
+
+void FUN_00d122f0(void)
+
+{
+  if (0x14 < DAT_00e54f3c) {
+                    /* WARNING: Subroutine does not return */
+    _free(PTR_DAT_00e54f34);
+  }
+  return;
+}
+
+
+//// FUNCTION FUN_00d12310 @ 00d12310 ////
+
+void FUN_00d12310(void)
+
+{
+  if (0x14 < DAT_00e54f5c) {
+                    /* WARNING: Subroutine does not return */
+    _free(PTR_DAT_00e54f54);
+  }
+  return;
+}
+
+
 //// FUNCTION FUN_00d12330 @ 00d12330 ////
 
 void FUN_00d12330(void)
@@ -5085,463 +5700,6 @@ void FUN_00d15060(void)
 
 {
   FUN_00a5c640(&DAT_010c97f8);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15070 @ 00d15070 ////
-
-void FUN_00d15070(void)
-
-{
-  FUN_00a5e2e0((undefined4 *)&DAT_010c9804);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15080 @ 00d15080 ////
-
-void FUN_00d15080(void)
-
-{
-  FUN_00a5ed00((undefined4 *)&DAT_010c9838);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15090 @ 00d15090 ////
-
-void FUN_00d15090(void)
-
-{
-  FUN_00a122e0((undefined4 *)&DAT_010c9ab0);
-  return;
-}
-
-
-//// FUNCTION FUN_00d150a0 @ 00d150a0 ////
-
-void FUN_00d150a0(void)
-
-{
-  FUN_009e46e0(0x10c9cd0);
-  return;
-}
-
-
-//// FUNCTION FUN_00d150b0 @ 00d150b0 ////
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_00d150b0(void)
-
-{
-  if (DAT_010c9d70 != (void *)0x0) {
-                    /* WARNING: Subroutine does not return */
-    _free(DAT_010c9d70);
-  }
-  DAT_010c9d70 = (void *)0x0;
-  DAT_010c9d74 = 0;
-  _DAT_010c9d78 = 0;
-  return;
-}
-
-
-//// FUNCTION FUN_00d150f0 @ 00d150f0 ////
-
-void FUN_00d150f0(void)
-
-{
-  FUN_00a7da60(&DAT_010c9d60);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15100 @ 00d15100 ////
-
-void FUN_00d15100(void)
-
-{
-  FUN_00a80c40(0x10c9f38);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15110 @ 00d15110 ////
-
-void FUN_00d15110(void)
-
-{
-  FUN_00a7f1c0(0x10c9f44);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15120 @ 00d15120 ////
-
-void FUN_00d15120(void)
-
-{
-  if (0xf < DAT_00e69b44) {
-                    /* WARNING: Subroutine does not return */
-    _free(DAT_00e69b30);
-  }
-  DAT_00e69b44 = 0xf;
-  DAT_00e69b40 = 0;
-  DAT_00e69b30 = (void *)((uint)DAT_00e69b30 & 0xffffff00);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15150 @ 00d15150 ////
-
-void FUN_00d15150(void)
-
-{
-  if (DAT_010c9dd0 != (void *)0x0) {
-                    /* WARNING: Subroutine does not return */
-    _free(DAT_010c9dd0);
-  }
-  DAT_010c9dd0 = (void *)0x0;
-  DAT_010c9dd4 = 0;
-  DAT_010c9dd8 = 0;
-  return;
-}
-
-
-//// FUNCTION FUN_00d15190 @ 00d15190 ////
-
-void FUN_00d15190(void)
-
-{
-  if (DAT_010c9f1c != (void *)0x0) {
-                    /* WARNING: Subroutine does not return */
-    _free(DAT_010c9f1c);
-  }
-  DAT_010c9f1c = (void *)0x0;
-  DAT_010c9f20 = 0;
-  DAT_010c9f24 = 0;
-  return;
-}
-
-
-//// FUNCTION FUN_00d151d0 @ 00d151d0 ////
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_00d151d0(void)
-
-{
-  if (DAT_010c9dc0 != (void *)0x0) {
-                    /* WARNING: Subroutine does not return */
-    _free(DAT_010c9dc0);
-  }
-  DAT_010c9dc0 = (void *)0x0;
-  _DAT_010c9dc4 = 0;
-  _DAT_010c9dc8 = 0;
-  return;
-}
-
-
-//// FUNCTION FUN_00d15220 @ 00d15220 ////
-
-void FUN_00d15220(void)
-
-{
-  FUN_00a88e10(&DAT_010c9f28);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15230 @ 00d15230 ////
-
-void FUN_00d15230(void)
-
-{
-  FUN_00a953c0(&DAT_010c9f64);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15240 @ 00d15240 ////
-
-void FUN_00d15240(void)
-
-{
-  if (DAT_010c9f80 != (void *)0x0) {
-                    /* WARNING: Subroutine does not return */
-    _free(DAT_010c9f80);
-  }
-  DAT_010c9f80 = (void *)0x0;
-  DAT_010c9f84 = 0;
-  DAT_010c9f88 = 0;
-  return;
-}
-
-
-//// FUNCTION FUN_00d15280 @ 00d15280 ////
-
-void FUN_00d15280(void)
-
-{
-  if (DAT_010c9f9c != (undefined4 *)0x0) {
-    FUN_00405fe0(DAT_010c9f9c,DAT_010c9fa0);
-                    /* WARNING: Subroutine does not return */
-    _free(DAT_010c9f9c);
-  }
-  DAT_010c9f9c = (undefined4 *)0x0;
-  DAT_010c9fa0 = (undefined4 *)0x0;
-  DAT_010c9fa4 = 0;
-  return;
-}
-
-
-//// FUNCTION FUN_00d152d0 @ 00d152d0 ////
-
-void FUN_00d152d0(void)
-
-{
-  FUN_00424100(&DAT_010c9f8c);
-  return;
-}
-
-
-//// FUNCTION FUN_00d152e0 @ 00d152e0 ////
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_00d152e0(void)
-
-{
-  if (DAT_010ca02c != (void *)0x0) {
-                    /* WARNING: Subroutine does not return */
-    _free(DAT_010ca02c);
-  }
-  DAT_010ca02c = (void *)0x0;
-  DAT_010ca030 = 0;
-  _DAT_010ca034 = 0;
-  return;
-}
-
-
-//// FUNCTION FUN_00d15320 @ 00d15320 ////
-
-void FUN_00d15320(void)
-
-{
-  if (0x14 < DAT_00e6e4b0) {
-                    /* WARNING: Subroutine does not return */
-    _free(PTR_DAT_00e6e4a8);
-  }
-  return;
-}
-
-
-//// FUNCTION FUN_00d15340 @ 00d15340 ////
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_00d15340(void)
-
-{
-  if (DAT_010ca064 != (undefined4 *)0x0) {
-    FUN_00405fe0(DAT_010ca064,DAT_010ca068);
-                    /* WARNING: Subroutine does not return */
-    _free(DAT_010ca064);
-  }
-  DAT_010ca064 = (undefined4 *)0x0;
-  DAT_010ca068 = (undefined4 *)0x0;
-  _DAT_010ca06c = 0;
-  return;
-}
-
-
-//// FUNCTION FUN_00d15390 @ 00d15390 ////
-
-void FUN_00d15390(void)
-
-{
-  FUN_00424100(&DAT_010ca048);
-  return;
-}
-
-
-//// FUNCTION FUN_00d153a0 @ 00d153a0 ////
-
-void FUN_00d153a0(void)
-
-{
-  FUN_00490060(&DAT_010ca054);
-  return;
-}
-
-
-//// FUNCTION FUN_00d153aa @ 00d153aa ////
-
-void FUN_00d153aa(void)
-
-{
-  FUN_00acbf88();
-  return;
-}
-
-
-//// FUNCTION FUN_00d153b4 @ 00d153b4 ////
-
-void FUN_00d153b4(void)
-
-{
-  FUN_00a16070((uint *)&DAT_010cbaec);
-  return;
-}
-
-
-//// FUNCTION FUN_00d153be @ 00d153be ////
-
-void FUN_00d153be(void)
-
-{
-  FUN_00acd14f((undefined4 *)&DAT_010cbb5c);
-  return;
-}
-
-
-//// FUNCTION FUN_00d153c8 @ 00d153c8 ////
-
-void FUN_00d153c8(void)
-
-{
-  FUN_00acbf88();
-  return;
-}
-
-
-//// FUNCTION FUN_00d153d2 @ 00d153d2 ////
-
-void FUN_00d153d2(void)
-
-{
-  thunk_FUN_00acd288();
-  return;
-}
-
-
-//// FUNCTION FUN_00d153dc @ 00d153dc ////
-
-void FUN_00d153dc(void)
-
-{
-  FUN_00afb492(0x10cc0ec);
-  return;
-}
-
-
-//// FUNCTION FUN_00d153f0 @ 00d153f0 ////
-
-void FUN_00d153f0(void)
-
-{
-  Wrap_DeleteCriticalSection_00bcea80((LPCRITICAL_SECTION)&DAT_010ced14);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15400 @ 00d15400 ////
-
-void FUN_00d15400(void)
-
-{
-  Wrap_DeleteCriticalSection_00bcea80((LPCRITICAL_SECTION)&DAT_010ced2c);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15410 @ 00d15410 ////
-
-void FUN_00d15410(void)
-
-{
-  FUN_00bbb6b0((undefined4 *)&DAT_010d5da8);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15420 @ 00d15420 ////
-
-void FUN_00d15420(void)
-
-{
-  FUN_00bbb6b0((undefined4 *)&DAT_010d5db0);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15430 @ 00d15430 ////
-
-void FUN_00d15430(void)
-
-{
-  FUN_00bbb6b0((undefined4 *)&DAT_010d5db8);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15440 @ 00d15440 ////
-
-void FUN_00d15440(void)
-
-{
-  Dtor_00c134d0(&DAT_010d5f50);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15450 @ 00d15450 ////
-
-void FUN_00d15450(void)
-
-{
-  SetVtable_00d9fbe8_00bdfc70((undefined4 *)&DAT_010d6128);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15460 @ 00d15460 ////
-
-void FUN_00d15460(void)
-
-{
-  SetVtable_00d9fbe8_00bdfc70((undefined4 *)&DAT_010d6108);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15470 @ 00d15470 ////
-
-void FUN_00d15470(void)
-
-{
-  FUN_00bbb6b0((undefined4 *)&DAT_010d6764);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15480 @ 00d15480 ////
-
-void FUN_00d15480(void)
-
-{
-  Dtor_00c0f200((undefined4 *)&DAT_010da2d8);
-  return;
-}
-
-
-//// FUNCTION FUN_00d15490 @ 00d15490 ////
-
-void FUN_00d15490(void)
-
-{
-  Dtor_00c37770((undefined4 *)&DAT_010da230);
   return;
 }
 

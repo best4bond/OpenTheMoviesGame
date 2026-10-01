@@ -2559,9 +2559,9 @@ void __fastcall FUN_0053c500(undefined4 *param_1)
 }
 
 
-//// FUNCTION FUN_0053c550 @ 0053c550 ////
+//// FUNCTION SimObjectQueue_TickPending @ 0053c550 ////
 
-void FUN_0053c550(void)
+void SimObjectQueue_TickPending(void)
 
 {
   int *piVar1;
@@ -6191,13 +6191,25 @@ undefined4 * __thiscall FUN_005418d0(void *this,undefined4 *param_1,undefined4 *
 }
 
 
-//// FUNCTION FUN_005419e0 @ 005419e0 ////
+//// FUNCTION InitConfigRegistryPath @ 005419e0 ////
 
-void FUN_005419e0(void)
+void InitConfigRegistryPath(void)
 
 {
   undefined4 *this;
   
+                    /* InitConfigRegistryPath - constructs the global CBasicString holding the
+                       literal registry subkey path "Software\\Lionhead Studios Ltd\\TheMovies"
+                       (classic HKCU\Software\<Company>\<Product> convention), stored in
+                       g_configRegistryPath. This string is passed as the first argument to
+                       Config_GetOrCreateInt (and presumably sibling Config_GetOrCreate* functions)
+                       throughout the whole codebase - 50+ confirmed call sites across audio
+                       options, autosave, tutorial system, trailer editor, movie maker, sandbox
+                       decade-unlock, and more (see get_xrefs_to on g_configRegistryPath). Confirms
+                       the game's settings/options are stored in the Windows Registry under this
+                       key, not an INI/config file. Called once from WinMain during startup;
+                       cleaned up by ShutdownConfigRegistryPath during shutdown. Confirmed
+                       2026-10-01. */
   this = operator_new(0x20);
   if (this != (undefined4 *)0x0) {
     *this = this + 3;
@@ -6205,28 +6217,28 @@ void FUN_005419e0(void)
     this[1] = 0;
     this[2] = 0x14;
     FUN_004015d0(this,"Software\\Lionhead Studios Ltd\\TheMovies",0x27);
-    DAT_0104c7e4 = this;
+    g_configRegistryPath = this;
     return;
   }
-  DAT_0104c7e4 = (undefined4 *)0x0;
+  g_configRegistryPath = (undefined4 *)0x0;
   return;
 }
 
 
-//// FUNCTION FUN_00541a30 @ 00541a30 ////
+//// FUNCTION ShutdownConfigRegistryPath @ 00541a30 ////
 
-void FUN_00541a30(void)
+void ShutdownConfigRegistryPath(void)
 
 {
   undefined4 *_Memory;
   
-  _Memory = DAT_0104c7e4;
-  if (DAT_0104c7e4 != (undefined4 *)0x0) {
-    FUN_00541870(DAT_0104c7e4);
+  _Memory = g_configRegistryPath;
+  if (g_configRegistryPath != (undefined4 *)0x0) {
+    FUN_00541870(g_configRegistryPath);
                     /* WARNING: Subroutine does not return */
     _free(_Memory);
   }
-  DAT_0104c7e4 = (undefined4 *)0x0;
+  g_configRegistryPath = (undefined4 *)0x0;
   return;
 }
 
@@ -6808,9 +6820,9 @@ uint FUN_00542aa0(void)
 }
 
 
-//// FUNCTION FUN_00542b20 @ 00542b20 ////
+//// FUNCTION WinMain @ 00542b20 ////
 
-undefined4 FUN_00542b20(HINSTANCE param_1,undefined4 param_2,byte *param_3)
+undefined4 WinMain(HINSTANCE param_1,undefined4 param_2,byte *param_3)
 
 {
   bool bVar1;
@@ -6861,6 +6873,33 @@ undefined4 FUN_00542b20(HINSTANCE param_1,undefined4 param_2,byte *param_3)
   byte local_64 [100];
   
   puVar6 = &DAT_0104c7f0;
+                    /* WinMain - confirmed as the true Win32 entry point's only call target (xref
+                       from `entry`, Ghidra's auto-detected CRT startup), 2026-10-01.
+                       
+                       Does the game's full bootstrap in order: zero a large static block, load
+                       stringdatabase.lhts, show first-run/safe-mode message boxes via
+                       Config_GetOrCreateInt-backed settings ("Open Count", "Fullscreen", "Audio
+                       Off"), parse a "safemode" command-line flag (forces 800x600 if present),
+                       register the "The Movies" window class and create the window
+                       (AdjustWindowRect/CreateWindowExA), init the 3D layer, then branch:
+                         - if FUN_004ef580() is true: calls Game_MainLoop(param_3) directly
+                         - else: tries LH_MasterGameLoop() first, falling back to
+                       Game_MainLoop(param_3) if that returns false
+                       
+                       Game_MainLoop is the one and only callee that matters for the gameplay/UI
+                       Tick
+                       hierarchy traced via the debugger DLL this session - everything from
+                       Game_TickOneFrame's screen-state switch down through
+                       SimObjectQueue_TickPending
+                       ultimately runs inside that call. LH_MasterGameLoop (not yet traced) looks
+                       like
+                       an alternate/legacy entry path - worth checking later whether it's dead code,
+                       a different game mode, or an older build artifact.
+                       
+                       Param signature (HINSTANCE, undefined4, byte*) is short one argument vs a
+                       textbook WinMain(hInstance, hPrevInstance, lpCmdLine, nCmdShow) - nCmdShow
+                       may have been folded away by the optimizer since ShowWindow() here uses a
+                       locally-computed value instead, not left unverified as a 4th argument. */
   for (iVar8 = 0x40; iVar8 != 0; iVar8 = iVar8 + -1) {
     *puVar6 = 0;
     puVar6 = puVar6 + 1;
@@ -6979,7 +7018,7 @@ LAB_00542e58:
       _free(local_16c);
     }
   }
-  FUN_005419e0();
+  InitConfigRegistryPath();
   bVar1 = FUN_004ef5e0();
   if (!bVar1) {
     uVar5 = FUN_00a0f240();
@@ -6999,7 +7038,7 @@ LAB_00542e58:
   lVar15 = 0;
   local_168 = 10;
   *(char *)(local_16c + 5) = '\0';
-  Config_GetOrCreateInt(DAT_0104c7e4,&local_16c,lVar15);
+  Config_GetOrCreateInt(g_configRegistryPath,&local_16c,lVar15);
   if (0x14 < local_164) {
                     /* WARNING: Subroutine does not return */
     _free(local_16c);
@@ -7018,7 +7057,7 @@ LAB_00542e58:
   ppuVar16 = &local_ec;
   local_168 = 10;
   *(char *)(local_16c + 5) = '\0';
-  FUN_005417f0(DAT_0104c7e4,&local_16c,ppuVar16);
+  FUN_005417f0(g_configRegistryPath,&local_16c,ppuVar16);
   if (0x14 < local_164) {
                     /* WARNING: Subroutine does not return */
     _free(local_16c);
@@ -7032,7 +7071,7 @@ LAB_00542e58:
   local_168 = 10;
   uVar2 = 1;
   *(char *)(local_16c + 5) = '\0';
-  uVar2 = FUN_00541de0(DAT_0104c7e4,&local_16c,uVar2);
+  uVar2 = FUN_00541de0(g_configRegistryPath,&local_16c,uVar2);
   local_12c = (undefined1 *)CONCAT31(local_12c._1_3_,uVar2);
   if (0x14 < local_164) {
                     /* WARNING: Subroutine does not return */
@@ -7047,7 +7086,7 @@ LAB_00542e58:
   local_168 = 9;
   bVar3 = 0;
   *(char *)((int)local_16c + 9) = '\0';
-  bVar3 = FUN_00541e50(DAT_0104c7e4,&local_16c,bVar3);
+  bVar3 = FUN_00541e50(g_configRegistryPath,&local_16c,bVar3);
   if (0x14 < local_164) {
                     /* WARNING: Subroutine does not return */
     _free(local_16c);
@@ -7147,10 +7186,10 @@ LAB_00542e58:
   FUN_00a0a1a0(hWnd);
   FUN_0082d0e0();
   FUN_009b2de0();
-  bVar1 = FUN_004ef580();
+  bVar1 = ShouldSkipFrontEnd();
   if (bVar1) {
 LAB_00543380:
-    FUN_00447c30(param_3);
+    Game_MainLoop(param_3);
   }
   else {
     uVar10 = LH_MasterGameLoop();
@@ -7166,7 +7205,7 @@ LAB_0054339a:
   WaitForSingleObject(hHandle,2000);
   CloseHandle(hHandle);
   FUN_009b3730();
-  FUN_00541a30();
+  ShutdownConfigRegistryPath();
   if (DAT_00e52b10 != (HANDLE)0xffffffff) {
     CloseHandle(DAT_00e52b10);
   }

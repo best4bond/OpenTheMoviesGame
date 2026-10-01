@@ -10579,7 +10579,7 @@ undefined4 * __fastcall GameStateManager_Constructor(undefined4 *param_1)
   local_28 = 10;
   local_2c[10] = '\0';
   local_4 = 0;
-  lVar2 = Config_GetOrCreateInt(DAT_0104c7e4,&local_2c,0);
+  lVar2 = Config_GetOrCreateInt(g_configRegistryPath,&local_2c,0);
   if (0x14 < local_24) {
                     /* WARNING: Subroutine does not return */
     _free(local_2c);
@@ -10823,6 +10823,39 @@ uint LH_MasterGameLoop(void)
   undefined1 *puStack_8;
   undefined4 local_4;
   
+                    /* LH_MasterGameLoop - NOT an alternate game loop. Confirmed 2026-10-01: this is
+                       a self-contained intro/splash-screen loop with its own PeekMessageA/
+                       TranslateMessage/DispatchMessageA message pump and its own GameStateManager
+                       object (constructed fresh each call via GameStateManager_Constructor). Per-
+                       iteration it calls UpdateIntroSplashScreens(GameStateManager) and
+                       Input_CheckGlobalShortcuts(), then switches on GameStateManager[1]:
+                         case 1 -> LH_State_IntroSplashScreen() (only if GameStateManager+0x16 byte
+                       is 0)
+                         case 2 -> virtual call through GameStateManager[4]'s vtable slot 0x2c
+                       (ditto gate)
+                         case 3/4/5 -> shared fallthrough: QueueRenderPrimitive(GameStateManager[3])
+                       Loop exits (and calls a virtual "finalize" method via GameStateManager's own
+                       vtable slot 0, passing 1) when WM_QUIT/WM_CLOSE(0x10 or 0x12) is seen OR
+                       UpdateIntroSplashScreens() signals completion via its return value.
+                       
+                       Crucially, this function NEVER calls Game_MainLoop and NEVER touches
+                       Game_TickOneFrame - it is a fully separate code path. In WinMain, it only
+                       runs in the `else` branch (when FUN_004ef580() is false), and WinMain falls
+                       back to calling Game_MainLoop() directly only if LH_MasterGameLoop() returns
+                       false - so in the common case this IS the real, normally-taken path for
+                       showing the startup splash/logo sequence before the real game loop starts,
+                       not dead/legacy code.
+                       
+                       Runtime implication (debugger DLL, 2026-10-01 session): the ~27s gap between
+                       DLL attach and the first Game_TickOneFrame state-change log is almost
+                       certainly time spent entirely inside this function (the Lionhead Studios
+                       logo sequence) - Game_TickOneFrame can't fire until this returns and
+                       Game_MainLoop actually starts. This corrects an earlier (wrong) guess that
+                       logged state "2" (a 37s dwell right after the first state change) was the
+                       logo - it isn't, since by the time Game_TickOneFrame can log anything at
+                       all, this function has already finished. State 2 is more likely a loading
+                       screen for the save file instead. See project_the_movies_re.md for the full
+                       correction. */
   local_4 = 0xffffffff;
   puStack_8 = &LAB_00ca20eb;
   pvStack_c = ExceptionList;

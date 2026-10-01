@@ -1,3 +1,675 @@
+//// FUNCTION FUN_008e2040 @ 008e2040 ////
+
+undefined4 * __thiscall FUN_008e2040(void *this,byte param_1)
+
+{
+  FUN_008e2060(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2060 @ 008e2060 ////
+
+void __fastcall FUN_008e2060(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2070 @ 008e2070 ////
+
+undefined4 * __thiscall FUN_008e2070(void *this,byte param_1)
+
+{
+  FUN_008e2090(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2090 @ 008e2090 ////
+
+void __fastcall FUN_008e2090(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e20a0 @ 008e20a0 ////
+
+undefined4 * __thiscall FUN_008e20a0(void *this,byte param_1)
+
+{
+  FUN_008e20c0(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e20c0 @ 008e20c0 ////
+
+void __fastcall FUN_008e20c0(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e20d0 @ 008e20d0 ////
+
+undefined4 * __thiscall FUN_008e20d0(void *this,byte param_1)
+
+{
+  FUN_008e20f0(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e20f0 @ 008e20f0 ////
+
+void __fastcall FUN_008e20f0(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2100 @ 008e2100 ////
+
+undefined4 * __thiscall FUN_008e2100(void *this,byte param_1)
+
+{
+  FUN_008e2120(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2120 @ 008e2120 ////
+
+void __fastcall FUN_008e2120(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2130 @ 008e2130 ////
+
+undefined4 * __thiscall FUN_008e2130(void *this,byte param_1)
+
+{
+  FUN_008e2150(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2150 @ 008e2150 ////
+
+void __fastcall FUN_008e2150(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2160 @ 008e2160 ////
+
+undefined4 * __thiscall FUN_008e2160(void *this,byte param_1)
+
+{
+  FUN_008e2180(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2180 @ 008e2180 ////
+
+void __fastcall FUN_008e2180(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2190 @ 008e2190 ////
+
+undefined4 * __thiscall FUN_008e2190(void *this,byte param_1)
+
+{
+  FUN_008e21b0(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e21b0 @ 008e21b0 ////
+
+void __fastcall FUN_008e21b0(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e21c0 @ 008e21c0 ////
+
+undefined4 * __thiscall FUN_008e21c0(void *this,byte param_1)
+
+{
+  FUN_008e21e0(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e21e0 @ 008e21e0 ////
+
+void __fastcall FUN_008e21e0(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e21f0 @ 008e21f0 ////
+
+undefined4 * __thiscall FUN_008e21f0(void *this,byte param_1)
+
+{
+  FUN_008e2210(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2210 @ 008e2210 ////
+
+void __fastcall FUN_008e2210(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2220 @ 008e2220 ////
+
+undefined4 * __thiscall FUN_008e2220(void *this,byte param_1)
+
+{
+  FUN_008e2240(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2240 @ 008e2240 ////
+
+void __fastcall FUN_008e2240(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2250 @ 008e2250 ////
+
+undefined4 * __thiscall FUN_008e2250(void *this,byte param_1)
+
+{
+  FUN_008e2270(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2270 @ 008e2270 ////
+
+void __fastcall FUN_008e2270(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2280 @ 008e2280 ////
+
+undefined4 * __thiscall FUN_008e2280(void *this,byte param_1)
+
+{
+  FUN_008e22a0(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e22a0 @ 008e22a0 ////
+
+void __fastcall FUN_008e22a0(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e22b0 @ 008e22b0 ////
+
+undefined4 * __thiscall FUN_008e22b0(void *this,byte param_1)
+
+{
+  FUN_008e22d0(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e22d0 @ 008e22d0 ////
+
+void __fastcall FUN_008e22d0(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e22e0 @ 008e22e0 ////
+
+undefined4 * __thiscall FUN_008e22e0(void *this,byte param_1)
+
+{
+  FUN_008e2300(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2300 @ 008e2300 ////
+
+void __fastcall FUN_008e2300(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2310 @ 008e2310 ////
+
+undefined4 * __thiscall FUN_008e2310(void *this,byte param_1)
+
+{
+  FUN_008e2330(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2330 @ 008e2330 ////
+
+void __fastcall FUN_008e2330(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2340 @ 008e2340 ////
+
+undefined4 * __thiscall FUN_008e2340(void *this,byte param_1)
+
+{
+  FUN_008e2360(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2360 @ 008e2360 ////
+
+void __fastcall FUN_008e2360(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2370 @ 008e2370 ////
+
+undefined4 * __thiscall FUN_008e2370(void *this,byte param_1)
+
+{
+  FUN_008e2390(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2390 @ 008e2390 ////
+
+void __fastcall FUN_008e2390(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e23a0 @ 008e23a0 ////
+
+undefined4 * __thiscall FUN_008e23a0(void *this,byte param_1)
+
+{
+  FUN_008e23c0(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e23c0 @ 008e23c0 ////
+
+void __fastcall FUN_008e23c0(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e23d0 @ 008e23d0 ////
+
+undefined4 * __thiscall FUN_008e23d0(void *this,byte param_1)
+
+{
+  FUN_008e23f0(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e23f0 @ 008e23f0 ////
+
+void __fastcall FUN_008e23f0(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2400 @ 008e2400 ////
+
+undefined4 * __thiscall FUN_008e2400(void *this,byte param_1)
+
+{
+  FUN_008e2420(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2420 @ 008e2420 ////
+
+void __fastcall FUN_008e2420(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2430 @ 008e2430 ////
+
+undefined4 * __thiscall FUN_008e2430(void *this,byte param_1)
+
+{
+  FUN_008e2450(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2450 @ 008e2450 ////
+
+void __fastcall FUN_008e2450(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2460 @ 008e2460 ////
+
+undefined4 * __thiscall FUN_008e2460(void *this,byte param_1)
+
+{
+  FUN_008e2480(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2480 @ 008e2480 ////
+
+void __fastcall FUN_008e2480(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2490 @ 008e2490 ////
+
+undefined4 * __thiscall FUN_008e2490(void *this,byte param_1)
+
+{
+  FUN_008e24b0(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e24b0 @ 008e24b0 ////
+
+void __fastcall FUN_008e24b0(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e24c0 @ 008e24c0 ////
+
+undefined4 * __thiscall FUN_008e24c0(void *this,byte param_1)
+
+{
+  FUN_008e24e0(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e24e0 @ 008e24e0 ////
+
+void __fastcall FUN_008e24e0(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e24f0 @ 008e24f0 ////
+
+undefined4 * __thiscall FUN_008e24f0(void *this,byte param_1)
+
+{
+  FUN_008e2510(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2510 @ 008e2510 ////
+
+void __fastcall FUN_008e2510(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2520 @ 008e2520 ////
+
+undefined4 * __thiscall FUN_008e2520(void *this,byte param_1)
+
+{
+  FUN_008e2540(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2540 @ 008e2540 ////
+
+void __fastcall FUN_008e2540(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
+//// FUNCTION FUN_008e2550 @ 008e2550 ////
+
+undefined4 * __thiscall FUN_008e2550(void *this,byte param_1)
+
+{
+  FUN_008e2570(this);
+  if ((param_1 & 1) != 0) {
+                    /* WARNING: Subroutine does not return */
+    _free(this);
+  }
+  return this;
+}
+
+
+//// FUNCTION FUN_008e2570 @ 008e2570 ////
+
+void __fastcall FUN_008e2570(undefined4 *param_1)
+
+{
+  *param_1 = &PTR_LAB_00d66f18;
+  return;
+}
+
+
 //// FUNCTION FUN_008e2580 @ 008e2580 ////
 
 undefined4 * __thiscall FUN_008e2580(void *this,byte param_1)
@@ -11860,673 +12532,6 @@ undefined4 * __fastcall FUN_008f34c0(undefined4 *param_1)
   FUN_008f3230(param_1);
   *param_1 = &PTR_FUN_00d68684;
   return param_1;
-}
-
-
-//// FUNCTION FUN_008f34e0 @ 008f34e0 ////
-
-undefined4 * __fastcall FUN_008f34e0(undefined4 *param_1)
-
-{
-  FUN_008f3230(param_1);
-  *param_1 = &PTR_FUN_00d68698;
-  return param_1;
-}
-
-
-//// FUNCTION FUN_008f3500 @ 008f3500 ////
-
-undefined4 * __fastcall FUN_008f3500(undefined4 *param_1)
-
-{
-  FUN_008f3230(param_1);
-  *param_1 = &PTR_FUN_00d686ac;
-  return param_1;
-}
-
-
-//// FUNCTION FUN_008f3520 @ 008f3520 ////
-
-undefined4 * __fastcall FUN_008f3520(undefined4 *param_1)
-
-{
-  FUN_008f3230(param_1);
-  *param_1 = &PTR_FUN_00d686c0;
-  return param_1;
-}
-
-
-//// FUNCTION FUN_008f3540 @ 008f3540 ////
-
-undefined4 * __fastcall FUN_008f3540(undefined4 *param_1)
-
-{
-  FUN_008f3230(param_1);
-  *param_1 = &PTR_FUN_00d686d4;
-  return param_1;
-}
-
-
-//// FUNCTION FUN_008f3560 @ 008f3560 ////
-
-undefined4 * __fastcall FUN_008f3560(undefined4 *param_1)
-
-{
-  FUN_008f3230(param_1);
-  *param_1 = &PTR_FUN_00d686e8;
-  return param_1;
-}
-
-
-//// FUNCTION FUN_008f3580 @ 008f3580 ////
-
-undefined4 * __fastcall FUN_008f3580(undefined4 *param_1)
-
-{
-  FUN_008f3230(param_1);
-  *param_1 = &PTR_FUN_00d686fc;
-  return param_1;
-}
-
-
-//// FUNCTION FUN_008f35a0 @ 008f35a0 ////
-
-undefined4 * __fastcall FUN_008f35a0(undefined4 *param_1)
-
-{
-  FUN_008f3230(param_1);
-  *param_1 = &PTR_FUN_00d68710;
-  return param_1;
-}
-
-
-//// FUNCTION FUN_008f3600 @ 008f3600 ////
-
-undefined4 * __fastcall FUN_008f3600(undefined4 *param_1)
-
-{
-  FUN_008f3230(param_1);
-  *param_1 = &PTR_FUN_00d68724;
-  return param_1;
-}
-
-
-//// FUNCTION FUN_008f3620 @ 008f3620 ////
-
-undefined4 * __fastcall FUN_008f3620(undefined4 *param_1)
-
-{
-  FUN_008f3230(param_1);
-  *param_1 = &PTR_FUN_00d68738;
-  return param_1;
-}
-
-
-//// FUNCTION FUN_008f3650 @ 008f3650 ////
-
-undefined4 * __fastcall FUN_008f3650(undefined4 *param_1)
-
-{
-  FUN_008f3230(param_1);
-  *param_1 = &PTR_FUN_00d6874c;
-  return param_1;
-}
-
-
-//// FUNCTION FUN_008f3690 @ 008f3690 ////
-
-undefined4 * __thiscall FUN_008f3690(void *this,byte param_1)
-
-{
-  FUN_008f3270(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f36f0 @ 008f36f0 ////
-
-undefined4 * __thiscall FUN_008f36f0(void *this,byte param_1)
-
-{
-  FUN_008f3710(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3710 @ 008f3710 ////
-
-void __fastcall FUN_008f3710(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3870 @ 008f3870 ////
-
-float10 FUN_008f3870(void)
-
-{
-  int *piVar1;
-  longlong *plVar2;
-  undefined1 local_8 [8];
-  
-  piVar1 = (int *)GetPlayerStudio();
-  plVar2 = (longlong *)(**(code **)(*piVar1 + 0x24))(local_8);
-  return (float10)*plVar2 * (float10)1.1920929e-07;
-}
-
-
-//// FUNCTION FUN_008f38c0 @ 008f38c0 ////
-
-undefined4 * __thiscall FUN_008f38c0(void *this,byte param_1)
-
-{
-  FUN_008f38e0(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f38e0 @ 008f38e0 ////
-
-void __fastcall FUN_008f38e0(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f38f0 @ 008f38f0 ////
-
-undefined4 * __thiscall FUN_008f38f0(void *this,byte param_1)
-
-{
-  FUN_008f3910(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3910 @ 008f3910 ////
-
-void __fastcall FUN_008f3910(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3920 @ 008f3920 ////
-
-undefined4 * __thiscall FUN_008f3920(void *this,byte param_1)
-
-{
-  FUN_008f3940(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3940 @ 008f3940 ////
-
-void __fastcall FUN_008f3940(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3950 @ 008f3950 ////
-
-undefined4 * __thiscall FUN_008f3950(void *this,byte param_1)
-
-{
-  FUN_008f3970(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3970 @ 008f3970 ////
-
-void __fastcall FUN_008f3970(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3980 @ 008f3980 ////
-
-undefined4 * __thiscall FUN_008f3980(void *this,byte param_1)
-
-{
-  FUN_008f39a0(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f39a0 @ 008f39a0 ////
-
-void __fastcall FUN_008f39a0(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f39b0 @ 008f39b0 ////
-
-undefined4 * __thiscall FUN_008f39b0(void *this,byte param_1)
-
-{
-  FUN_008f39d0(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f39d0 @ 008f39d0 ////
-
-void __fastcall FUN_008f39d0(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f39e0 @ 008f39e0 ////
-
-undefined4 * __thiscall FUN_008f39e0(void *this,byte param_1)
-
-{
-  FUN_008f3a00(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3a00 @ 008f3a00 ////
-
-void __fastcall FUN_008f3a00(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3a10 @ 008f3a10 ////
-
-undefined4 * __thiscall FUN_008f3a10(void *this,byte param_1)
-
-{
-  FUN_008f3a30(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3a30 @ 008f3a30 ////
-
-void __fastcall FUN_008f3a30(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3a40 @ 008f3a40 ////
-
-undefined4 * __thiscall FUN_008f3a40(void *this,byte param_1)
-
-{
-  FUN_008f3a60(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3a60 @ 008f3a60 ////
-
-void __fastcall FUN_008f3a60(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3a70 @ 008f3a70 ////
-
-undefined4 * __thiscall FUN_008f3a70(void *this,byte param_1)
-
-{
-  FUN_008f3a90(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3a90 @ 008f3a90 ////
-
-void __fastcall FUN_008f3a90(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3aa0 @ 008f3aa0 ////
-
-undefined4 * __thiscall FUN_008f3aa0(void *this,byte param_1)
-
-{
-  FUN_008f3ac0(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3ac0 @ 008f3ac0 ////
-
-void __fastcall FUN_008f3ac0(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3ad0 @ 008f3ad0 ////
-
-undefined4 * __thiscall FUN_008f3ad0(void *this,byte param_1)
-
-{
-  FUN_008f3af0(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3af0 @ 008f3af0 ////
-
-void __fastcall FUN_008f3af0(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3b00 @ 008f3b00 ////
-
-undefined4 * __thiscall FUN_008f3b00(void *this,byte param_1)
-
-{
-  FUN_008f3b20(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3b20 @ 008f3b20 ////
-
-void __fastcall FUN_008f3b20(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3b30 @ 008f3b30 ////
-
-undefined4 * __thiscall FUN_008f3b30(void *this,byte param_1)
-
-{
-  FUN_008f3b50(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3b50 @ 008f3b50 ////
-
-void __fastcall FUN_008f3b50(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3b60 @ 008f3b60 ////
-
-undefined4 * __thiscall FUN_008f3b60(void *this,byte param_1)
-
-{
-  FUN_008f3b80(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3b80 @ 008f3b80 ////
-
-void __fastcall FUN_008f3b80(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3b90 @ 008f3b90 ////
-
-undefined4 * __thiscall FUN_008f3b90(void *this,byte param_1)
-
-{
-  FUN_008f3bb0(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3bb0 @ 008f3bb0 ////
-
-void __fastcall FUN_008f3bb0(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3bc0 @ 008f3bc0 ////
-
-undefined4 * __thiscall FUN_008f3bc0(void *this,byte param_1)
-
-{
-  FUN_008f3be0(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3be0 @ 008f3be0 ////
-
-void __fastcall FUN_008f3be0(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3bf0 @ 008f3bf0 ////
-
-undefined4 * __thiscall FUN_008f3bf0(void *this,byte param_1)
-
-{
-  FUN_008f3c10(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3c10 @ 008f3c10 ////
-
-void __fastcall FUN_008f3c10(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3c20 @ 008f3c20 ////
-
-undefined4 * __thiscall FUN_008f3c20(void *this,byte param_1)
-
-{
-  FUN_008f3c40(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3c40 @ 008f3c40 ////
-
-void __fastcall FUN_008f3c40(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3c50 @ 008f3c50 ////
-
-undefined4 * __thiscall FUN_008f3c50(void *this,byte param_1)
-
-{
-  FUN_008f3c70(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3c70 @ 008f3c70 ////
-
-void __fastcall FUN_008f3c70(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
-}
-
-
-//// FUNCTION FUN_008f3c80 @ 008f3c80 ////
-
-undefined4 * __thiscall FUN_008f3c80(void *this,byte param_1)
-
-{
-  FUN_008f3ca0(this);
-  if ((param_1 & 1) != 0) {
-                    /* WARNING: Subroutine does not return */
-    _free(this);
-  }
-  return this;
-}
-
-
-//// FUNCTION FUN_008f3ca0 @ 008f3ca0 ////
-
-void __fastcall FUN_008f3ca0(undefined4 *param_1)
-
-{
-  *param_1 = &PTR_LAB_00d65724;
-  return;
 }
 
 

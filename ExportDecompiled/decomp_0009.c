@@ -81,9 +81,9 @@ LAB_004ef452:
 }
 
 
-//// FUNCTION FUN_004ef4d0 @ 004ef4d0 ////
+//// FUNCTION LoadSkipFrontEndSetting @ 004ef4d0 ////
 
-void FUN_004ef4d0(void)
+void LoadSkipFrontEndSetting(void)
 
 {
   char *local_2c;
@@ -97,9 +97,9 @@ void FUN_004ef4d0(void)
   local_4 = 0xffffffff;
   puStack_8 = &LAB_00caa858;
   local_c = ExceptionList;
-  if (DAT_0104adf8 == '\0') {
+  if (g_skipFrontEndInitialized == '\0') {
     local_2c = local_20;
-    DAT_0104adf8 = '\x01';
+    g_skipFrontEndInitialized = '\x01';
     local_20[0] = '\0';
     local_28 = 0;
     local_24 = 0x14;
@@ -108,7 +108,7 @@ void FUN_004ef4d0(void)
     local_28 = 0xe;
     local_2c[0xe] = '\0';
     local_4 = 0;
-    DAT_0104adf4 = Config_GetOrCreateInt(DAT_0104c7e4,&local_2c,0);
+    g_skipFrontEnd = Config_GetOrCreateInt(g_configRegistryPath,&local_2c,0);
     if (0x14 < local_24) {
                     /* WARNING: Subroutine does not return */
       _free(local_2c);
@@ -119,13 +119,22 @@ void FUN_004ef4d0(void)
 }
 
 
-//// FUNCTION FUN_004ef580 @ 004ef580 ////
+//// FUNCTION ShouldSkipFrontEnd @ 004ef580 ////
 
-bool FUN_004ef580(void)
+bool ShouldSkipFrontEnd(void)
 
 {
-  FUN_004ef4d0();
-  return DAT_0104adf4 != 0;
+                    /* ShouldSkipFrontEnd - gates WinMain's choice between LH_MasterGameLoop()
+                       (the splash/intro sequence) and Game_MainLoop() directly. Backed by a config
+                       value named literally "Skip Front End" (read via Config_GetOrCreateInt,
+                       default 0 = show the splash), cached in g_skipFrontEnd on first call via
+                       LoadSkipFrontEndSetting(). An internal dev/config toggle, same flavor as the
+                       SITT_DebugConsoleCommandDispatch command list found 2026-10-01 - not exposed
+                       in any in-game UI found so far, but trivially settable if the config file/key
+                       it reads from (DAT_0104c7e4 - not yet identified, looks like a config-section
+                       handle) is ever located. Confirmed 2026-10-01. */
+  LoadSkipFrontEndSetting();
+  return g_skipFrontEnd != 0;
 }
 
 
@@ -134,8 +143,8 @@ bool FUN_004ef580(void)
 bool FUN_004ef5a0(void)
 
 {
-  FUN_004ef4d0();
-  return DAT_0104adf4 == 1;
+  LoadSkipFrontEndSetting();
+  return g_skipFrontEnd == 1;
 }
 
 
@@ -144,8 +153,8 @@ bool FUN_004ef5a0(void)
 bool FUN_004ef5c0(void)
 
 {
-  FUN_004ef4d0();
-  return DAT_0104adf4 == 2;
+  LoadSkipFrontEndSetting();
+  return g_skipFrontEnd == 2;
 }
 
 
@@ -154,8 +163,8 @@ bool FUN_004ef5c0(void)
 bool FUN_004ef5e0(void)
 
 {
-  FUN_004ef4d0();
-  return DAT_0104adf4 != 0;
+  LoadSkipFrontEndSetting();
+  return g_skipFrontEnd != 0;
 }
 
 
@@ -3593,7 +3602,7 @@ void AudioOptions_SaveMixerLevels(void)
     puVar3 = FUN_00569d60(local_6c,iVar4);
     puVar3 = FUN_0040d6b0(local_4c,"Volume ",puVar3);
     local_4 = CONCAT31(local_4._1_3_,2);
-    FUN_005417f0(DAT_0104c7e4,puVar3,puVar2);
+    FUN_005417f0(g_configRegistryPath,puVar3,puVar2);
     if (0x14 < local_44) {
                     /* WARNING: Subroutine does not return */
       _free(local_4c[0]);
@@ -3619,7 +3628,7 @@ void AudioOptions_SaveMixerLevels(void)
   local_4 = 3;
   puVar2 = FUN_00569d60(local_8c,DAT_0104b09c);
   local_4 = CONCAT31(local_4._1_3_,4);
-  FUN_005417f0(DAT_0104c7e4,&local_ac,puVar2);
+  FUN_005417f0(g_configRegistryPath,&local_ac,puVar2);
   if (0x14 < local_84) {
                     /* WARNING: Subroutine does not return */
     _free(local_8c[0]);
@@ -3638,7 +3647,7 @@ void AudioOptions_SaveMixerLevels(void)
   local_4 = 5;
   puVar2 = FUN_00569d60(local_8c,DAT_0104b0a0);
   local_4 = CONCAT31(local_4._1_3_,6);
-  FUN_005417f0(DAT_0104c7e4,&local_ac,puVar2);
+  FUN_005417f0(g_configRegistryPath,&local_ac,puVar2);
   if (0x14 < local_84) {
                     /* WARNING: Subroutine does not return */
     _free(local_8c[0]);
@@ -3657,7 +3666,7 @@ void AudioOptions_SaveMixerLevels(void)
   local_4 = 7;
   puVar2 = FUN_00569d60(local_8c,DAT_0104b0a4);
   local_4 = CONCAT31(local_4._1_3_,8);
-  FUN_005417f0(DAT_0104c7e4,&local_ac,puVar2);
+  FUN_005417f0(g_configRegistryPath,&local_ac,puVar2);
   if (0x14 < local_84) {
                     /* WARNING: Subroutine does not return */
     _free(local_8c[0]);
@@ -3676,7 +3685,7 @@ void AudioOptions_SaveMixerLevels(void)
   local_4 = 9;
   puVar2 = FUN_00569d60(local_8c,DAT_0104b0a8);
   local_4 = CONCAT31(local_4._1_3_,10);
-  FUN_005417f0(DAT_0104c7e4,&local_ac,puVar2);
+  FUN_005417f0(g_configRegistryPath,&local_ac,puVar2);
   if (0x14 < local_84) {
                     /* WARNING: Subroutine does not return */
     _free(local_8c[0]);
@@ -3696,7 +3705,7 @@ void AudioOptions_SaveMixerLevels(void)
   bVar1 = FUN_009b0990();
   puVar2 = FUN_00569d60(local_2c,CONCAT31(extraout_var,bVar1));
   local_4 = CONCAT31(local_4._1_3_,0xc);
-  FUN_005417f0(DAT_0104c7e4,&local_ac,puVar2);
+  FUN_005417f0(g_configRegistryPath,&local_ac,puVar2);
   if (0x14 < local_24) {
                     /* WARNING: Subroutine does not return */
     _free(local_2c[0]);
@@ -3792,7 +3801,7 @@ void AudioOptions_LoadMixerLevels(void)
     local_4 = 0;
     puVar1 = FUN_0040d6b0(local_4c,"Volume ",puVar1);
     local_4 = CONCAT31(local_4._1_3_,1);
-    fVar4 = FUN_00541ae0(DAT_0104c7e4,puVar1,1.0);
+    fVar4 = FUN_00541ae0(g_configRegistryPath,puVar1,1.0);
     (&DAT_0104b0ac)[iVar3] = (float)fVar4;
     if (0x14 < local_44) {
                     /* WARNING: Subroutine does not return */
@@ -3814,7 +3823,7 @@ void AudioOptions_LoadMixerLevels(void)
   local_68 = 7;
   local_6c[7] = '\0';
   local_4 = 2;
-  DAT_0104b09c = Config_GetOrCreateInt(DAT_0104c7e4,&local_6c,3);
+  DAT_0104b09c = Config_GetOrCreateInt(g_configRegistryPath,&local_6c,3);
   if (0x14 < local_64) {
                     /* WARNING: Subroutine does not return */
     _free(local_6c);
@@ -3827,7 +3836,7 @@ void AudioOptions_LoadMixerLevels(void)
   local_68 = 9;
   local_6c[9] = '\0';
   local_4 = 3;
-  DAT_0104b0a0 = Config_GetOrCreateInt(DAT_0104c7e4,&local_6c,3);
+  DAT_0104b0a0 = Config_GetOrCreateInt(g_configRegistryPath,&local_6c,3);
   if (0x14 < local_64) {
                     /* WARNING: Subroutine does not return */
     _free(local_6c);
@@ -3840,7 +3849,7 @@ void AudioOptions_LoadMixerLevels(void)
   local_68 = 0xb;
   local_6c[0xb] = '\0';
   local_4 = 4;
-  DAT_0104b0a4 = Config_GetOrCreateInt(DAT_0104c7e4,&local_6c,3);
+  DAT_0104b0a4 = Config_GetOrCreateInt(g_configRegistryPath,&local_6c,3);
   if (0x14 < local_64) {
                     /* WARNING: Subroutine does not return */
     _free(local_6c);
@@ -3853,7 +3862,7 @@ void AudioOptions_LoadMixerLevels(void)
   local_68 = 10;
   local_6c[10] = '\0';
   local_4 = 5;
-  DAT_0104b0a8 = Config_GetOrCreateInt(DAT_0104c7e4,&local_6c,3);
+  DAT_0104b0a8 = Config_GetOrCreateInt(g_configRegistryPath,&local_6c,3);
   if (0x14 < local_64) {
                     /* WARNING: Subroutine does not return */
     _free(local_6c);
@@ -3866,7 +3875,7 @@ void AudioOptions_LoadMixerLevels(void)
   local_68 = 0xd;
   local_6c[0xd] = '\0';
   local_4 = 6;
-  lVar2 = Config_GetOrCreateInt(DAT_0104c7e4,&local_6c,0);
+  lVar2 = Config_GetOrCreateInt(g_configRegistryPath,&local_6c,0);
   FUN_009b0930(lVar2);
   if (0x14 < local_64) {
                     /* WARNING: Subroutine does not return */
