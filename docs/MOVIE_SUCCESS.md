@@ -635,7 +635,7 @@ Open: the +0x430 writer (assumed 1.0), whether other asset types (non-ornament) 
 
 **Studio decoration ratio.** `Studio_GetDecorationRatio` (0x466180) = clamp01( `g_TotalOrnamentAttractiveness` / (3 * max(N, 2) + 2 * max(M, 4)) ) where N = length of the list at studio+0x94 (`FUN_0050ab40`) and M = studio virtual 0x8C (returns an int, likely staff/people count). The analogous `Studio_GetCateringSurplusRatio` (0x465F40) = clamp01( (g_TotalCateringCapacity - need) / need ), need = 0.5 * (0.1 N' + 0.05 M'), and `Studio_GetToiletSurplusRatio` (0x466060) uses g_TotalToiletCapacity and need = 0.5 * (0.25 N' + 0.1 M'), with N' = max(N,2), M' = max(M,4).
 
-`Studio_UpdateEnvironmentScore` (0x518570, runs from `Studio_Tick` 0x519450 whenever a timer at +0x2A4 elapses) writes the studio's environment score at studio+0x4B0 = clamp01 of:
+`CStudioPlayer_UpdateAppearance` (0x518570, formerly `Studio_UpdateEnvironmentScore`; runs from the player-studio tick 0x519450 whenever a timer at +0xA9*4 elapses) writes the studio's **appearance** at studio+0x12C (byte offset; an earlier note said +0x4B0, which was a misread of `param_1 + 300`) = clamp01 of:
 - clamp01(0.30 * x1), x1 = `FUN_00452af0(DAT_00f88720)` (not decoded)
 - + clamp01(0.25 * lot virtual 0x188) (not decoded)
 - - 0.25 * (1 - lot virtual 0xB8) (the lot's condition / state of repair)
@@ -644,4 +644,25 @@ Open: the +0x430 writer (assumed 1.0), whether other asset types (non-ornament) 
 - + clamp01(0.05 * decoration ratio)
 - - 0.05 * (1 - cleanliness(0x466290))
 
-Constants verified from the exe (0xE52190..0xE521A8, 0xE50418..0xE50434). The readers of studio+0x4B0 and the meaning of x1 / lot virtual 0x188 are not found yet, so how this score feeds happiness or ratings is open.
+Constants verified from the exe (0xE52190..0xE521A8, 0xE50418..0xE50434). The consumers of the appearance are decoded in 3aw; the meaning of x1 / lot virtual 0x188 is still open.
+
+## 3aw. Studio appearance and the studio star rating (CStudio_ComputeStarRating)
+
+**Readers of the appearance (studio +0x12C).** CStudio/CStudioAI/CStudioPlayer all share virtual slot 0x80 = getter for +0x12C (0x50AB30, not a Ghidra function). It is read by (a) `CStudio_ComputeStarRating` (0x50AB70) and (b) the advice-tip classes `PIP_PLACING_APPEARANCE_UP/DOWN` (getter 0x958A30 and compare 0x958A50, which also compare the lot's virtual 0x188). A second writer is the smoothing code at 0x513BF0 (adds/subtracts a clamped amount using studio +0x26C/+0x270/+0x274 and a 0.1 factor), so the appearance is moved gradually, not only set by `CStudioPlayer_UpdateAppearance`.
+
+**The studio star rating** (stored at studio +0x130, getter = virtual slot 0x84, 0x50AB60), recomputed every studio tick by `CStudio_ComputeStarRating` (0x50AB70, called from 0x50CC00). Each step is clamped to 0..1:
+```
+s = clamp01( 0.15 * appearance )
+s = clamp01( s + 0.30 * DecayedReputation )               // CStudio_GetDecayedReputation 0x50A860
+s = clamp01( s + 0.30 * virtual 0x90 )                    // CStudio_GetMoneyRatingComponent   0x50CFE0
+s = clamp01( s + 0.30 * virtual 0x94 )                    // CStudio_GetStarPowerRatingComponent 0x50FC90
+s = clamp01( s + 0.15 * virtual 0x98 )                    // CStudio_GetAwardsRatingComponent  0x50D8E0
+studio.rating = s
+```
+- **Decayed reputation** = clamp01( rep(+0x138) * exp(-0.01 * years since +0x13C) ): stored reputation fades 1% per game year in the exponent.
+- **Money component**: studio money (virtual 0x24) compared with a six-entry int64 threshold table at 0x104BD38: starts at -0.2, +0.2 for each threshold passed, linear interpolation inside the current bracket (money scale 2^-23), clamped; below the first threshold the result is 0.
+- **Star power**: take the ratings of the studio's stars (list at +0x94, `TMCharacter_GetStarRating`), repeatedly pick the highest, add `rating * w` with w = 0.4 for the best star, then 0.35, 0.30, ... (w decreases by 0.05 per star), clamped after each addition.
+- **Awards**: number of award entries whose owner (+0xB8) is this studio times 0.1695 (about 1/5.9), clamped.
+- Consequence: a fully-decorated, well-kept studio contributes at most 0.15 to the rating directly; decor/appearance is the smallest term and money, reputation and star power dominate.
+
+**Where the studio rating is read** (call sites that fetch the player studio then call virtual 0x84): 0x574AA0 scales it by a 16-bit constant at 0xE531FC (= 5) and rounds (likely the number of arrivals of some NPC type per period, minimum 1 during a tutorial), 0x84E610 blends it with a field at +0x120 for a similar count, 0x8633C4/0x8634C5 (UI), and 0x8F38A0 (a getter object, probably an objective/advice value). These functions are not defined in Ghidra yet, so their exact purpose is unconfirmed.
