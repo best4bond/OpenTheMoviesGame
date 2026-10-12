@@ -125,7 +125,8 @@ public class ExportByClass extends GhidraScript {
 			return;
 		}
 
-		Map<String, List<Entry>> groups = new TreeMap<>();
+		// Case-insensitive: Windows file names are, so "Math" and "math" must share one file (otherwise one overwrites the other).
+		Map<String, List<Entry>> groups = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
 		int total = currentProgram.getFunctionManager().getFunctionCount();
 		monitor.initialize(total);
 		int exported = 0, skipped = 0, unnamed = 0, failed = 0;
