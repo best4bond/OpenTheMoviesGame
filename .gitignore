@@ -1,6 +1,7 @@
 # --- Firewall: no game-derived material in git ---
 # Everything extracted from or generated from the game lives in data/, gen/ or docs/generated/ (all local-only)
-data/
+data/*
+!data/identified_organized/
 gen/
 docs/generated/
 # Ghidra project (local database)
