@@ -14,7 +14,7 @@ HDR = re.compile(r'^//// FUNCTION (\S+) @ ([0-9a-f]{8}) ////$', re.M)
 SRC = re.compile(r'"\.\\\\([A-Za-z0-9_]+)\.cpp"')
 
 funcs, anchors = {}, {}
-for f in sorted(glob.glob(str(ROOT / 'ExportDecompiled' / 'decomp_*.c'))):
+for f in sorted(glob.glob(str(ROOT / 'data' / 'ExportDecompiled' / 'decomp_*.c'))):
     t = open(f, errors='replace').read()
     ms = list(HDR.finditer(t))
     for i, m in enumerate(ms):
@@ -28,7 +28,7 @@ for f in sorted(glob.glob(str(ROOT / 'ExportDecompiled' / 'decomp_*.c'))):
         if s:
             anchors[a] = s[0]
 
-size = {r[0]: int(r[2]) for r in list(csv.reader(open(ROOT / 'ExportDecompiled' / 'index.csv')))[1:]}
+size = {r[0]: int(r[2]) for r in list(csv.reader(open(ROOT / 'data' / 'ExportDecompiled' / 'index.csv')))[1:]}
 fable = {r['ours_addr']: r for r in csv.DictReader(open(ROOT / 'fable_matches.csv'))}
 
 order = sorted(funcs, key=lambda a: int(a, 16))

@@ -9,7 +9,7 @@ documentation of the original FUN_ name).
 import csv, re, pathlib
 
 root = pathlib.Path(__file__).resolve().parent.parent
-export = root / "ExportDecompiled"
+export = root / "data" / "ExportDecompiled"
 
 cur = {}
 for r in list(csv.reader(open(export / "index.csv", newline="")))[1:]:

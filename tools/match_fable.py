@@ -44,7 +44,7 @@ def jac(a, b):
 
 def load_ours():
     F = {}
-    for f in sorted(glob.glob(str(ROOT / 'ExportDecompiled' / 'decomp_*.c'))):
+    for f in sorted(glob.glob(str(ROOT / 'data' / 'ExportDecompiled' / 'decomp_*.c'))):
         t = open(f, errors='replace').read()
         ms = list(HDR.finditer(t))
         for i, m in enumerate(ms):

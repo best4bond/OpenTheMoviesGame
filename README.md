@@ -21,3 +21,19 @@ Write-up is being redone from scratch — check back soon.
 - [Ghidra](https://ghidra-sre.org/) for static analysis/decompilation of the executable.
 - `reshoot.exe`, archive-extraction tool for pulling real data files (`.csv`/`.ini`/`.lhts`) out of the game's `.pak` archives to verify inferences made from the disassembly.
 - Claude to help me write these notes and talk through complicated parts of this disassembly.
+
+## Repository layout
+
+```
+docs/          findings and format write-ups (MOVIE_*.md, STUNT_SYSTEM.md, FLM_FORMAT.md, REIMPLEMENTATION.md, DECOMP_PIPELINE.md)
+FINDINGS.md    older findings notes (being rewritten)
+renames.csv    proposed function names, library_map.csv, fable_matches.csv
+tools/         analysis and generator scripts (Python/PowerShell); tools/ghidra_names.csv = live Ghidra names
+ghidra/        Ghidra scripts (the Ghidra project itself is local: *.gpr / *.rep, gitignored)
+debugger/      TheMoviesDebugger: injected DLL + injector (CMake), used to verify findings at runtime
+src/           the readable reimplementation (to come)
+data/          LOCAL ONLY, gitignored: ExportDecompiled/, extracted game files, dumps
+gen/, docs/generated/   LOCAL ONLY, gitignored: generated sources and reports
+```
+
+The game install (`The Movies/`) is kept outside the repo, next to it. See `docs/REIMPLEMENTATION.md` for the module layout and workflow.
