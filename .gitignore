@@ -1,5 +1,6 @@
-# --- Firewall: no game-derived material in git ---
-# Everything extracted from or generated from the game lives in data/, gen/ or docs/generated/ (all local-only)
+# --- Game-derived material is local-only, except the organized per-class export ---
+# Extracted/generated game material lives in data/, gen/ and docs/generated/ (all local-only).
+# The one exception is data/identified_organized/ (decompiled functions, one .c per class), which is tracked.
 data/*
 !data/identified_organized/
 gen/
